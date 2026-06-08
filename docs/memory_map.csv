@@ -1,0 +1,5 @@
+region,rom_start,rom_end,snes_bank,notes
+code_low,0x00000,0x07FFF,$00-$01,Code 65816
+data_scripts,0x20000,0x4FFFF,$04-$09,Scripts banque 84
+gfx_tiles,0x50000,0x17FFFF,$0A-$2F,Tuiles / compression
+header,0x7FC0,0x7FFF,$00,SNES header

@@ -1,0 +1,3 @@
+rom_offset,char_count,char_ids_hex,notes
+0x008D7F,16,A6 AD 9E BF BB B4 9E 9F C6 CD 9E 9F DB D4 9E 60,0x8D + glyph ID
+0x00D39D,10,7F 83 89 8F 97 9F A9 B3 BF 00,0x8D + glyph ID

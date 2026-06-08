@@ -1,0 +1,5 @@
+feature,condition_jp,translation_en,rom_status
+hidden_profiles,Anniversaires TCRF,Profiles,compressed
+dev_message,5× 11月25日,Dev birthday egg,not plain SJIS
+dev_msg_1,ダメだよ,Don't same birthday,custom
+source,https://tcrf.net/Nage_Libre,,

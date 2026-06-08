@@ -1,0 +1,23 @@
+# ROMs (original + patches) — ne pas distribuer
+*.sfc
+*.smc
+
+# Secrets / config locale
+.env
+
+# Savestates Mesen (optionnels, locaux)
+*.mss
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# .NET
+bin/
+obj/
+*.user

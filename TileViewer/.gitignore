@@ -1,0 +1,9 @@
+*.o
+*.a
+*.dll
+*.exe
+.vscode/settings.json
+depend
+
+build
+build_**/*

@@ -1,0 +1,1217 @@
+ROM Offset | Source | Hex Bytes | Decoded Text
+--------------------------------------------------------------------------------
+0x021CBD | script_pointer       | C5 01 C6 01 C7 01 C8 01 C9 01 CA 01 CB 01 CC 01 00 00 00 00 00 00 00 00 01 00 01 00 01 00 01 00 02 00 02 00 02 00 02 00 03 00 03 00 03 00 03 00 04 00 04 00 04 00 04 00 05 00 05 00 05 00 05 00 06 00 06 00 06 00 06 00 07 00 07 00 07 00 07 00 08 00 08 00 08 00 08 00 09 00 09 00 09 00 09 00 0A 00 0A 00 0A 00 0A 00 0B 00 0B 00 0B 00 0B 00 0C 00 0C 00 0C 00 0C 00 0D 00 0D 00 0D 00 0D 00 0E 00 0E 00 0E 00 0E 00 0F 00 0F 00 0F 00 0F 00 10 00 10 00 10 00 10 00 11 00 11 00 11 00 11 00 12 00 12 00 12 00 12 00 13 00 13 00 13 00 13 00 14 00 14 00 14 00 14 00 15 00 15 00 15 00 15 00 16 00 16 00 16 00 16 00 17 00 17 00 17 00 17 00 18 00 18 00 18 00 18 00 19 00 19 00 19 00 19 00 1A 00 1A 00 1A 00 1A 00 DF 01 E0 01 E1 01 E2 01 E3 01 8F 00 07 08 F0 FF E0 | ハ[01]ヒ[01]フ[01]ヘ[01]ホ[01]マ[01]ミ[01]ム[01]
+0x021DA5 | script_pointer       | DF 01 E0 01 E1 01 E2 01 E3 01 8F 00 07 08 F0 FF E0 | 。[01]「[01]」[01]・[01]事[01]ズ
+0x021F09 | script_pointer       | 27 9F 28 9F 01 08 00 FF 00 | ゃペゅペ[01]が
+0x021F2C | bank84_early_01_prefix | 01 20 00 02 20 00 03 0A 0D 09 | [01]ああぐざぎ
+0x021F65 | bank84_early_FF      | 34 A0 39 A0 FF 09 | けポせポ[FF09]
+0x021FED | bank84_early_FF      | C4 08 0A 00 04 00 C0 08 F8 FF 10 | ノがぐ
+0x02205A | script_pointer       | 22 A5 32 A5 FF 1E | ぃォきォ[FF1E]
+0x022520 | bank84_dialogue_FF   | AA 4C 0F 02 00 22 20 0E 0C 04 24 2C 2A 26 28 08 06 0A 00 00 05 00 01 05 00 02 05 00 03 05 00 04 07 00 05 07 00 06 07 00 07 07 00 08 07 00 09 07 00 0A 07 00 0B 07 00 0C 07 00 0D 07 00 0E 07 00 0F 07 00 10 07 00 11 07 00 12 07 00 13 07 00 14 07 00 15 07 0D 0B 00 16 07 00 17 07 00 18 07 00 19 07 09 00 1A 07 00 1B 07 00 1C 07 03 00 00 9C FF 10 | ヮむず…
+0x022599 | script_pointer       | C6 A5 CB A5 FF 05 | ヒォミォ[FF05]
+0x0225E0 | bank84_dialogue_01_prefix | 01 03 05 08 00 80 00 05 0A | [01]えかが
+0x0225FD | script_pointer       | 45 A6 4E A6 FF 06 | はッもッ[FF06]
+0x022680 | script_pointer       | 0A A7 1B A7 FF 08 | ぐャぼャ[FF08]
+0x022750 | bank84_dialogue_FF   | 4C A8 5D A8 FF 0A | むュ？ュ[FF0A]
+0x022898 | script_pointer       | 43 A9 4C A9 FF 07 | ねョむョ[FF07]
+0x022977 | bank84_dialogue_01_prefix | 01 03 06 08 00 00 03 | [01]えカが
+0x022981 | bank84_dialogue_FF   | A8 A9 AC A9 FF 05 | ュョアョ[FF05]
+0x0229C4 | bank84_dialogue_FF   | 7A AB 89 AB FF 10 | {7A}ヴギヴ[FF10]
+0x0229D7 | bank84_dialogue_FF   | C0 48 E0 FF 10 | ナへ「[FF10]
+0x022A7F | bank84_dialogue_FF   | CE 08 E0 FF 10 | モが「[FF10]
+0x022AC2 | bank84_dialogue_FF   | 20 00 E2 88 E0 FF 10 | あガ「[FF10]
+0x022BA2 | bank84_dialogue_01_prefix | 01 04 05 0C 00 3D 00 | [01]おかご
+0x022BAA | bank84_dialogue_01_prefix | 01 04 05 0C 00 3E 00 0D 0D | [01]おかご
+0x022BB4 | bank84_dialogue_01_prefix | 01 04 05 0C 00 3F 00 | [01]おかご
+0x022C26 | bank84_dialogue_FF   | 96 AE A7 AE FF 10 | ドウャウ[FF10]
+0x022EFC | bank84_dialogue_FF   | 08 AF 09 AF FF 02 | がエぎエ[FF02]
+0x02330C | bank84_dialogue_01_prefix | 01 02 05 0C 00 33 00 | [01]…かご
+0x023374 | bank84_dialogue_FF   | 80 B6 88 B6 FF 10 | {80}サガサ[FF10]
+0x023693 | bank84_dialogue_01_prefix | 01 02 05 0C 00 33 00 | [01]…かご
+0x0238A3 | script_pointer       | E2 B8 E6 B8 FF 09 | ・ス思ス[FF09]
+0x0238BC | bank84_dialogue_FF   | C0 08 06 FF 01 | ナがカ[FF01]
+0x0238C5 | bank84_dialogue_FF   | C2 08 06 FF 01 | ヌがカ[FF01]
+0x023B7C | bank84_dialogue_FF   | 2E 04 10 00 00 00 4C 04 20 00 00 00 4E 04 10 00 00 00 00 00 10 00 10 00 02 00 20 00 10 00 04 00 20 00 00 00 06 00 14 BC 1B BC FF 0A | うおぜ
+0x023BA2 | script_pointer       | 14 BC 1B BC FF 0A | づチぼチ[FF0A]
+0x023BFA | bank84_dialogue_FF   | A0 0C 08 FF 02 | ポごが[FF02]
+0x023C09 | bank84_dialogue_FF   | A0 0C 09 FF 01 | ポごぎ[FF01]
+0x023D63 | script_pointer       | 93 BD 98 BD FF 06 | ヂツビツ[FF06]
+0x023DCE | script_pointer       | 64 BE 71 BE FF 08 | 見テ{71}テ[FF08]
+0x024062 | script_pointer       | 98 C0 9D C0 FF 08 | ビナピナ[FF08]
+0x0240D0 | bank84_dialogue_FF   | 51 C1 5A C1 FF 09 | よニーニ[FF09]
+0x024182 | bank84_dialogue_01_prefix | 01 03 04 09 00 04 03 | [01]えおぎ
+0x024383 | bank84_dialogue_FF   | 22 04 04 00 00 00 40 04 14 00 00 00 42 04 04 00 00 00 00 00 04 00 10 00 02 00 14 00 10 00 04 00 24 00 10 00 06 00 24 00 00 00 08 00 14 00 00 00 0A 00 00 C4 03 C4 FF 09 | ぃおお
+0x0243E6 | bank84_dialogue_FF   | A0 0C 07 FF 02 | ポごキ[FF02]
+0x0243F5 | bank84_dialogue_FF   | A0 0C 08 FF 01 | ポごが[FF01]
+0x0245CF | bank84_dialogue_FF   | CA 44 10 00 F0 FF 02 | マのぜ
+0x02460D | script_pointer       | 61 C6 66 C6 FF 08 | 」ヒ思ヒ[FF08]
+0x02464A | bank84_dialogue_FF   | C4 08 10 00 00 00 C6 08 00 00 10 00 A0 0C 06 FF 01 | ノがぜ
+0x024A03 | bank84_dialogue_FF   | A2 0C 05 FF 05 | ィごか[FF05]
+0x024C32 | bank84_dialogue_FF   | 8C 04 0A F6 FF 10 | ゴおぐ{F6}[FF10]
+0x024CE5 | script_pointer       | 42 CD 43 CD FF 0B | ぬメねメ[FF0B]
+0x024CF8 | bank84_dialogue_FF   | A0 0C 03 FF 01 | ポごえ[FF01]
+0x024D01 | bank84_dialogue_FF   | A2 0C 04 FF 01 | ィごお[FF01]
+0x024D0A | bank84_dialogue_FF   | A4 0C 05 FF 01 | ェごか[FF01]
+0x024D13 | bank84_dialogue_FF   | A6 0C 06 FF 01 | ッごカ[FF01]
+0x024D1C | bank84_dialogue_FF   | A0 0C 07 FF 01 | ポごキ[FF01]
+0x024D25 | bank84_dialogue_FF   | A2 0C 07 FF 01 | ィごキ[FF01]
+0x024D2E | bank84_dialogue_FF   | A6 0C 07 FF 01 | ッごキ[FF01]
+0x024D37 | bank84_dialogue_FF   | A0 0C 07 FF 01 | ポごキ[FF01]
+0x024F19 | script_pointer       | 52 CF 53 CF FF 09 | らヤりヤ[FF09]
+0x024F35 | bank84_dialogue_FF   | A0 0C 05 FF 01 | ポごか[FF01]
+0x024F3E | bank84_dialogue_FF   | A2 0C 05 FF 01 | ィごか[FF01]
+0x024F47 | bank84_dialogue_FF   | A4 0C 05 FF 01 | ェごか[FF01]
+0x025121 | script_pointer       | 8D D1 8E D1 FF 0C | ヨジヨ[FF0C]
+0x025140 | bank84_dialogue_FF   | A0 0C 03 FF 01 | ポごえ[FF01]
+0x025149 | bank84_dialogue_FF   | A0 0C 04 FF 01 | ポごお[FF01]
+0x025152 | bank84_dialogue_FF   | A0 8C 05 FF 01 | ポゴか[FF01]
+0x02515B | bank84_dialogue_FF   | A0 8C 06 FF 01 | ポゴカ[FF01]
+0x025164 | bank84_dialogue_FF   | A0 4C 04 FF 01 | ポむお[FF01]
+0x02516D | bank84_dialogue_FF   | A0 8C 03 FF 01 | ポゴえ[FF01]
+0x0251C0 | script_pointer       | 4A D2 4B D2 FF 0C | まラみラ[FF0C]
+0x0251DF | bank84_dialogue_FF   | A0 0C 03 FF 01 | ポごえ[FF01]
+0x0251E8 | bank84_dialogue_FF   | A0 0C 04 FF 01 | ポごお[FF01]
+0x0251F1 | bank84_dialogue_FF   | A0 8C 05 FF 01 | ポゴか[FF01]
+0x0251FA | bank84_dialogue_FF   | A0 8C 06 FF 02 | ポゴカ[FF02]
+0x025209 | bank84_dialogue_FF   | A0 4C 04 FF 02 | ポむお[FF02]
+0x025218 | bank84_dialogue_FF   | A0 8C 03 FF 02 | ポゴえ[FF02]
+0x02527D | script_pointer       | C2 D2 C3 D2 FF 07 | ヌラネラ[FF07]
+0x025293 | bank84_dialogue_FF   | A0 0C 02 FF 01 | ポご…[FF01]
+0x02529C | bank84_dialogue_FF   | A0 0C 03 FF 01 | ポごえ[FF01]
+0x0252A5 | bank84_dialogue_FF   | A0 0C 04 FF 01 | ポごお[FF01]
+0x0252AE | bank84_dialogue_FF   | A0 0C 05 FF 01 | ポごか[FF01]
+0x0253D7 | script_pointer       | 28 D4 2C D4 FF 09 | ゅルあル[FF09]
+0x0253ED | bank84_dialogue_FF   | C0 08 02 FF 01 | ナが…[FF01]
+0x0253F6 | bank84_dialogue_FF   | C2 08 02 FF 02 | ヌが…[FF02]
+0x025405 | bank84_dialogue_FF   | A0 0C 03 FF 02 | ポごえ[FF02]
+0x025414 | bank84_dialogue_FF   | A0 0C 03 FF 01 | ポごえ[FF01]
+0x025587 | bank84_dialogue_01_prefix | 01 05 0D 14 03 DC 00 | [01]かざづえ゜
+0x0255B5 | bank84_dialogue_FF   | 15 D6 16 D6 FF 0A | でロどロ[FF0A]
+0x0255D4 | bank84_dialogue_FF   | A0 0C 03 FF 01 | ポごえ[FF01]
+0x0255DD | bank84_dialogue_FF   | A0 0C 04 FF 01 | ポごお[FF01]
+0x0255E6 | bank84_dialogue_FF   | A4 0C 05 FF 01 | ェごか[FF01]
+0x0255EF | bank84_dialogue_FF   | A6 0C 06 FF 01 | ッごカ[FF01]
+0x0255F8 | bank84_dialogue_FF   | A2 0C 06 FF 01 | ィごカ[FF01]
+0x025601 | bank84_dialogue_FF   | A0 0C 06 FF 01 | ポごカ[FF01]
+0x02560A | bank84_dialogue_FF   | A4 0C 06 FF 01 | ェごカ[FF01]
+0x02565A | script_pointer       | 08 D7 09 D7 FF 0C | がワぎワ[FF0C]
+0x02575E | script_pointer       | 0C D8 0D D8 FF 0C | ごヲざヲ[FF0C]
+0x0258A9 | bank84_dialogue_FF   | 40 04 04 00 00 00 42 04 F4 FF 10 | なおお
+0x025A5D | bank84_dialogue_FF   | 40 04 04 00 00 00 42 04 F4 FF 10 | なおお
+0x025C11 | bank84_dialogue_FF   | 40 04 04 00 00 00 42 04 F4 FF 10 | なおお
+0x025DC5 | bank84_dialogue_FF   | 40 04 04 00 00 00 42 04 F4 FF 10 | なおお
+0x025F79 | bank84_dialogue_FF   | 40 04 04 00 00 00 42 04 F4 FF 10 | なおお
+0x02612D | bank84_dialogue_FF   | 40 04 04 00 00 00 42 04 F4 FF 10 | なおお
+0x0262E1 | bank84_dialogue_FF   | 40 04 04 00 00 00 42 04 F4 FF 10 | なおお
+0x026495 | bank84_dialogue_FF   | 40 04 04 00 00 00 42 04 F4 FF 10 | なおお
+0x026649 | bank84_dialogue_FF   | 40 04 04 00 00 00 42 04 F4 FF 10 | なおお
+0x0267FD | bank84_dialogue_FF   | 40 04 04 00 00 00 42 04 F4 FF 10 | なおお
+0x0269B1 | bank84_dialogue_FF   | 40 04 04 00 00 00 42 04 F4 FF 10 | なおお
+0x026B65 | bank84_dialogue_FF   | 40 04 04 00 00 00 42 04 F4 FF 10 | なおお
+0x026D19 | bank84_dialogue_FF   | 40 04 04 00 00 00 42 04 F4 FF 10 | なおお
+0x026E92 | bank84_dialogue_FF   | C2 48 02 FF 01 | ヌへ…[FF01]
+0x026E9B | bank84_dialogue_FF   | C2 08 03 FF 01 | ヌがえ[FF01]
+0x026EA4 | bank84_dialogue_FF   | C0 88 04 FF 01 | ナガお[FF01]
+0x02757B | bank84_dialogue_FF   | A2 0C 02 FF 02 | ィご…[FF02]
+0x02758A | bank84_dialogue_FF   | A6 0C 03 FF 02 | ッごえ[FF02]
+0x0275AE | bank84_dialogue_FF   | AE 0C 03 FF 02 | ウごえ[FF02]
+0x0275BD | bank84_dialogue_FF   | A8 0C 03 FF 02 | ュごえ[FF02]
+0x0275CC | bank84_dialogue_FF   | A4 0C 03 FF 02 | ェごえ[FF02]
+0x027719 | bank84_dialogue_FF   | AC 0C 08 00 00 00 AE 0C 04 FF 02 | アごが
+0x028352 | bank84_dialogue_01_prefix | 01 0F 03 06 07 0C 0E 1B 0C 17 | [01]ずえカキごじぼごば
+0x028390 | bank84_dialogue_01_prefix | 01 03 03 06 07 0C 0E 1B 1C 37 18 2D | [01]ええカキごじぼぱしびい
+0x028495 | script_pointer       | 1A 0C 16 18 37 19 2E 00 3B 00 00 00 00 00 38 18 EC 78 B4 60 DC 00 F8 D8 6C D8 B4 48 B4 48 B4 40 BC 40 A0 C0 A0 C0 60 00 C0 00 00 00 00 00 03 01 02 01 1E 0F 10 00 1F 00 1F 0F 10 00 1F 00 1C 08 14 0C 16 0E 1B 07 0C 00 07 00 00 00 00 00 80 00 80 00 F0 E0 10 80 70 80 7C F8 04 60 BC 60 D0 00 70 00 00 00 F0 E0 10 00 F0 00 00 00 00 00 03 01 02 01 1E 0F 10 00 1F 00 1F 0F 10 00 1F 00 1C 08 14 0C 16 0E 1B 07 0C 00 07 00 00 00 00 00 FC 3C D6 3C EA E0 1E 80 70 80 7C F8 04 60 BC 60 D0 00 70 00 00 00 F0 E0 10 00 F0 00 00 00 00 00 00 00 00 00 00 00 01 01 03 03 06 07 0D 06 0B 07 0D 03 06 01 03 00 01 00 00 00 00 00 00 00 00 00 00 00 70 60 D0 E0 B0 C0 60 80 C0 00 80 00 00 00 80 80 C0 C0 60 E0 B0 60 D0 00 70 00 00 00 00 00 00 00 00 00 00 00 01 01 03 03 06 07 0D 06 0B 07 0D 03 | べごどびしぶう
+0x028497 | script_pointer       | 16 18 37 19 2E 00 3B 00 00 00 00 00 38 18 EC 78 B4 60 DC 00 F8 D8 6C D8 B4 48 B4 48 B4 40 BC 40 A0 C0 A0 C0 60 00 C0 00 00 00 00 00 03 01 02 01 1E 0F 10 00 1F 00 1F 0F 10 00 1F 00 1C 08 14 0C 16 0E 1B 07 0C 00 07 00 00 00 00 00 80 00 80 00 F0 E0 10 80 70 80 7C F8 04 60 BC 60 D0 00 70 00 00 00 F0 E0 10 00 F0 00 00 00 00 00 03 01 02 01 1E 0F 10 00 1F 00 1F 0F 10 00 1F 00 1C 08 14 0C 16 0E 1B 07 0C 00 07 00 00 00 00 00 FC 3C D6 3C EA E0 1E 80 70 80 7C F8 04 60 BC 60 D0 00 70 00 00 00 F0 E0 10 00 F0 00 00 00 00 00 00 00 00 00 00 00 01 01 03 03 06 07 0D 06 0B 07 0D 03 06 01 03 00 01 00 00 00 00 00 00 00 00 00 00 00 70 60 D0 E0 B0 C0 60 80 C0 00 80 00 00 00 80 80 C0 C0 60 E0 B0 60 D0 00 70 00 00 00 00 00 00 00 00 00 00 00 01 01 03 03 06 07 0D 06 0B 07 0D 03 06 01 | どびしぶう
+0x028499 | script_pointer       | 37 19 2E 00 3B 00 00 00 00 00 38 18 EC 78 B4 60 DC 00 F8 D8 6C D8 B4 48 B4 48 B4 40 BC 40 A0 C0 A0 C0 60 00 C0 00 00 00 00 00 03 01 02 01 1E 0F 10 00 1F 00 1F 0F 10 00 1F 00 1C 08 14 0C 16 0E 1B 07 0C 00 07 00 00 00 00 00 80 00 80 00 F0 E0 10 80 70 80 7C F8 04 60 BC 60 D0 00 70 00 00 00 F0 E0 10 00 F0 00 00 00 00 00 03 01 02 01 1E 0F 10 00 1F 00 1F 0F 10 00 1F 00 1C 08 14 0C 16 0E 1B 07 0C 00 07 00 00 00 00 00 FC 3C D6 3C EA E0 1E 80 70 80 7C F8 04 60 BC 60 D0 00 70 00 00 00 F0 E0 10 00 F0 00 00 00 00 00 00 00 00 00 00 00 01 01 03 03 06 07 0D 06 0B 07 0D 03 06 01 03 00 01 00 00 00 00 00 00 00 00 00 00 00 70 60 D0 E0 B0 C0 60 80 C0 00 80 00 00 00 80 80 C0 C0 60 E0 B0 60 D0 00 70 00 00 00 00 00 00 00 00 00 00 00 01 01 03 03 06 07 0D 06 0B 07 0D 03 06 01 03 00 | しぶう
+0x0284C4 | bank84_dialogue_01_prefix | 01 02 01 1E 0F 10 00 1F | [01]…[01]ぷずぜ
+0x0284C6 | bank84_dialogue_01_prefix | 01 1E 0F 10 00 1F 00 1F 0F 10 | [01]ぷずぜ
+0x028504 | bank84_dialogue_01_prefix | 01 02 01 1E 0F 10 00 1F | [01]…[01]ぷずぜ
+0x028506 | bank84_dialogue_01_prefix | 01 1E 0F 10 00 1F 00 1F 0F 10 | [01]ぷずぜ
+0x028549 | bank84_dialogue_01_prefix | 01 01 03 03 06 07 0D 06 0B 07 0D 03 06 01 03 | [01][01]ええカキざカげキざえカ[01]え
+0x028589 | bank84_dialogue_01_prefix | 01 01 03 03 06 07 0D 06 0B 07 0D 03 06 01 03 | [01][01]ええカキざカげキざえカ[01]え
+0x0288CA | bank84_dialogue_01_prefix | 01 07 03 3C 1F 20 01 3F 03 06 03 05 03 05 03 06 01 03 | [01]キえちぺいえカえかえかえカ[01]え
+0x02890A | bank84_dialogue_01_prefix | 01 07 03 3C 1F 20 01 3F 03 06 03 05 03 05 03 06 01 03 | [01]キえちぺいえカえかえかえカ[01]え
+0x028B0C | bank84_dialogue_01_prefix | 01 03 03 06 03 05 02 05 02 05 03 05 03 06 01 03 | [01]ええカえか…か…かえかえカ[01]え
+0x028B4C | bank84_dialogue_01_prefix | 01 03 03 06 03 05 02 05 02 05 03 05 03 06 01 03 | [01]ええカえか…か…かえかえカ[01]え
+0x028ECC | bank84_dialogue_01_prefix | 01 02 01 02 01 02 01 3B 10 2F 1C 2A 1C 37 01 1E | [01]…[01]…[01]…[01]たぜえぱゎぱし[01]ぷ
+0x028F0C | bank84_dialogue_01_prefix | 01 02 01 02 01 02 01 3B 10 2F 1C 2A 1C 37 03 1C | [01]…[01]…[01]…[01]たぜえぱゎぱしえぱ
+0x028F4C | bank84_dialogue_01_prefix | 01 02 01 02 01 02 01 3B 10 2F 1C 2A 1C 37 03 1C | [01]…[01]…[01]…[01]たぜえぱゎぱしえぱ
+0x0290E3 | bank84_dialogue_FE   | 1F 0E 1B 0A F5 FE | ぺじぼぐ{F5}[FE]
+0x02914A | bank84_dialogue_01_prefix | 01 03 01 02 01 0E 0F 18 1E 35 1E 2D 1E 2B 1C 26 | [01]え[01]…[01]じずびぷこぷいぷゔぱっ
+0x029212 | bank84_dialogue_01_prefix | 01 06 03 0C 07 0A 07 0B 03 0C | [01]カえごキぐキげえご
+0x029286 | bank84_dialogue_01_prefix | 01 02 01 1E 0F 10 01 1E 01 3E 1F 20 02 3D 02 05 02 05 03 05 03 06 | [01]…[01]ぷずぜ[01]ぷ[01]てぺう…か…かえかえカ
+0x0292C6 | bank84_dialogue_01_prefix | 01 1E 09 17 0C 17 0F 1A 0F 39 1E 25 03 3D 03 06 01 02 01 03 | [01]ぷぎばごばずべずせぷぉえつえカ[01]…[01]え
+0x029344 | bank84_dialogue_01_prefix | 01 1E 0B 15 1B 34 1E 2D 16 2B 16 2B 1E 25 1B 25 0B 36 | [01]ぷげでぼけぷいどゔどゔぷぉぼぉげさ
+0x02938C | bank84_dialogue_01_prefix | 01 1E 0B 14 0E 15 0E 13 0E 13 0F 15 03 1E 03 05 | [01]ぷげづじでじぢじぢずでえぷえか
+0x0294CA | bank84_dialogue_01_prefix | 01 03 03 06 07 0C 0E 1B 0C 16 | [01]ええカキごじぼごど
+0x02954A | bank84_dialogue_01_prefix | 01 03 03 06 07 0C 0C 1B 08 16 | [01]ええカキごごぼがど
+0x0295C4 | bank84_dialogue_01_prefix | 01 02 01 1E 0F 10 02 1D 02 0D 07 08 0D 1B 0F 16 07 1D 06 0B 06 0B 07 0C | [01]…[01]ぷずぜ…ぴ…ざキがざぼずどキぴカげカげキご
+0x029606 | bank84_dialogue_01_prefix | 01 02 03 06 03 05 06 0D 06 0B 07 18 0D 13 08 17 18 35 18 2D 10 29 | [01]…えカえかカざカげキびざぢがばびこびいぜょ
+0x029653 | bank84_dialogue_01_prefix | 01 01 03 01 02 03 06 03 05 | [01][01]え[01]…えカえか
+0x029656 | bank84_dialogue_01_prefix | 01 02 03 06 03 05 00 07 | [01]…えカえか
+0x02968D | bank84_dialogue_01_prefix | 01 01 03 01 06 07 1C 0F 12 01 1E 01 02 01 02 | [01][01]え[01]カキぱずだ[01]ぷ[01]…[01]…
+0x029696 | bank84_dialogue_01_prefix | 01 1E 01 02 01 02 00 03 | [01]ぷ[01]…[01]…
+0x029746 | bank84_dialogue_01_prefix | 01 02 01 3E 1F 20 10 2F 10 28 10 28 | [01]…[01]てぺぜぜゅぜゅ
+0x029796 | bank84_dialogue_01_prefix | 01 0E 01 1E 0F 10 00 1F | [01]じ[01]ぷずぜ
+0x029798 | bank84_dialogue_01_prefix | 01 1E 0F 10 00 1F 00 | [01]ぷずぜ
+0x0297CC | bank84_dialogue_01_prefix | 01 1E 01 02 01 02 01 02 01 02 01 02 01 3E 1F 20 | [01]ぷ[01]…[01]…[01]…[01]…[01]…[01]てぺぽ
+0x0297D6 | bank84_dialogue_01_prefix | 01 02 01 3E 1F 20 00 3F | [01]…[01]てぺあ
+0x0297D8 | bank84_dialogue_01_prefix | 01 3E 1F 20 00 3F 00 | [01]てぺあ
+0x029851 | bank84_dialogue_01_prefix | 01 01 03 03 06 07 1D 0E 13 | [01][01]ええカキぴじぢ
+0x029886 | bank84_dialogue_01_prefix | 01 02 01 1E 0F 10 01 1E 01 02 01 02 03 06 03 05 06 0D 0E 1B 0C 16 | [01]…[01]ぷずぜ[01]ぷ[01]…[01]…えカえかカざじぼごど
+0x0298C6 | bank84_dialogue_01_prefix | 01 02 01 1E 0F 10 01 1E 01 02 01 02 03 06 03 05 06 0D 0E 1B 0C 16 | [01]…[01]ぷずぜ[01]ぷ[01]…[01]…えカえかカざじぼごど
+0x029906 | bank84_dialogue_01_prefix | 01 02 01 02 01 1E 0F 10 | [01]…[01]…[01]ぷずぜ
+0x029908 | bank84_dialogue_01_prefix | 01 02 01 1E 0F 10 00 1F | [01]…[01]ぷずぜ
+0x02990A | bank84_dialogue_01_prefix | 01 1E 0F 10 00 1F 00 1F 0F 10 | [01]ぷずぜ
+0x029946 | bank84_dialogue_01_prefix | 01 02 01 02 01 1E 0F 10 | [01]…[01]…[01]ぷずぜ
+0x029948 | bank84_dialogue_01_prefix | 01 02 01 1E 0F 10 00 1F | [01]…[01]ぷずぜ
+0x02994A | bank84_dialogue_01_prefix | 01 1E 0F 10 00 1F 00 1F 0F 10 | [01]ぷずぜ
+0x029995 | bank84_dialogue_01_prefix | 01 01 03 03 0E 07 09 | [01][01]ええじキぎ
+0x029996 | bank84_dialogue_01_prefix | 01 03 03 0E 07 09 00 0F | [01]ええじキぎ
+0x0299D5 | bank84_dialogue_01_prefix | 01 01 03 03 0E 07 09 | [01][01]ええじキぎ
+0x0299D6 | bank84_dialogue_01_prefix | 01 03 03 0E 07 09 00 0F | [01]ええじキぎ
+0x029A12 | bank84_dialogue_01_prefix | 01 3B 01 02 03 06 07 0D 06 0B | [01]た[01]…えカキざカげ
+0x029A52 | bank84_dialogue_01_prefix | 01 3B 01 02 03 06 07 0D 06 0B | [01]た[01]…えカキざカげ
+0x029B97 | bank84_dialogue_01_prefix | 01 01 1F 0F 10 00 1F | [01][01]ぺずぜ
+0x029B98 | bank84_dialogue_01_prefix | 01 1F 0F 10 00 1F 00 | [01]ぺずぜ
+0x029BD7 | bank84_dialogue_01_prefix | 01 01 1F 0F 10 00 1F | [01][01]ぺずぜ
+0x029BD8 | bank84_dialogue_01_prefix | 01 1F 0F 10 00 1F 00 | [01]ぺずぜ
+0x029C13 | bank84_dialogue_01_prefix | 01 01 03 03 06 07 1D 0E 13 | [01][01]ええカキぴじぢ
+0x029C53 | bank84_dialogue_01_prefix | 01 01 03 03 06 07 1D 0E 13 | [01][01]ええカキぴじぢ
+0x029D15 | bank84_dialogue_01_prefix | 01 01 03 03 0E 07 09 | [01][01]ええじキぎ
+0x029D16 | bank84_dialogue_01_prefix | 01 03 03 0E 07 09 00 0F | [01]ええじキぎ
+0x029D55 | bank84_dialogue_01_prefix | 01 01 03 03 0E 07 09 | [01][01]ええじキぎ
+0x029D56 | bank84_dialogue_01_prefix | 01 03 03 0E 07 09 00 0F | [01]ええじキぎ
+0x029D86 | bank84_dialogue_01_prefix | 01 02 03 06 03 05 06 0D 0E 1B 0D 16 01 1F | [01]…えカえかカざじぼざど[01]ぺ
+0x029D95 | bank84_dialogue_01_prefix | 01 01 03 03 0E 07 09 | [01][01]ええじキぎ
+0x029D96 | bank84_dialogue_01_prefix | 01 03 03 0E 07 09 00 0F | [01]ええじキぎ
+0x029DC6 | bank84_dialogue_01_prefix | 01 02 01 06 02 05 06 0D 0E 1B 0D 16 01 1F | [01]…[01]カ…かカざじぼざど[01]ぺ
+0x029DD5 | bank84_dialogue_01_prefix | 01 01 03 03 0E 07 09 | [01][01]ええじキぎ
+0x029DD6 | bank84_dialogue_01_prefix | 01 03 03 0E 07 09 00 0F | [01]ええじキぎ
+0x029E14 | bank84_dialogue_01_prefix | 01 03 01 02 03 0E 07 09 | [01]え[01]…えじキぎ
+0x029E16 | bank84_dialogue_01_prefix | 01 02 03 0E 07 09 00 0F | [01]…えじキぎ
+0x029E54 | bank84_dialogue_01_prefix | 01 03 01 02 03 0E 07 09 | [01]え[01]…えじキぎ
+0x029E56 | bank84_dialogue_01_prefix | 01 02 03 0E 07 09 00 0F | [01]…えじキぎ
+0x029ED8 | bank84_dialogue_01_prefix | 01 0E 06 09 00 0F 00 | [01]じカぎ
+0x029F15 | bank84_dialogue_01_prefix | 01 01 03 03 0E 07 09 | [01][01]ええじキぎ
+0x029F16 | bank84_dialogue_01_prefix | 01 03 03 0E 07 09 00 0F | [01]ええじキぎ
+0x029F55 | bank84_dialogue_01_prefix | 01 01 03 03 0E 07 09 | [01][01]ええじキぎ
+0x029F56 | bank84_dialogue_01_prefix | 01 03 03 0E 07 09 00 0F | [01]ええじキぎ
+0x029F95 | bank84_dialogue_01_prefix | 01 01 03 03 0E 07 09 | [01][01]ええじキぎ
+0x029F96 | bank84_dialogue_01_prefix | 01 03 03 0E 07 09 00 0F | [01]ええじキぎ
+0x029FC6 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 | [01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…
+0x029FD6 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 00 03 | [01]…[01]…[01]…
+0x02A006 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 | [01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…
+0x02A016 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 00 03 | [01]…[01]…[01]…
+0x02A051 | bank84_dialogue_01_prefix | 01 01 03 01 02 03 06 07 0D 06 0B | [01][01]え[01]…えカキざカげ
+0x02A0D4 | bank84_dialogue_01_prefix | 01 03 03 06 07 1D 0E 13 | [01]ええカキぴじぢ
+0x02A153 | bank84_dialogue_01_prefix | 01 01 03 03 06 07 1D 0E 13 | [01][01]ええカキぴじぢ
+0x02A317 | bank84_dialogue_01_prefix | 01 01 07 03 04 00 07 | [01][01]キえお
+0x02A318 | bank84_dialogue_01_prefix | 01 07 03 04 00 07 00 | [01]キえお
+0x02A357 | bank84_dialogue_01_prefix | 01 01 07 03 04 00 07 | [01][01]キえお
+0x02A358 | bank84_dialogue_01_prefix | 01 07 03 04 00 07 00 | [01]キえお
+0x02A397 | bank84_dialogue_01_prefix | 01 01 07 03 04 00 07 | [01][01]キえお
+0x02A398 | bank84_dialogue_01_prefix | 01 07 03 04 00 07 00 | [01]キえお
+0x02A3A5 | bank84_dialogue_FE   | 0E 0E 1B 0A F5 FE | じじぼぐ{F5}[FE]
+0x02A486 | bank84_dialogue_01_prefix | 01 02 01 3E 1F 20 01 3E 01 0E 05 0A 0D 1A 0D 16 19 36 19 2E 01 3A | [01]…[01]てぺい[01]じかぐざべざどぶさぶう[01]そ
+0x02A4C6 | bank84_dialogue_01_prefix | 01 02 01 3E 1F 20 01 3E 01 0E 05 0A 0D 1A 0D 16 19 36 19 2E 01 3A | [01]…[01]てぺい[01]じかぐざべざどぶさぶう[01]そ
+0x02A506 | bank84_dialogue_01_prefix | 01 02 01 3E 1F 20 01 3E 01 0E 05 0A 0D 1A 0D 16 19 36 19 2E 01 3A | [01]…[01]てぺい[01]じかぐざべざどぶさぶう[01]そ
+0x02A5C8 | bank84_dialogue_01_prefix | 01 02 03 06 03 05 06 0D 06 0B 0C 1A 0C 16 18 34 18 2F 1F 20 | [01]…えカえかカざカげごべごどびけびえぺぽ
+0x02A613 | bank84_dialogue_01_prefix | 01 01 03 03 06 07 1D 0E 13 | [01][01]ええカキぴじぢ
+0x02A694 | bank84_dialogue_01_prefix | 01 1E 01 02 01 03 00 01 | [01]ぷ[01]…[01]え
+0x02A6D4 | bank84_dialogue_01_prefix | 01 02 01 02 01 03 00 01 | [01]…[01]…[01]え
+0x02A997 | bank84_dialogue_01_prefix | 01 01 07 03 04 00 07 | [01][01]キえお
+0x02A998 | bank84_dialogue_01_prefix | 01 07 03 04 00 07 00 | [01]キえお
+0x02AA06 | bank84_dialogue_01_prefix | 01 02 01 3E 1F 20 10 2F 10 28 10 28 | [01]…[01]てぺぜぜゅぜゅ
+0x02AA4E | bank84_dialogue_01_prefix | 01 02 01 0E 07 08 01 0E 03 06 07 0D 06 0B | [01]…[01]じキが[01]じえカキざカげ
+0x02AA96 | bank84_dialogue_01_prefix | 01 1F 03 06 03 05 00 07 | [01]ぺえカえか
+0x02AAD6 | bank84_dialogue_01_prefix | 01 06 03 06 03 05 00 07 | [01]カえカえか
+0x02AB4C | bank84_dialogue_01_prefix | 01 0E 01 02 01 02 01 02 01 02 01 02 01 02 01 02 | [01]じ[01]…[01]…[01]…[01]…[01]…[01]…[01]…
+0x02AB56 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 00 03 | [01]…[01]…[01]…
+0x02AB91 | bank84_dialogue_01_prefix | 01 01 07 07 0C 0E 1B 0C 17 0F 10 | [01][01]キキごじぼごばずぜ
+0x02AC05 | bank84_dialogue_01_prefix | 01 01 03 01 02 03 06 07 0D 06 0B 0C 1A 0C 17 0F 10 | [01][01]え[01]…えカキざカげごべごばずぜ
+0x02ACD3 | bank84_dialogue_01_prefix | 01 01 03 01 02 03 06 03 05 | [01][01]え[01]…えカえか
+0x02ACD6 | bank84_dialogue_01_prefix | 01 02 03 06 03 05 00 07 | [01]…えカえか
+0x02B004 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 0F 74 0F 12 09 16 09 17 08 17 1C 73 38 4F 01 7F 03 04 | [01]…[01]くとなず{74}ずだぎどぎばがばぱ{73}すや[01]{7F}えお
+0x02B054 | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 03 04 | [01]くとな[01]くえお
+0x02B058 | bank84_dialogue_01_prefix | 01 7E 03 04 00 07 00 | [01]くえお
+0x02B204 | bank84_dialogue_01_prefix | 01 3E 1F 20 01 3E 0F 10 01 7E 3F 40 06 7D 0F 13 07 7C 3F 40 19 76 19 2E | [01]てぺいずぜ[01]くとなカ{7D}ずぢキ{7C}となぶ{76}ぶう
+0x02B24E | bank84_dialogue_01_prefix | 01 3E 01 7E 3F 40 01 7E 01 02 01 02 01 02 | [01]て[01]くとな[01]く[01]…[01]…[01]…
+0x02B256 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 00 03 | [01]…[01]…[01]…
+0x02B388 | bank84_dialogue_01_prefix | 01 3E 0F 10 01 7E 3F 40 02 7D 0F 18 1C 33 1F 28 04 3B 07 08 | [01]てずぜ[01]くとな…{7D}ずびぱくぺゅおたキが
+0x02B3C4 | bank84_dialogue_01_prefix | 01 7E 3F 40 02 7D 32 6D 36 5D 06 7B 06 0D 0F 38 1E 23 07 3D 03 7E 3F 41 | [01]くとな…{7D}き{6D}さ？カ{7B}カざずすぷぅキつえくとに
+0x02B544 | bank84_dialogue_01_prefix | 01 7E 3F 40 24 5A 2C 5A 1C 76 18 2C | [01]くとなぇーあーぱ{76}びあ
+0x02B554 | bank84_dialogue_01_prefix | 01 3E 01 02 01 7E 3F 40 | [01]て[01]…[01]くとな
+0x02B556 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 00 7F | [01]…[01]くとな
+0x02B558 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 00 | [01]くとな
+0x02B583 | bank84_dialogue_01_prefix | 01 01 1F 0F 10 01 1E 01 3E 1F 20 01 3E 01 7E 3F 40 01 7E 01 02 01 06 03 04 | [01][01]ぺずぜ[01]ぷ[01]てぺい[01]くとな[01]く[01]…[01]カえお
+0x02B596 | bank84_dialogue_01_prefix | 01 02 01 06 03 04 00 07 | [01]…[01]カえお
+0x02B598 | bank84_dialogue_01_prefix | 01 06 03 04 00 07 00 | [01]カえお
+0x02B714 | bank84_dialogue_01_prefix | 01 1E 0D 3A 1D 26 01 3E | [01]ぷざそぴっ[01]て
+0x02B754 | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 01 02 | [01]くとな[01]く[01]…
+0x02B7C4 | bank84_dialogue_01_prefix | 01 3E 1F 20 06 3B 06 7D 3F 40 | [01]てぺカカ{7D}とな
+0x02B808 | bank84_dialogue_01_prefix | 01 7E 31 5E 33 6C 02 3D 03 1C 08 17 1B 34 19 2E 31 6F 33 5C | [01]くか！く{6C}…つえぱがばぼけぶうか{6F}く゜
+0x02B846 | bank84_dialogue_01_prefix | 01 7E 01 1E 0F 70 29 56 29 56 2F 50 29 56 29 56 2F 50 20 5F 3F 40 | [01]く[01]ぷず{70}ょろょろえゆょろょろえゆ。な
+0x02B8CE | bank84_dialogue_01_prefix | 01 3A 01 1E 09 16 19 36 19 2E 31 6F 33 5C | [01]そ[01]ぷぎどぶさぶうか{6F}く゜
+0x02B9C4 | bank84_dialogue_01_prefix | 01 7E 3F 40 26 5D 2E 5B 0C 77 02 3D 1F 20 02 3D 06 1D 0E 1B 1C 36 18 2C | [01]くとなっ？う゛ご{77}…つぺうカぴじぼぱさびあ
+0x02BA10 | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 01 02 01 0E 07 08 | [01]くとな[01]く[01]…[01]じキが
+0x02BA16 | bank84_dialogue_01_prefix | 01 02 01 0E 07 08 00 0F | [01]…[01]じキが
+0x02BA18 | bank84_dialogue_01_prefix | 01 0E 07 08 00 0F 00 | [01]じキが
+0x02BA44 | bank84_dialogue_01_prefix | 01 7E 37 58 34 6B 07 38 34 6B 37 58 01 7E 3F 40 07 7C 0F 1A 1D 76 39 4E | [01]くしをけ{6B}キすけ{6B}しを[01]くとなキ{7C}ずべぴ{76}せも
+0x02BA50 | bank84_dialogue_01_prefix | 01 7E 3F 40 07 7C 0F 1A 1D 76 39 4E | [01]くとなキ{7C}ずべぴ{76}せも
+0x02BB44 | bank84_dialogue_01_prefix | 01 1E 09 16 19 36 1F 20 39 6E 31 5A 01 7E 0F 10 01 1E 01 02 01 7E 3F 40 | [01]ぷぎどぶさぺせかー[01]くずぜ[01]ぷ[01]…[01]くとな
+0x02BB50 | bank84_dialogue_01_prefix | 01 7E 0F 10 01 1E 01 02 01 7E 3F 40 | [01]くずぜ[01]ぷ[01]…[01]くとな
+0x02BB56 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 00 7F | [01]…[01]くとな
+0x02BB58 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 00 | [01]くとな
+0x02BDCC | bank84_dialogue_01_prefix | 01 3E 1F 20 11 2E 1F 20 0D 3A 1D 76 39 4E 01 7A | [01]てぺぞぺざぴ{76}せも[01]{7A}
+0x02BE46 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 7E 3F 40 | [01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]くとな
+0x02BE56 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 00 7F | [01]…[01]くとな
+0x02BE58 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 00 | [01]くとな
+0x02BF44 | bank84_dialogue_01_prefix | 01 1E 19 36 1B 2E 07 3D 1C 73 38 4F 01 7E 19 36 1B 2E 07 3D 1E 73 38 4E | [01]ぷぶさぼうキつぱ{73}すや[01]くぶさぼうキつぷ{73}すも
+0x02BF50 | bank84_dialogue_01_prefix | 01 7E 19 36 1B 2E 07 3D 1E 73 38 4E | [01]くぶさぼうキつぷ{73}すも
+0x02BFC8 | bank84_dialogue_01_prefix | 01 3E 1F 20 09 76 3F 40 09 76 1F 20 0D 3A 1D 76 39 4E 01 7A | [01]てぺぎとなぎ{76}ぺざぴ{76}せも[01]{7A}
+0x02C004 | bank84_dialogue_01_prefix | 01 7E 3F 40 20 5F 08 77 38 57 3B 64 0A 35 09 36 38 67 38 57 08 77 0B 14 | [01]くとな。{77}すわた見ぐこぎさす、すわが{77}げづ
+0x02C0C7 | bank84_dialogue_01_prefix | 01 01 03 01 02 03 06 03 05 02 05 06 0D 06 0B 0C 1A 1C 76 38 4C | [01][01]え[01]…えカえか…かカざカげごべぱ{76}すむ
+0x02C208 | bank84_dialogue_01_prefix | 01 3E 01 02 01 02 01 3E 1F 20 01 3E 01 02 01 02 01 7E 3F 40 | [01]て[01]…[01]…[01]てぺい[01]…[01]…[01]くとな
+0x02C216 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 00 7F | [01]…[01]くとな
+0x02C218 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 00 | [01]くとな
+0x02C3C4 | bank84_dialogue_01_prefix | 01 02 01 02 01 3E 1F 20 11 2E 17 28 11 2E 11 2E 10 2F 32 6D 36 5D 2E 53 | [01]…[01]…[01]てぺぞばゅぞうぞうぜえき{6D}さ？うり
+0x02C404 | bank84_dialogue_01_prefix | 01 3E 1F 20 01 3E 01 7E 3F 40 04 7B 04 3A 14 2A 34 6A 3C 5A 1C 77 18 2D | [01]てぺい[01]くとなお{7B}おそづゎけ{6A}ちーぱ{77}びい
+0x02C444 | bank84_dialogue_01_prefix | 01 3E 1F 20 01 3E 0F 10 01 7E 3F 40 08 77 0F 10 08 17 0F 10 08 17 08 14 | [01]てぺいずぜ[01]くとなが{77}ずぜがばずぜがばがづ
+0x02C544 | bank84_dialogue_01_prefix | 01 1E 0F 10 01 1E 01 7E 3F 40 02 7D 1F 70 3C 4B 07 78 04 0B 04 0B 07 08 | [01]ぷずぜ[01]ぷ[01]くとな…{7D}ぺ{70}ちみキ{78}おげおげキが
+0x02C5C4 | bank84_dialogue_01_prefix | 01 7E 37 58 34 6B 07 38 34 6B 37 58 01 7E 3F 40 07 7C 0F 1A 1D 76 39 4E | [01]くしをけ{6B}キすけ{6B}しを[01]くとなキ{7C}ずべぴ{76}せも
+0x02C5D0 | bank84_dialogue_01_prefix | 01 7E 3F 40 07 7C 0F 1A 1D 76 39 4E | [01]くとなキ{7C}ずべぴ{76}せも
+0x02C748 | bank84_dialogue_01_prefix | 01 3E 0F 10 01 7E 3F 40 02 7D 07 18 1C 33 3F 68 34 5B 07 78 | [01]てずぜ[01]くとな…{7D}キびぱくと{68}け゛キ{78}
+0x02C7C6 | bank84_dialogue_01_prefix | 01 7E 3E 41 01 7F 3F 42 03 7D 3C 43 01 7E 3E 41 25 5B 27 5A 3F 41 | [01]くてに[01]{7F}とぬえ{7D}ちね[01]くてにぉ゛ゃーとに
+0x02C7D2 | bank84_dialogue_01_prefix | 01 7E 3E 41 25 5B 27 5A 3F 41 | [01]くてにぉ゛ゃーとに
+0x02CA04 | bank84_dialogue_01_prefix | 01 3E 1F 20 01 3E 0D 16 0D 1A 01 7E 3F 40 0D 7A 1D 36 39 6E 31 5A 01 72 | [01]てぺいざどざべ[01]くとなざ{7A}ぴさせ{6E}かー[01]{72}
+0x02CA88 | bank84_dialogue_01_prefix | 01 1E 01 02 01 7E 39 46 09 76 0B 16 0B 15 18 37 3E 6B 37 5C | [01]ぷ[01]…[01]くせひぎ{76}げどげでびして{6B}し゜
+0x02CB4A | bank84_dialogue_01_prefix | 01 7E 0F 10 09 16 0F 10 09 16 0F 10 01 7E 3F 40 01 7E | [01]くずぜぎどずぜぎどずぜ[01]くとな[01]く
+0x02CB56 | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 00 03 | [01]くとな[01]く
+0x02CBC8 | bank84_dialogue_01_prefix | 01 03 01 02 01 7E 3F 40 01 7E 01 02 01 02 01 02 01 0E 07 08 | [01]え[01]…[01]くとな[01]く[01]…[01]…[01]…[01]じキが
+0x02CBD6 | bank84_dialogue_01_prefix | 01 02 01 0E 07 08 00 0F | [01]…[01]じキが
+0x02CBD8 | bank84_dialogue_01_prefix | 01 0E 07 08 00 0F 00 | [01]じキが
+0x02CCCE | bank84_dialogue_01_prefix | 01 7E 3D 42 01 7E 3D 42 25 5A 25 5A 3D 42 | [01]くつぬ[01]くつぬぉーぉーつぬ
+0x02CED0 | bank84_dialogue_01_prefix | 01 0F 01 0F 05 3A 15 2B 36 6B 37 5C | [01]ず[01]ずかそでゔさ{6B}し゜
+0x02CF08 | bank84_dialogue_01_prefix | 01 7E 33 5C 31 6E 01 3A 01 1E 09 16 19 36 19 2E 31 6F 33 5C | [01]くく゜か{6E}[01]そ[01]ぷぎどぶさぶうか{6F}く゜
+0x02CF50 | bank84_dialogue_01_prefix | 01 1F 09 16 1B 36 1B 2D 36 6D 36 5B | [01]ぺぎどぼさぼいさ{6D}さ゛
+0x02CFCC | bank84_dialogue_01_prefix | 01 7E 39 46 08 77 09 16 09 16 1B 34 3E 6B 37 5C | [01]くせひが{77}ぎどぎどぼけて{6B}し゜
+0x02D054 | bank84_dialogue_01_prefix | 01 7E 09 16 19 36 1B 2C | [01]くぎどぶさぼあ
+0x02D08A | bank84_dialogue_01_prefix | 01 3E 0F 10 01 3E 1F 20 01 7E 3F 40 06 7D 1E 73 38 4E | [01]てずぜ[01]てぺいとなカ{7D}ぷ{73}すも
+0x02D144 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 04 7B 04 0A 06 0B 06 0D 03 05 03 06 07 1D 1E 73 38 4E | [01]…[01]くとなお{7B}おぐカげカざえかえカキぴぷ{73}すも
+0x02D285 | bank84_dialogue_01_prefix | 01 01 3F 1F 20 01 3E 01 7E 3F 40 01 7E 01 02 01 02 01 02 01 02 01 02 | [01][01]とぺい[01]くとな[01]く[01]…[01]…[01]…[01]…[01]…
+0x02D296 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 00 03 | [01]…[01]…[01]…
+0x02D2D2 | bank84_dialogue_01_prefix | 01 7E 3F 40 0D 7A 1D 76 39 4E | [01]くとなざ{7A}ぴ{76}せも
+0x02D312 | bank84_dialogue_01_prefix | 01 7E 3F 40 0D 7A 1D 76 39 4E | [01]くとなざ{7A}ぴ{76}せも
+0x02D344 | bank84_dialogue_01_prefix | 01 3A 11 2A 19 2E 19 36 01 7E 3F 40 02 7D 02 05 06 0D 0E 1B 1C 77 38 4D | [01]そぞゎぶうぶさ[01]くとな…{7D}…かカざじぼぱ{77}すめ
+0x02D34C | bank84_dialogue_01_prefix | 01 7E 3F 40 02 7D 02 05 06 0D 0E 1B 1C 77 38 4D | [01]くとな…{7D}…かカざじぼぱ{77}すめ
+0x02D404 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 01 7E 01 3E 1F 20 | [01]…[01]くとな[01]く[01]てぺぽ
+0x02D40A | bank84_dialogue_01_prefix | 01 7E 01 3E 1F 20 00 3F 0F 10 08 17 08 14 08 17 0F 10 | [01]く[01]てぺあずぜがばがづがばずぜ
+0x02D4C4 | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 1F 20 11 2E 1F 20 11 2E 1F 20 0D 3A 1D 76 39 4E 01 7A | [01]くとな[01]くぺぞぺぞぺざぴ{76}せも[01]{7A}
+0x02D584 | bank84_dialogue_01_prefix | 01 3E 1F 20 01 3E 0F 10 08 17 0F 10 08 17 0F 10 08 77 3F 40 0C 7B 0C 16 | [01]てぺいずぜがばずぜがばずぜが{77}となご{7B}ごど
+0x02D6CE | bank84_dialogue_01_prefix | 01 7E 3F 40 03 7E 07 0D 0E 1B 1C 76 38 4C | [01]くとなえくキざじぼぱ{76}すむ
+0x02D704 | bank84_dialogue_01_prefix | 01 7E 3F 40 09 76 0F 10 09 16 0F 10 01 7E 3F 40 1D 72 3D 6B 37 58 0C 73 | [01]くとなぎ{76}ずぜぎどずぜ[01]くとなぴ{72}つ{6B}しをご{73}
+0x02D7C6 | bank84_dialogue_01_prefix | 01 7E 3F 40 29 56 29 56 | [01]くとなょろょろ
+0x02D850 | bank84_dialogue_01_prefix | 01 1E 08 17 18 34 18 2C 30 6F 33 5C | [01]ぷがばびけびあお{6F}く゜
+0x02D884 | bank84_dialogue_01_prefix | 01 3E 1F 20 04 7B 3F 40 08 77 0F 10 08 17 0F 10 01 3E 15 2B 36 6B 37 5C | [01]てぺおとなが{77}ずぜがばずぜ[01]てでゔさ{6B}し゜
+0x02D894 | bank84_dialogue_01_prefix | 01 3E 15 2B 36 6B 37 5C | [01]てでゔさ{6B}し゜
+0x02D948 | bank84_dialogue_01_prefix | 01 7E 3F 40 09 76 0F 10 09 16 0F 10 01 1E 0F 10 01 7E 3F 40 | [01]くとなぎ{76}ずぜぎどずぜ[01]ぷずぜ[01]くとな
+0x02D954 | bank84_dialogue_01_prefix | 01 1E 0F 10 01 7E 3F 40 | [01]ぷずぜ[01]くとな
+0x02D958 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 00 | [01]くとな
+0x02D988 | bank84_dialogue_01_prefix | 01 7E 01 06 07 0C 0F 1A 1D 76 39 4E 01 7A 01 02 01 02 01 02 | [01]く[01]カキごずべぴ{76}せも[01]{7A}[01]…[01]…[01]…
+0x02D994 | bank84_dialogue_01_prefix | 01 7A 01 02 01 02 01 02 | [01]{7A}[01]…[01]…[01]…
+0x02D996 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 00 03 | [01]…[01]…[01]…
+0x02D9D4 | bank84_dialogue_01_prefix | 01 3F 01 02 03 06 03 05 | [01]と[01]…えカえか
+0x02D9D6 | bank84_dialogue_01_prefix | 01 02 03 06 03 05 00 07 | [01]…えカえか
+0x02DA86 | bank84_dialogue_01_prefix | 01 7E 3C 43 00 7F 3B 44 | [01]くちね
+0x02DB4E | bank84_dialogue_01_prefix | 01 7E 3F 40 07 7C 0F 1A 1D 76 39 4E 01 7A | [01]くとなキ{7C}ずべぴ{76}せも[01]{7A}
+0x02DBCA | bank84_dialogue_01_prefix | 01 7E 3B 46 03 7D 3B 44 01 7E 3B 44 2B 56 2F 55 3E 43 | [01]くたひえ{7D}たの[01]くたのゔろえれてね
+0x02DBD2 | bank84_dialogue_01_prefix | 01 7E 3B 44 2B 56 2F 55 3E 43 | [01]くたのゔろえれてね
+0x02DC46 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 7E 3F 40 | [01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]くとな
+0x02DC56 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 00 7F | [01]…[01]くとな
+0x02DC58 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 00 | [01]くとな
+0x02DDD0 | bank84_dialogue_01_prefix | 01 0E 01 1E 19 36 13 2E 3F 6D 3E 53 | [01]じ[01]ぷぶさぢうと{6D}てり
+0x02DE84 | bank84_dialogue_01_prefix | 01 02 01 3E 1F 20 11 2E 11 2A 11 2A 11 2E 1F 20 01 3E 01 02 01 02 01 02 | [01]…[01]てぺぞぞゎぞゎぞうぺい[01]…[01]…[01]…
+0x02DE94 | bank84_dialogue_01_prefix | 01 3E 01 02 01 02 01 02 | [01]て[01]…[01]…[01]…
+0x02DE96 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 00 03 | [01]…[01]…[01]…
+0x02DFD0 | bank84_dialogue_01_prefix | 01 7E 01 3E 1F 20 0D 16 0D 7A 3F 40 | [01]く[01]てぺざざ{7A}とな
+0x02E010 | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 07 1C 1F 72 39 4E | [01]くとな[01]くキぱぺ{72}せも
+0x02E090 | bank84_dialogue_01_prefix | 01 7E 01 1E 0F 10 01 1E 01 7E 3F 40 | [01]く[01]ぷずぜ[01]ぷ[01]くとな
+0x02E096 | bank84_dialogue_01_prefix | 01 1E 01 7E 3F 40 00 7F | [01]ぷ[01]くとな
+0x02E098 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 00 | [01]くとな
+0x02E186 | bank84_dialogue_01_prefix | 01 7E 3C 43 00 7F 3B 44 | [01]くちね
+0x02E192 | bank84_dialogue_01_prefix | 01 7E 39 46 29 56 29 56 39 46 | [01]くせひょろょろせひ
+0x02E1C4 | bank84_dialogue_01_prefix | 01 7E 3F 40 20 5F 00 7F 0F 10 01 1E 01 1E 0F 10 01 1E 01 02 01 7E 3F 40 | [01]くとな。{7F}ずぜ[01]ぷ[01]ぷずぜ[01]ぷ[01]…[01]くとな
+0x02E1CE | bank84_dialogue_01_prefix | 01 1E 01 1E 0F 10 01 1E 01 02 01 7E 3F 40 | [01]ぷ[01]ぷずぜ[01]ぷ[01]…[01]くとな
+0x02E1D6 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 00 7F | [01]…[01]くとな
+0x02E1D8 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 00 | [01]くとな
+0x02E288 | bank84_dialogue_01_prefix | 01 7E 01 02 01 3E 1F 20 01 3E 03 06 07 0D 0E 1B 1C 76 38 4C | [01]く[01]…[01]てぺいえカキざじぼぱ{76}すむ
+0x02E444 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 21 5E 21 52 21 52 21 5E 3F 40 01 7E 01 02 01 02 01 02 | [01]…[01]くとなぁ！ぁらぁらぁ！とな[01]く[01]…[01]…[01]…
+0x02E454 | bank84_dialogue_01_prefix | 01 7E 01 02 01 02 01 02 | [01]く[01]…[01]…[01]…
+0x02E456 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 00 03 | [01]…[01]…[01]…
+0x02E4C4 | bank84_dialogue_01_prefix | 01 3E 1F 20 01 3E 0D 16 0D 1A 01 7E 3F 40 0D 7A 1D 36 39 6E 31 5A 01 72 | [01]てぺいざどざべ[01]くとなざ{7A}ぴさせ{6E}かー[01]{72}
+0x02E548 | bank84_dialogue_01_prefix | 01 3E 01 02 01 1E 09 16 09 16 09 16 09 16 09 16 09 76 3F 40 | [01]て[01]…[01]ぷぎどぎどぎどぎどぎどぎ{76}とな
+0x02E854 | bank84_dialogue_01_prefix | 01 3E 15 2B 36 6B 37 5C | [01]てでゔさ{6B}し゜
+0x02E906 | bank84_dialogue_01_prefix | 01 3A 11 2A 11 2A 11 2E 1F 20 01 3E 01 72 21 52 21 52 21 5E 3F 40 | [01]そぞゎぞゎぞうぺい[01]{72}ぁらぁらぁ！とな
+0x02E910 | bank84_dialogue_01_prefix | 01 3E 01 72 21 52 21 52 21 5E 3F 40 | [01]て[01]{72}ぁらぁらぁ！とな
+0x02EA50 | bank84_dialogue_01_prefix | 01 1E 09 16 1B 36 1B 2D 36 6D 36 5B | [01]ぷぎどぼさぼいさ{6D}さ゛
+0x02EC04 | bank84_dialogue_01_prefix | 01 1E 0F 10 01 1E 01 7E 3F 40 02 7D 0F 38 3E 65 33 5C | [01]ぷずぜ[01]ぷ[01]くとな…{7D}ずすて言く゜
+0x02EC94 | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 01 02 | [01]くとな[01]く[01]…
+0x02ED04 | bank84_dialogue_01_prefix | 01 3E 1F 20 0D 3A 1D 36 19 2E 05 7A 3E 41 04 7B 1F 31 3F 6A 34 5B 04 7A | [01]てぺざぴさぶうか{7A}てにお{7B}ぺかと{6A}け゛お{7A}
+0x02EE04 | bank84_dialogue_01_prefix | 01 7E 3F 40 20 5F 20 5F 0F 70 01 1E 01 1E 09 16 09 16 1F 32 3F 6C 31 5F | [01]くとな。。ず{70}[01]ぷ[01]ぷぎどぎどぺきと{6C}か。
+0x02EE0E | bank84_dialogue_01_prefix | 01 1E 01 1E 09 16 09 16 1F 32 3F 6C 31 5F | [01]ぷ[01]ぷぎどぎどぺきと{6C}か。
+0x02EFC6 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 01 72 21 52 21 52 21 52 21 52 21 52 21 5E 3F 40 | [01]…[01]…[01]…[01]{72}ぁらぁらぁらぁらぁらぁ！とな
+0x02F043 | bank84_dialogue_01_prefix | 01 01 3F 1F 20 0D 36 0D 7A 3F 40 0D 7A 0D 76 3F 40 09 76 0F 10 09 16 0F 10 | [01][01]とぺざざ{7A}となざ{7A}ざ{76}となぎ{76}ずぜぎどずぜ
+0x02F0C3 | bank84_dialogue_01_prefix | 01 01 1F 0F 10 01 3E 1F 20 07 3C 1F 72 39 4E 0F 70 08 17 0F 10 08 17 0F 10 | [01][01]ぺずぜ[01]てぺキぺ{72}せもず{70}がばずぜがばずぜ
+0x02F18A | bank84_dialogue_01_prefix | 01 7E 1F 20 01 7E 3F 60 01 7E 3F 40 06 7D 0E 7B 3C 46 | [01]くぺいと「[01]くとなカ{7D}じ{7B}ちひ
+0x02F2C8 | bank84_dialogue_01_prefix | 01 03 01 02 01 7E 3F 40 01 7E 01 02 01 02 01 02 01 06 03 04 | [01]え[01]…[01]くとな[01]く[01]…[01]…[01]…[01]カえお
+0x02F2D6 | bank84_dialogue_01_prefix | 01 02 01 06 03 04 00 07 | [01]…[01]カえお
+0x02F2D8 | bank84_dialogue_01_prefix | 01 06 03 04 00 07 00 | [01]カえお
+0x02F406 | bank84_dialogue_01_prefix | 01 7E 3F 40 29 56 29 56 1E 61 04 7B 3F 40 1C 73 3D 6A 34 5B 0D 72 | [01]くとなょろょろぷ」お{7B}となぱ{73}つ{6A}け゛ざ{72}
+0x02F444 | bank84_dialogue_01_prefix | 01 3E 1F 20 10 2F 1F 20 10 2F 1F 20 10 2F 1F 20 02 7D 22 5D 3F 40 | [01]てぺぜぺぜぺぜぺうぃ？とな
+0x02F504 | bank84_dialogue_01_prefix | 01 02 01 02 01 7E 3F 40 01 7E 07 0C 0F 1A 1D 36 39 6E 31 5A 01 72 01 02 | [01]…[01]…[01]くとな[01]くキごずべぴさせ{6E}かー[01]{72}[01]…
+0x02F592 | bank84_dialogue_01_prefix | 01 7E 0F 10 03 1E 0F 79 3C 47 | [01]くずぜえぷず{79}ちふ
+0x02F5C4 | bank84_dialogue_01_prefix | 01 02 01 02 01 7E 3F 40 01 7E 07 0C 0F 1A 1D 36 39 6E 37 58 01 7E 01 02 | [01]…[01]…[01]くとな[01]くキごずべぴさせ{6E}しを[01]く[01]…
+0x02F604 | bank84_dialogue_01_prefix | 01 3A 19 2E 19 36 09 16 01 3E 1F 20 | [01]そぶうぶさぎど[01]てぺぽ
+0x02F60C | bank84_dialogue_01_prefix | 01 3E 1F 20 00 3F 00 3F 1F 20 | [01]てぺあ
+0x02F644 | bank84_dialogue_01_prefix | 01 3A 19 2E 19 36 07 1C 06 0B | [01]そぶうぶさキぱカげ
+0x02F6CE | bank84_dialogue_01_prefix | 01 7E 3F 40 03 7E 07 0D 0E 1B 1C 76 38 4C | [01]くとなえくキざじぼぱ{76}すむ
+0x02F744 | bank84_dialogue_01_prefix | 01 7E 3F 40 20 5F 0F 70 06 3D 1F 22 07 3D 1E 23 03 3E 0F 39 1D 27 03 3C | [01]くとな。{70}カつぺぃキつぷぅえてずせぴゃえち
+0x02F786 | bank84_dialogue_01_prefix | 01 0E 01 02 01 02 03 06 03 05 06 0D 06 0B 0C 1A 1C 36 38 6C 30 58 | [01]じ[01]…[01]…えカえかカざカげごべぱさす{6C}おを
+0x02F9C4 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 0E 0F 18 0F 10 0F 19 | [01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]じずびずぜずぶ
+0x02FAC4 | bank84_dialogue_01_prefix | 01 7E 3F 40 20 5F 27 58 | [01]くとな。を
+0x02FACE | bank84_dialogue_01_prefix | 01 03 01 7E 3F 40 01 7E 01 02 01 0E 07 08 | [01]え[01]くとな[01]く[01]…[01]じキが
+0x02FAD6 | bank84_dialogue_01_prefix | 01 02 01 0E 07 08 00 0F | [01]…[01]じキが
+0x02FAD8 | bank84_dialogue_01_prefix | 01 0E 07 08 00 0F 00 | [01]じキが
+0x02FB18 | bank84_dialogue_01_prefix | 01 7E 03 04 00 07 00 | [01]くえお
+0x02FB43 | bank84_dialogue_01_prefix | 01 01 3B 1B 2E 1F 35 0E 1B 03 0C | [01][01]たぼうぺこじぼえご
+0x02FC12 | bank84_dialogue_01_prefix | 01 7E 39 46 29 56 29 56 39 46 | [01]くせひょろょろせひ
+0x02FC84 | bank84_dialogue_01_prefix | 01 1E 0F 10 08 77 3B 54 38 67 0B 34 3A 65 3A 55 0B 75 1B 34 1A 2D 12 2D | [01]ぷずぜが{77}たるす、げけそ言それげ{75}ぼけべいだい
+0x02FD44 | bank84_dialogue_01_prefix | 01 7E 3F 40 21 5E 0F 70 01 1E 0F 10 01 7E 3F 40 | [01]くとなぁ！ず{70}[01]ぷずぜ[01]くとな
+0x02FD4C | bank84_dialogue_01_prefix | 01 1E 0F 10 01 7E 3F 40 | [01]ぷずぜ[01]くとな
+0x02FD50 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 0F 10 08 17 0F 10 | [01]くとな
+0x02FDCE | bank84_dialogue_01_prefix | 01 7E 3D 42 09 76 2D 52 29 57 3F 42 27 5C | [01]くつぬぎ{76}いらょわとぬゃ゜
+0x02FE04 | bank84_dialogue_01_prefix | 01 3E 1F 20 01 3E 0F 10 01 7E 3F 40 0D 7A 0D 36 39 67 38 57 0E 71 18 27 | [01]てぺいずぜ[01]くとなざ{7A}ざさせ、すわじ{71}びゃ
+0x02FEC4 | bank84_dialogue_01_prefix | 01 1E 09 16 09 76 3F 40 11 6E 17 2A 17 2C 1F 20 1D 2A 1D 26 11 2E 1F 20 | [01]ぷぎどぎ{76}となぞ{6E}ばゎばあぺぴぴっぞうぺぽ
+0x030208 | bank84_dialogue_01_prefix | 01 06 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 06 03 04 | [01]カ[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]カえお
+0x030216 | bank84_dialogue_01_prefix | 01 02 01 06 03 04 00 07 | [01]…[01]カえお
+0x030218 | bank84_dialogue_01_prefix | 01 06 03 04 00 07 00 | [01]カえお
+0x0304C8 | bank84_dialogue_01_prefix | 01 3E 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 | [01]て[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…
+0x0304D6 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 00 03 | [01]…[01]…[01]…
+0x030614 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 01 02 | [01]…[01]…[01]…[01]…
+0x030616 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 00 03 | [01]…[01]…[01]…
+0x03064D | bank84_dialogue_01_prefix | 01 01 03 03 06 07 0D 0E 1B 1C 36 18 2F 1F 20 | [01][01]ええカキざじぼぱさびえぺぽ
+0x030984 | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 01 1E 0F 10 08 17 08 17 0F 10 02 1D 06 0D 0E 7B 3C 47 | [01]くとな[01]く[01]ぷずぜがばがばずぜ…ぴカざじ{7B}ちふ
+0x0309C8 | bank84_dialogue_01_prefix | 01 7E 31 5A 31 6A 01 3A 01 1E 09 16 1B 34 18 2F 33 6E 33 5D | [01]くかーか{6A}[01]そ[01]ぷぎどぼけびえく{6E}く？
+0x030A45 | bank84_dialogue_01_prefix | 01 01 3F 1F 20 01 3E 01 02 01 7E 3F 40 01 7E 01 02 01 02 01 3E 1F 20 | [01][01]とぺい[01]…[01]くとな[01]く[01]…[01]…[01]てぺぽ
+0x030A56 | bank84_dialogue_01_prefix | 01 02 01 3E 1F 20 00 3F | [01]…[01]てぺあ
+0x030A58 | bank84_dialogue_01_prefix | 01 3E 1F 20 00 3F 00 | [01]てぺあ
+0x030B48 | bank84_dialogue_01_prefix | 01 3E 0F 10 01 3E 1F 20 05 7A 3F 40 | [01]てずぜ[01]てぺかとな
+0x030BC6 | bank84_dialogue_01_prefix | 01 02 01 06 07 0C 0E 1B 0C 16 | [01]…[01]カキごじぼごど
+0x030C04 | bank84_dialogue_01_prefix | 01 3A 11 2E 1F 20 01 3E 0F 10 08 17 0F 10 08 17 0F 10 | [01]そぞうぺいずぜがばずぜがばずぜ
+0x030CC4 | bank84_dialogue_01_prefix | 01 02 01 02 01 3E 1F 20 11 2E 11 2A 11 2E 1F 20 11 2E 11 2A 11 2E 1F 20 | [01]…[01]…[01]てぺぞぞゎぞうぺぞぞゎぞうぺぽ
+0x031044 | bank84_dialogue_01_prefix | 01 02 01 02 01 7E 3F 40 01 7E 03 06 03 05 06 0D 06 0B 0C 1A 1C 76 38 4C | [01]…[01]…[01]くとな[01]くえカえかカざカげごべぱ{76}すむ
+0x0311C4 | bank84_dialogue_01_prefix | 01 02 01 02 01 7E 3F 40 01 7E 03 06 03 05 06 0D 06 0B 0C 1A 1C 76 38 4C | [01]…[01]…[01]くとな[01]くえカえかカざカげごべぱ{76}すむ
+0x03120E | bank84_dialogue_01_prefix | 01 7E 01 3E 1F 20 01 3E 19 36 39 6E 31 5A | [01]く[01]てぺいぶさせ{6E}かー
+0x031384 | bank84_dialogue_01_prefix | 01 06 02 3D 1F 20 10 2F 10 28 10 2F 1F 20 10 2F 10 28 10 28 10 2F 1F 20 | [01]カ…つぺぜぜゅぜえぺぜぜゅぜゅぜえぺぽ
+0x031404 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 20 5F 20 53 01 7E 04 0B 0C 1A 0C 16 18 34 38 6C 30 58 | [01]…[01]くとな。り[01]くおげごべごどびけす{6C}おを
+0x03140E | bank84_dialogue_01_prefix | 01 7E 04 0B 0C 1A 0C 16 18 34 38 6C 30 58 | [01]くおげごべごどびけす{6C}おを
+0x031444 | bank84_dialogue_01_prefix | 01 7E 3F 40 04 7B 1F 60 | [01]くとなお{7B}ぺ「
+0x031584 | bank84_dialogue_01_prefix | 01 3E 1F 20 00 3F 07 08 04 0B 07 08 | [01]てぺあキがおげキが
+0x03164C | bank84_dialogue_01_prefix | 01 72 01 7E 3F 40 0C 7B 0C 17 18 35 38 6D 30 59 | [01]{72}[01]くとなご{7B}ごばびこす{6D}おん
+0x031684 | bank84_dialogue_01_prefix | 01 7E 3F 40 09 76 09 16 09 76 3D 42 09 76 09 16 0C 73 39 4F 03 7E 07 09 | [01]くとなぎ{76}ぎどぎ{76}つぬぎ{76}ぎどご{73}せやえくキぎ
+0x03170A | bank84_dialogue_01_prefix | 01 06 01 7E 39 46 09 76 09 16 08 17 1F 34 3E 6B 37 5C | [01]カ[01]くせひぎ{76}ぎどがばぺけて{6B}し゜
+0x031750 | bank84_dialogue_01_prefix | 01 7E 3F 40 04 7B 1E 23 07 3C 1E 23 | [01]くとなお{7B}ぷぅキちぷぅ
+0x03188A | bank84_dialogue_01_prefix | 01 03 03 06 07 0D 0E 1B 1C 36 38 6C 30 58 20 5F 3F 60 | [01]ええカキざじぼぱさす{6C}おを。「
+0x031984 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 01 7E 19 2E 19 36 01 1E 01 1E 1D 72 39 4E 01 7E 03 04 | [01]…[01]くとな[01]くぶうぶさ[01]ぷ[01]ぷぴ{72}せも[01]くえお
+0x031998 | bank84_dialogue_01_prefix | 01 7E 03 04 00 07 00 | [01]くえお
+0x031A08 | bank84_dialogue_01_prefix | 01 3E 01 02 01 02 01 3E 1F 20 01 3E 01 06 01 06 01 7E 3F 40 | [01]て[01]…[01]…[01]てぺい[01]カ[01]カ[01]くとな
+0x031A16 | bank84_dialogue_01_prefix | 01 06 01 7E 3F 40 00 7F | [01]カ[01]くとな
+0x031A18 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 00 | [01]くとな
+0x031B44 | bank84_dialogue_01_prefix | 01 7E 3F 40 20 5F 20 5F 0F 70 | [01]くとな。。ず{70}
+0x031BC8 | bank84_dialogue_01_prefix | 01 7E 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 01 02 | [01]く[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…[01]…
+0x031BD6 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 00 03 | [01]…[01]…[01]…
+0x031C04 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 01 7E 01 1E 0D 16 0F 1A 07 0C 03 06 06 1D 1E 73 38 4E | [01]…[01]くとな[01]く[01]ぷざどずべキごえカカぴぷ{73}すも
+0x031C44 | bank84_dialogue_01_prefix | 01 02 01 3E 1F 20 01 3E 01 7E 3F 40 03 7E 03 05 06 0D 0E 1B 1C 76 38 4C | [01]…[01]てぺい[01]くとなえくえかカざじぼぱ{76}すむ
+0x031D4E | bank84_dialogue_01_prefix | 01 1E 09 16 09 16 1D 36 1F 2A 37 6C 33 5E | [01]ぷぎどぎどぴさぺゎし{6C}く！
+0x031E44 | bank84_dialogue_01_prefix | 01 7E 3F 40 26 5D 0E 7B 3C 47 01 7E 01 7E 3F 40 03 7E 07 1D 1E 73 38 4E | [01]くとなっ？じ{7B}ちふ[01]く[01]くとなえくキぴぷ{73}すも
+0x031E4E | bank84_dialogue_01_prefix | 01 7E 01 7E 3F 40 03 7E 07 1D 1E 73 38 4E | [01]く[01]くとなえくキぴぷ{73}すも
+0x031F84 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 02 7D 02 05 07 0C 06 0B 0C 1A 0C 16 18 37 39 6E 30 5B | [01]…[01]くとな…{7D}…かキごカげごべごどびしせ{6E}お゛
+0x032014 | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 01 02 | [01]くとな[01]く[01]…
+0x032094 | bank84_dialogue_01_prefix | 01 3E 09 36 09 76 3F 40 | [01]てぎさぎ{76}とな
+0x0321C6 | bank84_dialogue_01_prefix | 01 7E 0F 10 09 16 09 16 0F 10 09 16 09 76 3F 40 08 77 08 14 08 14 | [01]くずぜぎどぎどずぜぎどぎ{76}となが{77}がづがづ
+0x032244 | bank84_dialogue_01_prefix | 01 0E 04 0B 0C 1A 1C 76 38 4F 0F 70 02 1D 02 05 02 05 06 0D 0E 3B 1C 27 | [01]じおげごべぱ{76}すやず{70}…ぴ…か…かカざじたぱゃ
+0x032304 | bank84_dialogue_01_prefix | 01 7E 3F 40 20 5F 01 7E 1F 20 01 3E 0F 10 01 3E 1F 20 06 3D 1E 73 38 4F | [01]くとな。くぺいずぜ[01]てぺカぷ{73}すや
+0x0323C4 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 0F 10 08 17 08 17 0F 10 01 1E 19 36 39 6E 31 5E 03 74 | [01]くとな
+0x0323D2 | bank84_dialogue_01_prefix | 01 1E 19 36 39 6E 31 5E 03 74 | [01]ぷぶさせ{6E}か！え{74}
+0x032404 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 01 1E 0F 10 08 17 08 17 08 17 0F 10 | [01]…[01]…[01]…[01]ぷずぜがばがばがばずぜ
+0x03248E | bank84_dialogue_01_prefix | 01 3E 07 18 09 16 19 36 19 2E 30 6B 30 58 | [01]てキびぎどぶさぶうお{6B}おを
+0x03254A | bank84_dialogue_01_prefix | 01 1E 0F 10 09 16 09 76 3F 40 03 7E 07 1D 1E 73 38 4E | [01]ぷずぜぎどぎ{76}となえくキぴぷ{73}すも
+0x0325D2 | bank84_dialogue_01_prefix | 01 3E 1F 20 11 2E 11 2E 01 3A | [01]てぺぞぞう[01]そ
+0x03260E | bank84_dialogue_01_prefix | 01 7E 3D 42 01 7E 3D 42 25 5A 25 5A 3D 42 | [01]くつぬ[01]くつぬぉーぉーつぬ
+0x032904 | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 0F 10 09 36 1F 20 01 7E 3F 40 01 7E 1F 20 01 3E 03 04 | [01]くとな[01]くずぜぎさぺいとな[01]くぺいえお
+0x032910 | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 1F 20 01 3E 03 04 | [01]くとな[01]くぺいえお
+0x032918 | bank84_dialogue_01_prefix | 01 3E 03 04 00 07 00 | [01]てえお
+0x032957 | bank84_dialogue_01_prefix | 01 01 0F 07 08 00 0F | [01][01]ずキが
+0x032958 | bank84_dialogue_01_prefix | 01 0F 07 08 00 0F 00 | [01]ずキが
+0x032984 | bank84_dialogue_01_prefix | 01 02 01 1E 09 16 19 36 19 2E 31 6A 31 5E 03 74 | [01]…[01]ぷぎどぶさぶうか{6A}か！え{74}
+0x032996 | bank84_dialogue_01_prefix | 01 07 07 3C 1E 23 00 3E | [01]キキちぷぅ
+0x032A04 | bank84_dialogue_01_prefix | 01 7E 3F 40 06 7D 07 1A 0C 1B 1C 36 38 67 3B 54 08 77 08 15 08 15 08 15 | [01]くとなカ{7D}キべごぼぱさす、たるが{77}がでがでがで
+0x032A44 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 06 7D 06 0B 0C 1B 1D 36 38 67 38 54 08 74 08 17 0B 14 | [01]…[01]くとなカ{7D}カげごぼぴさす、するが{74}がばげづ
+0x032E18 | bank84_dialogue_01_prefix | 01 3F 03 04 00 07 00 | [01]とえお
+0x032E84 | bank84_dialogue_01_prefix | 01 3E 1F 20 01 3E 0F 10 08 17 0F 10 08 17 0F 10 08 77 3F 40 0C 7B 0C 16 | [01]てぺいずぜがばずぜがばずぜが{77}となご{7B}ごど
+0x033011 | bank84_dialogue_01_prefix | 01 01 03 03 06 07 1D 0E 13 | [01][01]ええカキぴじぢ
+0x033044 | bank84_dialogue_01_prefix | 01 7E 3F 40 20 5F 20 5F 0F 70 01 1E 01 1E 09 16 09 16 1F 32 3F 6C 31 5F | [01]くとな。。ず{70}[01]ぷ[01]ぷぎどぎどぺきと{6C}か。
+0x03304E | bank84_dialogue_01_prefix | 01 1E 01 1E 09 16 09 16 1F 32 3F 6C 31 5F | [01]ぷ[01]ぷぎどぎどぺきと{6C}か。
+0x033108 | bank84_dialogue_01_prefix | 01 7E 01 7E 3F 40 21 5E 29 56 29 56 29 56 2F 50 20 5F 20 50 | [01]く[01]くとなぁ！ょろょろょろえゆ。ゆ
+0x033304 | bank84_dialogue_01_prefix | 01 1E 0F 10 09 16 0F 10 09 16 09 16 0F 10 02 1D 06 0D 0E 1B 1C 77 38 4D | [01]ぷずぜぎどずぜぎどぎどずぜ…ぴカざじぼぱ{77}すめ
+0x033452 | bank84_dialogue_01_prefix | 01 7E 0F 10 01 1E 0D 1A 0D 16 | [01]くずぜ[01]ぷざべざど
+0x033456 | bank84_dialogue_01_prefix | 01 1E 0D 1A 0D 16 00 1F | [01]ぷざべざど
+0x0334CA | bank84_dialogue_01_prefix | 01 72 30 5F 33 6C 01 3E 09 16 19 36 19 2E 31 6A 31 5A | [01]{72}お。く{6C}[01]てぎどぶさぶうか{6A}かー
+0x033604 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 01 7E 01 02 01 3E 1F 20 10 2F 10 28 10 28 10 2F 1F 20 | [01]…[01]くとな[01]く[01]…[01]てぺぜぜゅぜゅぜえぺぽ
+0x033644 | bank84_dialogue_01_prefix | 01 02 01 02 01 7E 3F 40 | [01]…[01]…[01]くとな
+0x033646 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 00 7F | [01]…[01]くとな
+0x033648 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 00 7F 3E 41 08 77 08 17 0F 14 1E 73 38 4E | [01]くとな
+0x033812 | bank84_dialogue_01_prefix | 01 3E 01 02 01 02 01 02 01 02 | [01]て[01]…[01]…[01]…[01]…
+0x033816 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 00 03 | [01]…[01]…[01]…
+0x033904 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 01 1E 09 16 19 36 19 2E 31 6A 31 5A 01 72 01 06 03 04 | [01]…[01]…[01]…[01]ぷぎどぶさぶうか{6A}かー[01]{72}[01]カえお
+0x033916 | bank84_dialogue_01_prefix | 01 72 01 06 03 04 00 07 | [01]{72}[01]カえお
+0x033918 | bank84_dialogue_01_prefix | 01 06 03 04 00 07 00 | [01]カえお
+0x0339C4 | bank84_dialogue_01_prefix | 01 7E 3F 40 20 5F 2F 50 08 77 08 17 0F 10 01 3E 1F 20 10 2F 10 2F 1F 20 | [01]くとな。ゆが{77}がばずぜ[01]てぺぜぜえぺぽ
+0x0339D2 | bank84_dialogue_01_prefix | 01 3E 1F 20 10 2F 10 2F 1F 20 | [01]てぺぜぜえぺぽ
+0x033A84 | bank84_dialogue_01_prefix | 01 3E 1F 20 01 7E 3F 40 08 77 04 7B 3F 40 01 7E 1F 20 01 3E 01 02 01 02 | [01]てぺいとなが{77}お{7B}とな[01]くぺい[01]…[01]…
+0x033A92 | bank84_dialogue_01_prefix | 01 7E 1F 20 01 3E 01 02 01 02 | [01]くぺい[01]…[01]…
+0x033A96 | bank84_dialogue_01_prefix | 01 3E 01 02 01 02 00 03 | [01]て[01]…[01]…
+0x033AC4 | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 0F 10 09 16 0F 10 09 16 0F 10 01 3E 14 2B 14 6B 23 5C | [01]くとな[01]くずぜぎどずぜぎどずぜ[01]てづゔづ{6B}ぅ゜
+0x033AD4 | bank84_dialogue_01_prefix | 01 3E 14 2B 14 6B 23 5C | [01]てづゔづ{6B}ぅ゜
+0x033B04 | bank84_dialogue_01_prefix | 01 02 01 06 03 04 02 0D 04 1B 0A 15 01 1E | [01]…[01]カえお…ざおぼぐで[01]ぷ
+0x033B16 | bank84_dialogue_01_prefix | 01 0E 06 39 18 27 00 3C | [01]じカせびゃ
+0x033B48 | bank84_dialogue_01_prefix | 01 7E 33 5E 33 6D 00 3F | [01]くく！く{6D}
+0x033B84 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 04 0B 0D 1B 1F 36 3B 64 39 57 08 75 09 17 0B 16 0B 15 | [01]くとな
+0x033C12 | bank84_dialogue_01_prefix | 01 3E 0F 10 01 1E 01 7E 3F 40 | [01]てずぜ[01]ぷ[01]くとな
+0x033C16 | bank84_dialogue_01_prefix | 01 1E 01 7E 3F 40 00 7F | [01]ぷ[01]くとな
+0x033C18 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 00 | [01]くとな
+0x033D54 | bank84_dialogue_01_prefix | 01 3E 0F 10 01 7E 3F 40 | [01]てずぜ[01]くとな
+0x033D58 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 00 | [01]くとな
+0x033DC4 | bank84_dialogue_01_prefix | 01 02 01 3E 1F 20 01 3E 01 7E 3F 40 03 7E 07 0C 0F 1A 1D 76 39 4E 01 7A | [01]…[01]てぺい[01]くとなえくキごずべぴ{76}せも[01]{7A}
+0x033E84 | bank84_dialogue_01_prefix | 01 02 01 02 01 3E 1F 20 11 2E 11 2A 11 2E 1F 20 11 2E 11 2A 11 2E 1F 20 | [01]…[01]…[01]てぺぞぞゎぞうぺぞぞゎぞうぺぽ
+0x033F06 | bank84_dialogue_01_prefix | 01 7E 3F 40 29 56 29 56 | [01]くとなょろょろ
+0x034050 | bank84_dialogue_01_prefix | 01 3A 03 06 07 0D 0E 1B 1C 76 38 4C | [01]そえカキざじぼぱ{76}すむ
+0x0340C4 | bank84_dialogue_01_prefix | 01 3A 11 2E 15 2A 15 2A 15 2A 15 2A 15 2A 15 2A 35 6A 35 5A 21 5E 01 72 | [01]そぞうでゎでゎでゎでゎでゎでゎこ{6A}こーぁ！[01]{72}
+0x034104 | bank84_dialogue_01_prefix | 01 1E 0F 10 08 17 0F 10 08 17 0F 10 09 16 09 16 09 17 08 17 1F 70 3C 47 | [01]ぷずぜがばずぜがばずぜぎどぎどぎばがばぺ{70}ちふ
+0x034204 | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 0F 70 28 57 2F 50 28 57 2F 50 28 57 2F 50 20 5F 3F 40 | [01]くとな[01]くず{70}ゅわえゆゅわえゆゅわえゆ。な
+0x03428E | bank84_dialogue_01_prefix | 01 7E 3F 40 08 77 0F 10 01 3E 31 6E 33 5C | [01]くとなが{77}ずぜ[01]てか{6E}く゜
+0x034296 | bank84_dialogue_01_prefix | 01 3E 31 6E 33 5C 00 77 | [01]てか{6E}く゜
+0x034384 | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 1F 20 08 37 0F 10 04 7B 3F 40 | [01]くとな[01]くぺがずぜお{7B}とな
+0x0343CA | bank84_dialogue_01_prefix | 01 3F 1F 20 0F 35 0F 7A 3F 40 03 7E 07 1C 1F 72 39 4E | [01]とぺずず{7A}となえくキぱぺ{72}せも
+0x034404 | bank84_dialogue_01_prefix | 01 1E 0F 10 01 7E 3F 40 01 7E 0F 10 01 7E 3F 40 08 77 0F 10 08 17 0F 10 | [01]ぷずぜ[01]くとな[01]くずぜ[01]くとなが{77}ずぜがばずぜ
+0x034494 | bank84_dialogue_01_prefix | 01 7E 15 2B 36 6B 37 5C | [01]くでゔさ{6B}し゜
+0x034504 | bank84_dialogue_01_prefix | 01 7E 3F 40 20 5F 20 51 | [01]くとな。よ
+0x034597 | bank84_dialogue_01_prefix | 01 01 07 03 04 00 07 | [01][01]キえお
+0x034598 | bank84_dialogue_01_prefix | 01 07 03 04 00 07 00 | [01]キえお
+0x0345D2 | bank84_dialogue_01_prefix | 01 1E 01 02 01 02 01 02 01 02 | [01]ぷ[01]…[01]…[01]…[01]…
+0x0345D6 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 00 03 | [01]…[01]…[01]…
+0x034706 | bank84_dialogue_01_prefix | 01 3E 09 36 0D 36 0D 3A 01 7E 3F 40 01 7E 01 02 01 02 01 02 01 02 | [01]てぎさざさざそ[01]くとな[01]く[01]…[01]…[01]…[01]…
+0x03470E | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 01 02 01 02 01 02 01 02 | [01]くとな[01]く[01]…[01]…[01]…[01]…
+0x034716 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 00 03 | [01]…[01]…[01]…
+0x035004 | bank84_dialogue_01_prefix | 01 02 01 3E 1F 20 01 3E 01 7E 3F 40 01 7E 09 16 09 16 1F 32 3F 6C 30 5F | [01]…[01]てぺい[01]くとな[01]くぎどぎどぺきと{6C}お。
+0x035044 | bank84_dialogue_01_prefix | 01 02 01 02 01 3E 1F 20 | [01]…[01]…[01]てぺぽ
+0x035046 | bank84_dialogue_01_prefix | 01 02 01 3E 1F 20 00 3F 0C 16 0C 1A 04 0A 04 0A | [01]…[01]てぺあごどごべおぐおぐ
+0x035084 | bank84_dialogue_01_prefix | 01 1E 09 16 09 16 09 76 3F 40 01 7E 09 16 19 36 1B 2C | [01]ぷぎどぎどぎ{76}とな[01]くぎどぶさぼあ
+0x03508E | bank84_dialogue_01_prefix | 01 7E 09 16 19 36 1B 2C | [01]くぎどぶさぼあ
+0x0350C4 | bank84_dialogue_01_prefix | 01 3E 1F 20 10 2F 1E 21 12 2D 32 6D 36 59 | [01]てぺぜぷぁだいき{6D}さん
+0x035284 | bank84_dialogue_01_prefix | 01 06 07 1C 1E 73 3B 4D 03 7E 03 0E 0F 79 3F 40 04 7B 04 0A 04 0B 07 08 | [01]カキぱぷ{73}ためえくえじず{79}となお{7B}おぐおげキが
+0x035304 | bank84_dialogue_01_prefix | 01 3E 1F 20 12 2D 12 6D 3F 40 19 77 3F 6C 37 5A 01 7E 0D 1A 1D 76 39 4E | [01]てぺだだ{6D}となぶ{77}と{6C}しー[01]くざべぴ{76}せも
+0x035314 | bank84_dialogue_01_prefix | 01 7E 0D 1A 1D 76 39 4E | [01]くざべぴ{76}せも
+0x035344 | bank84_dialogue_01_prefix | 01 7E 3F 40 20 5F 22 55 02 7D 3F 40 0C 7B 0C 17 0E 11 03 1E 07 3D 1E 23 | [01]くとな。れ…{7D}となご{7B}ごばじぞえぷキつぷぅ
+0x0353C4 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 42 27 59 26 59 24 5B 24 5B 24 5B 3D 43 01 7E 03 06 03 05 | [01]…[01]くとぬゃんっんぇ゛ぇ゛ぇ゛つね[01]くえカえか
+0x0353D6 | bank84_dialogue_01_prefix | 01 7E 03 06 03 05 00 07 | [01]くえカえか
+0x035544 | bank84_dialogue_01_prefix | 01 7E 3F 40 21 5E 23 56 27 5D 2E 53 21 5E 23 56 27 5D 2E 53 20 5E 20 50 | [01]くとなぁ！ぅろゃ？うりぁ！ぅろゃ？うり！ゆ
+0x03558C | bank84_dialogue_01_prefix | 01 7E 3F 40 0E 7B 1C 77 3E 41 12 6D 12 2D 1E 21 | [01]くとなじ{7B}ぱ{77}てにだ{6D}だいぷぁ
+0x03608E | bank84_dialogue_01_prefix | 01 7E 3F 40 08 77 0F 10 01 3E 31 6A 31 5A | [01]くとなが{77}ずぜ[01]てか{6A}かー
+0x036096 | bank84_dialogue_01_prefix | 01 3E 31 6A 31 5A 00 73 | [01]てか{6A}かー
+0x036104 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 01 02 01 1E 09 16 09 16 09 16 09 16 09 16 09 76 3F 40 | [01]…[01]…[01]…[01]…[01]ぷぎどぎどぎどぎどぎどぎ{76}とな
+0x0361C4 | bank84_dialogue_01_prefix | 01 7E 3F 40 01 7E 1F 20 | [01]くとな[01]くぺぽ
+0x0361C8 | bank84_dialogue_01_prefix | 01 7E 1F 20 00 3F 1F 20 11 2E 11 2E 1F 20 10 2F 30 68 30 58 | [01]くぺあぺぞぞうぺぜお{68}おを
+0x03620A | bank84_dialogue_01_prefix | 01 7E 38 47 03 7C 3A 45 | [01]くすふえ{7C}そは
+0x036284 | bank84_dialogue_01_prefix | 01 7E 3F 40 26 5D 1E 63 | [01]くとなっ？ぷ事
+0x0362C8 | bank84_dialogue_01_prefix | 01 3E 01 02 01 02 01 02 01 02 01 02 01 02 01 7E 3F 40 | [01]て[01]…[01]…[01]…[01]…[01]…[01]…[01]くとな
+0x0362D4 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 00 7F | [01]…[01]くとな
+0x0362D6 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 00 | [01]くとな
+0x036404 | bank84_dialogue_01_prefix | 01 3E 1F 20 12 2D 1F 20 1E 29 1E 25 17 28 14 2B 37 68 32 5D 26 5D 0E 73 | [01]てぺだぺぷぷぉばゅづゔし{68}き？っ？じ{73}
+0x036484 | bank84_dialogue_01_prefix | 01 1E 0F 10 08 17 0F 10 08 17 0F 10 08 77 3F 40 01 7F 07 1C 1E 73 38 4F | [01]ぷずぜがばずぜがばずぜが{77}とな[01]{7F}キぱぷ{73}すや
+0x0364D4 | bank84_dialogue_01_prefix | 01 3E 15 2B 34 6B 33 5C | [01]てでゔけ{6B}く゜
+0x036504 | bank84_dialogue_01_prefix | 01 7E 3F 40 24 5B 2F 50 04 7B 0F 10 04 7B 3F 40 0F 7A 1D 77 3F 49 03 7E | [01]くとなぇ゛えゆお{7B}ずぜお{7B}となず{7A}ぴ{77}とほえく
+0x03668A | bank84_dialogue_01_prefix | 01 0E 01 3E 1F 20 01 3E 01 1E 0F 10 08 17 08 17 0F 10 | [01]じ[01]てぺい[01]ぷずぜがばがばずぜ
+0x0366CE | bank84_dialogue_01_prefix | 01 7E 1F 20 01 3E 03 06 07 0D 0E 3B 1C 26 | [01]くぺいえカキざじたぱっ
+0x036744 | bank84_dialogue_01_prefix | 01 3E 1F 20 01 3E 0F 10 01 7E 3F 40 09 76 3F 40 19 76 19 2E 1F 20 | [01]てぺいずぜ[01]くとなぎ{76}となぶ{76}ぶうぺぽ
+0x036904 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 01 7E 01 3E 1F 20 | [01]…[01]くとな[01]く[01]てぺぽ
+0x03690A | bank84_dialogue_01_prefix | 01 7E 01 3E 1F 20 00 3F 05 0A 05 3B 14 2B 34 6B 33 5C | [01]く[01]てぺあかぐかたづゔけ{6B}く゜
+0x036984 | bank84_dialogue_01_prefix | 01 3E 1F 20 06 3B 06 3D 1F 20 10 2F 14 2B 17 28 14 2B 33 6C 30 5F 2F 50 | [01]てぺカカつぺぜづゔばゅづゔく{6C}お。えゆ
+0x036A12 | bank84_dialogue_01_prefix | 01 3E 1F 20 01 3E 01 7E 3F 40 | [01]てぺい[01]くとな
+0x036A16 | bank84_dialogue_01_prefix | 01 3E 01 7E 3F 40 00 7F | [01]て[01]くとな
+0x036A18 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 00 | [01]くとな
+0x036A8A | bank84_dialogue_01_prefix | 01 3F 0F 10 08 17 0B 14 0A 15 1A 35 1A 2D 32 6D 33 5C | [01]とずぜがばげづぐでべこべいき{6D}く゜
+0x036B04 | bank84_dialogue_01_prefix | 01 3E 1F 20 12 2D 1F 20 12 2D 13 2C 10 2F 17 28 37 6D 33 5E 23 5E 0F 71 | [01]てぺだぺだぢあぜえばゅし{6D}く！ぅ！ず{71}
+0x036BCC | bank84_dialogue_01_prefix | 01 7E 3D 42 05 7A 0D 1A 1D 36 39 6E 31 5E 03 74 | [01]くつぬか{7A}ざべぴさせ{6E}か！え{74}
+0x036CCC | bank84_dialogue_01_prefix | 01 7E 39 46 09 76 09 16 08 17 1F 34 3E 6B 37 5C | [01]くせひぎ{76}ぎどがばぺけて{6B}し゜
+0x036D83 | bank84_dialogue_01_prefix | 01 01 3F 1F 20 01 3E 01 3E 1F 20 01 3E 01 7E 3F 40 01 7E 01 02 01 02 01 03 | [01][01]とぺい[01]てぺい[01]くとな[01]く[01]…[01]…[01]え
+0x036D96 | bank84_dialogue_01_prefix | 01 02 01 02 01 03 00 01 | [01]…[01]…[01]え
+0x036E44 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 0F 10 08 17 08 17 0F 10 05 1A 1D 73 3F 4A 0F 79 0E 13 | [01]くとな
+0x036E92 | bank84_dialogue_01_prefix | 01 0E 05 3B 34 6B 34 5B 07 7C | [01]じかたけ{6B}け゛キ{7C}
+0x036EC4 | bank84_dialogue_01_prefix | 01 02 01 7E 3F 40 01 7E 01 1E 0F 10 | [01]…[01]くとな[01]く[01]ぷずぜ
+0x036ECA | bank84_dialogue_01_prefix | 01 7E 01 1E 0F 10 00 1F 06 0B 07 0D 03 0E 0F 79 3C 47 | [01]く[01]ぷずぜ
+0x036F86 | bank84_dialogue_01_prefix | 01 7E 01 7E 3F 40 20 5F 20 5F 3F 40 01 7E 01 02 03 06 07 3D 1E 23 | [01]く[01]くとな。。とな[01]く[01]…えカキつぷぅ
+0x036F92 | bank84_dialogue_01_prefix | 01 7E 01 02 03 06 07 3D 1E 23 | [01]く[01]…えカキつぷぅ
+0x037196 | bank84_dialogue_01_prefix | 01 7A 01 07 03 04 00 07 | [01]{7A}[01]キえお
+0x037198 | bank84_dialogue_01_prefix | 01 07 03 04 00 07 00 | [01]キえお
+0x037243 | bank84_dialogue_01_prefix | 01 01 1F 0F 10 01 7E 3F 40 0F 7A 1D 76 3F 48 01 7F 01 7E 3F 40 01 7E 03 04 | [01][01]ぺずぜ[01]くとなず{7A}ぴ{76}とへ[01]{7F}[01]くとな[01]くえお
+0x037252 | bank84_dialogue_01_prefix | 01 7F 01 7E 3F 40 01 7E 03 04 | [01]{7F}[01]くとな[01]くえお
+0x037258 | bank84_dialogue_01_prefix | 01 7E 03 04 00 07 00 | [01]くえお
+0x0372C4 | bank84_dialogue_01_prefix | 01 7E 3F 40 20 5F 2F 50 03 7E 03 1D 0F 10 01 1E 01 1E 0F 10 01 7E 3F 40 | [01]くとな。ゆえくえぴずぜ[01]ぷ[01]ぷずぜ[01]くとな
+0x0372D2 | bank84_dialogue_01_prefix | 01 1E 01 1E 0F 10 01 7E 3F 40 | [01]ぷ[01]ぷずぜ[01]くとな
+0x0372D8 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 00 | [01]くとな
+0x03730E | bank84_dialogue_01_prefix | 01 7E 3F 40 07 7C 0F 1A 1D 76 39 4E 01 7A | [01]くとなキ{7C}ずべぴ{76}せも[01]{7A}
+0x037404 | bank84_dialogue_01_prefix | 01 02 01 02 01 02 01 1E 09 16 19 36 1B 2E 03 3D 06 0D 0E 1B 1C 76 38 4C | [01]…[01]…[01]…[01]ぷぎどぶさぼうえつカざじぼぱ{76}すむ
+0x03780E | bank84_dialogue_01_prefix | 01 3E 1F 20 01 7E 3F 40 | [01]てぺいとな
+0x037812 | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 36 6B 36 5D | [01]くとな
+0x037C44 | bank84_dialogue_01_prefix | 01 7E 3C 43 24 5B 27 58 24 5B 24 5B 27 58 3C 43 | [01]くちねぇ゛ゃをぇ゛ぇ゛ゃをちね
+0x037C58 | bank84_dialogue_01_prefix | 01 0E 06 09 00 0F 00 | [01]じカぎ
+0x037CCC | bank84_dialogue_01_prefix | 01 7E 3F 40 00 7F 0F 10 08 17 08 14 08 17 0F 10 | [01]くとな
+0x038037 | dialogue_extended_01_prefix | 01 92 06 C2 20 E6 06 A0 | [01]ダカヌ思ポ
+0x03816C | dialogue_extended_01_prefix | 01 C4 04 C6 04 | [01]ノおヒお
+0x038282 | dialogue_extended_01_prefix | 01 AC 01 52 03 | [01]ア[01]らえ
+0x038638 | dialogue_extended_01_prefix | 01 CA 01 B2 01 A0 01 | [01]マ[01]キ[01]ポ[01]
+0x038666 | dialogue_extended_01_prefix | 01 BE 01 D2 01 A0 01 | [01]テ[01]ラ[01]ポ[01]
+0x038688 | dialogue_extended_01_prefix | 01 D8 01 DA 01 DC 01 | [01]ヲ[01]ー[01]゜[01]
+0x03878E | dialogue_extended_01_prefix | 01 EA 02 D8 02 DA 02 | [01]{EA}…ヲ…ー…
+0x03887C | dialogue_extended_01_prefix | 01 EA 02 D8 02 DA 02 | [01]{EA}…ヲ…ー…
+0x03889A | dialogue_extended_01_prefix | 01 96 01 98 01 9A 01 4C | [01]ド[01]ビ[01]ベ[01]む
+0x03889C | dialogue_extended_01_prefix | 01 98 01 9A 01 4C 00 E0 02 | [01]ビ[01]ベ[01]む
+0x03894E | dialogue_extended_01_prefix | 01 F2 01 CC 03 1C 00 88 | [01]{F2}[01]ムえぱ
+0x038950 | dialogue_extended_01_prefix | 01 CC 03 1C 00 88 00 42 | [01]ムえぱ
+0x038970 | dialogue_extended_01_prefix | 01 C8 02 AE 00 20 00 3A | [01]ヘ…ウ
+0x038A17 | dialogue_extended_FE | 2A 01 42 01 4E 01 FE | ゎ[01]ぬ[01]も[01][FE]
+0x038ACA | dialogue_extended_01_prefix | 01 E6 01 C6 03 E2 01 | [01]思[01]ヒえ・[01]
+0x038ED0 | dialogue_extended_01_prefix | 01 8D 43 11 A9 1E 8D 44 11 C2 20 A9 | [01]ねぞョぷのぞヌぽョ
+0x038EE7 | dialogue_extended_01_prefix | 01 8D 48 07 AD 46 07 18 69 | [01]へキイひキび{69}
+0x038EF7 | dialogue_extended_01_prefix | 01 8D 44 07 20 18 90 9C 9F 02 9C A7 02 9C A1 02 9C A9 02 9C A3 02 9C AB 02 22 84 86 80 22 9C 86 80 A9 02 | [01]のキびパペ…パャ…パァ…パョ…パゥ…パヴ…ぃ{84}{86}{80}ぃパ{86}{80}ョ…
+0x0390A9 | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 E2 20 A9 13 8D C6 02 C2 20 20 36 91 20 7D 91 20 8C 91 20 66 C8 20 4C C8 E2 20 A9 A1 8D D0 02 8D | [01]ぃと{87}{80}ゅ「・ョヒ…ヌぽゾ{7D}ゴ思む・ョユ…ザ
+0x039113 | dialogue_extended_01_prefix | 01 8D A1 02 AD 14 02 C9 | [01]ァ…イづ…ホ
+0x0391B2 | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 08 C2 30 A2 01 | [01]ぃと{87}{80}ゅ「がヌおィ[01]
+0x0391E8 | dialogue_extended_01_prefix | 01 8D A1 02 9C A9 02 20 97 92 20 C6 92 20 D5 92 E2 20 A9 A1 8D D0 02 8D | [01]ァ…パョ…バヒレ・ョユ…ザ
+0x039217 | dialogue_extended_01_prefix | 01 8D A1 02 AD 14 02 C9 | [01]ァ…イづ…ホ
+0x039274 | dialogue_extended_01_prefix | 01 8D A1 02 AD 14 02 C9 | [01]ァ…イづ…ホ
+0x0392E7 | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 20 99 93 20 C8 93 20 D7 93 E2 20 A9 A1 8D D0 02 8D | [01]ぃと{87}{80}ゅ「ブヘワ・ョユ…ザ
+0x039316 | dialogue_extended_01_prefix | 01 8D A1 02 AD 14 02 C9 | [01]ァ…イづ…ホ
+0x039376 | dialogue_extended_01_prefix | 01 8D A1 02 AD 14 02 C9 | [01]ァ…イづ…ホ
+0x0393E9 | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 20 9B 94 20 B5 94 20 C4 94 E2 20 A9 A1 8D D0 02 8D | [01]ぃと{87}{80}ゅ「ボコノ・ョユ…ザ
+0x039418 | dialogue_extended_01_prefix | 01 8D A1 02 AD 14 02 C9 | [01]ァ…イづ…ホ
+0x039478 | dialogue_extended_01_prefix | 01 8D A1 02 AD 14 02 C9 | [01]ァ…イづ…ホ
+0x0394D6 | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 20 88 95 20 B7 95 20 C6 95 E2 20 A9 A1 8D D0 02 8D | [01]ぃと{87}{80}ゅ「ガシヒ・ョユ…ザ
+0x039505 | dialogue_extended_01_prefix | 01 8D A1 02 AD 14 02 C9 | [01]ァ…イづ…ホ
+0x039565 | dialogue_extended_01_prefix | 01 8D A1 02 AD 14 02 C9 | [01]ァ…イづ…ホ
+0x03962E | dialogue_extended_01_prefix | 01 30 28 38 E9 F0 01 8D 40 18 A9 10 | [01]おゅす{E9}{F0}[01]なびョぜ
+0x039634 | dialogue_extended_01_prefix | 01 8D 40 18 A9 10 00 38 ED 40 18 C9 08 | [01]なびョぜ
+0x0396EB | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 20 1B 97 20 4A 97 20 68 97 E2 20 A9 A1 8D D0 02 8D | [01]ぃと{87}{80}ゅ「ぼま{68}・ョユ…ザ
+0x039770 | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 A9 09 | [01]ぃと{87}{80}ゅ「ョぎ
+0x039906 | dialogue_extended_01_prefix | 01 30 06 9C F9 0F A9 | [01]おカパ{F9}ずョ
+0x03990E | dialogue_extended_01_prefix | 01 8D F7 0F 60 AE 99 0F AD AB 0F 20 E1 98 AD F9 0F 8D AB 0F AD F7 0F 8D 99 0F AA AC 9B 0F A9 | [01]{F7}ず「ウブずイヴず」イ{F9}ずヴずイ{F7}ずブずヮアボずョ
+0x039C27 | dialogue_extended_01_prefix | 01 8D A1 02 C9 00 01 10 0B 22 9C 86 80 22 B6 85 80 82 B2 | [01]ァ…ホ
+0x039C3D | dialogue_extended_01_prefix | 01 8D A1 02 60 08 C2 30 A9 BF 02 22 43 88 80 22 63 FA 80 A2 | [01]ァ…「がヌおョト…ぃねガ{80}ぃ事{FA}{80}ィ
+0x039C64 | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 08 C2 30 A9 8F 04 22 43 88 80 22 63 FA 80 A2 | [01]ぃと{87}{80}ゅ「がヌおョズおぃねガ{80}ぃ事{FA}{80}ィ
+0x039C8D | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 9C A1 02 9C A9 02 20 E2 9C 20 11 9D 20 20 9D E2 20 A9 A1 8D D0 02 8D | [01]ぃと{87}{80}ゅ「パァ…パョ…・ぞぽ・ョユ…ザ
+0x039D28 | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 08 C2 30 A2 05 | [01]ぃと{87}{80}ゅ「がヌおィか
+0x039D37 | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 48 DA 5A AD 40 18 C9 | [01]ぃと{87}{80}ゅ「へーーイなびホ
+0x039D99 | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 0A | [01][01][01]…[01]え[01]…[01][01]ぐ
+0x039DA5 | dialogue_extended_01_prefix | 01 01 01 02 03 03 02 02 02 01 A0 | [01][01][01]…ええ………[01]ポ
+0x039DB1 | dialogue_extended_01_prefix | 01 01 01 02 03 03 01 02 01 01 A8 | [01][01][01]…ええ[01]…[01][01]ュ
+0x039DBD | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 0A | [01][01][01]…[01]え[01]…[01][01]ぐ
+0x039DC9 | dialogue_extended_01_prefix | 01 01 01 02 01 03 02 02 02 01 A4 | [01][01][01]…[01]え………[01]ェ
+0x039DD5 | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 78 | [01][01][01]…[01]え[01]…[01][01]{78}
+0x039DE1 | dialogue_extended_01_prefix | 01 01 01 02 08 03 01 02 01 01 | [01][01][01]…がえ[01]…[01][01]
+0x039E04 | dialogue_extended_01_prefix | 01 8D A1 02 9C A9 02 20 9B 96 20 CA 96 20 D9 96 20 65 9E 20 7F 9E 20 EF 9E 20 A7 9E 20 D1 9E 20 E0 9E E2 20 A9 A1 8D D0 02 8D | [01]ァ…パョ…ボマン言{7F}{EF}ャヨ「・ョユ…ザ
+0x039EE8 | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 08 C2 30 A2 01 | [01]ぃと{87}{80}ゅ「がヌおィ[01]
+0x039F6A | dialogue_extended_01_prefix | 01 06 02 04 01 08 00 08 01 08 | [01]カ…お[01]が
+0x039F76 | dialogue_extended_01_prefix | 01 08 02 04 01 0A 00 06 01 03 02 02 01 08 | [01]が…お[01]ぐ
+0x039F7E | dialogue_extended_01_prefix | 01 03 02 02 01 08 00 04 01 06 02 04 01 | [01]え……[01]が
+0x039F86 | dialogue_extended_01_prefix | 01 06 02 04 01 | [01]カ…お[01]
+0x03A018 | dialogue_extended_01_prefix | 01 AD 44 18 C9 00 00 D0 14 AD A9 0F C9 | [01]イのびホ
+0x03A02B | dialogue_extended_01_prefix | 01 9C A5 0F 82 45 01 82 4E 01 C9 02 | [01]パォず{82}は[01]{82}も[01]ホ…
+0x03A031 | dialogue_extended_01_prefix | 01 82 4E 01 C9 02 00 D0 1F AD A9 0F C9 | [01]{82}も[01]ホ…
+0x03A055 | dialogue_extended_01_prefix | 01 82 2A 01 C9 04 00 D0 2D AD A9 0F C9 | [01]{82}ゎ[01]ホお
+0x03A46E | dialogue_extended_01_prefix | 01 8D B5 0F 8D B7 0F 9C 38 18 9C A3 0F A9 78 | [01]コずシずパすびパゥずョ{78}
+0x03A4CC | dialogue_extended_01_prefix | 01 8D 9F 02 AD 38 18 C9 30 02 D0 03 82 FD | [01]ペ…イすびホお…ユえ{82}{FD}
+0x03A63D | dialogue_extended_01_prefix | 01 8D 99 0F A9 6D 00 8D 9B 0F 9C 9D 0F 9C A3 0F A9 05 | [01]ブずョ{6D}
+0x03A650 | dialogue_extended_FE | 8D A5 0F A9 FE | ォずョ[FE]
+0x03A65B | dialogue_extended_01_prefix | 01 8D A7 0F A9 6E 00 8D A9 0F 9C AB 0F 9C B1 0F A9 06 | [01]ャずョ{6E}
+0x03A679 | dialogue_extended_01_prefix | 01 8D B5 0F A9 6F 00 8D B7 0F 9C B9 0F 9C BF 0F A9 05 | [01]コずョ{6F}
+0x03A697 | dialogue_extended_01_prefix | 01 8D C3 0F A9 70 00 8D C5 0F 9C C7 0F 9C CD 0F A9 05 | [01]ネずョ{70}
+0x03A6B5 | dialogue_extended_01_prefix | 01 8D D1 0F A9 71 00 8D D3 0F 9C D5 0F 9C DB 0F A9 05 | [01]ヨずョ{71}
+0x03A6D3 | dialogue_extended_01_prefix | 01 8D DF 0F A9 72 00 8D E1 0F 9C E3 0F 9C E9 0F A9 05 | [01]。ずョ{72}
+0x03A72D | dialogue_extended_01_prefix | 01 8D 9F 02 AD A5 0F 3A 8D A5 0F C9 | [01]ペ…イォずそォずホ
+0x03AC69 | dialogue_extended_01_prefix | 01 8D 99 0F A9 6D 00 8D 9B 0F 9C 9D 0F 9C A3 0F A9 05 | [01]ブずョ{6D}
+0x03AC7C | dialogue_extended_FE | 8D A5 0F A9 FE | ォずョ[FE]
+0x03AC87 | dialogue_extended_01_prefix | 01 8D A7 0F A9 6E 00 8D A9 0F 9C AB 0F 9C B1 0F A9 06 | [01]ャずョ{6E}
+0x03ACA5 | dialogue_extended_01_prefix | 01 8D B5 0F A9 6F 00 8D B7 0F 9C B9 0F 9C BF 0F A9 05 | [01]コずョ{6F}
+0x03ACC3 | dialogue_extended_01_prefix | 01 8D C3 0F A9 70 00 8D C5 0F 9C C7 0F 9C CD 0F A9 05 | [01]ネずョ{70}
+0x03ACE1 | dialogue_extended_01_prefix | 01 8D D1 0F A9 71 00 8D D3 0F 9C D5 0F 9C DB 0F A9 05 | [01]ヨずョ{71}
+0x03ACFF | dialogue_extended_01_prefix | 01 8D DF 0F A9 72 00 8D E1 0F 9C E3 0F 9C E9 0F A9 05 | [01]。ずョ{72}
+0x03AD59 | dialogue_extended_01_prefix | 01 8D 9F 02 AD A5 0F 3A 8D A5 0F C9 | [01]ペ…イォずそォずホ
+0x03B235 | dialogue_extended_01_prefix | 01 30 06 A9 04 00 8D 1C 02 28 60 20 44 B2 6B 08 C2 30 22 C5 BB 82 20 18 90 22 84 86 80 22 9C 86 80 A9 11 | [01]おカョお
+0x03B284 | dialogue_extended_01_prefix | 01 30 06 A9 01 00 8D 3C 18 22 84 86 80 AD 3C 18 F0 1C A2 10 | [01]おカョ[01]
+0x03B4DC | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 08 C2 30 E2 20 A9 81 8D D0 02 8D | [01]ぃと{87}{80}ゅ「がヌお・ョユ…ザ
+0x03B573 | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 08 C2 30 E2 20 A9 81 8D D0 02 8D | [01]ぃと{87}{80}ゅ「がヌお・ョユ…ザ
+0x03B5E6 | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 08 C2 30 A9 C3 04 22 43 88 80 22 63 FA 80 A2 | [01]ぃと{87}{80}ゅ「がヌおョネおぃねガ{80}ぃ事{FA}{80}ィ
+0x03B714 | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 48 DA 5A AD 1C 02 89 10 | [01]ぃと{87}{80}ゅ「へーーイぱ…ギぜ
+0x03B7A7 | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 0A | [01][01][01]…[01]え[01]…[01][01]ぐ
+0x03B7B3 | dialogue_extended_01_prefix | 01 01 01 02 03 03 02 02 02 01 A0 | [01][01][01]…ええ………[01]ポ
+0x03B7BF | dialogue_extended_01_prefix | 01 01 01 02 03 03 01 02 01 01 A8 | [01][01][01]…ええ[01]…[01][01]ュ
+0x03B7CB | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 0A | [01][01][01]…[01]え[01]…[01][01]ぐ
+0x03B7D7 | dialogue_extended_01_prefix | 01 01 01 02 01 03 02 02 02 01 A4 | [01][01][01]…[01]え………[01]ェ
+0x03B7E3 | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 78 | [01][01][01]…[01]え[01]…[01][01]{78}
+0x03B7EF | dialogue_extended_01_prefix | 01 01 01 02 08 03 01 02 01 01 | [01][01][01]…がえ[01]…[01][01]
+0x03B97D | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 10 | [01][01][01]…[01]え[01]…[01][01]ぜ
+0x03B989 | dialogue_extended_01_prefix | 01 01 01 02 03 03 02 02 02 01 A0 | [01][01][01]…ええ………[01]ポ
+0x03B995 | dialogue_extended_01_prefix | 01 01 01 02 03 03 01 02 01 01 A8 | [01][01][01]…ええ[01]…[01][01]ュ
+0x03B9A1 | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 40 | [01][01][01]…[01]え[01]…[01][01]な
+0x03B9AD | dialogue_extended_01_prefix | 01 01 01 02 01 03 02 02 02 01 A4 | [01][01][01]…[01]え………[01]ェ
+0x03B9B9 | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 78 | [01][01][01]…[01]え[01]…[01][01]{78}
+0x03B9C5 | dialogue_extended_01_prefix | 01 01 01 02 08 03 01 02 01 01 | [01][01][01]…がえ[01]…[01][01]
+0x03BB53 | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 0A | [01][01][01]…[01]え[01]…[01][01]ぐ
+0x03BB5F | dialogue_extended_01_prefix | 01 01 01 02 03 03 02 02 02 01 A0 | [01][01][01]…ええ………[01]ポ
+0x03BB6B | dialogue_extended_01_prefix | 01 01 01 02 03 03 01 02 01 01 A8 | [01][01][01]…ええ[01]…[01][01]ュ
+0x03BB77 | dialogue_extended_01_prefix | 01 01 01 02 04 03 01 02 01 01 20 | [01][01][01]…おえ[01]…[01][01]ぽ
+0x03BB7D | dialogue_extended_01_prefix | 01 02 01 01 20 00 01 01 01 02 01 03 02 02 02 01 A4 | [01]…[01][01]あ[01][01]…[01]え………[01]ェ
+0x03BB8F | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 78 | [01][01][01]…[01]え[01]…[01][01]{78}
+0x03BB9B | dialogue_extended_01_prefix | 01 01 01 02 08 03 01 02 01 01 | [01][01][01]…がえ[01]…[01][01]
+0x03BD29 | dialogue_extended_01_prefix | 01 01 01 02 02 03 01 02 01 01 0A | [01][01][01]……え[01]…[01][01]ぐ
+0x03BD35 | dialogue_extended_01_prefix | 01 01 01 02 03 03 02 02 02 01 A0 | [01][01][01]…ええ………[01]ポ
+0x03BD41 | dialogue_extended_01_prefix | 01 01 01 02 03 03 01 02 01 01 A8 | [01][01][01]…ええ[01]…[01][01]ュ
+0x03BD4D | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 0A | [01][01][01]…[01]え[01]…[01][01]ぐ
+0x03BD5A | dialogue_extended_01_prefix | 01 02 02 01 03 02 02 02 01 A4 | [01]……[01]え………[01]ェ
+0x03BD65 | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 78 | [01][01][01]…[01]え[01]…[01][01]{78}
+0x03BD71 | dialogue_extended_01_prefix | 01 01 01 02 08 03 01 02 01 01 | [01][01][01]…がえ[01]…[01][01]
+0x03BED5 | dialogue_extended_FE | 22 72 8E 80 28 AD 3C 18 1A 1A 8D 3C 18 AD 40 18 3A 8D 40 18 7A FA 68 60 FE | ぃ{72}ジ{80}ゅイちびべべちびイなびそなび{7A}{FA}{68}「[FE]
+0x03BEFF | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 0A | [01][01][01]…[01]え[01]…[01][01]ぐ
+0x03BF0B | dialogue_extended_01_prefix | 01 01 01 02 03 03 02 02 02 01 A0 | [01][01][01]…ええ………[01]ポ
+0x03BF17 | dialogue_extended_01_prefix | 01 01 01 02 03 03 01 02 01 01 A8 | [01][01][01]…ええ[01]…[01][01]ュ
+0x03BF24 | dialogue_extended_01_prefix | 01 01 02 01 03 01 02 01 01 0A | [01][01]…[01]え[01]…[01][01]ぐ
+0x03BF2F | dialogue_extended_01_prefix | 01 01 01 02 06 03 02 02 02 01 A4 | [01][01][01]…カえ………[01]ェ
+0x03BF3B | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 78 | [01][01][01]…[01]え[01]…[01][01]{78}
+0x03BF47 | dialogue_extended_01_prefix | 01 01 01 02 08 03 01 02 01 01 | [01][01][01]…がえ[01]…[01][01]
+0x03C0E2 | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 0A | [01][01][01]…[01]え[01]…[01][01]ぐ
+0x03C0EE | dialogue_extended_01_prefix | 01 01 01 02 03 03 02 02 02 01 A0 | [01][01][01]…ええ………[01]ポ
+0x03C0FA | dialogue_extended_01_prefix | 01 01 01 02 03 03 01 02 01 01 A8 | [01][01][01]…ええ[01]…[01][01]ュ
+0x03C106 | dialogue_extended_01_prefix | 01 01 01 02 08 03 01 02 01 01 0A | [01][01][01]…がえ[01]…[01][01]ぐ
+0x03C112 | dialogue_extended_01_prefix | 01 01 01 02 01 03 02 02 02 01 A4 | [01][01][01]…[01]え………[01]ェ
+0x03C11E | dialogue_extended_01_prefix | 01 01 01 02 01 03 01 02 01 01 78 | [01][01][01]…[01]え[01]…[01][01]{78}
+0x03C12A | dialogue_extended_01_prefix | 01 01 01 02 08 03 01 02 01 01 | [01][01][01]…がえ[01]…[01][01]
+0x03C1C1 | dialogue_extended_01_prefix | 01 06 02 04 01 08 00 08 01 08 | [01]カ…お[01]が
+0x03C1CD | dialogue_extended_01_prefix | 01 08 02 04 01 0A 00 06 01 03 02 02 01 08 | [01]が…お[01]ぐ
+0x03C1D5 | dialogue_extended_01_prefix | 01 03 02 02 01 08 00 04 01 06 02 04 01 | [01]え……[01]が
+0x03C1DD | dialogue_extended_01_prefix | 01 06 02 04 01 | [01]カ…お[01]
+0x03C3C0 | dialogue_extended_01_prefix | 01 D0 60 AD A1 02 38 E9 | [01]ユ「イァ…す{E9}
+0x03C44F | dialogue_extended_01_prefix | 01 8D A1 02 C9 00 01 10 20 22 B6 85 80 82 CA | [01]ァ…ホ
+0x03C45F | dialogue_extended_FF | AD A1 02 38 ED 42 18 29 FF 01 | イァ…す{ED}ぬびょ[FF01]
+0x03C468 | dialogue_extended_01_prefix | 01 8D A1 02 C9 00 01 30 07 22 B6 85 80 82 B1 | [01]ァ…ホ
+0x03C47A | dialogue_extended_01_prefix | 01 8D A1 02 22 12 89 80 22 BB 88 80 7A FA 68 28 60 20 8F C4 6B 08 C2 30 48 DA 5A 22 8D 88 80 22 E4 88 80 E2 20 A9 13 8D C6 02 9C D1 02 C2 20 9C 9F 02 9C A7 02 9C A1 02 9C A9 02 9C 42 18 9C F0 11 22 C5 BB 82 9C 3E 18 AD 56 11 D0 03 82 5C 01 C9 01 | [01]ァ…ぃだギ{80}ぃタガ{80}{7A}{FA}{68}ゅ「ズ{6B}がヌおへーーぃガ{80}ぃ見ガ{80}・ョヒ…パヨ…ヌパ…パャ…パァ…パョ…パぬびパ{F0}ぞぃハタ{82}パてびイろぞユえ{82}゜[01]ホ[01]
+0x03C519 | dialogue_extended_01_prefix | 01 0A AA BF 9C C6 87 D0 0B 20 36 91 20 7D 91 20 8C 91 80 09 20 08 C7 20 4F C7 20 5E C7 20 95 C7 20 C7 C7 20 DC C7 20 66 C8 20 4C C8 E2 20 A9 A1 8D D0 02 8D | [01]ぐヮトパヒ{87}ユげさ{7D}ゴ{80}ぎがや！デフ゜思む・ョユ…ザ
+0x03C7E4 | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 A5 04 A5 04 A5 04 A5 04 A5 04 A5 04 A5 04 A5 04 A5 04 A5 04 A5 04 A5 04 A5 04 A5 04 A6 04 A6 04 A6 04 A6 04 A6 04 A5 04 A5 04 A5 04 A5 04 A5 04 A5 04 A5 04 A5 04 | [01]ぃと{87}{80}ゅ「ォおォおォおォおォおォおォおォおォおォおォおォおォおォおッおッおッおッおッおォおォおォおォおォおォおォおォお
+0x03C845 | dialogue_extended_01_prefix | 01 22 3F 87 80 28 60 08 C2 30 A9 23 05 22 43 88 80 22 63 FA 80 A2 | [01]ぃと{87}{80}ゅ「がヌおョぅかぃねガ{80}ぃ事{FA}{80}ィ
+0x03C8B2 | dialogue_extended_01_prefix | 01 8D A1 02 E2 20 A9 15 8D 21 18 A9 02 8D 1F 18 C2 20 20 EA C1 22 CD E9 82 20 AD C3 AD 14 02 C9 | [01]ァ…・ョぁびョ…ぺびヌぽニぃメ{E9}{82}イイづ…ホ
+0x03C8EB | dialogue_extended_01_prefix | 01 8D 1F 18 C2 20 20 EA C1 20 9D C2 22 CD E9 82 20 AD C3 AD 14 02 C9 | [01]ぺびヌぽニピぃメ{E9}{82}イイづ…ホ
+0x03CA14 | dialogue_extended_01_prefix | 01 8D 48 07 AD 46 07 18 69 | [01]へキイひキび{69}
+0x03CDD4 | dialogue_extended_01_prefix | 01 D0 05 20 22 D2 80 24 AD 18 02 89 | [01]ユかぃ{80}ぇイび…ギ
+0x03D190 | dialogue_extended_01_prefix | 01 10 A9 48 00 8D 11 10 A9 70 | [01]ぜョへ
+0x03D298 | dialogue_extended_FE | 0C A1 11 AD AD 11 8D A3 11 EE A9 11 BD FE | ごァぞイイぞゥぞ{EE}ョぞツ[FE]
+0x03D2AA | dialogue_extended_FE | 30 05 DE FE | おか！[FE]
+0x03D2F9 | dialogue_extended_FE | 0C A1 11 AD AD 11 8D A3 11 EE A9 11 BD FE | ごァぞイイぞゥぞ{EE}ョぞツ[FE]
+0x03D33D | dialogue_extended_FE | 9D 04 12 7A FA 68 28 60 08 C2 30 AD A9 11 D0 28 AD 95 11 22 63 DC 82 BD FE | ピおだ{7A}{FA}{68}ゅ「がヌおイョぞユゅイデぞぃ事゜{82}ツ[FE]
+0x03D39D | dialogue_extended_01_prefix | 01 30 1A 38 E3 01 8D 79 17 68 8A 4A 20 1F D5 20 AD D5 A9 03 | [01]おべす事[01]{79}ば{68}グまぺイョえ
+0x03D4EB | dialogue_extended_01_prefix | 01 B1 01 B2 01 B3 01 B4 01 B2 01 08 C2 30 A2 | [01]カ[01]キ[01]ク[01]ケ[01]キ[01]がヌおィ
+0x03D4F5 | dialogue_extended_01_prefix | 01 08 C2 30 A2 00 00 A0 | [01]がヌおィ
+0x03D503 | dialogue_extended_01_prefix | 01 C8 8A 18 69 10 00 AA E0 50 | [01]ヘグび{69}ぜ
+0x03D5CE | dialogue_extended_FE | AD 79 17 22 E8 F6 80 28 60 08 C2 30 AD 95 11 22 63 DC 82 BD FE | イ{79}ばぃ{E8}{F6}{80}ゅ「がヌおイデぞぃ事゜{82}ツ[FE]
+0x03D6CD | dialogue_extended_01_prefix | 01 1A C9 05 00 D0 EB 20 CB DC 90 9B A0 | [01]べホか
+0x03D76E | dialogue_extended_01_prefix | 01 D0 0E A9 02 00 85 71 22 | [01]ユじョ…
+0x03D8CC | dialogue_extended_01_prefix | 01 18 60 08 C2 30 E2 20 A9 81 8D D0 02 8D | [01]び「がヌお・ョユ…ザ
+0x03DB2C | dialogue_extended_01_prefix | 01 65 02 66 03 67 04 68 05 69 08 8B 4B AB C2 30 AD D4 17 29 | [01]言…思え、お{68}か{69}がゲみヴヌおイルばょ
+0x03DC4F | dialogue_extended_01_prefix | 01 08 C2 30 A2 78 00 AD 5D 10 F0 06 8A 18 69 20 | [01]がヌおィ{78}
+0x03DCB4 | dialogue_extended_01_prefix | 01 BE 01 BD 01 C0 01 BA 01 C3 01 B9 01 C4 01 BB 01 C2 01 BC 01 BF 01 C2 30 22 | [01]テ[01]ツ[01]ナ[01]ソ[01]ネ[01]セ[01]ノ[01]タ[01]ヌ[01]チ[01]ト[01]ヌおぃ
+0x03DE8C | dialogue_extended_01_prefix | 01 0E 0C 0E 17 0E 06 18 12 18 08 C2 30 A2 80 | [01]じごじばじカびだびがヌおィ{80}
+0x03DFA4 | dialogue_extended_01_prefix | 01 D0 06 20 33 E4 82 8B | [01]ユカく{82}ゲ
+0x03E18D | dialogue_extended_FE | 9D 06 12 9E 08 12 B9 23 E2 9D FC 11 B9 25 E2 9D FE | ピカだプがだセぅ・ピ{FC}ぞセぉ・ピ[FE]
+0x03E514 | dialogue_extended_FE | DA BD 02 12 F0 2A BD FC 11 CD 5D 10 D0 22 BD FE | ーツ…だ{F0}ゎツ{FC}ぞメ？ぜユぃツ[FE]
+0x03E54D | dialogue_extended_01_prefix | 01 D0 C4 28 60 08 C2 30 AD 5F 10 F0 0E C9 01 | [01]ユノゅ「がヌおイ。ぜ{F0}じホ[01]
+0x03EA8B | dialogue_extended_01_prefix | 01 D0 0E A9 02 00 85 71 22 | [01]ユじョ…
+0x03EE4A | dialogue_extended_01_prefix | 01 D0 0E A9 02 00 85 71 22 | [01]ユじョ…
+0x03EF55 | dialogue_extended_01_prefix | 01 3A FA FA 28 60 08 C2 30 48 5A A5 0F 29 | [01]そ{FA}{FA}ゅ「がヌおへーォずょ
+0x03EF7E | dialogue_extended_01_prefix | 01 D0 F6 C2 20 7A 68 28 60 08 C2 30 48 5A A5 0F 29 | [01]ユ{F6}ヌ{7A}ゅ「がヌおへーォずょ
+0x03F0A6 | dialogue_extended_01_prefix | 01 05 28 C2 13 36 00 02 05 28 C4 13 40 | [01]かゅヌぢさ
+0x03F0B4 | dialogue_extended_01_prefix | 01 05 28 C5 13 45 00 01 05 28 C6 13 4A | [01]かゅハぢは
+0x03F0BB | dialogue_extended_01_prefix | 01 05 28 C6 13 4A 00 01 05 28 C7 13 4F | [01]かゅヒぢま
+0x03F0C2 | dialogue_extended_01_prefix | 01 05 28 C7 13 4F 00 01 05 28 CF 13 54 | [01]かゅフぢや
+0x03F0C9 | dialogue_extended_01_prefix | 01 05 28 CF 13 54 00 01 05 28 D0 13 59 | [01]かゅヤぢる
+0x03F0D0 | dialogue_extended_01_prefix | 01 05 28 D0 13 59 00 01 05 28 D1 13 5E | [01]かゅユぢん
+0x03F0D7 | dialogue_extended_01_prefix | 01 05 28 D1 13 5E 00 01 05 28 D4 13 63 | [01]かゅヨぢ！
+0x03F0DE | dialogue_extended_01_prefix | 01 05 28 D4 13 63 00 01 05 28 D7 13 68 | [01]かゅルぢ事
+0x03F0E5 | dialogue_extended_01_prefix | 01 05 28 D7 13 68 00 01 05 28 D8 13 6D | [01]かゅワぢ{68}
+0x03F0EC | dialogue_extended_01_prefix | 01 05 28 D8 13 6D 00 01 05 28 79 17 72 | [01]かゅヲぢ{6D}
+0x03F11D | dialogue_extended_01_prefix | 01 05 02 D7 17 A1 00 01 05 02 7A 02 A6 | [01]か…ワばァ
+0x03F124 | dialogue_extended_01_prefix | 01 05 02 7A 02 A6 00 02 01 | [01]か…{7A}…ッ
+0x03F23E | dialogue_extended_01_prefix | 01 7A 7A FA C8 E8 E0 4A 19 D0 E2 A2 95 02 E2 20 A9 80 9F | [01]{7A}{7A}{FA}ヘ{E8}「まぶユ・ィデ…・ョペ
+0x03F499 | dialogue_extended_01_prefix | 01 B1 01 B2 01 B3 01 B4 01 B2 01 08 C2 30 8D FC 17 A9 | [01]カ[01]キ[01]ク[01]ケ[01]キ[01]がヌお{FC}ばョ
+0x03F5D3 | dialogue_extended_01_prefix | 01 20 7E A9 40 8F 01 21 7E A9 20 8F 01 22 7E A9 A0 8F 02 20 7E 8F 25 20 7E 8F 02 21 7E 8F 25 21 7E 8F 02 22 7E 8F 25 22 7E A9 98 8F 48 20 7E 8F 48 21 7E 8F 48 22 7E A9 20 8F 23 20 7E 8F 46 20 7E 8F 23 21 7E 8F 46 21 7E 8F 23 22 7E 8F 46 22 7E A9 80 8F 24 20 7E 8F 47 20 7E A9 40 8F 24 21 7E 8F 47 21 7E A9 20 8F 24 22 7E 8F 47 22 7E A9 01 8F 61 20 7E 8F 61 21 7E 8F 61 22 7E A9 80 8F 62 20 7E A9 40 8F 62 21 7E A9 20 8F 62 22 7E C2 20 28 60 20 6A F6 6B 08 C2 30 A9 | [01]くなズ[01]ぁくョズぃくョポズ…くぉく…ぁくズぉぁくズ…ぃくズぉぃくョビズへくへぁくズへぃくョズくひくぅぁくズひぁくズぅぃくズひぃくョ{80}ズぇくふくなズぇぁくズふぁくョズぃくズふぃくョ[01]ズ」く」ぁくズ」ぃくョ{80}ズ・くなズ・ぁくョズぃくヌゅ{6A}{6B}がヌおョ
+0x03F643 | dialogue_extended_01_prefix | 01 8F 61 20 7E 8F 61 21 7E 8F 61 22 7E A9 80 8F 62 20 7E A9 40 8F 62 21 7E A9 20 8F 62 22 7E C2 20 28 60 20 6A F6 6B 08 C2 30 A9 | [01]ズ」く」ぁくズ」ぃくョ{80}ズ・くなズ・ぁくョズぃくヌゅ{6A}{6B}がヌおョ
+0x03F68B | dialogue_extended_01_prefix | 01 8D CB 02 A5 96 C9 01 F0 38 A9 | [01]ミ…ォドホ[01]{F0}すョ
+0x03F6EC | dialogue_extended_01_prefix | 01 F0 0E E2 20 AD D1 02 09 1C 8D D1 02 C2 20 80 09 E2 20 AD D1 02 09 10 C2 20 A9 01 | [01]{F0}じ・イ…ぎぱヨ…ヌ{80}・イ…ぎぜヌョ
+0x03F7BB | dialogue_extended_01_prefix | 01 07 41 01 06 55 01 05 69 01 04 87 01 03 A5 01 02 C3 01 01 F5 01 | [01]キに[01]カれ[01]か{69}[01]お{87}[01]えォ[01]…ネ[01][01]{F5}[01]
+0x03F7C7 | dialogue_extended_01_prefix | 01 03 A5 01 02 C3 01 01 F5 01 | [01]えォ[01]…ネ[01][01]{F5}[01]
+0x04000C | dialogue_extended_01_prefix | 01 C4 30 C5 F4 00 E8 02 C4 32 C5 F5 | [01]ノおハ{F4}
+0x040333 | dialogue_extended_01_prefix | 01 D0 E2 6F 08 00 2B 0B E4 31 C4 | [01]ユ・{6F}が
+0x040360 | dialogue_extended_01_prefix | 01 C4 07 3F DA 14 6F 10 | [01]ノキとーづ{6F}ぜ
+0x040374 | dialogue_extended_01_prefix | 01 C4 07 3F A5 14 6F 1F | [01]ノキとォづ{6F}ぺ
+0x040399 | dialogue_extended_01_prefix | 01 C5 A4 02 6F 20 00 7E 0B E4 31 28 07 C4 07 E4 31 C4 | [01]ハェ…{6F}あげ見かゅキノキ見かノ
+0x0403EA | dialogue_extended_01_prefix | 01 C4 0E 6F 07 00 BE 0B E4 0E 28 | [01]ノじ{6F}キ
+0x0403F0 | dialogue_extended_FE | BE 0B E4 0E 28 FE | テげ見じゅ[FE]
+0x040581 | dialogue_extended_01_prefix | 01 E5 01 20 88 20 C4 02 E4 | [01]言[01]ガノ…見
+0x040598 | dialogue_extended_01_prefix | 01 88 20 C4 01 C4 04 E8 | [01]ガノノお{E8}
+0x0406E9 | dialogue_extended_01_prefix | 01 9F 5C 28 07 60 84 06 FD F6 A5 02 8D 18 CF C4 03 CB 04 E4 03 60 88 78 C4 03 E4 04 84 10 C4 04 E4 03 60 84 02 C4 03 E4 04 88 | [01]ペ゜ゅキ「{84}カ{FD}{F6}ォ…びヤノえミお見え「ガ{78}ノえ見お{84}ぜノお見え「{84}…ノえ見おガ
+0x0407F2 | dialogue_extended_FE | 15 0B 16 17 16 23 16 2F 16 3B 16 4B 16 10 1A 5B 16 6A 16 EE 16 F2 16 F6 16 FA 16 FE | でげどばどぅどえどたどみどぜべ゛ど{6A}ど{EE}ど{F2}ど{F6}ど{FA}ど[FE]
+0x040874 | dialogue_extended_01_prefix | 01 F7 37 BC 1C 1C C4 29 E8 | [01]{F7}しチぱぱノょ{E8}
+0x0408A5 | dialogue_extended_01_prefix | 01 F7 37 C4 02 E4 37 60 88 02 C4 37 C4 | [01]{F7}しノ…見し「ガ…ノしノ
+0x0408BA | dialogue_extended_01_prefix | 01 E8 03 3F 90 1A 6F E8 03 3F BB 1A 8B 02 F0 0E E4 | [01]{E8}えとゼべ{6F}{E8}えとタべゲ…{F0}じ見
+0x0408E8 | dialogue_extended_01_prefix | 01 E4 37 60 84 00 C4 37 E4 38 84 01 C4 38 6F 8D 02 F7 37 2D DC F7 37 2D E4 37 60 88 03 C4 | [01]見し「{84}
+0x0408F3 | dialogue_extended_01_prefix | 01 C4 38 6F 8D 02 F7 37 2D DC F7 37 2D E4 37 60 88 03 C4 | [01]ノす{6F}う{F7}しい゜{F7}しい見し「ガえノ
+0x04090C | dialogue_extended_01_prefix | 01 E8 02 3F 90 1A AE 60 84 37 C4 37 AE 84 38 C4 38 6F E8 02 3F BB 1A E4 | [01]{E8}…とゼべウ「{84}しノしウ{84}すノす{6F}{E8}…とタべ見
+0x040928 | dialogue_extended_01_prefix | 01 C4 38 6F 09 00 D0 10 3F 39 1A 3F 9D 16 5F 80 0F 70 | [01]ノす{6F}ぎ
+0x040955 | dialogue_extended_01_prefix | 01 E5 07 20 88 20 C4 02 F7 01 60 88 | [01]言キガノ…{F7}[01]「ガ
+0x040966 | dialogue_extended_01_prefix | 01 88 20 C4 04 F8 07 8D | [01]ガノ{F8}キザ
+0x040991 | dialogue_extended_01_prefix | 01 E5 03 20 88 20 C4 02 F7 01 60 88 | [01]言えガノ…{F7}[01]「ガ
+0x0409A3 | dialogue_extended_01_prefix | 01 88 20 D5 66 03 3F 49 11 6F 9B | [01]ガレえとほぞ{6F}ボ
+0x040A20 | dialogue_extended_01_prefix | 01 C4 2D E4 2E 48 | [01]ノい見うへ
+0x040AE3 | dialogue_extended_01_prefix | 01 E5 09 20 88 20 C4 02 F7 01 60 88 | [01]言ぎガノ…{F7}[01]「ガ
+0x040AF5 | dialogue_extended_01_prefix | 01 88 20 D5 A5 03 E8 | [01]ガレえ{E8}
+0x040B04 | dialogue_extended_01_prefix | 01 F5 A5 03 C4 02 8D | [01]{F5}ォえノ…ザ
+0x040B19 | dialogue_extended_01_prefix | 01 10 0B 3F 48 13 2F 09 5F 6A 13 5F 9A 13 3F 27 13 E4 05 75 E5 03 F0 04 90 1B 2F 07 E4 06 75 DD 03 90 12 E4 06 80 B5 DD 03 C4 2D E4 05 80 B5 E5 03 C4 2E 2F 14 E8 01 D5 BD 03 F5 DD 03 80 A4 06 C4 2D F5 E5 03 A4 05 C4 2E F5 AD 03 C4 2B 4D 3F 1A 1B CE E4 2E D5 CD 03 E4 2D D5 C5 03 E4 2C C4 2E E8 | [01]ぜげとへぢえぎ。{6A}ぢ。ベぢとゃぢ見か{75}言え{F0}おゼぼえキ見カ{75}？えゼだ見カ{80}コ？えノい見か{80}コ言えノうえづ{E8}[01]レツえ{F5}？え{80}ェカノい{F5}言えェかノう{F5}イえノゔめとべぼモ見うレメえ見いレハえ見あノう{E8}
+0x040B4F | dialogue_extended_01_prefix | 01 D5 BD 03 F5 DD 03 80 A4 06 C4 2D F5 E5 03 A4 05 C4 2E F5 AD 03 C4 2B 4D 3F 1A 1B CE E4 2E D5 CD 03 E4 2D D5 C5 03 E4 2C C4 2E E8 | [01]レツえ{F5}？え{80}ェカノい{F5}言えェかノう{F5}イえノゔめとべぼモ見うレメえ見いレハえ見あノう{E8}
+0x040B7C | dialogue_extended_FE | C4 2D F5 AD 03 C4 2B 4D 3F 1A 1B CE E4 2D D5 D5 03 AE C4 07 AE C4 06 AE C4 05 6F C4 27 F5 75 02 1C C4 29 F5 7D 02 3C C4 2A 3F FE | ノい{F5}イえノゔめとべぼモ見いレレえウノキウノカウノか{6F}ノゃ{F5}{75}…ぱノょ{F5}{7D}…ちノゎと[FE]
+0x040BDC | dialogue_extended_01_prefix | 01 10 05 3F 48 13 2F 03 3F 27 13 E4 05 D5 E5 03 E4 06 D5 DD 03 E8 | [01]ぜかとへぢええとゃぢ見かレ言え見カレ？え{E8}
+0x040C0C | dialogue_extended_01_prefix | 01 1C 2D F5 B5 03 1C FD E5 08 20 60 88 | [01]ぱい{F5}コえぱ{FD}言が「
+0x040C1B | dialogue_extended_01_prefix | 01 E5 09 20 88 20 C4 02 F7 01 60 88 | [01]言ぎガノ…{F7}[01]「ガ
+0x040C2D | dialogue_extended_01_prefix | 01 88 20 D5 A5 03 AE 60 95 9D 03 D5 9D 03 F5 A5 03 88 | [01]ガレえウ「デピえレピえ{F5}ォえガ
+0x040CBA | dialogue_extended_01_prefix | 01 49 14 F8 07 E4 00 D5 20 02 8D 18 CF C4 03 CB 04 E4 03 60 88 78 C4 03 E4 04 84 10 C4 04 8D | [01]ほづ{F8}キ見
+0x040DCA | dialogue_extended_01_prefix | 01 E5 01 20 88 20 C4 02 E4 | [01]言[01]ガノ…見
+0x040DE1 | dialogue_extended_01_prefix | 01 88 20 C4 01 C4 04 E8 | [01]ガノノお{E8}
+0x040E16 | dialogue_extended_01_prefix | 01 AB 07 E4 07 68 08 D0 CD 6F E4 05 68 | [01]ヴキ見キ{68}がユメ{6F}見か{68}
+0x040F50 | dialogue_extended_01_prefix | 01 3F 80 1A 6F E4 07 3F DE 1A 48 | [01]と{80}べ{6F}見キと！べへ
+0x040F72 | dialogue_extended_01_prefix | 01 2F 18 E8 02 2F 14 E8 03 2F 10 E8 04 2F 0C E8 05 2F 08 E8 06 2F 04 E8 07 2F | [01]えび{E8}…えづ{E8}ええぜ{E8}おえご{E8}かえが{E8}カえお{E8}キえ
+0x040FB3 | dialogue_extended_01_prefix | 01 2F 18 E8 02 2F 14 E8 03 2F 10 E8 04 2F 0C E8 05 2F 08 E8 06 2F 04 E8 07 2F | [01]えび{E8}…えづ{E8}ええぜ{E8}おえご{E8}かえが{E8}カえお{E8}キえ
+0x040FF9 | dialogue_extended_01_prefix | 01 2F 18 E8 02 2F 14 E8 03 2F 10 E8 04 2F 0C E8 05 2F 08 E8 06 2F 04 E8 07 2F | [01]えび{E8}…えづ{E8}ええぜ{E8}おえご{E8}かえが{E8}カえお{E8}キえ
+0x041029 | dialogue_extended_01_prefix | 01 D5 E5 02 E4 02 D5 25 03 E8 01 3F 80 1A 6F 19 | [01]レ言…見…レぉえ{E8}[01]と{80}べ{6F}ぶ
+0x04103D | dialogue_extended_01_prefix | 01 F7 37 C5 65 02 E5 60 02 C5 66 02 E5 62 02 C5 68 02 E8 02 3F 80 1A 6F 7F | [01]{F7}しハ言…言「…ハ思…言・…ハ{68}…{E8}…と{80}べ{6F}{7F}
+0x04106B | dialogue_extended_01_prefix | 01 E5 65 02 30 24 E5 67 02 60 84 | [01]言言…おぇ言、…「{84}
+0x04107E | dialogue_extended_01_prefix | 01 B0 05 C5 68 02 2F 34 E8 | [01]オかハ{68}…えけ{E8}
+0x04109A | dialogue_extended_01_prefix | 01 F0 0F 90 0D C5 68 02 E5 67 02 A4 | [01]{F0}ずゼざハ{68}…言、…ェ
+0x0410EC | dialogue_extended_01_prefix | 01 3F 94 19 E4 2A F8 07 C5 69 02 2F 24 48 | [01]とヅぶ見ゎ{F8}キハ{69}…えぇへ
+0x041106 | dialogue_extended_01_prefix | 01 3F 94 19 E4 2A F8 07 C5 6A 02 2F 0A E5 68 02 5C C5 69 02 C5 6A 02 6F 12 | [01]とヅぶ見ゎ{F8}キハ{6A}…えぐ言{68}…゜ハ{69}…ハ{6A}…{6F}だ
+0x041123 | dialogue_extended_01_prefix | 01 F7 37 C5 60 02 C4 | [01]{F7}しハ「…ノ
+0x041152 | dialogue_extended_01_prefix | 01 3F 94 19 E4 2A F8 07 C5 63 02 2F 24 48 | [01]とヅぶ見ゎ{F8}キハ事…えぇへ
+0x04116C | dialogue_extended_01_prefix | 01 3F 94 19 E4 2A F8 07 C5 64 02 2F 0A E5 62 02 5C C5 63 02 C5 64 02 6F 17 | [01]とヅぶ見ゎ{F8}キハ見…えぐ言・…゜ハ事…ハ見…{6F}ば
+0x041189 | dialogue_extended_01_prefix | 01 F7 37 F8 07 C5 62 02 E8 02 3F 80 1A E5 60 02 C4 | [01]{F7}し{F8}キハ・…{E8}…と{80}べ言「…ノ
+0x0411DA | dialogue_extended_01_prefix | 01 3F 94 19 E4 2A F8 07 C4 15 2F 20 48 | [01]とヅぶ見ゎ{F8}キノでえぽへ
+0x0411F2 | dialogue_extended_01_prefix | 01 3F 94 19 E4 2A F8 07 C4 16 2F 08 E5 6C 02 5C C4 15 C4 16 6F 17 | [01]とヅぶ見ゎ{F8}キノどえが言{6C}…゜ノでノど{6F}ば
+0x041227 | dialogue_extended_01_prefix | 01 F7 37 F8 07 D5 50 02 C4 | [01]{F7}し{F8}キレゆ…ノ
+0x04125A | dialogue_extended_01_prefix | 01 3F 94 19 E4 2A F8 07 D5 | [01]とヅぶ見ゎ{F8}キレ
+0x041274 | dialogue_extended_01_prefix | 01 3F 94 19 E4 2A F8 07 D5 08 02 2F 0A F5 58 02 5C D5 | [01]とヅぶ見ゎ{F8}キレが…えぐ{F5}を…゜レ
+0x0412EC | dialogue_extended_01_prefix | 01 F5 05 04 C4 02 CD | [01]{F5}かおノ…メ
+0x0412FC | dialogue_extended_01_prefix | 01 D0 04 E4 03 F0 05 E4 | [01]ユお見え{F0}か見
+0x0414E2 | dialogue_extended_01_prefix | 01 D5 18 02 3D C8 08 D0 E0 6F E4 18 C4 | [01]レび…つヘがユ「{6F}見びノ
+0x041553 | dialogue_extended_01_prefix | 01 CD 01 3F 5E 1C 6F 0E | [01]メ[01]と！ぱ{6F}じ
+0x041555 | dialogue_extended_01_prefix | 01 3F 5E 1C 6F 0E 00 0A 1C E8 10 C4 | [01]と！ぱ{6F}じ
+0x041565 | dialogue_extended_01_prefix | 01 CD 02 3F 5E 1C 6F 0E | [01]メ…と！ぱ{6F}じ
+0x041577 | dialogue_extended_01_prefix | 01 CD 03 3F 5E 1C 6F 0E | [01]メえと！ぱ{6F}じ
+0x041589 | dialogue_extended_01_prefix | 01 CD 04 3F 5E 1C 6F 0E | [01]メおと！ぱ{6F}じ
+0x04159B | dialogue_extended_01_prefix | 01 CD 05 3F 5E 1C 6F 0E | [01]メかと！ぱ{6F}じ
+0x0415AD | dialogue_extended_01_prefix | 01 CD 06 3F 5E 1C 6F 24 | [01]メカと！ぱ{6F}ぇ
+0x0415BF | dialogue_extended_01_prefix | 01 CD 07 3F 5E 1C 6F 8D | [01]メキと！ぱ{6F}ザ
+0x04176D | dialogue_extended_01_prefix | 01 5F 10 2C 00 12 18 93 | [01]。ぜあ
+0x041779 | dialogue_extended_01_prefix | 01 38 05 78 05 CB 06 23 06 81 06 E4 07 4D 07 BC 08 32 08 AE 09 33 09 BF 0A 53 05 F0 06 4A 06 AA 07 10 07 7B 07 ED 08 66 08 E5 09 6D 09 FC 0A 94 0B 35 05 DC 06 35 06 94 06 F8 07 62 07 D2 08 49 08 C7 09 4D 09 DB 0A 71 0B 10 09 C4 0A 59 0A F6 0B 9D 0C 4E 0D 09 0D D0 0E A2 0F 81 10 6C 11 66 12 6F 09 0B 09 95 0A 26 0A C1 0B 65 0C 12 0C CA 0D 8D 0E 5B 0F 35 10 1D 11 12 10 CD 11 CD 12 DC 13 FB 15 2B 16 6D 17 C3 19 2C 1A AB 1C 41 1D F0 1F B7 06 05 06 61 06 C2 07 29 07 96 08 09 08 83 09 05 09 8E 0A 20 0A BA 0B 5D 04 8D 04 D2 05 1C 05 69 05 BC 06 13 06 70 06 D2 07 39 07 A7 08 1C 08 97 0C 15 0C CD 0D 90 0E 5E 0F 39 10 21 11 16 12 1A 13 2E 14 52 15 87 16 CF 15 F4 17 42 18 A4 1A 1B 1B A9 1D 4E 1F 0C 20 E4 22 D9 24 EC 27 1E 29 71 14 DC 16 1A 17 6A 18 CE 1A 48 1B D8 1D 80 1F 41 21 1D 23 15 25 2B 27 61 09 92 0A 24 0A BE 0B 62 0C 0F 0C C6 0D 89 0E 57 0F 31 10 18 11 0D 12 11 05 DC 06 35 06 94 06 F8 07 62 07 D2 08 49 08 C7 09 4D 09 DB 0A 71 0B 10 1B 5A A0 | [01]すか{78}かミカぅカ{81}カ見キめキチがきがウぎくぎトぐりか{F0}カまカヮキぜキ{7B}キ{ED}が思が言ぎ{6D}ぎ{FC}ぐヅげこか゜カこカヅカ{F8}キ・キラがほがフぎめぎ゛ぐ{71}げぜぎノぐんぐ{F6}げピごもざぎざユじィず{81}ぜ{6C}ぞ思だ{6F}ぎげぎデぐっぐニげ言ごだごマざじ゛ずこぜぴぞだぜメぞメだ゜ぢ{FB}でゔど{6D}ばネぶあべヴぱにぴ{F0}ぺシカかカ」カヌキょキドがぎが{83}ぎかぎジぐぐげ？おおラかぱか{69}かチカぢカ{70}カラキせキャがぱがバごでごメざゼじ！ずせぜぁぞどだべぢうづらで{87}どヤで{F4}ばぬびェべぼぼョぴもぺご見ンぇ{EC}ゃぷょ{71}づ゜どべば{6A}びモべへぼヲぴ{80}ぺにぁぴぅでぉゔゃ」ぎダぐぇぐテげ・ごずごヒざギじわずかぜびぞざだぞか゜カこカヅカ{F8}キ・キラがほがフぎめぎ゛ぐ{71}げぜぼーポ
+0x0419FA | dialogue_extended_01_prefix | 01 31 10 11 1F | [01]かぜぞぺ
+0x041A67 | dialogue_extended_01_prefix | 01 12 21 44 34 35 54 C0 35 55 65 44 43 12 21 10 C0 0F | [01]だぁのけこるナこれ言のねだぁぜナず
+0x041AA9 | dialogue_extended_01_prefix | 01 24 33 55 C0 15 43 33 40 10 11 | [01]ぇくれナでねくなぜぞ
+0x041AC7 | dialogue_extended_FE | 12 B0 45 35 53 44 46 42 27 33 B0 70 F3 F0 1E EE AD E9 BA C0 FE | だオはこりのひぬゃくオ{70}{F3}{F0}ぷ{EE}イ{E9}ソナ[FE]
+0x041ADC | dialogue_extended_FE | E0 C0 0E 02 FE | 「ナじ…[FE]
+0x041AE1 | dialogue_extended_01_prefix | 01 F1 B0 0B F0 FD 3E 30 F5 24 33 A0 33 71 06 45 21 50 03 4C B0 02 ED 1F C0 DD ED A3 C0 A0 6A 9D 0A 01 3F 31 02 3E A0 5E 03 6C 33 10 1D 7E B7 A0 F2 22 5E 15 4E 43 F1 4C B0 | [01]{F1}オげ{F0}{FD}てお{F5}ぇくポく{71}カはぁゆえむオ…{ED}ぺナ？{ED}ゥナポ{6A}ピぐ[01]とか…てポ！え{6C}くぜぴくシポ{F2}ぃ！でもね{F1}むオ
+0x041B02 | dialogue_extended_01_prefix | 01 3F 31 02 3E A0 5E 03 6C 33 10 1D 7E B7 A0 F2 22 5E 15 4E 43 F1 4C B0 | [01]とか…てポ！え{6C}くぜぴくシポ{F2}ぃ！でもね{F1}むオ
+0x041B2C | dialogue_extended_01_prefix | 01 31 03 01 21 | [01]かえ[01]ぁ
+0x041B32 | dialogue_extended_FE | 2F 1C B0 0E BF FD 2F B0 F0 FE | えぱオじト{FD}えオ{F0}[FE]
+0x041B9F | dialogue_extended_FE | 0D A0 C5 F0 4F 1E 40 1F 01 01 90 B7 02 67 26 EF 6F D7 CE 90 2B F4 C3 9C 1C DF FE | ざポハ{F0}やぷなぺ[01][01]ゼシ…、っ{EF}{6F}ワモゼゔ{F4}ネパぱ。[FE]
+0x041BA7 | dialogue_extended_01_prefix | 01 01 90 B7 02 67 26 EF 6F D7 CE 90 2B F4 C3 9C 1C DF | [01][01]ゼシ…、っ{EF}{6F}ワモゼゔ{F4}ネパぱ。
+0x041C74 | dialogue_extended_FE | DE DB BB AB B0 BD BC AB ED ED FE | ！゛タヴオツチヴ{ED}{ED}[FE]
+0x041C8F | dialogue_extended_FE | DF ED DD CD A0 99 9B 9A DC BE FE | 。{ED}？メポブボベ゜テ[FE]
+0x041CB8 | dialogue_extended_01_prefix | 01 12 33 35 34 53 44 34 A0 64 75 12 1D 0E FC 9B 9A B0 CB AE BC DE CD DE EF F0 B0 01 33 23 43 46 44 55 64 B0 45 24 23 21 0F | [01]だくこけりのけポ見{75}だぴじ{FC}ボベオミウチ！メ！{EF}{F0}オ[01]くぅねひのれ見オはぇぅぁず
+0x041CD3 | dialogue_extended_01_prefix | 01 33 23 43 46 44 55 64 B0 45 24 23 21 0F | [01]くぅねひのれ見オはぇぅぁず
+0x041CEF | dialogue_extended_FE | 32 25 53 55 64 66 65 B0 55 53 33 20 0E 0D FD DD B0 AC BB BC AB BA CC CC FE | きぉりれ見思言オれりくじ{FD}？オアタチヴソムム[FE]
+0x041D16 | dialogue_extended_01_prefix | 01 0E ED DB B0 BB AB AB A9 AB BA BA CE B0 EF 01 21 14 34 56 67 76 B0 56 53 55 34 21 | [01]じ{ED}゛オタヴヴョヴソソモオ{EF}[01]ぁづけろ、{76}オろりれけぁ
+0x041D25 | dialogue_extended_01_prefix | 01 21 14 34 56 67 76 B0 56 53 55 34 21 | [01]ぁづけろ、{76}オろりれけぁ
+0x041D41 | dialogue_extended_01_prefix | 01 13 34 34 45 55 B0 56 66 43 34 43 32 | [01]ぢけけはれオろ思ねけねき
+0x041D5E | dialogue_extended_FE | E2 23 54 65 B0 42 33 43 44 34 23 32 30 A0 4E 1F FE | ・ぅる言オぬくねのけぅきおポもぺ[FE]
+0x041D6F | dialogue_extended_FE | DE DD CD BC CA A0 CA 9B AC CD AF FE | ！？メチマポマボアメエ[FE]
+0x041D9F | dialogue_extended_FE | 30 D5 A0 03 34 33 35 45 74 76 65 A0 43 53 22 01 01 FE | おレポえけくこは{74}{76}言ポねりぃ[01][01][FE]
+0x041DB1 | dialogue_extended_FE | DC BB A0 C9 A8 BA 8C 8C AA 9D BE A0 EF F1 30 43 54 67 67 57 A0 77 76 55 46 43 43 F1 FE | ゜タポホュソゴゴヮピテポ{EF}{F1}おねる、、わポ{77}{76}れひねね{F1}[FE]
+0x041DCE | dialogue_extended_FE | A0 FD DC DB 9B B8 BB 9A BC A0 BB BD EF DE 0E 11 23 24 A0 36 47 77 57 65 76 64 53 A0 21 01 0F FE | ポ{FD}゜゛ボスタベチポタツ{EF}！じぞぅぇポさふ{77}わ言{76}見りポぁ[01]ず[FE]
+0x041DFD | dialogue_extended_FE | 12 33 56 66 76 67 76 90 66 53 43 44 43 11 F2 EF 90 FE | だくろ思{76}、{76}ゼ思りねのねぞ{F2}{EF}ゼ[FE]
+0x041E0F | dialogue_extended_FE | 0E 0E FC EC DC CB CB 90 BC AC BD DB CF EE FE | じじ{FC}{EC}゜ミミゼチアツ゛ヤ{EE}[FE]
+0x041E40 | dialogue_extended_01_prefix | 01 41 33 90 45 56 55 66 66 56 55 64 80 57 50 43 1F CA AD 9B 99 90 CC BB CB AB CC CD CE EE 90 EF 01 01 23 33 53 43 32 80 75 76 46 66 43 23 31 | [01]にくゼはろれ思思ろれ見{80}わゆねぺマイボブゼムタミヴムメモ{EE}ゼ{EF}[01][01]ぅくりねき{80}{75}{76}ひ思ねぅか
+0x041E60 | dialogue_extended_01_prefix | 01 01 23 33 53 43 32 80 75 76 46 66 43 23 31 | [01][01]ぅくりねき{80}{75}{76}ひ思ねぅか
+0x041E80 | dialogue_extended_FE | 20 21 70 63 25 55 63 66 36 24 33 60 75 53 E3 E3 54 41 05 23 60 0E 1C 1E 2B CE F1 EE C1 60 E0 0F 0B 01 AA EE A2 BD 50 99 9A AB EC 0E 03 C5 23 60 32 32 54 44 72 64 33 33 50 33 42 01 E0 FE | ぁ事ぉれ事思さぇく「{75}り事事るにかぅ「じぱぷゔモ{F1}{EE}ニ「「ずげ[01]ヮ{EE}ィツゆブベヴ{EC}じえハぅ「ききるの{72}見くくゆくぬ[01]「[FE]
+0x041EA1 | dialogue_extended_01_prefix | 01 AA EE A2 BD 50 99 9A AB EC 0E 03 C5 23 60 32 32 54 44 72 64 33 33 50 33 42 01 E0 | [01]ヮ{EE}ィツゆブベヴ{EC}じえハぅ「ききるの{72}見くくゆくぬ[01]「
+0x041EBE | dialogue_extended_FE | EE EB DC 51 BD DD CE DE FE | {EE}{EB}゜よツ？モ！[FE]
+0x041F27 | dialogue_extended_FE | 2E 30 0F E1 01 02 B0 70 35 0E 1E 31 DB DE 70 C0 0F 4E E1 F2 D0 4F 03 3D B0 50 EC FB FE | うおず」[01]…オ{70}こじぷか゛！{70}ナずも」{F2}ユやえつオゆ{EC}{FB}[FE]
+0x041F98 | dialogue_extended_01_prefix | 01 A0 65 65 1F 24 31 45 0D 24 B0 | [01]ポ言言ぺぇかはざぇオ
+0x041FA7 | dialogue_extended_FE | ED DC DE DB B0 BE FD CE 0F F0 12 22 33 B0 44 22 22 10 0E ED CD BC B0 A9 BA DA BD AC E2 3F F1 C0 23 11 14 42 23 43 02 44 B0 54 57 61 01 44 0E 02 FD B0 DE DB BC EF C9 AC CC DD B0 DF FE | {ED}゜！゛オテ{FD}モず{F0}だぃくオのぃぃぜじ{ED}メチオョソーツア・と{F1}ナぅぞづぬぅね…のオるわ」[01]のじ…{FD}オ！゛チ{EF}ホアム？オ。[FE]
+0x041FD3 | dialogue_extended_01_prefix | 01 44 0E 02 FD B0 DE DB BC EF C9 AC CC DD B0 DF | [01]のじ…{FD}オ！゛チ{EF}ホアム？オ。
+0x041FE4 | dialogue_extended_FE | F1 1E F3 42 23 30 A0 15 54 32 23 42 EF 0E DD B0 0F DC EE CC BB CC CC CE B0 DD EF 20 01 24 33 22 42 B0 11 10 EF FE | {F1}ぷ{F3}ぬぅおポでるきぅぬ{EF}じ？オず゜{EE}ムタムムモオ？{EF}いくぃぬオぞぜ{EF}[FE]
+0x042000 | dialogue_extended_01_prefix | 01 24 33 22 42 B0 11 10 EF | [01]ぇくぃぬオぞぜ{EF}
+0x042012 | dialogue_extended_FE | DE 33 0F 35 41 C0 14 43 22 33 21 34 42 12 B0 43 21 12 1F F1 0D CC DF B0 0E CC DC BC FE | ！くずこにナづねぃくぁけぬだオねぁだぺ{F1}ざム。オじム゜チ[FE]
+0x04204B | dialogue_extended_01_prefix | 01 EE A0 25 54 77 56 66 64 30 | [01]{EE}ポぉる{77}ろ思見お
+0x042078 | dialogue_extended_FE | EC CC B0 CD DC CD FE | {EC}ムオメ゜メ[FE]
+0x042092 | dialogue_extended_FE | EE EC CE A0 DA 8A CD DD EF 13 25 66 B0 33 44 43 20 01 20 DC CD B0 DB BB BA 9A DD CC F1 10 B0 F1 33 23 67 65 54 55 66 B0 77 64 46 52 12 33 22 FE | {EE}{EC}モポーグメ？{EF}ぢぉ思オくのねい゜メオ゛タソベ？ム{F1}ぜオ{F1}くぅ、言るれ思オ{77}見ひらだくぃ[FE]
+0x0420A3 | dialogue_extended_01_prefix | 01 20 DC CD B0 DB BB BA 9A DD CC F1 10 B0 F1 33 23 67 65 54 55 66 B0 77 64 46 52 12 33 22 | [01]゜オ゛タソベ？ム{F1}ぜオ{F1}くぅ、言るれ思オ{77}見ひらだくぃ
+0x0420EA | dialogue_extended_01_prefix | 01 22 12 45 42 B0 11 22 1F | [01]ぃだはぬオぞぃぺ
+0x0420F4 | dialogue_extended_FE | DC CD DC AA B0 BC BA BE FE | ゜メ゜ヮオチソテ[FE]
+0x04214F | dialogue_extended_FE | EF F4 5E C0 A0 11 10 21 E1 0E 22 03 C0 33 33 66 B8 CD DD D0 FE | {EF}{F4}！ナポぞぜぁ」じぃえナくく思スメ？ユ[FE]
+0x042164 | dialogue_extended_FE | C0 21 E1 0E 0F EF 05 4D B0 B0 23 20 50 D3 0C 42 06 65 C0 33 75 A9 DD DD D0 FE | ナぁ」じず{EF}かめオオぅゆごぬカ言ナく{75}ョ？？ユ[FE]
+0x042184 | dialogue_extended_FE | 05 3C B1 12 B0 21 5F D4 FD 52 27 66 67 C0 74 9A DD DD D0 EE 20 F2 C0 FE | かちカだオぁ。ル{FD}らゃ思、ナ{74}ベ？？ユ{EE}{F2}[FE]
+0x04219E | dialogue_extended_FE | 06 2B C1 12 10 C0 2F 02 F0 21 13 33 34 73 C0 8A DD DD E0 EF 2F F1 FE | カゔニだぜナえ…{F0}ぁぢくけ{73}ナグ？？「{EF}え{F1}[FE]
+0x0421BC | dialogue_extended_01_prefix | 01 2F C0 02 F0 30 24 33 34 72 8B B0 A9 B9 C0 CF 3E F3 DD 0D C0 | [01]えナ…{F0}おぇくけ{72}ゲオョセナヤて{F3}？ざナ
+0x042218 | dialogue_extended_FE | C0 E1 1E 10 EF FE | ナ」ぷぜ{EF}[FE]
+0x04223B | dialogue_extended_01_prefix | 01 B0 32 15 1D 41 D5 21 75 56 C0 47 49 8D DD DD 0E E2 0F C0 1F E0 | [01]オきでぴにレぁ{75}ろナふほ？？じ・ずナぺ「
+0x042255 | dialogue_extended_01_prefix | 01 21 C0 02 | [01]ぁナ…
+0x042276 | dialogue_extended_01_prefix | 01 43 33 47 28 C0 AD DD DE 0E F2 | [01]ねくふゅナイ？！じ{F2}
+0x042290 | dialogue_extended_01_prefix | 01 42 33 57 18 AD B0 AB 9D 0B 04 D0 2C EF DE C0 F2 6F AE 11 20 12 F0 2E C0 02 02 32 33 67 F8 BD DD B0 9E FB 12 C1 1C EF DE F5 C0 6E AF 11 20 21 E0 1E 12 C0 02 33 33 67 E8 CD DD CF C0 FD 11 E1 0E | [01]ぬくわびイオヴピげおユあ{EF}！ナ{F2}{6F}ウぞだうナ……きく、{F8}ツ？オプ{FB}だニぱ{EF}！{F5}ナ{6E}エぞぁぷだナ…くく、{E8}メ？ヤナ{FD}ぞ」じ
+0x0422D2 | dialogue_extended_FE | EF 03 6D C0 AF 11 10 21 E1 1E 12 02 C0 33 33 75 D8 DD DD DF FE | {EF}え{6D}ナエぞぜぁ」ぷだ…ナくく{75}ヲ？？。[FE]
+0x0422E7 | dialogue_extended_FE | C0 10 E1 0E 0F EF 04 5C A0 B0 23 21 41 D3 1D 53 17 65 C0 33 74 C8 DD DD D0 EE 20 C0 E1 FE | ナぜ」じず{EF}お゜ポオぅぁにリぴりば言ナく{74}ヘ？？ユ{EE}ナ[FE]
+0x042321 | dialogue_extended_01_prefix | 01 37 4D CE F0 C0 | [01]しめモ{F0}ナ
+0x042335 | dialogue_extended_FE | 14 57 5C B0 9B DF 01 21 FE | づわ゜オボ。[01]ぁ[FE]
+0x04233E | dialogue_extended_FE | EF 02 44 B0 64 A9 DF 12 20 FE | {EF}…のオ見ョ。だぽ[FE]
+0x042348 | dialogue_extended_FE | DE 03 C0 23 51 BC F0 01 11 FE | ！えナぅよチ{F0}[01]ぞ[FE]
+0x042382 | dialogue_extended_01_prefix | 01 1F EE F1 33 54 CB C0 E0 | [01]ぺ{EE}{F1}くるミナ「
+0x0423FB | dialogue_extended_01_prefix | 01 33 61 C0 AC EF 00 | [01]く」ナア{EF}
+0x042423 | dialogue_extended_01_prefix | 01 11 12 22 33 33 44 44 C0 55 56 66 7E 9A AA BB BC C0 CC DD DE EE EF | [01]ぞだぃくくののナれろ思くベヮタチナム？！{EE}{EF}
+0x042456 | dialogue_extended_01_prefix | 01 22 C0 12 22 33 33 44 44 55 56 C0 66 79 AA AA BB BC CC DD B0 AB CC DE EF F0 01 22 33 C0 22 33 33 44 45 55 56 66 C0 7C 99 AA BB BC CC DD DE B0 CC DD EF F0 01 22 33 45 C0 33 33 44 45 55 56 66 6A C0 8A AA BB BC CC DD DD EE B0 DD EF F0 01 22 34 45 56 C0 33 44 45 55 56 66 78 99 C0 AA BB BC CC DD DE EE EF B0 EF F0 01 22 33 45 56 67 C0 44 45 55 56 66 7A 9A AA C0 BB BC CC DD DE EE EF | [01]ぃナだぃくくののれろナ思{79}ヮヮタチム？オヴム！{EF}{F0}[01]ぃくナぃくくのはれろ思ナ{7C}ブヮタチム？！オム？{EF}{F0}[01]ぃくはナくくのはれろ思{6A}ナグヮタチム？？{EE}オ？{EF}{F0}[01]ぃけはろナくのはれろ思{78}ブナヮタチム？！{EE}{EF}オ{EF}{F0}[01]ぃくはろ、ナのはれろ思{7A}ベヮナタチム？！{EE}{EF}
+0x042470 | dialogue_extended_01_prefix | 01 22 33 C0 22 33 33 44 45 55 56 66 C0 7C 99 AA BB BC CC DD DE B0 CC DD EF F0 01 22 33 45 C0 33 33 44 45 55 56 66 6A C0 8A AA BB BC CC DD DD EE B0 DD EF F0 01 22 34 45 56 C0 33 44 45 55 56 66 78 99 C0 AA BB BC CC DD DE EE EF B0 EF F0 01 22 33 45 56 67 C0 44 45 55 56 66 7A 9A AA C0 BB BC CC DD DE EE EF | [01]ぃくナぃくくのはれろ思ナ{7C}ブヮタチム？！オム？{EF}{F0}[01]ぃくはナくくのはれろ思{6A}ナグヮタチム？？{EE}オ？{EF}{F0}[01]ぃけはろナくのはれろ思{78}ブナヮタチム？！{EE}{EF}オ{EF}{F0}[01]ぃくはろ、ナのはれろ思{7A}ベヮナタチム？！{EE}{EF}
+0x04248A | dialogue_extended_01_prefix | 01 22 33 45 C0 33 33 44 45 55 56 66 6A C0 8A AA BB BC CC DD DD EE B0 DD EF F0 01 22 34 45 56 C0 33 44 45 55 56 66 78 99 C0 AA BB BC CC DD DE EE EF B0 EF F0 01 22 33 45 56 67 C0 44 45 55 56 66 7A 9A AA C0 BB BC CC DD DE EE EF | [01]ぃくはナくくのはれろ思{6A}ナグヮタチム？？{EE}オ？{EF}{F0}[01]ぃけはろナくのはれろ思{78}ブナヮタチム？！{EE}{EF}オ{EF}{F0}[01]ぃくはろ、ナのはれろ思{7A}ベヮナタチム？！{EE}{EF}
+0x0424A4 | dialogue_extended_01_prefix | 01 22 34 45 56 C0 33 44 45 55 56 66 78 99 C0 AA BB BC CC DD DE EE EF B0 EF F0 01 22 33 45 56 67 C0 44 45 55 56 66 7A 9A AA C0 BB BC CC DD DE EE EF | [01]ぃけはろナくのはれろ思{78}ブナヮタチム？！{EE}{EF}オ{EF}{F0}[01]ぃくはろ、ナのはれろ思{7A}ベヮナタチム？！{EE}{EF}
+0x0424BE | dialogue_extended_01_prefix | 01 22 33 45 56 67 C0 44 45 55 56 66 7A 9A AA C0 BB BC CC DD DE EE EF | [01]ぃくはろ、ナのはれろ思{7A}ベヮナタチム？！{EE}{EF}
+0x0424D8 | dialogue_extended_01_prefix | 01 11 12 22 33 33 44 C0 45 55 66 67 79 9A AA BB C0 BC CC DD DE EE EF | [01]ぞだぃくくのナはれ思、{79}ベヮタナチム？！{EE}{EF}
+0x0424F2 | dialogue_extended_01_prefix | 01 11 12 22 33 34 44 45 C0 55 56 66 78 9A AA BB BC C0 CC DD DE EE EF | [01]ぞだぃくけのはナれろ思{78}ベヮタチナム？！{EE}{EF}
+0x04250B | dialogue_extended_01_prefix | 01 C0 11 12 22 33 33 44 45 55 C0 66 66 7A 9A AA BB BC CC B0 9A AB CC DE EF F0 11 22 C0 12 22 33 34 44 45 55 56 C0 66 78 9A AA BB BC CC DD B0 AB CC DE EF F0 01 22 33 C0 22 33 33 44 45 55 56 66 C3 7A 89 AA BB BC CC DD DE C0 0F | [01]ナぞだぃくくのはれナ思思{7A}ベヮタチムオベヴム！{EF}{F0}ぞぃナだぃくけのはれろナ思{78}ベヮタチム？オヴム！{EF}{F0}[01]ぃくナぃくくのはれろ思ネ{7A}ギヮタチム？！ナず
+0x04253F | dialogue_extended_01_prefix | 01 22 33 C0 22 33 33 44 45 55 56 66 C3 7A 89 AA BB BC CC DD DE C0 0F | [01]ぃくナぃくくのはれろ思ネ{7A}ギヮタチム？！ナず
+0x042645 | dialogue_extended_FE | C0 0D C0 CF 22 FE | ナざナヤぃ[FE]
+0x04267B | dialogue_extended_FE | 45 31 C0 21 01 55 42 56 64 53 20 C0 46 52 34 42 43 21 47 74 C0 44 31 34 20 04 43 12 10 C0 04 42 03 33 01 FE | はかナぁ[01]れぬろ見りナらけぬねぁふ{74}ナのかけおだぜナおぬえく[01][FE]
+0x0426D6 | dialogue_extended_FE | FD C0 DE F0 12 22 23 20 EE DC C0 CE EE B9 9A BC BD ED CC C0 CA 98 8A AB CE DD DD EF C0 EE FE | {FD}ナ！{F0}だぃぅ{EE}ナモ{EE}セベチツ{ED}ムナマビグヴモ？？{EF}ナ{EE}[FE]
+0x042746 | dialogue_extended_FE | 02 23 22 33 45 45 C0 43 45 54 46 77 51 F1 FD B0 9A 04 35 43 1F F3 51 01 C0 01 22 33 66 54 2F F1 2F B0 EB 99 AF 0C CD F1 FD E0 B0 EE CC DD 9C CA AC D0 EF C0 FE | …ぅぃくははナねはるひ{77}よ{F1}{FD}オベおこねぺ{F3}よ[01]ナ[01]ぃく思るえ{F1}えオ{EB}ブエごメ{F1}{FD}「オ{EE}ム？パマアユ{EF}ナ[FE]
+0x04275D | dialogue_extended_01_prefix | 01 C0 01 22 33 66 54 2F F1 2F B0 EB 99 AF 0C CD F1 FD E0 B0 EE CC DD 9C CA AC D0 EF C0 | [01]ナ[01]ぃく思るえ{F1}えオ{EB}ブエごメ{F1}{FD}「オ{EE}ム？パマアユ{EF}ナ
+0x04277D | dialogue_extended_FE | 32 11 12 10 44 C0 55 31 21 FE | きぞだぜのナれかぁ[FE]
+0x0427A5 | dialogue_extended_FE | EE C0 ED DD F0 01 11 0D AA BC C0 AA CE FE | {EE}ナ{ED}？{F0}[01]ぞざヮチナヮモ[FE]
+0x0427BA | dialogue_extended_FE | 12 01 32 1E CC AB BC C0 BB CD FE | だ[01]きぷムヴチナタメ[FE]
+0x0427D4 | dialogue_extended_01_prefix | 01 22 23 34 42 55 44 34 C0 53 23 21 21 03 33 10 43 C0 46 55 33 44 43 33 66 43 C0 31 F0 23 33 45 42 1F | [01]ぃぅけぬれのけナりぅぁぁえくぜねナひれくのねく思ねナか{F0}ぅくはぬぺ
+0x0427F7 | dialogue_extended_FE | C0 F0 22 32 23 34 55 54 43 C0 55 43 57 76 20 10 DC CF B0 52 45 32 FE | ナ{F0}ぃきぅけれるねナれねわ{76}ぜヤオらはき[FE]
+0x04282B | dialogue_extended_FE | EF CD C0 F0 01 31 10 21 02 44 54 B0 33 4F CB CF FD 98 DE 03 C0 32 22 30 EE DC CD EE C9 C0 A9 BC BC FD CC CB A8 89 C0 AB CD DC DD DF FE | {EF}メナ{F0}[01]かぜぁ…のるオくやミヤ{FD}ビ！えナきぃお{EE}゜メ{EE}ホナョチチ{FD}ムミュギナヴメ゜？。[FE]
+0x04286B | dialogue_extended_01_prefix | 01 C0 20 23 21 DC BA BB BB BC B0 AE CC | [01]ナぅ゜ソタタチオウム
+0x0428AA | dialogue_extended_FF | F2 C0 23 21 33 45 55 54 34 55 C0 34 77 74 10 1E CC D1 21 B0 53 2F F1 52 00 01 43 56 C0 56 54 20 F1 20 FE CD DF B0 0D CD E1 0E EF FE DC DD B3 BB CB AB DE FE ED DE 01 B0 D1 11 0C C1 13 1F 72 3C B0 D1 FF 10 | {F2}ナぅぁくはれるけれナけ{77}{74}ぜぷムヨぁオりえ{F1}ら
+0x0428C3 | dialogue_extended_01_prefix | 01 43 56 C0 56 54 20 F1 20 | [01]ねろナろる{F1}
+0x0428CD | dialogue_extended_FE | CD DF B0 0D CD E1 0E EF FE | メ。オざメ」じ{EF}[FE]
+0x0428D6 | dialogue_extended_FE | DC DD B3 BB CB AB DE FE | ゜？クタミヴ！[FE]
+0x0428E0 | dialogue_extended_01_prefix | 01 B0 D1 11 0C C1 13 1F 72 3C B0 D1 | [01]オヨぞごニぢぺ{72}ちオヨ
+0x0428ED | dialogue_extended_FE | 10 0E A1 F3 10 44 B0 2D DE 1F F0 0F AF 03 10 B0 37 21 CC 01 F0 0E DB 21 B0 2F 25 33 CC D3 FE | ぜじァ{F3}ぜのオい！ぺ{F0}ずエえぜオしぁム[01]{F0}じ゛ぁオえぉくムリ[FE]
+0x042900 | dialogue_extended_01_prefix | 01 F0 0E DB 21 B0 2F 25 33 CC D3 | [01]{F0}じ゛ぁオえぉくムリ
+0x042928 | dialogue_extended_FE | 9F B0 01 C0 A2 FE | ペオ[01]ナィ[FE]
+0x04295B | dialogue_extended_01_prefix | 01 BF 01 ED B0 26 CD 44 25 7D D5 B9 10 C0 FC 03 | [01]ト[01]{ED}オっメのぉ{7D}レセぜナ{FC}え
+0x04299D | dialogue_extended_01_prefix | 01 C0 3F F5 05 0E 11 DD EE 1F C0 F1 22 C4 13 1D 11 EE DD B0 32 C1 35 B3 75 5A | [01]ナと{F5}かじぞ？{EE}ぺナ{F1}ぃノぢぴぞ{EE}？オきニこク{75}ー
+0x0429B8 | dialogue_extended_FE | EC B0 C8 04 DF 36 0B 75 7C 0F C0 0E EB F3 0E 13 2D 24 3F C0 1F FE | {EC}オヘお。さげ{75}{7C}ずナじ{EB}{F3}じぢいぇとナぺ[FE]
+0x042A62 | dialogue_extended_01_prefix | 01 21 C0 03 | [01]ぁナえ
+0x042A67 | dialogue_extended_FE | 1B BF C1 12 32 02 C0 20 12 1E 1C AE D0 32 23 C0 F1 20 13 1E 0E 9D FD 42 C0 24 F1 20 03 1F F0 AB 0D C0 34 14 01 20 F2 2F 0E C9 C0 FE | ぼトニだき…ナだぱウユきぅナ{F1}ぢじピ{FD}ぬナぇ{F1}え{F0}ヴざナけづ[01]{F2}じホナ[FE]
+0x042A8B | dialogue_extended_01_prefix | 01 20 F2 2F 0E C9 C0 | [01]{F2}じホナ
+0x042AAE | dialogue_extended_01_prefix | 01 DC AD E2 53 32 E3 C0 | [01]゜イ・りき事ナ
+0x042AB8 | dialogue_extended_01_prefix | 01 DC BC D2 44 42 C0 E0 1E 02 11 EC CC EF 44 C0 52 | [01]゜チラのぬナ「ぷ…ぞ{EC}ム{EF}のナら
+0x042ACA | dialogue_extended_FF | 2F F1 21 FD AC DF C0 33 45 FF 10 | え{F1}ぁ{FD}ア。ナくは[FF10]
+0x042AFE | dialogue_extended_01_prefix | 01 D2 22 DC CD 2F 35 50 C0 1F F2 D1 21 0D CD 10 14 C0 41 1F E1 DF 21 1C EC 10 C0 04 33 1E F1 EF 22 0C EC B0 2F E7 74 3D E4 BD 33 29 B0 CA 11 D7 54 6E C5 CA 23 C0 1E CE 01 E3 21 30 C3 1D B0 23 3F 9B 03 A5 6F 72 83 B0 3A 13 22 A9 13 A4 7F 25 C0 CE 2D 11 01 FC 02 EF 40 B0 07 CC 4C 32 10 08 B5 EF C0 40 01 0D 1E 12 | [01]ラぃ゜メえこゆナぺ{F2}ヨぁざメぜづナにぺ」。ぁぱ{EC}ぜナおくぷ{F1}{EF}ぃご{EC}オえ、{74}つ見ツくょオマぞワる{6E}ハマぅナぷモ[01]事ぁおネぴオぅとボえォ{6F}{72}{83}オそぢぃョぢェ{7F}ぉナモいぞ[01]{FC}…{EF}なオキムむきぜがコ{EF}ナな[01]ざぷだ
+0x042B36 | dialogue_extended_01_prefix | 01 E3 21 30 C3 1D B0 23 3F 9B 03 A5 6F 72 83 B0 3A 13 22 A9 13 A4 7F 25 C0 CE 2D 11 01 FC 02 EF 40 B0 07 CC 4C 32 10 08 B5 EF C0 40 01 0D 1E 12 | [01]事ぁおネぴオぅとボえォ{6F}{72}{83}オそぢぃョぢェ{7F}ぉナモいぞ[01]{FC}…{EF}なオキムむきぜがコ{EF}ナな[01]ざぷだ
+0x042B52 | dialogue_extended_01_prefix | 01 FC 02 EF 40 B0 07 CC 4C 32 10 08 B5 EF C0 40 01 0D 1E 12 | [01]{FC}…{EF}なオキムむきぜがコ{EF}ナな[01]ざぷだ
+0x042B62 | dialogue_extended_01_prefix | 01 0D 1E 12 00 1E C3 C0 F0 41 F1 1C 1F 03 F0 1F C0 C0 1E 42 E1 0E F0 F4 0F C0 10 EF 2E 34 D0 0F C0 E4 C0 1E 1E 0D 1F 15 EE 2F DF C0 F3 3E 1E 1E | [01]ざぷだ
+0x042BBB | dialogue_extended_01_prefix | 01 F0 62 DE 0D FC 34 F0 C0 0F 11 0F 55 DE FD FC 04 C0 1E 1F 02 1E 16 EE DF FD C0 E4 3E | [01]{F0}・！ざ{FC}け{F0}ナずぞずれ！{FD}{FC}おナぷぺ…ぷど{EE}。{FD}ナ見て
+0x042BD9 | dialogue_extended_FE | F2 1F 06 0E DF C0 FE | {F2}ぺカじ。ナ[FE]
+0x042C1E | dialogue_extended_01_prefix | 01 22 1F 13 20 10 0F BF B0 DD E1 24 3C F5 33 11 01 B0 8C DE B2 16 40 C7 33 20 B0 E2 A9 DE D2 15 43 B3 52 C0 1F F1 FC EF | [01]ぃぺぢぜトオ？」ぇち{F5}くぞ[01]オゴ！キどなフくオョ！ラでねクらナぺ{F1}{FC}{EF}
+0x042C2E | dialogue_extended_01_prefix | 01 B0 8C DE B2 16 40 C7 33 20 B0 E2 A9 DE D2 15 43 B3 52 C0 1F F1 FC EF | [01]オゴ！キどなフくオョ！ラでねクらナぺ{F1}{FC}{EF}
+0x042C47 | dialogue_extended_FE | 12 32 E0 B0 52 4D E1 09 BC FE | だき「オらめ」ぎチ[FE]
+0x042C51 | dialogue_extended_FE | 23 64 B0 FE | ぅ見オ[FE]
+0x042C55 | dialogue_extended_FE | 43 6C D2 EC CC CF 11 C0 41 2D 11 30 B1 FE | ね{6C}ラ{EC}ムヤぞナにいぞおカ[FE]
+0x042CBC | dialogue_extended_01_prefix | 01 E1 DF C0 1E D0 E3 52 F1 5F E2 E1 C0 DF 0E D0 D2 62 F0 52 E1 C0 F0 DF 0E D0 DE 72 0F 43 C0 E0 0F EF 0E D0 DD 64 | [01]」。ナぷユ事ら{F1}。・」ナ。じユラ・{F0}ら」ナ{F0}。じユ！{72}ずねナ「ず{EF}じユ？見
+0x042CD0 | script_pointer       | E1 C0 F0 DF 0E D0 DE 72 0F 43 C0 E0 0F EF 0E D0 DD 64 00 C0 23 0F 0F ED 1F C0 ED 35 C0 01 22 10 FF FD | 」ナ{F0}。じユ！{72}ずねナ「ず{EF}じユ？見
+0x042D0F | dialogue_extended_FE | 19 C0 E1 ED FD 12 31 43 E2 1F C0 1C D1 0C FE | ぶナ」{ED}{FD}だかね・ぺナぱヨご[FE]
+0x042D54 | dialogue_extended_FE | 61 1F 20 FD C0 01 DC 0E E5 3E 52 0E 11 B0 FA E0 E8 0B E5 7C 37 FE | 」ぺ{FD}[01]゜じ言てらじぞオ{FA}「{E8}げ言{7C}し[FE]
+0x042D70 | dialogue_extended_01_prefix | 01 51 E5 C0 0F F1 00 E1 ED 1B 01 42 C0 D5 2F 01 F1 D0 DD 1D F2 C0 24 E2 5E 01 F1 F0 ED | [01]よ言ナず{F1}
+0x042E33 | dialogue_extended_01_prefix | 01 33 3E F0 02 C3 C0 70 CD DC | [01]くて{F0}…ネナ{70}メ゜
+0x042E4C | dialogue_extended_01_prefix | 01 0D 56 ED EB D0 12 32 C0 2D F1 0E 27 0E DD B0 02 C0 22 3F D0 1F 16 2F DD AE C0 02 23 21 DF 1F 14 40 EC C0 CC 01 22 23 ED 1F 03 32 C0 FC CB E1 21 33 0E 01 03 C0 23 3B CB C1 20 34 1E E1 C0 F3 11 4C DB BF 2F 23 20 C0 E1 03 3F 6F CC AE 2F 12 C0 41 | [01]ざろ{ED}{EB}ユだきナい{F1}じゃじ？オ…ナぃとユぺどえ？ウナ…ぅぁ。ぺづな{EC}ナム[01]ぃぅ{ED}ぺえきナ{FC}ミ」ぁくじ[01]えナぅたミニけ」ナ{F3}ぞむ゛トえぅナえと{6F}ムウえだナに
+0x042E71 | dialogue_extended_01_prefix | 01 22 23 ED 1F 03 32 C0 FC CB E1 21 33 0E 01 03 C0 23 3B CB C1 20 34 1E E1 C0 F3 11 4C DB BF 2F 23 20 C0 E1 03 3F 6F CC AE 2F 12 C0 41 | [01]ぃぅ{ED}ぺえきナ{FC}ミ」ぁくじ[01]えナぅたミニけ」ナ{F3}ぞむ゛トえぅナえと{6F}ムウえだナに
+0x042E7F | dialogue_extended_01_prefix | 01 03 C0 23 3B CB C1 20 34 1E E1 C0 F3 11 4C DB BF 2F 23 20 C0 E1 03 3F 6F CC AE 2F 12 C0 41 | [01]えナぅたミニけ」ナ{F3}ぞむ゛トえぅナえと{6F}ムウえだナに
+0x042EC8 | dialogue_extended_FE | 31 C0 10 3E CB C2 0E 21 41 F1 C0 22 1F 3F DB A1 0E 12 32 C0 F1 22 10 11 EC BF 2E F2 C0 24 01 22 11 E1 ED BC 2E C0 E2 23 31 22 11 F0 FE | かナぜてミヌじぁに{F1}ナぃぺと゛ァじだきナ{F1}ぃぜぞ{EC}トう{F2}ナぇ[01]ぃぞ」{ED}チうナ・ぅかぃぞ{F0}[FE]
+0x042EE6 | dialogue_extended_01_prefix | 01 22 11 E1 ED BC 2E C0 E2 23 31 22 11 F0 | [01]ぃぞ」{ED}チうナ・ぅかぃぞ{F0}
+0x042F94 | dialogue_extended_FE | 27 14 21 FD C0 BD CF 1E E4 10 16 24 22 C0 FE | ゃづぁ{FD}ナツヤぷ見ぜどぇぃナ[FE]
+0x042FB0 | dialogue_extended_FE | D2 30 03 C0 33 40 2E DA EC E1 D1 21 C0 11 32 51 10 EA DD D1 E1 C0 22 01 31 44 F2 EB BE C0 C0 F0 12 11 11 25 F2 FE | ラおえナくなうー{EC}」ヨぁナぞきよぜ{EA}？ヨ」ナぃ[01]かの{F2}{EB}テナナ{F0}だぞぞぉ{F2}[FE]
+0x042FFA | dialogue_extended_FE | 30 C0 F2 61 1F 0B C1 DE 33 0F C0 22 EF 62 2E FC B1 EC 24 C0 1F 13 FE | おナ{F2}」ぺげニ！くずナぃ{EF}・う{FC}カ{EC}ぇナぺぢ[FE]
+0x043011 | dialogue_extended_FE | 52 3F EE C0 0C B0 27 2D 04 1B 55 61 AC AC B0 28 05 6F E4 3D 16 53 CA B0 CB 0D E3 7F D2 40 F6 45 B0 D9 AE D0 B2 72 EE 42 D4 B0 46 F9 9F D1 E0 73 ED 23 B0 E3 37 4A 8C EE 1D 45 DF C0 F4 F1 14 2D CD 0E 1E 23 B0 E0 97 F2 14 6D A8 0C 2D C0 14 F1 D3 01 21 3F EB FE | らと{EE}ナごオゃいおぼれ」アアオゅか{6F}見つどりマオミざ事{7F}ラな{F6}はオンウユキ{72}{EE}ぬルオひ{F9}ペヨ「{73}{ED}ぅオ事しまゴ{EE}ぴは。ナ{F4}{F1}づいメじぷぅオ「バ{F2}づ{6D}ュごいナづ{F1}リ[01]ぁと{EB}[FE]
+0x043067 | dialogue_extended_FE | C0 10 E4 01 D0 1F 31 31 EC B0 C0 F4 C7 31 EE 3E 72 53 C0 ED B1 E2 E1 3F 1D 2F 22 C0 12 FE | ナぜ見[01]ユぺかか{EC}オナ{F4}フか{EE}て{72}りナ{ED}カ・」とぴえぃナだ[FE]
+0x0430D6 | dialogue_extended_FE | 3F CE 0F 3F 10 2F B0 F1 E4 4E 6E AC 0E 40 12 B0 4E E0 E1 5D 42 CA EF 30 B0 01 41 E0 F0 5F 23 EA DE B0 40 F1 41 D0 FE | とモずとぜえオ{F1}見も{6E}アじなだオも「」？ぬマ{EF}おオ[01]に「{F0}。ぅ{EA}！オな{F1}にユ[FE]
+0x0430EF | dialogue_extended_01_prefix | 01 41 E0 F0 5F 23 EA DE B0 40 F1 41 D0 | [01]に「{F0}。ぅ{EA}！オな{F1}にユ
+0x0430FD | dialogue_extended_FE | 40 03 0C A0 8A 56 C2 73 0D 0B 7D 25 B0 0E AD F5 E0 34 1F 0D 3E B0 12 10 BE E4 1F 24 11 EE B0 10 E2 20 CA E0 3E 13 42 B0 ED 11 D2 10 FA FE | なえごポグろヌ{73}ざげ{7D}ぉオじイ{F5}「けぺざてオだぜテ見ぺぇぞ{EE}オぜ・マてぢぬオ{ED}ぞラぜ{FA}[FE]
+0x04314C | dialogue_extended_01_prefix | 01 01 11 E2 04 C0 3C ED 46 31 | [01][01]ぞ・おナち{ED}ひか
+0x043157 | dialogue_extended_FE | FD 0F 12 C0 32 30 F0 EE EC CF EF 01 B0 16 65 66 54 23 4E FB DA B0 99 A8 AB DD DD FE | {FD}ずだナきお{F0}{EE}{EC}ヤ{EF}[01]オど言思るぅも{FB}ーオブュヴ？？[FE]
+0x043162 | dialogue_extended_01_prefix | 01 B0 16 65 66 54 23 4E FB DA B0 99 A8 AB DD DD | [01]オど言思るぅも{FB}ーオブュヴ？？
+0x043216 | dialogue_extended_01_prefix | 01 C0 13 F3 12 22 23 33 44 44 C0 44 44 45 24 43 34 05 2E C0 52 D5 0F 1F 3C 3F E1 C0 C0 1A 3B C0 CC EA 1A CC 0B C0 0A EF BD ED C1 FA E1 A0 C0 FA 2A 1F C1 1E 0E 41 F4 C0 F4 01 43 F6 24 42 34 24 C0 35 13 33 4F 51 32 04 14 C0 E3 13 C4 1E 01 2E D1 D1 C0 C0 DA 0D DE C1 BC 0A 18 C0 0F AC 1A DE ED 0C 2F D3 C0 C4 D0 | [01]ナぢ{F3}だぃぅくののナののはぇねけかうナらレずぺちと」ナナべたナム{EA}べムげナぐ{EF}ツ{ED}ニ{FA}」ポナ{FA}ゎぺニぷじに{F4}ナ{F4}[01]ね{F6}ぇぬけぇナこぢくやよきおづナ事ぢノぷ[01]うヨヨナナーざ！ニチぐびナずアべ！{ED}ごえリナノユ
+0x04324F | dialogue_extended_01_prefix | 01 43 F6 24 42 34 24 C0 35 13 33 4F 51 32 04 14 C0 E3 13 C4 1E 01 2E D1 D1 C0 C0 DA 0D DE C1 BC 0A 18 C0 0F AC 1A DE ED 0C 2F D3 C0 C4 D0 | [01]ね{F6}ぇぬけぇナこぢくやよきおづナ事ぢノぷ[01]うヨヨナナーざ！ニチぐびナずアべ！{ED}ごえリナノユ
+0x043264 | dialogue_extended_01_prefix | 01 2E D1 D1 C0 C0 DA 0D DE C1 BC 0A 18 C0 0F AC 1A DE ED 0C 2F D3 C0 C4 D0 | [01]うヨヨナナーざ！ニチぐびナずアべ！{ED}ごえリナノユ
+0x043284 | dialogue_extended_01_prefix | 01 05 01 15 E5 1E 41 11 C0 33 F6 04 11 43 13 05 10 C0 23 5E 60 14 E5 E2 11 E0 C0 10 F1 D0 FA 3C CE 0B 0B C0 DF BE FA 0B CD FB EC ED C0 ED ED 1A 0D E0 D0 2B 12 C0 B1 | [01]か[01]で言ぷにぞナく{F6}おぞねぢかぜナぅ！「づ言・ぞ「ナぜ{F1}ユ{FA}ちモげげナ。テ{FA}げメ{FB}{EC}{ED}ナ{ED}{ED}べざ「ユゔだナカ
+0x0432BC | dialogue_extended_FE | F2 01 4F 33 05 21 C0 22 33 05 14 12 51 24 03 C0 32 23 23 32 34 14 22 40 B0 45 21 71 E7 F0 3E 12 E2 C0 0E 3D 02 EF EF 0C F0 BF C0 FB 1B EE DE CC 0B ED CE C0 DC DD DD CD EF A1 BE 0C B0 0D B1 A1 FD 4E 3F 23 33 C0 21 32 02 32 03 22 21 15 C0 E2 31 20 50 5F 23 4F 43 C0 11 42 12 31 31 32 14 11 B0 7F 27 2E 60 62 B6 B5 97 C0 FD 1D 0D F0 DE 0D ED 0C C0 EE BF DD DD DD ED EC DE C0 EC DE 0A ED FE | {F2}[01]やくかぁナぃくかづだよぇえナきぅぅきけづぃなオはぁ{71}、{F0}てだ・ナじつ…{EF}{EF}ご{F0}トナ{FB}ぼ{EE}！ムげ{ED}モナ゜？？メ{EF}ァテごオざカァ{FD}もとぅくナぁき…きえぃぁでナ・かゆぅやねナぞぬだかかきづぞオ{7F}ゃう「・サコバナ{FD}ぴざ{F0}！ざ{ED}ごナ{EE}ト？？？{ED}{EC}！ナ{EC}！ぐ{ED}[FE]
+0x0433C1 | dialogue_extended_FE | ED 1E ED F9 2A 19 B0 1E BD 1A 2A 3A D1 AE FE | {ED}ぷ{ED}{F9}ゎぶオぷツべゎそヨウ[FE]
+0x0433D0 | dialogue_extended_FE | B0 CF FD 1C 0D 01 C2 FE | オヤ{FD}ぱざ[01]ヌ[FE]
+0x043448 | script_pointer       | 04 EC 05 37 05 86 05 DA 06 33 06 92 06 F6 07 60 03 E8 04 23 04 62 04 A5 04 EC 05 37 05 86 05 DA 06 33 06 92 06 F6 07 60 07 88 07 FB 08 74 08 F5 09 7D 0A 0E 0A A7 0B 49 0B F5 0C AA 0D 6B 0E 38 0F 54 B0 00 00 0F DC CB BD 13 52 B0 27 34 30 D0 EF 01 14 41 B0 13 12 23 E9 8D 13 23 1F B0 31 13 22 F0 35 77 67 24 C0 0E DA 88 C2 57 51 53 74 C0 63 E1 22 1E EE 32 1F B9 C0 AB CE EE EF FE | お{EC}かしか{86}かーカくカダカ{F6}キ「え{E8}おぅお・おォお{EC}かしか{86}かーカくカダカ{F6}キ「キガキ{FB}が{74}が{F5}ぎ{7D}ぐじぐャげほげ{F5}ごヮざ{6B}じすずるオ
+0x04348D | dialogue_extended_FE | 0F DC CB BD 13 52 B0 27 34 30 D0 EF 01 14 41 B0 13 12 23 E9 8D 13 23 1F B0 31 13 22 F0 35 77 67 24 C0 0E DA 88 C2 57 51 53 74 C0 63 E1 22 1E EE 32 1F B9 C0 AB CE EE EF FE | ず゜ミツぢらオゃけおユ{EF}[01]づにオぢだぅ{E9}ぢぅぺオかぢぃ{F0}こ{77}、ぇナじーガヌわより{74}ナ事」ぃぷ{EE}きぺセナヴモ{EE}{EF}[FE]
+0x043499 | dialogue_extended_01_prefix | 01 14 41 B0 13 12 23 E9 8D 13 23 1F B0 31 13 22 F0 35 77 67 24 C0 0E DA 88 C2 57 51 53 74 C0 63 E1 22 1E EE 32 1F B9 C0 AB CE EE EF | [01]づにオぢだぅ{E9}ぢぅぺオかぢぃ{F0}こ{77}、ぇナじーガヌわより{74}ナ事」ぃぷ{EE}きぺセナヴモ{EE}{EF}
+0x0434D5 | dialogue_extended_01_prefix | 01 33 10 45 67 1D B0 DC BB A9 F3 64 | [01]くぜは、ぴオ゜タョ{F3}見
+0x0434FD | dialogue_extended_FE | 02 30 C0 FD CB F3 22 20 0F ED DC A0 90 D5 AC EB 5F F3 2F 92 C0 BB 88 BB CF 04 43 21 DB C0 BD FE | …おナ{FD}ミ{F3}ぃず゜ポゼレア{EB}。{F3}えダナタガタヤおねぁ゛ナツ[FE]
+0x04351D | dialogue_extended_FE | E1 10 0E FE | 」ぜじ[FE]
+0x04353C | dialogue_extended_01_prefix | 01 22 A0 35 54 64 2F 0F 15 76 65 A0 65 54 44 45 55 54 42 33 A0 45 54 23 45 33 23 32 24 A0 57 51 EF 14 55 56 1F F1 90 35 66 1D E0 2F DC ED 9C 90 F2 54 11 1F D9 98 AB E2 A0 D0 EC 89 D0 11 | [01]ぃポこる見えずで{76}言ポ言るのはれるぬくポはるぅはくぅきぇポわよ{EF}づれろぺ{F1}ゼこ思ぴ「え゜{ED}パゼ{F2}るぞぺンビヴ・ポユ{EC}ギユぞ
+0x04358E | dialogue_extended_FE | 23 90 34 20 0E 04 53 10 45 4D A0 FE | ぅゼけじりぜはめポ[FE]
+0x0435CD | dialogue_extended_FF | ED 71 D1 3F CA AC DF 12 0F EE C0 11 00 FE E1 50 FF 10 | {ED}{71}ヨとマア。だず{EE}ナぞ
+0x0435DE | dialogue_extended_FE | 10 1F B0 DC B5 71 DE 22 3F DC 94 B0 71 DE 31 2E ED A4 70 EE C0 11 2F FE | ぜぺオ゜コ{71}！ぃと゜ヅオ{71}！かう{ED}ェ{70}{EE}ナぞえ[FE]
+0x0435F6 | dialogue_extended_FE | E2 5F EF 11 1F C0 FE | ・。{EF}ぞぺナ[FE]
+0x04360D | dialogue_extended_FE | C0 21 0F FD 01 5F EF 30 0F C0 FD 11 4F FE | ナぁず{FD}[01]。{EF}おずナ{FD}ぞや[FE]
+0x04364C | dialogue_extended_FE | C0 D0 15 FE | ナユで[FE]
+0x043680 | script_pointer       | 0F DA B0 23 6E DE 52 FF DA | ずーオぅ{6E}！ら[FFDA]
+0x0436AD | dialogue_extended_FE | F2 01 C0 0F DF 05 FE | {F2}[01]ナず。か[FE]
+0x0436B6 | dialogue_extended_FE | 0F DF C0 05 FE | ず。ナか[FE]
+0x0436BB | dialogue_extended_FE | E2 10 0F DF 05 FE | ・ぜず。か[FE]
+0x0436C1 | dialogue_extended_FE | C0 E2 10 0F D0 05 FE | ナ・ぜずユか[FE]
+0x04370D | dialogue_extended_01_prefix | 01 10 10 CF 34 C0 0E F1 20 | [01]ぜぜヤけナじ{F1}ぽ
+0x04373F | dialogue_extended_FE | C0 10 CF 42 FE | ナぜヤぬ[FE]
+0x043744 | dialogue_extended_FE | 11 2F 10 CF C0 23 FE | ぞえぜヤナぅ[FE]
+0x04374D | dialogue_extended_01_prefix | 01 CF 15 1E C0 E1 2F 01 CF E6 1E E2 2F C0 01 EE E6 1E E2 2F 01 EE C0 E6 1E E2 1F 01 EE E6 1E C0 E2 10 01 EF E6 1E E2 1F C0 01 EC E6 2E E2 20 | [01]ヤでぷナ」え[01]ヤ思ぷ・えナ[01]{EE}思ぷ・え[01]{EE}ナ思ぷ・ぺ[01]{EE}思ぷナ・ぜ[01]{EF}思ぷ・ぺナ[01]{EC}思う・ぽ
+0x043776 | dialogue_extended_01_prefix | 01 EC E6 2E E2 20 00 0D C0 E6 1E E2 20 01 0C E6 2E C0 E1 10 | [01]{EC}思う・あナ思ぷ・い思うナ」ぜ
+0x043783 | dialogue_extended_01_prefix | 01 0C E6 2E C0 E1 10 | [01]ご思うナ」ぜ
+0x043791 | dialogue_extended_01_prefix | 01 0C E3 2F E0 11 01 0B C0 F3 2F E0 01 | [01]ご事え「ぞ[01]げナ{F3}え「[01]
+0x0437B8 | dialogue_extended_01_prefix | 01 01 0B F3 2F C0 E1 11 | [01][01]げ{F3}えナ」ぞ
+0x0437CC | dialogue_extended_01_prefix | 01 01 0C C0 E5 2F E1 11 01 FD E5 1F C0 E1 10 01 FC E6 1E D2 20 C0 | [01][01]ごナ言え」ぞ[01]{FD}言ぺナ」ぜ[01]{FC}思ぷラぽナ
+0x04381E | dialogue_extended_FE | C1 06 C0 1E F0 3F 0F C1 32 FD 11 C0 10 FE | ニカナぷ{F0}とずニき{FD}ぞナぜ[FE]
+0x043838 | dialogue_extended_FE | EE E7 1D C0 E2 30 0F C1 32 FD 01 20 C0 FE | {EE}、ぴナ・おずニき{FD}[01]ナ
+0x043869 | dialogue_extended_01_prefix | 01 3F 0D E0 70 DD 23 F1 C0 CD 06 1E D2 11 1D C0 53 C0 FD 10 20 EC F1 50 DF 13 C0 F0 CE 06 1D D2 3F 1D C0 C0 52 ED 21 10 EC 04 2F D2 C0 13 | [01]とざ「{70}？ぅ{F1}ナメカぷラぞぴナりナ{FD}ぜ{EC}ゆ。ぢナ{F0}モカぴラとぴナナら{ED}ぁぜ{EC}おえラナぢ
+0x043898 | dialogue_extended_FE | C0 33 FD 11 3F 0B C0 02 30 DF 13 F0 B0 24 0D C0 F1 3F 0B 02 40 DF 13 F0 C0 B1 35 FE | ナく{FD}ぞとげナ…お。ぢ{F0}オぇざナ{F1}とげ…な。ぢ{F0}ナカこ[FE]
+0x0438B4 | dialogue_extended_01_prefix | 01 3F FB 12 3F B0 A2 35 DC 91 73 DA 53 3E C0 CC 06 0E D3 21 FD EF 7F C0 DE 33 0F B1 05 FD 02 3F C0 FA 13 2E D2 23 ED E0 6F C0 DE 32 0F B1 14 EE 03 3F C0 EB 16 0C E2 31 EB 01 4E C0 DF 33 | [01]と{FB}だとオィこ゜ゾ{73}ーりてナムカじリぁ{FD}{EF}{7F}ナ！くずカか{FD}…とナ{FA}ぢうラぅ{ED}「{6F}ナ！きずカづ{EE}えとナ{EB}どご・か{EB}[01]もナ。く
+0x0438ED | dialogue_extended_01_prefix | 01 4E C0 DF 33 | [01]もナ。く
+0x043910 | dialogue_extended_01_prefix | 01 5F CF C0 33 FD E2 6F CE 33 0C D2 C0 60 CE 34 FC D2 70 CE 33 C0 FC E2 6F CE 33 EB 03 5E C0 C0 32 DB 34 1D D2 30 BC C0 46 FC D4 3F BE 36 EC E4 C0 3E B1 34 CC 03 2C C3 51 C0 CD 33 FA E4 6E BE 53 CA C0 27 2B D3 40 8F 55 DC 15 C0 2A B2 70 AF 54 E8 17 2B C0 C4 41 8F 44 DC 24 19 E2 C0 6F B0 52 AD 17 FB F5 2A C0 D1 70 BE 52 CC 27 1A D4 C0 3C C1 70 BE 53 CC 17 FC C0 E4 2C C1 7F BE 42 DD 16 C0 FB F4 2C C1 6F CF 42 CD C0 26 FB F4 1C D2 6E C0 51 C0 AE 35 EC 14 0A 04 4D D1 C0 3F B0 62 CD 33 DD 15 FC C0 F3 1C 04 2D E1 3F D1 5F C0 C0 31 C0 33 DE 22 ED 15 B0 F8 F6 18 16 59 B4 4C B3 C0 40 DF 30 C1 31 DE 22 EE B0 37 CB 15 09 26 1A E6 2C B0 E3 5B C3 3D C2 6E A0 60 B0 A2 63 9D 53 CF 45 9A 15 C0 0E 13 ED 03 1D 13 1C E3 B0 3C F4 69 A3 5E E3 7C 8F C0 30 E1 30 CE 32 E1 31 CD C0 22 F0 23 CD 13 0E 13 EC C0 03 0E 14 0C E3 1E 13 2C B0 A4 5D 16 49 81 5F F4 79 C0 CF 20 F2 4E BF 31 E1 40 C0 BE 21 E1 41 BD 22 E1 42 C0 CC 12 E1 42 CC 02 F1 34 C0 DC 12 | [01]。ヤナく{FD}・{6F}モくごラナ「モけ{FC}ラ{70}モくナ{FC}・{6F}モく{EB}え！ナナき゛けぴラおチナひ{FC}ルとテさ{EC}見ナてカけムえあネよナメく{FA}見{6E}テりマナゃゔリなズれ゜でナゎキ{70}エる{E8}ばゔナノにズの゜ぇぶ・ナ{6F}オらイば{FB}{F5}ゎナヨ{70}テらムゃべルナちニ{70}テりムば{FC}ナ見あニ{7F}テぬ？どナ{FB}{F4}あニ{6F}ヤぬメナっ{FB}{F4}ぱラ{6E}ナよナウこ{EC}づぐおめヨナとオ・メく？で{FC}ナ{F3}ぱおい」とヨ。ナナかナく！ぃ{ED}でオ{F8}{F6}びどんケむクナな。おニか！ぃ{EE}オしミでぎっべ思あオ事゛ネつヌ{6E}ポ「オィ事ピりヤはベでナじぢ{ED}えぴぢぱ事オち{F4}{69}ゥ！事{7C}ズナお」おモき」かメナぃ{F0}ぅメぢじぢ{EC}ナえじづご事ぷぢあオェ？どほ{81}。{F4}{79}ナヤ{F2}トか」なナテぁ」にツぃ」ぬナムだ」ぬム…{F1}けナ゜だ
+0x043ACC | dialogue_extended_FE | C0 24 EC E1 0F 25 FC E2 0E C0 15 0B E2 0D 15 2C D2 0D C0 14 2D D1 1D 14 3E D0 1E C0 03 4E CF 20 E2 5F BF 20 C0 D1 51 CE 21 D0 43 DD 21 C0 D0 45 EC 02 ED 25 FB E3 C0 0C 15 1C E2 1D 04 3D D2 C0 1E D3 5F B0 3F C1 52 CE C0 30 C0 44 DD 12 ED 34 FC C0 F3 0C 14 1C E2 1E E3 4E C0 C1 30 C1 41 CE 31 DE 24 C0 ED 12 FC 24 1C F3 1D E3 B0 6E 92 6E 81 72 9D 43 B9 B0 47 FB 16 F9 F6 4B E4 2C C0 C2 31 D0 30 CD 23 FE | ナぇ{EC}」ずぉ{FC}・じナでげ・ざであラざナづいヨぴづてユぷナえもヤ・トナよモぁユね？ぁナユは{EC}…{ED}ぉ{FB}事ナごでぱ・ぴおつラナぷリ。オとニらモナおナの？だ{ED}け{FC}ナ{F3}ごづぱ・ぷ事もナニおニにモか！ぇナ{ED}だ{FC}ぇぱ{F3}ぴ事オ{6E}ダ{6E}{81}{72}ピねセオふ{FB}ど{F9}{F6}み見あナヌかユおメぅ[FE]
+0x043C12 | dialogue_extended_01_prefix | 01 45 42 C9 C0 11 25 B0 31 EC EF 01 12 41 EB DF B0 10 12 32 FC DF 11 03 42 B0 FC DF 10 12 33 FC DF 10 A0 16 66 FA 8D | [01]はぬホナぞぉオか{EC}{EF}[01]だに{EB}。オぜだき{FC}。ぞえぬオ{FC}。ぜだく{FC}。ぜポど思{FA}ザ
+0x043C1D | dialogue_extended_01_prefix | 01 12 41 EB DF B0 10 12 32 FC DF 11 03 42 B0 FC DF 10 12 33 FC DF 10 A0 16 66 FA 8D | [01]だに{EB}。オぜだき{FC}。ぞえぬオ{FC}。ぜだく{FC}。ぜポど思{FA}ザ
+0x043C4B | dialogue_extended_01_prefix | 01 33 31 FC A0 CE 11 32 31 2F BC 01 10 A0 23 31 CB E1 0E 13 64 09 A0 CF 0F E3 36 10 AB | [01]くか{FC}ポモぞきかえチ[01]ぜポぅかミ」じぢ見ぎポヤず事さぜヴ
+0x043C56 | dialogue_extended_01_prefix | 01 10 A0 23 31 CB E1 0E 13 64 09 A0 CF 0F E3 36 10 AB | [01]ぜポぅかミ」じぢ見ぎポヤず事さぜヴ
+0x043C88 | dialogue_extended_01_prefix | 01 33 32 0C CE F0 B0 22 33 2F CB EF 11 33 23 B0 FC BE F1 22 43 20 BC E0 A0 13 65 62 09 8A | [01]くきごモ{F0}オぃくえミ{EF}ぞくぅオ{FC}テ{F1}ぃねチポぢ言・ぎグ
+0x043CD3 | dialogue_extended_01_prefix | 01 11 21 A0 32 29 AB 10 32 52 21 2A A0 AC 10 22 51 21 0B 9F 21 A0 14 60 21 19 BE 1F 22 50 A0 12 1B A0 | [01]ぞぁポきょヴぜきらぁゎポアぜぃよぁげペぁポづ「ぁぶテぺぃゆポだぼポ
+0x043D73 | dialogue_extended_FE | F2 23 12 21 DD A0 EF EF 32 10 43 1B CE FE | {F2}ぅだぁ？ポ{EF}{EF}きぜねぼモ[FE]
+0x043DB6 | dialogue_extended_01_prefix | 01 90 14 EE CE CD 01 63 21 20 90 E0 CD C2 F5 33 15 1F EE 90 DB F1 33 11 23 1C BE FD 90 E2 52 F0 13 EE CE | [01]ゼづ{EE}モメ[01]事ぁゼメヌ{F5}くでぺ{EE}ゼ゛{F1}くぞぅぱテ{FD}ゼ・ら{F0}ぢ{EE}モ
+0x043E08 | dialogue_extended_FE | 80 32 41 20 2F EE FD CF 35 80 1F 24 0E F0 0E D2 22 01 70 27 BC BD CD E3 47 02 03 70 0F CF FE | {80}きにえ{FD}ヤこ{80}ぺぇじ{F0}じラぃ[01]{70}ゃチツメ事ふ…え{70}ずヤ[FE]
+0x043E19 | dialogue_extended_01_prefix | 01 70 27 BC BD CD E3 47 02 03 70 0F CF | [01]{70}ゃチツメ事ふ…え{70}ずヤ
+0x043E46 | dialogue_extended_FE | 20 C0 06 7A 9A 3D A5 AA AC 66 C0 BA CA BB 1B 16 C6 DE BB C0 DB 5C BB FB 47 6C 4C 5C C0 6E B4 77 B2 6C B4 66 BB C0 16 66 44 F6 E3 C6 65 4E C0 1D 1F B3 6B B5 6F B1 05 C0 55 5B 4C AC 5F FE | ナ{7A}ベつォヮア思ナソマタぼどヒ！タナ゛゜タ{FB}ふ{6C}む゜ナ{6E}ケ{77}キ{6C}ケ思タナど思の{F6}事ヒ言もナぴぺク{6B}コ{6F}カかナれ゛むア。[FE]
+0x043F4B | dialogue_extended_FE | 3A C0 DD 1A 55 5A 2B E5 BC 4A C0 55 BC 11 0C 55 D2 EA A4 C0 5D AE 15 33 DA A5 CC D1 C0 D5 3B 4D 3C BE 5E CA 43 C0 55 43 A0 A4 4B A3 5B 3D C0 D3 4C 4E F4 5D A0 45 DE C0 E5 3B DC 35 B3 2D E4 D4 C0 A3 33 35 CA 13 51 B1 FE | そナ？べれーゔ言チまナれチぞごれラ{EA}ェナ？ウでくーォムヨナレためちテ！マねナれねポェみゥ゛つナリむも{F4}？ポは！ナ言た゜こクい見ルナゥくこマぢよカ[FE]
+0x043F94 | dialogue_extended_FE | C0 31 2B 35 C4 44 EC CD B4 C0 E2 5C B4 C3 33 B4 EB CB C0 2D 12 CE CE 54 DC B5 24 C0 4B E4 C1 2D B3 DB 55 3B C0 3C 4D DC 4E B4 54 C3 C2 C0 3F DF 31 F0 31 0D 4B B2 C0 DC C1 5B 02 52 45 CC BE C0 10 FD 30 D5 1C B3 2E B4 C0 D4 01 DD DB C4 CD C4 CC C0 BD 35 5F B4 2C BF DE DB C0 4C 5C 5D 33 3C C4 BB 35 C0 5E CB B5 D0 C5 C5 C4 C2 C0 E5 BD CC 5C 0B 40 D5 5C C0 EB E5 CC B5 12 13 5B 50 C0 0C E2 B5 B1 FD 14 3C 20 C0 41 CB D3 D3 1F 5C BC 54 C0 31 FE | ナかゔこノの{EC}メケナ・゜ケネくケ{EB}ミナいだモモる゜コぇナみ見ニいク゛れたナちめ゜もケるネヌナと。か{F0}かざみキナ゜ニ゛…らはムテナぜ{FD}おレぱクうケナル[01]？゛ノメノムナツこ。ケあト！゛ナむ゜？くちノタこナ！ミコユハハノヌナ言ツム゜げなレ゜ナ{EB}言ムコだぢ゛ゆナご・コカ{FD}づちナミリリぺ゜チるナか[FE]
+0x043FDE | dialogue_extended_01_prefix | 01 DD DB C4 CD C4 CC C0 BD 35 5F B4 2C BF DE DB C0 4C 5C 5D 33 3C C4 BB 35 C0 5E CB B5 D0 C5 C5 C4 C2 C0 E5 BD CC 5C 0B 40 D5 5C C0 EB E5 CC B5 12 13 5B 50 C0 0C E2 B5 B1 FD 14 3C 20 C0 41 CB D3 D3 1F 5C BC 54 C0 31 | [01]？゛ノメノムナツこ。ケあト！゛ナむ゜？くちノタこナ！ミコユハハノヌナ言ツム゜げなレ゜ナ{EB}言ムコだぢ゛ゆナご・コカ{FD}づちナミリリぺ゜チるナか
+0x044000 | script_pointer       | C0 E5 BD CC 5C 0B 40 D5 5C C0 EB E5 CC B5 12 13 5B 50 C0 0C E2 B5 B1 FD 14 3C 20 C0 41 CB D3 D3 1F 5C BC 54 C0 31 FE | ナ言ツム゜げなレ゜ナ{EB}言ムコだぢ゛ゆナご・コカ{FD}づちナミリリぺ゜チるナか[FE]
+0x04409C | dialogue_extended_FE | C1 25 C4 41 C3 22 C0 43 4D 2D CD 0E C0 52 5C C0 FE | ニぉノにネぃナねめいメじナら゜ナ[FE]
+0x0440AD | dialogue_extended_FE | F4 44 CB B4 5D 5C D3 C0 CF B4 D3 C3 5D EB 4C 33 C0 54 FC CD 04 E3 13 C3 C5 C0 35 C4 DB 15 EC 35 EC 3E C0 4F D2 DC 54 5C C4 22 DC C0 4D 3E 40 C3 EE B0 24 1E C0 DD F1 5D D1 2C CB 24 5D C0 C3 3F 3F 3C 40 55 FC E3 C0 24 F3 DC C2 5C 35 3C C4 C0 FE | {F4}のミケ？゜リナヤケリネ？{EB}むくナる{FC}メお事ぢネハナこノ゛で{EC}こ{EC}てナやラ゜る゜ノぃ゜ナめてなネ{EE}オぇぷナ？{F1}？ヨあミぇ？ナネととちなれ{FC}事ナぇ{F3}゜ヌ゜こちノナ[FE]
+0x0440FF | script_pointer       | 4C CE 5E C5 D1 41 C0 CE 0F 23 CD D5 5C 1D D4 C0 45 C3 C0 05 CD 25 CB 14 C0 DC 24 4E C4 10 2F 0D 3D C0 3C 03 C3 0D 01 DE D2 DE C0 34 3D CD C5 5E EC F4 42 C0 CC 43 5C 2E 4D C3 03 F3 C0 E3 D3 C4 1C CF 20 C0 42 C0 E3 1E 2C D3 40 20 1D F1 B0 5C D9 37 97 B6 D6 49 D7 B0 59 02 95 21 C3 D9 2F 30 B0 C1 27 C5 B1 CB D1 BD 5A B0 5A 7B 5B 55 76 B7 A0 0B B0 BE CA 15 51 A7 5A A4 C3 B0 A3 D1 72 F5 AD 26 36 AF B0 6D 64 BF 00 BE 3A 3F 42 B0 C7 7A C3 3D CA 16 CC 2B B0 E0 4B 5C 0B 5C DB 0A 7C B0 05 CD A4 C6 4B C1 7B F7 B0 FF B1 | むモ！ハヨにナモずぅメレ゜ぴルナはネナかメぉミづナ゜ぇもノぜえざつナちえネざ[01]！ラ！ナけつメハ！{EC}{F4}ぬナムね゜うめネえ{F3}ナ事リノぱヤナナ事ぷあリなぴオ゜ンしバサロほワオん…デぁネンえおオニゃハカミヨツーオー{7B}゛れ{76}シポげオテマでよャーェネオゥヨ{72}{F5}イっさエオ{6D}見ト
+0x044125 | dialogue_extended_01_prefix | 01 DE D2 DE C0 34 3D CD C5 5E EC F4 42 C0 CC 43 5C 2E 4D C3 03 F3 C0 E3 D3 C4 1C CF 20 C0 42 C0 E3 1E 2C D3 40 20 1D F1 B0 5C D9 37 97 B6 D6 49 D7 B0 59 02 95 21 C3 D9 2F 30 B0 C1 27 C5 B1 CB D1 BD 5A B0 5A 7B 5B 55 76 B7 A0 0B B0 BE CA 15 51 A7 5A A4 C3 B0 A3 D1 72 F5 AD 26 36 AF B0 6D 64 BF | [01]！ラ！ナけつメハ！{EC}{F4}ぬナムね゜うめネえ{F3}ナ事リノぱヤナナ事ぷあリなぴオ゜ンしバサロほワオん…デぁネンえおオニゃハカミヨツーオー{7B}゛れ{76}シポげオテマでよャーェネオゥヨ{72}{F5}イっさエオ{6D}見ト
+0x0441DF | dialogue_extended_FE | 0C 50 BF 5D B5 3E DF B0 FC 15 EE 41 E2 E1 E2 4F A0 8D E6 C9 36 B8 56 17 99 B0 05 FE | ごゆト？コて。オ{FC}で{EE}に・」・やポ思ホさスろばブオか[FE]
+0x044200 | script_pointer       | CD B0 0D 33 0D ED D1 51 EE 3D B0 0C 4D DF 4D 13 0D DF F3 A0 1B C2 66 C8 DB D7 AC 0F B0 44 20 DE C4 42 DE 42 0F A0 D5 2F F7 30 EC C0 42 1E A0 6A 00 4D C7 C0 E1 E1 20 A0 BB 33 B1 7D F2 34 DF DB A0 61 04 4C E0 24 C0 1F 52 A0 EB ED D3 1D 0F EF E0 2C A0 15 D0 E0 D4 E0 3F F1 DF 90 37 93 1C 17 50 94 A2 FD 90 6F 4F B5 EE E5 00 9B EA 90 45 FB 21 F2 45 A5 AC 10 90 7B C2 56 C4 FB D2 CF 41 90 32 A0 E1 D5 E1 00 0D 4F 90 CF 12 2E 0F FD 00 3E FF 90 | メオざくざ{ED}ヨよ{EE}つオごめ。めぢざ。{F3}ポぼヌ思ヘ゛ワアずオの！ぬ！ぬずポレえ{F7}お{EC}ナぬぷポ{6A}
+0x0442D0 | dialogue_extended_FE | 70 11 A3 12 DE 21 FE | {70}ぞゥだ！ぁ[FE]
+0x0442EA | dialogue_extended_01_prefix | 01 C0 35 56 66 54 33 11 | [01]ナころ思るくぞ
+0x0442F3 | dialogue_extended_01_prefix | 01 C0 22 34 55 55 42 10 ED CA C0 AA BB CD EF | [01]ナぃけれれぬぜ{ED}マナヮタメ{EF}
+0x044314 | dialogue_extended_01_prefix | 01 23 45 55 C0 54 32 1E DC BA AA BC DE C0 F0 | [01]ぅはれナるきぷ゜ソヮチ！ナ{F0}
+0x044334 | dialogue_extended_01_prefix | 01 12 34 55 55 43 20 FD C0 BB AA AB CD EF | [01]だけれれね{FD}タヮヴメ{EF}
+0x044394 | dialogue_extended_01_prefix | 01 23 C0 35 55 55 42 10 EC BA AA C0 BB DD EF | [01]ぅナこれれぬぜ{EC}ソヮナタ？{EF}
+0x0443B5 | dialogue_extended_FE | 12 24 45 55 54 C0 32 FE | だぇはれるナき[FE]
+0x0443D4 | dialogue_extended_01_prefix | 01 C3 12 34 55 55 43 10 EC BB 46 1B 01 40 07 | [01]ネだけれれねぜ{EC}タひぼ[01]なキ
+0x0444B1 | dialogue_extended_01_prefix | 01 01 11 E2 04 C0 3C ED 46 31 | [01][01]ぞ・おナち{ED}ひか
+0x0444BC | dialogue_extended_FE | FD 0F 12 C0 32 30 F0 EE EC CF EF 01 B0 16 65 66 54 23 4E FB DA B0 99 A8 AB DD DD FE | {FD}ずだナきお{F0}{EE}{EC}ヤ{EF}[01]オど言思るぅも{FB}ーオブュヴ？？[FE]
+0x0444C7 | dialogue_extended_01_prefix | 01 B0 16 65 66 54 23 4E FB DA B0 99 A8 AB DD DD | [01]オど言思るぅも{FB}ーオブュヴ？？
+0x0444FF | script_pointer       | CC CB DA AE BB BB EA F0 C0 B2 E2 02 23 34 55 66 66 C0 66 55 44 33 22 11 10 00 C0 FF EF | ムミーウタタ{EA}{F0}ナキ・…ぅけれ思思ナ思れのくぃぞぜ
+0x04457B | dialogue_extended_01_prefix | 01 C0 13 F3 12 22 23 33 44 44 C0 44 44 45 24 43 34 05 2E C0 52 D5 0F 1F 3C 3F E1 C0 C0 1A 3B C0 CC EA 1A CC 0B C0 0A EF BD ED C1 FA E1 A0 C0 FA 2A 1F C1 1E 0E 41 F4 C0 F4 01 43 F6 24 42 34 24 C0 35 13 33 4F 51 32 04 14 C0 E3 13 C4 1E 01 2E D1 D1 C0 C0 DA 0D DE C1 BC 0A 18 C0 0F AC 1A DE ED 0C 2F D3 C0 C4 D0 | [01]ナぢ{F3}だぃぅくののナののはぇねけかうナらレずぺちと」ナナべたナム{EA}べムげナぐ{EF}ツ{ED}ニ{FA}」ポナ{FA}ゎぺニぷじに{F4}ナ{F4}[01]ね{F6}ぇぬけぇナこぢくやよきおづナ事ぢノぷ[01]うヨヨナナーざ！ニチぐびナずアべ！{ED}ごえリナノユ
+0x0445B4 | dialogue_extended_01_prefix | 01 43 F6 24 42 34 24 C0 35 13 33 4F 51 32 04 14 C0 E3 13 C4 1E 01 2E D1 D1 C0 C0 DA 0D DE C1 BC 0A 18 C0 0F AC 1A DE ED 0C 2F D3 C0 C4 D0 | [01]ね{F6}ぇぬけぇナこぢくやよきおづナ事ぢノぷ[01]うヨヨナナーざ！ニチぐびナずアべ！{ED}ごえリナノユ
+0x0445C9 | dialogue_extended_01_prefix | 01 2E D1 D1 C0 C0 DA 0D DE C1 BC 0A 18 C0 0F AC 1A DE ED 0C 2F D3 C0 C4 D0 | [01]うヨヨナナーざ！ニチぐびナずアべ！{ED}ごえリナノユ
+0x0445E9 | dialogue_extended_01_prefix | 01 05 01 15 E5 1E 41 11 C0 33 F6 04 11 43 13 05 10 C0 23 5E 60 14 E5 E2 11 E0 C0 10 F1 D0 FA 3C CE 0B 0B C0 DF BE FA 0B CD FB EC ED C0 ED ED 1A 0D E0 D0 2B 12 C0 B1 | [01]か[01]で言ぷにぞナく{F6}おぞねぢかぜナぅ！「づ言・ぞ「ナぜ{F1}ユ{FA}ちモげげナ。テ{FA}げメ{FB}{EC}{ED}ナ{ED}{ED}べざ「ユゔだナカ
+0x044600 | script_pointer       | E2 11 E0 C0 10 F1 D0 FA 3C CE 0B 0B C0 DF BE FA 0B CD FB EC ED C0 ED ED 1A 0D E0 D0 2B 12 C0 B1 00 F2 01 4F 33 05 21 C0 22 33 05 14 12 51 24 03 C0 32 23 23 32 34 14 22 40 B0 45 21 71 E7 F0 3E 12 E2 C0 0E 3D 02 EF EF 0C F0 BF C0 FB 1B EE DE CC 0B ED CE C0 DC DD DD CD EF A1 BE 0C B0 0D B1 A1 FD 4E 3F 23 33 C0 21 32 02 32 03 22 21 15 C0 E2 31 20 50 5F 23 4F 43 C0 11 42 12 31 31 32 14 11 B0 7F 27 2E 60 62 B6 B5 97 C0 FD 1D 0D F0 DE 0D ED 0C C0 EE BF DD DD DD ED EC DE C0 EC DE 0A ED FE | ・ぞ「ナぜ{F1}ユ{FA}ちモげげナ。テ{FA}げメ{FB}{EC}{ED}ナ{ED}{ED}べざ「ユゔだナカ
+0x044621 | dialogue_extended_FE | F2 01 4F 33 05 21 C0 22 33 05 14 12 51 24 03 C0 32 23 23 32 34 14 22 40 B0 45 21 71 E7 F0 3E 12 E2 C0 0E 3D 02 EF EF 0C F0 BF C0 FB 1B EE DE CC 0B ED CE C0 DC DD DD CD EF A1 BE 0C B0 0D B1 A1 FD 4E 3F 23 33 C0 21 32 02 32 03 22 21 15 C0 E2 31 20 50 5F 23 4F 43 C0 11 42 12 31 31 32 14 11 B0 7F 27 2E 60 62 B6 B5 97 C0 FD 1D 0D F0 DE 0D ED 0C C0 EE BF DD DD DD ED EC DE C0 EC DE 0A ED FE | {F2}[01]やくかぁナぃくかづだよぇえナきぅぅきけづぃなオはぁ{71}、{F0}てだ・ナじつ…{EF}{EF}ご{F0}トナ{FB}ぼ{EE}！ムげ{ED}モナ゜？？メ{EF}ァテごオざカァ{FD}もとぅくナぁき…きえぃぁでナ・かゆぅやねナぞぬだかかきづぞオ{7F}ゃう「・サコバナ{FD}ぴざ{F0}！ざ{ED}ごナ{EE}ト？？？{ED}{EC}！ナ{EC}！ぐ{ED}[FE]
+0x0446FF | script_pointer       | B0 33 E1 5E 24 21 31 31 24 B0 31 24 06 02 27 D6 05 02 B0 60 22 41 F7 04 17 F4 6F B0 61 24 F0 51 02 F2 FF 2F | オく」！ぇぁかかぇオかぇカ…ゃロか…オ「ぃに{F7}おば{F4}{6F}オ」ぇ{F0}よ…{F2}[FF2F]
+0x044726 | dialogue_extended_FE | ED 1E ED F9 2A 19 B0 1E BD 1A 2A 3A D1 AE FE | {ED}ぷ{ED}{F9}ゎぶオぷツべゎそヨウ[FE]
+0x044735 | dialogue_extended_FE | B0 CF FD 1C 0D 01 C2 FE | オヤ{FD}ぱざ[01]ヌ[FE]
+0x044777 | dialogue_extended_01_prefix | 01 22 2F EE 13 56 B0 51 CB AB DF 24 45 43 0E B0 E0 36 75 0E BA BF | [01]ぃえ{EE}ぢろオよミヴ。ぇはねじオ「さ{75}じソト
+0x0447A6 | dialogue_extended_01_prefix | 01 12 22 22 A0 56 77 76 32 36 66 51 C9 B0 BC D3 56 76 53 22 10 FD C0 DD EF 13 43 0D BA CF 02 B0 34 21 24 41 DC AB F2 42 B0 1D BC E2 33 2E BB CD EF B0 0F F0 22 0D CB D1 57 64 B0 1B AB D0 47 76 41 EB A9 C0 CD E0 24 55 31 ED CD DE B0 E0 35 65 3F DC CC F1 36 C0 44 54 32 0F ED DE 01 23 C0 32 10 EC AA CE 05 77 32 B0 FB AC E1 34 43 32 10 DC B0 AA CE 01 11 | [01]だぃぃポろ{77}{76}きさ思よホオチリろ{76}りぃぜ{FD}ナ？{EF}ぢねざソヤ…オけぁぇに゜ヴ{F2}ぬオぴチ・くうタメ{EF}オず{F0}ぃざミヨわ見オぼヴユふ{76}に{EB}ョナメ「ぇれか{ED}メ！オ「こ言と゜ム{F1}さナのるきず{ED}！[01]ぅナきぜ{EC}ヮモか{77}きオ{FB}ア」けねきぜ゜オヮモ[01]ぞ
+0x044800 | script_pointer       | ED DE 01 23 C0 32 10 EC AA CE 05 77 32 B0 FB AC E1 34 43 32 10 DC B0 AA CE 01 11 00 23 45 30 C0 EC CB DE F0 01 22 21 0E B0 AC E0 22 1E EF 01 24 56 B0 65 41 FE | {ED}！[01]ぅナきぜ{EC}ヮモか{77}きオ{FB}ア」けねきぜ゜オヮモ[01]ぞ
+0x04481C | dialogue_extended_FE | 23 45 30 C0 EC CB DE F0 01 22 21 0E B0 AC E0 22 1E EF 01 24 56 B0 65 41 FE | ぅはおナ{EC}ミ！{F0}[01]ぃぁじオア「ぃぷ{EF}[01]ぇろオ言に[FE]
+0x044824 | dialogue_extended_01_prefix | 01 22 21 0E B0 AC E0 22 1E EF 01 24 56 B0 65 41 | [01]ぃぁじオア「ぃぷ{EF}[01]ぇろオ言に
+0x04482E | dialogue_extended_01_prefix | 01 24 56 B0 65 41 | [01]ぇろオ言に
+0x044862 | dialogue_extended_01_prefix | 01 22 32 22 10 C0 ED DD F1 33 20 CA AE 03 C0 65 1D CB D0 34 32 FD CD C0 F1 35 65 30 EB AB E0 25 C0 54 20 FD DD CD EF 13 56 C0 42 1F EF | [01]ぃきぃぜナ{ED}？{F1}くマえナ言ぴミユけき{FD}メナ{F1}こ言お{EB}ヴ「ぉナる{FD}メ{EF}ぢろナぬぺ{EF}
+0x044897 | dialogue_extended_FE | E2 46 65 3E B9 9C C0 02 34 32 10 FE | ・ひ言てセパナ…けきぜ[FE]
+0x0448A3 | dialogue_extended_FE | BB AB D0 B0 36 65 0F F1 10 FE | タヴユオさ言ず{F1}ぜ[FE]
+0x0448AD | dialogue_extended_FE | CD 25 B0 77 5E A8 BD 03 65 43 10 B0 FE | メぉオ{77}！ュツえ言ねぜオ[FE]
+0x0448BA | dialogue_extended_FE | EE ED CB AB E3 67 73 A0 EA 9B D2 66 43 20 DC CE C0 01 22 1F ED CC E0 35 66 C0 52 FE | {EE}{ED}ミヴ事、{73}ポ{EA}ボラ思ね゜ナ[01]ぃぺ{ED}ム「こ思ナら[FE]
+0x0448CB | dialogue_extended_01_prefix | 01 22 1F ED CC E0 35 66 C0 52 | [01]ぃぺ{ED}ム「こ思ナら
+0x0448F3 | dialogue_extended_01_prefix | 01 67 62 0C C0 CB BC DF 12 33 32 22 22 B0 41 FB 99 AC E3 67 75 0B B0 AA C1 44 21 EC CF | [01]、・ごナミチ。だくきぃぃオに{FB}ブア事、{75}げオヮニのぁ{EC}ヤ
+0x044972 | dialogue_extended_FE | DC BC D1 C0 55 42 0E D0 13 33 1E DD C0 DE 01 22 10 0F FE | ゜チヨナれぬじユぢくぷ？ナ！[01]ぃぜず[FE]
+0x044980 | dialogue_extended_01_prefix | 01 22 10 0F | [01]ぃぜず
+0x044985 | dialogue_extended_FE | CC BD C0 F2 44 43 FE | ムツナ{F2}のね[FE]
+0x04499D | dialogue_extended_01_prefix | 01 34 55 42 FD C0 BC EF 34 42 0F DD CD E0 B0 16 77 43 0E EF 12 22 0F C0 F0 | [01]けれぬ{FD}ナチ{EF}けぬず？メ「オど{77}ねじ{EF}だぃずナ{F0}
+0x0449D2 | dialogue_extended_01_prefix | 01 11 22 23 44 30 C0 FD CB BC CD EF 02 33 43 C0 1D CC D0 36 54 2E DD | [01]ぞぃぅのおナ{FD}ミチメ{EF}…くねナぴムユさるう？
+0x0449EA | dialogue_extended_FF | B0 12 0E CC CF 24 67 74 43 C0 22 22 10 00 00 0F EC CB C0 DF 24 54 2F ED EF 12 22 B0 1E CC DF 12 21 13 56 76 B0 30 ED DC CB AA CF 35 66 B0 31 DB AA CE 46 64 1C AA C0 F1 45 52 10 ED EE DD EF C0 14 66 53 1D BB CE 02 33 B0 62 0D 99 AC CD CB BD F1 C0 12 34 45 65 43 1F EC CC B0 CE 13 30 EE F1 46 53 20 C0 00 11 0E DC CE 01 10 FE C0 E0 35 66 41 EC BB CD 12 B0 3F CA 9C 25 64 3D BB EF B0 01 0E DC CE 24 77 62 DC C0 F0 12 1F DC BC EF FF 01 | オだじムヤぇ、{74}ねナぃぃぜ
+0x044A00 | script_pointer       | 2F ED EF 12 22 B0 1E CC DF 12 21 13 56 76 B0 30 ED DC CB AA CF 35 66 B0 31 DB AA CE 46 64 1C AA C0 F1 45 52 10 ED EE DD EF C0 14 66 53 1D BB CE 02 33 B0 62 0D 99 AC CD CB BD F1 C0 12 34 45 65 43 1F EC CC B0 CE 13 30 EE F1 46 53 20 C0 00 11 0E DC CE 01 10 FE | え{ED}{EF}だぃオぷム。だぁぢろ{76}オお{ED}゜ミヮヤこ思オか゛ヮモひ見ぱヮナ{F1}はらぜ{ED}{EE}？{EF}ナづ思りぴタモ…くオ・ざブアメミツ{F1}ナだけは言ねぺ{EC}ムオモぢお{EE}{F1}ひりナぞじ゜モ[01]ぜ[FE]
+0x044A4F | dialogue_extended_FE | 11 0E DC CE 01 10 FE | ぞじ゜モ[01]ぜ[FE]
+0x044A69 | dialogue_extended_01_prefix | 01 0E DC CE 24 77 62 DC C0 F0 12 1F DC BC EF | [01]じ゜モぇ{77}・゜ナ{F0}だぺ゜チ{EF}
+0x044A79 | dialogue_extended_01_prefix | 01 C0 24 55 30 DB BC F1 23 20 C0 DC BD 02 44 41 | [01]ナぇれお゛チ{F1}ぅナツ…のに
+0x044AD3 | dialogue_extended_01_prefix | 01 C0 10 01 35 55 41 EE ED DC C0 CC CE 02 33 44 33 22 11 B0 23 21 EC AA DF 14 67 76 B0 53 0D CD E1 34 43 2E C8 C0 BB CD EF 02 35 65 2E B8 C0 8B F2 22 FD CC DE 02 34 C0 45 43 20 CB BC E1 34 33 B0 31 01 21 | [01]ナぜ[01]これに{EE}{ED}゜ナムモ…くのくぃぞオぅぁ{EC}ヮ。づ、{76}オりざメ」けねうヘナタメ{EF}…こ言うスナゲ{F2}ぃ{FD}ム！…けナはねミ」けくオか[01]ぁ
+0x044B1F | dialogue_extended_FE | 12 24 55 43 20 FE | だぇれねぽ[FE]
+0x044B35 | dialogue_extended_01_prefix | 01 33 C0 10 00 00 01 23 33 2F CA C3 AA C0 12 21 0F F0 02 32 A0 | [01]くナぜ
+0x044B4B | dialogue_extended_FE | 23 33 2E CB AE 46 64 C0 0F ED CC EF 13 45 54 20 B0 DD 01 0D CC CB CE F0 13 B0 45 65 54 21 01 23 21 10 B0 FE | ぅくうミウひ見ナず{ED}ム{EF}ぢはるオ[01]ざムミモ{F0}ぢオは言るぁ[01]ぅぁぜオ[FE]
+0x044B5D | dialogue_extended_01_prefix | 01 0D CC CB CE F0 13 B0 45 65 54 21 01 23 21 10 B0 | [01]ざムミモ{F0}ぢオは言るぁ[01]ぅぁぜオ
+0x044B69 | dialogue_extended_01_prefix | 01 23 21 10 B0 | [01]ぅぁぜオ
+0x044BE3 | dialogue_extended_01_prefix | 01 1F ED DD DB 9A CD DC B0 D0 34 43 1F DB CE 11 23 C0 22 32 0E DC CD F0 0F | [01]ぺ{ED}？゛ベメ゜オユけねぺ゛モぞぅナぃきじ゜メ{F0}ず
+0x044C41 | dialogue_extended_01_prefix | 01 0D CB 9B C0 DF 12 20 F0 14 56 42 22 C0 44 55 55 43 12 21 10 | [01]ざミボナ。だ{F0}ろぬぃナのれれねだぁぜ
+0x044C57 | dialogue_extended_FE | C0 0F ED DD ED CC B9 88 CD B0 9A BE 01 30 0E DE DD DD C0 FE | ナず{ED}？{ED}ムセガメオベテ[01]おじ！？？ナ[FE]
+0x044C63 | dialogue_extended_01_prefix | 01 30 0E DE DD DD C0 | [01]おじ！？？ナ
+0x044C6B | dialogue_extended_FE | 14 1F EC DE FE | づぺ{EC}！[FE]
+0x044C81 | dialogue_extended_FE | 0F E0 01 C0 0F FE | ず「[01]ナず[FE]
+0x044CB4 | dialogue_extended_01_prefix | 01 22 44 55 44 34 C0 44 43 24 F0 F0 | [01]ぃのれのけナのねぇ{F0}{F0}
+0x044CC5 | dialogue_extended_FE | 10 0E DD DC DC C0 12 C0 33 45 77 56 55 1E E0 F0 C0 EF E1 22 23 53 44 52 01 B0 F1 15 32 13 56 1E FE | ぜじ？゜゜ナだナくは{77}ろれぷ「{F0}ナ{EF}」ぃぅりのら[01]オ{F1}できぢろぷ[FE]
+0x044CDD | dialogue_extended_01_prefix | 01 B0 F1 15 32 13 56 1E | [01]オ{F1}できぢろぷ
+0x044CE6 | dialogue_extended_FE | F2 B0 30 0D CA 89 BA 9A C0 0E B0 EE FE | {F2}オおざマギソベナじオ{EE}[FE]
+0x044CF3 | dialogue_extended_01_prefix | 01 2D D1 2E CD | [01]いヨうメ
+0x044D07 | dialogue_extended_01_prefix | 01 21 DD ED C0 EE CD CB BD DD CE | [01]ぁ？{ED}ナ{EE}メミツ？モ
+0x044D13 | dialogue_extended_FE | E1 B0 40 ED DF 35 44 FE | 」オな{ED}。この[FE]
+0x044D23 | dialogue_extended_FE | 13 20 01 A0 51 10 FE | ぢいよぜ[FE]
+0x044D3A | dialogue_extended_01_prefix | 01 0D CC EC CD | [01]ざム{EC}メ
+0x044D68 | dialogue_extended_01_prefix | 01 1D BD BC CE BE C0 | [01]ぴツチモテナ
+0x044D71 | dialogue_extended_01_prefix | 01 22 11 0F DD DB C0 A8 AC AB BC D0 | [01]ぃぞず？゛ナュアヴチユ
+0x044DD6 | dialogue_extended_01_prefix | 01 25 32 0F B0 00 10 EE EE BA 98 AC F3 C0 22 32 22 11 01 1F ED CB B0 8B BC DC D1 21 23 31 21 A0 F9 AF F0 1E D0 01 1D DD 90 22 FA DC 8E E1 8C 4B B3 A0 02 DD | [01]ぉきずオ
+0x044DDC | dialogue_extended_FE | 10 EE EE BA 98 AC F3 C0 22 32 22 11 01 1F ED CB B0 8B BC DC D1 21 23 31 21 A0 F9 AF F0 1E D0 01 1D DD 90 22 FA DC 8E E1 8C 4B B3 A0 02 DD FE | ぜ{EE}{EE}ソビア{F3}ナぃきぃぞ[01]ぺ{ED}ミオゲチ゜ヨぁぅかぁポ{F9}エ{F0}ぷユ[01]ぴ？ゼぃ{FA}゜ジ」ゴみクポ…？[FE]
+0x044DE8 | dialogue_extended_01_prefix | 01 1F ED CB B0 8B BC DC D1 21 23 31 21 A0 F9 AF F0 1E D0 01 1D DD 90 22 FA DC 8E E1 8C 4B B3 A0 02 DD | [01]ぺ{ED}ミオゲチ゜ヨぁぅかぁポ{F9}エ{F0}ぷユ[01]ぴ？ゼぃ{FA}゜ジ」ゴみクポ…？
+0x044DFB | dialogue_extended_01_prefix | 01 1D DD 90 22 FA DC 8E E1 8C 4B B3 A0 02 DD | [01]ぴ？ゼぃ{FA}゜ジ」ゴみクポ…？
+0x044E00 | script_pointer       | FA DC 8E E1 8C 4B B3 A0 02 DD FE | {FA}゜ジ」ゴみクポ…？[FE]
+0x044E17 | dialogue_extended_FE | 14 54 A0 74 33 30 EF EC BD CD E0 B0 13 22 32 55 43 33 31 10 B0 FE | づるポ{74}くお{EF}{EC}ツメ「オぢぃきれねくかぜオ[FE]
+0x044E49 | dialogue_extended_FE | 56 43 10 FE | ろねぜ[FE]
+0x044E60 | dialogue_extended_FE | 10 B0 EF 0F FE | ぜオ{EF}ず[FE]
+0x044E8C | dialogue_extended_FE | EE DE A0 BA 9B AB CE FE | {EE}！ポソボヴモ[FE]
+0x044EA4 | dialogue_extended_01_prefix | 01 44 45 32 22 B0 02 10 0F DC CC BC EF 22 A0 64 EB 88 E1 | [01]のはきぃオ…ぜず゜ムチ{EF}ぃポ見{EB}ガ」
+0x044EE5 | dialogue_extended_FE | FD AA DE C0 FE | {FD}ヮ！ナ[FE]
+0x044F08 | dialogue_extended_01_prefix | 01 32 11 11 B0 11 0F 01 F0 23 34 46 63 A0 1E FD EF 01 36 42 1E 9A A0 BF | [01]きぞぞオぞず[01]{F0}ぅけひ事ポぷ{FD}{EF}[01]さぬぷベポト
+0x044F19 | dialogue_extended_01_prefix | 01 36 42 1E 9A A0 BF | [01]さぬぷベポト
+0x044F75 | dialogue_extended_01_prefix | 01 11 25 B0 45 77 55 51 0F F1 12 0F B0 CB BA AE E0 | [01]ぞぉオは{77}れよず{F1}だずオミソウ「
+0x044FB3 | dialogue_extended_FE | F1 23 31 10 90 DE F2 77 75 33 C8 9D 27 A0 34 40 BA F2 F2 0D EE CF A0 1F 34 33 42 22 31 54 23 A0 20 33 14 54 34 3F E0 ED 90 CA 22 45 65 73 2F FE | {F1}ぅかぜゼ！{F2}{77}{75}くヘピゃポけなソ{F2}{F2}ざ{EE}ヤポぺけくぬぃかるぅポくるけと「{ED}ゼマぃは言{73}え[FE]
+0x044FE5 | dialogue_extended_01_prefix | 01 43 14 54 56 64 42 21 A0 0D CE CD 0F | [01]ねづるろ見ぬぁポざモメず
+0x04500F | dialogue_extended_FE | 24 32 A0 1E DD CD CC BA 98 BC BB 90 AE 11 32 0B F3 77 63 42 A0 20 EE E0 10 FE | ぇきポぷ？メムソビチタゼウぞきげ{F3}{77}事ぬポ{EE}ぜ[FE]
+0x045031 | dialogue_extended_FE | EE DB CF 22 90 45 33 D9 9D 47 77 51 CB A0 DD DF 01 1F DD F0 35 42 A0 EF 23 10 01 0F ED BB CC A0 DF 11 10 DD 02 46 65 20 A0 FE | {EE}゛ヤぃゼはくンピふ{77}よミポ？。[01]ぺ？{F0}こぬポ{EF}ぅぜ[01]ず{ED}タムポ。ぞぜ？…ひ言ポ
+0x045041 | dialogue_extended_01_prefix | 01 1F DD F0 35 42 A0 EF 23 10 01 0F ED BB CC A0 DF 11 10 DD 02 46 65 20 A0 | [01]ぺ？{F0}こぬポ{EF}ぅぜ[01]ず{ED}タムポ。ぞぜ？…ひ言ぽポ
+0x04504B | dialogue_extended_01_prefix | 01 0F ED BB CC A0 DF 11 10 DD 02 46 65 20 A0 | [01]ず{ED}タムポ。ぞぜ？…ひ言ぽポ
+0x045083 | dialogue_extended_01_prefix | 01 23 44 A0 33 31 0F F0 | [01]ぅのポくかず{F0}
+0x0450B9 | dialogue_extended_01_prefix | 01 22 32 B0 00 | [01]ぃきオ
+0x0450BF | dialogue_extended_FE | DD CC CD DD EE F0 A0 24 57 63 0F F1 35 66 53 A0 22 44 22 21 FE | ？ムメ？{EE}{F0}ポぇわ事ず{F1}こ思りポぃのぃぁ[FE]
+0x0450EB | dialogue_extended_01_prefix | 01 31 EE E0 13 33 34 A0 33 21 FD BB BE F0 0F ED A0 DE 01 0F | [01]か{EE}「ぢくけポくぁ{FD}タテ{F0}ず{ED}ポ！[01]ず
+0x04512E | dialogue_extended_FE | ED BB CE A0 F1 34 55 42 1F FE | {ED}タモポ{F1}けれぬぺ[FE]
+0x045177 | dialogue_extended_FE | E1 24 90 75 55 51 DC 99 B9 AC D0 90 32 20 0E 15 30 DB AB AC 90 DE FE | 」ぇゼ{75}れよ゜ブセアユゼきじお゛ヴアゼ！[FE]
+0x0451CC | dialogue_extended_01_prefix | 01 0E FD CC BC E1 22 90 | [01]じ{FD}ムチ」ぃゼ
+0x0451D5 | dialogue_extended_FE | CC BA DF 02 33 12 41 90 0F EE DC DF 21 24 34 33 80 62 14 32 41 FE | ムソ。…くだにゼず{EE}゜。ぁぇけく{80}・づきに[FE]
+0x0451F2 | dialogue_extended_FE | AB DE D0 03 0D 80 DE DB DE EE E0 F1 FE | ヴ！ユえざ{80}！゛！{EE}「{F1}[FE]
+0x045227 | dialogue_extended_FE | DD E2 1D E0 DD 05 70 31 30 10 EC FE | ？・ぴ「？か{70}かおぜ{EC}[FE]
+0x045237 | dialogue_extended_01_prefix | 01 05 20 57 32 54 | [01]かわる
+0x045297 | dialogue_extended_FE | DE 01 C0 06 7A 9A 3D A5 AA AC 66 C0 BA CA BB 1B 16 C6 DE BB C0 DB 5C BB FB 47 6C 4C 5C C0 6E B4 77 B2 6C B4 66 BB C0 16 66 44 F6 E3 C6 65 4E C0 1D 1F B3 6B B5 6F B1 05 C0 55 5B 4C AC 5F FE | ！[01]ナカ{7A}ベつォヮア思ナソマタぼどヒ！タナ゛゜タ{FB}ふ{6C}む゜ナ{6E}ケ{77}キ{6C}ケ思タナど思の{F6}事ヒ言もナぴぺク{6B}コ{6F}カかナれ゛むア。[FE]
+0x04539D | dialogue_extended_FE | 3A C0 DD 1A 55 5A 2B E5 BC 4A C0 55 BC 11 0C 55 D2 EA A4 C0 5D AE 15 33 DA A5 CC D1 C0 D5 3B 4D 3C BE 5E CA 43 C0 55 43 A0 A4 4B A3 5B 3D C0 D3 4C 4E F4 5D A0 45 DE C0 E5 3B DC 35 B3 2D E4 D4 C0 A3 33 35 CA 13 51 B1 FE | そナ？べれーゔ言チまナれチぞごれラ{EA}ェナ？ウでくーォムヨナレためちテ！マねナれねポェみゥ゛つナリむも{F4}？ポは！ナ言た゜こクい見ルナゥくこマぢよカ[FE]
+0x0453E6 | dialogue_extended_FE | C0 31 2B 35 C4 44 EC CD B4 C0 E2 5C B4 C3 33 B4 EB CB C0 2D 12 CE CE 54 DC B5 24 C0 4B E4 C1 2D B3 DB 55 3B C0 3C 4D DC 4E B4 54 C3 C2 C0 3F DF 31 F0 31 0D 4B B2 C0 DC C1 5B 02 52 45 CC BE C0 10 FD 30 D5 1C B3 2E B4 C0 D4 01 DD DB C4 CD C4 CC C0 BD 35 5F B4 2C BF DE DB C0 4C 5C 5D 33 3C C4 BB 35 C0 5E CB B5 D0 C5 C5 C4 C2 C0 E5 BD CC 5C 0B 40 D5 5C C0 EB E5 CC B5 12 13 5B 50 C0 0C E2 B5 B1 FD 14 3C 20 C0 41 CB D3 D3 1F 5C BC 54 C0 31 FE | ナかゔこノの{EC}メケナ・゜ケネくケ{EB}ミナいだモモる゜コぇナみ見ニいク゛れたナちめ゜もケるネヌナと。か{F0}かざみキナ゜ニ゛…らはムテナぜ{FD}おレぱクうケナル[01]？゛ノメノムナツこ。ケあト！゛ナむ゜？くちノタこナ！ミコユハハノヌナ言ツム゜げなレ゜ナ{EB}言ムコだぢ゛ゆナご・コカ{FD}づちナミリリぺ゜チるナか[FE]
+0x045408 | script_pointer       | 55 3B C0 3C 4D DC 4E B4 54 C3 C2 C0 3F DF 31 F0 31 0D 4B B2 C0 DC C1 5B 02 52 45 CC BE C0 10 FD 30 D5 1C B3 2E B4 C0 D4 01 DD DB C4 CD C4 CC C0 BD 35 5F B4 2C BF DE DB C0 4C 5C 5D 33 3C C4 BB 35 C0 5E CB B5 D0 C5 C5 C4 C2 C0 E5 BD CC 5C 0B 40 D5 5C C0 EB E5 CC B5 12 13 5B 50 C0 0C E2 B5 B1 FD 14 3C 20 C0 41 CB D3 D3 1F 5C BC 54 C0 31 FE | れたナちめ゜もケるネヌナと。か{F0}かざみキナ゜ニ゛…らはムテナぜ{FD}おレぱクうケナル[01]？゛ノメノムナツこ。ケあト！゛ナむ゜？くちノタこナ！ミコユハハノヌナ言ツム゜げなレ゜ナ{EB}言ムコだぢ゛ゆナご・コカ{FD}づちナミリリぺ゜チるナか[FE]
+0x045428 | script_pointer       | 30 D5 1C B3 2E B4 C0 D4 01 DD DB C4 CD C4 CC C0 BD 35 5F B4 2C BF DE DB C0 4C 5C 5D 33 3C C4 BB 35 C0 5E CB B5 D0 C5 C5 C4 C2 C0 E5 BD CC 5C 0B 40 D5 5C C0 EB E5 CC B5 12 13 5B 50 C0 0C E2 B5 B1 FD 14 3C 20 C0 41 CB D3 D3 1F 5C BC 54 C0 31 FE | おレぱクうケナル[01]？゛ノメノムナツこ。ケあト！゛ナむ゜？くちノタこナ！ミコユハハノヌナ言ツム゜げなレ゜ナ{EB}言ムコだぢ゛ゆナご・コカ{FD}づちナミリリぺ゜チるナか[FE]
+0x045430 | dialogue_extended_01_prefix | 01 DD DB C4 CD C4 CC C0 BD 35 5F B4 2C BF DE DB C0 4C 5C 5D 33 3C C4 BB 35 C0 5E CB B5 D0 C5 C5 C4 C2 C0 E5 BD CC 5C 0B 40 D5 5C C0 EB E5 CC B5 12 13 5B 50 C0 0C E2 B5 B1 FD 14 3C 20 C0 41 CB D3 D3 1F 5C BC 54 C0 31 | [01]？゛ノメノムナツこ。ケあト！゛ナむ゜？くちノタこナ！ミコユハハノヌナ言ツム゜げなレ゜ナ{EB}言ムコだぢ゛ゆナご・コカ{FD}づちナミリリぺ゜チるナか
+0x0454EE | dialogue_extended_FE | C1 25 C4 41 C3 22 C0 43 4D 2D CD 0E C0 52 5C C0 FE | ニぉノにネぃナねめいメじナら゜ナ[FE]
+0x0454FF | dialogue_extended_FE | F4 44 CB B4 5D 5C D3 C0 CF B4 D3 C3 5D EB 4C 33 C0 54 FC CD 04 E3 13 C3 C5 C0 35 C4 DB 15 EC 35 EC 3E C0 4F D2 DC 54 5C C4 22 DC C0 4D 3E 40 C3 EE B0 24 1E C0 DD F1 5D D1 2C CB 24 5D C0 C3 3F 3F 3C 40 55 FC E3 C0 24 F3 DC C2 5C 35 3C C4 C0 FE | {F4}のミケ？゜リナヤケリネ？{EB}むくナる{FC}メお事ぢネハナこノ゛で{EC}こ{EC}てナやラ゜る゜ノぃ゜ナめてなネ{EE}オぇぷナ？{F1}？ヨあミぇ？ナネととちなれ{FC}事ナぇ{F3}゜ヌ゜こちノナ[FE]
+0x045577 | dialogue_extended_01_prefix | 01 DE D2 DE C0 34 3D CD C5 5E EC F4 42 C0 CC 43 5C 2E 4D C3 03 F3 C0 E3 D3 C4 1C CF 20 C0 42 C0 E3 1E 2C D3 40 20 1D F1 B0 5C D9 37 97 B6 D6 49 D7 B0 59 02 95 21 C3 D9 2F 30 B0 C1 27 C5 B1 CB D1 BD 5A B0 5A 7B 5B 55 76 B7 A0 0B B0 BE CA 15 51 A7 5A A4 C3 B0 A3 D1 72 F5 AD 26 36 AF B0 6D 64 BF | [01]！ラ！ナけつメハ！{EC}{F4}ぬナムね゜うめネえ{F3}ナ事リノぱヤナナ事ぷあリなぴオ゜ンしバサロほワオん…デぁネンえおオニゃハカミヨツーオー{7B}゛れ{76}シポげオテマでよャーェネオゥヨ{72}{F5}イっさエオ{6D}見ト
+0x045631 | dialogue_extended_FE | 0C 50 BF 5D B5 3E DF B0 FC 15 EE 41 E2 E1 E2 4F A0 8D E6 C9 36 B8 56 17 99 B0 05 FE | ごゆト？コて。オ{FC}で{EE}に・」・やポ思ホさスろばブオか[FE]
+0x045722 | dialogue_extended_FE | 70 11 A3 12 DE 21 FE | {70}ぞゥだ！ぁ[FE]
+0x045736 | dialogue_extended_01_prefix | 01 21 ED F2 42 FC B2 C0 33 0D CE 24 2E BC 04 50 C0 CB E3 54 0B BF 46 4E AC C0 16 62 C8 E4 75 F9 8E 77 C0 3C 8B 17 60 A8 D3 76 EA C0 AF 57 4E 9C 16 62 CA E3 C0 64 0C BF 35 3F CC E3 42 B0 E8 9F 67 3C 8B 16 71 B9 B0 C2 66 1B 9E 47 5F AB 16 B0 61 CB 04 51 DC F3 40 CC B0 04 41 CC 05 51 CA E4 74 C0 FD D0 44 1D CE 24 3F CC C0 F3 51 DB D1 44 1D CE 24 B0 60 A9 F5 75 E9 91 67 2C B0 9C 25 40 CC F2 31 0F EE B0 E0 33 1D BC 15 50 A9 D4 C0 43 FC CF 35 3E BC 15 51 C0 CA E3 64 FA AF 56 2D AC C0 15 40 CB D2 53 FB CF 34 C0 2D CE 13 30 ED 01 21 0F A0 CF 22 32 | [01]ぁ{ED}{F2}ぬ{FC}キナくざモぇうチおゆナミ事るげトひもアナど・ヘ見{75}{F9}ジ{77}ナちゲば「ュリ{76}{EA}ナエわもパど・マ事ナ見ごトことム事ぬオ{E8}ペ、ちゲど{71}セオヌ思ぼプふ。ヴどオ」ミおよ゜{F3}なムオおにムかよマ見{74}ナ{FD}ユのぴモぇとムナ{F3}よ゛ヨのぴモぇオ「ョ{F5}{75}{E9}ゾ、あオパぉなム{F2}かず{EE}オ「くぴチでゆョルナね{FC}ヤこてチでよナマ事見{FA}エろいアナでなミラり{FB}ヤけナいモぢお{ED}[01]ぁずポヤぃき
+0x0457E5 | dialogue_extended_01_prefix | 01 21 0F A0 CF 22 32 | [01]ぁずポヤぃき
+0x045910 | dialogue_extended_01_prefix | 01 C0 35 56 66 54 33 11 | [01]ナころ思るくぞ
+0x045919 | dialogue_extended_01_prefix | 01 C0 22 34 55 55 42 10 ED CA C0 AA BB CD EF | [01]ナぃけれれぬぜ{ED}マナヮタメ{EF}
+0x04593A | dialogue_extended_01_prefix | 01 23 45 55 C0 54 32 1E DC BA AA BC DE C0 F0 | [01]ぅはれナるきぷ゜ソヮチ！ナ{F0}
+0x04595A | dialogue_extended_01_prefix | 01 12 34 55 55 43 20 FD C0 BB AA AB CD EF | [01]だけれれね{FD}タヮヴメ{EF}
+0x0459BA | dialogue_extended_01_prefix | 01 23 C0 35 55 55 42 10 EC BA AA C0 BB DD EF | [01]ぅナこれれぬぜ{EC}ソヮナタ？{EF}
+0x0459DB | dialogue_extended_FE | 12 24 45 55 54 C0 32 FE | だぇはれるナき[FE]
+0x0459FA | dialogue_extended_01_prefix | 01 C3 12 34 55 55 43 10 EC BB 90 | [01]ネだけれれねぜ{EC}タゼ
+0x045A25 | dialogue_extended_01_prefix | 01 21 30 C0 1E 5C 1E 0D 11 33 43 31 B0 DA BE 13 67 66 2E DC EC C0 | [01]ぁおナぷ゜ぷざぞくねかオーテぢ、思う゜{EC}ナ
+0x045AB8 | dialogue_extended_FE | B0 2F FB 8D AD 06 FE | オえ{FB}イカ[FE]
+0x045AEE | dialogue_extended_FE | B0 35 31 F1 32 CC AB 9C E3 C0 20 0E CB 01 40 11 ED 12 C0 20 22 FD F0 35 31 E0 1E C0 F2 22 FE | オこか{F1}きムヴパ事ナじ[01]なぞ{ED}だナぃ{F0}こか「ぷナ{F2}ぃ[FE]
+0x045AFB | dialogue_extended_01_prefix | 01 40 11 ED 12 C0 20 22 FD F0 35 31 E0 1E C0 F2 22 | [01]なぞ{ED}だナぃ{F0}こか「ぷナ{F2}ぃ
+0x045B0E | dialogue_extended_FE | CB 0F 2F FE | ミずえ[FE]
+0x045B3C | dialogue_extended_01_prefix | 01 03 54 C0 20 F0 CD DE | [01]えるナ{F0}！
+0x045B86 | dialogue_extended_01_prefix | 01 C0 E0 14 F0 64 | [01]ナ「づ{F0}見
+0x045B96 | dialogue_extended_01_prefix | 01 AD DF B0 1F 50 F0 06 91 57 90 39 C0 01 21 F0 2F EF 21 05 F3 C0 F3 D1 0F 0F E0 9C C0 ED C0 02 2D E1 DE 0D F1 2F 46 C0 4F E1 22 21 33 33 FC FC C0 CE E2 23 13 3F DD DE D0 C0 F1 22 DE D1 B1 F2 21 2F B0 B4 73 47 0B DE CA C1 BE C0 E1 D0 EF 02 40 11 2D E0 C0 3F EE 31 F1 F3 10 D1 EB B0 C2 CD 52 21 F6 C1 F1 F5 C0 E3 E5 DE E0 1E 13 2E CF C0 | [01]イ。オぺゆ{F0}カゾわゼせナ[01]ぁ{F0}え{EF}ぁか{F3}ナ{F3}ヨずず「パナ{ED}ナ…い」！ざ{F1}えひナや」ぃぁくく{FC}{FC}ナモ・ぅぢと？！ユナ{F1}ぃ！ヨカ{F2}ぁえオケ{73}ふげ！マニテナ」ユ{EF}…なぞい「ナと{EE}か{F1}{F3}ぜヨ{EB}オヌメらぁ{F6}ニ{F1}{F5}ナ事言！「ぷぢうヤナ
+0x045BA3 | dialogue_extended_01_prefix | 01 21 F0 2F EF 21 05 F3 C0 F3 D1 0F 0F E0 9C C0 ED C0 02 2D E1 DE 0D F1 2F 46 C0 4F E1 22 21 33 33 FC FC C0 CE E2 23 13 3F DD DE D0 C0 F1 22 DE D1 B1 F2 21 2F B0 B4 73 47 0B DE CA C1 BE C0 E1 D0 EF 02 40 11 2D E0 C0 3F EE 31 F1 F3 10 D1 EB B0 C2 CD 52 21 F6 C1 F1 F5 C0 E3 E5 DE E0 1E 13 2E CF C0 | [01]ぁ{F0}え{EF}ぁか{F3}ナ{F3}ヨずず「パナ{ED}ナ…い」！ざ{F1}えひナや」ぃぁくく{FC}{FC}ナモ・ぅぢと？！ユナ{F1}ぃ！ヨカ{F2}ぁえオケ{73}ふげ！マニテナ」ユ{EF}…なぞい「ナと{EE}か{F1}{F3}ぜヨ{EB}オヌメらぁ{F6}ニ{F1}{F5}ナ事言！「ぷぢうヤナ
+0x045C69 | dialogue_extended_01_prefix | 01 A0 06 53 33 BC CC BE B0 1E CD 0E D0 34 FD 0F DA B0 FD F1 61 6F 3C A9 | [01]ポカりくチムテオぷメじユけ{FD}ずーオ{FD}{F1}」{6F}ちョ
+0x045D1D | dialogue_extended_01_prefix | 01 CE EA 9E 02 0E | [01]モ{EA}プ…じ
+0x045D24 | dialogue_extended_FE | AF B0 05 31 22 0E 33 FE | エオかかぃじく[FE]
+0x045D2C | dialogue_extended_FE | 2C F4 B0 23 1E AF F4 56 32 E2 DA B0 EF 1D A0 1D A0 FE | あ{F4}オぅぷエ{F4}ろき・ーオ{EF}ぴポぴポ[FE]
+0x045DAE | dialogue_extended_01_prefix | 01 1F 0E BB E1 F0 22 A0 3E BB BD D4 31 40 AA F1 B0 1F 40 E1 F0 F2 | [01]ぺじタ」{F0}ぃポてタツルかなヮ{F1}オぺな」{F0}{F2}
+0x045DFC | dialogue_extended_01_prefix | 01 B0 42 1C 00 CC 01 04 01 DD B0 BE D0 13 3F FC DD F2 23 B0 CE 0E C1 72 21 FD FB | [01]オぬぱ
+0x045E74 | dialogue_extended_FE | 2D BF BE ED F2 11 56 A0 52 1F DE CC C0 F4 13 3F A0 CE BB CF 32 32 01 F2 C1 A0 03 F5 2F EF 0D 12 20 20 A0 EC 1F F0 30 DF 1E BF 01 90 B1 01 D0 10 45 5E EF CC 90 8B ED A1 03 35 33 C0 DB 90 C0 F1 46 0E DE BA D0 FE | いトテ{ED}{F2}ぞろポらぺ！ムナ{F4}ぢとポモタヤきき[01]{F2}ニポえ{F5}え{EF}ざだぽ{EC}ぺ{F0}お。ぷト[01]ゼカ[01]ユぜは！{EF}ムゼゲ{ED}ァえこくナ゛ゼナ{F1}ひじ！ソユ[FE]
+0x045E8A | dialogue_extended_01_prefix | 01 F2 C1 A0 03 F5 2F EF 0D 12 20 20 A0 EC 1F F0 30 DF 1E BF 01 90 B1 01 D0 10 45 5E EF CC 90 8B ED A1 03 35 33 C0 DB 90 C0 F1 46 0E DE BA D0 | [01]{F2}ニポえ{F5}え{EF}ざだぽ{EC}ぺ{F0}お。ぷト[01]ゼカ[01]ユぜは！{EF}ムゼゲ{ED}ァえこくナ゛ゼナ{F1}ひじ！ソユ
+0x045E9E | dialogue_extended_01_prefix | 01 90 B1 01 D0 10 45 5E EF CC 90 8B ED A1 03 35 33 C0 DB 90 C0 F1 46 0E DE BA D0 | [01]ゼカ[01]ユぜは！{EF}ムゼゲ{ED}ァえこくナ゛ゼナ{F1}ひじ！ソユ
+0x045EF1 | dialogue_extended_01_prefix | 01 DF 23 51 30 0D 3F 40 70 F0 0F BE 1D F1 0E DF 2D 70 D3 32 E1 33 12 DF BD AC 60 E4 F6 12 FC AC FD ED 21 50 7C A4 DC D4 36 4D 31 F1 51 1D BF E2 F2 01 EF EE 0F 4C 05 01 40 04 | [01]。ぅよおざとな{70}{F0}ずテぴ{F1}じ。い{70}リき」くだ。ツア「見{F6}だ{FC}ア{FD}{ED}ぁゆ{7C}ェ゜ルさめか{F1}よぴト・{F2}[01]{EF}{EE}ずむか[01]なお
+0x045FA5 | dialogue_extended_01_prefix | 01 22 2F EE 13 56 B0 51 CB AB DF 24 45 43 0E B0 E0 36 75 0E BA BF | [01]ぃえ{EE}ぢろオよミヴ。ぇはねじオ「さ{75}じソト
+0x045FD4 | dialogue_extended_01_prefix | 01 12 22 22 A0 56 77 76 32 36 66 51 C9 B0 BC D3 56 76 53 22 10 FD C0 DD EF 13 43 0D BA CF 02 B0 34 21 24 41 DC AB F2 42 B0 1D BC E2 33 2E BB CD EF B0 0F F0 22 0D CB D1 57 64 B0 1B AB D0 47 76 41 EB A9 C0 CD E0 24 55 31 ED CD DE B0 E0 35 65 3F DC CC F1 36 C0 44 54 32 0F ED DE 01 23 C0 32 10 EC AA CE 05 77 32 B0 FB AC E1 34 43 32 10 DC B0 AA CE 01 11 | [01]だぃぃポろ{77}{76}きさ思よホオチリろ{76}りぃぜ{FD}ナ？{EF}ぢねざソヤ…オけぁぇに゜ヴ{F2}ぬオぴチ・くうタメ{EF}オず{F0}ぃざミヨわ見オぼヴユふ{76}に{EB}ョナメ「ぇれか{ED}メ！オ「こ言と゜ム{F1}さナのるきず{ED}！[01]ぅナきぜ{EC}ヮモか{77}きオ{FB}ア」けねきぜ゜オヮモ[01]ぞ
+0x046000 | script_pointer       | 33 2E BB CD EF B0 0F F0 22 0D CB D1 57 64 B0 1B AB D0 47 76 41 EB A9 C0 CD E0 24 55 31 ED CD DE B0 E0 35 65 3F DC CC F1 36 C0 44 54 32 0F ED DE 01 23 C0 32 10 EC AA CE 05 77 32 B0 FB AC E1 34 43 32 10 DC B0 AA CE 01 11 00 23 45 30 C0 EC CB DE F0 01 22 21 0E B0 AC E0 22 1E EF 01 24 56 B0 65 41 FE | くうタメ{EF}オず{F0}ぃざミヨわ見オぼヴユふ{76}に{EB}ョナメ「ぇれか{ED}メ！オ「こ言と゜ム{F1}さナのるきず{ED}！[01]ぅナきぜ{EC}ヮモか{77}きオ{FB}ア」けねきぜ゜オヮモ[01]ぞ
+0x046030 | dialogue_extended_01_prefix | 01 23 C0 32 10 EC AA CE 05 77 32 B0 FB AC E1 34 43 32 10 DC B0 AA CE 01 11 | [01]ぅナきぜ{EC}ヮモか{77}きオ{FB}ア」けねきぜ゜オヮモ[01]ぞ
+0x04604A | dialogue_extended_FE | 23 45 30 C0 EC CB DE F0 01 22 21 0E B0 AC E0 22 1E EF 01 24 56 B0 65 41 FE | ぅはおナ{EC}ミ！{F0}[01]ぃぁじオア「ぃぷ{EF}[01]ぇろオ言に[FE]
+0x046052 | dialogue_extended_01_prefix | 01 22 21 0E B0 AC E0 22 1E EF 01 24 56 B0 65 41 | [01]ぃぁじオア「ぃぷ{EF}[01]ぇろオ言に
+0x04605C | dialogue_extended_01_prefix | 01 24 56 B0 65 41 | [01]ぇろオ言に
+0x046090 | dialogue_extended_01_prefix | 01 22 32 22 10 C0 ED DD F1 33 20 CA AE 03 C0 65 1D CB D0 34 32 FD CD C0 F1 35 65 30 EB AB E0 25 C0 54 20 FD DD CD EF 13 56 C0 42 1F EF | [01]ぃきぃぜナ{ED}？{F1}くマえナ言ぴミユけき{FD}メナ{F1}こ言お{EB}ヴ「ぉナる{FD}メ{EF}ぢろナぬぺ{EF}
+0x0460C5 | dialogue_extended_FE | E2 46 65 3E B9 9C C0 02 34 32 10 FE | ・ひ言てセパナ…けきぜ[FE]
+0x0460D1 | dialogue_extended_FE | BB AB D0 B0 36 65 0F F1 10 FE | タヴユオさ言ず{F1}ぜ[FE]
+0x0460DB | dialogue_extended_FE | CD 25 B0 77 5E A8 BD 03 65 43 10 B0 FE | メぉオ{77}！ュツえ言ねぜオ[FE]
+0x0460E8 | dialogue_extended_FE | EE ED CB AB E3 67 73 A0 EA 9B D2 66 43 20 DC CE C0 01 22 1F ED CC E0 35 66 C0 52 FE | {EE}{ED}ミヴ事、{73}ポ{EA}ボラ思ね゜ナ[01]ぃぺ{ED}ム「こ思ナら[FE]
+0x0460F9 | dialogue_extended_01_prefix | 01 22 1F ED CC E0 35 66 C0 52 | [01]ぃぺ{ED}ム「こ思ナら
+0x046121 | dialogue_extended_01_prefix | 01 67 62 0C C0 CB BC DF 12 33 32 22 22 B0 41 FB 99 AC E3 67 75 0B B0 AA C1 44 21 EC CF | [01]、・ごナミチ。だくきぃぃオに{FB}ブア事、{75}げオヮニのぁ{EC}ヤ
+0x0461A0 | dialogue_extended_FE | DC BC D1 C0 55 42 0E D0 13 33 1E DD C0 DE 01 22 10 0F FE | ゜チヨナれぬじユぢくぷ？ナ！[01]ぃぜず[FE]
+0x0461AE | dialogue_extended_01_prefix | 01 22 10 0F | [01]ぃぜず
+0x0461B3 | dialogue_extended_FE | CC BD C0 F2 44 43 FE | ムツナ{F2}のね[FE]
+0x0461CB | dialogue_extended_01_prefix | 01 34 55 42 FD C0 BC EF 34 42 0F DD CD E0 B0 16 77 43 0E EF 12 22 0F C0 F0 | [01]けれぬ{FD}ナチ{EF}けぬず？メ「オど{77}ねじ{EF}だぃずナ{F0}
+0x046200 | dialogue_extended_01_prefix | 01 11 22 23 44 30 C0 FD CB BC CD EF 02 33 43 C0 1D CC D0 36 54 2E DD | [01]ぞぃぅのおナ{FD}ミチメ{EF}…くねナぴムユさるう？
+0x046218 | dialogue_extended_FF | B0 12 0E CC CF 24 67 74 43 C0 22 22 10 00 00 0F EC CB C0 DF 24 54 2F ED EF 12 22 B0 1E CC DF 12 21 13 56 76 B0 30 ED DC CB AA CF 35 66 B0 31 DB AA CE 46 64 1C AA C0 F1 45 52 10 ED EE DD EF C0 14 66 53 1D BB CE 02 33 B0 62 0D 99 AC CD CB BD F1 C0 12 34 45 65 43 1F EC CC B0 CE 13 30 EE F1 46 53 20 C0 00 11 0E DC CE 01 10 FE C0 E0 35 66 41 EC BB CD 12 B0 3F CA 9C 25 64 3D BB EF B0 01 0E DC CE 24 77 62 DC C0 F0 12 1F DC BC EF FF 01 | オだじムヤぇ、{74}ねナぃぃぜ
+0x04627D | dialogue_extended_FE | 11 0E DC CE 01 10 FE | ぞじ゜モ[01]ぜ[FE]
+0x046297 | dialogue_extended_01_prefix | 01 0E DC CE 24 77 62 DC C0 F0 12 1F DC BC EF | [01]じ゜モぇ{77}・゜ナ{F0}だぺ゜チ{EF}
+0x0462A7 | dialogue_extended_01_prefix | 01 C0 24 55 30 DB BC F1 23 20 C0 DC BD 02 44 41 | [01]ナぇれお゛チ{F1}ぅナツ…のに
+0x046301 | dialogue_extended_01_prefix | 01 C0 10 01 35 55 41 EE ED DC C0 CC CE 02 33 44 33 22 11 B0 23 21 EC AA DF 14 67 76 B0 53 0D CD E1 34 43 2E C8 C0 BB CD EF 02 35 65 2E B8 C0 8B F2 22 FD CC DE 02 34 C0 45 43 20 CB BC E1 34 33 B0 31 01 21 | [01]ナぜ[01]これに{EE}{ED}゜ナムモ…くのくぃぞオぅぁ{EC}ヮ。づ、{76}オりざメ」けねうヘナタメ{EF}…こ言うスナゲ{F2}ぃ{FD}ム！…けナはねミ」けくオか[01]ぁ
+0x04634D | dialogue_extended_FE | 12 24 55 43 20 FE | だぇれねぽ[FE]
+0x046363 | dialogue_extended_01_prefix | 01 33 C0 10 00 00 01 23 33 2F CA C3 AA C0 12 21 0F F0 02 32 1A C0 | [01]くナぜ
+0x046380 | dialogue_extended_01_prefix | 01 C0 35 56 66 54 33 11 | [01]ナころ思るくぞ
+0x046389 | dialogue_extended_01_prefix | 01 C0 22 34 55 55 42 10 ED CA C0 AA BB CD EF | [01]ナぃけれれぬぜ{ED}マナヮタメ{EF}
+0x0463AA | dialogue_extended_01_prefix | 01 23 45 55 C0 54 32 1E DC BA AA BC DE C0 F0 | [01]ぅはれナるきぷ゜ソヮチ！ナ{F0}
+0x0463CA | dialogue_extended_01_prefix | 01 12 34 55 55 43 20 FD C0 BB AA AB CD EF | [01]だけれれね{FD}タヮヴメ{EF}
+0x046400 | script_pointer       | CD E1 23 56 66 65 43 21 C0 00 00 12 34 55 55 54 21 C0 FD CB AA AB BC EE F0 00 C0 FF ED | メ」ぅろ思言ねぁナ
+0x04642A | dialogue_extended_01_prefix | 01 23 C0 35 55 55 42 10 EC BA AA C0 BB DD EF | [01]ぅナこれれぬぜ{EC}ソヮナタ？{EF}
+0x04644B | dialogue_extended_FE | 12 24 45 55 54 C0 32 FE | だぇはれるナき[FE]
+0x04646A | dialogue_extended_01_prefix | 01 C3 12 34 55 55 43 10 EC BB | [01]ネだけれれねぜ{EC}タ
+0x05C401 | script_pointer       | 30 80 37 44 63 D6 4D 65 DA 30 0A C0 BD 6F 62 D6 3D 14 24 1F 30 C2 0C D3 60 0D 5F 70 56 64 54 A1 FD 57 D0 A0 0D 0B DD 20 0A D0 BD 2B D2 AD 46 D0 B1 5D 1C 45 1D D5 54 45 45 05 70 06 46 6D 67 D6 8D 0A A4 7D 46 DE D2 B5 0D 54 30 3F 10 1F F5 7F 56 64 20 A7 08 01 55 F3 FF 56 | お{80}しの事ロめ言ーおぐナツ{6F}・ロつづぇぺおヌごリ「ざ。{70}ろ見るァ{FD}わユポざげ？ぐツゔライひユカ？ぱはぴレるははか{70}カひ{6D}、ロぐェ{7D}ひ！ラコざるおとぜぺ{F5}{7F}ろ見ャ[01]れ{F3}[FF56]
+0x060C00 | script_pointer       | 04 36 04 E0 5F D1 48 02 D7 CB 7F 00 67 18 D3 C7 07 B7 46 BF E2 47 B2 4A BE 60 7A C1 9C 79 C7 58 02 C6 D7 C0 38 01 0C 73 B8 5C 23 80 17 C0 38 02 A4 2E 32 C7 28 01 C6 AD 0C 2A 80 1C 0A 3E 42 2E 72 80 1E 62 3D 80 43 6F 73 6E 72 5E 62 01 FF A0 | おさお「。ヨへ…ワミ{7F}
+0x0622FF | script_pointer       | 6F F6 BD 64 D7 6D 3D D8 01 C6 7C 30 4C 47 3B 73 0F 1F A5 63 20 B0 1D 60 D0 FD DC 7C 80 2C 3F D0 1E 8D 60 D7 ED 2A 01 0A D2 2D 14 15 00 46 45 16 F7 47 53 C7 D0 1A A7 E8 02 15 6A 45 3A EF 75 0A 7D E0 02 55 52 55 52 80 1C D5 1F 80 15 95 A7 68 01 2C A2 C8 01 FE | {6F}{F6}ツ見ワ{6D}つヲ[01]ヒ{7C}おむふた{73}ずぺォ事オ「ユ{FD}゜{7C}{80}あとユぷ「ワ{ED}ゎ[01]ぐラいづで
+0x067874 | script_pointer       | 84 F0 30 80 B6 26 D3 50 28 20 70 53 F3 B4 23 D0 17 E5 10 37 C0 87 76 01 FA B0 57 A7 F3 B4 42 53 75 92 C5 31 96 F2 F2 85 20 21 F1 37 35 1E A7 E5 20 17 E0 87 71 06 F5 A2 85 70 26 D1 36 05 10 CA E5 20 17 D3 93 B3 A7 B7 2C F7 76 56 F4 E5 C1 8B 73 E6 65 93 04 F8 01 60 1F 41 3E 4A 35 AA 10 6F 73 0C 66 18 5D 5D F9 67 27 C5 53 D3 91 E6 A1 FD 34 C5 95 93 B3 B5 D2 20 74 E7 81 56 A3 14 EA 1F 0C 33 07 59 26 3B 44 BC 0F E7 0C 00 EB C4 F0 6E 5F 1F 5B 4B BA 0F 70 FE | {84}{F0}お{80}サっリゆゅ{70}{F3}ケぅユば言ぜしナ{87}{76}[01]{FA}オわャ{F3}ケぬり{75}ダハかド{F2}{F2}{85}ぁしこぷャ言ば{87}{71}カ{F5}ィ{85}{70}っヨさかぜマ言ばヂクャシあ{F7}{76}ろ{F4}言ニゲ{73}思言ヂお{F8}[01]「ぺにてまこヮぜ{6F}{73}ご思び？？{F9}、ゃハりリゾ思ァ{FD}けハデヂクコラ{74}{81}ろゥづ{EA}ぺごくキんったのチず、ご
+0x0678F4 | script_pointer       | 0C 33 07 59 26 3B 44 BC 0F E7 0C 00 EB C4 F0 6E 5F 1F 5B 4B BA 0F 70 FE | ごくキんったのチず、ご
+0x07518D | script_pointer       | 52 D5 3D 54 D5 5D 56 D5 7D 50 FF D5 | らレつるレ？ろレ{7D}ゆ[FFD5]
+0x0784DF | script_pointer       | 01 48 19 44 AE 3A 46 7C 7F D1 1B 21 17 08 AC 07 80 13 80 33 C0 1F 7C 03 11 54 6E 21 5E 70 0F 7E 01 BA 80 10 FD 2D D7 00 00 F6 80 8B A8 04 0F 70 FB 08 AA 77 40 3C 04 7B BA 80 21 FF D7 | [01]へぶのウそひ{7C}{7F}ヨぼぁばがアキ{80}ぢ{80}くナぺ{7C}えぞる{6E}ぁ！{70}ずく[01]ソ{80}ぜ{FD}いワ
+0x0784E9 | script_pointer       | 1B 21 17 08 AC 07 80 13 80 33 C0 1F 7C 03 11 54 6E 21 5E 70 0F 7E 01 BA 80 10 FD 2D D7 00 00 F6 80 8B A8 04 0F 70 FB 08 AA 77 40 3C 04 7B BA 80 21 FF D7 | ぼぁばがアキ{80}ぢ{80}くナぺ{7C}えぞる{6E}ぁ！{70}ずく[01]ソ{80}ぜ{FD}いワ
+0x07E701 | script_pointer       | D8 05 C0 0E 40 C0 FA 1C F1 0D D8 02 C0 10 08 01 CC 04 CC 80 61 50 33 70 F6 51 14 B5 42 27 D2 10 F4 06 A7 85 68 07 0A 0F C1 F0 E3 F1 CD 1E 7F 1F FD 07 B0 FD 13 13 69 6B 7D C1 F0 67 F3 C3 F6 57 93 34 24 3F 70 2A B8 03 40 D0 0D A7 E2 4F EE 07 E7 C0 3B 31 06 F5 0D 70 1F 28 4F 37 E1 47 A0 0E CC 07 60 6F C2 FA 1F 50 D2 5F 58 5F BA 49 38 02 7E 01 03 BA 80 1D 29 D5 35 7A 0F 07 B0 1F A8 03 D2 8D 2D C7 02 3C 21 5F 10 2E 06 5D FD 43 B6 62 B0 03 F0 37 07 AF 54 07 36 07 C7 17 02 E6 04 11 94 07 7D 4C D7 67 00 D7 CA D4 B3 85 E1 00 B7 00 27 CE 06 05 F0 07 F0 FB 03 F0 73 F8 D6 30 37 CA BF 3F DC D7 02 0E 40 DA 20 69 C6 06 07 03 03 01 05 80 8F 5A 20 00 40 D6 04 07 0A 80 13 84 04 01 86 00 C0 3A 02 01 C8 01 F0 78 01 D0 67 B8 01 DA 80 40 38 03 2F 60 73 20 45 4E 57 2F 5C 44 5C 62 | ヲかナじなナ{FA}ぱ{F1}ざヲ…ナぜが[01]ムおム{80}」ゆく{70}{F6}よづコぬゃラぜ{F4}カャ{85}{68}キぐずニ{F0}事{F1}メぷ{7F}ぺ{FD}キオ{FD}ぢぢ{69}{6B}{7D}ニ{F0}、{F3}ネ{F6}わヂけぇと{70}ゎスえなユざャ・や{EE}キ、ナたかカ{F5}ざ{70}ぺゅやし」ふポじムキ「{6F}ヌ{FA}ぺゆラ。を。ソほす…く[01]えソ{80}ぴょレこ{7A}ずキオぺュえラいフ…ちぁ。ぜうカ？{FD}ねサ・オえ{F0}しキエるキさキフば…思おぞヅキ{7D}むワ、

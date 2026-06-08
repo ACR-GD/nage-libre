@@ -1,0 +1,11 @@
+﻿metric,value,notes
+unique_unicode_chars,194,Après mapping unicode partiel (sinon utiliser glyph_ids)
+hiragana_unique,84,Attendu ~46-86 si complet
+katakana_unique,83,Attendu ~46-86 si complet
+kanji_unique,4,Sous-ensemble jeu (~1381 glyphes ROM)
+ascii_unique,16,Chiffres / Latin dans dialogue
+font_glyphs_rom,1381,Tuiles 16x16 en ROM
+hiragana_complete_in_font,unknown,Vérifier charset_atlas.bmp
+katakana_complete_in_font,unknown,Vérifier charset_atlas.bmp
+repack_strategy,replace_glyph_bytes_same_length,Conserver FF/FE et longueur octets
+space_saving,remove_kanji_banks,Repointer scripts après suppression banques 12-19

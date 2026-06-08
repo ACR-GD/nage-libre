@@ -1,0 +1,5 @@
+﻿region,rom_start,rom_end,size_bytes,freeable_for_translation,notes
+font_kanji_banks,0x033010,0x03E700,~45000,true,Banques 14-19 ~kanji denses
+font_duplicate_banks,0x050000,0x180000,variable,partial,VRAM tiles aussi en gfx — prudence
+script_bank84,0x020000,0x040000,131072,false,Repointer si texte déplacé
+rom_total,0x000000,0x180000,1572864,false,LoROM 1.5MB

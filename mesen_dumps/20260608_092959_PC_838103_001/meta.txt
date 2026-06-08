@@ -1,0 +1,10 @@
+reason = codeBreak
+rom = nl-prologue-en.sfc
+rom_path = /Users/acr/Develop/nage-libre/nl-prologue-en.sfc
+pc = $838103
+frame = 2739
+a = $03FE
+x = $0242
+y = $0800
+sp = $1FDB
+dump_dir = /Users/acr/Develop/nage-libre/mesen_dumps/20260608_092959_PC_838103_001

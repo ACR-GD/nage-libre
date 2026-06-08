@@ -1,0 +1,6 @@
+game,rom_size_mb,map_mode,tag_84_count_low_rom,tag_8d_pairs,font_ko_signature_match,notes
+Nage Libre - Seijaku no Suishin (Japan),1.5,0x30,high,low,yes,Reference; font @ ROM 0x28540
+Nakajima Satoru Kanshuu - Super F-1 Hero (Japan),1.0,0x30,252,444,no,LoROM; shared 0x84 script tags?
+Putty Moon (Japan),1.0,0x20,388,424,no,HiROM map bit; different header
+Stardust Suplex (Japan),2.5,0x30,855,1405,no,Most 0x8D pairs; possible same engine family
+Undercover Cops (Japan),2.0,0x4C,195,738,no,Different mapper 0x4C; action game

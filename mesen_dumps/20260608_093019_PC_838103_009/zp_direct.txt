@@ -1,0 +1,14 @@
+Direct page / WRAM $7E:0000
+
+  $0006  phase counter ($06)  byte=D6  word=64D6
+  $0007  decomp ptr +1 ($07)  byte=64  word=7F64
+  $0008  decomp ptr +2 ($08)  byte=7F  word=227F
+  $0009  text ptr lo ($09)  byte=22  word=6622
+  $000A  text ptr hi ($0A)  byte=66  word=7F66
+  $000B  text ptr bank ($0B)  byte=7F  word=007F
+  $0214  wait flag ($0214)  byte=00  word=0000
+
+WRAM game vars:
+
+  $7E17D6  scene index ($17D6)  = 0000
+  $7E17D4  config ($17D4)  = 0000

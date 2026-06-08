@@ -1,0 +1,12 @@
+finding_id,source,mesen_value,rom_offset,snes_address,notes
+font_format,Screenshot 9.22.30,16x16 = 4x 8x8 tiles 2bpp,,,Layer 3 dialogue; tileset $5000.w
+tileset_base,Layer viewer,$5000.w (VRAM word),,,$A000 bytes; 2bpp font
+tilemap_dialog,Layer viewer,$7C00.w 32x32,,,Text box tilemap
+char_ko_tl,Layer viewer tile $108,$5840.w byte $B080,0x28540,$85:8540,Top-left of こ; matches savestate VRAM TL
+char_ko_tr,Derived index $109,$5850.w equiv,0x28550,$85:8550,ROM contiguous +16 bytes
+char_ko_bl,Derived index $118,VRAM $B180 (spaced),0x28560,$85:8560,ROM +32; VRAM index +0x10
+char_ko_br,Derived index $119,VRAM $B190 (spaced),0x28570,$85:8570,ROM +48; VRAM index +0x11
+tile_viewer_note,Screenshot 9.23.37,$5A50.w selected,,,Tile viewer base A000; use Layer $5840.w for こ TL
+dialogue_scene,Screenshot 9.22.30,「この世界を全て私の物に……」,,,Different scene than first-text savestate
+font_rom_region,ROM analysis,,0x28000-0x29000,$85:8000+,~241 active 2bpp tiles; hiragana block
+rom_vram_layout,Analysis,,,,ROM stores 4 quadrants linear; VRAM uses +1/+16/+17 tile indices

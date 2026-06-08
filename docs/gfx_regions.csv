@@ -1,0 +1,6 @@
+region,rom_start,rom_end,bpp,notes
+font_hiragana_block,0x28000,0x29000,2,Police 16x16; こ @ 0x28540 (4 tuiles linéaires)
+font_vram_tileset,VRAM $5000.w,VRAM $5000.w+0x2000,2,Chargé depuis ROM; index glyphe ex. こ=$108
+font_tiles_vram_match,0x50000,0x17FFFF,2,Tuiles ROM retrouvées en VRAM
+dialog_tilemap,VRAM $7C00.w,32x32 tiles,2,Layer 3 text box (Screenshots)
+dialog_box_tiles,VRAM,VRAM,2,Boîte blanche 1px + texte palette 0
