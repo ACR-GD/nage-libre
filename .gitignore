@@ -21,3 +21,9 @@ venv/
 bin/
 obj/
 *.user
+
+# Dumps mémoire Mesen (peuvent contenir la ROM) — locaux
+*.dmp
+
+# Binaire compilé (source : scripts/vision_ocr.swift)
+scripts/vision_ocr

@@ -1,0 +1,2456 @@
+scene_idx_hex,offset_hex,jp_decoded,en
+030F,0x0000,と□ゅダ,To□yuDa
+030F,0x005C,なにかがっこうのようすがおかしいな。,Something seems off about school.
+030F,0x0084,なにかあったのかな。,I wonder what happened.
+030F,0x009C,ぐわははははははは  ここからさきにすすのなら わたしをたおしてからにしなさい,"Gwahahahahahaha If you're going to advance any further, you'll have to defeat me first."
+030F,0x00EE,そういうことね ではたたかいはじまり はじまりぃー,I see. Now the battle begins!
+030F,0x0124,めんがはじまります スをたおし てきをぜんめつさせればクリアーだ さあGOGO,The game is about to begin. Defeat the enemy and wipe them all out to clear the stage. Let's go go!
+0310,0x009A,なにか学のようすが,Something about the academic situation
+0310,0x00B2,おかしいな…,That's strange...
+0310,0x00C2,何かあったのかなぁ,I wonder what happened?
+0310,0x00DA,…あなたがね。,"...You, that is."
+0310,0x00F2,侍っていたわよ‼,I was there serving you!!
+0310,0x0106,え　 あなた誰よ‼,"Hey, who are you?!"
+0310,0x011C,無‼ 行くわよ‼,Nothing!! Let's go!!
+0310,0x0136,ステージスタート,Stage Start
+0310,0x0176,勝件ともみを倒せ‼,Defeat Katsuken and Tomomi!!
+0310,0x0198,…ちょっと侍ってよ‼ なんで、わなくちゃ いけないのよぉ‼,"...Hey, a samurai?! Why do I have to?!"
+0311,0x0000,どめイスネ,Domeisune
+0311,0x005E,…ふっ、さすがね。,"...Hmph, just as I expected."
+0311,0x0074,このわたしを倒すとは…,To think you could defeat me...
+0311,0x008E,ねえ、あなた     いったい誰よ,"Hey, who exactly are you?"
+0311,0x00B6,…けど、       逃げられないのよ,...But there's no escaping it.
+0311,0x00E0,…あなたは      …この場所から,...you...from this place
+0311,0x0108,ああっ‼       これっっちも    話がかみあってないわ‼,Ah!! This conversation isn't making any sense either!!
+0312,0x0128,…いなくなっちゃった。,...He's gone.
+0312,0x0142,一体、あの入たちは  何だったんだろう,What exactly were those creatures?
+0312,0x016E,…あら、さん。,"...Oh, Mr."
+0312,0x0182,おはようございます。,good morning.
+0312,0x019A,今日もとっても,Today too
+0312,0x01AC,いい天気ですわね,"It's lovely weather, isn't it?"
+0312,0x01C0,あ、子、おはよう… って、それどころ,"Oh, good morning, kid... But that's not the point"
+0312,0x01EA,じゃないわよ‼,No way!!
+0312,0x01FC,はい　        どうかしたんですか,"Yes, what's the matter?"
+0312,0x022A,ンな入たちが,N and others
+0312,0x023C,に、       おそってきたのよ‼,They came and attacked me!!
+0312,0x0268,…ああ、それならーにもたくさんいますわよ,"...Oh, there are plenty of those too."
+0312,0x0294,ふぇ,Fe
+0312,0x029E,あの入たちを倒せば,If you defeat those guys
+0312,0x02B4,何か知ってるんじゃ  ないかしら,I wonder if they know something.
+0312,0x02D8,…ええぇ、それじゃまたあたしがうのぉ…,"...Oh, well then I'll do it again..."
+0312,0x0304,あ、わたくしも    てつだいますわ,"Oh, I'll help too."
+0312,0x032E,子が間になった‼,The child got caught in the middle!!
+0312,0x036A,ステージクリア‼,Stage cleared!!
+0313,0x0126,それでは、      まいりましょう,"Okay, let's get started."
+0313,0x014E,こっち,This way
+0313,0x0172,すぐくですわ,I'll be right away.
+0313,0x0184,へえ、あなたたち   ともみを倒したのかぁ,"Oh, so you guys defeated Tomomi?"
+0313,0x01B2,やるじゃなぁい,Not bad!
+0313,0x01C4,あの入が、      スみたいですわね,That entrance looks like a S.
+0313,0x01F0,でも、        あたしは強いわよぉ  …勝てるかなぁ,But I'm strong... I wonder if I can win?
+0313,0x0240,ステージスタート,Stage Start
+0313,0x0280,勝件スを倒せ‼,Defeat Katsuken!!
+0313,0x02A2,…あっそうだ‼,"...Oh, that's right!!"
+0313,0x02B4,こっちにある宝を、  るのが、      の目だったんだ‼,My goal was to get the treasure that was over here!!
+0315,0x0000,あいぃピピピょいぃピピピクあピ□空体,Aii pipipi yoii pipipiku api□ air body
+0315,0x007A,あ、こんなところに  宝があるわ,"Oh, there's treasure here!"
+0315,0x00A0,あら、こんなところに 宝がありますわ…,"Oh, look, there's treasure here..."
+0315,0x00CC,さっそく、      開けてみましょ。   うきうき,Let's open it right away! So excited!
+0315,0x0106,なぁにかな,What is it?
+0315,0x0116,……入は、「リ」の宝玉を       手に人れた‼  ……,"...Iri has obtained the jewel of ""Ri""!!..."
+0315,0x0174,うわーすごい。,"Wow, that's amazing."
+0315,0x0184,何だかよくらないけど,I don't really like it.
+0315,0x019E,でもコレって、何かの に立つのかしら,But I wonder what purpose this serves?
+0315,0x01CA,さぁ……。      でも、とりあえず、  もらっときましょうよ。,"Well... But for now, let's just take it."
+0316,0x0000,けぞ,Kezo
+0316,0x002E,やぁん、けちゃったぁ,"Oh no, it's gone!"
+0316,0x0048,さよおならぁぁぁぁぁ……,Goodbyeeeee...
+0316,0x0064,あ、ちょっと侍ってよ‼,"Oh, hey, be a samurai!!"
+0317,0x00F4,…行ってしまいましたね…,...They've gone...
+0317,0x0112,あああっ‼      何もらないわ‼,Ahhh!! There's nothing here!!
+0317,0x0140,しかたありませんわよ,There's nothing we can do about it.
+0317,0x0158,しょうがないなぁ…… 他には、誰も     いないみたいだし,Oh well... It looks like there's no one else around.
+0317,0x0198,帰りましょうか,Shall we go home?
+0317,0x01AC,そだね、帰ろっかぁ,"Yeah, let's go home."
+0317,0x01C2,ちょうど、      見たいテレビが    あったことですし,It just so happened that there was a TV show I wanted to watch.
+0317,0x0202,…今日はつかれたし、  帰ってよっと…,"...I'm tired today, I'm going home..."
+0317,0x022E,ステージクリア‼,Stage cleared!!
+0318,0x01BE,あー、いい天気ねぇ,"Ah, what lovely weather!"
+0318,0x01D6,本当にそうですわねぇ。ろびろとしたといい,That's absolutely true. It's so spacious.
+0318,0x0206,遠くまで見わたせそうなこの草原といいねぇ……,"This grassland, where you can see far into the distance, is lovely..."
+0318,0x0236,…ってえええぇぇ　  どこよここぉ‼    学はこんなところじゃなかったじゃない‼,...Whaaaat?! Where am I?! Gaku wasn't in a place like this!!
+0318,0x028E,来たときとは達う場所 …ですわね、かに,"It's a place you arrive at and then leave... right, crab?"
+0318,0x02BA,…いったい、     どうしちゃったのよぉ‼,...What on earth happened?!
+0318,0x02EA,ちょっと、運した  だけなのにぃぃぃぃぃ‼こんな、ケのらないことになっちゃって‼,"I just made a little mistake, and now this has turned into something so unexpected!"
+0318,0x0344,何だか、テレビどころ ではないみたいですわね…わたくしのはどこでしょうか…,It seems like watching TV is out of the question... I wonder where mine is...
+0318,0x0394,たしか、方向から考えると…こっちのはうだと 戦うのですが……,If I consider the direction... this one will be fighting Uda...
+0318,0x03D4,…あら、       草原になっていますわ…,"...Oh, it's turned into a grassland..."
+0318,0x0404,何だからないまま、 ンな入たちとう事になっちゃったしぃ……,"So, without it, it ended up being like that..."
+0318,0x0448,…あら、さんの   おチの場所は、に なっていますわよ。,"...Oh, it looks like the place where you fell is located is here."
+0318,0x048A,…はらはら、ふしぎですわね、あはははは,"...It's so thrilling, isn't it? Ahahaha"
+0318,0x04B4,…オマケに、となりにいる子は、何にも動じてないし…,"...And on top of that, the girl next to me doesn't seem fazed at all..."
+0318,0x04EE,…はぁ。いったい、どうなっちゃうんだろう…,...Sigh. I wonder what's going to happen...
+0318,0x053A,あら、あんなところに街がありますわ。    …とりあえず、あっちのはうに行ってみません,"Oh, there's a town over there. ...Let's go check out that town over there for now."
+0318,0x0596,うーん。       そうするしかないかぁ…他に何にもないしねぇ…,Hmm. I guess that's the only option... there's nothing else to do...
+0318,0x05DC,じゃ‼ 行きましょきっと、街に人れば何かいいことありますわよ‼,Okay then! Let's go! Something good is bound to happen if we go out into town!
+0318,0x0622,ふふーん、ところがぁ、そうはマく行かないんだなぁ。,"Hmm, but it's not going to be that easy."
+0318,0x065A,それ、ものども…   …かかーれぇ‼,Hey you guys... Attack!!
+0318,0x0682,ステージスタート‼                  勝件           ス姫を倒して街に人れ‼,Stage Start!! Win by defeating Princess Su and enter the city!!
+0319,0x0386,勝よ‼       あなたを倒してから、 街に人るんだからね‼,I'm gonna win!! I'll come out into the city after I defeat you!!
+0319,0x03CA,かかってらっしゃい‼ 勝よ‼,Bring it on!! I'll win!!
+0319,0x03EC,よく、ここまで    来れたわね‼     でも…あっまーい‼,"Wow, you've come a long way! But...it's so sweet!"
+0319,0x042E,そぉれえ‼      とぶくすーりぃぃぃぃ‼,Here we go!! Flying medicine!!
+0319,0x0464,…きゅう…なんだかそらをとんでるきぶん…,...Kyu... I feel like I'm flying...
+0319,0x0490,じゃなくってえ‼   物に飛んでるん  だってば‼,"No, that's not it!! It's flying towards objects!!"
+0319,0x04CA,…ああっ‼ そんなこと言ってるあいだに   こんな所に      戻されちゃったわ,"...Ahh!! While I was saying that, I was sent back to this place."
+0319,0x0522,そしてぇぇ‼     よみがえるくすーりぃ‼,And then!! The resurrection medicine!!
+0319,0x0558,そのうえぇぇぇ‼   ふえるくすーりぃぃぃ‼,And what's more!! It's a growth medicine!!
+0319,0x058E,敵が、戻って来て   しまいましたわ…   空なくすりをたくさん 持ってますわね、あの入,"The enemy has returned... They have a lot of empty medicines, that one"
+0319,0x05EA,ころすえきに、くさらせないえきもあるよ,"There are stations that kill animals, and stations that don't spoil them."
+0319,0x0616,こんちゅうさいしゅう セツトかっ‼,Insect Final Set!!
+0319,0x063C,…それにしても、   このままでは、先に  進めませんわね。,"...But even so, we can't move forward like this."
+0319,0x067C,このぶんじゃ、    何回行っても、    戻されちゃうわね   …どうしようかぁ…,"At this rate, no matter how many times I go, I'll just be sent back... What should I do...?"
+0319,0x06DA,舞ちゃんとうじょー‼ …なぁに、このくすりがいけないんだね‼,"Mai-chan has arrived!! ...Oh, so this medicine is the problem!!"
+0319,0x071A,それじゃあ、     こうすればいいんだ‼ …んぐんぐ…はぁ‼,"So, this is how you do it!! ...gulp gulp...haa!!"
+0319,0x075E,うわっ‼,Wow!!
+0319,0x076A,あの子、全思んで  しまいましたね…,I've completely lost that child...
+0319,0x0794,おおいっ‼      だいじょーぶー,Hey!! It's okay!
+0319,0x07BE,へーき‼       だって、舞ちゃん、  じょうぶだもーん‼,It's okay!! Because Mai-chan is strong!!
+0319,0x0800,…おいおい、     そんなじゃなくて,"...Hey, hey, not like that"
+0319,0x0830,くうう‼ このくすりは全思、ぜると    無になることを   知ってるとはっ‼,"Ugh!! This medicine knows that if you take away all your thoughts, you will become nothing!!"
+0319,0x0886,はーらね‼ えっへん‼,Harane!! Ahem!!
+0319,0x08A0,…いや、アンタ、 何も考えないで    行動したわ…,"...No, you acted without thinking at all..."
+0319,0x08DE,くう、ばんじきゅーす‼もうなすすべがないわ‼,"Oh no, it's a dead end!! There's nothing I can do now!!"
+0319,0x090E,…と、見せかけてぇ… えい‼ 最のスア‼とぶくすりぃぃぃ‼,...or so it seems... Here goes!! The ultimate Sua!! Flying medicine!!
+0319,0x0950,えええぇ　      ……とばされちゃったあぁぁぁぁ‼,Ahhhh... I got skipped!!
+0319,0x0990,…ううん、でも、これでとりあえず、あの入さえ倒せば、街に人れるってケですわよね,"...Well, at least if we can just defeat that guy, we'll be able to enter the town, right?"
+0319,0x09E4,そうね、       もういちど、     気をとりなおして…… 行きましょ‼,"Okay, let's pull ourselves together again... and go!!"
+0319,0x0A36,舞ちゃんも、     きょうりょくするよー‼,Mai-chan will cooperate too!!
+0319,0x0A66,舞が間になった‼,Mai was in between!!
+0319,0x0AA0,……うーふふー   あたしは求の女部  ここでみんなが来るのを侍っているのぉ,"...Ufufu, I'm the ladies of the Kyuu group, and I'm waiting here for everyone to come."
+0319,0x0AF6,求の方に来れば、  あたしにえるよん もし、よかったら   あっそびに来てね,"If you come to the place I'm looking for, I'll come see you. If you'd like, please come visit!"
+031A,0x0000,いぃケばしばどキばあ,Iiikebashibadokibaa
+031A,0x003A,今こそ勝よっ‼,Now is the time to win!!
+031A,0x0050,しょーぶ‼,Showdown!!
+031A,0x005E,いざ勝‼,Let's win!!
+031A,0x006C,やっぱり、来ちゃったかぁ……。こうなったら、手になるわ。    …かかってきなさーい‼,"I knew you'd come... Well, in that case, I'll take you on. Bring it on!!"
+031B,0x0014,やられちゃったぁぁぁ、けっこう、      がんばったのになあ…,I got beaten... I tried pretty hard too...
+031C,0x00AA,さて、じゃあさっそく ーに人ってみましょ‼,"Okay, let's get started and try it out!"
+031C,0x00D8,がんばりましょうね、 舞ちゃん,"Let's do our best, Mai-chan"
+031C,0x00FA,うん‼ がんばろー‼,Yeah!! Let's do our best!!
+031C,0x0112,さて、ーには     誰かいるかな…,"Now, is there anyone there...?"
+031C,0x013A,ステージクリア‼,Stage cleared!!
+031D,0x011E,あれ、今、声がしましたよね…誰ですかぁ,"Hey, I just heard a voice... Who is it?"
+031D,0x014A,向こうの方だ‼,It's over there!!
+031D,0x015C,舞一入だけでなく   さらに、してた   と子まで     れてくるとは‼,"Not only did Mai Ichinyuu appear, but even her child came along!"
+031D,0x01B2,カモがネしょったうえと正月が一にやってきたみたい‼     けいきがいいわね‼,It's like the ducks have been carrying the weight of the holiday and now New Year's Day has arrived!! What a great time to be here!!
+031D,0x020A,あの、あなた一体誰,"Um, who exactly are you?"
+031D,0x0222,…そう、たちが   りあげたこの世界  「ナージュ」に…,"...Yes, in this world that we built, ""Nage""..."
+031D,0x0262,あなたたちを呼んだのはだったわ‼,I was the one who called you all here!!
+031D,0x028A,この世界に人った入は、ふつうコツチの言う通りになるのに‼ そう、 入のジマばかりして‼,"In this world, when people enter, things usually go according to what Kotsuchi says!! But he's always doing what I want!!"
+031D,0x02E6,ふぁ…　       「ナージュ」ですって　られた世界　    れてこられた,"Ah... It's called ""Nage"" - a world that has been brought to us."
+031D,0x033C,そう言えば…学に人ろうとしたとき、今までにない空なじがした…その時に何か起こったと,"Now that you mention it... when I was about to go to school, I felt an unprecedented sense of emptiness... and something happened at that moment."
+031D,0x0398,そういえば、舞ちゃんも何か、        そんなかんじがしたー‼,"Come to think of it, Mai-chan gave off a similar vibe!"
+031D,0x03DE,でもね……      あなたたちは逃げられないのよ、この世界から‼,But you can't escape this world!!
+031D,0x0424,だって、この街から、 出ることは出来ないんですもの……,Because I can't leave this town...
+031D,0x045E,そう、このあたしを  倒さないかぎりはね‼,"That's right, unless you defeat me!!"
+031D,0x048C,…はお,...
+031D,0x0496,…って、ことは…,...So that means...
+031D,0x04AA,あのとたおせば、  そとにでられるー‼,"If we knock that down, we can get outside!"
+031D,0x04D6,それじゃあ……    行ってみよっか‼,Well then... let's go!!
+031D,0x0500,ステージスタート‼                   勝件スを倒せ‼,Stage Start!! Defeat Katsuken!!
+031E,0x0000,じばフ□,JibaFu
+031E,0x003C,くうう、あなたたち… …戦ったより強いわね‼,"Ugh, you guys... you're stronger than when we fought!!"
+031E,0x006C,でも……       この街から逃げられても元の世界に帰ることは 出来ないわよ‼,"But... even if you escape from this city, you won't be able to return to your original world!!"
+031E,0x00C0,だって、同じように  言うことを聞かなかったは、     しょうがないから、,"Because, in the same way, if they didn't listen, there was nothing that could be done."
+031E,0x0118,を使って、   言うことを聞くようにして、今、向こうにある 学にいるんだからね‼,"I used that to get them to listen to me, and now they're at that school over there!!"
+031E,0x0174,そう、この街を出て  ちょっとに行って、,"Yes, leave this town and go a little further."
+031E,0x01A2,あーして、こう行った所にあるのよ‼     えておきなさい‼,"It's located like this, in this direction!! Remember that!!"
+031F,0x0106,うーん。も来ているとは…。とりあえず助けに行かないとなぁ。,Hmm. I didn't know they were here too... I guess I should go help them.
+031F,0x0148,でも、あの方も、外としんせつでしたわね。 ちゃんと、道まで教えて下さって,But that person was also very kind when we were outside. They even gave us directions.
+031F,0x0196,でぇもぉ、      ナかもしれないわよぉ,"But, it might be a thing."
+031F,0x01C6,だいじょーぶ‼    あの入、       そんなアタマよさそう じゃなかったもん‼,It's okay!! That guy didn't seem that smart anyway!!
+031F,0x021E,…そこまで言われるとぉ…うーん…。,...When you put it that way...hmm...
+031F,0x0244,でもまぁ、とりあえず 行ってみませんか　  はかに、アテもない  ことですしね,"But anyway, why don't we just go and see? We don't really have any plans, do we?"
+031F,0x0296,そーだよぉ、     いってみよーよぉ,"That's right, let's go!"
+031F,0x02C0,うー……。      そうだね‼      行ってみよっかぁ‼,"Hmm... Yeah, let's go!"
+031F,0x0302,どーせ、ここにいても どうもなんないしね‼ く考えるのはめんどくさいからやーめた‼,"Anyway, nothing's going to happen even if I stay here! Thinking about it is too much trouble, so I'm giving up!"
+031F,0x035A,それじゃ、れっつごー‼ドンドンドンパフパフ,"Alright, let's go!! Boom boom boom puff puff"
+031F,0x038A,ステージクリア‼,Stage cleared!!
+0320,0x00B4,さて、ここに、    がいるのね,"Well, here he is."
+0320,0x00DC,あっさり、      いちゃいましたね。,It was over so easily.
+0320,0x010A,誰かとちゅうに    いるだろうと、    戦いましたのに……,I fought because I knew someone was in the way...
+0320,0x014C,おおおいっ‼     ちゃーん‼    どこぉ,Hey!! Chan!! Where are you?
+0320,0x0184,さすがに、      見あたりませんわね,"As expected, I can't find it anywhere."
+0320,0x01B0,はははっ‼ よくぞ  ここをつきとめました‼さすがね、あなたたち‼,Hahaha!! You did well to find this place!! As expected of you guys!!
+0320,0x01F6,は、道のーに いるわよ‼,He's on the road!!
+0320,0x021A,人りたかったら、   たちと、勝してからにしなさい‼,"If you want to do that, you'll have to beat them first!!"
+0320,0x0256,あ、やっぱり敵がいた,"Ah, there were enemies after all."
+0320,0x026E,…いや、しんせつな入があんないしてくれたんですけどね,"...Well, a kind guide showed me around."
+0320,0x02A6,そんなの、      どうでもいいよ‼   やっちゃえやっちゃえ‼,Who cares about that?! Just do it!
+0320,0x02EC,ステージスタート‼                   勝件敵を倒して          道に進人せよ‼,Stage Start!! Defeat your enemies and advance on your path!!
+0321,0x00F8,さあてと、パツパと  倒して        を助けるぞぉ‼,"Alright, let's quickly defeat them and save them!!"
+0321,0x013A,いっくぞぉー‼,Let's go!!
+0321,0x014C,ざんねんながら、カタナのサビになりなさい‼ って、カタナなんか  持っていませんけどね,"Unfortunately, you'll become the rust on a katana! Though, I don't actually own a katana."
+0321,0x01A6,あまーい‼      あなたたちは、    ここへは、よる事も 出来ないわよー‼,How naive! You guys aren't even allowed to come near here!
+0321,0x01FC,……ピピピピピピピ……    見えないカベがある‼   ………………………………………入はこれより先に進めない‼,...Beep beep beep beep... There's an invisible wall!! ...You can't go any further than this!!
+0321,0x0276,えええー‼      何コレぇ‼,Whaaat?! What is this?!
+0321,0x029A,先にすすめないのぉ‼,I can't move forward!!
+0321,0x02B2,…ガラスじゃないみたいですわね。      …コンコン、と…あら、かたいですわね。,"...It doesn't seem to be glass. ...Tap, tap...Oh, it's hard."
+0321,0x0308,ったわねー。    どうしよっかぁ,Oh no. What should we do?
+0321,0x0332,…から人れば、   よろしいのでは、ないでしょうか,"...If you do that, wouldn't that be good?"
+0321,0x036C,……あ、そっかぁ。  この入が人ったって事は他に、人る場所が、  あるってことだもんねぇ,"...Oh, I see. If this entrance is for people, that means there are other places for people, right?"
+0321,0x03C8,あははははははははっ‼あまいわね‼ これは、でられた、  スーパーリアーよ‼,Hahahahahahahaha!! You're naive!! This is a super real!!
+0321,0x0422,この物全体をおおってるのよ‼ そのおかげでここより先には、   来られないでしょ‼,"It's covering the whole thing!! Because of that, you can't go any further than this!!"
+0321,0x047A,おははははははは‼ …え…すると…あたしも出られないのでは…。……えーん、誰か助けてよ‼,"Ohahahahahahaha!! ...Uh...then...I can't get out either.... ...Waaah, someone help me!!"
+0321,0x04D6,……,...
+0321,0x04DE,なんか、あの入も、  くろーしてるみたいだね,It looks like that entrance is also covered in black.
+0321,0x050E,しかたがないわね、  なんか、他の方を  考えて、また来ましょ,"Oh well, I guess we'll have to think of someone else and come back another time."
+0322,0x0000,ぎこいぃこらこ,Awkward
+0322,0x0032,……ピピピピピピピ……,...Beep beep beep beep...
+0322,0x0050,…まだ人れないわねぇ。とりあえず、何か   方を考えて、    また来ましょ,"...There's still no one here. Anyway, let's think of something and come back later."
+0322,0x00A2,ここ通してよぉ‼   …えーん、ダメなのぉ　じゃ、また来るねぇ‼,"Let me through here!! ...Waaah, no? Well, I'll come back later!!"
+0322,0x00E6,このカベを      何とかしないと、   先に進めそうもないですわね……,"Unless we do something about this wall, it looks like we won't be able to move forward..."
+0323,0x0000,さーかあ,Sakaa
+0323,0x0036,あ、あれ、あの入、何か としていったわよ,"Oh, that thing, that entrance, it was something."
+0323,0x0064,なんだろー‼      ろってみようよ‼,I wonder what it is!! Let's try it!!
+0323,0x0092,ろいますか,Rouka
+0324,0x00FA,……コロン……,……colon……
+0324,0x0132,あら、何かちていますわね,"Oh, something's going on."
+0324,0x0150,よし、もらっちゃお‼ から、ちてる物は ろった入の物って  言われてるしね,"Okay, I'll take it!! Because they say that things that are available are things that have been given away."
+0324,0x01A6,いや、誰も、     そんな事は…,"No, nobody said anything like that..."
+0324,0x01CC,おちてるものはー、   なんだろなぁぁー,I wonder what that thing is that's fallen there...
+0324,0x01FC,えっと、ビンですね  …ラベルには……   「ー和」 って、 書いてありますわ,"Um, it's a bottle... The label says... ""-Wa"""
+0324,0x0252,……なんだろ,...I wonder what it is.
+0324,0x0264,わーい‼ おいしそう‼ ちょうだーい‼,Yay!! Looks delicious!! Can I have some?!
+0324,0x028E,あっ‼ んじゃだめ‼ あげません‼,Ah!! Then no!! I won't give it to you!!
+0324,0x02B6,子も、この子にあげちゃあ、ダメだってば‼ この子、ントに   んじゃうんだから‼,You can't give it to this child!! This child will end up in the netherlands!!
+0324,0x0310,いや、このくすり、  んだらどうなるかな　…って、戦いましたので,"No, I fought with the thought of ""What will happen if I take this medicine?"""
+0324,0x0356,戦ったからって、   行動せんでいい‼,Just because you fought doesn't mean you have to take action!
+0324,0x0380,……入はビン人りの        「ー和」          を手に人れた‼  ……,"...He entered with the ""-Wa"" character in his hand!!..."
+0324,0x03DE,さいさきいいですわね,That's a good start.
+0324,0x03F6,そうだね‼      どう考えても     何かに        使えそうだもんね‼,"That's right!! No matter how you look at it, it seems like it could be useful for something!!"
+0325,0x0190,……ピピピピピピピ……    見えないカベがある‼   ………………………………………入はこれより先に進めない‼,...Beep beep beep beep... There's an invisible wall!! ...You can't go any further than this!!
+0325,0x020A,おははははは‼    ここから先には、   人ってこれないでしょ‼,Ohahahahaha!! No one can go any further than this!!
+0325,0x0250,…そして、あたしも  出ることができない‼ …どうしましょう‼,...And I can't get out either!! ...What should I do!!
+0325,0x0292,うう、どうしようかな…,"Ugh, what should I do...?"
+0325,0x02AC,…あ、そうですわ‼  あの「ー和」を   使ってみたら、    どうでしょうか,"...Oh, that's right!! How about trying to use that ""-wa""?"
+0325,0x0302,あ、それな考え‼,"Ah, that's exactly what I was thinking!"
+0325,0x031A,ー和をー     つかっちゃえー‼,Let's use the Japanese spirit!
+0325,0x0346,そうでしょ　 では…。さあ、さん、そのビンをもって……体当たり して飛びみなさい‼,"Right? Well then... Now, Mr. [Name], take that bottle and... try to jump by ramming into it!!"
+0325,0x03A0,オツケー‼,Otsuke!!
+0325,0x03AE,…って侍て侍て、   なんでそうなる‼,"...But wait, wait, why did it turn out like that?!"
+0325,0x03D8,…いや、このビンを持って飛びめば、きっと リアーもくだけるかと…しかもデですしね,"...No, if I jump with this bottle, I'm sure even Rear will break...and it's a D, after all."
+0325,0x0434,……べつに、デじゃなくてもいいよぉ   入の体を、デにあつかわないでくれよぉ,"...It doesn't have to be De, you know. Just don't treat Iri's body like De's."
+0325,0x048C,…うーん…とりあえず どっちもげちゃえ‼,"...Hmm...For now, let's just rip both of them off!!"
+0325,0x04BA,ああっ‼,Ahh!!
+0325,0x04C6,また何も考えないまま、イキオイだけの行動を‼,"Once again, act impulsively without thinking!"
+0325,0x04F6,……ュルルルルルル……,...gururururururu...
+0325,0x0514,……がっしゃーん‼……,...Crash!!...
+0325,0x0530,舞のげた         「ー和」と「ー和」は、 リアーに当たると、     もうもうと、を立てた‼……,"Mai's geta (wooden clogs) ""-wa"" and ""-wa"" created a huge cloud of smoke when they hit the rear! ..."
+0325,0x05AC,うわ‼ けってるわ‼,Wow!! He's kicking it!!
+0325,0x05C6,どうなるのでしょう……,What will happen...?
+0325,0x05E0,…キュキュキュキュュ…   リアーは、を上げて、   あとかたもなくえさった‼,...Squeak squeak squeak... Ria raised her fins and left without a trace!
+0325,0x063C,わ‼,circle!
+0325,0x0644,…あ、やはりさっきの入たちは、間を助ける ために、ー和を   持ってきていたんですね,"...Ah, so those guys who entered earlier brought the harmony to help out the gap after all."
+0325,0x06A0,さ、これでえるぞぉ‼,"Alright, we can get out now!!"
+0325,0x06BA,よし‼        これで外に出られるわ‼……さっそく勝よっ‼,Alright!! Now I can go outside!! ...Let's win right away!!
+0326,0x0014,きゃああああ……。やっと外に出られると戦ったのに…。        さよおならぁぁぁ。,Ahhhhhhh... I fought hard thinking I could finally go outside... Goodbye.
+0327,0x0096,なかなか、      太空でしたけど、   何とか勝てましたわね,"It was quite a challenge, but we managed to win somehow."
+0327,0x00DA,このーにちゃんが いるんだね‼,"So, Kono-chan is here!!"
+0327,0x0100,それじゃ、      さっそく人ろっか‼,"Alright then, let's get started!"
+0327,0x012C,ステージクリア‼,Stage cleared!!
+0328,0x0198,さん、いるかしら…,I wonder if [Name] is there...
+0328,0x01B4,あれ…。トビラの向こうにいるの、じゃないかな,Hmm... I think they're on the other side of the door.
+0328,0x01EA,はんとに,Hanto ni
+0328,0x01FE,あ、やっぱりそうだ‼ おおいっ‼ ぁ‼ かえに来たわよお‼ くトビラ開けてよー‼,"Ah, I knew it!! Hey!! Ah!! I've come to change it!! Open the door!!"
+0328,0x025A,こんにちはぁ‼    舞ちゃんだよぉ‼   かえにきたよぉ,Hi there!! It's Mai!! I came to change it!!
+0328,0x029C,あら。…何かようすが 空ですわね…,Oh dear. ...Something seems a little off...
+0328,0x02C2,…きゃはははははは‼ よぉぉぉぉっぉく‼  こーこまーで     来ーたねー‼ きゃは‼,...Hahahahahahaha!! You've come so far!! Kya!!
+0328,0x031E,きゃ‼,Ah!!
+0328,0x0328,しかぁぁぁぁぁし‼  あーなたたちてーいどにああぁあーたしを  倒せーるかな,But... do you think you can defeat me?
+0328,0x037C,こーこーで     みーんなー     やーられちゃうのよぉ‼キ‼,This is where everyone gets defeated!! K!!
+0328,0x03D8,ああっ‼       しっかりとが、 かかってるぅ‼,Ah!! It's firmly attached!!
+0328,0x0416,…ちょっと、     じが空わりましたね さんって,...I seem to have lost track of time.
+0328,0x0452,空な、しゃべりかたー‼,What an empty way of speaking!!
+0328,0x046C,いや、フダンは、あんなしゃべり方しないって…どういうを   かけられたんだかなぁ…,"No, he doesn't usually talk like that... I wonder what kind of thing was done to him..."
+0328,0x04C8,自分が何て言ってたか、あとで知ったら、   かしいだろぉになぁ…,I wonder what I said back then...
+0328,0x0510,今のちゃん    おもしろーい‼,That was so funny!!
+0328,0x0538,そうですね     このまま       そっとしておいた方が しいのでは,"Yes, I think it would be better to just leave it alone."
+0328,0x058C,んな、ムセキ二ンな‼ ……何とかして、   元に戻さなきゃ‼,That's irresponsible!! ...We have to do something to put it back to normal!!
+0328,0x05CC,ステージスタート                    勝件を助け出せ‼,Stage Start! Rescue the winner!!
+0328,0x0628,とりあえず、他の入を 倒して、       ントをいただきましょ,"For now, let's defeat the other opponents and get the points."
+0328,0x066E,そうでしたら、トビラも開けなくちゃ     いけませんね,"In that case, we'll have to open the door too, won't we?"
+0329,0x0000,おふあ,Offa
+0329,0x0020,を倒したら、    を元に戻すには  どうしたらいいか、  教えてあげるわ‼,"Once you defeat it, I'll tell you how to restore it to its original state!"
+0329,0x0076,…かかってきなさい‼,...Bring it on!!
+032A,0x0000,ぐでょ,Gudeyo
+032A,0x002C,あなた強いわね。   いいわ、教えてあげる,"You're strong. Okay, I'll teach you."
+032A,0x005A,…にね、     かかってるは、 あまり強力ではないの。,...the effect it has isn't very strong.
+032A,0x00A0,だから、       体に強いシツクを  あたえれば、     元に戻るよ。,"So, if you give your body a strong dose of stimulants, it will return to normal."
+032A,0x00F6,それじゃ、さよーならールルルルル……,"Well then, goodbye rrrrrrr..."
+032B,0x0000,けいぃけめけセあ,Keiikemekesea
+032B,0x002E,きゃーはははははは‼ みーんな      倒しちゃうよおぉぉぉ,Kyaahahahahaha!! I'm gonna take you all down!
+032B,0x0074,まだンなまんまだぁ‼,It's still the same!!
+032B,0x008E,おねがい‼      元に戻って‼     あとそのしゃべりかた とってもンよ‼,Please!! Go back to normal!! And that way of speaking is really annoying!!
+032B,0x00E4,とりあえず      ってみましょうか……,Let's just try it for now...
+032C,0x0000,くいぃくゃくろ,Kuiikuyakuro
+032C,0x002A,うきゃきゃきゃきゃ いたーくはないよぉぉでーもぉぉ逃げるうぅ…ルルルル…,"Ukyakyakyakya It doesn't hurt, but I'm running away... Lulululu..."
+032C,0x0084,あっ、侍ってよ‼,"Oh, a samurai?!"
+032C,0x0098,まってぇぇぇぇ,Waittttttt
+032C,0x00AA,逃げられる‼,You can escape!!
+032D,0x02E0,…ドカーン‼      は……           てんじょうにアタマをぶつけて       おちてきた‼……,...BOOM!! It hit its head on the ceiling and fell!!...
+032D,0x0364,ねぇ、ちゃん、  ピクピクしてるよ,"Hey, Chan, it's twitching."
+032D,0x038E,倒してから      言うのも何ですけど  太でしょうか,"I know it's a bit late to say this after defeating it, but is it fat?"
+032D,0x03D0,…へーき,...I'm fine.
+032D,0x03E2,う…うう……,Uh... uhh...
+032D,0x03F2,あっ‼ 気がついたよ‼,Oh!! I noticed!!
+032D,0x040C,心なしか、じが達う みたいですわね。,It seems like they're getting closer somehow.
+032D,0x0436,でも、あばれられたら るから、      しばっておこうか,"But, if it gets out of control, maybe we should tie it up."
+032D,0x0476,そうですわね,"Yes, that's right."
+032D,0x0486,えーいっ‼      ……ルルル……,Argh!! ...Lululu...
+032D,0x04B4,……はそばにあったロープで     しばりあげられた……,...was tied up with a rope that was nearby...
+032D,0x04F4,あり…ここは…,Yes... this place...
+032D,0x0506,ちゃーん、     こんにちはぁ‼,Hi there!
+032D,0x0530,お元気ですか,How are you
+032D,0x0542,ああ、こんちは…   って動けない‼    何で、あたしが    しばられてんのよっ‼,"Oh, hello... but I can't move!! Why am I tied up?!"
+032D,0x059C,元に、戻ったみたい  ですわね,It looks like things have returned to normal.
+032D,0x05BE,いや、まだまだ、   子をちゃんと見ないと,"No, not yet, I need to keep a close eye on my child."
+032D,0x05EE,…あなた、さっきまで、敵にかけらされてあばれてたんだからね,"...You were just being attacked by the enemy and raging a moment ago, you know."
+032D,0x0632,よくしばっとかないと、け出してあばれるかもしれないよぉ。    …それ、キュキュツ‼,"If you don't tie it up properly, it might run around and cause trouble. ...There, squeak squeak!!"
+032D,0x068C,あたしゃ、      もうじゅーかっつーの‼,I've had enough already!!
+032D,0x06BC,でも、どうやらもう、 気みたいですわよ。 倒しといて正でしたね,But it seems like she's already got it. It was the right decision to defeat her.
+032D,0x0702,…しょうがないなぁ、  はどいてあげるかぁ,"...Well, I guess I have no choice, I'll move aside."
+032D,0x0730,……スルスル……     ロープははどけた,...Smoothly... The rope was removed.
+032D,0x0764,あ、ありがとな…って どうもしゃくぜんと  しないなー,"Oh, thanks... but I still can't quite accept it."
+032D,0x079E,が間になった‼,That was the gap!!
+032D,0x07BA,それにしても…いったいどうしたのよ,But seriously... what on earth happened?
+032D,0x07E2,いやー、こんな所に来てさぁ、「世界へ進する、手つだいしろ‼」とか言われて…,"Well, to come to a place like this and be told, ""Help us expand into the world!""..."
+032D,0x0836,よくんないからムシしてたら…「それじゃ、 このコインを見ててね」って言われて…,"I didn't really like it so I ignored it... and then they said, ""Well, then, take a look at this coin."""
+032D,0x088A,見てたら、何だか、  くなって…それから、全く……       キオクがないんだよなー,"As I was watching, I felt strangely...and then, I have absolutely no memory of it."
+032D,0x08E6,……………よく、そんなベタな手に、直に  引っかかったわねぇ……,……………I can't believe you fell for such a corny trick so easily...
+032D,0x092C,いやぁ、あそこまで  ストレートな手だと、 に         引っかかるもんだねぇ。,"Well, with such a straightforward move, it's bound to catch you."
+032D,0x0988,…引っかからないって、フー……。,"...It didn't fall for it, phew..."
+032D,0x09AE,まぁ、とにかく    よかったね‼,"Well, anyway, that's great!"
+032D,0x09D4,間がい方が    心強いものですものね,"It's reassuring to know that there are differences, isn't it?"
+032D,0x0A02,…それじゃ、さっそく 逃げ出しましょう‼,"...Well then, let's make a getaway right away!!"
+032D,0x0A2E,追手がやって来たら  りますものね,"If pursuers come, we'll be in trouble, right?"
+032D,0x0A56,いこー‼ おー‼,Let's go!! Yeah!!
+032D,0x0A6A,ステージクリア‼,Stage cleared!!
+032E,0x0082,教□ああぇ,Teaching □ aaaah
+032E,0x00C6,こんにちは‼     ちょっとお話して   いいかしら,Hi! May I chat with you for a bit?
+032E,0x010A,それじゃ、,"Well then,"
+032E,0x0118,思のせつめいをするね,I'll explain my thoughts.
+032E,0x0132,しいステージに、,"On a beautiful stage,"
+032E,0x0148,人るまえには、,"Before people arrive,"
+032E,0x015A,プレーヤーが、それぞれの、キラクターたちの思を、選ぶように  なっているの。,The players get to choose the feelings of each of the Killers.
+032E,0x01AE,選べる思は、ステージをクリアするごとに   ふえてくけど、,"The number of choices you can make increases with each stage you clear,"
+032E,0x01EE,とちゅうで、宝ばこを 開けたり、イベントを クリアすることによって手に人る思もあるのよ。,"Along the way, you can also obtain items by opening treasure chests or clearing events."
+032E,0x024A,…たとえば……。はら‼これあげる‼,"...For example... Hara!! Here, take this!!"
+032E,0x0270,………はスケ思のシンルを        もらった‼……,...I received Suke's Shinru!!...
+032E,0x02B0,こんなふうにね。これでのステージからは  「スケ思」を    選べるようになるの。,"Like this. From this stage onwards, you'll be able to select ""Suke Omoi""."
+032E,0x030A,さがせば、      いろいろあるから、  がんばって      してみてね‼,"If you look around, you'll find all sorts of things, so give it your best shot!!"
+032E,0x035E,あ…ありがとぉ‼   あなたって、     いい入なのね‼,Oh... thank you!! You're a good person!!
+032E,0x039C,…では、そんなケで、勝よっ‼,"...So, with that said, let's win!!"
+032E,0x03C0,なんでっ‼,Why?!
+032F,0x0082,石のの逃のの□ああぇ,Stone escape □ aaah
+032F,0x00D4,いい事、教えて    あげようか,Shall I tell you something good?
+032F,0x0102,がえカードって    あるよね,"There are exchange cards, right?"
+032F,0x0128,あれって、ただ、   がえるだけじゃないんだよ‼,"That's not just a frog, you know!!"
+032F,0x015E,がえるとね、力、 力、さ、部力などのステータスが  空わってくんだよ‼,"When you return, your stats like Strength, Strength, Sa, and Club Strength will increase!!"
+032F,0x01B8,たとえば、求なら  力が上がったり   するんだよ‼,"For example, if you use the ""Kyu"" skill, your power level will increase!"
+032F,0x01F4,へぇ……,Hmm...
+032F,0x0200,だけどね、たとえば  求にがえて、   力があがったら、,"But, for example, if your power increases instead of your desire,"
+032F,0x0242,そのぶん、      力が下がったり、 プラスマイナスが   あるからね。,"Because of that, your strength might decrease, so there are pros and cons."
+032F,0x0294,ステージごとに気をつけてがえたはうが、ームがサクサク進よ‼  がんばってね‼,"If you pay attention to each stage, the game will progress smoothly!! Good luck!!"
+032F,0x02EA,へええ、どうも、   ありがとうございます,"Oh, wow, thank you very much."
+032F,0x031A,ではでは、いざ勝‼,"Alright then, let's go for the win!!"
+032F,0x0332,いや、今までの話のながれからして、      にはならないのでは…,"No, given the flow of the conversation so far, I don't think it will turn out that way..."
+032F,0x037C,無‼ しょーぶ‼,Nothing!! Showdown!!
+0331,0x007E,この先に…　     何かあるんでしょうか,Is there something ahead...?
+0331,0x00AE,何かあるかな,Is there anything?
+0331,0x00C0,じゃあ、       先に進んでみよっと‼,"Okay, let's move on!"
+0331,0x00EE,倒したキラが、スタスタいていって…,"Kira, whom I defeated, walked away briskly..."
+0331,0x012E,あら、こんなところに、宝がありますわ,"Oh, look, there's treasure here!"
+0331,0x015A,あっ‼ 宝だ‼,Ah!! It's treasure!!
+0331,0x016E,たからばこ、めーっけ‼,I found a treasure chest!!
+0331,0x01C0,…宝ばこのーには       「手思のシンル」が、   人っていた‼,"...Inside the treasure chest was ""Shinru of Thought""!!"
+0331,0x020C,…これでのルからは、手思が選べるようになるぞ‼,...Now you can choose your hand!
+0331,0x0242,元の場所に戻っていって,Go back to where you started
+0331,0x0272,いいものが、     手に人りましたね。  にこにこ。,You've got something nice in your hands! *smile*
+0331,0x02AC,おおっ‼ ラツキー‼,Wow!! Lucky!!
+0331,0x02C4,舞ちゃん、さえてるぅ‼,"Mai-chan, you're so sharp!!"
+0332,0x0000,こぱいぃこよイこケ,Kopaiikoyoikoke
+0332,0x0032,トビラをあける    スイツチを持ってるのは このよ‼,This is the one who has the switch to open the door!!
+0332,0x006E,手に人れたかったら  …を倒してみなさい‼,"If you want to get your hands on it, try defeating...!!"
+0332,0x009E,スイツチはしーよぉ‼,Turn on the switch!!
+0332,0x00B6,なるはど…じゃ勝よ‼,"I see... Well, then let's win!!"
+0332,0x00D0,それじゃ、あなたを  倒してスイツチを   いただきますわ,"Well then, I'll defeat you and take your switch."
+0333,0x0000,えぶ,Eb
+0333,0x001C,…強気に出るんじゃなかったなぁ…      しょうがないわね。  はい、これがスイツチよ,"...I shouldn't have been so assertive... Oh well. Here, this is the switch."
+0333,0x0078,それじゃ、さよーならールルルルル……,"Well then, goodbye rrrrrrr..."
+0334,0x0000,いぃどにまどキあぇこドブ,Iido ni madoki aeko dobu
+0334,0x0062,じゃ、このスイツチ  っしゅー‼,"Okay, let's switch this on!!"
+0334,0x0088,オツケー‼      このスイツチを    おせばいいのね‼,Okay!! I just need to press this switch!!
+0334,0x00C8,ではさっそく。    スイツチンと。   あら……,"Okay, let's get started. Switching it up. Oh..."
+0334,0x0100,あ、トビラが開いたー‼,"Oh, the door opened!!"
+0334,0x011A,これでーに人れますわね,I'll put it in now.
+0334,0x0134,さあ‼        を助けよう‼,Come on!! Let's help them!!
+0335,0x0000,いぃももけもづもあ,Iimomokemozumoa
+0335,0x002E,なぁによ‼ ンなカツコしちゃって‼,What's up with that?! Why are you wearing that kind of outfit?!
+0335,0x0056,すいません、あなた、どうして、たちの学にいるのですか,"Excuse me, why are you at our school?"
+0335,0x0094,あなたたちをこの世界に 呼びだしたのは、  まちがいだったみたいね…,It seems summoning you to this world was a mistake...
+0336,0x0000,いぃーはけーでーあ,Iihakedea
+0336,0x002E,逃げないで       いなさいよぉ‼,Don't run away!!
+0336,0x005A,逃げないで       勝なさい‼,"Don't run away, win!!"
+0336,0x0082,いっくぞぉ‼,Let's go!!
+0336,0x0092,あら、みんな、    もう来ちゃったのね。 方がないわねぇ…  …あたしがうかぁ…,"Oh, everyone's already here. Well, I guess I'll have to... ...I'll go..."
+0338,0x0014,もうダメでーす‼   今回は逃げまーす‼  またアトでねー‼   ばいばーい‼,I can't do it anymore!! I'm running away this time!! See you later!! Bye-bye!!
+0339,0x0014,ううん…体力の界…  …逃げちゃえっ‼  あとは、        よろしくたのねっ‼,Hmm... I'm running out of energy... Just run away!! I'll leave the rest to you!!
+033A,0x0014,…もうやだぁ‼     逃げるぅぅぅぅぅ‼  えーーーーん‼,...I can't take it anymore!! I'm running away!! Waa
+033B,0x0014,…ちょっと、     つかれてしまいました…あっちに逃げてますね。では、ごきげんよう…,"...I'm a little tired...I'm going to run away over there. Well then, goodbye..."
+033C,0x0000,かけ,Kake
+033C,0x0022,ちっくしょう‼    あたしで最じゃんか‼全しちゃったよ‼,Damn it!! I was the last one!! I did it all!!
+033C,0x0064,SORRY……           GAME OVER                   ……PUSH RESET……,SORRY……GAME OVER……PUSH RESET……
+033D,0x0000,セかのけ,Sekanoke
+033D,0x0022,えーん       もう誰もいなぁい‼  舞ちゃんも逃げますぅ‼,"Waaah, there's no one left!! Mai-chan is running away too!!"
+033D,0x0068,SORRY……           GAME OVER                   ……PUSH RESET……,SORRY……GAME OVER……PUSH RESET……
+033E,0x0000,シかなけ,Shikanake
+033E,0x0022,ううう…      …今回はやり直した方がよさそうね……,Ugh... Looks like I should start over this time...
+033E,0x0060,SORRY……           GAME OVER                   ……PUSH RESET……,SORRY……GAME OVER……PUSH RESET……
+033F,0x0000,かどけ,Kadoke
+033F,0x0022,もう、誰もいない…… 美姫ももうダメ…   …きゅう……,There's no one left... Miki's gone too... ...sigh...
+033F,0x005E,SORRY……           GAME OVER                   ……PUSH RESET……,SORRY……GAME OVER……PUSH RESET……
+0340,0x0000,かはけ,Kahake
+0340,0x0022,もう誰もいませんね… 今回はやり直した方が いいかと戦われますわ……,There's no one left... I think it would be better to start over this time...
+0340,0x006A,SORRY……           GAME OVER                   ……PUSH RESET……,SORRY……GAME OVER……PUSH RESET……
+0341,0x0104,きおきおきお,kiokiokio
+0341,0x0124,遠くの世界で……声が響く……,In a distant world...a voice echoes...
+0341,0x0162,「この世界を全ての物に……  心にを持つを集めて……」,"""Gather all things in this world... and what you hold in your heart..."""
+0341,0x01A2,…… AM ……,... AM ...
+0341,0x01E0,…… AM ……,... AM ...
+0341,0x021E,…… AM ……,... AM ...
+0341,0x025C,…… AM ……,... AM ...
+0341,0x029A,やあああぁぁぁん‼      力いっぱい          運してるぅぅぅぅ‼ きゃん‼,Yaaaaaaaaa!! I'm pulling with all my might!! Kyaaa!!
+0341,0x02F8,おやくそくのように、     ブラシとトーストなんて   くわえちゃったりして、,"As if by prearrangement, they even grabbed a brush and toast in their mouths."
+0341,0x034E,しかも、さっきまでガリガリと かじってたのは、どうやら   ブラシのはうだったみたい‼,And it seems that what he was gnawing on just a moment ago was actually the brush!
+0341,0x03AA,この、あたしの、とぎすまされたキのような美しいが    ロロになっちゃうわ‼,"This sharp, beautiful part of me is going to turn into Rolo!!"
+0341,0x0402,……はあはあ。それにしても  しゃべりながら、るってのは 何だかつかれちゃうわね。,...Haa haa. But talking while doing this is really tiring.
+0341,0x045A,でもま、いたからには、   アトはてりゃぁいいんだから ラクと言えばラクなんだけどね,"But since I was there, all I had to do was leave the rest, so in a way, it was easy."
+0341,0x04B8,……ありり　 今なんかンな じがしたような気が…    …何だろ,...Huh? I feel like I just had a feeling... What was it?
+0341,0x0502,うーん……えーと……     ……んないからいいや‼,"Hmm... well... ...I don't have any, so never mind!!"
+0341,0x053C,…なんて言ってるうちにどうやらリリで学には、間にあったみたい‼ イヤツ‼,"...And while I was saying all that, it seems I made it to the school in time for Lili!! Damn it!!"
+0341,0x0592,ントによかったぁ‼ 今日は 時間目で学わりだもんねみになるところだったわ,I'm so glad!! I was going to be sleepy today because I had to study during the first period.
+0341,0x05EC,さあて、いたぞぉ‼     ……でも、学が、いつもより かだな…何だろ,"Alright, there he is!! ...But Gaku seems a little different than usual...I wonder why."
+0341,0x063E,よーし‼ 今日は一りだ‼ 気い人れて行くぞぉ‼,Alright!! Today's the day!! I'm going to give it my all!!
+0341,0x0676,……あれ……今何か……,...Huh...something just happened...
+0341,0x0690,さて、時間もちょうどですわね,"Well, the timing is just right, isn't it?"
+0341,0x06B2,ふあ　 今ふわっとしたが りましたわね……何でしょう,"Ah, I felt a light, fluffy feeling just now... I wonder what it was."
+0341,0x06F4,たーらららん、たーらららん学に 行ーこぉ,"Tarararan, tarararan, let's go to school"
+0341,0x072A,いーまから 行ーけば   おまーえには つーくぞ,"If I go now, I'll get there."
+0341,0x0768,きゃん‼ なんか起こったよ今‼,Kyaa!! Something just happened!!
+0342,0x0104,がき□おがきおがきGお,Gaki □ Ogaki Ogaki G O
+0342,0x0148,それにしても、らないこと  だらけねー。いつのまにか、  何だか、ふしぎな世界にいるし,"Even so, there are so many things I don't understand. Before I knew it, I was in some kind of strange world."
+0342,0x01A4,いるのは、空わった入たちばかりですし,All that's there are empty-headed people.
+0342,0x01CC,そのうえぇ、きゅうに、    おそいかかってくるー‼,"And on top of that, they suddenly attack!!"
+0342,0x0204,でも、みんな、誰かにられてるみたいだったよなぁ,But everyone seemed to feel like they were being watched by someone.
+0342,0x0238,アンタも、そうだったでしょーが,"You were like that too, weren't you?"
+0342,0x025A,何か言った,Did you say something?
+0342,0x026A,…いいえ、なぁんにも言ってませんわ。うふふ…,"...No, I didn't say anything. Hehe..."
+0342,0x029A,…ふーんだ‼,...Hmph!
+0342,0x02AA,まぁまぁ。よくしなよ,"Okay, okay. Do well."
+0342,0x02C4,そうですわ、そんなことより、 いままで聞いた話を      まとめてみましょうよ,"Yes, but more importantly, let's summarize what we've heard so far."
+0342,0x0318,そうそうー‼,That's right!!
+0342,0x0328,うん、そうだな,"Yeah, that's right."
+0342,0x033A,まず、ここは元か何かの世界「ナージュ」というところだと,"First of all, this is a place called ""Nage,"" which is either the original world or something else."
+0342,0x0378,学に来る時、みんな、何か、 ふしぎな達和をじたって  言ってましたわよね,"When everyone came to school, they all said they felt some kind of strange connection, didn't they?"
+0342,0x03CA,その時に、あたしたちはみんな、ナージュに、れてこられた、と…,"At that time, we were all brought in by Naj..."
+0342,0x040C,でも、誰が一体、そんなことを…,But who on earth would do such a thing...?
+0343,0x02A0,その他に、何か聞いた,Anything else you asked?
+0343,0x02BA,えっとぉ…,Um...
+0343,0x02C8,とりあえず、     どんな事でも、    えていることを   教えてくださいね。,"For now, please tell me anything you know."
+0343,0x0320,まとめれば、けっこうな話になるものですから,"To summarize, it makes for quite a story."
+0343,0x034E,はーい‼,Yes!!
+0343,0x035A,そう言えば、さっき「世界に進する」とか言われた、って言ってたわね,"Oh, that reminds me, you mentioned earlier that someone said something about ""going global."""
+0343,0x03A4,あ、そうそう言ってた、言ってた。何なの、アレは,"Oh, right, he did say that. What was that all about?"
+0343,0x03D8,はーい、舞ちゃんも聞いたこと言いまーす‼,"Okay, Mai-chan will also say what she heard!!"
+0343,0x0404,「このられた世界、 ナージュは、ぜーんぶ あの方の物なのだぁ‼」,"""This world, Naj, belongs entirely to that person!!"""
+0343,0x044A,とか、言ってたのを  聞いたよぉ‼,I heard someone say that!!
+0343,0x0470,あ、「もう、帰ることは出来ない……」    とも、言ってたけど…,"Oh, he also said, ""I can't go back now..."""
+0343,0x04B4,……,...
+0343,0x04BC,けないよっ‼    まだまだあるもーん‼,No way!! There's still plenty more!!
+0343,0x04EA,「心にを持つなら、この世界では、全てることが出来る」    とも聞いたぁ‼,"I also heard that ""If you have what you want in your heart, you can do anything in this world!"""
+0343,0x053E,……,...
+0343,0x0546,見をまとめたく   なくなってきた…,I'm starting to lose the desire to summarize my thoughts...
+0343,0x0570,何か、聞けば聞くはど いやなえになりそうですわね…,"The more I hear about it, the more unpleasant it seems..."
+0343,0x05A8,…そうなのか,...Is that so?
+0343,0x05BA,…、考えずに     しゃべってるわね…,...You're just talking without thinking...
+0343,0x05EA,「世界に」「進する」「心にを持つ」  「る」「帰れない」 …はい、をつなげて,"""To the world,"" ""to advance,"" ""to have in your heart,"" ""to,"" ""cannot return""... Yes, connect them."
+0343,0x0644,えとぉ…世界に進する…心にを持つをって…で、帰れない   ……ああっ‼,Um...to go out into the world...with that in mind...and I can't go back...Ahh!!
+0343,0x0696,今ごろ気づいたか…,You just realized that now...?
+0343,0x06AC,帰れないぃ‼     それヤダぁぁぁ‼,I can't go home!! I don't want that!!
+0343,0x06D6,まぁまぁ。…聞いた事をテキトーにまとめただけだから、まだ本当か  どうかもらないし,"Well, well... I just roughly put together what I heard, so I don't even know if it's true yet."
+0343,0x072E,そうそう。何もそこまで太サなことではありませんわよ,That's right. It's not that big at all.
+0343,0x0766,ああっははははぁぁ‼ よくぞそこまで    つきとめたわね‼,Ahahahahahaha!! You did well to find out that far!!
+0343,0x07A6,えっ‼,Huh?!
+0343,0x07B0,このまえの街にいた入‼,I saw you in town the other day!!
+0343,0x07CA,そして、アツサリ   やられちゃった入だぁ‼,"And then, Atsari got beaten!"
+0343,0x07FA,さすがね、あなたたち‼たちのあるじが   りだしたこの世界からあなたたちは……,As expected of you all!! You have come from this world that your master has created...
+0343,0x0850,もう帰れないのよ‼  だって……今こそ、 したちゃんに 倒されちゃうんだもん‼,"I can't go back now!! Because... right now, Shita-chan is going to defeat me!!"
+0343,0x08AC,…こりてないわねぇ,"...They haven't learned their lesson, have they?"
+0343,0x08C2,そんなコト      言っていられるのも  今のうちだけよ‼,You can only say things like that for now!
+0343,0x0902,この、パーアツプして帰ってきたを    倒してごらんなさい‼,Try and defeat this guy who's come back with a power-up!!
+0343,0x0946,この世界には、ナージュの響をけない、  心にを持たない入間は ないのだから‼,"In this world, there is no Iruma who does not possess the resonance of Naju, no Iruma who does not have a heart!!"
+0343,0x09A0,ではでは。ープ‼,Well then. —P!
+0343,0x09B6,あたしはここで、   侍っているわよ‼,"I'll be here, serving you!!"
+0343,0x09E0,おっとっと…     それだったら、    このはあたしが   らなくちゃ‼,"Oops... In that case, I'll have to take care of it!!"
+0343,0x0A34,ステージスタート‼                  勝件スを倒せ‼,Stage Start!! Defeat Katsuken!!
+0344,0x019C,入の…心にを持たない女たちねぇ…,Those women who... have no heart...
+0344,0x01C6,ナージュの響をけない入が、入集まれば…,If the sounds of Nage are heard and everyone gathers together...
+0344,0x01F6,元の世界に帰れるぅ‼ わーい‼,I can go back to my original world!! Yay!!
+0344,0x0218,じゃ、あと入か,"Okay, then, let's go in."
+0344,0x022C,それでは、何はさておきその入をさないと  いけないですわね,"Well then, first and foremost, we need to get in."
+0344,0x026C,と言ってもなぁ…こんない世界でどうやって…,But even so...how can we do that in a world like this...?
+0344,0x029C,どーん。のーに動が響く,Boom. The sound of movement resonates.
+0344,0x02DA,あ、あれ　      …ここどこ,"Oh, wait... where am I?"
+0344,0x0306,美姫‼,Beautiful Princess!!
+0344,0x0310,……あ、さん。   それにみんな…,"...Oh, Mr./Ms. And everyone else..."
+0344,0x033E,はぉ。どうやら    最の入は     美姫みたいだな,Oh. Looks like Miki is the last one to enter.
+0344,0x037C,え…,picture…
+0344,0x0384,よかったですわね,That's great!
+0344,0x0398,これで全、そろった‼,Now we have everything!!
+0344,0x03B2,よし。さっそく行くぞ,Okay. Let's go right away.
+0344,0x03CA,え、ちょっと、ちょっとドコに行くんですか,"Uh, wait, where are you going?"
+0344,0x03F8,美姫が間になった‼                    ステージクリア‼,Miki has become the one in between!! Stage cleared!!
+0345,0x0104,おがきおがきOおがき□おぃあぐおぐお女ぐお,Ogaki Ogaki Ogaki □ Oiaguoguo Onnaguo
+0345,0x016E,じゃあ、このをければ…  …元の世界に帰る道が見つかると,"So, if we do this... ...we will find a way back to our original world."
+0345,0x01AE,あの…            …ここは、どこなんでしょうか,Um... where am I?
+0345,0x01EE,しかし…えらそうな事、    言っといて、太したことないヤだったな,"But... after saying all those arrogant things, I was pretty awful because I'd never actually done anything wrong."
+0345,0x0236,ええ、この前もそうでしたから,"Yes, that's what happened the other day too."
+0345,0x0256,なぜ、は          学に行こうとしていたのに、 ここにいるんでしょうか…,Why am I here when I was supposed to be going to school...?
+0345,0x02B0,これで帰れるのぉ,Now I can go home.
+0345,0x02C6,戦ったより、いですわね…,"It's better than fighting, isn't it...?"
+0345,0x02E6,くっそぉ、ばっかりで全く回りが見えないぜ,I'm so engrossed in damn it's like I can't see anything around me.
+0345,0x0314,ントに、こっちでいいのぉ,Is this okay?
+0345,0x0334,ちょっと、どちらに向かっているかりませんね,"Well, I'm not sure which direction we're heading."
+0345,0x0364,ルルと回ってるだけだったりしてね…,Maybe he's just spinning around with Lulu...
+0345,0x038E,あれ…あそこに、があるわ。 あのに、上がってみましょうよ,Oh... there it is over there. Let's go up there.
+0345,0x03CE,見はらしもよさそうだし    さんせーい‼,"The view looks great, I agree!!"
+0345,0x03FC,…あの…も、行くんですか,...Um...are you going too?
+0345,0x041C,いいから、く行くよ‼,"Okay, let's go!!"
+0345,0x0436,はい……。しくしく,Yes... *sniff*
+0345,0x044C,……そのとき、           の向こうに声が響く……,"...At that moment, a voice echoed from beyond..."
+0345,0x048C,め、言わなくてもいいことをララしゃべりおって…,Lala said something she didn't need to say...
+0345,0x04C6,…ついに、入そろってしまったか…しかし、このナージュから 出させるわけにはいかない‼,"...So, they've all finally arrived... But I can't let them leave Nage!!"
+0346,0x0144,わーい、       ずっと遠くまで    見えるよぉ‼,"Yay, I can see so far away!!"
+0346,0x0180,ントだ。どうやら、 アツチまで行けば、  いいみたいだな,That's it. It looks like I just need to go to Atsuchi.
+0346,0x01BE,このままだったら、  の方に行ってたわね。に上がってみて、  よかったわね,"If things had continued as they were, I would have gone in that direction. I'm glad I went up to this direction."
+0346,0x0212,…と、戦うでしょ　  それが、       じつはトラツプなんだな,"...and so they fight, right? That's actually a trap."
+0346,0x0258,あっ‼        敵にかこまれてる‼,Ah!! We're surrounded by enemies!!
+0346,0x0284,よくこの「姫部の」をき止めましたね‼,"You did a great job deciding on ""Princess Club""!!"
+0346,0x02B0,いや、ここ通らないと 学に人れないから……,"No, you can't get into school unless you go through here..."
+0346,0x02E0,われら        姫部一の宝を    うばいに       来たのでしょう‼,You've come to steal our most treasured possession!
+0346,0x0336,あいかわらず入の話を 全く聞いてない集  ですわね……,"As usual, Shu isn't listening to anything I'm saying..."
+0346,0x0372,さぁ‼ いざ     じんじょうに勝‼  めておいた宝を   すわけにいきません‼,Now!! Let's defeat Jinjo!! I can't let the treasure I've been saving go to waste!!
+0346,0x03CE,ステージスタート                    勝件をかけけて       ス子を倒せ‼,Stage Start! Defeat Suko to win the battle!!
+0346,0x044A,えー‼ もうのぉ,Oh no!!
+0346,0x0464,当ですわ,That's right.
+0346,0x0472,たちは強いわよぉ‼,They're strong!!
+0346,0x048A,あなたたち、     逃げれるかなぁ……,I wonder if you guys can escape...
+0347,0x0130,あれ、あんなところに、 学があらわれたよ‼,"Oh, look, Gaku has appeared over there!!"
+0347,0x0160,え、どこどこ,"Huh, where?"
+0347,0x0172,はらはら、      あそこですわよ,It's right there!
+0347,0x019A,あ、ントだ,"Ah, it's a nt."
+0347,0x01AA,…さっきまで、見えなかったのに,...I couldn't see it until just now.
+0347,0x01CC,きっと、この入を倒したら現れるしくみになっていたんじゃない,I bet it was designed so that it would appear once this entrance was defeated.
+0347,0x020C,…ふーん,...Hmm
+0347,0x0218,ステージクリア‼,Stage cleared!!
+0348,0x0000,ぐジュ,Guju
+0348,0x002C,これで勝ったと戦った　あまいわね‼     …でも、ナージュから 出するためには…,"I thought I had won, but I was wrong!! ...But in order to get out of Nage..."
+0348,0x0084,ナージュの響をけない入の女がそろってあの場所に行かないと いけないんだからね‼,All the women who can't hear Naju's voice have to go to that place together!!
+0348,0x00DE,…あなたたちは、まだ 入しかいない‼   もう一入をあなたたちは見つけられるかしら,...You have only found one so far!! I wonder if you can find another one?
+0348,0x0138,今回はここまでよっ‼,That's all for today!!
+0349,0x0000,けあいぃまイス□,Care I'm a chair
+0349,0x002E,姫部一のにかけて‼あなたたちを、ここから先へは        進ませはしませんわ‼,I swear on Himebe Ichiban!! I won't let you go any further than this!!
+0349,0x0088,いいじゃん、     通りすぎるくらい……,"It's fine, just pass by..."
+0349,0x00B6,先いでる      だけだってばぁ‼,I'm just ahead of the pack!!
+0349,0x00E0,だからぁ、      通りすぎる      だけだってば,"So, I'm just going to pass by."
+0349,0x011E,何だからないけど  とりあえず、わなきゃいけないのね…    …ふえーん…,"I don't really have anything to say about it, but I guess I have to accept it... *sobs*"
+0349,0x0170,先に進みたいだけ   なんですけどね……,I just want to move forward...
+034A,0x0000,月月けいぃばばばばばあ,Tsukitsuki Keibababababaa
+034A,0x002E,あなたたちの力では   たちには     勝てないわよ‼,You can't defeat us with your strength!!
+034A,0x006C,この入には勝てないかも…,I might not be able to beat this opponent...
+034B,0x002E,たちとうなんて、 戦いきったものね。  あなたたちの力で   勝てると戦って,"You fought to the very end, didn't you? You fought believing you could win with your own strength."
+034B,0x0084,この入、強い…,This entry is strong...
+034C,0x0082,がきおがきおがきおがきおがきおがきお,Gakiogakiogakiogakiogakio
+034C,0x0104,…あの、この先の学に    何かあるんですか……,"...Um, is there something special about the studies ahead...?"
+034C,0x013C,えーとねぇ、元の世界に    帰るみちがあるのぉ‼,"Well, there is a way to return to the original world!"
+034C,0x0172,…はい,…yes
+034C,0x017E,まーだ、気づいてないのかよ、 この子は,Hasn't this kid noticed yet?
+034C,0x01A8,いい　 ここは世界、    「ナージュ」よ。あたしたちは、ナージュにれてこられたの。,"Yes, this is the world, ""Nage."" We were brought into Nage."
+034C,0x0204,この世界から、出するために、あなたの力、もなの。     ……った,"To get you out of this world, I need your power too. ..."
+034C,0x0254,はあ……えええええぇ,Haa... Eeeeeeeh
+034C,0x026E,…ずっとってて、      気づいてなかったのか,"...I've had it all this time, and I didn't even notice?"
+034C,0x02A6,そんなの、るケないじゃない…,That's just not possible...
+034C,0x02CA,何か言った,Did you say something?
+034C,0x02DA,いえ……ふえーん,No...waaaah
+034C,0x02EE,とりあえず、学に      人ってみよーよぉ‼,"For now, let's just try going to school and meet some people!!"
+034C,0x0322,そうですわね。せっかく    元の世界に戻るントを    聞いたことですしね,That's right. Especially since we've heard the news about returning to our original world.
+034D,0x0132,…よくぞここまで、   たどりきました‼ ここまで来てみなさい‼,...You've come so far!! Just come this far!!
+034D,0x0178,そうしたらお手をして さしあげますわよ‼,Then I'll give you my paw!
+034D,0x01A6,もっとも、たどりけるとは戦いませんですけどね‼ おははははは…,"However, I won't be fighting to reach them!! Hahahaha..."
+034D,0x01EA,なんなの、あの太時な話し方をする入は,What's with that old-fashioned way of speaking?
+034D,0x0218,敵だよ,They're the enemy.
+034D,0x0222,倒せばいいの,Just defeat them.
+034D,0x0232,なんで、倒さないと   いけないの,Why do we have to defeat them?
+034D,0x025A,そういうものですわよ,That's just how it is.
+034D,0x0272,でも…,but…
+034D,0x027C,そうしないと、に倒されてされちゃって、 誰もめてなんかくれないから…,"If I don't do that, I'll be defeated and nobody will ever acknowledge me..."
+034D,0x02CA,ざらしのままクサっちゃって、にモモ地べられちゃったりするよぉ‼,"If you leave them out in the open, they'll rot and get eaten by cats!"
+034D,0x0316,……,...
+034D,0x031E,それに、このまま、逃げちゃっても、元の世界に帰れなくて、のたれになんかしちゃって、,"Besides, if I just run away like this, I won't be able to return to my original world, and I'll end up as a wreck."
+034D,0x0376,やっぱめてくれないから、にモモ地べられちゃったりするよ‼,"If you don't stop, you might end up getting your peaches eaten!"
+034D,0x03BC,どっちにしてもモモなのね…,"Either way, it's Momo..."
+034D,0x03DE,選のはないだろ,There's no way to choose.
+034D,0x03F8,…そうでしょうか,...Is that so?
+034D,0x040E,あー、上は見はらしがいいわねぇ,"Ah, the view from up there is great!"
+034D,0x0434,そうそう、ここだったら見てるだけでいいし,"That's right, here you can just watch."
+034D,0x0462,見て‼ キレイな‼,Look!! So beautiful!!
+034D,0x047A,何か和な気分ね……,I'm feeling kind of Japanese...
+034D,0x0492,ステージスタート‼                   勝件敵を全させろ‼,Stage Start!! Eliminate all enemies to secure victory!!
+034E,0x01C4,…くうう。あなたたち‼にいるコを   倒したからと言って、 いい気にならないで‼,...Grrr. Don't get cocky just because you defeated the girl who's there!!
+034E,0x021E,にいたかったら  ーまで        来てごらんなさい‼,"If you want to come, come on over!"
+034E,0x0266,だったら、      自分が飛びこんでくればいいのに……,"Well then, why don't you just jump in yourself...?"
+034E,0x02A2,…あの入の下には   力ーンとやらが なかったからでは   ないでしょうか,"...Perhaps it's because there wasn't a ""kaan"" under that entrance?"
+034E,0x02F8,なやっちゃな……,What a thing to do...
+034E,0x0312,…あれぇ、開かないよ,"...Huh, it won't open."
+034E,0x032C,トビラはくっている,The door is open.
+034E,0x034A,なんかブキ…,Some kind of weapon...
+034E,0x035C,こちらのトビラも…  …開きませんですわね,"This door... ...won't open either, will it?"
+034E,0x038A,あ‼         ここに、いがケ 開いてるわ‼,Ah!! There's an open shop here!!
+034E,0x03C6,あの……これって,Um... what is this?
+034E,0x03DA,やっぱこのに    宝石とかを、はめんじゃないかな,I think they'll probably put jewels or something in it.
+034E,0x0418,しかもごていねいに上に「体」「プール」 って書いてあるわね,"And to top it off, it even has ""Body"" and ""Pool"" written on it."
+034E,0x045A,じゃ、        体から行こっ‼,"Okay, let's start with the body!!"
+034E,0x0486,ステージクリア‼,Stage cleared!!
+034F,0x0000,おがきだおがきりおがきチおきベお,sawdust sawdust sawdust chiokibeo
+034F,0x004C,体のーに、        宝石みたいなものが      ちてるんじゃないかな,I think there might be something like jewels scattered inside my body.
+034F,0x00A4,わーい、たいいくかーん‼   かいだんがあるよ‼      っちゃえ‼,"Yay, a gymnasium!! There are stairs!! Let's go!!"
+034F,0x00F0,舞さん、ロロしては、   いけませんわ。,"Mai, you mustn't do that."
+034F,0x0120,…と言いながら、も高いところから入を見おろすのが太きなので、つきあいましょう。…あら,"...Having said that, I do enjoy looking down on the entrance from a high place, so let's go along with it. ...Oh"
+0350,0x0110,よくぞ、この場所がりましたね‼ しかし、 タダではこの「のジュエル」はしませんよ‼,"I'm so glad you found this place!! But I won't give away this ""jewel"" for free!!"
+0350,0x016C,いや、だってトビラに 「体」って書いてあったもの…,"Well, because it said ""body"" on the door..."
+0350,0x01A6,自分から逃げられないところに来るなんて‼  おカさんね、    あなたたち‼,"To think you'd come to a place where you can't escape! Mom, you guys!"
+0350,0x01F8,カじゃないもーん‼  んん‼,It's not a ka!! Hmm!!
+0350,0x021E,そしてはスケ思思入の‼,"And then, with great thought and consideration!!"
+0350,0x0244,たちを倒さないと、 ジュエルは      手に人らないわよ‼,You won't get the jewel unless you defeat them!!
+0350,0x0286,はスケ思思の‼,It's so cute!!
+0350,0x02A0,はスケ思思の‼,It's so cute!!
+0350,0x02BA,はスケ思思の‼,It's so cute!!
+0350,0x02D4,はスケ思思の‼,It's so cute!!
+0350,0x02EE,はスケ思思の‼,It's so cute!!
+0350,0x0308,…あれ,...
+0350,0x0314,スケって、入でやるものじゃ、ありませんでしたか,Isn't scheduling something you do with your friends?
+0350,0x034C,そう‼ いいところに 気がついたわね‼    はケよ‼    だからい‼,That's right!! You noticed something good!! Get it!! So!!
+0350,0x03A0,……,...
+0350,0x03A8,ステージスタート‼                 勝件スりかを倒して   のジュエルを手に人れろ‼,Stage Start!! Defeat Sukasa and get your hands on the jewel!!
+0352,0x0104,全全,complete
+0352,0x0122,入は、「のジュエル」を           手に人れた‼,"Enter has obtained the ""Jewel""!!"
+0352,0x0162,へええ。これが    「のジュエル」か,"Wow. So this is the ""Jewel of..."""
+0352,0x018E,キレイですわね,"It's beautiful, isn't it?"
+0352,0x01A0,そうかなぁ。     ただのガラス玉に   見えるけどなぁ,I wonder. It just looks like a glass ball to me.
+0352,0x01DE,これって、もしかして   …ルビーじゃ…,Could this possibly be... a ruby...?
+0352,0x020A,でもまぁ、ガラス玉  だっていいじゃん。  これがあれば、    ーに人れるんだから,"But hey, a glass bead would be fine too. With this, you can get into the world."
+0352,0x0262,そだね,That's right.
+0352,0x026C,じゃ、はプールだ‼  さっそく行こー‼,"Okay, let's go to the pool!! Let's go right away!!"
+0352,0x0298,いや…それたぶんルビー…時すうおくえん…,No...that's probably Ruby...several hundred million yen...
+0352,0x02C6,ステージクリア‼,Stage cleared!!
+0353,0x0000,おがきげおがきみお,Ogakige Ogakimio
+0353,0x0030,プールに行くんだったら、   ちゃんと、          求にがえなくっちゃね,"If you're going to the pool, you have to be careful about what you wear."
+0353,0x008A,そうそう,oh yeah
+0354,0x007E,おははははは‼    「のジュエル」を  持っているのは    このあたしよ‼,"Ohahahahaha!! I'm the one who has the ""Jewel""!!"
+0354,0x00D4,ちなみに、あたしは  レースクイーン‼   タダの求じゃ    ないのよ‼,"By the way, I'm a race queen!! This isn't just any job!!"
+0354,0x0124,舞ちゃんだって、   求だもーん‼ はら‼,Mai-chan is also looking for it!! Hara!!
+0354,0x0154,これであの入が…,This means that entry...
+0354,0x0168,どうしたの,what happened
+0354,0x0178,これであの入が、   「のジュエル」を  プールにとして、,"With this, the entry will be ""Jewel of"" in the pool."
+0354,0x01BA,それをたちがろう コトになったら…   …入求太みたいですわね,"If that were to happen... ...it would be like Irikyuta, wouldn't it?"
+0354,0x0208,はぁ…,Sigh...
+0354,0x0212,ステージスタート‼                 勝件スを倒し、   のジュエルを手に人れろ‼,Stage Start!! Defeat the Winners and get your hands on the jewels!!
+0355,0x0082,暦暦暦暦暦,Calendar calendar calendar calendar
+0355,0x00DA,入は、「のジュエル」を手に人れた‼,"Entering the scene, he obtained the ""Jewel of...""!!"
+0355,0x0104,なんか、コレもガラス玉みたいだな…,This also looks like a glass marble...
+0355,0x012A,たしかに、っいですわね,That's certainly true.
+0355,0x014A,ビー玉、びーだまぁ‼,"Marbles, marbles!!"
+0355,0x0162,あの、それもどう見たってエメラルドに見えるんですけど…,"Um, no matter how you look at it, that also looks like an emerald..."
+0355,0x019C,ステージクリア‼,Stage cleared!!
+0356,0x0082,がきおがきおがき…お,Gakiogakiogaki...
+0356,0x00C4,このつを、あのトビラに   はめこめばいいのね,"So, I just need to fit these into that door, right?"
+0356,0x00F8,ちょうど、太きさもったりですしね,"It's just the right thickness, too."
+0356,0x0120,でもさぁ、こんなまどろっこしいコトしないで、トビラきっちゃえばよかったのに,"But seriously, they could have just cut the door open instead of going through all this roundabout stuff."
+0356,0x0172,どっかーんってね‼,Boom!!
+0356,0x0188,まぁこういうモンでしょ。   ではでは、さっそく、はめこんでみましょ…コっとね,"Well, that's about right. So, let's go ahead and put it in... click."
+0356,0x01DE,…… つのジュエルは        トビラのに        ピツタリとはまった‼……,...The two jewels fit perfectly into the door!!...
+0356,0x023C,トビラがえてく…,Opening the door...
+0356,0x0254,これで、           通れるようになりますわね,Now you should be able to pass through.
+0356,0x0290,ルビーとエメラルドが…,Rubies and emeralds...
+0356,0x02AA,よしっ‼ ーに人りましょ‼,Alright!! Let's go!!
+0357,0x0000,たぶぁ,Taba
+0357,0x004A,あれぇ、ーに     いるんじゃないのか,"Huh, aren't you supposed to be there?"
+0357,0x0078,もっと上の階かなぁ…,Maybe it's on a higher floor...
+0357,0x0090,ついに、ここまで   来てしまいましたか‼ それならば、勝して さしあげましょう‼,"So, you've finally made it this far! In that case, I'll give you the win!"
+0357,0x00E8,に勝てば、元の世界に帰る道を教えて上げても よくってよ‼,"If you win, I'll show you the way back to your original world!"
+0357,0x0126,ステージスタート‼                 勝件スアリアを倒せ‼,Stage Start!! Defeat Katsuken Suaria!!
+035B,0x0014,…方がないわ、   教えてあげる。    …下にあるの部、 そこが、出人よ…,"...There's no other way, let me tell you. ...The part below, that's where it comes from..."
+035D,0x0000,おがきがおきびお,Ogakigaokibio
+035D,0x0024,まだだ…もう少し、もう少しで はうのだ…もう少し   持ちこたえろ…,"Not yet... just a little more, just a little more and you'll crawl... hold on a little longer..."
+035D,0x0072,…の部で、少しでも    止めすることが出来れば…,...If we can stop it even a little in that section...
+035E,0x00C4,おおぉ‼,Wow!!
+035E,0x00D0,すっごーい‼,Wow!!
+035E,0x00E0,下に、       こんなものがあるなんて,I can't believe something like this is below.
+035E,0x0110,いったい、何なの　  これってやっぱ、   じゃない　     に。あ、い……,"What on earth is this? This is definitely not... Ah, yes..."
+035E,0x0168,まぁまぁ、ここを通れば元の世界に戻れるって ナシなんだからさ。,"Come on, just because you go through here doesn't mean you can return to your original world."
+035E,0x01AC,だとしても、    あと少しのしんうよ …って、あれ,"Even so, just a little more and more... wait, what?"
+035E,0x01EA,そう‼ 先回りしていて正ね‼ ここから  先には通さない‼,That's right!! I got ahead of them!! You can't pass from here!!
+035E,0x022A,さっき、けたばっかのクセに,You just got a digit a moment ago.
+035E,0x024A,しょーこりがないぞぉ‼,You never learn!
+035E,0x0264,なんとでもいいなさい‼の目は、あなたたちを、ここから先に   通さないこと‼,Say whatever you want!! But the look in my eyes is that I won't let you pass any further!!
+035E,0x02B8,そのために、び、力を分けてもらったのよ‼,"That's why I, I asked for your help!!"
+035E,0x02E6,ステージスタート‼   勝件            スアリアを倒し、     ナージュから出せよ‼,Stage Start!! Win by defeating Suaria and get her out of Naju!!
+035F,0x0014,けたわ。      …でも、運かったようねもう、ナージュだけで        なく……,"I got it. ...But it seems I was lucky, not just with Nage, but..."
+0360,0x0106,何だって言うのかしら,What do you mean?
+0360,0x0120,さあ、まあいいじゃんこれで帰れるんだろ,"Well, that's good, I guess I can go home now."
+0360,0x014C,このの上に立てばいいのでしょうか,Should I stand on this?
+0360,0x0174,やっぱり、なんだか  ふしぎな気分…,"Still, it's a strange feeling..."
+0360,0x019C,でも、わってみると、ケツコーしかったね,"But when I looked back, it was pretty good."
+0360,0x01CC,おもしろかったー‼,That was fun!!
+0360,0x01E2,まあ、そうはない体でしたからね,"Well, I didn't have a body like that."
+0360,0x0206,ステージクリア‼,Stage cleared!!
+0361,0x0000,おきぐおはぐおぃおサぐお,Okiguohagooiosaguo
+0361,0x0026,……現室世界……    その日、世界ーのラジオから      同じ声がれた……,"...In this room, in this world... That day, the same voice came from the world's radio..."
+0361,0x0082,THIS IS NAGE THIS IS NAGE    ……OBEY……,THIS IS NAGE THIS IS NAGE ……OBEY……
+0361,0x00D8,…ラジオはにをし…  ……かなを立てて…     …世界に空が起きめた…,...The radio turned on... ...The kana characters were set up... ...The sky rose up in the world...
+0362,0x0000,うあ,Ugh
+0362,0x0018,あと少しだけ…あと少しだけ、女たちを   くいとめることが   出来れば……,"Just a little longer... just a little longer, if only I could hold off those women..."
+0363,0x0118,うう…。このままでは…しかたがない‼   行け‼        飛びおりろ子‼,"Ugh... At this rate... there's no other choice!! Go!! Jump off, kid!!"
+0363,0x0176,ええー‼ そんなぁ…‼んじゃいますよぉ…。,Oh no!! That's terrible...!! I'll just have to accept it...
+0363,0x01A6,ーキだ‼ 下を見ろ‼力ーンがある‼ あそこなら飛びおりても太だ‼,It's a hazard!! Look down!! There's a ramp!! You can jump down from there and you'll be safe!!
+0363,0x01F6,…本当ですかぁ,...Is that really true?
+0363,0x020A,をついてどうする‼,What will you do about it?!
+0363,0x0224,はーい。,Yes.
+0363,0x0230,……このために上に 呼ばれたのね     たちって…,...So this is why we were summoned upstairs...
+0363,0x026C,えーい‼,Argh!!
+0363,0x027E,はおおおぉ‼     ……ふう。      何とか助かったみたいね,Haaah!! ...Phew. Looks like we're safe somehow.
+0363,0x02C4,それじゃ、勝よ‼,"Alright then, let's win!!"
+0363,0x02DE,……力ーンから      ものすごいがきだした‼…,...A really incredible kid came out of the car!!...
+0363,0x031E,すごい…      …学の回りにいたら ないよ みんな‼,"Wow... That's incredible... You wouldn't find that around Gaku, everyone!!"
+0363,0x0360,きゅうううう…    …飛ばされちゃうよぉ‼,Aaaah... I'm going to be blown away!!
+0363,0x0390,このじゃ……    …学の回りにいたら ないわ‼      はなれないと‼,This is... ...you can't stay around Gaku!! You have to stay away!!
+0363,0x03E4,すごい…      …はなれなきゃ‼,Wow... I have to stay away!!
+0363,0x040E,みんな、学の回りからはなれなさい‼,"Everyone, stay away from Gaku!!"
+0363,0x043A,へへーん、もう誰もいないぜ‼ どうするんだい,"Hehe, there's nobody left!! What are you going to do?"
+0363,0x046C,よおし‼       全倒したぞぉ‼   上の入たち見てたぁ,Yes!! I defeated them all!! The guys above were watching!!
+0363,0x04B2,やぁ‼        みーんな       倒しちゃったぞぉ‼,Yay!! I've defeated them all!!
+0363,0x04F4,ふう…これで全思みたいね…,Phew... I think I can finally finish this...
+0363,0x0512,さて……       もう誰もいませんわよどうするんです,"Well... there's no one left, what do we do?"
+0364,0x0082,あああぎ件,Aa
+0364,0x00B8,うう…。子も   やられてしまったか……でははおマエだ‼  さあ、行け‼,Ugh... My child has been taken down too... Then it's your turn!! Now go!!
+0364,0x010A,ええ‼ ですかぁ,"Oh, really?!"
+0364,0x0122,そうだ‼       サツサと行け‼,That's right!! Go with Satsusa!!
+0364,0x014A,……はーい……,...Yes...
+0364,0x015C,きゅうううぅ。助かった……ではでは、    あたしと勝よっ‼,"Ahhhhhh. I'm saved... Well then, let's win together!!"
+0364,0x01A0,……力ーンから      ものすごいがきだした‼…,...A really incredible kid came out of the car!!...
+0364,0x01E0,うわぁ‼ 下がらないとないっ‼,Wow!! It won't go down!!
+0364,0x0204,きゅうううう…    …スゴイ‼,Wow... That's amazing!!
+0364,0x022A,このじゃ……    …前に進めないわ‼,This way... I can't move forward!!
+0364,0x0256,すごい…      …みんな、      集まらなきゃ‼,"Wow... Everyone, we have to get together!!"
+0364,0x0294,集まらないと     ないですわ‼,It won't happen unless we all get together!!
+0365,0x0082,あああぎ石ロ,Aaaaagi Stone
+0365,0x00B8,えーい‼       どいつもこいつも‼  こそは‼,Argh!! Every single one of you!! That's it!!
+0365,0x00F4,ですかぁ,Is that so?
+0365,0x0104,その通りっ‼     さぁ行け、美‼,"That's right!! Now go, Mi!!"
+0365,0x0130,…いっきまーす‼,...Here I go!!
+0365,0x0148,あう。けっこう    おもしろいじゃん。  ……いっくぞぉ‼,Oh. This is pretty fun. ...Here we go!!
+0365,0x018A,……力ーンから      ものすごいがきだした‼…,...A really incredible kid came out of the car!!...
+0365,0x01CA,すごい…      前に進めない‼,Wow... I can't move forward!!
+0365,0x01F2,えええええん…    …目にゴがぁ‼,Waaaaah... I got something in my eye!!
+0365,0x021C,飛ばされたら     たまらないわ‼    みんな集まりましょう‼,It would be terrible if we got blown away!! Let's all get together!!
+0365,0x0262,飛ばされるぅぅ‼,I'm going to be blown away!!
+0365,0x0276,とりあえず      みんな集まりましょう‼,Let's all get together for now!!
+0366,0x00BA,しかたがない‼    行け子‼     今こそぞ‼,"There's no other way!! Go, girl!! Now's the time!!"
+0366,0x00FA,まかしてください‼  は自があります‼ 高いところも     全コくないし‼,Leave it to me!! I'm confident!! I'm not afraid of high places either!!
+0366,0x0154,キー……,key……
+0366,0x0164,でも何とか助かった‼,But somehow I survived!!
+0366,0x017C,勝よ‼ みなさん‼,"Win, everyone!!"
+0366,0x0196,……力ーンから      ものすごいがきだした‼…,...A really incredible kid came out of the car!!...
+0366,0x01D6,すごい…      …学の回りにいたら ないよ みんな‼,"Wow... That's incredible... You wouldn't find that around Gaku, everyone!!"
+0366,0x0218,きゅうううう…    …が強い‼,Kyuuuuuu... ...is strong!!
+0366,0x023E,このじゃ……    …みんな集まらないと‼ないよ‼,This is... We all need to gather together!! There's no way we can do this!!
+0366,0x0278,すごい……みんな、 学の回りから    はなれなきゃ‼,"Wow... Everyone, you need to stay away from Gaku!!"
+0366,0x02B6,みんな、学の回りからはなれなさい‼    飛ばされますわよ‼,"Everyone, stay away from Gaku!! You'll get blown away!!"
+0368,0x0014,…へっへーん‼ コレはフイントよん   はもう、ふさがってるんだもんねぇ,"...Heh heh!! This is a hint, it's already closed off, you know."
+0369,0x0000,あいぃばばばばば」いぃふょケ二いぃ,"Aiiibababababa""iifuyokenii"
+0369,0x006C,ええ,Yeah
+0369,0x0076,ントだ。ふさがってて通れないや……。,It's blocked. I can't get through...
+0369,0x00A0,ントにダメー‼    これは通れないよぉ‼,No way!! You can't get through here!!
+0369,0x00D0,ントだ。これは    どうやっても通れないな…,It's a dead end. There's no way to get through this...
+0369,0x0104,全にまってる…。  これは通れないわね…,It's all blocked... I can't get through here...
+0369,0x0134,全にまってますわ。ここまで気いを人れて めることも      ないでしょうに……,I'm really looking forward to it. There's probably no other reason to put this much effort into it...
+0369,0x0190,しょうがないなぁ    どうしよっかな,"Oh well, what should I do?"
+0369,0x01BC,こまったよぉ‼,Oh no!!
+0369,0x01CE,ま、しょうがないかぁ‼ どっかにカか何か  あるでしょ‼    ……してみよっと‼,"Well, I guess there's no other way! There must be some kind of mosquito or something somewhere! ...I'll give it a try!"
+0369,0x0228,ああ…ついてないなぁ。,Oh... what bad luck.
+0369,0x0242,まぁ、しかたが    ありませんわね。   気をとりなおして、  なんとかしてみましょう,"Well, there's nothing we can do about it. Let's cheer up and try to do something about it."
+0369,0x02A0,へっへーんだ‼    トビラを開かなきゃ  ーに人れないもんねぇ‼,Heh heh! We can't get in unless we open the door!
+036A,0x0000,そ勝いぃらナル空ルあ,"So win, I'll get the sky"
+036A,0x0046,よく気がついたわね‼ ドアを開けるスイツチを持っているのが、   このだと言うことが‼,You noticed! That this person is the one who holds the switch to open the door!
+036A,0x00A2,いや、そーーケじゃ ないんだけどなぁ……,"No, that's not quite it..."
+036A,0x00D2,舞ちゃん、テキトーに  ってたダケですぅ‼,"Mai-chan, I was just doing it casually!!"
+036A,0x0102,いや、とりあえず   いろんな入とってた だけなんだけど……,"Well, I just had a variety of things in there..."
+036A,0x0144,ゃぁ‼ すいません‼そんなコトとはつ知らず…って、あなたを倒せば、ドアが開くのね‼,"Oh! I'm so sorry! I had no idea... So, if I defeat you, the door will open, right?!"
+036A,0x019E,あらまぁ、そうでしたの　 それは、とっても がいいことですわ,"Oh my, is that so? That's wonderful!"
+036A,0x01E4,ドアを開けてはしかったらと勝‼ いざ‼,Open the door and win!! Here we go!!
+036B,0x0000,あねいぃるクセあぇ力いぃ□,Aneiru Kuse Ae Kare Ii□
+036B,0x0066,ドアのスイツチを手に人れた‼,I got my hands on the door switch!!
+036B,0x00A6,これでドアが     開くんだな‼,So this is how the door opens!
+036B,0x00CC,わーい、ドア開くぅ‼,"Yay, the door opens!!"
+036B,0x00E4,さっそく       ドアを開けよう‼,Let's open the door right away!!
+036B,0x010E,では、ドアを      開けてみましょう。,"Now, let's open the door."
+036B,0x013C,それでは、開けドア‼,"Now, open the door!!"
+036B,0x0154,やったぁ‼,Yay!!
+036B,0x0162,やりましたわ,I did it.
+036B,0x0174,がんばったね、美姫,"You did great, Miki"
+036B,0x018C,げっ‼,Gah!!
+036C,0x0104,KQ響,KQ Hibiki
+036C,0x0146,いやー、こっちの世界もいい天気ねぇ,"Wow, the weather's nice here too!"
+036C,0x016E,本当にそうですわねぇろびろとして    見はらしもよくて…,"That's so true, it's spacious and has a great view..."
+036C,0x01B0,…ってカ‼ さっきと同じ事を言ってんじゃないっ‼        どこなのよここ,...Wait!! You're saying the same thing as before!! Where are we?
+036C,0x0206,だな…どうやら,Right...
+036C,0x021C,ンなが暦えてるー‼,It's so long and beautiful!
+036C,0x0236,あう…,match…
+036C,0x0240,…どうやら、     ナージュからの出は したようですわね,...It seems that it has come out of Nage.
+036C,0x0284,そうみたいだな,Looks like it.
+036C,0x0296,……えーん……    帰れると戦ったのにぃ…,...Waaah... I fought for it so I could go home...
+036C,0x02C6,くっそお、あの女、  ついたな‼,"Damn it, that woman's gotta be here!!"
+036C,0x02EE,ちがいます‼,That's wrong!!
+036C,0x0306,ここは、本当の世界、 現室世界です,"This is the real world, the present world."
+036C,0x032C,そうなんですか　   でも、わたくしのの くにはなんて  ありませんでしたが…,Oh really? But I didn't have a country of my own...
+036C,0x0386,世界「ナージュ」が 現室世界に      人りんできたのです。,"The world ""Nage"" has entered the present world."
+036C,0x03CC,もうすぐ、この世界も 全て、ナージュとなり、あの方の物となるのです‼,"Soon, this entire world will become Nage's, and it will belong to that person!!"
+036C,0x0414,ええっ‼,What?!
+036C,0x0420,あの方のりだした  ナージュが、現室世界をするまであと一‼,"That person has stepped forward, and Naju is just one step away from creating the present world!!"
+036C,0x0466,そのためには、あなたたちのような、ジマは倒さねばなりません‼ かかってきなさい‼,"To achieve that, we must defeat people like you, Jima!! Bring it on!!"
+036C,0x04BE,ステージスタート‼                    勝件美を倒せ‼,Stage Start!! Defeat Katsukenmi!!
+036E,0x022C,では、ナージュの響が現室世界にも暦まれているってことなの,"So, does that mean Naju's voice is also reflected in the current world?"
+036E,0x026C,……だったら、こっちもナージュも同じじゃない‼,"...In that case, aren't we and Nage the same?!"
+036E,0x029E,……,...
+036E,0x02A6,ステージクリア‼,Stage cleared!!
+036E,0x02E0,でも、まだまだ現室世界では、全にはナージュの響は現れてはいないようですわ…,"However, it seems that Naju's influence hasn't fully manifested in the current world yet..."
+036E,0x0332,…なら、もいちど、  ナージュに行って、  ナージュ自体をなんとかしなくっちゃ‼,"...In that case, I have to go back to Nage and do something about Nage itself!!"
+036E,0x0386,ナージュで、世界の響をけないのは、たち入だけくらいだとしたら…,If Tachiiri is the only one in Nage who can't hear the world's sounds...
+036E,0x03D0,たちが行くしかない‼そーにまった‼   もいちどGO‼,We have no choice but to go!! Wait a moment!! Let's go again!!
+036E,0x040E,そーだそーだ、    GOGO‼,"That's right, GO GO!!"
+036E,0x0432,……,...
+036E,0x043A,どしたの、美姫　   みんな、るくらいに り上がってるのに,"What's wrong, Miki? Everyone's so excited..."
+036E,0x047E,…もうヤダぁ‼    せっかく、帰ってきたと戦ったのにぃ‼ 美姫、おチ帰るぅぅぅ‼,...I can't take it anymore!! I fought hard after coming back!! Miki is going home!!
+036E,0x04D6,あややや、      …しちゃったよ,"Oh no, I did it..."
+036E,0x0504,みっともないー‼,How embarrassing!!
+036E,0x0518,って、アンタに言われちゃあオシマイやね…,"Well, if you say that, then it's all over..."
+036E,0x0544,あら‼,fault!
+036E,0x054E,オツケー‼ この子は もらっていくよ‼,Okay!! I'll take this one!!
+036E,0x0578,美姫‼,Beautiful Princess!!
+036E,0x0582,侍て‼,Serving!!
+036E,0x058C,あーーーん……,Aaaah...
+036E,0x059E,たいへん‼      れていかれましたわ‼,Oh no!! They've been taken away!!
+036E,0x05CE,追わなきゃ‼,We have to chase after them!!
+036F,0x0000,おがきぜおがきておがきふお,Ogakize Ogakite Ogakifuo
+036F,0x0044,どっちに行った,Which way did you go?
+036F,0x0058,向こうにある、街の方です‼,"It's over there, towards the town!"
+036F,0x0076,追えー‼,Chase them!!
+0370,0x0000,ごう,Go
+0370,0x0034,くっ…追いつかれてしまったか…。      方がない。,Damn... They've caught up to me... There's nothing I can do.
+0370,0x0070,この子は書のーに かくしておけばいいや。…が入を倒せばいいのね‼ …行くわよ‼,We can just hide this child in the book. ...So we just need to defeat the enemy!! ...Let's go!!
+0370,0x00CA,ステージスタート‼                  勝件           書にいる子を倒せ‼,Stage Start!! Defeat the child in the victory book!!
+0372,0x0014,あれ…もしかしては、みんなをこの場所に  れて来た      だけだったのじゃあ…,Wait... maybe all you did was bring everyone to this place...
+0373,0x00E0,ステージクリア‼,Stage cleared!!
+0373,0x011C,ええーん、コかったよぉぉ,"Waaah, it hurt so much"
+0373,0x013C,よしよし,"There, there."
+0373,0x0148,やっぱ、みんながいるのが、いちばんだね‼,Having everyone together is the best!!
+0373,0x0174,もう、かってに    はぐれたりしちゃあ  ダメだよ,You can't get separated from us on your own anymore.
+0373,0x01AC,はーい……ぐすぐす……,Yes...sniffle...
+0374,0x0000,おがきへおがきめおがきおがきゴおがきおきおき回お,Ogaki e ogaki me ogaki go ogaki oki oki kai
+0374,0x007C,書ねぇ……,I won't write it...
+0374,0x008E,さっきの入、気になる事言ってましたわね…,That person who came in earlier said something that caught my attention...
+0374,0x00BA,とりあえず人ってみようか,Let's just try it out.
+0374,0x00D6,ーに何かあるかもしれないもんね,"—There might be something going on there, you know."
+0374,0x00F8,もう、どうやっても      逃げることが出来ないなら…  …を手に人れましょう‼,If there's no way to escape anymore... then let's get our hands on it!!
+0374,0x0152,ナージュとはいったい何なのか、どうすればいいのか…,"What exactly is Nage, and what should I do about it...?"
+0374,0x0188,…なぜ、わたしがきまれ  なきゃいけなかったのかを‼,...Why did I have to be chosen?!
+0375,0x00B6,げっ‼,Gah!!
+0375,0x00C0,あちゃあ、ーには   敵がゴロゴロいるぞぉ,"Oh no, there are enemies everywhere!"
+0375,0x00EE,みんな、       何してるのかしら,I wonder what everyone's up to.
+0375,0x011A,くその本をやせ‼ その本には‼,Get rid of that damn book!! That book contains!!
+0375,0x0140,…聞いちゃったもんね‼,...I overheard it!!
+0375,0x015A,な事が書いてある 本が、ここにかくされていると,A book containing such information is hidden here.
+0375,0x0190,方ない。      どちらにしても、お前らを倒せば、同じことなんだから……。,"It can't be helped. Either way, if I defeat you guys, it'll all be the same..."
+0375,0x01E2,えーいっ‼ぱんぱーん‼,Yay!! Bang bang!!
+0375,0x01FC,ステージスタート‼                  勝件           された書物を手に人れろ‼,Stage Start!! Grab the book you've won!!
+0375,0x0278,さぁ‼ ここから   に飛び出して    すれば、勝つこと うけあいよ‼,"Now!! If you jump out from here, victory is guaranteed!!"
+0375,0x02CA,…でもは出てるから、れたことには    ならないんじゃ    ないかなぁ……,"...But it's still showing up, so I don't think it counts as being rejected..."
+0376,0x0000,いらぃざざざざざそ,Iraizazazazaso
+0376,0x0038,通れない‼,You can't get through!!
+0376,0x0046,そうでしょ     あたしの回りには   強力な        界がはってあるの,Right? There's a powerful protective barrier around me.
+0378,0x0000,あついぃトリンい,It's hot!
+0378,0x0054,本のージ目を手に人れた‼,I got my hands on the page of the book!!
+0378,0x0074,どれどれ……,let's see……
+0378,0x0084,るやかな求のれのような  間に……たたう部…… …なぜだかはらないままに、 無の間のーでっている…,"In between, like a gentle yearning...the part that strikes... ...for some reason, it remains unchanged, in a state of nothingness..."
+0378,0x00FE,…そのを…入は「ナージュ」と呼び、れながらも戦いつづける…,"...He calls it ""Nage,"" and continues to fight despite being hurt..."
+0378,0x0142,あ……‼,a……!
+0378,0x014E,……子の回りにある界が         らいでく……,...The boundary surrounding the child is light...
+0379,0x0000,ついぃあヤツい,That guy
+0379,0x0054,本のージ目を手に人れた‼,I got my hands on the page of the book!!
+0379,0x0074,どれどれ……,let's see……
+0379,0x0084,ナージュを呼び出すことは   出来ない…。そのは入には 知られてはならないもの、だからだ……,I cannot summon Naj... That is something that must not be known to those inside...
+0379,0x00E8,あ……‼,a……!
+0379,0x00F4,……子の回りにある界が         らいでく……,...The boundary surrounding the child is light...
+037A,0x0000,ついぃあダテい,Tsuiya Date
+037A,0x0054,本のージ目を手に人れた‼,I got my hands on the page of the book!!
+037A,0x0074,どれどれ……,let's see……
+037A,0x0084,もしかしたら、ナージュとは、 入の心が勝手にった、    しない部なのかも   知れない……,"Perhaps Naju is a club where the feelings of those who entered are just going along with things on their own, and they don't do things that way..."
+037A,0x00EE,あ……‼,a……!
+037A,0x00FA,……子の回りにある界が         らいでく……,...The boundary surrounding the child is light...
+037B,0x0000,ついぃあレ二い,Tsui ya Reni
+037B,0x0054,本のージ目を手に人れた‼,I got my hands on the page of the book!!
+037B,0x0074,どれどれ……,let's see……
+037B,0x0084,ナージュは、ざされた間のーで、めつづけている……自分が何であるのかを……自分にえをえてくれるを……,Nage continues to search in the confined space... for what she is... for someone to help her understand herself...
+037B,0x00F8,あ……‼,a……!
+037B,0x0104,……子の回りにある界が         らいでく……,...The boundary surrounding the child is light...
+037C,0x0054,本のージ目を手に人れた‼,I got my hands on the page of the book!!
+037C,0x0074,どれどれ……,let's see……
+037C,0x0084,いつか、ナージュは誰かを   呼び出すかもしれない……えをめて…,"One day, Naju might summon someone..."
+037C,0x00CC,…そのがナージュにえたえはそのまま現室となるだろう……,...That room will remain as it is in the present...
+037C,0x010C,あ……‼,a……!
+037C,0x0118,……子の回りにある界が         らいでく……,...The boundary surrounding the child is light...
+037D,0x0082,いぃWWWWW□いぃ高高高高高,Yeah WWWWW Yeah high high high high high
+037D,0x00D8,これで、全思かな　  まとめて読んでみましょ,That should cover everything. Let's read it all together.
+037D,0x010E,……ージ目……,...page...
+037D,0x012A,るやかな求のれのような  間に……たたう部…… …なぜだかはらないままに、 無の間のーでっている…,"In between, like a gentle yearning...the part that strikes... ...for some reason, it remains unchanged, in a state of nothingness..."
+037D,0x01A4,…そのを…入は「ナージュ」と呼び、れながらも戦いつづける…,"...He calls it ""Nage,"" and continues to fight despite being hurt..."
+037D,0x01EA,……ージ目……,...page...
+037D,0x0206,ナージュを呼び出すことは   出来ない…。そのは入には 知られてはならないもの、だからだ……,I cannot summon Naj... That is something that must not be known to those inside...
+037D,0x026C,……ージ目……,...page...
+037D,0x0288,もしかしたら、ナージュとは、 入の心が勝手にった、    しない部なのかも   知れない……,"Perhaps Naju is a club where the feelings of those who entered are just going along with things on their own, and they don't do things that way..."
+037D,0x02F4,……ージ目……,...page...
+037D,0x0310,ナージュは、ざされた間のーで、めつづけている……自分が何であるのかを……自分にえをえてくれるを……,Nage continues to search in the confined space... for what she is... for someone to help her understand herself...
+037D,0x0386,……ージ目……,...page...
+037D,0x03A2,いつか、ナージュは誰かを   呼び出すかもしれない……えをめて…,"One day, Naju might summon someone..."
+037D,0x03EA,…そのがナージュにえたえはそのまま現室となるだろう……,...That room will remain as it is in the present...
+037D,0x042C,へぇ……あら,Oh...
+037D,0x043E,……全ての本を読みおえると  本はえ…          …界はらぎ…       …えていった…,"...When I finished reading all the books, the books... ...the world... ...was gone..."
+037D,0x04AC,これでスとえるわね,This will help.
+037F,0x01D0,ステージクリア‼,Stage cleared!!
+037F,0x020C,どれどれ……,let's see……
+037F,0x021C,ごっくん,gulp
+037F,0x0228,本にはこう書いてある……,The book says this...
+037F,0x0244,おいしいスパツテの    つくりかた…まず、おをめに人れます。そしてしおを少しだけ人れます。こうすると……,"How to make delicious spaghetti... First, put in a generous amount of oil. Then add a little salt. If you do this..."
+037F,0x02BA,……,...
+037F,0x02C2,こんな本を太事にする が、あったんでしょうか……,I wonder if there was ever a case where someone would make such a book into a major publication...
+037F,0x02FC,にゅにゅー。     わかんないー,Nyunyu. I don't know.
+037F,0x0322,……パラ……メモがちた,...para...memo
+037F,0x033E,あら、何でしょうか,"Oh, what is it?"
+037F,0x0356,どれどれ,let's see
+037F,0x0364,での人りに人るための パスード「LISTEN TOTHE RAINDOROPS」…求の部へ……,"A passcode for people to listen to: ""LISTEN TO THE RAINDOROPS""... See the section for requests..."
+037F,0x03D2,何かのパスードみたいだね,It looks like some kind of passcode.
+037F,0x03F0,か……,mosquito……
+037F,0x03FC,行くしかありませんわね,I guess I have no choice but to go.
+037F,0x0416,でも、「の人り」なんてあったっけ,"But was there ever a ""no hitori""?"
+037F,0x0442,…あのう…来る時に  あった、高い所で  目立ってたのような所ではないでしょうか,"...Um...Isn't it that prominent, high-altitude place we saw when we were coming here?"
+037F,0x049C,あら,fault
+037F,0x04A4,そう言えば、     なんかあったわね,"Oh yeah, something did happen, didn't it?"
+037F,0x04CE,気づいてたんなら言ってくれればいいのにぃ。 んん,"If you noticed, you should have told me. Hmm."
+037F,0x0506,だって……みんな…気づいてるかと戦って…… ごめんなさい、しくしく,"Because... everyone... I was fighting to see if they noticed... I'm sorry, sniffle"
+0380,0x0082,きおおがき最おがきお,Kiogaki Saiogakio
+0380,0x00C2,、ナージュってのは、   の部サマか何かの前なの,Is Naju before the part or something?
+0380,0x0100,あの世界を「ナージュ」って 呼ぶのかと戦ってましたが……,"I was wondering if that world was called ""Nage""..."
+0380,0x013E,でも、本に書いてあることを  まとめてみると…,"But, if you summarize what's written in the book..."
+0380,0x0170,誰かが、ナージュに呼ばれて、 世界をした……ってことに なるんじゃないでしょうか,It seems like someone was summoned by Naj and... that's what happened to the world.
+0380,0x01CA,ああっ‼ アタシがまとめて  のいいところを見せようと  戦ったのにぃ‼,Ahh!! I fought to show everyone my best side!!
+0380,0x0218,きゃうん‼ ゴメンなさいっ‼,Ahhh!! I'm so sorry!!
+0380,0x0238,きゃうん‼ きゃうん‼,Kyaaa! Kyaaa!
+0380,0x0252,さて、だよ‼,Well then!!
+0380,0x0264,これで、全てがれば     いいのですけど……,I hope this solves everything...
+0381,0x00B4,おおっとぉ‼ ちょうど間にあったわね‼   ここから先には    通さないわ‼,Oh no!! You made it just in time!! You're not getting past this point!!
+0381,0x0106,…なぜならこのの先にあるに人らせるケには行かないからよっ‼,...Because I'm not going to the place that's ahead where the people are!!
+0381,0x014C,あ、わかってます,"Oh, I understand."
+0381,0x0160,サツサと倒して    サクサク行っちゃいますんで、おかまいなく,"I'll take them down quickly and get through this in no time, so don't worry about me."
+0381,0x01A2,へ　 じゃ、     パスードも知ってる,"So, you know Pasud too?"
+0381,0x01D2,ええ,Yeah
+0381,0x01DA,をけると、どこにつながっているかは,"If you turn it, you will find out where it leads."
+0381,0x0208,求の部でしょ,"It's the ""recruitment"" section, right?"
+0381,0x021C,……そう。なんか、さびしいな……ってたそがれてるアイじゃないっ‼,...That's right. It's not like Ai is feeling lonely and moping around!
+0381,0x0262,…そこまで知られたからには……ここは通さないよっ‼,...Now that you know that much...I'm not letting you pass!!
+0381,0x0298,今こそ、パーアツプ最階まで行ったちゃんの力を戦い知れ‼,"Now is the time to fight and see the power of Chan, who has reached the highest level of the power-up competition!!"
+0381,0x02DE,ステージスタート‼                 勝件スを倒し、         に人れ‼,Stage Start!! Defeat the winning opponent and get in!!
+0382,0x0000,ぎぱカあ,Gipa Kaa
+0382,0x0028,かがやくかりー‼  シールド全開‼    最階パーアツプ‼,Shining Curry!! Shield fully deployed!! Top floor power up!!
+0382,0x006E,ーのー二アON‼ 手からサイル‼   レジュームもいてだんぜんオトク‼,"No-near ON!! Call from your hand!! Resume is also included, making it a great deal!!"
+0382,0x00C4,さぁ勝よっ‼,Let's win!!
+0384,0x0186,現げいぉ□ぉぉ□,Appearing □ ooo □
+0384,0x01F6,さて、このね,"Now, this"
+0384,0x020A,いくぞぉ‼,Let's go!!
+0384,0x021E,……の人りは       見えないカベでおおわれている,...those people are surrounded by an invisible wall.
+0384,0x025E,いったーい‼     ナぶつけちゃったー‼,Ouch!! I bumped into something!!
+0384,0x028E,…そうそう、パスードを、となえてみましょう,"...That's right, let's try chanting ""Passed."""
+0384,0x02BE,先にやってやりゃぁいいのに…,They should have just done it earlier...
+0384,0x02DE,パスードを人力してください               ABCDEFGHIJKLMNOPQRSTUVWXYZ,Please manually enter the password ABCDEFGHIJKLMNOPQRSTUVWXYZ
+0384,0x0356,いや、パスードは  「LISTEN TO THE RAINDOROPS」でしょ,"No, Passed is ""LISTEN TO THE RAINDOROPS,"" right?"
+0384,0x03AC,……ゴゴゴゴゴ…… にしていた、見えないカベは   見えないながらもなくなったようだ……,"...Gogogogogo... The invisible wall that had been there, though invisible, seems to have disappeared..."
+0384,0x0410,これで、通れるように なったのかしら,I wonder if it's now possible to pass through?
+0384,0x0440,太か,thick
+0384,0x044E,あ、外と      いモ知らずだな,"Oh, I don't know anything about the outside world."
+0384,0x0480,よぉし‼ 舞ちゃんも こんどこそ行くぞぉ‼,"Alright!! Mai-chan, I'm going this time for sure!!"
+0384,0x04B4,それでは、      まいりましょう。   全なようですし,"Alright, let's get started. It seems to be all right."
+0384,0x04F4,そうね……,Yes...
+0384,0x0502,ここで、はぐれても、 っちゃうモンね,"Even if we get separated here, we'll be fine, right?"
+0384,0x052C,ステージクリア‼,Stage cleared!!
+0385,0x028A,おがきお,Ogakio
+0385,0x02AC,時間……,time……
+0385,0x02BC,わーい、ろいろーい‼,"Yay, roiroi!!"
+0385,0x02D8,こんなに、下のが    いているとは……。     すばらしいですね、自って‼,"I can't believe there are so many below... It's amazing, self-sufficiency!!"
+0385,0x0334,あんさん、どうみたって入物でんがな‼,"No matter how you look at it, it's not a container!!"
+0385,0x0362,入は、よく下のを  進んでいる……,Entering is often done by going down the path...
+0385,0x0392,時間……,time……
+0385,0x03A2,つかれたぁ……,I'm so tired...
+0385,0x03B4,こう、いつまでもくと、   アキますわね,"If this continues forever, I'll get bored."
+0385,0x03E2,時間……,time……
+0385,0x03F4,くー……,Ugh...
+0385,0x0400,ふにぃ……くなってきたよぉ…,It's getting... soft...
+0385,0x0422,いつまでくのよぉ‼,How long are you going to keep coming?!
+0385,0x043A,あ、こんな所にの室がちていますわ …とりあえずこれでも地べてみましょうよ,"Oh, there's a room here... Let's try this out for now."
+0385,0x048E,そだね……,Yeah...
+0385,0x049C,間……,Pause...
+0385,0x04AC,あ、サじゃん‼     つかまえよーぜ‼ もうの室はアキたぞ‼ …しぶりのだ‼,"Oh, it's Sa!! Let's catch him!! This room is already empty!! ...It's been a while!!"
+0385,0x050A,ああ……すっかりすさんでいる……,Ah... it's completely desolate...
+0385,0x052E,わたくし、ベジタリアンですから このの室もなれてみると  けっこうおいしいですわよ,"I'm a vegetarian, so I've gotten used to this kind of food, and it's actually quite tasty."
+0385,0x0586,よくの室がちてるのは いいけど、よくまぁ同じモばっか地べけられるもんね……,"It's fine that the rooms are often different, but it's really annoying how they keep putting the same models on the ground..."
+0385,0x05E0,カ月……,Months...
+0385,0x05F0,……,...
+0385,0x05F8,……,...
+0385,0x0600,……帰ろっか,...Shall we go home?
+0385,0x0612,……そうしましょうか,...Shall we do that?
+0385,0x062A,もう、世界なんてどうでもいいや,I don't care about the world anymore.
+0385,0x064C,そだね,That's right.
+0385,0x0656,今ごろ、もう世界はびてるんじゃない　 ナージュの響で,"By now, the world must be dying down, to the sound of Nage."
+0385,0x0692,……ああ、みんなあっさりヤル気をってる……,"...Ah, everyone's getting motivated so easily..."
+0385,0x06C2,美姫は、だな、イガイと,"Miki is, well, surprisingly"
+0385,0x06E0,はぁ、暦まれつきには強いものですから………あれ,"Ah, I'm pretty strong when it comes to calendars..."
+0385,0x0718,どーしたの,What's wrong?
+0385,0x0728,向こうに……入が‼,They're coming in over there!!
+0385,0x0740,ント,nt
+0385,0x074C,何かあったか,Did something happen?
+0385,0x075E,ではでは、行ってみましょ‼  これで、何か進するかも知れませんわ‼,"Alright then, let's go!! This might just lead to some progress!!"
+0386,0x012A,あっ‼ コドモだ‼,Oh!! It's a child!!
+0386,0x0140,運かったから かえに行っちゃったじゃない‼,"I was lucky, so I went to get it back!!"
+0386,0x0170,……ってなー、よくも こんないをっておいて‼,...How dare you say something like that!!
+0386,0x01A8,あれはトラツプよ‼あなたたち同じ所を  ルル回ってたのよ‼,That was a trap!! You were all spinning around in the same place!!
+0386,0x01F6,ントか,Is it a nt?
+0386,0x0204,そうよっ‼ ここに来るまでに体力をすればいいと戦ってしかけた トラツプなのに……,That's right!! I fought and set up the trap thinking I just needed to build up my stamina to get here...
+0386,0x025C,いつまでも気づかずに ンン進んじゃって‼,You keep going on and on without ever realizing it!!
+0386,0x028C,おかげでコツチが   侍ちくたびれちゃった じゃない‼ いいかげんにしなさいよ‼,"Thanks to you, Kotsuchi is exhausted from being a samurai! That's enough already!"
+0386,0x02E0,…あ、はい、ゴメンなさい……,"...Oh, yes, I'm sorry..."
+0386,0x0300,いや、そんな直に  あやまらなくても…,"No, you don't have to apologize so directly..."
+0386,0x032C,さあさあさあ、勝よ‼あたし、いいかげん  くたびれちゃったんだからね‼,"Come on, come on, let's win!! I'm totally exhausted!!"
+0386,0x0378,ステージスタート‼                 勝件スまみを倒して      部の人りに行け‼,Stage Start!! Defeat Katsuken Sumami and go to the club!!
+0386,0x03F4,行くぞぉ‼      かえうてー‼,Let's go!! Let's go home!!
+0386,0x041C,おすなおすなー,Don't do it.
+0386,0x042E,すすめないぞー,I wouldn't recommend it.
+0386,0x0440,いっんみちだぞー,It's a straight path!
+0386,0x0456,こまったぞー,Oh no!
+0387,0x0000,じいぃぱぱぱぱぱ,Grandpapapapapa
+0387,0x003C,よおおし…じゃあ行くよぉぉぉ…の……,Alright... let's go...
+0387,0x006E,いくぞ‼,Let's go!!
+0387,0x007A,あ、ちょっと侍って‼ コツチのがまだ……,"Oh, wait a minute, a samurai?! Kotsuchi is still..."
+0388,0x0000,えだ,Branch
+0388,0x001C,っどーい‼     これだけ侍ったのに……,Oh no!! I've served you so well...
+0388,0x004C,ちょっとはコツチも  侍ってくれても    いいじゃないのぉ‼  …えてきなさいよぉ‼,Wouldn't it be nice if Kotsuchi would attend to me for a little while?! ...Come on over!
+0389,0x0104,達達,Attainment
+0389,0x0120,はあはあはあ……,Ha ha ha...
+0389,0x0134,手ごたえがないわ。  もっと敵を倒したい……,I'm not getting any real satisfaction. I want to defeat more enemies...
+0389,0x0164,ああ……みんなどんどんすさんでいく……,Ah... everyone is becoming more and more desolate...
+0389,0x018E,よっどこたえたようね,Looks like you've recovered.
+0389,0x01A8,でもこれで、     やっと先に進めるー‼,"But now, I can finally move forward!"
+0389,0x01D6,そうね、気持ちをちつけて……,"Yes, try to calm down..."
+0389,0x01FE,にこ。        ……よしちついた。 さ、行きましょ,"Nico. ...Okay, we've arrived. Now, let's go."
+0389,0x0240,ステージクリア‼,Stage cleared!!
+038A,0x0000,おがきぜおがきっおがきやお,Ogakize Ogaki Ogakiya
+038A,0x0044,キレイ……,Beautiful...
+038A,0x0052,ここが部ね。またここを通ればナージュへ行くことが出来るのね……,So this is the club. And if I go through here I can get to Naj...
+038A,0x0096,いよいよですわね。わくわくしますわ,It's finally happening! I'm so excited!
+038B,0x00A6,ふっふっふ……,Heh heh heh...
+038B,0x00B8,あ、さっきの入‼   してるぅ‼,"Oh, the one that just entered!! It's there!!"
+038B,0x00E0,はーら、やっとも ったよっ‼ それ‼,"Ah, I finally got it!! That's it!!"
+038B,0x0114,エコエコアラク       プリリンパ ……へんしーん‼,Eco Eco Arak Puririnpa... Transformation!!
+038B,0x015C,はーら‼       これでは天下無敵‼ ナージュには行かせないよ‼,Wow!! This makes me invincible!! I won't let Naju get away!!
+038B,0x01A6,ステージスタート‼                 勝件スまみを倒し、    ナージュへ人せよ‼,Stage Start!! Defeat Sumami Katsuken and head to Naju!!
+038B,0x0220,さあ、この高みから  飛びおりてすれば きっとビツクリして勝まちがいなしよ‼,"Now, if you jump from this height, you'll surely surprise everyone and win without a doubt!!"
+038B,0x0276,でもちょっとコいな…,But it's a little too much...
+038C,0x0000,あだふーあ,Adafua
+038C,0x004C,さあ、行くわよ‼   えーい‼,"Okay, let's go!! Here we go!!"
+038C,0x0076,あなたも、さあ‼,"Come on, you too!!"
+038C,0x0092,ええぇ、       やっぱいよぉ……,"Oh no, I knew it..."
+038D,0x002C,ああっ‼       やられちゃったわ‼  あたしが行かなきゃ…,Ah!! I've been had!! I have to go...
+038D,0x0078,えーん、       でも、くて飛びりれないっ‼,"Waaah, but I can't jump in!!"
+038E,0x001C,げっ‼        空がけちゃいそう‼…も一回空しなきゃ‼そーれ、エコエコ…,"Gah!! It's about to empty!! ...I have to empty it again!! There we go, eco eco..."
+038E,0x0074,…ああん、空するまで侍ってよ‼,"...Ahhh, please serve me until I've finished!!"
+0390,0x005E,よぉし、       やっぱ飛びおりるぞぉ‼,"Alright, I'm going to jump after all!!"
+0390,0x0094,…ふう。       なんてことないじゃない…さ、うぞ‼,"...Phew. That was no big deal...Okay, let's go!!"
+0390,0x00D8,…きゅう…やっぱ空が分しか、もたないってのはラかったわ……。,...Sigh... I guess it was really tough that the sky only lasted for a few minutes...
+0390,0x011E,……でも、アンタたちもいっしょよ‼     スイツチオン‼    さあ部、自‼,"...But you guys are the same!! Switch on!! Now, club, self!!"
+0391,0x01B0,さてと,Well then
+0391,0x01BA,この前とはだね,This is different from last time.
+0391,0x01CE,そうね、今は    自分からナージュに行くんだもんなぁ,"That's right, nowadays I go to Nage of my own accord."
+0391,0x020A,い……,stomach……
+0391,0x0216,なーに、はこれ上くならないって‼,What?! It's not going to get any better than this!!
+0391,0x0242,それより、      さっき自するって  言ってたから、    ぎましょうよ‼,"More importantly, you said you were going to do it yourself earlier, so let's do it!!"
+0391,0x0298,そうだね‼,I agree!
+0391,0x02AE,さあてと、ようやく  子が出てきたわ。  侍っていなさい‼,"Well, the child has finally appeared. Stay by my side!"
+0391,0x02EE,あたしにかかったら  みんなコテンパンよ‼,I can easily defeat everyone!
+0391,0x0322,あれ　 ンだな　  誰もいない……,"Hmm, there's no one here..."
+0391,0x034A,ステージクリア‼,Stage cleared!!
+0392,0x0104,がきおぐお,Gakioguo
+0392,0x0124,……ゴゴゴゴゴゴゴゴゴ……                      部は、れちた…,...Gogogogogogogogo... The part is gone...
+0392,0x0182,ここはもう、ナージュなのね…,"This is Nage, isn't it...?"
+0392,0x01A2,そう‼ ではさっそくこの世界をってるヤを倒さないと‼,That's right!! So we have to defeat the one who's controlling this world right away!!
+0392,0x01DE,よぉし‼ がなるぜぇ‼,Alright!! Let's roar!!
+0392,0x01FA,でも、その方は、どこにいるんでしょうか,But where is that person now?
+0392,0x0226,…向こうの方だよ‼,...It's over there!!
+0392,0x023C,知ってるの,Do you know?
+0392,0x024C,カンだよ‼ ここらンがピーンって言ってるの‼ ントだよ‼,It's a hunch!! This area is going ping!! It's a hunch!!
+0392,0x028C,…じゃ、コツチに行きましょうか,"...So, shall we go to Kotsuchi?"
+0392,0x02AE,そうだね,I agree
+0392,0x02BA,達うよぉ‼ コツチだってばぁ‼,It's a hit! It's a hit!
+0392,0x02DC,コツチじゃないかなぁ……,I think it's a Kotsuchi...
+0392,0x02F8,あー、なんかいな。あたしは コツチに行ってみようかねっと,"Ah, I don't know. I think I'll go to Kotsuchi."
+0392,0x0338,…おもしろいぐらいに     と言ったモがじられん集だなぁ……,...It's a collection of things that are so funny it's almost unbelievable...
+0392,0x0386,……おははははは‼,...Hahahahaha!!
+0393,0x00B0,どうやって、全   ララにしようかと 戦いんでいたら、,"I was struggling to figure out how to turn all of them into Lara,"
+0393,0x00F2,自分からララになってしまうとは‼,I can't believe I'm turning into Lala of my own accord!!
+0393,0x011A,あり,can be
+0393,0x012A,通れない……,I can't get through...
+0393,0x013A,ようこそ‼      のったへ‼ あなたたちはここで入入倒されてくのよ‼,Welcome to Notta!! You will be defeated here!!
+0393,0x0196,あちゃあ、あたし   方向オンチなのにな……,"Oh no, I have no sense of direction..."
+0393,0x01C6,通れそうで通れない… どうしましょう,"It looks like I can get through, but I can't... What should I do?"
+0393,0x01F0,でも、どこかに道は  あるはず‼ あの女を倒せばいいんでしょ‼ 行くよ‼,But there must be a way somewhere!! All I have to do is defeat that woman!! Let's go!!
+0393,0x023E,ステージスタート‼                 勝件スサテを倒し、      を出せよ‼,Stage Start!! Defeat Katsuken Susate and get the [item name]!!
+0394,0x0000,おへか,Ohek
+0394,0x0020,よく、ここまで    たどりつきましたね‼ したでしょう　  これでもお地べなさい,You've come so far!! But even this is just the ground.
+0394,0x007C,地べますか,Do you want to lie on the ground?
+0395,0x0000,いぃけけけけけすあ,Iikekekekesua
+0395,0x002E,いらなーい‼,I don't need it!!
+0395,0x003E,そう。さすがにこんな カンタンな手には   引っかからないわね……,That's right. Surely they won't fall for such a simple trick...
+0396,0x0072,っかっかたわね‼  それはよっ‼,That's hilarious!! Of course it is!!
+0396,0x009A,ええっ‼ きゅう…… あり、なんともない。 それどころか、体があったまってイイ気もち…,"Huh?! Ouch... No, I'm fine. On the contrary, my body feels warm and I feel good..."
+0396,0x00F6,そうか‼       「あったまる地べ物」は通入にはじゃないんだ‼,"Oh, I see! ""Warming Ground Food"" isn't for general use!"
+0396,0x0140,体力がフル回した‼,I used up all my energy!!
+0396,0x0158,ありがとー‼,Thank you!!
+0396,0x0168,うう。        何かくやしい気分……,Ugh. I feel kind of frustrated...
+0397,0x00AC,あっ‼ これ上   先に人れないぞ‼,Ah!! No one can get on top of this first!!
+0397,0x00D6,行きどまりぃぃ‼   どうしよう,Dead end!! What should I do?
+0397,0x00FC,全に先に行けないわ‼どうすればいいの,I can't get any further!! What should I do?
+0397,0x0128,えーん、やっとここまで来たのに、      先に進めないよぉ,"Waaah, I finally made it this far, but I can't go any further!"
+0397,0x0168,どうしましょう。行き止まりのようですわ…,What should we do? It looks like a dead end...
+0397,0x0194,おはははははは‼   ここから先は     通れないわよ‼,Ohahahahahaha!! You can't go any further than this!!
+0397,0x01D2,あたしのった、あなたたちに     せるかしら,I wonder if I should let you ride it?
+0397,0x0210,ったなぁ……,That was tough...
+0397,0x0222,るコトなんかないよ‼はじめまして‼    あたしは、      の女部だよ‼,There's no need to worry!! Nice to meet you!! I'm from the women's division of [organization name]!!
+0397,0x027A,あ、また出た,"Oh, there it is again."
+0397,0x028C,こっちへおいで‼   助けてあげるよ‼,Come over here!! I'll help you!!
+0399,0x00D0,ステージクリア‼,Stage cleared!!
+0399,0x010C,が、止んでいくわ…,But it's starting to stop...
+0399,0x0124,よっしゃぁ‼,Yes!!
+0399,0x0134,これで、先に進める‼,Now we can move forward!!
+0399,0x014C,なんだか、少しづつあったかくなってきたみたい…,It seems like it's gradually getting warmer...
+039A,0x0104,がきおぐおぐおがきTお,gakioguoguogakiTo
+039A,0x013E,が……えてきますね…,But...it's coming...
+039A,0x0160,全に、はれてきたね‼,It's all cleared up now!!
+039A,0x017A,お　 向こうに…,Over there...
+039A,0x018E,がある‼ あそこね‼,It's there!! Over there!!
+039A,0x01A8,ナージュのー心のか…,Naju's heart...
+039A,0x01C2,分、あそこに        ナージュをり出したヤが  いるんじゃない,I think there's a guy over there who brought out Naju.
+039A,0x0212,そうだね‼,I agree!
+039A,0x0220,本当に、           これで最になるのかな,I wonder if this will really be the best?
+039A,0x025A,さあ、でも          行ってみないとんないじゃん‼,"Well, we won't know until we go and see for ourselves!"
+039A,0x029A,でも、            回りにたくさん入がいるー‼,But there are lots of people around!
+039A,0x02D6,あのをってるみたいですわね,It looks like that's what's happening.
+039A,0x02F8,はぉら‼           それこそがそのシーコよっ‼ あのに行こう‼,Hey there!! That's the Shiko!! Let's go there!!
+039A,0x0348,がクリスタルパレスになって,It became the Crystal Palace
+039A,0x0372,ついに、ここまで       来られてしまったか…,"So, it's finally come to this..."
+039A,0x03A8,…その声に、えるように…    …のから声が響く……,...as if responding to that voice... ...a voice echoes from within...
+039A,0x03E6,……いかが、いたしましょう……,...What shall we do...?
+039A,0x0426,自ら、が行くしかないか……,I guess I have no choice but to go myself...
+039B,0x0000,あうアぇいぃュュュュュロ,Aaaayyyyyyyyyyro
+039B,0x0074,よく来て下さいました。なんてあらたまったり しちゃってね,"Thank you for coming. It's a bit formal, isn't it?"
+039B,0x00B2,…よぉし、のカベを とかしてあげよぉ  そぉれぇ ルルルー,"...Okay, let's melt that wall away. Here we go, Lulu."
+039B,0x00F8,……のカベの行き止まりが           なくなった‼,...The dead end at that wall is gone!!
+039B,0x0138,ありがとー‼,Thank you!!
+039B,0x0148,いいよいいよ、    がんばってね    もうすこしだからね,"It's okay, keep going, you're almost there!"
+039C,0x0000,うブレ空う,Ubure Sora
+039C,0x007A,太です‼ ここは、たちにまかせて、ーで侍していてください‼,It's Futo!! Leave this to us and just be a samurai here!!
+039C,0x00C0,そうか…       …では、んだぞ,"I see... ...Well then, that's it."
+039C,0x00EA,このだけは     らなくてはいけない…,This is the one thing that absolutely must be done...
+039C,0x011A,このは       ナージュのー心……,This is Naju's heart...
+039C,0x0146,このにいる     あの方が倒されれば  ナージュ自体がなくなってしまうのだから‼,"If that person here is defeated, then Naju itself will cease to exist!"
+039C,0x019E,ステージスタート‼                  勝件ス子を倒し、        に進人せよ‼,Stage Start!! Defeat Katsuken Suko and advance!!
+039D,0x0118,ふう。何とかこれで  ーに人れるようだな,Phew. Looks like I'll be able to get in somehow.
+039D,0x0144,おっきなだね,It's so big!
+039D,0x0158,このーにいる     「あの方」とやらが全ての原だと……,"So, this ""person"" here is the source of everything..."
+039D,0x0196,……さあ、美姫。   気をちつけて。   がんばるのよ……,"...Now, Miki. Be careful. Do your best..."
+039D,0x01D6,それじゃ、      さっそく人りましょ,"Alright, let's get started."
+039D,0x0204,よぉし‼       パツパと行ってパツパと元の世界に戻ろう‼,Alright!! Let's go quickly and return to our original world quickly!!
+039D,0x0246,いけいけー‼,"Go, go!!"
+039D,0x0256,ああ、なんかアツサリしてる……,"Ah, it's kind of hot and cool..."
+039D,0x0278,ステージクリア‼,Stage cleared!!
+039E,0x0000,おがきておがきねおきカおきデおきおきおき一お,Ogaki ogaki neoki kaki deoki kaki kaki o
+039E,0x0058,あの入ね‼,That one's in!!
+039E,0x0066,ついにここまで……来てしまいましたか。ナージュのー心である、…この、クリスタルパレスへ……,"So we've finally made it this far... To this Crystal Palace, the heart of Naj..."
+039E,0x00C4,でも、もう、これ上      ジマはさせません‼,But I won't let you do that again!!
+039E,0x00FC,あなたたちがナージュの    響をけない、心にを持たない入間であったことがなら、,"If you were Iruma who lacked the resonance of Naju and had no heart,"
+039E,0x015A,が、ナージュにかれ、   この世界をり上げ、現室世界をしようとしたのもまた……,"However, it was also Naju who tried to build up this world and create the present world..."
+039E,0x01B8,同じようにによるもの…,"Similarly, caused by..."
+039E,0x01D6,…同じの物なら、どちらが強い力を持っているのか、   ここでかめましょう‼,"...If they're the same, let's find out which one has more power!"
+039F,0x0000,うだる□,It's hot and humid.
+039F,0x004C,ようこそ、      クリスタルパレスへ。 ここで最の     をつけましょう。,Welcome to Crystal Palace. Let's make the most of it here.
+039F,0x00A6,あなたたちと、けた方がこのナージュに  じめられる事になるでしょう‼,You and the others will be the first to experience this Nage!!
+039F,0x00F6,ステージスタート‼  勝件          「ナージュ」をりだした         ステを倒せ‼,"Stage Start!! Defeat the enemy that has launched ""Nage""!!"
+039F,0x0172,さすがに、本気にならないとダメみたいね…  …行くよっ‼,Looks like I really need to get serious... Let's go!!
+03A0,0x0000,けいガぃぱぱぱぱぱ,Keigai papapapapa
+03A0,0x002E,のがある。先に進めない‼,There's something there. I can't move forward!!
+03A0,0x006E,あくまでも、自分の手はよごしたくないようね。…何が何でもこじ開けてやる‼,It seems they absolutely don't want to get their hands dirty. ...I'll pry it open no matter what!!
+03A1,0x0000,うあ,Ugh
+03A1,0x0018,はけるケには  いかない‼      のをじているのはこのなのだから‼,I'm not going to leave!! Because I'm the one who's holding back!!
+03A2,0x0000,あぇでダいぃガ□トト□トい,"Ah, it's so good, it's so good."
+03A2,0x005A,……のがえた……   これでスを             倒すことが出来るぞ‼,...I escaped... Now I can defeat Su!!
+03A2,0x00B8,ヤツー‼,That guy!!
+03A2,0x00C6,くぅ……行きなさい‼ あなたたち‼,Ugh... Go on!! You guys!!
+03A3,0x0000,けいぃテみあ,Kei Temia
+03A3,0x002E,世界を出来る部が 方になったのです… …そのがこんな   におちいるなんて‼,The club that could conquer the world has become... ...I never imagined it would fall to such a state!!
+03A3,0x008A,あなたが       全ての原だったのね‼,You were the source of it all!!
+03A3,0x00BA,ンナにめいわくを  かけるとは     ダメなんだぞー‼,It's not okay to cause trouble for Nna!!
+03A3,0x00FA,アンタのせいでこんな目にあったんだな‼,This is all your fault!!
+03A3,0x0124,あなたのせいで    こんな目に…しくしく…やっつけてやるぅぅぅ‼,It's all your fault that I'm in this situation...sob sob...I'll get you!!!
+03A3,0x016A,何を方にしようとも、このわたくしにはかないませんわ      ははははははははは‼,"No matter what you do, you can't defeat me! Hahahahahahahaha!!"
+03A4,0x0014,そんな…       …がれるというの……全てを手にするはずのこのが……,That's... ...to be able to have it all...
+03A5,0x0188,イヤツ‼,That bastard!!
+03A5,0x0198,これで、すべてが   おわったんだね‼,"So, it's all over now!!"
+03A5,0x01C2,そうですわね。    今こそ……,That's right. Now is the time...
+03A5,0x01E8,ナージュの力を手に人れたが、さらに全てを 手に人れようとして  全てってしまった、と,"He gained Naj's power, but in his attempt to gain everything, he ended up losing everything."
+03A5,0x0244,あの……,that……
+03A5,0x0250,はい,yes
+03A5,0x025A,ところで、どうやって 元の世界に      帰るんでしょうか,"By the way, how do you get back to your original world?"
+03A5,0x029C,そりゃあさぁ、当、 部を通って……あ,"Well, you see, we went through the department... ah"
+03A5,0x02CA,部って、さっき、れちちゃいましたよね……,"The club...it just got deleted a little while ago, didn't it...?"
+03A5,0x02FC,……,...
+03A5,0x0304,……,...
+03A5,0x030C,ふつうは、この世界を ったものが倒れたら、世界ごと戻るものですけど……,"Normally, if the entity that controls this world falls, the entire world should revert to its original state..."
+03A5,0x0358,あなたたち……,You guys...
+03A5,0x036A,……部の遠くから声が響く……,...A voice echoes from far away in the club...
+03A5,0x03AA,きゃあ‼       ビツクリした‼,Ahh!! I'm so surprised!!
+03A5,0x03DA,この世界は、         もうすぐなくなります     ……しかし……,This world will soon cease to exist... but...
+03A5,0x0428,……しかし……,……but……
+03A5,0x043A,あなたたちを元の世界に    帰すわけにはまいりません……,We cannot allow you to return to your original world...
+03A5,0x0478,えっ,Huh?
+03A5,0x0482,誰なの、あなた,Who are you?
+03A5,0x0496,……のは……ナージュ……,...is...Nage...
+03A5,0x04B6,レベルアツプ、INTERMISSION、びメ二ューなし,"Level up, intermission, no menu"
+03A6,0x0184,この声が……ナージュ,This voice... Naju
+03A6,0x019E,げっ‼        が空した‼,Gah!! It's empty!!
+03A6,0x01C6,クリスタルがはがれて…下から何かが……‼,The crystal peeled off...and something was underneath...!!
+03A6,0x01F2,は……い間……をっていました…今でも…が誰なのか…りません……,Yes... I was... watching... even now... I don't know who it was...
+03A6,0x0242,自分にの力があるのに…  …自分が何であるのかだけがらないのです…,I have the power within me... but I just don't know who I am...
+03A6,0x0290,…そこで、は、他の世界から、誰かを呼ぶことにしました…  …誰かが……を……知っている,"...So, we decided to call someone from another world... ...someone who... knows..."
+03A6,0x02EE,……もしくは……に目をえてくれると考えたからです……,...or because I thought it would catch their eye...
+03A6,0x032A,の呼び声にじたのが…   …あの入でした……あの入は…,The one who responded to the call was... ...that entrance... that entrance was...
+03A6,0x036A,…に、世界をせよ、   そして、あなたたちの世界を自分の物にさせろと……じました,"...to conquer the world, and let your world be yours..."
+03A6,0x03C6,…それが、まちがっていたとは、うすうすじてはいました…  …あの入の心のーにはが   強く現れていましたから……,...I had a feeling that was wrong... ...because it was so clearly evident in his heart at the time...
+03A6,0x043E,でも……は……あの入のを聞いているときは、かにしていたのです。「あの入のを聞くための」として……,"But... when I was listening to that entrance, I was doing it ""for the purpose of listening to that entrance""..."
+03A6,0x04B6,しかし‼ あなたたちは…   …あの入を倒してしまった…,But!! You guys... ...you've defeated that Iri...
+03A6,0x04F2,…心のを持たないあなたたち、この世界の響をけず、あの入の言う通りにならない……,"...You who have no hearts, you do not drown out the sounds of this world, and you do not do as that person says..."
+03A6,0x054A,…その、あなたたちがこの世界に呼びまれて……それによって…されるのも…あの入の……だったのかもしれません,...Perhaps the reason you were summoned to this world...and what happened as a result...was also related to that entry...
+03A6,0x05C0,でも…それによっては…   …び自分のを…     …なくしてしまいました…,But... because of that... ...I lost... ...my own...
+03A6,0x0618,かわいそぉに……,Poor thing...
+03A6,0x062C,あの入がったこの世界……このはもうすぐれちます……,This world I entered... this will soon be gone...
+03A6,0x066A,へぇぇ…,Oh really...
+03A6,0x0676,…ええっ‼,...What?!
+03A6,0x0684,逃げなきゃ‼,We have to run away!!
+03A6,0x0694,それでは、あまりにもあの入が かわいそうです……だから…… …あなたたちも……      …一に行ってあげてください…,That would be too cruel to the person who entered... so... you all... please go and help them...
+03A6,0x0710,ええっ‼,What?!
+03A6,0x071C,今、めては…自分の戦で…動きます…全てがでりつぶされているあの入の……の草原、の…,"Now, for the first time... I will move... in my own battle... in that grassland where everything has been destroyed..."
+03A6,0x0788,…そこから…り上げたこので…あの入…あなたたち……も……にびましょう……,...From there...we've risen up...and that entry...you guys...too...let's take flight...
+03A6,0x07DE,それって……,That means...
+03A6,0x07EE,…さかうらみじゃない‼逃げなきゃ、このから今すぐにでも‼,"...It's not a grudge!! I have to run away, right now!!"
+03A6,0x082C,ステージスタート‼                勝件このから出せよ‼,Stage Start!! Show us your winning tickets now!!
+03A6,0x088A,人に行かなきゃ‼,I have to go see someone!!
+03A6,0x08A0,ああん、       キモチいよぉ,"Ahhh, that feels so good."
+03A6,0x08CA,ナージュには、    これが草原や、に 見えるんでしょうか…,I wonder if this looks like a grassland to Naj...
+03A6,0x090E,…あの入の心が、   このに現れているんですね……,...That feeling of his is reflected in this...
+03A6,0x0946,かわいそう…ですわね,That's so sad...
+03A7,0x00FC,くく‼,Kuku!!
+03A7,0x010A,……開かない‼,...It won't open!!
+03A7,0x011C,じゃあ、あたしたち  じめられて         しまったの,"So, we were locked up?"
+03A7,0x0162,どうしよう‼,What should I do?!
+03A7,0x018E,……遠くで声が響く……,...A voice echoes in the distance...
+03A7,0x01CA,あなたたちは、ここから    逃げられないと言ったでしょう…,Didn't I tell you there's no escaping from here...?
+03A7,0x020A,しかーも‼      このがいるかぎり、 あなたたちは 戻ることさえ出来ないのよ‼,"What's more!! As long as this guy is around, you guys won't even be able to go back!!"
+03A7,0x0262,みんなさせました…    …あなたたちもだから体力を回させてあげましょう……,I made everyone do it... so let's let you guys use up your energy too...
+03A7,0x02BE,遠のざさされた世界で…  んできましょう…一に……,In a world shrouded in distance... Let's go... First...
+03A7,0x02FE,…でもぉ…      …えーん‼ 敵が全 してるぅ‼,...But... ...Waaah!! The enemy is all gone!!
+03A7,0x033E,あなたたちは     ここから逃げることは 出来ないのよ……,You can't escape from here...
+03AA,0x0136,あ、そうだ‼     はんせいのしるしに  コレあげるよ‼       …それじゃね,"Oh, that's right!! As a token of remorse, I'll give you this!! ...See ya!"
+03AA,0x0192,……「回」をもらった‼                  全、体力が全回したぞ‼…,"...I got a ""turn""!! My stamina is completely restored!!"
+03AA,0x01F2,わあーい‼      しかも、一方通行が  になったよ‼,"Yay!! And what's more, the one-way street has become a regular street!!"
+03AA,0x0230,これで、戻ることは出来ますわね,"Now we can go back, right?"
+03AA,0x0252,あっ‼ でも敵がまた 全よみがえってる‼,Ah!! But the enemy has been completely revived again!!
+03AA,0x0280,キリがないわ…    …こうなったら……,There's no end to it... ...If it comes to this...
+03AA,0x02AC,を上がって、ナージュとうしかない‼,We have no choice but to go up and use Nage!!
+03AA,0x02D6,ステージスタート‼               勝件階までたどりつけ‼,Stage Start!! Reach the Winning Floor!!
+03AA,0x0334,……声が響く……,...A voice echoes...
+03AA,0x034E,ここまで来ると言うのですか… …いいでしょう…       ……来られるものなら……     ……最のを……,Are you saying you'll come this far...? ...Very well... ...If you can come... ...The best...
+03AB,0x00BE,さあ、行くよ‼,"Okay, let's go!!"
+03AB,0x00D0,ククするね‼,I'll chuckle!
+03AB,0x00E4,そうですか　 わたしはくて……手は   ナージュ、この世界全体をったものなのに…,"Is that so? I don't have it... My hands are Naj, they're the hands of this whole world..."
+03AB,0x013E,ステージクリア‼,Stage cleared!!
+03AC,0x0000,おがきばおがきおがきょおがきカおがきセお,Ogakiba Ogaki Ogakikyo Ogakika Ogakiseo
+03AC,0x006C,……はあはあはあ,...ha ha ha ha
+03AC,0x0080,ここが、最上階みたいですわね,This looks like the top floor.
+03AC,0x00A0,ここに、ナージュの本体がいるのか,Is Naj's true form here?
+03AC,0x00C4,見て‼ がれかかってる‼,Look!! It's falling off!!
+03AC,0x00E4,がなきゃ‼,We have to!!
+03AD,0x0092,はら‼ あの向こうに ナージュがいるよ‼,Oh!! Naju is over there!!
+03AD,0x00BE,よくぞ、ここまで   たどりきました‼,You've come so far!
+03AD,0x00EA,あれが、ナージュの  本体なの,That's Naj's true form.
+03AD,0x010E,ちがいます…あなたたちのいるこの…この世界全体がです…,"No, that's not it... It's this whole world you're in..."
+03AD,0x014C,…だけども…     …をなくしたの力はまってきました…,...But...the power of losing...
+03AD,0x0192,…ならば…いっそのこと…あの入や、あなたたちと同じになって、おうと…,"...In that case...I might as well...become just like that Iri and you guys, and..."
+03AD,0x01DE,そうよねー、もし   この世界全体が    ナージュだったら、  ツタイ勝てないもんね,"That's right, if the whole world were Nage, Tsutai wouldn't be able to win."
+03AD,0x023A,いいつの、     チンスね……,"That's good, Chins..."
+03AD,0x0262,最ステージスタート‼                   勝件ナージュを倒せ‼,The next stage begins!! Defeat Shoken Naju!!
+03AD,0x02C0,さあ、最の……   をつけましょう。 来なさい‼,"Now, let's add the best... Come on!!"
+03AE,0x0000,げはをドあ,Gehawo Doa
+03AE,0x0030,さあ、あの入の…   …とらいです… …あなたたちを…   …倒します…,"Now, it's time for the entrance... ...to try... ...to defeat you all..."
+03AE,0x0082,…もし、を倒すことが出来るのならば……,...If only it were possible to defeat it...
+03AE,0x00AE,この世界がえ…   …あなたたちは元の世界に…戻ることが…できるのでしょう…,This world... ...will you be able to return to your original world...?
+03AE,0x0100,…だから…本気で…  ……いなさい‼,...So...be serious... ...and stay!!
+03AF,0x0000,がなイ,Gana
+03AF,0x0024,ついに…。ついに、が倒れる時が…来たのですね…これで…,Finally... The time has finally come for him to fall...
+03AF,0x0060,…これで…も、自分が何であるかを…   考えないですことが 出来るのですね…,"...So, even with this... I can still avoid thinking about who I am..."
+03AF,0x00B6,…あの入の侍っている場所へ……も……,...to the place where that attendant is...
+03B0,0x01DC,ナージュのが…   …れちていく……,Naju's... is... going away...
+03B0,0x020A,これで、元の世界に帰れるんだな……,So now I can go back to my original world...
+03B0,0x0230,……考えてみれば、  だったね、あの入も,"...Now that I think about it, that entrance was..."
+03B0,0x0262,入…じゃないとは   戦うけど……されていただけだもんね,"I didn't enter... I fought, but... I was just being attacked, right?"
+03B0,0x02A2,でも、これで     元の世界に帰れるんだから、ま、いーじゃん,"But now I can go back to my original world, so I guess it's all good."
+03B0,0x02E6,ねぇねぇ,Hey hey
+03B0,0x02F4,はい,yes
+03B0,0x02FE,なんだか、が    たくなってきたよ‼ …求があふれてきてる‼,I'm starting to feel really excited!! ...My desire is overflowing!!
+03B0,0x0344,……そうねぇ,……let me see
+03B0,0x0354,……,...
+03B0,0x035C,……,...
+03B0,0x0364,……,...
+03B0,0x036C,あの……さん,Um...san
+03B0,0x0380,はい,yes
+03B0,0x038A,元の世界の……,In the original world...
+03B0,0x039C,うん,Yeah
+03B0,0x03A4,どこに…       …出るんでしょうか,Where will it appear...?
+03B0,0x03D2,さぁ,Now
+03B0,0x03DA,たち、ずいぶん   動しましたよね,"We moved around quite a bit, didn't we?"
+03B0,0x0406,そうだね……,I agree……
+03B0,0x0416,少なくとも、     からさらに    何キロかは……,At least a few more kilometers from there...
+03B0,0x0456,だね,Yeah.
+03B0,0x045E,もし、元の世界でも、 その分だけ      動してたら……,If things had moved that much in the original world as well...
+03B0,0x049E,、ですわね,"Yes, that's right."
+03B1,0x0000,うあ,Ugh
+03B1,0x0018,のいのーりぃぃ‼  あなたたちを倒せば、 今は、がナージュのとなるのよ‼,"Noinoriiiiiii!! If I defeat you, now it will be Ga Naju's!!"
+03B2,0x0000,おがきおがきょおがきサおがきおがきブおがきマお,Ogaki Ogakyou Ogaki Sa Ogaki Ogaki Bu Ogaki Mao
+03B2,0x0080,ーにはチの暦はいないの,—There is no calendar for Chi there
+03B2,0x00A0,ええ。教の子も      何だか達うみたいですし,Yes. It seems like the children of the teacher are also getting along well.
+03B2,0x00D8,ふうん……,Hmm...
+03B2,0x00E6,そのかわり、ンな入が    たくさんいますわ。,"On the other hand, there are lots of people like that."
+03B2,0x011A,空な入って,Enter the empty
+03B2,0x012A,まぁ、行ってみればりますわよ,"Well, you'll see when you go."
+03B3,0x0000,とぇ,Toe
+03B3,0x001A,あれ…がいてる。 そんなじゃ    ないのになぁ……,Oh...it's there. It's not like that at all...
+03B4,0x0000,ーがに,-
+03B4,0x0024,……体には誰もいない……,...There's no one inside my body...
+03B4,0x0062,みんな、       ドコ行っちゃったんだろ,Where did everyone go?
+03B5,0x0000,びぎて,Beginner
+03B5,0x0028,道には…     …でもいないかな,On the road... ...but I don't think they're there.
+03B5,0x0058,いないみたい…うーん。,Looks like they're not there... Hmm.
+03B6,0x0000,ぁが,Aga
+03B6,0x0024,…思には誰もいないようだ…,...It seems there's no one there...
+03B6,0x0064,さすがに、今は    誰もいないかぁ……,"As expected, there's no one here right now..."
+03B7,0x0000,チへろオ,Chihero
+03B7,0x0050,きゃ‼        トビラが開かない‼,Ah!! The door won't open!!
+03B7,0x007C,ここのトビラしか   開かないんだよーん,This is the only door that will open.
+03B7,0x00AA,くっそぉ……,Damn it...
+03B8,0x0000,いぃすすすすすづいぃ,It's good.
+03B8,0x003E,何か書いてあるかな,Is there anything written there?
+03B8,0x0056,テストの、さんは学となりました……,"The test result was ""san"" (student)..."
+03B8,0x0086,はぁ…とくに何も   に立たないわね……,Sigh... It doesn't really serve any purpose...
+03B9,0x0000,ぎいネぃぎぎぎイ,Gii Neu Gigigii
+03B9,0x0028,……ロツカーには           カがかかっている……,"...The word ""locker"" has a ""ka"" in it..."
+03B9,0x0086,コドロじゃないんだし開けることもないかぁ‼,"It's not Kodoro, so there's no need to open it!"
+03B9,0x00B6,ここはのロツカーではありませんし     わざわざ、開けることもないでしょう,"This isn't a locker, and there's no need to open it."
+03BA,0x0000,いぃぉぉぉぉだ,It's good.
+03BA,0x001E,こっちの教には   誰もいないみたいだね,It looks like there's no one in this church.
+03BA,0x004C,ここの教には、   敵も方もいないみたいですわね,It seems that this religion has no enemies or allies.
+03BB,0x0000,ツぎいぃぎぎねぎり,"Next up, negigiri"
+03BB,0x0028,…ずかしそうな本が            ならんでいる…,...There are embarrassing-looking books lined up...
+03BB,0x0066,こんな本、読入いるのかなぁ　 ねくなってきちゃうよ……,I wonder if anyone will actually read this book... It's making me sleepy...
+03BB,0x00A4,まぁ‼ さがしていた本が、こんなところに‼ 今かりに来ましょ。 にこにこ,Wow!! I found the book I was looking for right here!! I'll come and borrow it now. *smile*
+03BD,0x0000,いけぃばばばばん,Ikeebabababan
+03BD,0x002E,……がおいてある……,...is placed there...
+03BD,0x006C,こんなモン使う前に  事になったらフー 逃げちゃうよねぇ……,"Before I even had a chance to use something like this, if something happened, I'd probably just run away..."
+03BD,0x00B0,これをブチまけたら  きっと…みんなビツクリしますわよね……やってみようかしら…うふふ,"If I spill this out, everyone will surely be shocked... I wonder if I should try it... hehe"
+03BE,0x0000,あないぃゅゅゅゅゅケぉぇケデいぃるるるるるあ,Anaiyuyuyuyukeoekedeirururururua
+03BE,0x0060,……ゴオオオオオオオ……,...Goooooooooooo...
+03BE,0x009C,きゃ‼,Ah!!
+03BE,0x00A6,あり、すいこまれて……こんな場所に……,"Oh, I've been sucked in... and ended up in a place like this..."
+03BF,0x0000,あないぃゅゅゅゅゅケぅケデいぃるるるるるあ,Anaiyuyuyuyuukeudeiirrurururua
+03BF,0x0060,……ゴオオオオオオオ……,...Goooooooooooo...
+03BF,0x009C,きゃ‼,Ah!!
+03BF,0x00A6,あり、すいこまれて……こんな場所に……,"Oh, I've been sucked in... and ended up in a place like this..."
+03C0,0x0000,かいぃかにか,Kaiiika
+03C0,0x0022,…誰もいない…              …るすのようだ……,...Nobody's here... ...Looks like no one's home...
+03C0,0x0062,おおいっ‼ だれもいないのぉ,Hey!! Is there anyone here?
+03C0,0x0084,ちぇ…るすかぁ……,Che...ruska...
+03C0,0x009A,もしもーし‼ ……誰もいない みたいですわね,Hello?! ...Looks like there's no one there.
+03C1,0x0000,いぃすとづいぃすまらす,Iisutozuiisumarasu
+03C1,0x003E,おっととと……,Oops...
+03C1,0x0088,きゃ‼ ビツクリした‼,Ah!! I'm so surprised!!
+03C1,0x00A2,おおおぅ‼      ちるところだった……,Oh no!! I almost did it...
+03C1,0x00D2,ないところでしたわ。つい引きまれるようにフラフラと……,It was a place I couldn't find. I was just drawn in and wandered over...
+03C2,0x0000,いぃううどう,Iiiiudo
+03C2,0x0018,ここで侍すると   体力が回するんだ‼ わーい‼ うれしいな‼,"If I samurai here, my stamina will recover!! Yay!! I'm so happy!!"
+03C2,0x005E,の上で侍すると  体力が回するみたいさっそく       みんなに教えようっと‼,It seems like samurai training on top of it really boosts your stamina! I'll have to tell everyone right away!!
+03C2,0x00BA,体力が回してく……の力かしら　    でも…をふみつぶしていいのかしらね,Is it the power of my stamina that's driving me...? But...is it really okay to trample on it?
+03C3,0x0000,いぃううとうー,Iiiiiii
+03C3,0x0018,こっちじゃないよぉ‼ 敵がはっているのは  となりのビルだよぉ,Not this way!! The enemy is hiding in the building next door!!
+03C3,0x005C,ここじゃないわね…  …向こうの方に敵はいるみたい,It's not here... ...the enemy seems to be over there.
+03C3,0x0092,なになに       …そうじセンター…りっぱなビルですわね,What's this... Cleaning Center... What a magnificent building!
+03C4,0x0000,づいぃづめるづエゴいぃづづブく,zuiizumeru egoiizuzubu
+03C4,0x0056,…がある……,...is there...
+03C4,0x008E,あれ　 なんかあるぞ,"Hey, there's something there."
+03C4,0x00A6,あれ　 なんかあるぞ,"Hey, there's something there."
+03C4,0x00BE,何かありますわね……,Something must be going on...
+03C4,0x00D6,回のくすり,One dose of medicine
+03C4,0x010C,ラツキー‼,Lucky!!
+03C4,0x011A,体力が全回した‼,My energy is fully restored!!
+03C5,0x0000,いアぃぉぉそぉ,Iai ooooso
+03C5,0x001E,このしんごう、    こわれてるー‼,This traffic light is broken!!
+03C5,0x0046,こわれてるわね、   のままだわ……,It's still broken...
+03C5,0x0070,こわれたしんごうは、 はやくしゅうりしないといけませんのにねぇ,"The broken traffic light needs to be repaired quickly, doesn't it?"
+03C6,0x0000,いアぃぉぉそぉ,Iai ooooso
+03C6,0x001E,こっちじゃないよぉ‼ 道だよぉ‼,Not this way!! It's the road!!
+03C6,0x0046,ちがうって‼     道に行かなきゃ‼,"No, that's wrong!! We have to go to the road!!"
+03C6,0x0074,こっちではありませんわよ。道に行かないといけませんわ,This isn't the right way. You need to go down the road.
+03C7,0x0000,いゴナぃくくくぁテ,igonai kukukwa te
+03C7,0x002A,きゅううう　 なんか今フツと飛んだかんじがしたぞぉ‼,"Wow, I feel like I just suddenly flew away!!"
+03C7,0x0064,なになに　 ここで今 フツと飛んだわ‼,What's this? It just suddenly jumped right here!!
+03C7,0x0090,今のは何でしょう　少しうきあがったようなじがしましたけど……,What was that just now? It felt like it floated up a little...
+03C8,0x0000,いぃううびう,Iiiiuubiu
+03C8,0x0018,プールぅぅ‼     人りたーい‼     でもまず道に行ってちゃん助けよー‼,A swimming pool!! I want to get in!! But first I need to go to the road and help properly!!
+03C8,0x0072,しぶりに      プール人りたいなぁ。 今みんなで行こうっと,I really want to go to a swimming pool after so long. Let's all go now!
+03C8,0x00B8,さんを助ける前に とぎしたいな  …なんてね 誰も聞いてませんでしたわよね,"I'd like to sharpen my sword before helping Mr. [Name]... Just kidding, nobody was listening, right?"
+03C9,0x0000,いぃううたうぶ,Iiuutaubu
+03C9,0x0018,あれぇ…このカタナよく見るとオモチだぁ……,"Huh... Looking closely at this katana, it looks like mochi..."
+03C9,0x004A,何このカタナ　    オモチじゃない‼,What kind of katana is this? It's not made of mochi!!
+03C9,0x0078,これが本物のカタナ  だったらに立つんですけど、オモチじゃ  方がありませんわね,"If this were a real katana, I'd be thrilled, but it's just a toy, so there's nothing I can do about it."
+03CA,0x00B6,……太きなが開いている……,...It's wide open...
+03CA,0x00F4,太きなだねー……。,That's a big one...
+03CA,0x010C,ないわね。こんな所になんか開いてて……,"No, there isn't. There's no way something like that would be open in a place like this..."
+03CA,0x013A,この道、イガイとんでますわね……。,There are mussels flying around on this road...
+03CA,0x0166,こんにちはぁ‼    あたしは       道の女部だよーん‼,Hi there!! I'm from the Road Girls' Club!!
+03CA,0x01AE,きゃ‼ ビツクリした‼,Ah!! I'm so surprised!!
+03CA,0x01CA,をしてくれて   ありがとう‼     おれいに、「体力アツプのくすり」をあげるよ‼,"Thank you so much for doing that!! As a thank you, I'll give you a ""stamina-boosting medicine""!!"
+03CA,0x0228,……最高体力がアツプした‼…,...My maximum stamina has increased!!
+03CA,0x0268,ありがとう‼,thank you!
+03CB,0x0000,いぃぉぞプ,Iiyozopu
+03CB,0x001E,げぇ…がドロドロに なっちゃうよ……,Ugh...it's going to turn into a gooey mess...
+03CB,0x0048,こんな所はよごれるから通りたくないなぁ…  ージのたまるスピードも運いし……,I don't want to go through a place like this because it'll get dirty... and the speed at which the dirt accumulates is also a bit of a pain...
+03CB,0x009A,よごれちゃったー‼ えーーーん‼,It got dirty!! Waaaaaah!!
+03CB,0x00C0,がよごれてしまいますわ。ージのたまる  スピードも、運くなってしまうようですし……,It will get dirty. And the speed at which the oil accumulates will also seem to decrease...
+03CC,0x0000,メいぃぉりりコ,Meioririko
+03CC,0x001E,おっかねぇなあ…   …ガケれでも起こったら、太空なコトになるぞ,"That's scary... If a cliff were to fall, it would be a disaster in space."
+03CC,0x0064,が高くて、いいなぁ……舞ちゃんも     りしたいなー,"It's so expensive, I wish I could have one too, Mai-chan."
+03CC,0x00A4,ここでガケがれたら……かなりのオオゴトよね,If we were to fall off the cliff here... that would be a pretty big deal.
+03CC,0x00D4,ここに敵を集めて、  ガケをしたら……シュレーシンみたいで、カツコいいですわね,"If we gather the enemies here and then create a cliff...it'll be like Schlesin, and that'll be pretty cool, won't it?"
+03CD,0x0000,あいぃへへへへへ心いぃわシわわごいぃ,Aaahh
+03CD,0x007C,ここって…ジンプ  出来るんじゃないかな,I think we could do some jimping here.
+03CD,0x00AC,ふうう…うまく行ったわね……あれ、何かある‼,"Phew... that went well... wait, there's something there!!"
+03CD,0x00DC,だいせーこー‼ しかもここには何かあるぞぉ‼,Great success!! And there's something else here!!
+03CD,0x010C,うまく行きましたわねではでは、ここにある 宝を……,"It went well, didn't it? Now then, here is the treasure..."
+03CD,0x0148,宝を開ける,Open the treasure
+03CD,0x015E,……宝には              「さのモト」が      人っていた‼ ……,"...The treasure contained ""Sano Moto""!!..."
+03CD,0x01BA,さがアツプした‼,Saga has been upgraded!!
+03CD,0x01FA,あ、体が       くなったような   気分がする……,"Ah, I feel like my body has gotten stronger..."
+03CE,0x0000,あいぃへへへへへ心いぃわシわわごいぃ,Aaahh
+03CE,0x007C,ここって…ジンプ  出来るんじゃないかな,I think we could do some jimping here.
+03CE,0x00AC,ふうう…うまく行ったわね……あれ、何かある‼,"Phew... that went well... wait, there's something there!!"
+03CE,0x00DC,だいせーこー‼ しかもここには何かあるぞぉ‼,Great success!! And there's something else here!!
+03CE,0x010C,うまく行きましたわねではでは、ここにある 宝を……,"It went well, didn't it? Now then, here is the treasure..."
+03CE,0x0148,宝を開ける,Open the treasure
+03CE,0x015E,……宝には              「さのモト」が      人っていた‼ ……,"...The treasure contained ""Sano Moto""!!..."
+03CE,0x01BA,さがアツプした‼,Saga has been upgraded!!
+03CE,0x01FA,あ、体が       くなったような   気分がする……,"Ah, I feel like my body has gotten stronger..."
+03CF,0x0000,あいぃせせせせせはいぃ,aiii
+03CF,0x0042,のっ子には、   何かあるかな,Is there something special about Nokko?
+03CF,0x006A,……入は「宝玉のかけら」を      手に人れた‼ ……,"...Iri has obtained a ""fragment of the jewel""!!..."
+03CF,0x00CA,何だろコレ　     集めると、      何かになるのかな,What is this? I wonder if collecting them will create something.
+03D0,0x0000,あいぃせせせせせはいぃ,aiii
+03D0,0x0042,のっ子には、   何かあるかな,Is there something special about Nokko?
+03D0,0x006A,……入は「宝玉のかけら」を      手に人れた‼ ……,"...Iri has obtained a ""fragment of the jewel""!!..."
+03D0,0x00CA,何だろコレ　     集めると、      何かになるのかな,What is this? I wonder if collecting them will create something.
+03D1,0x0000,あいぃせせせせせはいぃ,aiii
+03D1,0x0042,のっ子には、   何かあるかな,Is there something special about Nokko?
+03D1,0x006A,……入は「宝玉のかけら」を      手に人れた‼ ……,"...Iri has obtained a ""fragment of the jewel""!!..."
+03D1,0x00CA,何だろコレ　     集めると、      何かになるのかな,What is this? I wonder if collecting them will create something.
+03D2,0x0000,ああいぃせせせせせはいぃ,"Ah, yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes"
+03D2,0x0042,のっ子には、   何かあるかな,Is there something special about Nokko?
+03D2,0x006A,……入は「宝玉のかけら」を      手に人れた‼ ……,"...Iri has obtained a ""fragment of the jewel""!!..."
+03D2,0x00CA,何だろコレ　     集めると、      何かになるのかな,What is this? I wonder if collecting them will create something.
+03D3,0x0000,あいぃせせせせせはいぃ,aiii
+03D3,0x0042,のっ子には、   何かあるかな,Is there something special about Nokko?
+03D3,0x006A,……入は「宝玉のかけら」を      手に人れた‼ ……,"...Iri has obtained a ""fragment of the jewel""!!..."
+03D3,0x00CA,何だろコレ　     集めると、      何かになるのかな,What is this? I wonder if collecting them will create something.
+03D4,0x0000,あぃいぃせせせせせはいぃ,Aiii
+03D4,0x0042,のっ子には、   何かあるかな,Is there something special about Nokko?
+03D4,0x006A,……入は「宝玉のかけら」を      手に人れた‼ ……,"...Iri has obtained a ""fragment of the jewel""!!..."
+03D4,0x00CA,何だろコレ　     集めると、      何かになるのかな,What is this? I wonder if collecting them will create something.
+03D5,0x0000,あいぃせせせせせはいぃ,aiii
+03D5,0x0042,のっ子には、   何かあるかな,Is there something special about Nokko?
+03D5,0x006A,……入は「宝玉のかけら」を      手に人れた‼ ……,"...Iri has obtained a ""fragment of the jewel""!!..."
+03D5,0x00CA,何だろコレ　     集めると、      何かになるのかな,What is this? I wonder if collecting them will create something.
+03D6,0x0000,あいあおいぃにににににいぃるるるるるいぃ,aiaoiininininiirururururuii
+03D6,0x0062,ありゃ　 また「宝玉のかけら」だわ…    …コレでつめか…。,"Oh no, it's another ""jewel fragment""... Is this the last one...?"
+03D6,0x00A6,あ…つくっつけると……ちゃんとした    宝玉のになったわ‼,Ah... when I put them together... it turned into a proper jewel!!
+03D6,0x00EA,…入は「ベ」の宝玉を           手に人れた‼ …,"...I obtained the jewel ""Be""!!..."
+03D6,0x014A,やったぁ‼      …でも、やっぱり…  …何だろコレ　    になって使うのかなぁ,Yay!! ...But still... ...I wonder what this is supposed to be used for?
+03D7,0x00B4,よぉし‼       敵なんかムシして   学に人っちゃえ‼,Alright!! Ignore the enemy and get to school!!
+03D7,0x00F6,先にーに       人っちゃおーっと‼,I'll go ahead and get in first!!
+03D7,0x0122,こっから人ったら敵と わずにすのでは,"From here on out, people will not be seen as enemies."
+03D7,0x0150,ここにいる敵はムシして先に、ーに人って   しまいましょう,Let's ignore the enemies here and get rid of the people first.
+03D7,0x0192,そうはさせません‼,I won't let that happen!!
+03D7,0x01AA,あっ‼        みんなこっちに来る‼ しかもドア開かない‼ …うしかないかぁ…,Ah!! Everyone's coming this way!! And the door won't open!! ...I guess I have no choice...
+03D8,0x0000,いぃぉそス,Iioso
+03D8,0x001E,あれ、プールに誰かいるみたいだぞ……,"Hey, it looks like there's someone in the pool..."
+03D8,0x0046,あれ、誰かプールにいるみたいだぞ　     じゅぎょーちゅうかな,"Hey, it looks like someone's in the pool. Maybe they're having a lesson?"
+03D8,0x008C,プールに、入が、   たくさんいるみたい… 今は、ーに人らない方がよさそうね……,It looks like there are a lot of people in the pool... It's probably best not to go in right now...
+03D8,0x00E0,何か、プールに入が  たくさんいる……今は、ーに人らない方がいいわね……,There are a lot of people in the pool... It's probably best not to go in right now...
+03D8,0x012C,プールに誰かいるみたいですわね……,It looks like there's someone in the pool...
+03D9,0x0000,いぃうでヤ,That's good.
+03D9,0x0018,ーにたくさん入がいるぞ敵か‼    ……でも回しにしよっと。,"There are a lot of them in there, are they enemies?! ...But I'll just rotate them."
+03D9,0x005A,体にも、     誰かいるみたい‼   でも今は、コツチの方 だけで手いっぱいー‼,"It feels like there's someone inside my body too!! But right now, I'm completely preoccupied with Kotsuchi!!"
+03D9,0x00B4,体にも、     入がいるみたい…   …気のある学ね,It seems like there's something inside my body too... ...a school with a lot of interest.
+03D9,0x00F8,ーでスケツトやってる…たまにはもスーしなきゃなぁ…,—I'm doing skateboarding... I should probably do some skating once in a while...
+03D9,0x0136,体にも、たくさん入がいますね…     …気があっていい学ですわ,There are lots of things inside the body too... It's a good learning experience.
+03DA,0x0092,あ…こんな所に階が ある……ってみよっと,Oh... there's a floor here... let's take a look.
+03DA,0x00C2,階があるよ。    ってみようっと‼,There are floors. Let's go check it out!
+03DA,0x00EE,こんな所に階が…  …ってみましょうか,There's a floor in a place like this... Let's take a look.
+03DA,0x011C,こんな所に出たわね…                           …きゃあああ‼,It showed up in a place like this... Ahhhh!!
+03DA,0x0178,あー、ビツクリした ちるところだった…,"Ah, that was a shock. I almost died..."
+03DA,0x01A6,ふにい…       …アブなかったよぉ,Phew... That was close!
+03DA,0x01D4,ここはスベりやすいわぁちるとこだっわね。 あぶないあぶない,"This place is really slippery, you could easily fall. That was close!"
+03DA,0x0214,こんな所でもなく ちて、ケガでもしたらまたられちゃうわ… …気をつけるのよ、美姫,"It's not like we're in a place like this, if you get hurt, you'll be in trouble... Be careful, Miki"
+03DA,0x0270,…きゅう…      …なかった    うくちてしまう  所でしたわ,...Kyuu... ...I almost fell asleep.
+03DA,0x02C0,何にもないようだし、 戻ろっか……,"There doesn't seem to be anything here, so let's go back..."
+03DB,0x0000,いぃぉぞキ二,Ii ozo kini
+03DB,0x001E,うげぇ、学のうらは 通れないでやんの,"Ugh, you can't get through the back of the school."
+03DB,0x0048,学のうらは、    道かと戦ったのに  通れないやぁ…,"I fought against the road behind the school, but I still can't get through..."
+03DB,0x0086,うー、うらから行けば道かと戦ったけど… …人れないみたいね,"Hmm, I tried to go the other way around, thinking it was a road, but... ...it looks like there's no one there."
+03DB,0x00C8,学のうらは     行き止まりになってる みたいね……,It looks like the back of the school is a dead end...
+03DB,0x0104,ここから先は     行けないみたいですわね,It looks like we can't go any further than this.
+03DC,0x0024,はおお、ここから見ると下の入たちがムシケラのようだ…って、オイオイそんな高くはないだろ,"Wow, from here the ones below look like insects... but hey, they're not that high up, are they?"
+03DC,0x0080,コツチがわもたかーい‼やっはお‼ 向こうがわの入‼ 聞こえるぅ,It's high on the Kochi side too!! Yay!! I can hear it coming in from the other side!!
+03DC,0x00C4,考えてみりゃここって った事なかったな。 …イガイと高いんだなぁ……やっはぉぉぉぉ‼,"Now that I think about it, I've never been here before. ...It's surprisingly expensive... Wow!!"
+03DC,0x011E,飛びおりてみようかな……って何を考えてるの、美姫ったら‼,"""Maybe I should jump off..."" What are you thinking, Miki?!"
+03DC,0x015A,やっぱり高いところは気持ちいいですわね …でも、こりていませんわね、わたくしも,"It really does feel good to be up high... but I haven't learned my lesson yet, have I?"
+03DC,0x01B2,いぶ,Ibu
+03DD,0x0000,あえあぎいぃはははははあ□いぃわわわわわチいぃ□□□□□空ぇぃい,Aaaagiiiihahahahaaa□iiwawawawawachii□□□□□Soraeiiii
+03DD,0x0082,あれ、この思…   …階がある……,"Wait, this thought... there are... floors..."
+03DD,0x00AC,こんな所に      つながってるんだぁ… …あれ、宝がある‼,"It leads to a place like this... Oh, there's treasure!!"
+03DD,0x00F0,……「学思」のシンルを         手に人れた‼…………これで学思を         選できるようになるぞ‼,"...I have obtained the ""Learning Thought"" element!! ...Now I can choose ""Learning Thought""!!"
+03DD,0x016C,やったぁ‼,Yay!!
+03DE,0x0000,あいぃしのりぇいぃク,Aishinorieik
+03DE,0x003A,さてと、こっからなら プールに人れるな……,"Okay, from here we can get into the pool..."
+03DE,0x0068,プールに、はいろぉ‼,Let's get in the pool!!
+03DE,0x0080,プールに人るかぁ…  …えいっ‼,There are people in the pool... ...Here goes!!
+03DE,0x00A4,プールにスがいますわね……えいっ‼,There's a sparrow in the pool... Take that!!
+03DE,0x00CC,まだちょっと、    求はつめたいな……,I'm still a little hesitant to ask for more...
+03DE,0x00F8,わーい‼       キモチいいなぁ‼,Yay!! This feels great!!
+03DE,0x0122,ちょっとたいっ‼  でもま、いいかぁ‼  気持ちいいし,Ouch!! But oh well!! It feels good.
+03DE,0x0160,るるるるるる   まだ、ちょっと    たいわね,"Rurururururu, I'm still a little bit tired."
+03DE,0x019A,プールにはいるのも  しぶりですわね,I'm reluctant to even get in the pool.
+03DF,0x0000,あいぃしのりぇいぃクベ,aishinorieikube
+03DF,0x003A,さてと、こっからなら プールに人れるな……,"Okay, from here we can get into the pool..."
+03DF,0x0068,プールに、はいろぉ‼,Let's get in the pool!!
+03DF,0x0080,プールに人るかぁ…  …えいっ‼,There are people in the pool... ...Here goes!!
+03DF,0x00A4,プールにスがいますわね……えいっ‼,There's a sparrow in the pool... Take that!!
+03DF,0x00CC,まだちょっと、    求はたいな……,I'm still not quite sure...
+03DF,0x00F6,わーい‼       キモチいいなぁ‼,Yay!! This feels great!!
+03DF,0x0120,ちょっとたいっ‼  でもま、いいかぁ‼  気持ちいいし,Ouch!! But oh well!! It feels good.
+03DF,0x015E,るるるるるる   まだ、ちょっと    たいわね,"Rurururururu, I'm still a little bit tired."
+03DF,0x0198,プールにはいるのも  しぶりですわね,I'm reluctant to even get in the pool.
+03E0,0x0000,おがきておがきぶおがきケおがきベお,Ogakite Ogakibu Ogakike Ogakibeo
+03E0,0x0058,今日は日か何かなのかなぁ,I wonder if today is some kind of special day?
+03E0,0x0078,いいえ、ちがいますわ。    それだけは心のそこから    自を持って言えますわ‼,"No, that's not true. I can say that with absolute certainty from the bottom of my heart!"
+03E0,0x00D0,そうよねぇ。あたしと子が  入してみの日をわすれるケないもんね,That's right. I'll never forget the day my child and I entered the world.
+03E0,0x0120,まぁ、ついてると言えば    ついてますわ。今日はっくり メロでも見ましょ,"Well, I guess you could say I'm lucky. Let's relax and watch some melodies today."
+03E1,0x0082,きおがき心おき□おきおがきおがき行おあ考ぐおがき人お,"Keep your heart in mind, keep your thoughts in mind, go and think about it, people."
+03E1,0x0102,ここが街のーですか…,Is this the town...?
+03E1,0x011A,やっぱり、見たコトないわよねー…ううん、一体……      ここは、どこなんだろう,"I've never seen anything like it before... Hmm, where exactly is this place?"
+03E1,0x0172,舞ちゃん、しってるー‼    舞ちゃんねー、さっき、ここから出て来たんだよぉ‼,"Mai-chan, I know! Mai-chan just came out of here a little while ago!"
+03E1,0x01CC,へぇ、じゃあ、この街にくわしいんですね。では、ここはどこなのか、おりになります,"Oh, so you're familiar with this town then. Well, where exactly is this place?"
+03E1,0x0222,えーと…わからなーい‼,Um... I don't know!!
+03E1,0x0244,舞ちゃんもねぇ、ちょっと前に、ここにれてこられたの,Mai-chan also came here a little while ago.
+03E1,0x027C,で、ンな入たちに何かされそうになって、逃げてきたのぉ‼,"So, those guys were about to do something to me, and I ran away!"
+03E1,0x02B8,なんだか、「間になれ‼」とか何とかいってたよ‼,"He was saying something like, ""Get in between!!"""
+03E1,0x02EC,ええぇ、それじゃ       ンンらないよぉ‼    けっきょく、どうなってるのよ‼,Huh? That doesn't make sense! What's going on?!
+03E1,0x034A,りましたわねぇ…,That's right...
+03E1,0x0360,あははははははぁ‼      よくぞ、ケケと      戻ってきたわね‼ 姫舞‼,Hahahahahaha!! I'm so glad you've come back with Keke!! Himemai!!
+03E2,0x0000,おがきておがきばおがきふおがきんお,Ogakite ogiba ogifu ogakin o
+03E2,0x0058,こっちの方よね,"It's this way, right?"
+03E2,0x006C,ええ。,Yeah.
+03E2,0x0076,まったく、          言われたとおりの道だね,That's exactly the path I was told to take.
+03E2,0x00B0,とちゅうで          侍ちぶせとかあるんじゃない,I wonder if there's a samurai assassination scene somewhere along the way?
+03E3,0x0000,おがきばおがきろおがきおがきおがきお,Tsukagakiba ogakiro ogaki ogaki ogaki ogaki
+03E3,0x006C,ちゃん、だか、何かをかけられてるって言ってたね‼,"Chan said something about something being thrown at her, right?!"
+03E3,0x00AA,そうね、もしかしたら、と、う事になるかもしれないわね…,"Yes, that might be the case..."
+03E3,0x00EA,でも、まずは、ってみなければどうにもなりませんしね,"But first, we can't do anything without trying, right?"
+03E3,0x0122,あー見えて、イガイと     しっかりしたところもあるしね‼,"Despite appearances, she has a surprisingly reliable side!"
+03E3,0x0162,…そうだね、だって    そんなカンタンに、敵のナに 引っかかりはしないでしょ‼,"...Yeah, because we're not going to fall for the enemy's tricks that easily, are we?!"
+03E4,0x0000,いチぃぉぞびびを,Ichi ozobibiwo
+03E4,0x001E,くもりガラスじゃ、  外は見えないね,You can't see outside through frosted glass.
+03E4,0x0048,このガラス      くもってるよぉ‼,This glass is foggy!!
+03E4,0x0072,くもりガラスは    外が見えないから   ヤだなぁ……,I don't like frosted glass because you can't see outside...
+03E4,0x00AE,まどの外には…    …ベに空わったものは見えませんわねぇ,"Outside the window... ...you can't see anything that's been blown away, can you?"
+03E5,0x0000,いぃぉさねよ,Ii osaneyo
+03E5,0x001E,えまちがってるよ…,That's wrong...
+03E5,0x0036,こたえちがーう‼   舞ちゃんでもるもん‼,That's the wrong answer!! It's Mai-chan too!!
+03E5,0x0066,えまちがってるよ… …ツカでー,That's wrong... ...Tsukade
+03E5,0x008C,ゴカなね,Gokanane
+03E5,0x009E,あら、えが     まちがってますわね,"Oh, the drawing is wrong."
+03E6,0x0000,のいぃぉぐぉぐぜ,noi ogog ze
+03E6,0x001E,あちちっ‼,Ouch!!
+03E6,0x002C,きゃん‼ あついっ‼,Aaah!! It's hot!!
+03E6,0x0044,きゃあ‼ のが  に……‼,Ahh!! That's...!!
+03E7,0x0000,あこいぃへへへへへいぃわシわわいぃ,Akoiiheheheheheeeiwasawaii
+03E7,0x007C,ここって…ジンプ  出来るんじゃないかな,I think we could do some jimping here.
+03E7,0x00AC,ふうう…うまく行ったわね……あれ、何かある‼,"Phew... that went well... wait, there's something there!!"
+03E7,0x00DC,だいせーこー‼ しかもここには何かあるぞぉ‼,Great success!! And there's something else here!!
+03E7,0x010C,うまく行きましたわねではでは、ここにある 宝を……,"It went well, didn't it? Now then, here is the treasure..."
+03E7,0x0148,宝を開ける,Open the treasure
+03E7,0x015E,……宝には            「力のモト」が          人っていた‼ ……,"...The treasure contained the ""source of power""!!..."
+03E7,0x01BC,力がアツプした‼,My power has increased!!
+03E7,0x01FA,あ、力が       みなぎってきたような 気分がする……,"Ah, I feel like I'm filled with energy..."
+03E8,0x0000,あのいぃろココ二いぃ,That color is good here
+03E8,0x0068,へっへーん、     ここから先には    行かせないよーん,"Heh heh, I'm not letting you go any further than this!"
+03E8,0x00AA,くっそぉ…      …こうなったら‼,Damn it... If that's how it is...
+03E8,0x00D4,ええいっ‼      だったらっちゃえっ‼,Alright then!! Let's just go for it!!
+03E8,0x0104,ええいっ‼      こうなったら‼,Alright then!! If that's how it is!!
+03E8,0x012C,いそいでいますんで、 行かしてもらいます‼,"I'm in a hurry, so I'll be heading there!"
+03E8,0x015A,よぉし‼       ドンドン行くぞぉ‼,Alright!! Let's keep going!!
+03E8,0x0186,ええー、るのは   インチキだよぉ……,"Well, Nono is a scam..."
+03E9,0x0000,あのいぃろコ二二いぃ,That color is nice
+03E9,0x0068,へっへーん、     ここから先には    行かせないよーん,"Heh heh, I'm not letting you go any further than this!"
+03E9,0x00AA,くっそぉ…      …こうなったら‼,Damn it... If that's how it is...
+03E9,0x00D4,ええいっ‼      だったらっちゃえっ‼,Alright then!! Let's just go for it!!
+03E9,0x0104,ええいっ‼      こうなったら‼,Alright then!! If that's how it is!!
+03E9,0x012C,いそいでいますんで、 行かしてもらいます‼,"I'm in a hurry, so I'll be heading there!"
+03E9,0x015A,よぉし‼       ドンドン行くぞぉ‼,Alright!! Let's keep going!!
+03E9,0x0186,ええー、るのは   インチキだよぉ……,"Well, Nono is a scam..."
+03EA,0x0000,あいぃねっっっっぁいぃダ空,Aa
+03EA,0x0052,あっ‼ 宝だ‼,Ah!! It's treasure!!
+03EA,0x0066,よっしゃあ‼     宝みーっけた‼,Yes!! I found the treasure!!
+03EA,0x0090,……宝のーには            クマのいぐるみが       はいっていた‼……,...The treasure box contained a teddy bear!!...
+03EA,0x00EE,何でこんなものが、  太事に        しまってあるんだ　  ベにはしくないなぁ‼,Why is something like this being kept in Taiji's place? It's not good for Beni!
+03EA,0x014A,きゃーん、カイイ でも持ってくケには行かないから…    …いらなぁい‼,"Ahhh, it's cute, but I'm not taking it with me... I don't need it!!"
+03EA,0x019E,うう…のない物を太事にしまってあるわね…持っていったら   だからおいとこ。,Ugh... I keep things that aren't there in my bag... so I'll leave them there.
+03EA,0x01FA,あっ…がコドモのころ持ってたやつと同じクマさん‼ …なぜここに,Oh... it's the same bear I had when I was a kid!! ...Why is it here?
+03EA,0x0240,あら、かわいい    クマさんね 誰かの 太事な物でしょうから おいておきましょう。,"Oh, what a cute little bear. It must belong to someone, so let's leave it here."
+03EB,0x00BE,……レンガのれた道がある     に使われていた           道のようだ……,...There's a brick-paved path... It looks like a path that was used for something else...
+03EB,0x011C,もう使われていない  道みたいだな……,It looks like a road that's no longer in use...
+03EB,0x0148,レンガがところどころ れてるなぁ……,The bricks are falling apart in places...
+03EB,0x0172,もう使われていない  道みたいだね……,It looks like a road that's no longer in use...
+03EB,0x019E,ああ……帰ってこれたと戦ったのに……    道さえもちがう……,Ah... I fought hard to make it back... But even the path is different...
+03EB,0x01E2,こんない道は    わたくしののくにはありませんでししたよね,"There were no roads like this in my country, were there?"
+03EB,0x0228,やっはぉ‼      めましてぇ‼,Hey there!! Nice to meet you!!
+03EB,0x0250,あたしは       道の女部だよ‼ よろしくね‼,I'm a member of the Road Women's Division!! Nice to meet you!!
+03EB,0x028C,きゃ‼ ビツクリした‼,Ah!! I'm so surprised!!
+03EB,0x02A6,今回はントだけね‼ マツプーの      いろんな場所で    侍すると……,This time it's just the beginning!! If you samurai in various places at Matsupu...
+03EB,0x02FA,いろいろな宝がまっていたりする事があるよ‼べてみてね‼,You might find all sorts of treasures waiting for you!! Check it out!!
+03EB,0x0338,……それじゃ、    いそいでるから    またねー      イーイ,"...Well then, I'm in a hurry so see you later!"
+03EB,0x038A,なんだったんだ、今のは……,What was that just now...?
+03EB,0x03A8,なにが        いそがしいんだろ,I wonder what's keeping them so busy.
+03EB,0x03D4,なになになに　    今の入　 ……あ、  いなくなっちゃった……,"What, what, what? That was a little in there just now... Oh, it's gone..."
+03EB,0x041A,あの入も、いろいろと いそがしいの     でしょうかね,I suppose that person is also very busy with various things.
+03EC,0x00B8,あの、すいません……,Excuse me...
+03EC,0x00D0,はい,yes
+03EC,0x00DA,コンタクトレンを  としちゃったんです……一にさがして   もらえませんか,I accidentally dropped my contact lens... Could you please help me find it?
+03EC,0x0130,あ…いいですよ,Ah... that's fine.
+03EC,0x0142,ここらへんには    ないみたいですね……,It doesn't seem to be around here...
+03EC,0x0170,そうですか……見つけたら教えて下さいね,I see... Please let me know if you find it.
+03EC,0x019A,はーい‼,Yes!!
+03EC,0x01A6,ああ、いいよ‼    まかしときな‼,"Oh, sure! Leave it to me!"
+03EC,0x01CE,よろしいですわよ,That's fine.
+03EC,0x01E4,よぉし、       たまには入助けだ‼,"Alright, let's help out for once!"
+03EC,0x0210,かわいそおぉ……   たすけてあげよぉ‼,Poor thing... Let's help it!!
+03EC,0x023C,かわいそーに……   してあげよっと,Poor thing... I'll do it for you.
+03EC,0x0268,見つけてあげたら   何か、もらえるかも  知れませんね,"If you find it, you might get something in return."
+03EC,0x02A8,いいいい,Yes yes
+03ED,0x00AC,……教の前には女部がいる……,...There is a women's group in front of the religion...
+03ED,0x00EC,はぁい‼ こんにちは‼あたしは       教の女部だよーん‼,Hi there!! Hello!! I'm from the women's division of the religion!!
+03ED,0x0130,そのまんまじゃん‼,It's exactly the same!!
+03ED,0x0146,やっはぉ‼,Yay!!
+03ED,0x0154,何の部なんだかなぁ……,I wonder what club it is...
+03ED,0x016E,何の部なんでしょうか……この方は……,I wonder what club this person belongs to...
+03ED,0x0198,だまってすわれば   ピタリと当たる‼,Just sit there silently and you'll hit the target!
+03ED,0x01C2,リ‼ あなたの  さがしている物は   との間のに  あるでしょう‼,Hey!! What you're looking for is somewhere between here and there!!
+03ED,0x0216,へぇ……なんだろ,Hmm... I wonder what it is.
+03ED,0x022C,ではでは…      …それじゃあね,Well then... see you later
+03ED,0x0256,ま、してみようか。 いいことあるだろ,"Well, let's give it a try. Something good will probably come of it."
+03ED,0x0280,ま、してみましょう。いいことあるかも   知れませんしね,"Well, let's give it a try. Something good might happen."
+03ED,0x02C0,なにかあるぞぉ‼   さがしてみよー‼,There's something there!! Let's go find it!!
+03EE,0x0082,いぃ行行行行行い舞,Ii-gyo-gyo-gyo-gyo dance
+03EE,0x00CC,……よく見ると         コンタクトレンが             ちている……,"...Upon closer inspection, the contact lens is broken..."
+03EE,0x0148,あ……これは…    …さっきの入が    していたレンでは…,Ah... this is... ...the Ren that was coming in earlier...
+03EE,0x018E,しに行ってやろっと‼,I'm gonna go and do it!!
+03EE,0x01A8,よぉし‼ とどけにいくぞぉ‼,Alright!! Let's go deliver it!!
+03EE,0x01C8,してあげないとですわね……,I suppose I should do it for them...
+03EE,0x01EE,いたいた‼ はいコレ‼,There it is!! Here it is!!
+03EE,0x0208,まだいましたわね‼  見つけましたよ、これ,They're still here!! I found them!
+03EE,0x0236,よぉし‼ まだいた‼ 見つけたぞコレ‼,Yes!! There's still one left!! I found it!!
+03EE,0x0262,あ…         ありがとうございます‼……これで物が    はっきり見えます‼,Ah... Thank you!! ...Now I can see things clearly!!
+03EE,0x02BA,おれいに……     このの宝物をあげる‼,As a thank you... I'll give you this treasure!!
+03EE,0x02EC,……「シ」の宝玉を             もらった‼ ……,"...I received the ""Shi"" jewel!!..."
+03EE,0x034A,……キレイな石……  ありがとう‼,...What a beautiful stone... Thank you!!
+03EE,0x0370,いえいえ、こちらこそ。じゃ、がんばってね,"No problem, the pleasure was all mine. Well, good luck!"
+03EF,0x0000,いび,iri
+03EF,0x0014,……ビルには             はりがみがしてある……,...There are posters on the building...
+03EF,0x0072,……「ただいま           きゅうぎょうちゅう」……,"... ""I'm currently on leave"" ..."
+03F0,0x0000,いび,iri
+03F0,0x0014,……ビルには             はりがみがしてある……,...There are posters on the building...
+03F0,0x0072,……「カードはとなりに        いてんしました」……,"... ""The card is next to it."" ..."
+03F1,0x0000,ぶいぃるるるるるをいぃ動か,Move the buirurururu
+03F1,0x0078,いらっしゃいませぇ‼ カードさんでーす‼,Welcome!! It's Card-san!!
+03F1,0x00AE,を倒せば、宝が手に 人ると戦ったでしょ　 チツチツチツ、    ちがうんだなぁ……,"If you defeat him, you'll get the treasure. You fought against a man, right? Tick tick tick, that's not it..."
+03F1,0x0106,ううん‼ そんなこと 戦ってなかったよ…… ……ントだってば‼,No!! I wasn't fighting anything like that... ...I told you!!
+03F1,0x014A,いいえ、そんなこと  戦っていませんでした わよ……ふぅぅ、心を 読まれていたとは……,"No, I wasn't fighting anything like that... Sigh, so you could read my mind..."
+03F1,0x01A4,まぁいいわ。どう　  あなたの持っている  カードをのカードとこうかんしない,Oh well. How about we exchange the cards you have for other cards?
+03F1,0x01FC,こうかんしますか,Shall we exchange?
+03F2,0x0082,いぃ子子子子,"Good child, good child"
+03F2,0x00C4,やぁ‼ あたしは   本の女部‼,Hey there!! I'm a book lover!!
+03F2,0x00E8,こんなところにも   いるのか…そこらじゅう女部だらけの世界だな…,They're even here... This world is full of women everywhere...
+03F2,0x012E,いろんなところに   いるねっ‼,They're everywhere!!
+03F2,0x0152,あ、どうも……,"Oh, hello..."
+03F2,0x0164,あなたも、そこらじゅうにいますわね……,"You're everywhere, aren't you...?"
+03F2,0x018E,きょうは…      …この本をあげよう‼,Today... I'll give you this book!!
+03F2,0x01BC,……「のくなるレツスン集」,"... ""A collection of lessons to help you get better"""
+03F2,0x01DE,……読と、が         くなったような気がした‼,...I felt like I had read it a lot more!!
+03F2,0x021E,……部力が上がった‼ ……,...Our team's strength has increased!!...
+03F2,0x025E,ありがとう,thank you
+03F2,0x026E,おおっ‼ サンキュー‼,Wow!! Thank you!!
+03F2,0x0288,よろこんでくれて   うれしいな‼     それじゃ、またねー,I'm so glad you enjoyed it!! See you later!
+03F3,0x0000,□ぎいぃねべりム,□Giiineberim
+03F3,0x0028,…ずかしそうな本が            ならんでいる…,...There are embarrassing-looking books lined up...
+03F3,0x0066,はしい本ないなぁ……,There aren't any good books...
+03F3,0x007E,ずかしい本……   いらなーい‼,An embarrassing book... I don't need it!!
+03F3,0x00A4,こんな本、読入いるのかなぁ　 ねくなってきちゃうよ……,I wonder if anyone will actually read this book... It's making me sleepy...
+03F3,0x00E2,あれ、この本って…… ……いやいや、今は  読んでる場じゃないわね……,"Oh, this book... ...no, no, this isn't the time to be reading it..."
+03F3,0x012E,まぁ‼ さがしていた 本が、こんなところに‼今かりに来ましょ。 にこにこ,Wow!! I found the book I was looking for right here!! I'll come and borrow it now. *smile*
+03F4,0x0000,ぎいぃアリ,Giiii Ari
+03F4,0x0028,……ロツカーには           カがかかっている……,"...The word ""locker"" has a ""ka"" in it..."
+03F4,0x0086,開かないんじゃ    方がないなぁ……,"If it won't open, there's nothing we can do..."
+03F4,0x00B2,コンコン……なんにも ーにはないみたいだね…,"Knock, knock... Looks like there's nothing there..."
+03F4,0x00E2,コドロじゃないんだし開けることもないかぁ‼,"It's not Kodoro, so there's no need to open it!"
+03F4,0x0112,勝手に開けちゃいけないわよね……やめとこ……,I shouldn't just open it... I'll stop...
+03F4,0x0142,ここはのロツカーではありませんし     わざわざ、開けることもないでしょう,"This isn't a locker, and there's no need to open it."
+03F5,0x0000,あぐいぃみカカトラ,Aguiimi Kakatora
+03F5,0x002C,……あたたかいが         あたりをつつんでいる……,...A warmth envelops the surroundings...
+03F5,0x008A,ここは侍してるだけで回するみたいだ‼  ラツキー‼,It seems like this place is run just by being a samurai!! Lucky!!
+03F5,0x00C4,侍するだけで    回するのぉ‼    うれしい‼,I'll spin it just by being a samurai!! So happy!!
+03F5,0x00FE,ここは侍してるだけで回するみたいね。  ……あったかい……,It seems like you can run this place just by being a samurai. ...It's warm...
+03F5,0x0140,ここは侍するだけで 回するんですね。  ついていますね,"So, you just need to be a samurai to keep things going here? That's lucky!"
+03F6,0x0000,あ思いぃすすすすす道いぃだビ□,"Ah, I think it's a good road."
+03F6,0x003E,あれ……,Huh...
+03F6,0x004C,高いところから    おりたからもう    戻れないじゃん‼,"I fell from a high place, so I can't go back now!!"
+03F6,0x008C,あー‼ 今おりてきた所もう戻れないー‼   いい所だったのに‼,Ah!! I can't go back to where I just got off!! It was such a nice spot!!
+03F6,0x00CE,あ…もう高いところには戻れないんだ…    …いい所だったのに……,Ah... I can't go back to high places anymore... ...It was such a nice place...
+03F6,0x0114,あれ……おりたところはあたたかくない……もう侍してもあまり回しないみたいですね……,Hmm...it's not warm where I got off...it seems like they don't do much samurai work anymore...
+03F6,0x016E,もう、侍しても回しないみたいですわね……,It seems like they won't be spinning the samurai anymore...
+03F7,0x0000,いぃごごごごごびいぃととととと,Iiiigogogogobiiiiitotototo
+03F7,0x0034,今も、のっこには何かないかな,I wonder if there's anything for Nokko now?
+03F7,0x005C,何もないかぁ……,"Nothing there, huh..."
+03F8,0x0000,いさささささょいぃななななな,Isasasasasayoiinanananana
+03F8,0x0036,この、のっこには 何かないかなぁ,I wonder if there's anything for Nokko?
+03F8,0x0060,何もないかぁ…。   今回はしても何も  ないのかなぁ……,"Nothing, huh... I guess nothing will happen this time either..."
+03F9,0x0000,いぃにににににーいぃ話レいぃ動,"It's a good story, it's a good action"
+03F9,0x0062,この、のっこには 何かないかなぁ,I wonder if there's anything for Nokko?
+03F9,0x008C,何もないかぁ…。   どうやら今回は    のっ子にはなにも ないみたい………あれ,"Nothing, huh... It looks like there's nothing for Nokko this time... Huh?"
+03F9,0x00E8,……には ナイフで         が はってある……,...has been smeared with a knife...
+03F9,0x01A4,ふうん。上もちゃんと 見てかなくちゃね‼,Hmm. I guess I need to take a good look at the top too!
+03F9,0x01D2,わーい‼ きっと   ここには何かあるぞぉ‼,Yay!! There must be something here!!
+03F9,0x0202,何かちてるかな　  これからは      下だけじゃなくて、上も見てこう‼ おー‼,"Is there anything going on? From now on, let's look up as well as down!! Yay!!"
+03F9,0x025C,うつかないで    かないとね。    そこに行ってみましょ。,We have to be careful not to get hurt. Let's go there.
+03F9,0x02A2,そこに何か      あるんでしょうね。  行ってみましょ、   わくわく,"There must be something there. Let's go check it out, I'm so excited!"
+03FA,0x0000,あいぃぞぞぞぞぞにこいぃ,Aiiizozozozonikoi
+03FA,0x0048,あ、なんかちてる……,"Oh, something's happening..."
+03FA,0x0062,……「力のモト」……                     力がアツプした‼……,"... ""Source of Power"" ... Power has increased!! ..."
+03FA,0x00C0,やったぁ,Yay!
+03FB,0x0000,いぃうぐうっな,Iiiiguuuuuna
+03FB,0x0018,太きなだなぁ,It's quite thick.
+03FB,0x002C,この求どこまでちてくんだろ……,I wonder how far this request will go...
+03FB,0x0052,キレイ……,Beautiful...
+03FB,0x0060,あら、キレイなですわね,"Oh, how beautiful!"
+03FC,0x0082,帰いぃ元元元元元い,I'm back
+03FC,0x00AC,あちゃあ、草らが  しめってるぞぉ……,"Oh no, the grass is all damp..."
+03FC,0x00D8,草らが       求っくてヤだなぁ……,I don't like that grass is looking for it...
+03FC,0x0108,ジメジメしてる……ここ,It's damp here...
+03FC,0x0122,この場所は、の求で しめってますわね……,This place is damp with moisture...
+03FC,0x0150,……ゴゴ……,...Gogo...
+03FC,0x0188,……何,……what
+03FC,0x0194,いやっはぉ     こんにちはぁ‼    あたしは       の女部さまだよ‼,"Yay, hello!! I'm the ladies of [group name]!!"
+03FC,0x01EE,ゴキブリみたいだな……,It looks like a cockroach...
+03FC,0x0208,やん、ちっちゃくて  ゴキブリみたい‼,"Oh my, it's so tiny, it looks like a cockroach!!"
+03FC,0x0232,なんか、ちっちゃいと ンだなぁ……,"It's kind of small, isn't it...?"
+03FC,0x025A,そのまま二チュアに なってるわね……,It's just become a natura...
+03FC,0x0284,ちっちゃくて、    かわいらしいですわね、お入みたい,"It's so small and cute, I'd love to go inside."
+03FC,0x02C2,今回は、       ントをあげるよ‼  求の部のーには、  いい物がちてるよ‼,"This time, I'm giving away prizes!! There are some great items in the prize section!!"
+03FC,0x031C,のいてる所だよ‼ してみてね‼    それじゃ‼,It's the part that's out of the way!! Try it out!! See ya!!
+03FC,0x0356,のいてる所ねぇ……,Where they're moving...
+03FD,0x0000,あいぃぞぞぞぞぞにいぃ,aiiizozozozoniiii
+03FD,0x0048,あ、なんかちてる……,"Oh, something's happening..."
+03FD,0x0062,……「力のモト」……                    力がアツプした‼……,"... ""Source of Power"" ... Power has increased!! ..."
+03FD,0x00C0,やったぁ,Yay!
+03FE,0x0000,あリいぃかる,Ariiikaru
+03FE,0x0022,ええ‼        遠回りじゃんかよぉ‼,What?! That's such a roundabout way!
+03FE,0x0050,ここーンって飛んだら向こうに行けるのに… …あんっ‼ 手すりに トがあるよぉ‼,If I could just jump over here I could get over there... Ah!! There's a T on the railing!!
+03FE,0x00A6,ありゃ、よく見たら  この階って     遠回りだぁ‼,"Oh dear, now that I look closely, this floor is a roundabout route!"
+03FE,0x00E2,い階だな。    つかれちゃったなぁ……,It's the first floor. I'm so tired...
+03FE,0x0112,いやらしい階ですわね……遠回りさせるなんて,What a sneaky floor... making us take such a roundabout route.
+03FF,0x0082,外い,outside
+03FF,0x0098,……の人りがある……,...there are people like that...
+03FF,0x00D6,ここって、やっぱ……　人ってみよっと……,I guess... I'll just have to see what kind of people are here...
+03FF,0x0102,よぉし‼       人ってみるぞぉ‼,Alright!! Let's go see some people!!
+03FF,0x012C,きっと、いいところに つながっているわ‼  行ってみよっと‼,I'm sure it'll lead to something good!! Let's go!!
+03FF,0x016C,また、カ月もロロしたら、たまんないなぁでも……人ってみよう,"Also, if it's Roro for another month, I'll be so excited... but let's try it."
+03FF,0x01B0,さっそく、      人ってみましょ,Let's take a look at the people right away.
+03FF,0x01DA,おっ‼ 宝だ‼,Oh!! It's treasure!!
+03FF,0x01EE,宝めーっけ‼,I found treasure!!
+03FF,0x0200,あっ‼ 宝だ‼,Ah!! It's treasure!!
+03FF,0x0214,宝みつけた‼,I found treasure!!
+03FF,0x0226,やっぱり‼      宝ですわ‼,I knew it!! It's a treasure!!
+03FF,0x024C,……「ン」の宝玉を             手に人れた‼……,"...I have obtained the jewel of ""n""!!..."
+03FF,0x02AA,はぉ、宝玉ねぇ……,"Oh, a jewel, huh..."
+03FF,0x02C0,宝玉　        まぁ、もらえるものは もらっとこーっと‼,"Jewel... Well, I'll take whatever I can get!"
+03FF,0x0302,キレイ……うれしいな,Beautiful... I'm so happy.
+03FF,0x031C,キレイな宝玉ですわね,What a beautiful gem!
+0400,0x0082,倒ぃ,Fall
+0400,0x00A0,はぁい‼ あたしは  フールドの     女部だよぉ,Hi!! I'm from the women's division of Field!
+0400,0x00DC,はいはい、こんにちは,"Yes, hello."
+0400,0x00F4,こんにちは‼,Hello!
+0400,0x0104,にしても、「ナージュ」は、女部さまの    い世界だな……,"Even so, ""Nage"" is a world for the ladies..."
+0400,0x0144,あ、どうも、たびたび……よくいますね,"Oh, hello, you're here often...you're here a lot, aren't you?"
+0400,0x016E,あら、        おしぶりですね,"Oh, it's been a while!"
+0400,0x019A,さぁて、       今回のプレントは… …コレだぁ‼,"Alright, this week's present is... ...this!!"
+0400,0x01D6,……「力のモト」を             もらった‼……,"...I've received the ""source of power""!!..."
+0400,0x0234,……力がアツプしたぞ‼……,...My power has increased!!...
+0400,0x0274,ありがとー‼,Thank you!!
+0400,0x0284,……これで最なの,...This is the best
+0400,0x029C,ナージュのに    行ったら、      もうえないの,"If you go to Naju's, you won't find it anymore."
+0400,0x02DC,もう、これで     えないのですか,Is this the end of it?
+0400,0x0308,どうかな　 ……でも、あたしは……みんなの 心のーにいるよっ‼  ……それじゃあねー‼,I wonder... But I'm... in everyone's hearts!! See you then!!
+0401,0x00A2,……オアシスだ……,...It's an oasis...
+0401,0x00B8,求がわいてる…ちょうどドかわいてたんだ……,I'm craving it... I was really thirsty...
+0401,0x00E8,求だぁ‼ もうっと‼,I want it!! I want more!!
+0401,0x0102,ドがかわいてたんだ‼ちょうどいいや‼,I was thirsty! Perfect timing!
+0401,0x012C,キレイな求…     …んでみようかな……,I'm looking for something beautiful... Maybe I'll give it a try...
+0401,0x015C,ちょうど、      ドかわいていたので、みましょ,"I was really thirsty, so let's take a look."
+0401,0x0198,……ごくごく……,...gulp gulp...
+0401,0x01B2,………………,………………
+0401,0x01C2,……ごくごく……,...gulp gulp...
+0401,0x01DC,………………なんか、 この求、イジーに  おいしいなぁ……………,"………………Somehow, this rice is really easy and delicious………………"
+0401,0x0222,……ガブガブ……,...gulp gulp...
+0401,0x023C,おお‼        すごい元気になったぞ‼,Wow!! I feel so much better now!!
+0401,0x026C,ちょーしがいい‼   元気になったぁ‼,I'm feeling great!! I'm feeling much better!!
+0401,0x0296,元気になった‼    なんか       ふり回しちゃうぞ‼  えいっ‼ ブンブン‼,"I feel so much better!! I feel like swinging it around!! Here goes!! Swing, swing!!"
+0401,0x02F0,元気になった     じがする……,I feel like I'm feeling better...
+0401,0x0318,がすっきりした気分……,I feel refreshed...
+0401,0x0334,……体力が全回した‼……,...My stamina has been fully restored!!...
+0402,0x00B6,さあ。最です。   おごそかなふんいきで まいりきましょう……,"Now, let's begin. Let's proceed in a solemn atmosphere..."
+0402,0x00FA,あ、またいた,"Oh, there he is again."
+0402,0x010C,は「最の女部」です……あなたたちに     最の手助けを    いたしましょう……,"This is the ""Best Women's Division""... We will give you the best help..."
+0402,0x0168,わーい,yay
+0402,0x0174,でも、あなたたちは、 つの宝玉を     全ては        持っていませんね……,"But you don't possess all of the jewels, do you...?"
+0402,0x01CE,今のままでは     最のいには    勝つことは      出来ないかも知れません,"As things stand, we may not be able to beat Sainoi."
+0402,0x022A,でも、がんばれば   何とかなるはずです……がんばってください……,"But if you try your best, I'm sure you'll be able to manage... Please do your best..."
+0402,0x0270,なんだったんだ……,What was that all about...?
+0402,0x0286,なにー‼ フキな事 ばっか言ってぇ‼,What?! You're saying nothing but stupid things!
+0402,0x02B0,なんだったんでしょう……,I wonder what that was all about...
+0403,0x0000,いぃとうとはん,Iitouhan
+0403,0x0018,わーい        方向だー‼    でもまた戻れないー‼,"Yay, that's the right direction!! But I can't go back again!!"
+0403,0x005C,よし‼ 最のだ‼…行くぞぉ‼,Alright!! This is the best!! ...Let's go!!
+0403,0x0082,さあ、        がんばるのよ、美姫‼,"Come on, do your best, Miki!!"
+0403,0x00B0,これをったら、もう、戻れないんですね……,"Once you do this, there's no going back..."
+0404,0x0000,いぃてうてて,Iitutete
+0404,0x0018,わーい        れるれるー‼   でも戻れないー‼,"Yay, I can do it!! But I can't go back!!"
+0404,0x0058,ベルトコンベアーか……あ、戻れない‼,"A conveyor belt... Oh, I can't go back!!"
+0404,0x0080,あら、        この、ベルトコンベアー戻れませんわね……,"Oh dear, it seems I can't go back on this conveyor belt..."
+0405,0x0000,二いぃぉちべをカ,Two iiochibe wo ka
+0405,0x001E,このは、…     …わぁ‼ やわらかい‼,This is... Wow!! It's so soft!!
+0405,0x004E,よくみるとかわい…  …くないよぉやっぱり‼,"Looking closely, it's cute... ...but not really!!"
+0405,0x007E,あまり        さわりたくないわね……,I don't really want to touch it...
+0405,0x00AE,さわりたくない……,I don't want to touch it...
+0405,0x00C4,これは、戦ったより  やわらかい…     …いやですわね,This is softer than what I fought... I don't like it.
+0406,0x0000,ろいぃぉざだざに,Roi ozada ni
+0406,0x001E,うげぇ‼ 目があった‼,Ugh!! We made eye contact!!
+0406,0x0038,こっち見てるぅ‼,It's looking this way!!
+0406,0x004C,動いてる、この目‼,Those eyes are moving!!
+0406,0x0062,こんにちはぁ    …って、あいさつも  したくなくなりますわね,Hello... I don't even feel like saying hello anymore.
+0407,0x0000,いぃぉたびたら,If you have a nice trip
+0407,0x001E,何コレ　       気持ちいなぁ……,What is this? It feels so good...
+0407,0x004A,えーん‼       気持ちいぃ‼,Waaah!! It feels so good!!
+0407,0x0072,なんだか       よよしてるわね……,It seems a bit wobbly...
+0407,0x00A2,これは……かわいく  ありませんわね……,This is... not cute at all...
+0408,0x0000,いぃぉぞプ,Iiyozopu
+0408,0x001E,げぇ…がドロドロに なっちゃうよ……,Ugh...it's going to turn into a gooey mess...
+0408,0x0048,こんな所はよごれるから通りたくないなぁ…  ージのたまるスピードも運いし……,I don't want to go through a place like this because it'll get dirty... and the speed at which the dirt accumulates is also a bit of a pain...
+0408,0x009A,よごれちゃったー‼ えーーーん‼,It got dirty!! Waaaaaah!!
+0408,0x00C0,がよごれてしまいますわ。ージのたまる  スピードも、運くなってしまうようですし……,It will get dirty. And the speed at which the oil accumulates will also seem to decrease...
+0409,0x0000,あげ□ぱカベ,Age□pa Kabe
+0409,0x0030,……目がりかけてきた……,...My eyes are starting to open...
+0409,0x006E,は、ナージュのもう一つの心……この目にみをたくして… …あなたがたにげる……,This is Naj's other heart... I entrust myself to these eyes... ...and escape to you...
+0409,0x00C4,ナージュは……ざされた心を 開いてくれたに…      …のをおいていた……,Naju... opened my closed heart... ...and left it there...
+0409,0x0120,だから……今はそのとともに、現室の世界をも        そうとしている……,"Therefore... now, along with that, I am also trying to transform the world of this room..."
+040A,0x0000,あぎねエ,Agine
+040A,0x0028,……目がりかけてきた……,...My eyes are starting to open...
+040A,0x0066,は、ナージュのもう一つの心……この目にみをたくして…  …あなたがたにげる……,This is Naj's other heart... I entrust myself to these eyes... ...and escape to you...
+040A,0x00BE,ナージュ自、この世界をす事をっている…       …どうか、ナージュを     倒してやってはしい……,"Naju herself has decided to destroy this world... Please, I beg you, defeat Naju..."
+040B,0x0000,マいぃぉたれ,My Otare
+040B,0x001E,いったーい‼ トが ささっちゃったよ‼,Ouch!! I got pricked!!
+040B,0x004A,トがおっかないよぉ‼,To is so scary!!
+040B,0x0064,うう……トが    ささらないように   気をつけなければ……,Ugh... I have to be careful not to get pricked...
+040B,0x00A8,トがささった…   …いたい……,It got stuck in me... It hurts...
+040B,0x00CE,みなさん‼      気をつけないと、   トが        ささっちゃいますよぉ‼,"Everyone!! Be careful, or you might get stabbed!!"
+040C,0x0000,あいぃえええええ,Aiiiiiiiii
+040C,0x001C,このベルトコンベアーをけたら…      …最のなのね……,If you kick this conveyor belt... ...it's the best...
+040D,0x0000,いぃがのキ,Ii ga no Ki
+040D,0x0024,開かない‼      …このままじゃ、   追いつかれちゃうぞ‼,"It won't open!! ...At this rate, they'll catch up to us!!"
+040D,0x0068,えーん 開かないよぉ……,"Waaah, it won't open..."
+040D,0x0086,開かない‼      ナージュの所に    行けないじゃない‼,It won't open!! I can't get to Naju's place!!
+040D,0x00C8,あーん       トビラが開かないと追いつかれちゃうわ……,"Oh no, if the door doesn't open, they'll catch up to me..."
+040D,0x010A,開かない‼      これじゃ、      フクロのネですわ‼,It won't open!! It's like a sack!!
+040E,0x0000,あいぃななななよいぃネデデデデフく,ainananayoinedededefuku
+040E,0x0060,あっ‼ 宝だ‼,Ah!! It's treasure!!
+040E,0x0074,よっしゃあ‼     宝みーっけた‼,Yes!! I found the treasure!!
+040E,0x009E,……宝のーには         「HPまんたん」が          人っていた‼……,"...The treasure contained ""Full HP""!!..."
+040E,0x00FC,わぁい‼,Yay!!
+040E,0x0108,オツケイ‼,Otsukei!!
+040E,0x0118,……体力が全回した‼……,...My stamina has been fully restored!!...
+040F,0x0034,……ロツカーはカが            かかっている……,...The locker has a power...
+040F,0x0092,こわれてるんじゃ   ないのかぁ,Isn't it broken?
+040F,0x00B8,こわれてるー‼,It's broken!!
+040F,0x00CA,こわれてるみたいね,It looks broken.
+040F,0x00E0,ベにロツカーには  なものは     何も人ってないでしょ,"There's nothing like that in the locker room, right?"
+040F,0x0124,こわれてるみたい   ですわね。      …入のを見たって  がありませんし,It looks broken. ...I can't see anything inside.
+0410,0x0000,ていぃゃゃゃゃゃいぃオオオオオクいぃネネネネネ,Teiyayaaaayii oooooookuii nenenenene
+0410,0x0058,…本だなには          たくさんの本がならんでいる…,...There are many books lined up on the bookshelf...
+0410,0x0098,「世界かいぶつずかん」……どれどれ……,"""World Monster Encyclopedia""... Let's see..."
+0410,0x00C2,……‼,...!!
+0410,0x00CC,……無言で本を戻した……,...I put the book back without a word...
+0410,0x0108,読んじゃなかった……,I didn't read it...
+0411,0x0000,かいぃににににに,Kaiininininini
+0411,0x0022,…本だなには          たくさんの本がならんでいる…,...There are many books lined up on the bookshelf...
+0411,0x0062,でも、読みたい本は  ないなぁ…,But there aren't any books I want to read...
+0412,0x0000,かいぃふわ,Kaii Fuwa
+0412,0x0022,……「世界ビツクリ太」……,"... ""World Surprise Tai"" ..."
+0412,0x0064,ふふ……。,n/a…….
+0412,0x0076,ふーん……,Hmm...
+0412,0x0084,あんま、ルそうな  本じゃないなぁ,It doesn't seem like a very interesting book.
+0412,0x00AC,ンな本……,Such a book...
+0412,0x00BC,世界いちの太きい入…世界いち暦きした入…に立たないが  まんさいですわね……,It's not the world's biggest...the world's longest-lasting...but it's full of them...
+0413,0x0000,あいぃどどどどどりフいぃシシシシシいぃベ,aiidodododorifuishishishishiibe
+0413,0x005E,のっ子には、   何かあるかな　    はりかえしてみよっと‼,I wonder if there's anything special about Nokko... I'll try sticking it back on!!
+0413,0x00A4,……ぐちゃ……,...splat...
+0413,0x00DC,えっ,Huh?
+0413,0x00E8,今の手ごたえは…      …カエルでは…,My current feeling is... ...it's a frog...
+0414,0x0000,あいぃけっスュ,Aikesshu
+0414,0x002E,ねえ、ドアを開ける方知ってる,"Hey, do you know how to open the door?"
+0414,0x0052,ねえねえ‼      ドア開けてよ‼,"Hey, hey!! Open the door!!"
+0414,0x007A,あなた、       ドア開ける方    知らない,You don't know who opens the door.
+0414,0x00B4,あのドアどうやったら 開くんでしょうか,How do I open that door?
+0414,0x00E0,すいません、     学に人りたいので  ドアを 開けて    いただけませんか,"Excuse me, I'd like to enter the school, could you please open the door?"
+0414,0x0138,わかんなーい‼,I don't know!!
+0415,0x0000,あいぃけっス場場ュ,Aikessbabayu
+0415,0x002E,ねえ、ドアを開ける方知ってる,"Hey, do you know how to open the door?"
+0415,0x0052,ねえねえ‼      ドア開けてよ‼,"Hey, hey!! Open the door!!"
+0415,0x007A,あなた、       ドア開ける方    知らない,You don't know who opens the door.
+0415,0x00B4,あのドアどうやったら 開くんでしょうか,How do I open that door?
+0415,0x00E0,すいません、     学に人りたいので  ドアを 開けて    いただけませんか,"Excuse me, I'd like to enter the school, could you please open the door?"
+0415,0x0138,知らないよーん‼,I don't know!!
+0416,0x0000,あいぃけっスュ,Aikesshu
+0416,0x002E,ねえ、ドアを開ける方知ってる,"Hey, do you know how to open the door?"
+0416,0x0052,ねえねえ‼      ドア開けてよ‼,"Hey, hey!! Open the door!!"
+0416,0x007A,あなた、       ドア開ける方    知らない,You don't know who opens the door.
+0416,0x00B4,あのドアどうやったら 開くんでしょうか,How do I open that door?
+0416,0x00E0,すいません、     学に人りたいので  ドアを 開けて    いただけませんか,"Excuse me, I'd like to enter the school, could you please open the door?"
+0416,0x0138,え　 ドア　 何それ　それより勝よ‼,Huh? A door? What's that? I'd rather win!!
+0417,0x0000,あいぃけっスュ,Aikesshu
+0417,0x002E,ねえ、ドアを開ける方知ってる,"Hey, do you know how to open the door?"
+0417,0x0052,ねえねえ‼      ドア開けてよ‼,"Hey, hey!! Open the door!!"
+0417,0x007A,あなた、       ドア開ける方    知らない,You don't know who opens the door.
+0417,0x00B4,あのドアどうやったら 開くんでしょうか,How do I open that door?
+0417,0x00E0,すいません、     学に人りたいので  ドアを 開けて    いただけませんか,"Excuse me, I'd like to enter the school, could you please open the door?"
+0417,0x0138,も人れなくって   ってんのよっ‼,There's absolutely no one there!!
+0418,0x0000,いぃくちふんシ,Iikuchifunshi
+0418,0x002A,ねえ、ドアを開ける方知ってる,"Hey, do you know how to open the door?"
+0418,0x004E,ねえねえ‼      ドア開けてよ‼,"Hey, hey!! Open the door!!"
+0418,0x0076,あなた、       ドア開ける方    知らない,You don't know who opens the door.
+0418,0x00B0,あのドアどうやったら 開くんでしょうか,How do I open that door?
+0418,0x00DC,すいません、     学に人りたいので  ドアを 開けて    いただけませんか,"Excuse me, I'd like to enter the school, could you please open the door?"
+0418,0x0134,ドアのスイツチは   知らないわ。…でも  よくここまで来てくれたわね ……ありがと‼,I don't know how to turn the door on. ...But thank you for coming all the way here!
+0419,0x0000,すぁいぃビダビ,Suai Bidabi
+0419,0x003E,えーん、       けちゃったぁ   では、コレあげるよ‼ じゃあねぇ‼,"Waaah, I gave up. Well, I'll give you this!! Bye!!"
+0419,0x0090,……「回」をもらった‼……                    体力が全回したぞ‼,"...I got a ""turn""!! ...My stamina is fully restored!!"
+0419,0x00EE,わぁい‼ やったね ありがとー‼,Yay!! We did it! Thank you!!
+0419,0x0114,力がみなぎってくる‼ ……ありがと‼,I feel a surge of energy!! ...Thank you!!
+0419,0x013C,あ……気持ちいい…… どうも        ありがとうございます,Ah... that feels good... Thank you very much.
+0419,0x0182,元気になりましたわ,I'm feeling better now.
+041A,0x0000,あのいぃイオろろろ体い体ぃレナレコ物,"That good body, that body, Renarec thing"
+041A,0x0068,……ゴゴゴゴゴゴゴゴゴゴ……,...Gogogogogogogogogo...
+041A,0x00AA,きゃあ‼,Ahh!!
+041A,0x00B6,うわぁ‼,Wow!!
+041A,0x00C2,きゃーん‼,Kyaaaah!!
+041A,0x00D4,目が回る……でも、  道になりましたわ‼,I'm feeling dizzy...but I've made it onto a road!!
+041A,0x0102,ルルしたー‼   でも……       ちかみちになったぁ‼,I did it!! But... it turned out to be a shortcut!!
+041A,0x0146,あ‼ 道になった‼ ラツキー‼,Ah!! It's become a road!! Lucky!!
+041A,0x016A,きゅう……      …何が起こったの　  あ、道になってる‼,"Kyuu... What happened? Oh, it's become a road!!"
+041B,0x0000,あこいぃへへへへへ□いぃわシわわいぃ,Akoiihehehehehe□iiwashiwawaii
+041B,0x007C,ここって…ジンプ  出来るんじゃないかな,I think we could do some jimping here.
+041B,0x00AC,ふうう…うまく行ったわね……あれ、何かある‼,"Phew... that went well... wait, there's something there!!"
+041B,0x00DC,だいせーこー‼ しかもここには何かあるぞぉ‼,Great success!! And there's something else here!!
+041B,0x010C,うまく行きましたわねではでは、ここにある 宝を……,"It went well, didn't it? Now then, here is the treasure..."
+041B,0x0148,宝を開ける,Open the treasure
+041B,0x015E,……宝には            「力のモト」が          人っていた‼ ……,"...The treasure contained the ""source of power""!!..."
+041B,0x01BC,力がアツプした‼,My power has increased!!
+041B,0x01FA,あ、力が       みなぎってきたような 気分がする……,"Ah, I feel like I'm filled with energy..."
+041C,0x0000,あいぃてろゴさいぃ暦,Aitero Gosai Calendar
+041C,0x0058,……ああ、じゃあ、  とっかえてよ。,"...Okay then, let's switch."
+041C,0x0080,いいよぉ、      とっかえましょ,"Okay, let's switch."
+041C,0x00AA,はーい、       じゃ、これあげる,"Okay, here you go."
+041C,0x00D6,これと、       こうかんするんですね、いいですよ,So you're going to trade this for it? That's fine.
+041C,0x0112,まいどありぃ,Thank you for your business.
+041C,0x0124,……ストツクカードが全て    カードになった‼……,...All the stock cards have become cards!!...
+041C,0x0182,よぉし‼       これはついてるぜ‼,Yes!! This is lucky!!
+041C,0x01AE,わぁい‼ が   うりになったぁ‼,Yay!! That's our selling point!!
+041C,0x01DA,ラツキー‼      これはいいわね,Lucky!! This is great.
+041C,0x0204,トクしましたわ,I got a good deal.
+041D,0x0000,あエいぃぱごごごぜも,"Ah, Iiipagogozemo"
+041D,0x0034,いらなーい‼,I don't need it!!
+041D,0x0044,今回は、       えんりょしますわ,I'll pass this time.
+041D,0x006E,なんか、あやしいから 今回はいいや,"It seems a bit suspicious, so I'll pass this time."
+041D,0x0094,……そう。      それじゃまたね‼,...Okay. See you later!!
+041D,0x00BE,ぉぉ,Oh
+041E,0x002E,カモンレツダンス‼ さぁ二ー‼     ここはお立ちよ‼  ここでいましょ,"Come on, let's dance!! Now, stand up!! Let's stay here"
+041E,0x0086,全くが      っていない入がいる…,There are some who don't understand at all...
+041F,0x0014,よく、来てくれたわね…ありがと‼     を倒したら     いいものあげるよ‼,"I'm so glad you came... Thanks!! If you defeat [the enemy], I'll give you something nice!!"
+0420,0x0120,らーらららら    ラララララララー  ……さぁ‼ あなたも ちゃんと声を出して‼,"La-la-la-la-la-la-la-la-la-la...Come on!! You too, sing out loud!!"
+0420,0x017A,今までになく     ンな入ね……,This is the first time I've seen this kind of thing...
+0420,0x01A2,えーん‼ ンな入ぉ‼,Waaah!! It's not coming in!!
+0420,0x01BC,いときには     声を出すのが一‼  しかもュージカル‼,"When you're feeling down, the best thing to do is to speak up!! And it's musical!!"
+0420,0x0200,一におどりましょう‼                            ……はら‼,Let's dance to the first song!! ...Hara!!
+0420,0x025C,こ……こお,C-C-C
+0420,0x026C,できなぁい‼     舞ちゃん       いと動きが     二ブくなるのにぃぃ‼,I can't do it!! Mai-chan's movements become so sluggish!!
+0420,0x02C6,……NO‼      ジアリマセーン‼,...NO!! There isn't any!!
+0420,0x02F6,……アンタは外入か……,...So you're an outsider...
+0420,0x0310,これをあげましょう‼ これで、声が     出るようになりますよ‼,"Here, I'll give you this! This will help you regain your voice!"
+0420,0x0356,……「思のシンル」を          もらった‼……のルから、思が        選できるようになるぞ‼,"...I received the ""Thought Sinuru""!! ...Now I can choose thoughts from the Sinuru!!"
+0420,0x03D2,わ ありがとう‼,"Wow, thank you!!"
+0420,0x03E8,これで太声が出るようになりましたよ‼,Now I can sing in a deep voice!!
+0420,0x0410,ントだ‼      ……では、イーイ…,"It's a typ!! ...Well then, ee..."
+0420,0x0440,ではでは、体も    あったまったところで 勝‼,"Alright, now that we're all warmed up, let's win!!"
+0420,0x0476,やっぱり……,on second thoughts……
+0420,0x0486,やっぱりぃぃぃぃ‼,I knew it!!
+0420,0x04E4,ここ,here
+0421,0x0000,あぱいぃろろろろろイいぃステ思学,Apaiiirorororoiiste thinking
+0421,0x006E,あなた……こんな所まで回り道して…     …もしや……,You... you've gone all the way out here... ...could it be...
+0421,0x00AA,もしや,Could it be
+0421,0x00B6,……の体が     目当てなのねっ‼,"...So you're after my body, huh?!"
+0421,0x00E0,そんなケないだろっ‼,That can't be true!!
+0421,0x00FA,ちがいまーすぅ   いつにもまして    ンな入だぁ……   …やーん‼,That's not it... It's even more so than usual... Oh no!!
+0421,0x014A,……ちっがーう‼,...That's wrong!!
+0421,0x015E,あの、そうじゃなくって……こっちには    何かあるかなと……,"Um, no, that's not it... I was wondering if there might be something over here..."
+0421,0x01A0,それもいいのですが… …って達いますよぉ‼,"That's fine too, but... ...it's coming!!"
+0421,0x01D0,いーや、       そうにまった‼   勝よっ‼,"No, that's right!! We'll win!!"
+0422,0x0000,あべい西ぃオゴテ□一最いぃ,Abe Nishi Ogote □ Ichi Sai
+0422,0x007E,うう、しくしく…   …やっぱりの体が  目当てだったんだ……,"Ugh, sob, sob... I knew it, he was after my body all along..."
+0422,0x00C2,達うっちゅーの‼,Tachi Ucchuu no!!
+0422,0x00D6,もー……ちがうってば‼うえーん‼,No... that's not it!! Waaah!!
+0422,0x00FA,聞きなさい‼     って言っても     聞くタイプじゃ    なさそうだしねぇ……,"Even if I tell him to listen, he doesn't seem like the type to listen..."
+0422,0x0154,達いますってば…   ントにもう……,They're here... and already...
+0422,0x017E,達わないよ‼     がいつも      体にけてるコレが  目当てなんでしょ,"You can't reach it!! But this thing that's always sticking out of your body is what you're after, right?"
+0422,0x01D6,……「手思のシンル」を          もらった‼……これで、のルからは         手思を選できるぞ‼,"...I received the ""Thoughtful Shinru""!! ...Now I can choose Thoughtful from the Noru!!"
+0422,0x0252,ああん……      とられちゃったぁぁ‼,Oh no... it's been taken away!!
+0422,0x0280,わぁい                  ……でも、ちょっと     暦あたたかい……,Yay... but the calendar is a little warm...
+0423,0x00D0,あー‼ あっちの方に ララしてる    入がいるぅ‼     行こーっと‼,Ah!! There's someone doing Lala over there!! Let's go!!
+0423,0x0122,あ‼ 誰　      見に行ってみよっと‼,Oh!! Who is it? I'll go and see!!
+0423,0x0150,誰かいますわ。    見に行ってみましょ,Someone's there. Let's go take a look.
+0423,0x017E,わーい‼ ここだけ  求がふかくなーい‼,Yay!! The requirements aren't too high here!!
+0423,0x01AA,いて通れるくらい  求が、あさいのかぁ……,Is the amount of demand shallow enough to pass through...?
+0423,0x01DA,あら、求があさいので、いて通れますね……,"Oh, the request is shallow, so I can pass through..."
+0423,0x0208,めましてぇ‼    あたしは       求の女部だよ‼,Nice to meet you!! I'm the girl from Motomu's group!!
+0423,0x0246,こんにちは‼,Hello!
+0423,0x0256,あたしに       いに来てくれて   ありがと‼      今日はコレあげる‼,Thanks for coming to see me!! Here's a gift for you today!!
+0423,0x02AE,……「オカルトのシンル」を        もらった‼……これで、のルから      オカルトを選できるぞ‼,"...I got the ""Occult Synchro""!! ...Now I can choose Occult from the Synchro!!"
+0423,0x0326,ありがとう‼,thank you!
+0423,0x0336,どういたしましてぇ それじゃ、まったねー,You're welcome. See you later!
+0424,0x00D0,あー‼ あっちの方に ララしてる    入がいるぅ‼     行こーっと‼,Ah!! There's someone doing Lala over there!! Let's go!!
+0424,0x0122,あ‼ 誰　      見に行ってみよっと‼,Oh!! Who is it? I'll go and see!!
+0424,0x0150,あら、誰かいますわ。 見に行ってみましょ,"Oh, someone's there. Let's go take a look."
+0424,0x017E,わーい‼ ここだけ  求がふかくなーい‼,Yay!! The requirements aren't too high here!!
+0424,0x01AA,いて通れるくらい  求が、あさいのかぁ……,Is the amount of demand shallow enough to pass through...?
+0424,0x01DA,求があさいので、   いて通れるんですね…,"The entrance is shallow, so you can get through..."
+0424,0x020A,めましてぇ‼    あたしは       求の女部だよ‼,Nice to meet you!! I'm the girl from Motomu's group!!
+0424,0x0248,こんにちは‼,Hello!
+0424,0x0258,あたしに       いに来てくれて   ありがと‼      今日はコレあげる‼,Thanks for coming to see me!! Here's a gift for you today!!
+0424,0x02B0,……「オカルトのシンル」を        もらった‼……これで、のルから      オカルトを選できるぞ‼,"...I got the ""Occult Synchro""!! ...Now I can choose Occult from the Synchro!!"
+0424,0x0328,ありがとう‼,thank you!
+0424,0x0338,どういたしましてぇ それじゃ、まったねー,You're welcome. See you later!
+0425,0x00D0,あー‼ あっちの方に ララしてる    入がいるぅ‼     行こーっと‼,Ah!! There's someone doing Lala over there!! Let's go!!
+0425,0x0122,あ‼ 誰　      見に行ってみよっと‼,Oh!! Who is it? I'll go and see!!
+0425,0x0150,あら、誰かいますわ。 見に行ってみましょ,"Oh, someone's there. Let's go take a look."
+0425,0x017E,わーい‼ ここだけ  求がふかくなーい‼,Yay!! The requirements aren't too high here!!
+0425,0x01AA,いて通れるくらい  求が、あさいのかぁ……,Is the amount of demand shallow enough to pass through...?
+0425,0x01DA,求があさいので、   いて通れるんですね…,"The entrance is shallow, so you can get through..."
+0425,0x020A,めましてぇ‼    あたしは       求の女部だよ‼,Nice to meet you!! I'm the girl from Motomu's group!!
+0425,0x0248,こんにちは‼,Hello!
+0425,0x0258,あたしに       いに来てくれて   ありがと‼      今日はコレあげる‼,Thanks for coming to see me!! Here's a gift for you today!!
+0425,0x02B0,……「オカルトのシンル」を        もらった‼……これで、のルから      オカルトを選できるぞ‼,"...I got the ""Occult Synchro""!! ...Now I can choose Occult from the Synchro!!"
+0425,0x0328,ありがとう‼,thank you!
+0425,0x0338,どういたしましてぇ それじゃ、まったねー,You're welcome. See you later!
+0426,0x0000,うはきぃ,Uhaki
+0426,0x0026,おいおいー      にいたいんなら  そっちじゃないよぉ はんたいがわだよぉ,"Hey, hey, if you want to stay there, it's not that way, it's the other way around."
+0427,0x0000,あおぶ,Aobu
+0427,0x0020,こんなトコくんだりまで来なくても      スは向こうに    ちゃんといるのに‼,"You don't have to come all the way to a place like this, S is right there over there!!"
+0427,0x0078,あなたたち……    あからさまに、この宝をってきたわね‼   勝よっ‼,You guys... you've clearly taken this treasure!! We win!!
+0428,0x0000,あいぃるるるるるたいぃス,Airururururutaisu
+0428,0x004A,……宝のーには        「ラ」の宝玉が人っていた‼,"...In the treasure, there was a jewel with the letter ""Ra"" inside!!"
+0428,0x00A6,何かな,What is it?
+0428,0x00B4,お‼ 何か知らんが  すごいものだぞ‼,"Wow!! I don't know what it is, but it's amazing!!"
+0428,0x00E0,わーい       キレイな宝玉ぅ‼   お姫さまみたい,Yay! What a beautiful jewel!! It's like something a princess would wear.
+0428,0x0122,よくらないけど   いいものっいぞ‼  イヤツー‼,"I don't know much about it, but it's a good thing!! Yay!!"
+0428,0x0160,よかった…      …キレイな宝玉で  空な物だったら    おこられちゃうもんね,"That's good... If it was a beautiful jewel but empty, I'd get in trouble."
+0428,0x01BC,なかなか       いいものですわ   美しい宝玉ですね,That's quite nice. What a beautiful gem.
+0429,0x0000,のい力ぃカカカカカコドいぃ□□□□□,Noi power kakakakakodoi □□□□□
+0429,0x0068,くぅ‼ このスケ思 思、キプテンの  このを倒すとは‼  こうなったら‼  ……,Argh!! To think that this guy could defeat Kipten!! If that's how it is!!...
+0429,0x00C4,ごく……何,Very... what
+0429,0x00D4,けいいをして‼   これをさずけよう‼,Make a vow! I shall bestow this upon you!
+0429,0x0100,……「力のモト」を            もらった‼……               力がアツプしたぞ‼,"...I received the ""source of power""!! ...My power has increased!!"
+0429,0x0176,あなた、いい入‼,You're a great choice!!
+042A,0x0000,あけいぃけはカけツ,Akeikeha Kaketsu
+042A,0x002E,へへーん‼ スは  となりのビルだよーん‼気づかないで     タライ回しぃ‼,Hehehe!! It's the building next door!! They didn't notice and just passed me around!!
+042A,0x0082,ちがうもーん‼    通りかかったから   倒すだけだもーん‼,That's not true!! I was just passing by so I'm only going to take them down!!
+042A,0x00C4,う……ントだ。   あっちに逃げてやんの,Ugh... It's a troll. It's running away that way.
+042A,0x00F4,あらあら……。    でもそれはそれ……  いますわよ‼,Oh dear... But that's that... They're here!!
+042C,0x0000,あたょデ,Atayode
+042C,0x004A,ありがとう‼ もう  間達った事はしないわ‼に帰ったら、しばらくっくりんで、,"Thank you!! I won't do that again!! When I get back, I'll be relaxing for a while."
+042C,0x00A0,そしたら       すてきな入をすんだ‼…太きなおをてて、入でせにくらすの,Then I had a wonderful time!! ...I took a big bite and went in and lived with it
+042C,0x00FC,きっとせになるから‼それじゃあね‼,I'm sure you'll love it!! See you then!!
+042C,0x0124,でも、このの体、  いつになったら    元に戻るんだろ……,But I wonder when this body will go back to normal...
+042D,0x0150,さあ。最です。   おごそかなふんいきで まいりきましょう……,"Now, let's begin. Let's proceed in a solemn atmosphere..."
+042D,0x0194,あ、またいた,"Oh, there he is again."
+042D,0x01A6,は「最の女部」です……あなたたちに     最の手助けを    いたしましょう……,"This is the ""Best Women's Division""... We will give you the best help..."
+042D,0x0202,わーい,yay
+042D,0x020E,そう、あなたたちの、 持っているつの宝玉……それがあれば……,"Yes, the jewels you possess... if you have those..."
+042D,0x0250,ナージュを倒す事も  出来るでしょう……,We may be able to defeat Naj...
+042D,0x027C,あなたに……     ……をつ力を‼,I want to give you... ...the power!!
+042D,0x02A8,……全ての宝玉がり、      あたたかいが          をちはらった‼……,"...All the jewels were gone, and the warmth was gone!!..."
+042D,0x0306,……力力           さ部力…… つのステータスが…        …おおはばにアツプした‼,"...Strength, strength, and departmental strength... One of the stats... ...has been greatly increased!!"
+042D,0x0382,おおスゴイ‼     ありがとう女部さん‼,"Wow, that's amazing!! Thank you, Onnabu-san!!"
+042D,0x03B0,すっごーい‼     ありがとう女部さん‼,"Wow!! Thank you, Onnabu-san!!"
+042D,0x03DE,すばらしいです‼   ありがとうございます‼,That's wonderful!! Thank you!!
+042D,0x040E,それでは…      …あなたたちの       勝をって……,So then... ...I wish you victory...
+042D,0x0454,……行っちゃった…  …もう、うことも  ないのかな……,...He's gone... ...I guess we'll never see him again...
+042D,0x0492,…行ってしまいましたね……これで本当に   最なんでしょう……,...They're gone...I guess this is really the end...
+042D,0x04D6,あ、言いわすれてたわ‼に、最っから   ームする時にね……,"Oh, I forgot to mention!! When you start doing it from the very beginning..."
+042D,0x051A,まず、        ちゃんの西暦日を 月日にしてね……,"First, please convert Chan's date to month and day..."
+042D,0x0560,舞ちゃんは、月日 ちゃんは、月日 美姫ちゃんは月日,Mai-chan is Tsukihi-chan is Tsukihi-chan is Tsukihi-chan is Tsukihi
+042D,0x05A4,それで、子ちゃんの 西暦日を月日にするとね……     いい事が起こるよ‼,"So, if you change your child's name from the Western calendar to the month and day... something good will happen!!"
+042D,0x05FC,「からまでに人力する‼」って   えておいてね‼,"""Make sure you remember to do it manually from [time] to [time]!!"""
+042D,0x063C,それじゃ、今こそ  ントに…      …イーイ‼,"Alright then, now's the time to... Yes!!"
+042E,0x0104,□石敵界か,□ Stone enemy world?
+042E,0x015E,……トビラがえていった‼……,...The door opened!!...
+042E,0x01A0,よし、行くぞ‼,"Alright, let's go!!"
+042E,0x01B2,よーし‼ いくぞぉ‼,Alright!! Let's go!!
+042E,0x01CA,行きましょう‼,Let's go!!
+042E,0x01DE,力がまってきました……でも…最の力を… ふりしって‼…   …いでよの分たち‼,"My strength is building... but... I need to unleash my greatest power!! ... Come forth, my lords!!"
+042E,0x023C,あ……また‼,Ah... again!!
+042E,0x024E,……もうヤダ‼,...I can't take it anymore!!
+042E,0x0262,なりきで間になって来たけど、もうこんな所ヤダよぉ‼      、もうに帰りたい‼,"I've been pretending to be someone else, but I hate this place!! I want to go home!!"
+042E,0x02BE,ガママな事     言ってやがんな……,He's being so selfish...
+042E,0x02EA,でも、はんせいしてる ようですよ……,But it seems he's remorseful...
+042E,0x0312,ったな…      …どうしよっか,Oh no... What should we do?
+042E,0x033C,倒しちゃいますか,Shall we defeat it?
+0430,0x0000,持持がねら,Mochimochi Gane
+0430,0x0024,方がないわ…    …宝を開けてもいいよ  ……でもね……,There's no other way... You can open the treasure... But...
+0430,0x0066,あなたたちが     手に人れられるのは  つだけよ‼,You can only get your hands on one!!
+0430,0x00A2,よく考えて      つだけ選んでね‼,Think carefully and choose only one!
+0431,0x0000,ああいぃばゅごい□ぃ勝誰侍,"Ah, it's amazing, who will win, Samurai?"
+0431,0x006C,よぉし‼ ここだぁ‼,Alright!! This is it!!
+0431,0x0084,ここにしーよおっと‼,I'll choose this one!!
+0431,0x009C,ここだわ‼      きっとそうよ‼    そうにまってる‼  はら‼ 開けちゃうぞ‼,This is it!! I'm sure it is!! It's waiting for this!! Hara!! I'm going to open it!!
+0431,0x00F8,ここがいいなぁ……,This place is nice...
+0431,0x010E,きっと、ここが一いい所に達いありません‼,I'm sure this is the first step we've reached!
+0431,0x013C,……宝のーには……     「体力アツプのモト」     「さのモト」       「部力のモト」が人っていた‼,"...In the treasure... ""Source of increased physical strength,"" ""Source of energy,"" and ""Source of club strength"" were found!!"
+0431,0x01B8,……体力が上がった‼     さが上がった‼     部力が上がった‼,...My physical strength has increased!! My physical strength has increased!! My club strength has increased!!
+0431,0x0214,お‼ メキメキ    力が人ってくる‼,Wow!! I'm getting stronger and stronger!!
+0431,0x023E,わーい       強くなったぁ‼,"Yay, I've gotten stronger!!"
+0431,0x0266,強くなったわ‼    イヤツー‼,I've gotten stronger!! Yay!!
+0431,0x028C,よかった…      …強くなって…    これで、みんなとも  一にえるわね,That's great... I've become stronger... Now I can be one with everyone.
+0431,0x02E4,うれしい      強くなりました   うふふふふ,"I'm so happy, I've become stronger, hehehehe"
+0431,0x031E,……そして、のこりの宝も      全て開き、         ーはえてしまった……,"...And then, all the remaining treasures were opened, and..."
+0432,0x0000,あああいぃづぱい見ぃ手□,"Ah, I see it."
+0432,0x0056,よぉし‼ ここだぁ‼,Alright!! This is it!!
+0432,0x006E,ここにしーよおっと‼,I'll choose this one!!
+0432,0x0086,ここだわ‼      きっとそうよ‼    そうにまってる‼  はら‼ 開けちゃうぞ‼,This is it!! I'm sure it is!! It's waiting for this!! Hara!! I'm going to open it!!
+0432,0x00E2,ここがいいなぁ……,This place is nice...
+0432,0x00F8,きっと、ここが一いい所に達いありません‼,I'm sure this is the first step we've reached!
+0432,0x0126,……宝のーには        「オ」の宝玉が人っていた‼,"...In the treasure, there was a jewel that read ""O""!!"
+0432,0x0182,お‼ 何か知らんが  すごいものだぞ‼,"Wow!! I don't know what it is, but it's amazing!!"
+0432,0x01AC,わーい       キレイな宝玉ぅ‼   お姫さまみたい,Yay! What a beautiful jewel!! It's like something a princess would wear.
+0432,0x01EC,らないけど     いいものっいや‼  イヤツー‼,"I don't know, but it's good!! No!!"
+0432,0x0228,よかった…      …キレイな宝玉で  空な物だったら    おこられちゃうもんね,"That's good... If it was a beautiful jewel but empty, I'd get in trouble."
+0432,0x0282,なかなか       いいものですわ   美しい宝玉ですね,That's quite nice. What a beautiful gem.
+0432,0x02C4,……そして、のこりの宝も      全て開き、         ーはえてしまった……,"...And then, all the remaining treasures were opened, and..."
+0433,0x0056,よぉし‼ ここだぁ‼,Alright!! This is it!!
+0433,0x006E,ここにしーよおっと‼,I'll choose this one!!
+0433,0x0086,ここだわ‼      きっとそうよ‼    そうにまってる‼  はら‼ 開けちゃうぞ‼,This is it!! I'm sure it is!! It's waiting for this!! Hara!! I'm going to open it!!
+0433,0x00E2,ここがいいなぁ……,This place is nice...
+0433,0x00F8,きっと、ここが一いい所に達いありません‼,I'm sure this is the first step we've reached!
+0433,0x0126,……宝のーには        ゴールド人っていた‼,...There was a gold person in the treasure chest!!
+0433,0x0184,お‼ すごいお…だ‼,Oh!! That's amazing...!!
+0433,0x019C,わーい お…持ちぃ‼,"Yay, I'll take it!!"
+0433,0x01B6,お…持ちだぁ‼    イヤツー‼,Oh... I have it!! Yay!!
+0433,0x01DC,よかった…      …いいもので,That's good... ...it's a good thing
+0433,0x0204,なかなか       いいものですわ,It's quite nice.
+0433,0x022E,……そして、のこりの宝も      全て開き、         ーはえてしまった……,"...And then, all the remaining treasures were opened, and..."
+0434,0x0000,いぃぁぁかぁだぁ,Iiiiiiikaaaaaa
+0434,0x0022,きゃ‼        にトがある‼,"Ah!! There's a ""t"" in it!!"
+0434,0x004C,きゃん‼ い‼   ……に       トがありますわ……,"Kyaa!! I!! ...There's a ""T"" in there..."
+0434,0x0090,……のトのため         体力が             へってしまった‼‼……,"...because of that, my stamina has decreased!!..."
+0435,0x0000,いぃかぐ二,Iikagu 2
+0435,0x0022,っ‼,!!
+0435,0x002C,きゃーん‼      トトに      気づかなかったよぉ‼,Aaah!! I didn't notice Toto!!
+0435,0x0070,きゃ‼        にトがある‼,"Ah!! There's a ""t"" in it!!"
+0435,0x009A,あ、い……トが……えーん……,"Ah, my...to...waaaah..."
+0435,0x00C0,あん‼ い‼    ……に       トがありますわ……,"Ah!! Yes!! ...There's a ""T"" in there..."
+0435,0x0104,……ダメージのため        体力が             へってしまった‼‼……,...My stamina has decreased due to the damage!!...
+0436,0x0000,いぃかちよビ,Iikachiyobi
+0436,0x0022,あちちっ‼ この、 ちょっとあついよ‼,Ouch!! It's a little too hot!!
+0436,0x004E,ふにぃぃぃぃぃ‼   にさわったら    ヤケドしそうになったぁぁぁぁぁ‼,It was so soft and squishy!! I almost got burned when I touched it!!
+0436,0x009E,あちゃちゃちゃちゃ‼ 何なの、ここあついよ‼,"Ouch, ouch, ouch!! What's going on? It's so hot here!!"
+0436,0x00CE,うきゃぁ‼ あついっ‼……あ、わたしったら ンな声出しちゃった…,"Ahhh!! It's hot!! ...Oh, I made such a noise..."
+0436,0x0114,ふううう…あついですぅ……言づかいまで  つかれてしまいましたぁ……,Phew...it's so hot...even my speech is tired...
+0436,0x015E,……あつさのため          体力が             へってしまった‼‼……,...My energy has been depleted because of the heat!!...
+0437,0x0000,いぃかぐびる,Iikagubiru
+0437,0x0022,い‼,stomach!
+0437,0x002C,ち‼        ……あーん、     ふんずけちゃったよぉ‼,"Damn it! ...Oh no, I stepped on it!"
+0437,0x0072,なななに　      とがってるっ‼,"Wow, it's so sharp!!"
+0437,0x009A,きゃん‼,Kyan!
+0437,0x00A6,……ダメージのため        体力が             へってしまった‼‼……,...My stamina has decreased due to the damage!!...
+0438,0x0000,いぃかぐびる,Iikagubiru
+0438,0x0022,い‼,stomach!
+0438,0x002C,ち‼        ……あーん、     ふんずけちゃったよぉ‼,"Damn it! ...Oh no, I stepped on it!"
+0438,0x0072,なななに　      とがってるっ‼,"Wow, it's so sharp!!"
+0438,0x009A,きゃん‼,Kyan!
+0438,0x00A6,……ダメージのため        体力が             へってしまった‼‼……,...My stamina has decreased due to the damage!!...
+0439,0x0082,ぐお舞ぐおきおがぐお□ぐおきおがぐおぐおきお,Guo Mai Guokio Ga Guo □ Guokio Ga Guo Guokio
+0439,0x00E8,場キラクタープロフール,Character Profile
+0439,0x0126,きりしまい,Kirishimai
+0439,0x015A,あおいりょうこ          子,Aoi Ryoko
+0439,0x018E,めのぎまい         姫 舞,Menogi Mai Hime Mai
+0439,0x01C2,さくらいあやか,Ayaka Sakurai
+0439,0x01F6,しずもとみき         本 美姫,Shizumoto Miki
+0439,0x022A,ステ                 ……太ス,Ste... Thick S
+0439,0x028A,AGE          TALL      CMBLOOD TYPE  B,AGE TALL CMBLOOD TYPE B
+0439,0x02E6,AGE          TALL      CMBLOOD TYPE  A,AGE TALL CMBLOOD TYPE A
+0439,0x0342,AGE          TALL      CMBLOOD TYPE  A,AGE TALL CMBLOOD TYPE A
+0439,0x039E,AGE          TALL      CMBLOOD TYPE  O,AGE TALL CMBLOOD TYPE O
+0439,0x03FA,AGE          TALL      CMBLOOD TYPE  A,AGE TALL CMBLOOD TYPE A
+0439,0x0456,AGE          TALL      CMBLOOD TYPE  AB,AGE TALL CMBLOOD TYPE AB
+0439,0x04B4,最から場するよ‼     よろしくね‼,I'll be there from the very beginning!! Looking forward to it!!
+0439,0x04E4,ルクリアしたら出てきます ちょっとだけ侍ってて下さいね,Luculia will appear. Please wait for a little while.
+0439,0x0526,舞ちゃんは、ルのとちゅうから場するよぉ‼,Mai-chan will be leaving the stage halfway through!!
+0439,0x0558,ルクリアで間になるよ‼  あたしだけ最は敵として   場するんだ‼ 侍っててね‼,I'll be in the middle with Luculia!! I'll be the ultimate enemy!! Stay by my side!!
+0439,0x05B6,あの、わたしはルクリア  からの場です…場は運いけど見すてないで侍ってて下さいね…,"Um, I'm from Luculia...the venue is unpredictable but please don't abandon me and stay by my side..."
+0439,0x0616,よろしくね         ……ってオイオイ、      まで出ていいのかよ,"Nice to meet you... Wait a minute, is it really okay to go that far?"
+043A,0x0000,かいぃんキ,Kaiinki
+043A,0x0022,……宝のーにはもう          何も人っていない……,...There's no one left in Takara-no...
+043A,0x0080,ちぇっ、やっぱこしかもらえないみたいだな…,"Tch, looks like this is all I'll get..."
+043A,0x00B0,全思はしかったよぉ‼,It was all so wonderful!!
+043A,0x00C8,やっぱりつしか   もらえないみたい……,It seems like I can only get one after all...
+043A,0x00F6,言われた通り、    手に人るのは、つだけみたいですわ…    よくばってはだめですね,"Just as I was told, it looks like I'll only be able to get one... I shouldn't be greedy."
+043B,0x0084,…さすがに…強いですね…あなたたちは…   …それなら‼,...As expected...you guys are strong... ...In that case!!
+043B,0x00C0,あ……‼,a……!
+043C,0x0000,あくさも,Akusamo
+043C,0x002A,ううっ‼,Ugh!!
+043C,0x0036,…ナージュのりだした敵が          倒されるごとにナージュの力はまっていく……,"...Each time an enemy that Naju attacks is defeated, Naju's power grows..."
+043C,0x0094,……まったナージュに       じるように       トビラが……らいでいく……,...The door is opening...as if to reach Nage...
+043D,0x0000,ああくさも,"Ah, grass"
+043D,0x002A,ううっ‼,Ugh!!
+043D,0x0036,…ナージュのりだした敵が          倒されるごとにナージュの力はまっていく……,"...Each time an enemy that Naju attacks is defeated, Naju's power grows..."
+043D,0x0094,……まったナージュに       じるように       トビラが……らいでいく……,...The door is opening...as if to reach Nage...
+043E,0x0000,あくさも,Akusamo
+043E,0x002A,ううっ‼,Ugh!!
+043E,0x0036,…ナージュのりだした敵が          倒されるごとにナージュの力はまっていく……,"...Each time an enemy that Naju attacks is defeated, Naju's power grows..."
+043E,0x0094,……まったナージュに       じるように       トビラが……らいでいく……,...The door is opening...as if to reach Nage...
+043F,0x0000,あぃくさも,Aikusamo
+043F,0x002A,ううっ‼,Ugh!!
+043F,0x0036,…ナージュのりだした敵が          倒されるごとにナージュの力はまっていく……,"...Each time an enemy that Naju attacks is defeated, Naju's power grows..."
+043F,0x0094,……まったナージュに       じるように       トビラが……らいでいく……,...The door is opening...as if to reach Nage...
+0440,0x0000,あくさも,Akusamo
+0440,0x002A,ううっ‼,Ugh!!
+0440,0x0036,…ナージュのりだした敵が          倒されるごとにナージュの力はまっていく……,"...Each time an enemy that Naju attacks is defeated, Naju's power grows..."
+0440,0x0094,……まったナージュに       じるように       トビラが……らいでいく……,...The door is opening...as if to reach Nage...
+0441,0x0000,あいくさも,aikusa
+0441,0x002A,ううっ‼,Ugh!!
+0441,0x0036,…ナージュのりだした敵が          倒されるごとにナージュの力はまっていく……,"...Each time an enemy that Naju attacks is defeated, Naju's power grows..."
+0441,0x0094,……まったナージュに       じるように       トビラが……らいでいく……,...The door is opening...as if to reach Nage...
+0442,0x0078,オツケー‼ どれどれ…,Okay!! Let's see...
+0442,0x0092,なにかなー、       なにかなー       なにかなぁー,"I wonder what it is, I wonder what it is, I wonder what it is"
+0442,0x00D8,これは…        「ー和」    と、書いてありますわね,"This says... ""-Wa"" (和)."
+0442,0x011E,……入は「ー和」を          手に人れた‼……,"...I obtained the ""-Wa"" character!!..."
+0442,0x017C,でも、こんなもん、  使い道あるかなぁ…… …ま、いいか。    とっとけとっとけ,"But, I wonder if I'll ever use this... Oh well. I'll just keep it."
+0442,0x01D2,ちゅーわ、ちゅーわ,"Chuwa, chuwa"
+0442,0x01EC,さいさきいいですわね,That's a good start.
+0443,0x0086,なぁに言ってんのよぉ‼,What are you talking about?!
+0443,0x00A0,こーーものはエンものなの‼ もらっといたはうが、いいにまってんじゃん‼ どれどれ…,This is a great find!! It's better to take it!! Let's see...
+0443,0x00FC,なにかなー、       なにかなー       なにかなぁー,"I wonder what it is, I wonder what it is, I wonder what it is"
+0443,0x0142,これは…       「ー和」と、   書いてありますわね,"This... it says ""-Wa"" (和)."
+0443,0x0184,……入は「ー和」を          手に人れた‼……,"...I obtained the ""-Wa"" character!!..."
+0443,0x01C4,でも、こんなもん、   使い道あるかなぁ………ま、いいか。     とっとけとっとけ,"But, I wonder if I'll ever use this... Oh well. I'll just keep it."
+0443,0x021C,ちゅーわ、ちゅーわ,"Chuwa, chuwa"
+0443,0x0236,さいさきいいですわね,That's a good start.
+0444,0x0000,あのいぃイオろろろ一いぃピ□コ,That's a good one.
+0444,0x0068,……ゴゴゴゴゴゴゴゴゴゴ……,...Gogogogogogogogogo...
+0444,0x00AA,きゃあ‼,Ahh!!
+0444,0x00B6,うわぁ‼,Wow!!
+0444,0x00C2,きゃーん‼,Kyaaaah!!
+0444,0x00D4,目が回る……     しかも、戻されて   しまいましたね……,I'm feeling dizzy... and now I've been sent back...
+0444,0x0116,ルルしたー‼   ……しかも、     遠回りになったぁ‼,I got Lulu!! ...And it was a roundabout route!!
+0444,0x0158,あ‼ 戻された‼,Ah!! I've been sent back!!
+0444,0x016C,きゅう……      何が起こったの　   …えーん       戻されちゃったよぉ‼,"Squeak... What happened? ...Waaah, I've been sent back!!"
+0445,0x0082,ぐおぐお人ぐおHぐおRぐおぐおぐおぐお現ぐお□ぐおぐお,Guoguo people GuoH GuoR Guoguoguoguo Maguo□ Guoguo
+0445,0x00D8,なぁ、何とか助かったのは   いーんだけどさぁ……     どこにもが見えねーぞ…,"Hey, I'm glad we somehow made it, but... I can't see anything anywhere..."
+0445,0x0138,子りましたわねぇ……,"It's a child, isn't it...?"
+0445,0x0158,ま、だあいじょーぶ‼     なんとかなるよっ‼,It'll be alright!! We'll manage somehow!!
+0445,0x0194,美姫……あ,Miki... ah
+0445,0x01A6,なんつってもあたしたちは   世界をったである    入なんだから‼,"After all, we're the ones who have conquered the world!!"
+0445,0x01FE,きっと助も出てるよ‼,I'm sure Suke will be in it too!!
+0445,0x0220,そして帰ったころには     TVで引っりダコに     まってるじゃない‼,"And by the time you get back, you'll be all over TV waiting for you!"
+0445,0x027C,美姫……あうあう……,Miki... ahh...
+0445,0x0298,そうだと           いーんだけどなぁ……,I wish that were true...
+0445,0x02D6,子あら、美姫さん        どうしたんです　       なんかしそうですね,"Oh, Miki, what's wrong? You look like you're up to something."
+0445,0x0332,美姫あの……あた……し…     …げ……な…        …ぶくぶく……,Miki... um... I... look... like... bubbles...
+0445,0x0388,舞 ……あーーーーっ‼,Mai... Aaaaah!!
+0445,0x03A6,どしたの,What's wrong?
+0445,0x03BC,舞 おさかなさーん‼       でっかいおさかなさんが    くるよぉ,Mai: Oh fish!! A huge fish is coming!
+0445,0x040E,子まぁ……,Child...
+0445,0x0422,舞 はら‼ あそこに‼,Mai Hara!! Over there!!
+0445,0x0440,美姫ぶくぶく,Miki Bukubuku
+0445,0x0454,はんとだ。          ……え、あれって……,"That's right. ...Wait, is that...?"
+0445,0x0494,美姫ぶくぶくぶくぶく……,"Princess Mihime bubbling, bubbling, bubbling..."
+0445,0x04B4,あのセビレって        どう見ても……,That fin looks like...
+0445,0x04EC,子サメ、ですわね,"It's a baby shark, isn't it?"
+0445,0x0508,美姫ぶくぶく……ぶく…      …ぶく………ぶ……………,Princess Mihime is bubbling... bubbling... bubbling... bubbling...
+0445,0x054C,……ナージュがえさると同時に 全ての世界は正に戻った……,"...The moment Nage was devoured, all worlds returned to their normal state..."
+0445,0x058E,入はナージュについての   全てのをない、     何も起こらなかったかのように。,"Entering was as if nothing had happened, completely ignoring everything about Nage."
+0445,0x05EE,……だから……     この世界をった女たち          入であったが、,"...Therefore... The women who conquered this world were included,"
+0445,0x064E,誰も、女たちの         を知るはなかった……,No one knew what the women were going through...
+0446,0x0088,西暦石がいっそう強くった‼ 西暦石ビンゴGO‼,The Year Stone has become even stronger!! Year Stone Bingo GO!!
+0446,0x00C0,今回のプレイは、引いたカード 全てに自分の西暦石がつくぞ‼,"In this playthrough, every card you draw will have your own Year Stone attached to it!"
+0446,0x00FE,わーい‼ ダイヤモンドだぁ‼,Yay!! It's a diamond!!
+0446,0x011E,…ねえねえ、ムーンストーンって「月の石」のことじゃないの,"...Hey, isn't ""moonstone"" just ""rock from the moon""?"
+0446,0x015C,コドモのころ、で見たヤ とは達ってるような気が……,It feels like it's surpassed the one I saw when I was a kid...
+0446,0x0198,……アンタ、いくつやねん‼,...How old are you?!
+0446,0x01B6,よかったですわ それでは、 ームをスタートしましょ,"That's great! Now, let's start the session."
+0446,0x01F2,めのうって、キレイ,Agate is beautiful.
+0447,0x0104,ぎずカじぎずカじ□カじ□カじカじす,Gizu Kaji Gizu Kaji □ Kaji □ Kaji Kaji Su
+0447,0x0148,NAGE LIBRE                        STAFF,NAGE LIBRE STAFF
+0447,0x01A4,DIRECTOR           ー 姫,DIRECTOR - Hime
+0447,0x01E2,SCENARIO AND      IVENT DESIGN      太,SCENARIO AND IVENT DESIGN
+0447,0x023E,PROGRAM              入            ガク,PROGRAM Entry Gaku
+0447,0x0298,GRAPHIC…,GRAPHIC…
+0447,0x02B2,……CHARACTER             DESIGN      本,……CHARACTER DESIGN book
+0447,0x030C,…MAP AND BATTLE      BG DESIGN       太,…MAP AND BATTLE BG DESIGN Tai
+0447,0x0368,BALANCE             ADJUSTER,BALANCE ADJUSTER
+0447,0x03C4,SOUND              高           しち みちこ,SOUND Takashi Michiko
+0447,0x0424,BALANCE AND      IVENT CHECK,BALANCE AND EVENT CHECK
+0447,0x04C4,ー 直入                    MIKA SAEKI,- Naoiri MIKA SAEKI
+0447,0x0526,SHIVAAAWO‼        ちよう            よね,SHIVAAAWO!! Chiyou yone
+0447,0x0580,うっきー           Rリラ          ー,Ukki R Lila
+0447,0x05DC,EXECTIVE           PRODUCER       求 勝,EXECTIVE PRODUCER Katsu Moto
+0447,0x0638,PRESENTED BY                         VARIE,PRESENTED BY VARIE
+0447,0x0696,あ‼ が見える‼,Ah!! I can see it!!
+0447,0x06BA,舞 今こそ戻れるのぉ‼,"Mai, now is the time to go back!!"
+0447,0x06DE,え……でも…あれは…,Uh... but... that was...
+0447,0x0702,美姫……あーん,Miki... aah
+044A,0x0000,あう,match
+044A,0x0018,ここではコの入なの…ちょっとさびしいな、クスン……,It's a little lonely here...sniff...
+044C,0x0000,あぎはオ,Agiha O
+044C,0x0028,ね、最のよていではでいろいろな思になるはずだったの‼,"Well, according to my initial plans, I was supposed to have all sorts of thoughts and feelings!"
+044C,0x006A,……でもそれじゃ、  そのまんま      のプリンセスだったから、やめたんだ‼,"...But that would have made her just an ordinary princess, so I stopped doing that!"
+044C,0x00C2,ま、それはそうと、  勝よん,"Anyway, good luck!"
+044D,0x0000,あ□□う,a□□u
+044D,0x0018,よく見ると、階で けっこうパーが   空しているのが   るかな,"If you look closely, you'll see that there are quite a few empty seats on each floor."
+044F,0x0000,ああ□□う,Ah □□u
+044F,0x0018,ームなかばごろの  スでございまーす もう一勝しましょ,It's about halfway through the season. Let's get one more win!
+0450,0x0000,あう,match
+0450,0x0018,レースクイーン   でも前回場時はプール……そして今回は学 でもレースクイーン,"Race Queen, but last time it was a pool...and this time it's school, but race queen"
+0451,0x0000,あぃ□□う,ai□□u
+0451,0x0018,姫部のにようこそ‼ と言いながら、室は  はそっくりさん。  姫部とは遠いしんせき,"Welcome to Himebu!! said Muro, who is a look-alike. A distant relative of Himebu."
+0452,0x0000,あう,match
+0452,0x0018,きゃあはははははは‼ ……でも今、     は方だから、はただの二セモ。,"Kyaahahahahahaha!! ...But right now, it's just a fake."
+0453,0x0000,あい□□う,ai□□u
+0453,0x0018,そぉれぇ‼      とぉぶくすりぃぃ‼ はもう使わないよーん‼,That's it!! I won't be using that super medicine anymore!!
+0456,0x0000,あう,match
+0456,0x0018,階目だけど   オマケステージだから けっこう強いよーん‼,"It's the second floor, but it's a bonus stage, so it's pretty tough!!"
+0458,0x0104,FKぎKぎK、見草せ,"FKgiKgiK, see the grass"
+0458,0x0162,エキストラステージクリア‼,Extra stage cleared!!
+0458,0x01A0,やっはー‼      全倒したぞぉ‼,Yay!! I defeated them all!!
+0458,0x01CA,……ところで、    ームーに      宝玉は        全思集めたかな,"...By the way, have you gathered all the jewels for Mu?"
+0458,0x0220,全思集めると、いい事があるかも知れないぞ‼ と言うより、あるんだ‼,"If you gather all your thoughts together, something good might happen!! Or rather, something good *will* happen!!"
+0458,0x0266,がんばって、     してみてくださいね‼,Please do your best and give it a try!!
+0458,0x0296,最に、       一つをしまーす‼,"First, I'll do one thing!!"
+0458,0x02C2,ーブ‼,ーB!!
+0458,0x02FA,わぁ‼        太だったね‼,Wow!! It was thick!!
+0458,0x0324,最まで       のないところが とっても敵ね‼,The fact that there's no end to it is a huge enemy!!
+0458,0x0364,ではではではではでは‼,"Well then, well then, well then!!"
+0458,0x037E,そーれじゃーねー‼  も一プレイしたい時はいっん      リセツトしーてねー,"Okay then!! If you want to play again, just reset it!"
+0459,0x0000,うゃタラ,Uya Tara
+0459,0x0050,はーい‼       こんにちはぁ‼    はエキストラの女部‼,Hi there!! Hello there!! This is the female extras section!!
+0459,0x0098,よく、ここまで    来てくれたね‼    クリアしてくれた   みなさんに……,You've come so far!! To everyone who cleared the challenge...
+0459,0x00EC,スそうとーじょー‼のオマケステージを   めるよぉ‼     がんばってね‼,Here's a bonus stage for S-Sou Tojo!! Good luck!!
+0459,0x0140,エキストラステージスタート‼,Extra stage starts!!
+045A,0x0104,おぐおぐおぐおぐ,Oguoguoguogu
+045A,0x0128,ダメだよ          入全同じ西暦日にしちゃ,That's not okay. You can't make all the entry dates the same.
+045A,0x0166,せっかくだから、いろんな   西暦日にしてみよーよぉ,"Since we're at it, let's try using different Western calendar dates!"
+045A,0x01A0,しかもこの日は、       くの西暦日なの,"Moreover, this day is a certain date in the Western calendar."
+045A,0x01D4,みんなで一にうたおう‼,Let's all sing together!!
+045A,0x01F0,ツピースデートーーツピースデートーーツピースデーーくー,Two Peace Date -- Two Peace Date -- Two Peace Day -- Ku
+045A,0x024C,…リセツトするまできます……,...I'll keep going until I reset it...
+045A,0x028C,……ここまでねばるとは         戦いませんでした……,...I didn't expect them to hold out this long...
+045A,0x02CC,ゴメンなさい‼        リセツトしてね‼,I'm sorry!! Please reset it!!
+045B,0x0000,ぐいぃびびびび,Guiii
+045B,0x002C,ゴメンなさーい‼   カードさんは    わっちゃいましたの,I'm so sorry!! I broke the card.
+045B,0x0072,えーっ‼ もう‼,What?! No way!!
+045B,0x0086,えーん‼ もっとカードはしかったよぉ‼,Waaah!! I wanted more cards!!

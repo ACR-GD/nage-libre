@@ -1,0 +1,23 @@
+=== capture source moteur $80:F4A7 (noms/dates/pierres) ===
+Log: /Users/acr/Develop/nage-libre/mesen_dumps/name_src_trace.log
+Actif. Faire défiler les personnages sur l'écran d'anniversaire.
+SRC=$8386B3  f=908  n=15  ids: 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE
+SRC=$878965  f=1944  n=1  ids: 32C
+SRC=$878969  f=1944  n=1  ids: 2C8
+SRC=$878A51  f=1944  n=2  ids: 508 586
+SRC=$87896D  f=1945  n=7  ids: 560 562 260 3DC 274 276 564
+SRC=$878697  f=1945  n=14  ids: 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE
+SRC=$878077  f=1945  n=2  ids: 3A4 3A6
+SRC=$8782D9  f=1945  n=2  ids: 384 386
+SRC=$87807D  f=2006  n=3  ids: 38E 10A 3A8
+SRC=$8782DF  f=2006  n=1  ids: 39E
+SRC=$878A01  f=2021  n=4  ids: 56E 396 570 33C
+SRC=$878085  f=2050  n=2  ids: 3A0 3A2
+SRC=$8782E3  f=2050  n=1  ids: 39A
+SRC=$878A71  f=2065  n=4  ids: 594 4E8 336 4DC
+SRC=$87808B  f=2098  n=2  ids: 3AA 3AE
+SRC=$8782E7  f=2098  n=2  ids: 284 38E
+SRC=$878A31  f=2112  n=4  ids: 582 3EA 328 326
+SRC=$878091  f=2144  n=1  ids: 3AC
+SRC=$8782ED  f=2144  n=2  ids: 394 25E
+SRC=$878981  f=2254  n=10  ids: 546 344 336 3F8 2F0 460 566 480 548 54A

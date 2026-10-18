@@ -1,0 +1,413 @@
+#!/usr/bin/env python3
+"""Injection MULTI-SCÈNES à grande échelle (Nage Libre).
+
+Toutes les scènes de dialogue/narration sont décompressées en `$7F:64C0` par
+`$80:F8D8`, appelé depuis l'init narration `$83:80DB`. Juste avant ce JSL
+($83:80FF), le registre **A = scene_idx** (base 0x030F = index de la table de
+pointeurs source $8A:8000). C'est une clé EXACTE, sans collision : on hooke
+$83:80FF, on garde A, on décompresse, puis on recopie les chaînes anglaises de
+la bonne scène à leur offset dans le buffer.
+
+Sûreté : chaque chaîne anglaise est bornée à `n_ids` (longueur EXACTE de la
+chaîne japonaise d'origine) et terminée par `$FFFF`. Elle reste donc strictement
+dans l'empreinte de la chaîne JP -> jamais de débordement sur le programme
+d'opcodes. Les offsets sont validés (walk d'opcodes : offset « ligne de texte »
+OU offset >= fin du programme) pour rejeter les faux positifs en zone programme.
+
+Table (annuaire scene_idx -> section + données) : trop grosse pour la banque $83
+(~1.8 Ko) -> placée en ROM ÉTENDUE à 2 Mo (banques $B0+, déjà déclarées par
+l'en-tête). Le hook (~130 o) reste en banque $83.
+
+Police : encodeur par paires (2 car./tuile 16x16) avec repli MONO-caractère
+(1 car./tuile) pour les digrammes rares -> tient dans le pool d'IDs partagé quel
+que soit le volume de texte.
+
+apply(rom, alloc) est appelé par build_full_translation.py (allocateur partagé,
+APRÈS menu/noms/clubs pour connaître le budget de police restant).
+"""
+import csv
+import importlib.util
+import struct
+import sys
+from collections import Counter
+from pathlib import Path
+
+ROOT = Path(__file__).parent
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from patch_prologue_v3 import FONT, JP_SPACE  # noqa: E402
+from nl_decompress import decompress, read_ptr_table  # noqa: E402
+
+_spec = importlib.util.spec_from_file_location(
+    "dp", ROOT / "scripts" / "decompile_prologue_script.py")
+dp = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(dp)
+
+SCENES_DIR = ROOT / "docs" / "scenes"
+ELLIPSIS = 0x02AA
+DEST_BASE = 0x64C0
+SCENE_BASE = 0x030F            # scene_idx du 1er enregistrement de la table
+
+HOOK_POINT = 0x0180FF          # ROM offset de $83:80FF
+HOOK_BANK = 0x83
+HOOK_ADDR = 0xF8E3
+HOOK_ROM = 0x01F8E3
+FREE83_END = 0x01FFE0
+
+# ROM étendue : annuaire + données en $B0:8000+ (l'en-tête déclare déjà 2 Mo)
+EXP_FILE_START = 0x180000
+EXP_FILE_END = 0x200000
+BANK_SIZE = 0x8000
+
+PAIR_BUDGET_MARGIN = 12        # garde-fou d'IDs de police
+
+
+def off_to_snes(file_off):
+    bank = 0x80 + file_off // BANK_SIZE
+    addr = 0x8000 + (file_off % BANK_SIZE)
+    return (bank << 16) | addr
+
+
+# ---------------------------------------------------------------------------
+# 1) Validation des offsets par scène (walk d'opcodes du buffer décompressé)
+# ---------------------------------------------------------------------------
+def _scene_validator(rom, src_off):
+    """Renvoie (legit_offsets, prog_end, orig_len) pour une scène décompressée."""
+    out, _ = decompress(rom, src_off, dst_limit=0x4000)
+    n = len(out)
+
+    def word(o):
+        return out[o] | (out[o + 1] << 8) if o + 1 < n else 0xFFFF
+
+    handlers = _scene_validator.handlers
+    sizes = _scene_validator.sizes
+    feats = _scene_validator.feats
+
+    legit = set()
+    pos = 0
+    for _ in range(4000):
+        opc = word(pos)
+        if opc == 0xFFFF or opc not in handlers:
+            break
+        size = sizes.get(opc, 0) or 2
+        nopr = (size - 2) // 2
+        if feats[opc]["textline"] and nopr >= 1:
+            o0 = word(pos + 2)
+            if o0 >= 0x100:
+                legit.add(o0)
+        pos += size
+    prog_end = pos
+
+    def orig_len(o):
+        k = 0
+        while o + 2 * k < n and word(o + 2 * k) != 0xFFFF and k < 80:
+            k += 1
+        return k
+
+    return legit, prog_end, orig_len
+
+
+def _init_walk_tables():
+    handlers = dp.opcode_handlers()
+    _scene_validator.handlers = handlers
+    _scene_validator.sizes = {k: dp.opcode_size(v) for k, v in handlers.items()}
+    _scene_validator.feats = {k: dp.handler_features(v) for k, v in handlers.items()}
+
+
+# ---------------------------------------------------------------------------
+# 2) Chargement + validation des enregistrements traduits
+# ---------------------------------------------------------------------------
+def load_scene_records(rom):
+    """{scene_idx: [(offset, en, slot), ...]} pour les scènes traduites valides."""
+    _init_walk_tables()
+    tbl = {i: off for i, _snes, off in read_ptr_table(rom, 0x600) if off}
+
+    scenes = {}
+    for path in sorted(SCENES_DIR.glob("scene_*.csv")):
+        scene_idx = int(path.stem.split("_")[1], 16)
+        src = tbl.get(scene_idx)
+        if src is None or src >= len(rom):
+            continue
+        try:
+            legit, prog_end, orig_len = _scene_validator(rom, src)
+        except Exception:
+            continue
+
+        recs = []
+        for r in csv.DictReader(path.open(encoding="utf-8")):
+            en = (r.get("en") or "").strip()
+            if not en:
+                continue
+            off = int(r["offset_hex"], 16)
+            # rejette les faux positifs en zone programme (≠ offset de ligne réel)
+            if off not in legit and off < prog_end:
+                continue
+            slot = orig_len(off)            # borne sûre = longueur JP d'origine
+            if slot < 1:
+                continue
+            recs.append((off, en, slot))
+        if recs:
+            scenes[scene_idx] = recs
+    return scenes
+
+
+# ---------------------------------------------------------------------------
+# 3) Plan de police (paires fréquentes + repli mono-caractère)
+# ---------------------------------------------------------------------------
+def _digraph_stats(all_en):
+    freq = Counter()
+    charset = set()
+    for en in all_en:
+        ch = list(en)
+        i = 0
+        while i < len(ch):
+            cl = ch[i]
+            if cl == "\u2026":
+                i += 1
+                continue
+            if cl == " ":
+                i += 1
+                continue
+            if cl not in FONT:
+                i += 1
+                continue
+            charset.add(cl)
+            cr = ch[i + 1] if i + 1 < len(ch) else " "
+            if cr == "\u2026" or cr not in FONT:
+                cr = " "
+            if cr == " ":
+                i += 2
+            else:
+                freq[(cl, cr)] += 1
+                charset.add(cr)
+                i += 2
+    return freq, charset
+
+
+def build_pair_plan(all_en, alloc):
+    """Pré-alloue les glyphes mono-caractère (repli) puis les digrammes les plus
+    fréquents dans le budget de police restant. Renvoie l'ensemble `approved`."""
+    freq, charset = _digraph_stats(all_en)
+    approved = set()
+    # 1) mono-caractères (c, ' ') : indispensables au repli -> toujours alloués
+    for c in sorted(charset):
+        alloc.get(c, " ")
+        approved.add((c, " "))
+    # 2) digrammes fréquents tant qu'il reste du budget
+    for (cl, cr), _n in freq.most_common():
+        if (cl, cr) in approved:
+            continue
+        if alloc.available() <= PAIR_BUDGET_MARGIN:
+            break
+        alloc.get(cl, cr)
+        approved.add((cl, cr))
+    return approved
+
+
+def encode_fit(text, alloc, approved, slot):
+    """Encode en bornant à `slot` IDs. Si trop long, coupe sur une FRONTIÈRE DE
+    MOT (lisible) plutôt qu'en plein milieu. Renvoie (ids, tronqué)."""
+    ids = smart_encode(text, alloc, approved)
+    if len(ids) <= slot:
+        return ids, False
+    words = text.split(" ")
+    while len(words) > 1:
+        words.pop()
+        cand = smart_encode(" ".join(words), alloc, approved)
+        if len(cand) <= slot:
+            return cand, True
+    # un seul mot trop long : coupe dur
+    return smart_encode(text, alloc, approved)[:slot], True
+
+
+def smart_encode(text, alloc, approved):
+    """Encode en IDs : paire si approuvée, sinon repli mono-caractère."""
+    ids = []
+    ch = list(text)
+    i = 0
+    while i < len(ch):
+        cl = ch[i]
+        if cl == "\u2026":
+            ids.append(ELLIPSIS)
+            i += 1
+            continue
+        if cl == " ":
+            ids.append(JP_SPACE)
+            i += 1
+            continue
+        if cl not in FONT:
+            i += 1
+            continue
+        cr = ch[i + 1] if i + 1 < len(ch) else " "
+        if cr == "\u2026" or cr not in FONT:
+            cr = " "
+        if (cl, cr) in approved:
+            ids.append(alloc.get(cl, cr))
+            i += 2
+        else:
+            ids.append(alloc.get(cl, " "))   # repli : émet cl seul
+            i += 1
+    return ids
+
+
+# ---------------------------------------------------------------------------
+# 4) Hook scene_idx (banque $83) — annuaire 4 o/entrée en ROM étendue
+# ---------------------------------------------------------------------------
+def assemble_hook(dir_snes, base, ndir):
+    """Hook @ $83:F8E3. A=scene_idx en entrée. Annuaire DIR (4 o/entrée :
+    addrLo, addrHi, bank, 0) à l'adresse 24-bit `dir_snes` ; bank 0 = pas de
+    section. Section = [offset, count, ids…]×n, FFFF final. Copie chaque chaîne
+    vers $7F:64C0+offset. ZP utilisés ($09/$0A/$0B dest, $0C cnt, $3C/$3D/$3E
+    src) sauvegardés/restaurés."""
+    DLO = dir_snes & 0xFFFF
+    DHI = (dir_snes >> 16) & 0xFF
+    c = bytearray()
+    c += bytes([0x22, 0xD8, 0xF8, 0x80])              # JSL $80F8D8 (A préservé)
+    c += bytes([0x08])                                # PHP
+    c += bytes([0xC2, 0x30])                          # REP #$30
+    c += bytes([0xDA, 0x5A])                          # PHX PHY
+    c += bytes([0xA8])                                # TAY  (Y = scene_idx)
+    # sauvegarde ZP (16-bit) : $09/$0A, $0B/$0C, $0D/$0E (STA $0C écrit $0D),
+    # $3C/$3D, $3E/$3F
+    c += bytes([0xA5, 0x09, 0x48])                    # LDA $09 ; PHA
+    c += bytes([0xA5, 0x0B, 0x48])                    # LDA $0B ; PHA
+    c += bytes([0xA5, 0x0D, 0x48])                    # LDA $0D ; PHA
+    c += bytes([0xA5, 0x3C, 0x48])                    # LDA $3C ; PHA
+    c += bytes([0xA5, 0x3E, 0x48])                    # LDA $3E ; PHA
+    # index annuaire = (scene_idx - base) ; borne
+    c += bytes([0x98])                                # TYA
+    c += bytes([0x38, 0xE9, base & 0xFF, (base >> 8) & 0xFF])  # SEC ; SBC #base
+    jmp_done = []
+    c += bytes([0x30, 0x00]); b_neg = len(c) - 1      # BMI done
+    c += bytes([0xC9, ndir & 0xFF, (ndir >> 8) & 0xFF])  # CMP #ndir
+    c += bytes([0xB0, 0x00]); b_ge = len(c) - 1       # BCS done
+    c += bytes([0x0A, 0x0A])                          # ASL A ; ASL A  (*4)
+    c += bytes([0xAA])                                # TAX
+    # bank = DIR+2,X ; 0 => done
+    c += bytes([0xBF, (DLO + 2) & 0xFF, ((DLO + 2) >> 8) & 0xFF, DHI])  # LDA.l DIR+2,X
+    c += bytes([0x29, 0xFF, 0x00])                    # AND #$00FF
+    c += bytes([0xF0, 0x00]); b_z = len(c) - 1        # BEQ done
+    c += bytes([0x85, 0x3E])                          # STA $3E  (src bank)
+    c += bytes([0xBF, DLO & 0xFF, (DLO >> 8) & 0xFF, DHI])  # LDA.l DIR,X (addr16)
+    c += bytes([0x85, 0x3C])                          # STA $3C  (src addr)
+    # $0B = $7F (bank dest), une fois
+    c += bytes([0xE2, 0x20, 0xA9, 0x7F, 0x85, 0x0B, 0xC2, 0x20])  # SEP/LDA/STA/REP
+    c += bytes([0xA0, 0x00, 0x00])                    # LDY #$0000  (index section)
+    rec = len(c)
+    c += bytes([0xB7, 0x3C])                          # LDA [$3C],Y  (offset)
+    c += bytes([0xC9, 0xFF, 0xFF])                    # CMP #$FFFF
+    c += bytes([0xD0, 0x03])                          # BNE +3
+    jmp_done.append(len(c)); c += bytes([0x4C, 0x00, 0x00])  # JMP done
+    c += bytes([0x18, 0x69, 0xC0, 0x64])              # CLC ; ADC #$64C0
+    c += bytes([0x85, 0x09])                          # STA $09  (dest addr)
+    c += bytes([0xC8, 0xC8])                          # INY INY
+    c += bytes([0xB7, 0x3C])                          # LDA [$3C],Y  (count)
+    c += bytes([0x0A, 0x85, 0x0C])                    # ASL A ; STA $0C (octets)
+    c += bytes([0xC8, 0xC8])                          # INY INY
+    c += bytes([0xA2, 0x00, 0x00])                    # LDX #$0000  (octets copiés)
+    cp = len(c)
+    c += bytes([0xB7, 0x3C])                          # LDA [$3C],Y  (id)
+    c += bytes([0x87, 0x09])                          # STA [$09]
+    c += bytes([0xA5, 0x09, 0x18, 0x69, 0x02, 0x00, 0x85, 0x09])  # $09 += 2
+    c += bytes([0xC8, 0xC8])                          # INY INY
+    c += bytes([0xE8, 0xE8])                          # INX INX
+    c += bytes([0xE4, 0x0C])                          # CPX $0C
+    c += bytes([0x90, (cp - (len(c) + 2)) & 0xFF])    # BCC cp
+    c += bytes([0x80, (rec - (len(c) + 2)) & 0xFF])   # BRA rec
+    done = len(c)
+    c[b_neg] = (done - (b_neg + 1)) & 0xFF
+    c[b_ge] = (done - (b_ge + 1)) & 0xFF
+    c[b_z] = (done - (b_z + 1)) & 0xFF
+    done_snes = HOOK_ADDR + done
+    for j in jmp_done:
+        c[j + 1] = done_snes & 0xFF
+        c[j + 2] = (done_snes >> 8) & 0xFF
+    # restauration ZP (ordre inverse)
+    c += bytes([0x68, 0x85, 0x3E])                    # PLA ; STA $3E
+    c += bytes([0x68, 0x85, 0x3C])                    # PLA ; STA $3C
+    c += bytes([0x68, 0x85, 0x0D])                    # PLA ; STA $0D
+    c += bytes([0x68, 0x85, 0x0B])                    # PLA ; STA $0B
+    c += bytes([0x68, 0x85, 0x09])                    # PLA ; STA $09
+    c += bytes([0x7A, 0xFA])                          # PLY PLX
+    c += bytes([0x28, 0x6B])                          # PLP RTL
+    return bytes(c)
+
+
+# ---------------------------------------------------------------------------
+# 5) apply() — encode, place annuaire+données en $B0+, écrit le hook
+# ---------------------------------------------------------------------------
+def apply(rom: bytearray, alloc):
+    scenes = load_scene_records(rom)
+    if not scenes:
+        return {"scenes": 0, "lines": 0, "truncated": 0, "bytes": 0}
+
+    all_en = [en for recs in scenes.values() for _o, en, _s in recs]
+    approved = build_pair_plan(all_en, alloc)
+
+    # encodage + bornage n_ids
+    encoded = {}            # scene_idx -> [(offset, ids+FFFF)]
+    truncated = 0
+    for sidx, recs in scenes.items():
+        out = []
+        for off, en, slot in recs:
+            ids, was_trunc = encode_fit(en, alloc, approved, slot)
+            if was_trunc:
+                truncated += 1
+            out.append((off, ids + [0xFFFF]))
+        encoded[sidx] = out
+
+    idxs = sorted(encoded)
+    base = SCENE_BASE
+    ndir = max(idxs) - base + 1
+
+    # étend la ROM à 2 Mo si besoin
+    if len(rom) < EXP_FILE_END:
+        rom.extend(b"\xFF" * (EXP_FILE_END - len(rom)))
+
+    # annuaire (4 o/entrée) en $B0:8000 ; sections bin-packées sans franchir de
+    # frontière de banque (32 Ko) -> [src],Y reste dans la banque.
+    dir_file = EXP_FILE_START
+    dir_snes = off_to_snes(dir_file)
+    dir_bytes = bytearray(ndir * 4)        # 00.. = pas de section
+
+    cursor = dir_file + len(dir_bytes)
+    for sidx in idxs:
+        # sérialise la section
+        sec = bytearray()
+        for off, ids in encoded[sidx]:
+            sec += struct.pack("<HH", off, len(ids))
+            for cid in ids:
+                sec += struct.pack("<H", cid)
+        sec += struct.pack("<H", 0xFFFF)
+        # ne pas franchir la frontière de banque
+        bank_end = (cursor // BANK_SIZE + 1) * BANK_SIZE
+        if cursor + len(sec) > bank_end:
+            cursor = bank_end
+        if cursor + len(sec) > EXP_FILE_END:
+            raise SystemExit("Dépassement ROM étendue (sections de scènes).")
+        snes = off_to_snes(cursor)
+        rom[cursor:cursor + len(sec)] = sec
+        e = (sidx - base) * 4
+        dir_bytes[e] = snes & 0xFF
+        dir_bytes[e + 1] = (snes >> 8) & 0xFF
+        dir_bytes[e + 2] = (snes >> 16) & 0xFF
+        cursor += len(sec)
+
+    rom[dir_file:dir_file + len(dir_bytes)] = dir_bytes
+
+    # hook en banque $83 + redirection $83:80FF
+    hook = assemble_hook(dir_snes, base, ndir)
+    if HOOK_ROM + len(hook) > FREE83_END:
+        raise SystemExit(f"Hook scènes trop gros pour banque $83 ({len(hook)} o).")
+    rom[HOOK_ROM:HOOK_ROM + len(hook)] = hook
+    rom[HOOK_POINT:HOOK_POINT + 4] = bytes(
+        [0x22, HOOK_ADDR & 0xFF, (HOOK_ADDR >> 8) & 0xFF, HOOK_BANK])
+
+    return {
+        "scenes": len(idxs),
+        "lines": sum(len(v) for v in encoded.values()),
+        "truncated": truncated,
+        "bytes": cursor - dir_file,
+        "hook": len(hook),
+        "pairs": len(approved),
+    }

@@ -1,0 +1,5 @@
+offset_hex,n_ids,slot_words,jp_decoded,en
+0x0000,8,16,いぃぁぁかぁだぁ,Iiiiiiikaaaaaa
+0x0022,19,20,きゃ‼        にトがある‼,"Ah!! There's a ""t"" in it!!"
+0x004C,32,33,きゃん‼ い‼   ……に       トがありますわ……,"Kyaa!! I!! ...There's a ""T"" in there..."
+0x0090,45,31,……のトのため         体力が             へってしまった‼‼……,"...because of that, my stamina has decreased!!..."

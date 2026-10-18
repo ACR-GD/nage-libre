@@ -1,0 +1,248 @@
+idx,snes_off,n_glyphs,role,ocr_kanji,partial_decode,en
+0,8077,2,surname,桜井,,Sakurai
+1,807D,3,surname,姫ノ木,,Himenoki
+2,8085,2,surname,霧島,,Kirishima
+3,808B,2,surname,静本,,Shizumoto
+4,8091,1,surname,葵,,Aoi
+5,8095,2,surname,青木,,Aoki
+6,809B,2,surname,青岡,,Aoka
+7,80A1,2,surname,赤井,,Akai
+8,80A7,3,surname,朝比奈,,Asahina
+9,80AF,3,surname,績小路,,Sekimaji
+10,80B7,2,surname,生島,,Ikushima
+11,80BD,2,surname,石井,,Ishii
+12,80C3,2,surname,石田,,Ishida
+13,80C9,2,surname,井上,,Inoue
+14,80CF,2,surname,今井,,Imai
+15,80D5,2,surname,今岡,,Imaoka
+16,80DB,2,surname,今田,,Imada
+17,8.00E+02,2,surname,今中,,Imanaka
+18,8.00E+08,2,surname,入谷,,Iriya
+19,80ED,2,surname,岡島,,Okajima
+20,80F3,2,surname,岡岡,,Okaoka
+21,80F9,2,surname,岡本,,Okamoto
+22,80FF,2,surname,音無,,Otonashi
+23,8105,2,surname,鬼庭,,Oniniwa
+24,810B,2,surname,恩田,,Onda
+25,8111,1,surname,鏡,,Kagami
+26,8115,2,surname,片桐,,Katagiri
+27,811B,2,surname,上岡,,Kamioka
+28,8121,2,surname,神田,,Kanda
+29,8127,3,surname,神無月,,Kannazuki
+30,812F,2,surname,菊迦,,Kikuka
+31,8135,2,surname,如月,,Kisaragi
+32,813B,2,surname,木田,,Kida
+33,8141,2,surname,清川,,Kiyokawa
+34,8147,2,surname,京極,,Kyōgoku
+35,814D,2,surname,来島,,Kurushima
+36,8153,2,surname,甲賀,,Koga
+37,8159,2,surname,古式,,Koshiki
+38,815F,2,surname,近藤,,Kondo
+39,8165,2,surname,紺野,,Konno
+40,816B,3,surname,早乙女,,Saotome
+41,8173,2,surname,酒井,,Sakai
+42,8179,2,surname,桜木,,Sakuragi
+43,817F,2,surname,桜島,,Sakurajima
+44,8185,2,surname,桜田,,Sakurada
+45,818B,2,surname,定岡,,Sadaoka
+46,8191,2,surname,真岡,,Moka
+47,8197,2,surname,静岡,,Shizuoka
+48,819D,2,surname,島岡,,Shimaoka
+49,81A3,2,surname,島田,,Shimada
+50,81A9,2,surname,島本,,Shimamoto
+51,81AF,2,surname,新城,,Niishiro
+52,81B5,2,surname,千両,,Senryo
+53,81BB,2,surname,鴈井,,Gani
+54,81C1,2,surname,蘢田,,Komorida
+55,81C7,2,surname,田中,ー,Tanaka
+56,81CD,2,surname,千葉,,Chiba
+57,81D3,2,surname,月島,,Tsukishima
+58,81D9,2,surname,東国,,Togoku
+59,81DF,2,surname,道本,,Michimoto
+60,8.10E+06,1,surname,所,,Tokoro
+61,8.10E+10,2,surname,中井,ー,Nakai
+62,81EF,2,surname,中島,ー,Nakajima
+63,81F5,2,surname,仲田,ー,Nakada
+64,81FB,2,surname,中代,ー,Nakadai
+65,8201,2,surname,中村,ー,Nakamura
+66,8207,2,surname,中本,ー,Nakamoto
+67,820D,2,surname,仲本,,Nakamoto
+68,8213,2,surname,梨田,,Nashida
+69,8219,2,surname,仁科,,Nishina
+70,821F,2,surname,虹野,,Nijino
+71,8225,2,surname,新田,,Nitta
+72,822B,2,surname,野上,,Nogami
+73,8231,2,surname,橋本,,Hashimoto
+74,8237,2,surname,葉月,,Hazuki
+75,823D,2,surname,早坂,,Hayasaka
+76,8243,2,surname,原島,,Harashima
+77,8249,2,surname,原田,,Harada
+78,824F,2,surname,姫神,,Himegami
+79,8255,2,surname,藤﨑,,Fujisaki
+80,825B,2,surname,本田,,Honda
+81,8261,2,surname,舞島,,Maishima
+82,8267,2,surname,間中,ー,Manaka
+83,826D,3,surname,美樹原,,Mikihara
+84,8275,2,surname,三沢,,Misawa
+85,827B,2,surname,水本,,Mizumoto
+86,8281,3,surname,御手洗,,Mitarai
+87,8289,3,surname,水無月,,Minazuki
+88,8291,2,surname,島好,,Shimayoshi
+89,8297,2,surname,向島,,Mukojima
+90,829D,2,surname,睦月,,Mutsuki
+91,82A3,2,surname,本木,,Motoki
+92,82A9,2,surname,本宮,,Motomiya
+93,82AF,2,surname,森田,,Morita
+94,82B5,2,surname,森野,,Morino
+95,82BB,2,surname,矢神,,Yagami
+96,82C1,2,surname,吉井,,Yoshii
+97,82C7,2,surname,吉田,,Yoshida
+98,82CD,2,surname,吉本,,Yoshimoto
+99,82D3,2,surname,両国,,Ryogoku
+100,82D9,2,given+surname,彩香,,Ayaka
+101,82DF,1,given+surname,舞,,Mai
+102,8.20E+04,1,given+surname,惟,,Yui
+103,8.20E+08,2,given+surname,美姫,,Miki
+104,82ED,2,given+surname,嶺子,,Mineko
+105,82F3,1,given+surname,愛,,Ai
+106,82F7,2,given+surname,愛子,,Aiko
+107,82FD,3,given+surname,あかね,,Akane
+108,8305,1,given+surname,茜,,Akane
+109,8309,3,given+surname,あけみ,,Akemi
+110,8311,2,given+surname,美明,,Akemi
+111,8317,2,given+surname,亜子,,Ako
+112,831D,1,given+surname,彩,,Aya
+113,8321,2,given+surname,彩子,,Ayako
+114,8327,2,given+surname,績子,,Sekiko
+115,832D,3,given+surname,亜失子,,Asako
+116,8335,2,given+surname,彩音,,Ayane
+117,833B,2,given+surname,詩江,,Utano
+118,8341,2,given+surname,詩子,,Utako
+119,8347,2,given+surname,絵舞,,Emai
+120,834D,2,given+surname,江美,,Emi
+121,8353,2,given+surname,絵里,,Eri
+122,8359,3,given+surname,かあり,,Kali
+123,8361,2,given+surname,和代,,Kazuyo
+124,8367,3,given+surname,喜久子,,Kikuko
+125,836F,2,given+surname,京子,,Kyoko
+126,8375,3,given+surname,今日子,,Kyoko
+127,837D,2,given+surname,鏡子,,Keiko
+128,8383,2,given+surname,覆香,,Ooikou
+129,8389,2,given+surname,久美,,Kumi
+130,838F,2,given+surname,景子,,Keiko
+131,8395,2,given+surname,恵子,,Keiko
+132,839B,2,given+surname,紗恵,,Sae
+133,83A1,2,given+surname,沙希,,Saki
+134,83A7,3,given+surname,さくら,,Sakura
+135,83AF,1,given+surname,桜,,Sakura
+136,83B3,2,given+surname,桜子,,Sakurako
+137,83B9,2,given+surname,里子,,Satoko
+138,83BF,2,given+surname,早苗,,Sanae
+139,83C5,2,given+surname,沙夜,,Sayo
+140,83CB,3,given+surname,沙夜子,,Sayoko
+141,83D3,2,given+surname,抄窪,,Kubo
+142,83D9,2,given+surname,詩織,,Shiori
+143,83DF,2,given+surname,静江,,Shizue
+144,8.30E+06,3,given+surname,しずか,,Shizuka
+145,83ED,1,given+surname,静,,Shizu
+146,83F1,2,given+surname,静香,,Shizuka
+147,83F7,2,given+surname,静子,,Shizuko
+148,83FD,2,given+surname,順子,,Junko
+149,8403,2,given+surname,純子,,Junko
+150,8409,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E152)"
+151,840F,3,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E153)"
+152,8417,3,given+surname,ともみ,と,Tomomi
+153,841F,2,given+surname,言呼,,Kotoko
+154,8425,2,given+surname,,世,"=ai(""translate those kanji that are names from Japanese to English"", E156)"
+155,842B,2,given+surname,月子,,Tsukiko
+156,8431,3,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E158)"
+157,8439,2,given+surname,直子,,Naoko
+158,843F,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E160)"
+159,8445,1,given+surname,望,,Nozomi
+160,8449,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E162)"
+161,844F,2,given+surname,紀子,,Noriko
+162,8455,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E164)"
+163,845B,2,given+surname,華子,,Hanako
+164,8461,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E166)"
+165,8467,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E167)"
+166,846D,2,given+surname,洋子,,Yoko
+167,8473,2,given+surname,碚善,,Zenzen
+168,8479,2,given+surname,洋姜,,Hiroshi Kyō
+169,847F,3,given+surname,,ろ,"=ai(""translate those kanji that are names from Japanese to English"", E171)"
+170,8487,2,given+surname,変子,,Henko
+171,848D,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E173)"
+172,8493,2,given+surname,舞島,,Maishima
+173,8499,2,given+surname,真紀,,Maki
+174,849F,2,given+surname,真子,,Mako
+175,84A5,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E177)"
+176,84AB,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E178)"
+177,84B1,3,given+surname,真奈島,,Manajishima
+178,84B9,2,given+surname,,ほ,"=ai(""translate those kanji that are names from Japanese to English"", E180)"
+179,84BF,2,given+surname,真美,,Mami
+180,84C5,2,given+surname,真安,,Masayasu
+181,84CB,2,given+surname,真弥,,Maya
+182,84D1,2,given+surname,美離,,Miri
+183,84D7,2,given+surname,未緒,,Mio
+184,84DD,2,given+surname,美瞽,,Mimi
+185,8.40E+04,2,given+surname,美茴,,Mika
+186,8.40E+10,2,given+surname,美紀,,Miki
+187,84EF,2,given+surname,島子,,Shimako
+188,84F5,3,given+surname,島奈子,,Shimanako
+189,84FD,2,given+surname,島穂,,Shiaho
+190,8503,2,given+surname,美矢,,Miya
+191,8509,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E193)"
+192,850F,3,given+surname,辛西せ,,Metal Rooster
+193,8517,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E195)"
+194,851D,2,given+surname,美幸,,Miyuki
+195,8523,3,given+surname,島由紀,,Shimayuki
+196,852B,3,given+surname,島げ子,,Shimageko
+197,8533,2,given+surname,睦江,,Mutsue
+198,8539,2,given+surname,睦美,,Mutsumi
+199,853F,1,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E201)"
+200,8543,2,given+surname,受美,,Sumi
+201,8549,2,given+surname,素子,,Motoko
+202,854F,2,given+surname,弥生,暦,Yayoi
+203,8555,2,given+surname,絈奈,,Hina
+204,855B,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E206)"
+205,8561,2,given+surname,由佳,,Yuka
+206,8567,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E208)"
+207,856D,3,given+surname,,かり,"=ai(""translate those kanji that are names from Japanese to English"", E209)"
+208,8575,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E210)"
+209,857B,2,given+surname,慢島,,Manshima
+210,8581,2,given+surname,諤甲,,Gakukou
+211,8587,2,given+surname,弖脅,,Teikyou
+212,858D,2,given+surname,弖子,,Teiko
+213,8593,3,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E215)"
+214,859B,3,given+surname,由刷子,,Yueko
+215,85A3,2,given+surname,需子,,Motoko
+216,85A9,2,given+surname,良子,,Ryoko
+217,85AF,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E219)"
+218,85B5,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E220)"
+219,85BB,2,given+surname,りか,,Rika
+220,85C1,2,given+surname,,,"=ai(""translate those kanji that are names from Japanese to English"", E222)"
+221,85C7,4,given+surname,ナージュ,,Naju
+222,85D1,3,given+surname,アリア,,Aria
+223,85D9,3,given+surname,サティ,,Satie
+224,8.50E+02,4,given+surname,ツキヨミ,,Tsukiyomi
+225,85EB,4,given+surname,ミスティ,,Misty
+226,85F5,4,given+surname,シャドウ,,shadow
+227,85FF,4,given+surname,バスケ部,,Basketball club
+228,8609,4,School Club,テニス部,,tennis club
+229,8613,3,School Club,剣道部,,kendo club
+230,861B,3,School Club,空手部,,karate club
+231,8623,3,School Club,弓道部,,Archery Club
+232,862B,5,School Club,ラクロス部,,lacrosse club
+233,8637,4,School Club,新体操部,,Gymnastics Club
+234,8641,5,School Club,オカルト研,,Occult Research Club
+235,864D,3,School Club,科学部,,Science Department
+236,8655,3,School Club,日舞部,,Japanese Dance Club
+237,865D,3,School Club,華道部,,Flower Arrangement Club
+238,8665,4,School Club,軽音楽部,,Light music club
+239,866F,3,School Club,演劇部,,Drama Club
+240,8677,3,School Club,漫画部,,Manga Club
+241,867F,3,School Club,手芸部,,Handicraft Club
+242,8687,4,given+surname,ー般生徒,,Regular Students
+243,8691,2,given+surname,ボス,,boss
+244,8697,14,(non pointé),,,"=ai(""translate those kanji that are names from Japanese to English"", E246)"
+245,86B5,11,(non pointé),,,"=ai(""translate those kanji that are names from Japanese to English"", E247)"
+246,86CD,5,(non pointé),,,"=ai(""translate those kanji that are names from Japanese to English"", E248)"

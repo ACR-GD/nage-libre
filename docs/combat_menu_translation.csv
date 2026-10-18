@@ -1,0 +1,68 @@
+file_off,snes,slot_words,category,jp_full,en
+0x0386D9,$87:86D9,2,combat,？？,??
+0x0386DF,$87:86DF,4,combat,の攻撃！！, hits!!
+0x0386ED,$87:86ED,6,combat,のダメージ！！, damage!!
+0x0386FB,$87:86FB,4,combat,回復した,Healed!
+0x038705,$87:8705,7,combat,防御がアップ！！,Defense up!!
+0x038715,$87:8715,13,combat,入れかえるカードを選んでね,Pick a card to swap
+0x038731,$87:8731,11,combat,ただいま着がえ中です…,Changing outfit now...
+0x038749,$87:8749,5,combat,逃げろぉ！！,Run away!!
+0x038755,$87:8755,12,combat,…おいつかれてしまった！！,...got caught!!
+0x03876F,$87:876F,12,combat,…なんとか、逃げられた…,...barely got away...
+0x038789,$87:8789,6,combat,誕生石効果,Stone bonus
+0x038797,$87:8797,13,combat,ダメージをあたえられない！！,No damage!!
+0x0387B3,$87:87B3,9,combat,逃げるな　待てぇ！！,"Don't run, wait!!"
+0x0387C7,$87:87C7,6,combat,…おいついた,...caught up
+0x0387D5,$87:87D5,10,combat,…逃げられてしまった,...they got away
+0x0387EB,$87:87EB,5,combat,を倒した！！, beaten!!
+0x0387F7,$87:87F7,10,combat,ゴールド手に入れた！！, Gold won!!
+0x03880D,$87:880D,5,combat,上がった！！, went up!!
+0x038819,$87:8819,3,stat,体力が,HP
+0x038821,$87:8821,3,stat,腕力が,Power
+0x038829,$87:8829,4,stat,防御力が,Defense
+0x038833,$87:8833,4,stat,精神力が,Spirit
+0x03883D,$87:883D,4,stat,素早さが,Speed
+0x038847,$87:8847,4,stat,レベルが,Level
+0x038855,$87:8855,10,combat,選べるようになった！！,can now be chosen!!
+0x03886B,$87:886B,6,combat,に上がった！！, up to!!
+0x038879,$87:8879,5,menu,誕生石効果,Gem bonus
+0x038885,$87:8885,8,menu,　はい　　いいえ,Yes    No
+0x038897,$87:8897,7,combat,の超必殺技だ！！, special!!
+0x0388A7,$87:88A7,11,menu,このデータでいいかな？,Is this data OK?
+0x0388BF,$87:88BF,13,menu,どのファイルをロードする？,Which file to load?
+0x0388DB,$87:88DB,13,shop,カードを買います,Buy a card
+0x0388F7,$87:88F7,13,menu,キャラクターを入れかえます,Swap character
+0x038913,$87:8913,13,shop,カードをうります,Sell a card
+0x03892F,$87:892F,12,shop,お金がたりません！！,Not enough money!!
+0x038949,$87:8949,13,shop,これ以上買えません,Can't buy more
+0x03896D,$87:896D,9,menu,誕生日をおしえてね,Your birthday?
+0x038981,$87:8981,12,menu,これで誕生日はいいかな？,Is this birthday OK?
+0x03899B,$87:899B,13,menu,どのファイルにセーブする？,Which file to save?
+0x0389B7,$87:89B7,4,menu,ファイル,File
+0x0389C5,$87:89C5,12,menu,まえのデータをけしますよ,Old data will be erased
+0x0389DF,$87:89DF,5,menu,だめ　よい,No   Yes
+0x0389EB,$87:89EB,2,menu,なし,None
+0x0389F1,$87:89F1,7,stone,ガーネット,Garnet
+0x038A01,$87:8A01,7,stone,アメジスト,Amethyst
+0x038A11,$87:8A11,7,stone,アクアマリン,Aquamarine
+0x038A21,$87:8A21,7,stone,ダイヤモンド,Diamond
+0x038A31,$87:8A31,7,stone,エメラルド,Emerald
+0x038A41,$87:8A41,7,stone,ムーンストーン,Moonstone
+0x038A51,$87:8A51,7,stone,ルビー,Ruby
+0x038A61,$87:8A61,7,stone,めのう,Agate
+0x038A71,$87:8A71,7,stone,サファイア,Sapphire
+0x038A81,$87:8A81,7,stone,オパール,Opal
+0x038A91,$87:8A91,7,stone,トパーズ,Topaz
+0x038AA1,$87:8AA1,7,stone,ラピスラズリ,Lapis Lazuli
+0x038AB1,$87:8AB1,7,hub,どうしますか？,What to do?
+0x038AC1,$87:8AC1,3,hub,買い物,Shop
+0x038AC9,$87:8AC9,4,hub,部活選択,Clubs
+0x038AD3,$87:8AD3,3,hub,セーブ,Save
+0x038ADB,$87:8ADB,4,hub,スタート,Start
+0x038AE5,$87:8AE5,2,hub,EX,EX
+0x038AEB,$87:8AEB,6,hub,「リ」の宝玉,Gem of Li
+0x038AF9,$87:8AF9,6,hub,「ベ」の宝玉,Gem of be
+0x038B07,$87:8B07,6,hub,「ラ」の宝玉,Gem of ra
+0x038B15,$87:8B15,6,hub,「ジ」の宝玉,Gem of ji
+0x038B23,$87:8B23,6,hub,「オ」の宝玉,Gem of o
+0x038B31,$87:8B31,6,hub,「ン」の宝玉,Gem of n
