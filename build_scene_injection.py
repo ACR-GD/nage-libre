@@ -217,7 +217,89 @@ def encode_fit(text, alloc, approved, slot):
         if len(cand) <= slot:
             return cand, True
     # un seul mot trop long : coupe dur
-    return smart_encode(text, alloc, approved)[:slot], True
+    return wrap_encode(text, alloc, approved)[:slot], True
+
+
+NEWLINE_CODE = 0xFFFE
+NEWLINE_HOOK_ADDR = 0xFEE0
+NEWLINE_ENTRY_ADDR = 0xF433
+NEWLINE_ENTRY_FILE = 0x7433
+NEWLINE_HOOK_FILE = 0x7EE0
+
+
+def wrap_encode(text, alloc, approved, max_row_chars=26):
+    """Enveloppe et encode le texte en IDs avec sauts de ligne propres ($FFFE)."""
+    paragraphs = text.split('\n')
+    all_ids = []
+
+    for p_idx, para in enumerate(paragraphs):
+        words = para.split(' ')
+        rows = []
+        cur_row = []
+        cur_len = 0
+
+        for w in words:
+            space = 1 if cur_row else 0
+            if cur_len + space + len(w) > max_row_chars:
+                rows.append(" ".join(cur_row))
+                cur_row = [w]
+                cur_len = len(w)
+            else:
+                cur_row.append(w)
+                cur_len += space + len(w)
+        if cur_row:
+            rows.append(" ".join(cur_row))
+
+        for r_idx, row in enumerate(rows):
+            all_ids.extend(smart_encode(row, alloc, approved))
+            if r_idx < len(rows) - 1:
+                all_ids.append(NEWLINE_CODE)
+
+        if p_idx < len(paragraphs) - 1:
+            all_ids.append(NEWLINE_CODE)
+
+    return all_ids
+
+
+def assemble_newline_hook():
+    """Hook @ $80:FB00 interceptant le code de saut de ligne $FFFE pour $80:F433."""
+    c = bytearray()
+    c += bytes([0xC9, 0xFE, 0xFF])                    # CMP #$FFFE
+    c += bytes([0xF0, 0x0E])                          # BEQ handle_newline (+14)
+
+    # Chemin normal : exécute le préambule de $80:F433 et saute à $F43C
+    c += bytes([0x08])                                # PHP
+    c += bytes([0xC2, 0x30])                          # REP #$30
+    c += bytes([0x48])                                # PHA
+    c += bytes([0xDA])                                # PHX
+    c += bytes([0x5A])                                # PHY
+    c += bytes([0xAE, 0x40, 0x02])                    # LDX $0240
+    c += bytes([0x5C, 0x3C, 0xF4, 0x80])              # JML $80:F43C
+
+    # handle_newline : passe à la ligne suivante
+    c += bytes([0xE2, 0x20])                          # SEP #$20
+    c += bytes([0xAD, 0x42, 0x11])                    # LDA $1142 (rangée courante)
+    c += bytes([0x18, 0x69, 0x02])                    # CLC ; ADC #$02
+    c += bytes([0xC9, 0x1F])                          # CMP #$1F
+    c += bytes([0x30, 0x02])                          # BMI +2
+    c += bytes([0xA9, 0x1E])                          # LDA #$1E
+    c += bytes([0x8D, 0x42, 0x11])                    # STA $1142
+    c += bytes([0xAD, 0x43, 0x11])                    # LDA $1143 (marge gauche)
+    c += bytes([0x8D, 0x41, 0x11])                    # STA $1141 (colonne courante)
+    c += bytes([0xC2, 0x20])                          # REP #$20
+    c += bytes([0x60])                                # RTS
+    return bytes(c)
+
+
+def install_newline_hook(rom: bytearray):
+    """Installe l'intercepteur de saut de ligne dans la banque $80."""
+    hook = assemble_newline_hook()
+    rom[NEWLINE_HOOK_FILE:NEWLINE_HOOK_FILE + len(hook)] = hook
+
+    # Détournement à $80:F433 : JML $80:FB00 + NOPs
+    patch = bytearray([0x5C, NEWLINE_HOOK_ADDR & 0xFF, (NEWLINE_HOOK_ADDR >> 8) & 0xFF, 0x80])
+    patch += bytes([0xEA] * 5)
+    rom[NEWLINE_ENTRY_FILE:NEWLINE_ENTRY_FILE + len(patch)] = patch
 
 
 def smart_encode(text, alloc, approved):
@@ -392,7 +474,7 @@ def apply(rom: bytearray, alloc):
         string_records = []
 
         for off, en, slot in recs:
-            full_ids = smart_encode(en, alloc, approved)
+            full_ids = wrap_encode(en, alloc, approved)
             if len(full_ids) <= slot:
                 # Tient sur place
                 string_records.append((off, full_ids + [0xFFFF]))
@@ -463,13 +545,16 @@ def apply(rom: bytearray, alloc):
 
     rom[dir_file:dir_file + len(dir_bytes)] = dir_bytes
 
-    # hook en banque $83 + redirection $83:80FF
+    # hook scènes en banque $83 + redirection $83:80FF
     hook = assemble_hook(dir_snes, base, ndir)
     if HOOK_ROM + len(hook) > FREE83_END:
         raise SystemExit(f"Hook scènes trop gros pour banque $83 ({len(hook)} o).")
     rom[HOOK_ROM:HOOK_ROM + len(hook)] = hook
     rom[HOOK_POINT:HOOK_POINT + 4] = bytes(
         [0x22, HOOK_ADDR & 0xFF, (HOOK_ADDR >> 8) & 0xFF, HOOK_BANK])
+
+    # Installe l'intercepteur de saut de ligne ($FFFE) dans la banque $80
+    install_newline_hook(rom)
 
     return {
         "scenes": len(idxs),
