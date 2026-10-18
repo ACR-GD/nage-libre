@@ -152,85 +152,35 @@ def load_scene_records(rom):
 
 
 # ---------------------------------------------------------------------------
-# 3) Plan de police (paires fréquentes + repli mono-caractère)
+# 3) Moteur de police matérielle 8x16 native (demi-chasse)
 # ---------------------------------------------------------------------------
-def _digraph_stats(all_en):
-    freq = Counter()
-    charset = set()
-    for en in all_en:
-        ch = list(en)
-        i = 0
-        while i < len(ch):
-            cl = ch[i]
-            if cl == "\u2026":
-                i += 1
-                continue
-            if cl == " ":
-                i += 1
-                continue
-            if cl not in FONT:
-                i += 1
-                continue
-            charset.add(cl)
-            cr = ch[i + 1] if i + 1 < len(ch) else " "
-            if cr == "\u2026" or cr not in FONT:
-                cr = " "
-            if cr == " ":
-                i += 2
-            else:
-                freq[(cl, cr)] += 1
-                charset.add(cr)
-                i += 2
-    return freq, charset
+HW_BASE_ID = 0x0500
+HW_HOOK_ADDR = 0xFF10
+HW_HOOK_FILE = 0x7F10
+
+# Table de correspondance caractère -> ID 16-bit
+CHAR_TO_HW_ID = {chr(c): HW_BASE_ID + (c - 32) for c in range(32, 127)}
+CHAR_TO_HW_ID['…'] = HW_BASE_ID + 95
+CHAR_TO_HW_ID['—'] = HW_BASE_ID + 96
+CHAR_TO_HW_ID['ー'] = CHAR_TO_HW_ID['-']
+CHAR_TO_HW_ID['□'] = CHAR_TO_HW_ID['?']
 
 
-def build_pair_plan(all_en, alloc):
-    """Pré-alloue les glyphes mono-caractère (repli) puis les digrammes les plus
-    fréquents dans le budget de police restant. Renvoie l'ensemble `approved`."""
-    freq, charset = _digraph_stats(all_en)
-    approved = set()
-    # 1) mono-caractères (c, ' ') : indispensables au repli -> toujours alloués
-    for c in sorted(charset):
-        alloc.get(c, " ")
-        approved.add((c, " "))
-    # 2) digrammes fréquents tant qu'il reste du budget
-    for (cl, cr), _n in freq.most_common():
-        if (cl, cr) in approved:
-            continue
-        if alloc.available() <= PAIR_BUDGET_MARGIN:
-            break
-        alloc.get(cl, cr)
-        approved.add((cl, cr))
-    return approved
+def encode_hw(text):
+    """Encode une chaîne de texte en IDs demi-chasse (8x16) natifs."""
+    ids = []
+    for ch in text:
+        cid = CHAR_TO_HW_ID.get(ch)
+        if cid is None:
+            cid = CHAR_TO_HW_ID.get('?')
+        ids.append(cid)
+    return ids
 
 
-def encode_fit(text, alloc, approved, slot):
-    """Encode en bornant à `slot` IDs. Si trop long, coupe sur une FRONTIÈRE DE
-    MOT (lisible) plutôt qu'en plein milieu. Renvoie (ids, tronqué)."""
-    ids = smart_encode(text, alloc, approved)
-    if len(ids) <= slot:
-        return ids, False
-    words = text.split(" ")
-    while len(words) > 1:
-        words.pop()
-        cand = smart_encode(" ".join(words), alloc, approved)
-        if len(cand) <= slot:
-            return cand, True
-    # un seul mot trop long : coupe dur
-    return wrap_encode(text, alloc, approved)[:slot], True
-
-
-NEWLINE_CODE = 0xFFFE
-NEWLINE_HOOK_ADDR = 0xFEE0
-NEWLINE_ENTRY_ADDR = 0xF433
-NEWLINE_ENTRY_FILE = 0x7433
-NEWLINE_HOOK_FILE = 0x7EE0
-
-
-def wrap_encode(text, alloc, approved, max_glyphs=14):
-    """Enveloppe et encode le texte en IDs avec sauts de ligne propres ($FFFE).
-    Mesure la largeur en nombre réel de GLYPHES (max 14 glyphes = 28 colonnes de tuiles),
-    ce qui garantit qu'aucune ligne ne déborde la marge droite ($1144 = $1F) et que
+def wrap_encode(text, alloc=None, approved=None, max_row_chars=26):
+    """Enveloppe et encode le texte en IDs demi-chasse (8x16) avec sauts de ligne propres ($FFFE).
+    Mesure la largeur en caractères (max 26 par ligne),
+    ce qui garantit qu'aucune ligne ne déborde la marge droite ($1144 = 30) et que
     le moteur SNES ne coupe jamais les mots en deux."""
     paragraphs = text.split('\n')
     all_ids = []
@@ -243,8 +193,7 @@ def wrap_encode(text, alloc, approved, max_glyphs=14):
         for w in words:
             cand = cur_words + [w]
             cand_str = " ".join(cand)
-            cand_ids = smart_encode(cand_str, alloc, approved)
-            if len(cand_ids) <= max_glyphs:
+            if len(cand_str) <= max_row_chars:
                 cur_words.append(w)
             else:
                 if cur_words:
@@ -257,7 +206,7 @@ def wrap_encode(text, alloc, approved, max_glyphs=14):
             rows.append(" ".join(cur_words))
 
         for r_idx, row in enumerate(rows):
-            all_ids.extend(smart_encode(row, alloc, approved))
+            all_ids.extend(encode_hw(row))
             if r_idx < len(rows) - 1:
                 all_ids.append(NEWLINE_CODE)
 
@@ -265,6 +214,27 @@ def wrap_encode(text, alloc, approved, max_glyphs=14):
             all_ids.append(NEWLINE_CODE)
 
     return all_ids
+
+
+def encode_fit(text, alloc=None, approved=None, slot=0):
+    """Encode en bornant à `slot` IDs si non relocalisable. Coupe sur frontière de mot."""
+    ids = wrap_encode(text)
+    if len(ids) <= slot:
+        return ids, False
+    words = text.split(" ")
+    while len(words) > 1:
+        words.pop()
+        cand = wrap_encode(" ".join(words))
+        if len(cand) <= slot:
+            return cand, True
+    return ids[:slot], True
+
+
+NEWLINE_CODE = 0xFFFE
+NEWLINE_HOOK_ADDR = 0xFEE0
+NEWLINE_ENTRY_ADDR = 0xF433
+NEWLINE_ENTRY_FILE = 0x7433
+NEWLINE_HOOK_FILE = 0x7EE0
 
 
 def assemble_newline_hook():
@@ -305,40 +275,53 @@ def install_newline_hook(rom: bytearray):
     hook = assemble_newline_hook()
     rom[NEWLINE_HOOK_FILE:NEWLINE_HOOK_FILE + len(hook)] = hook
 
-    # Détournement à $80:F433 : JML $80:FB00 + NOPs
+    # Détournement à $80:F433 : JML $80:FEE0 + NOPs
     patch = bytearray([0x5C, NEWLINE_HOOK_ADDR & 0xFF, (NEWLINE_HOOK_ADDR >> 8) & 0xFF, 0x80])
     patch += bytes([0xEA] * 5)
     rom[NEWLINE_ENTRY_FILE:NEWLINE_ENTRY_FILE + len(patch)] = patch
 
 
-def smart_encode(text, alloc, approved):
-    """Encode en IDs : paire si approuvée, sinon repli mono-caractère."""
-    ids = []
-    ch = list(text)
-    i = 0
-    while i < len(ch):
-        cl = ch[i]
-        if cl == "\u2026":
-            ids.append(ELLIPSIS)
-            i += 1
-            continue
-        if cl == " ":
-            ids.append(JP_SPACE)
-            i += 1
-            continue
-        if cl not in FONT:
-            i += 1
-            continue
-        cr = ch[i + 1] if i + 1 < len(ch) else " "
-        if cr == "\u2026" or cr not in FONT:
-            cr = " "
-        if (cl, cr) in approved:
-            ids.append(alloc.get(cl, cr))
-            i += 2
-        else:
-            ids.append(alloc.get(cl, " "))   # repli : émet cl seul
-            i += 1
-    return ids
+def assemble_hw_hook():
+    """Sous-routine à $80:FF10 testant si l'ID dans A est demi-chasse (8x16).
+    Renvoie Carry = 0 si demi-chasse (< 0x0010 OU 0x0500..0x056F),
+            Carry = 1 si pleine-chasse (0x0010..0x04FF OU >= 0x0570)."""
+    c = bytearray()
+    c += bytes([0xC9, 0x10, 0x00])      # CMP #$0010
+    c += bytes([0x90, 0x0A])            # BCC +10 ($FF1F)
+    c += bytes([0xC9, 0x00, 0x05])      # CMP #$0500
+    c += bytes([0x90, 0x07])            # BCC +7  ($FF21)
+    c += bytes([0xC9, 0x70, 0x05])      # CMP #$0570
+    c += bytes([0xB0, 0x02])            # BCS +2  ($FF21)
+    # $FF1F:
+    c += bytes([0x18, 0x60])            # CLC ; RTS
+    # $FF21:
+    c += bytes([0x38, 0x60])            # SEC ; RTS
+    return bytes(c)
+
+
+def install_hw_hook(rom: bytearray):
+    """Installe la sous-routine is_half_width à $80:FF10 et patche les 3 sites de $80:F390."""
+    sub = assemble_hw_hook()
+    rom[HW_HOOK_FILE:HW_HOOK_FILE + len(sub)] = sub
+
+    # Site 1 : $80:F3AD (offset 0x73AD) - 5 octets
+    rom[0x73AD:0x73AD + 5] = bytes([0x20, HW_HOOK_ADDR & 0xFF, (HW_HOOK_ADDR >> 8) & 0xFF, 0x90, 0x02])
+
+    # Site 2 : $80:F3C6 (offset 0x73C6) - 5 octets
+    rom[0x73C6:0x73C6 + 5] = bytes([0x20, HW_HOOK_ADDR & 0xFF, (HW_HOOK_ADDR >> 8) & 0xFF, 0xB0, 0x1E])
+
+    # Site 3 : $80:F425 (offset 0x7425) - 6 octets
+    rom[0x7425:0x7425 + 6] = bytes([0x20, HW_HOOK_ADDR & 0xFF, (HW_HOOK_ADDR >> 8) & 0xFF, 0xEA, 0xEA, 0xEA])
+
+
+def install_hw_font(rom: bytearray):
+    """Installe les tuiles 8x16 (32 octets 2bpp par caractère) pour tous les caractères
+    supportés en ROM à partir de char_id_to_rom(0x0500) = 0x032000."""
+    from patch_prologue_v3 import make_half_tile, char_id_to_rom
+    for ch, cid in CHAR_TO_HW_ID.items():
+        data = make_half_tile(ch)
+        off = char_id_to_rom(cid)
+        rom[off:off + 32] = data
 
 
 # ---------------------------------------------------------------------------
@@ -446,13 +429,15 @@ def assemble_hook(dir_snes, base, ndir):
 # ---------------------------------------------------------------------------
 # 5) apply() — encode, place annuaire+données en $B0+, écrit le hook
 # ---------------------------------------------------------------------------
-def apply(rom: bytearray, alloc):
+def apply(rom: bytearray, alloc=None):
     scenes = load_scene_records(rom)
     if not scenes:
         return {"scenes": 0, "lines": 0, "truncated": 0, "bytes": 0}
 
-    all_en = [en for recs in scenes.values() for _o, en, _s in recs]
-    approved = build_pair_plan(all_en, alloc)
+    # 1. Installe la police matérielle demi-chasse (8x16) et les hooks moteur en banque $80
+    install_hw_font(rom)
+    install_hw_hook(rom)
+    install_newline_hook(rom)
 
     # Table des pointeurs de scènes pour décompresser et inspecter le bytecode
     tbl = {i: off for i, _s, off in read_ptr_table(rom, 0x600) if off}
@@ -483,7 +468,7 @@ def apply(rom: bytearray, alloc):
         string_records = []
 
         for off, en, slot in recs:
-            full_ids = wrap_encode(en, alloc, approved)
+            full_ids = wrap_encode(en)
             if len(full_ids) <= slot:
                 # Tient sur place
                 string_records.append((off, full_ids + [0xFFFF]))
@@ -500,7 +485,7 @@ def apply(rom: bytearray, alloc):
                     relocated_count += 1
                 else:
                     # Repli exceptionnel si aucun pointeur trouvé dans prog_end
-                    ids, was_trunc = encode_fit(en, alloc, approved, slot)
+                    ids, was_trunc = encode_fit(en, slot=slot)
                     if was_trunc:
                         truncated += 1
                     string_records.append((off, ids + [0xFFFF]))
@@ -562,9 +547,6 @@ def apply(rom: bytearray, alloc):
     rom[HOOK_POINT:HOOK_POINT + 4] = bytes(
         [0x22, HOOK_ADDR & 0xFF, (HOOK_ADDR >> 8) & 0xFF, HOOK_BANK])
 
-    # Installe l'intercepteur de saut de ligne ($FFFE) dans la banque $80
-    install_newline_hook(rom)
-
     return {
         "scenes": len(idxs),
         "lines": sum(len(str_recs) for _, str_recs in encoded.values()),
@@ -572,5 +554,5 @@ def apply(rom: bytearray, alloc):
         "relocated": relocated_count,
         "bytes": cursor - dir_file,
         "hook": len(hook),
-        "pairs": len(approved),
+        "pairs": len(CHAR_TO_HW_ID),
     }

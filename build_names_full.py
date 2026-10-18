@@ -98,6 +98,7 @@ def compute_free_pool(rom):
 
     return [cid for cid in find_safe_ids(rom)
             if cid >= 0x0100
+            and not (0x0500 <= cid < 0x0570)
             and cid not in ref and (cid + 1) not in ref and (cid - 1) not in ref]
 
 
