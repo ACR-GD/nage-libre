@@ -256,9 +256,10 @@ def smart_encode(text, alloc, approved):
 def assemble_hook(dir_snes, base, ndir):
     """Hook @ $83:F8E3. A=scene_idx en entrée. Annuaire DIR (4 o/entrée :
     addrLo, addrHi, bank, 0) à l'adresse 24-bit `dir_snes` ; bank 0 = pas de
-    section. Section = [offset, count, ids…]×n, FFFF final. Copie chaque chaîne
-    vers $7F:64C0+offset. ZP utilisés ($09/$0A/$0B dest, $0C cnt, $3C/$3D/$3E
-    src) sauvegardés/restaurés."""
+    section.
+    Section format :
+      [n_repoints, (ptr_pos, new_offset) * n_repoints, (dest_offset, count, ids…) * n_strings, FFFF]
+    """
     DLO = dir_snes & 0xFFFF
     DHI = (dir_snes >> 16) & 0xFF
     c = bytearray()
@@ -267,8 +268,7 @@ def assemble_hook(dir_snes, base, ndir):
     c += bytes([0xC2, 0x30])                          # REP #$30
     c += bytes([0xDA, 0x5A])                          # PHX PHY
     c += bytes([0xA8])                                # TAY  (Y = scene_idx)
-    # sauvegarde ZP (16-bit) : $09/$0A, $0B/$0C, $0D/$0E (STA $0C écrit $0D),
-    # $3C/$3D, $3E/$3F
+    # sauvegarde ZP (16-bit) : $09/$0A, $0B/$0C, $0D/$0E, $3C/$3D, $3E/$3F
     c += bytes([0xA5, 0x09, 0x48])                    # LDA $09 ; PHA
     c += bytes([0xA5, 0x0B, 0x48])                    # LDA $0B ; PHA
     c += bytes([0xA5, 0x0D, 0x48])                    # LDA $0D ; PHA
@@ -293,8 +293,27 @@ def assemble_hook(dir_snes, base, ndir):
     # $0B = $7F (bank dest), une fois
     c += bytes([0xE2, 0x20, 0xA9, 0x7F, 0x85, 0x0B, 0xC2, 0x20])  # SEP/LDA/STA/REP
     c += bytes([0xA0, 0x00, 0x00])                    # LDY #$0000  (index section)
+
+    # --- Phase 1 : Repointage des opcodes bytecode pour lignes relocalisées ---
+    c += bytes([0xB7, 0x3C])                          # LDA [$3C],Y (n_repoints)
+    c += bytes([0xF0, 0x16])                          # BEQ skip_repoints (+22)
+    c += bytes([0x85, 0x0C])                          # STA $0C (compteur)
+    rp_loop = len(c)
+    c += bytes([0xC8, 0xC8])                          # INY INY
+    c += bytes([0xB7, 0x3C])                          # LDA [$3C],Y (ptr_pos)
+    c += bytes([0x18, 0x69, 0xC0, 0x64])              # CLC ; ADC #$64C0
+    c += bytes([0x85, 0x09])                          # STA $09
+    c += bytes([0xC8, 0xC8])                          # INY INY
+    c += bytes([0xB7, 0x3C])                          # LDA [$3C],Y (new_offset)
+    c += bytes([0x87, 0x09])                          # STA [$09]
+    c += bytes([0xC6, 0x0C])                          # DEC $0C
+    c += bytes([0xD0, (rp_loop - (len(c) + 2)) & 0xFF]) # BNE rp_loop
+    # skip_repoints:
+    c += bytes([0xC8, 0xC8])                          # INY INY
+
+    # --- Phase 2 : Copie des chaînes de texte ---
     rec = len(c)
-    c += bytes([0xB7, 0x3C])                          # LDA [$3C],Y  (offset)
+    c += bytes([0xB7, 0x3C])                          # LDA [$3C],Y  (dest_offset)
     c += bytes([0xC9, 0xFF, 0xFF])                    # CMP #$FFFF
     c += bytes([0xD0, 0x03])                          # BNE +3
     jmp_done.append(len(c)); c += bytes([0x4C, 0x00, 0x00])  # JMP done
@@ -344,17 +363,58 @@ def apply(rom: bytearray, alloc):
     all_en = [en for recs in scenes.values() for _o, en, _s in recs]
     approved = build_pair_plan(all_en, alloc)
 
-    # encodage + bornage n_ids
-    encoded = {}            # scene_idx -> [(offset, ids+FFFF)]
+    # Table des pointeurs de scènes pour décompresser et inspecter le bytecode
+    tbl = {i: off for i, _s, off in read_ptr_table(rom, 0x600) if off}
+
+    # Encodage avec relocalisation pour les lignes qui dépassent
+    encoded = {}            # scene_idx -> (repoints, [(dest_offset, ids+FFFF)])
     truncated = 0
+    relocated_count = 0
+
     for sidx, recs in scenes.items():
-        out = []
+        src = tbl.get(sidx)
+        out, _ = decompress(rom, src, dst_limit=0x4000)
+        w = lambda o: out[o] | (out[o+1] << 8) if o + 1 < len(out) else 0xFFFF
+
+        # Recherche de la fin du programme d'opcodes (premier FFFF aligné)
+        prog_end = 0
+        for p in range(0, len(out) - 1, 2):
+            if w(p) == 0xFFFF:
+                prog_end = p
+                break
+
+        # Curseur d'offset WRAM pour les nouvelles chaînes au-delà du buffer
+        cur_end = len(out)
+        if cur_end % 2 != 0:
+            cur_end += 1
+
+        repoints = []
+        string_records = []
+
         for off, en, slot in recs:
-            ids, was_trunc = encode_fit(en, alloc, approved, slot)
-            if was_trunc:
-                truncated += 1
-            out.append((off, ids + [0xFFFF]))
-        encoded[sidx] = out
+            full_ids = smart_encode(en, alloc, approved)
+            if len(full_ids) <= slot:
+                # Tient sur place
+                string_records.append((off, full_ids + [0xFFFF]))
+            else:
+                # Dépasse la longueur JP d'origine : on cherche les références dans le programme
+                ptrs = [p for p in range(0, prog_end, 2) if w(p) == off]
+                if ptrs:
+                    # Relocalisation à la fin du buffer décompressé
+                    new_off = cur_end
+                    cur_end += (len(full_ids) + 1) * 2
+                    for p in ptrs:
+                        repoints.append((p, new_off))
+                    string_records.append((new_off, full_ids + [0xFFFF]))
+                    relocated_count += 1
+                else:
+                    # Repli exceptionnel si aucun pointeur trouvé dans prog_end
+                    ids, was_trunc = encode_fit(en, alloc, approved, slot)
+                    if was_trunc:
+                        truncated += 1
+                    string_records.append((off, ids + [0xFFFF]))
+
+        encoded[sidx] = (repoints, string_records)
 
     idxs = sorted(encoded)
     base = SCENE_BASE
@@ -372,13 +432,21 @@ def apply(rom: bytearray, alloc):
 
     cursor = dir_file + len(dir_bytes)
     for sidx in idxs:
-        # sérialise la section
+        repoints, str_recs = encoded[sidx]
         sec = bytearray()
-        for off, ids in encoded[sidx]:
-            sec += struct.pack("<HH", off, len(ids))
+
+        # En-tête : nombre de repoints
+        sec += struct.pack("<H", len(repoints))
+        for ptr_pos, new_off in repoints:
+            sec += struct.pack("<HH", ptr_pos, new_off)
+
+        # Chaînes de texte
+        for dest_off, ids in str_recs:
+            sec += struct.pack("<HH", dest_off, len(ids))
             for cid in ids:
                 sec += struct.pack("<H", cid)
         sec += struct.pack("<H", 0xFFFF)
+
         # ne pas franchir la frontière de banque
         bank_end = (cursor // BANK_SIZE + 1) * BANK_SIZE
         if cursor + len(sec) > bank_end:
@@ -405,8 +473,9 @@ def apply(rom: bytearray, alloc):
 
     return {
         "scenes": len(idxs),
-        "lines": sum(len(v) for v in encoded.values()),
+        "lines": sum(len(str_recs) for _, str_recs in encoded.values()),
         "truncated": truncated,
+        "relocated": relocated_count,
         "bytes": cursor - dir_file,
         "hook": len(hook),
         "pairs": len(approved),

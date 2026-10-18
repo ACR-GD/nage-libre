@@ -27,3 +27,8 @@ obj/
 
 # Binaire compilé (source : scripts/vision_ocr.swift)
 scripts/vision_ocr
+
+# Ghidra project lock and state files
+*.lock
+*.lock~
+Nage Libre.rep/
