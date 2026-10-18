@@ -227,28 +227,34 @@ NEWLINE_ENTRY_FILE = 0x7433
 NEWLINE_HOOK_FILE = 0x7EE0
 
 
-def wrap_encode(text, alloc, approved, max_row_chars=26):
-    """Enveloppe et encode le texte en IDs avec sauts de ligne propres ($FFFE)."""
+def wrap_encode(text, alloc, approved, max_glyphs=14):
+    """Enveloppe et encode le texte en IDs avec sauts de ligne propres ($FFFE).
+    Mesure la largeur en nombre réel de GLYPHES (max 14 glyphes = 28 colonnes de tuiles),
+    ce qui garantit qu'aucune ligne ne déborde la marge droite ($1144 = $1F) et que
+    le moteur SNES ne coupe jamais les mots en deux."""
     paragraphs = text.split('\n')
     all_ids = []
 
     for p_idx, para in enumerate(paragraphs):
-        words = para.split(' ')
+        words = [w for w in para.split(' ') if w]
         rows = []
-        cur_row = []
-        cur_len = 0
+        cur_words = []
 
         for w in words:
-            space = 1 if cur_row else 0
-            if cur_len + space + len(w) > max_row_chars:
-                rows.append(" ".join(cur_row))
-                cur_row = [w]
-                cur_len = len(w)
+            cand = cur_words + [w]
+            cand_str = " ".join(cand)
+            cand_ids = smart_encode(cand_str, alloc, approved)
+            if len(cand_ids) <= max_glyphs:
+                cur_words.append(w)
             else:
-                cur_row.append(w)
-                cur_len += space + len(w)
-        if cur_row:
-            rows.append(" ".join(cur_row))
+                if cur_words:
+                    rows.append(" ".join(cur_words))
+                    cur_words = [w]
+                else:
+                    rows.append(w)
+                    cur_words = []
+        if cur_words:
+            rows.append(" ".join(cur_words))
 
         for r_idx, row in enumerate(rows):
             all_ids.extend(smart_encode(row, alloc, approved))
