@@ -262,21 +262,24 @@ def wrap_encode(text, alloc, approved, max_row_chars=26):
 
 
 def assemble_newline_hook():
-    """Hook @ $80:FB00 interceptant le code de saut de ligne $FFFE pour $80:F433."""
+    """Hook @ $80:FEE0 interceptant le code de saut de ligne $FFFE pour $80:F433."""
     c = bytearray()
-    c += bytes([0xC9, 0xFE, 0xFF])                    # CMP #$FFFE
-    c += bytes([0xF0, 0x0E])                          # BEQ handle_newline (+14)
-
-    # Chemin normal : exécute le préambule de $80:F433 et saute à $F43C
+    # 1. Préserve immédiatement les flags P et force A/XY en 16-bit
     c += bytes([0x08])                                # PHP
     c += bytes([0xC2, 0x30])                          # REP #$30
+
+    # 2. Vérifie le code de saut de ligne ($FFFE)
+    c += bytes([0xC9, 0xFE, 0xFF])                    # CMP #$FFFE
+    c += bytes([0xF0, 0x0A])                          # BEQ handle_newline (+10)
+
+    # Chemin normal : sauvegarde A/X/Y, charge X et saute à $80:F43C
     c += bytes([0x48])                                # PHA
     c += bytes([0xDA])                                # PHX
     c += bytes([0x5A])                                # PHY
     c += bytes([0xAE, 0x40, 0x02])                    # LDX $0240
     c += bytes([0x5C, 0x3C, 0xF4, 0x80])              # JML $80:F43C
 
-    # handle_newline : passe à la ligne suivante
+    # handle_newline : avance la rangée et réinitialise la colonne
     c += bytes([0xE2, 0x20])                          # SEP #$20
     c += bytes([0xAD, 0x42, 0x11])                    # LDA $1142 (rangée courante)
     c += bytes([0x18, 0x69, 0x02])                    # CLC ; ADC #$02
@@ -286,7 +289,7 @@ def assemble_newline_hook():
     c += bytes([0x8D, 0x42, 0x11])                    # STA $1142
     c += bytes([0xAD, 0x43, 0x11])                    # LDA $1143 (marge gauche)
     c += bytes([0x8D, 0x41, 0x11])                    # STA $1141 (colonne courante)
-    c += bytes([0xC2, 0x20])                          # REP #$20
+    c += bytes([0x28])                                # PLP (restaure flags et taille de l'appelant)
     c += bytes([0x60])                                # RTS
     return bytes(c)
 
