@@ -114,12 +114,23 @@ def _write_ptr(rom, tbl_file, e, bank, addr):
     rom[a + 2] = bank & 0xFF
 
 
+# Patch de la routine HUD adverse @ $81:C0B0 (0x00C0B0) :
+# D'origine : charge $13D8,X (Nom de famille) puis $13D7,X (Prénom).
+# Inversé : charge $13D7,X (Prénom) puis $13D8,X (Initiale nom de famille).
+OPPONENT_HUD_PATCH_1 = 0x00C0B5   # BD D8 13 -> BD D7 13
+OPPONENT_HUD_PATCH_2 = 0x00C0BE   # BD D7 13 -> BD D8 13
+
+
 def apply(rom: bytearray, alloc):
     """Relocalise les noms remplis et repointe le tableau partagé. Renvoie le nb
     d'entrées relocalisées (et le nb de chaînes uniques écrites dans le pool)."""
     en_by_idx, idx_by_off, role_by_idx = _load_en()
     if not en_by_idx:
         return 0, 0
+
+    # Inverse l'ordre d'affichage dans le HUD de combat adverse (Prénom puis Initiale Nom)
+    rom[OPPONENT_HUD_PATCH_1:OPPONENT_HUD_PATCH_1 + 3] = bytes([0xBD, 0xD7, 0x13])
+    rom[OPPONENT_HUD_PATCH_2:OPPONENT_HUD_PATCH_2 + 3] = bytes([0xBD, 0xD8, 0x13])
 
     cursor = POOL_FILE
     cache = {}  # tuple(ids) -> addr 16-bit
@@ -151,7 +162,7 @@ def apply(rom: bytearray, alloc):
         ids = encode_en(en, alloc)
         while len(ids) > 1 and ids[-1] == JP_SPACE:
             ids.pop()
-        # séparateur nom de famille -> prénom : une seule espace (les noms de
+        # séparateur prénom -> initiale : une seule espace (les noms de
         # longueur impaire en ont déjà une implicite via la tuile « X␣ »).
         if trailing_space and not _ends_with_space(ids):
             ids = ids + [JP_SPACE]
@@ -163,11 +174,20 @@ def apply(rom: bytearray, alloc):
         idx = idx_by_off.get(addr16)
         if idx is None or idx not in en_by_idx:
             continue
-        # Seuls les noms de famille (1re partie) prennent une espace finale ; les
-        # prénoms/clubs (dernière partie) n'en mettent pas → les suffixes de combat
-        # (" hits!!", " damage!!") fournissent déjà l'espace de tête.
-        trailing = role_by_idx.get(idx) == "surname"
-        a = intern(encode(en_by_idx[idx], trailing))
+        raw_name = en_by_idx[idx]
+        role = role_by_idx.get(idx)
+        if role == "surname":
+            # Initiale du nom de famille suivie d'un point : "N." (1 tuile 16x16)
+            text = f"{raw_name[0].upper()}."
+            a = intern(encode(text, trailing_space=False))
+        else:
+            # Prénom : max 7 caractères pour garantir que Prénom + " N." <= 10 caractères
+            if idx < 227 and len(raw_name) > 7:
+                text = raw_name[:7]
+            else:
+                text = raw_name
+            # trailing_space=True assure qu'une espace sépare le prénom de l'initiale dans le HUD
+            a = intern(encode(text, trailing_space=True))
         _write_ptr(rom, NAME_TBL, e, POOL_BANK, a)
         n_entries += 1
 

@@ -177,33 +177,51 @@ def encode_hw(text):
     return ids
 
 
-def wrap_encode(text, alloc=None, approved=None, max_row_chars=26):
+def wrap_encode(text, alloc=None, approved=None, max_row_chars=21):
     """Enveloppe et encode le texte en IDs demi-chasse (8x16) avec sauts de ligne propres ($FFFE).
-    Mesure la largeur en caractères (max 26 par ligne),
-    ce qui garantit qu'aucune ligne ne déborde la marge droite ($1144 = 30) et que
+    Garantit qu'aucune ligne ne déborde la marge droite ($1144 = 30) et que
     le moteur SNES ne coupe jamais les mots en deux."""
+    text = text.replace("...", "…")
     paragraphs = text.split('\n')
     all_ids = []
 
     for p_idx, para in enumerate(paragraphs):
         words = [w for w in para.split(' ') if w]
-        rows = []
-        cur_words = []
+        if not words:
+            continue
 
-        for w in words:
-            cand = cur_words + [w]
-            cand_str = " ".join(cand)
-            if len(cand_str) <= max_row_chars:
-                cur_words.append(w)
-            else:
-                if cur_words:
-                    rows.append(" ".join(cur_words))
-                    cur_words = [w]
+        def do_wrap(w):
+            rows, cur = [], []
+            for item in words:
+                if len(' '.join(cur + [item])) <= w:
+                    cur.append(item)
                 else:
-                    rows.append(w)
-                    cur_words = []
-        if cur_words:
-            rows.append(" ".join(cur_words))
+                    if cur:
+                        rows.append(' '.join(cur))
+                        cur = [item]
+                    else:
+                        rows.append(item)
+                        cur = []
+            if cur:
+                rows.append(' '.join(cur))
+            return rows
+
+        # 1. w=20 : équilibré et marge sûre (ex: '…Hey, a samurai?!' / 'Why do I have to?!')
+        r20 = do_wrap(20)
+        if len(r20) <= 3:
+            rows = r20
+        else:
+            # 2. w=21 si cela permet de tenir en <= 3 lignes
+            r21 = do_wrap(21)
+            if len(r21) <= 3:
+                rows = r21
+            else:
+                # 3. w=22 si cela permet de tenir en <= 3 lignes
+                r22 = do_wrap(22)
+                if len(r22) <= 3:
+                    rows = r22
+                else:
+                    rows = r21
 
         for r_idx, row in enumerate(rows):
             all_ids.extend(encode_hw(row))
@@ -318,10 +336,12 @@ def install_hw_font(rom: bytearray):
     """Installe les tuiles 8x16 (32 octets 2bpp par caractère) pour tous les caractères
     supportés en ROM à partir de char_id_to_rom(0x0500) = 0x032000."""
     from patch_prologue_v3 import make_half_tile, char_id_to_rom
-    for ch, cid in CHAR_TO_HW_ID.items():
-        data = make_half_tile(ch)
-        off = char_id_to_rom(cid)
-        rom[off:off + 32] = data
+    for ch in FONT:
+        if ch in CHAR_TO_HW_ID:
+            cid = CHAR_TO_HW_ID[ch]
+            data = make_half_tile(ch)
+            off = char_id_to_rom(cid)
+            rom[off:off + 32] = data
 
 
 # ---------------------------------------------------------------------------
