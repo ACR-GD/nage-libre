@@ -28,7 +28,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 0312,0x0182,おはようございます。,Good morning.
 0312,0x019A,今日もとっても,What lovely weather
 0312,0x01AC,いい天気ですわね,we're having today.
-0312,0x01C0,あ、嶺子、おはよう… って、それどころ,"Ah, Reiko, morning... This is no time"
+0312,0x01C0,あ、嶺子、おはよう… って、それどころ,"Ah, Ryoko, morning... This is no time"
 0312,0x01EA,じゃないわよ‼,for that!!
 0312,0x01FC,はい？        どうかしたんですか？,Pardon? Is something wrong?
 0312,0x022A,ヘンな人たちが,Some weird people
@@ -39,7 +39,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 0312,0x02B4,何か知ってるんじゃ  ないかしら,maybe they'll know something.
 0312,0x02D8,…ええぇ、それじゃまたあたしが戦うのぉ…,"...Ugh, so I have to fight again..."
 0312,0x0304,あ、わたくしも    てつだいますわ♥,"Oh, I'll help too!"
-0312,0x032E,  嶺子が仲間になった‼               ,Reiko joined the team!!
+0312,0x032E,  嶺子が仲間になった‼               ,Ryoko joined the team!!
 0312,0x036A,  ステージ１・クリア‼,Stage 1 Clear!!
 0313,0x0126,それでは、      まいりましょう,"Well then, shall we go?"
 0313,0x014E,こっち？,This way?
@@ -88,7 +88,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 0318,0x0404,何だか判らないまま、 ヘンな人たちと戦う事になっちゃったしぃ……,And I ended up fighting weird people without knowing why...
 0318,0x0448,…あら、惟さんの   おウチの場所は、森に なっていますわよ。,"...My, Yui, where your house was is now a forest."
 0318,0x048A,…ほらほら、ふしぎですわね、あはははは,"...Look, look, how strange. Ahahaha."
-0318,0x04B4,…オマケに、となりにいる嶺子は、何にも動じてないし…💦,...And Reiko next to me isn't fazed at all...
+0318,0x04B4,…オマケに、となりにいる嶺子は、何にも動じてないし…💦,...And Ryoko next to me isn't fazed at all...
 0318,0x04EE,…はぁ。いったい、どうなっちゃうんだろう…,...Sigh. What's going to happen to us...
 0318,0x053A,あら、あんなところに街がありますわ。    …とりあえず、あっちのほうに行ってみません？,"Oh, there's a town over there. ...Shall we try going that way?"
 0318,0x0596,うーん。       そうするしかないかぁ…他に何にもないしねぇ…,Hmm. I guess that's all we can do... There's nothing else...
@@ -142,7 +142,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 031C,0x013A,                 ステージ３・クリア‼,Stage 3 Clear!!
 031D,0x011E,あれ、今、声がしましたよね…誰ですかぁ？,"Huh, I just heard a voice... Who's there?"
 031D,0x014A,向こうの方だ‼,Over there!!
-031D,0x015C,舞一人だけでなく   さらに、捜してた   惟と嶺子まで     連れてくるとは‼,"Not just Mai, but Yui and Reiko, who I was after!!"
+031D,0x015C,舞一人だけでなく   さらに、捜してた   惟と嶺子まで     連れてくるとは‼,"Not just Mai, but Yui and Ryoko, who I was after!!"
 031D,0x01B2,カモがネギしょったうえ益と正月が一緒にやってきたみたい‼     けいきがいいわね‼,Ducks walking in with the leeks!! What luck!!
 031D,0x020A,あの、あなた一体誰？,"Um, who are you?"
 031D,0x0222,…そう、私たちが   造りあげたこの世界  「ナージュ」に…,"...Yes, into this world we created, ""Nage""..."
@@ -224,7 +224,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 0324,0x0252,……なんだろ？,...What is it?
 0324,0x0264,わーい‼ おいしそう‼ ちょうだーい‼,Yay!! Looks yummy!! Gimme!!
 0324,0x028E,あっ‼ 飲んじゃだめ‼ あげません‼,Ah!! Don't drink it!! You can't have it!!
-0324,0x02B6,嶺子も、この子にあげちゃあ、ダメだってば‼ この子、ホントに   飲んじゃうんだから‼,"Reiko, don't give it to her!! She'll really drink it!!"
+0324,0x02B6,嶺子も、この子にあげちゃあ、ダメだってば‼ この子、ホントに   飲んじゃうんだから‼,"Ryoko, don't give it to her!! She'll really drink it!!"
 0324,0x0310,いや、このくすり、  飲んだらどうなるかな？…って、思いましたので,"Well, I wondered what would happen if she drank it..."
 0324,0x0356,思ったからって、   行動せんでいい‼,Wondering doesn't mean you have to try!!
 0324,0x0380,……３人はビン入りの        「中和剤２」          を手に入れた‼  ……,"...The three obtained a bottle of ""Neutralizer 2""!! ..."
@@ -1603,7 +1603,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 03E0,0x0000,おがきておがきぶおがきケおがきベお,Ogakite Ogakibu Ogakike Ogakibeo
 03E0,0x0058,今日は休日か何かなのかなぁ？,Is today a holiday or something?
 03E0,0x0078,いいえ、ちがいますわ。    それだけは心のそこから    自信を持って言えますわ‼,"No, it's not. That much I can say with total confidence!!"
-03E0,0x00D0,そうよねぇ。あたしと嶺子が  ２人して休みの日をわすれるワケ絶対ないもんね♥,Right. Reiko and I would never both forget a day off!
+03E0,0x00D0,そうよねぇ。あたしと嶺子が  ２人して休みの日をわすれるワケ絶対ないもんね♥,Right. Ryoko and I would never both forget a day off!
 03E0,0x0120,まぁ、ついてると言えば    ついてますわ。今日はゆっくり 昼メロでも見ましょ♥,"Well, lucky us, I suppose. Let's relax and watch soaps today!"
 03E1,0x0082,き冗おがき心おき　おき裏おがき状おがき行おあ考ぐおがき入お,"Keep your heart in mind, keep your thoughts in mind, go and think about it, people."
 03E1,0x0102,ここが街の中ですか…,So this is the town...
@@ -2184,7 +2184,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 042D,0x04D6,あ、言いわすれてたわ‼次に、最初っから   ゲームする時にね……,"Oh, I forgot!! Next time you start a new game..."
 042D,0x051A,まず、        彩香ちゃんの誕生日を １月２３日にしてね……,"first, set Ayaka's birthday to January 23..."
 042D,0x0560,舞ちゃんは、４月５日 惟ちゃんは、６月７日 美姫ちゃんは８月９日,"Mai to April 5, Yui to June 7, Miki to August 9."
-042D,0x05A4,それで、嶺子ちゃんの 誕生日を１０月１１日にするとね……     いい事が起こるよ‼,Then set Reiko's birthday to Oct. 11... Good things happen!!
+042D,0x05A4,それで、嶺子ちゃんの 誕生日を１０月１１日にするとね……     いい事が起こるよ‼,Then set Ryoko's birthday to Oct. 11... Good things happen!!
 042D,0x05FC,「１から１１まで順番に入力する‼」って   覚えておいてね‼,"Remember: ""Enter them in order, 1 to 11!!"""
 042D,0x063C,それじゃ、今度こそ  ホントに…      …バイバーイ‼,Then this time for real... Bye-bye!!
 042E,0x0104,　味雲石敵界か,
@@ -2276,7 +2276,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 0439,0x0082,画ぐお舞ぐおき燃おが搭ぐお　ぐおき片おが者ぐお豊ぐおき澄お,Guo Mai Guokio Ga Guo □ Guokio Ga Guo Guokio
 0439,0x00E8,               登場キャラクタープロフィール,Character Profiles
 0439,0x0126,   きりしま・ゆい          霧島 惟,Yui Kirishima
-0439,0x015A,   あおい・りょうこ         葵 嶺子,Reiko Aoi
+0439,0x015A,   あおい・りょうこ         葵 嶺子,Ryoko Aoi
 0439,0x018E,   ひめのぎ・まい         姫ノ木 舞,Mai Himenoki
 0439,0x01C2,   さくらい・あやか        桜井 彩香,Ayaka Sakurai
 0439,0x01F6,   しずもと・みき         静本 美姫,Miki Shizumoto
@@ -2351,7 +2351,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 0444,0x016C,きゅう……      何が起こったの？   …えーん       戻されちゃったよぉ‼,"Ugh... what happened? ...Waaah, we got sent back!!"
 0445,0x0082,ぐお井ぐお入ぐおHぐおRぐお雅ぐお俊ぐお庭ぐお現ぐお　ぐお解ぐお,Guoguo people GuoH GuoR Guoguoguoguo Maguo□ Guoguo
 0445,0x00D8,彩香：なぁ、何とか助かったのは   いーんだけどさぁ……     どこにも陸が見えねーぞ…,"Ayaka: Hey, it's great we survived and all... but there's no land anywhere..."
-0445,0x0138,嶺子：困りましたわねぇ……,Reiko: What a predicament...
+0445,0x0138,嶺子：困りましたわねぇ……,Ryoko: What a predicament...
 0445,0x0158,惟 ：ま、だあいじょーぶ‼     なんとかなるよっ‼,"Yui: Eh, it's fine!! We'll manage!!"
 0445,0x0194,美姫：……あ,Miki: ...Ah
 0445,0x01A6,惟 ：なんつってもあたしたちは   世界を救った英雄である    ５人なんだから‼,"Yui: After all, we're the five heroes who saved the world!!"
@@ -2359,18 +2359,18 @@ scene_idx_hex,offset_hex,jp_decoded,en
 0445,0x0220,惟 ：そして帰ったころには     TVで引っ張りダコに     決まってるじゃない‼,"Yui: And when we get back, we'll be all over TV, for sure!!"
 0445,0x027C,美姫：……あうあう……,Miki: ...Uh-uh...
 0445,0x0298,彩香：そうだと           いーんだけどなぁ……,Ayaka: I sure hope so...
-0445,0x02D6,嶺子：あら、美姫さん        どうしたんです？       なんか楽しそうですね,"Reiko: My, Miki, what is it? You seem to be having fun."
+0445,0x02D6,嶺子：あら、美姫さん        どうしたんです？       なんか楽しそうですね,"Ryoko: My, Miki, what is it? You seem to be having fun."
 0445,0x0332,美姫：あの……あた……し…     …泳げ……な…        …ぶくぶく……,Miki: Um... I... can't... swim... blub blub...
 0445,0x0388,舞 ：……あーーーーっ‼,Mai: ...Aaaaah!!
 0445,0x03A6,惟 ：どしたの？,Yui: What is it?
 0445,0x03BC,舞 ：おさかなさーん‼       でっかいおさかなさんが    くるよぉ♥,Mai: A fishy!! A big fishy is coming!
-0445,0x040E,嶺子：まぁ……,Reiko: My...
+0445,0x040E,嶺子：まぁ……,Ryoko: My...
 0445,0x0422,舞 ：ほら‼ あそこに‼,Mai: Look!! Over there!!
 0445,0x0440,美姫：ぶくぶく,Miki: Blub blub
 0445,0x0454,惟 ：ほんとだ。          ……え、あれって……💦,"Yui: You're right. ...Huh, isn't that..."
 0445,0x0494,美姫：ぶくぶくぶくぶく……,Miki: Blub blub blub blub...
 0445,0x04B4,彩香：あのセビレって        どう見ても……,"Ayaka: That dorsal fin, any way you look at it..."
-0445,0x04EC,嶺子：サメ、ですわね💦,Reiko: It's a shark.
+0445,0x04EC,嶺子：サメ、ですわね💦,Ryoko: It's a shark.
 0445,0x0508,美姫：ぶくぶく……ぶく…      …ぶく………ぶ……………,Miki: Blub blub... blub... blub... b...
 0445,0x054C,……ナージュが消えさると同時に 全ての世界は正常に戻った……,"...As Nage vanished, all the worlds returned to normal..."
 0445,0x058E,人々はナージュについての   全ての記憶を失ない、     何も起こらなかったかのように。,"People lost every memory of Nage, as if nothing had happened."

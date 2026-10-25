@@ -8,7 +8,7 @@ Le moteur $80:F4A7 affiche les noms de personnages via les tables de pointeurs 2
 
 En combat et sur l'écran d'anniversaire :
 - Le HUD supérieur affiche le prénom puis l'initiale du nom de famille :
-  "Ayaka S.", "Mai H.", "Yui K.", "Miki S.", "Reiko A." (max 8 car., loge dans la boîte de 10).
+  "Ayaka S.", "Mai H.", "Yui K.", "Miki S.", "Ryoko A." (max 8 car., loge dans la boîte de 10).
 - Les messages d'action en bas (ex. "Yui hits!!") appellent JSR $9D19 avec l'index de prénom
   (100 + char_idx). Les prénoms doivent donc être présents dans GIVEN_TBL ($81:B087).
 - La table d'ordre à $87:DB2C (0x03DB2C) est inversée pour afficher Prénom puis Initiale Nom.
@@ -45,14 +45,14 @@ DATE_DAY_FILE = 0x038969       # $87:8969  (日, ID 2C8)
 
 # Noms des 5 héroïnes : (Prénom, Initiale Nom de Famille)
 # Pour Miki (longueur paire 4 car.), l'initiale prend une espace de tête " S." (2 tuiles).
-# Pour Ayaka/Mai/Yui/Reiko (longueurs impaires 3 ou 5 car.), la dernière tuile a déjà une espace
+# Pour Ayaka/Mai/Yui/Ryoko (longueurs impaires 3 ou 5 car.), la dernière tuile a déjà une espace
 # intégrée, donc l'initiale est "S." / "H." / "K." / "A." (1 tuile).
 MAIN_PLAYERS = [
     ("Ayaka", "S."),      # 桜井彩香  (Ay-ak-a␣ + S.  = Ayaka S., 4 tuiles)
     ("Mai", "H."),        # 姫ノ木舞  (Ma-i␣    + H.  = Mai H.,   3 tuiles)
     ("Yui", "K."),        # 霧島惟    (Yu-i␣    + K.  = Yui K.,   3 tuiles)
     ("Miki", " S."),      # 静本美姫  (Mi-ki    + ␣S-.␣ = Miki S., 4 tuiles)
-    ("Reiko", "A."),      # 葵嶺子    (Re-ik-o␣ + A.  = Reiko A., 4 tuiles)
+    ("Ryoko", "A."),      # 葵嶺子    (Ry-ok-o␣ + A.  = Ryoko A., 4 tuiles)
 ]
 
 

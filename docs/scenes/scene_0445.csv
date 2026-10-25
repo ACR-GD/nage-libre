@@ -1,7 +1,7 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0082,32,42,ぐお井ぐお入ぐおHぐおRぐお雅ぐお俊ぐお庭ぐお現ぐお　ぐお解ぐお,Guoguo people GuoH GuoR Guoguoguoguo Maguo□ Guoguo
 0x00D8,45,47,彩香：なぁ、何とか助かったのは   いーんだけどさぁ……     どこにも陸が見えねーぞ…,"Ayaka: Hey, it's great we survived and all... but there's no land anywhere..."
-0x0138,13,15,嶺子：困りましたわねぇ……,Reiko: What a predicament...
+0x0138,13,15,嶺子：困りましたわねぇ……,Ryoko: What a predicament...
 0x0158,27,29,惟 ：ま、だあいじょーぶ‼     なんとかなるよっ‼,"Yui: Eh, it's fine!! We'll manage!!"
 0x0194,6,8,美姫：……あ,Miki: ...Ah
 0x01A6,41,43,惟 ：なんつってもあたしたちは   世界を救った英雄である    ５人なんだから‼,"Yui: After all, we're the five heroes who saved the world!!"
@@ -9,18 +9,18 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x0220,43,45,惟 ：そして帰ったころには     TVで引っ張りダコに     決まってるじゃない‼,"Yui: And when we get back, we'll be all over TV, for sure!!"
 0x027C,11,13,美姫：……あうあう……,Miki: ...Uh-uh...
 0x0298,28,30,彩香：そうだと           いーんだけどなぁ……,Ayaka: I sure hope so...
-0x02D6,43,45,嶺子：あら、美姫さん        どうしたんです？       なんか楽しそうですね,"Reiko: My, Miki, what is it? You seem to be having fun."
+0x02D6,43,45,嶺子：あら、美姫さん        どうしたんです？       なんか楽しそうですね,"Ryoko: My, Miki, what is it? You seem to be having fun."
 0x0332,40,42,美姫：あの……あた……し…     …泳げ……な…        …ぶくぶく……,Miki: Um... I... can't... swim... blub blub...
 0x0388,12,14,舞 ：……あーーーーっ‼,Mai: ...Aaaaah!!
 0x03A6,8,10,惟 ：どしたの？,Yui: What is it?
 0x03BC,38,40,舞 ：おさかなさーん‼       でっかいおさかなさんが    くるよぉ♥,Mai: A fishy!! A big fishy is coming!
-0x040E,7,9,嶺子：まぁ……,Reiko: My...
+0x040E,7,9,嶺子：まぁ……,Ryoko: My...
 0x0422,12,14,舞 ：ほら‼ あそこに‼,Mai: Look!! Over there!!
 0x0440,7,9,美姫：ぶくぶく,Miki: Blub blub
 0x0454,29,31,惟 ：ほんとだ。          ……え、あれって……💦,"Yui: You're right. ...Huh, isn't that..."
 0x0494,13,15,美姫：ぶくぶくぶくぶく……,Miki: Blub blub blub blub...
 0x04B4,25,27,彩香：あのセビレって        どう見ても……,"Ayaka: That dorsal fin, any way you look at it..."
-0x04EC,11,13,嶺子：サメ、ですわね💦,Reiko: It's a shark.
+0x04EC,11,13,嶺子：サメ、ですわね💦,Ryoko: It's a shark.
 0x0508,30,33,美姫：ぶくぶく……ぶく…      …ぶく………ぶ……………,Miki: Blub blub... blub... blub... b...
 0x054C,30,32,……ナージュが消えさると同時に 全ての世界は正常に戻った……,"...As Nage vanished, all the worlds returned to normal..."
 0x058E,45,47,人々はナージュについての   全ての記憶を失ない、     何も起こらなかったかのように。,"People lost every memory of Nage, as if nothing had happened."
