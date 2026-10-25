@@ -45,7 +45,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 0313,0x014E,こっち？,This way?
 0313,0x0172,すぐ近くですわ,It's very close.
 0313,0x0184,へえ、あなたたち   ともみを倒したのかぁ,"Heh, so you two beat Tomomi?"
-0313,0x01B2,やるじゃなぁい,Not bad!
+0313,0x01B2,やるじゃなぁい,Not bad
 0313,0x01C4,あの人が、      ボスみたいですわね,That person seems to be the boss.
 0313,0x01F0,でも、        あたしは強いわよぉ  …勝てるかなぁ？,"But I'm strong, you know... Think you can win?"
 0313,0x0240, ステージ２・スタート                   ,Stage 2 Start
@@ -59,7 +59,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 0315,0x0106,なぁにかな？,What's inside?
 0315,0x0116,               ……２人は、「リ」の宝玉を       手に入れた‼  ……,"...The two obtained the ""Ri"" jewel!! ..."
 0315,0x0174,うわーすごい。,"Wow, amazing."
-0315,0x0184,何だかよく判らないけど,"Not sure what it is, though."
+0315,0x0184,何だかよく判らないけど,What is it?
 0315,0x019E,でもコレって、何かの 役に立つのかしら？,But will this be useful for anything?
 0315,0x01CA,さぁ……。      でも、とりあえず、  もらっときましょうよ。,Who knows... But let's take it for now.
 0316,0x0000,けぞぬ,Kezo
@@ -370,13 +370,13 @@ scene_idx_hex,offset_hex,jp_decoded,en
 0331,0x007E,この先に…？     何かあるんでしょうか？,Up ahead...? Is something there?
 0331,0x00AE,何かあるかな？,Anything there?
 0331,0x00C0,じゃあ、       先に進んでみよっと‼,Then let's go ahead!!
-0331,0x00EE,■■倒したキャラが、スタスタ歩いていって…■■■■■■■■,The defeated character walks off briskly...
+0331,0x00EE,■■倒したキャラが、スタスタ歩いていって…■■■■■■■■,[Defeated one walks off...]
 0331,0x012E,あら、こんなところに、宝箱がありますわ♥,"Oh, a treasure chest in a place like this!"
 0331,0x015A,あっ‼ 宝箱だ‼,Ah!! A treasure chest!!
 0331,0x016E,たからばこ、めーっけ‼,Found a treasure chest!!
 0331,0x01C0,…宝ばこの中には       「空手部のシンボル」が、   入っていた‼,"...Inside the chest was the ""Karate Club emblem""!!"
 0331,0x020C,…これで次の面からは、空手部が選べるようになるぞ‼,"...From the next stage, you can choose the Karate Club!!"
-0331,0x0242,■■元の場所に戻っていって■■■■■■■■,and goes back to where she was.
+0331,0x0242,■■元の場所に戻っていって■■■■■■■■,[and goes back.]
 0331,0x0272,いいものが、     手に入りましたね。  にこにこ。,We got something nice. Hee hee.
 0331,0x02AC,おおっ‼ ラッキー‼,Whoa!! Lucky!!
 0331,0x02C4,舞ちゃん、さえてるぅ‼,"Mai, you're on fire!!"
@@ -839,7 +839,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 036C,0x03CC,もうすぐ、この世界も 全て、ナージュとなり、あの方の物となるのです‼,"Soon this whole world will become Nage, and belong to her!!"
 036C,0x0414,ええっ‼,Whaaat!!
 036C,0x0420,あの方の造りだした  ナージュが、現実世界を侵略するまであと一歩‼,Her Nage is one step from conquering the real world!!
-036C,0x0466,そのためには、あなたたちのような、ジャマ者は倒さねばなりません‼ かかってきなさい‼,So pests like you must be beaten!! Bring it on!!
+036C,0x0466,そのためには、あなたたちのような、ジャマ者は倒さねばなりません‼ かかってきなさい‼,Pests like you must fall!! Come on!!
 036C,0x04BE, ステージ１４・スタート‼                    勝利条件：美夕を倒せ‼,Stage 14 Start!! Victory condition: Defeat Miyu!!
 036E,0x022C,では、ナージュの影響が現実世界にも生まれているってことなの？,So Nage's influence is appearing in the real world too?
 036E,0x026C,……だったら、こっちもナージュも同じじゃない‼,...Then this place is no different from Nage!!
@@ -928,7 +928,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 037C,0x0054,本の５ページ目を手に入れた‼,Got page 5 of the book!!
 037C,0x0074,どれどれ……,Let's see...
 037C,0x0084,いつか、ナージュは誰かを   呼び出すかもしれない……答えを求めて…,"Someday, Nage may summon someone... seeking an answer..."
-037C,0x00CC,…その者がナージュに与えた答えはそのまま現実となるだろう……,...The answer that one gives Nage will become reality...
+037C,0x00CC,…その者がナージュに与えた答えはそのまま現実となるだろう……,...That answer becomes real...
 037C,0x010C,あ……‼,Ah...!!
 037C,0x0118,……京子の回りにある結界が         ゆらいでゆく……,...The barrier around Kyoko wavers...
 037D,0x0082,島害いぃWWWWW振　いぃ高高高高高,
@@ -959,11 +959,11 @@ scene_idx_hex,offset_hex,jp_decoded,en
 037F,0x0322,……パラ……メモが落ちた,...Flutter... A note fell out.
 037F,0x033E,あら、何でしょうか？,"Oh, what's this?"
 037F,0x0356,どれどれ？,Let's see?
-037F,0x0364,森で洞富の入り口に入るための パスワード「LISTEN TOTHE RAINDOROPS」…水の神殿へ……,"Forest cave password: ""LISTEN TOTHE RAINDOROPS""... to the Water Temple..."
+037F,0x0364,森で洞窟の入り口に入るための パスワード「LISTEN TOTHE RAINDOROPS」…水の神殿へ……,"Forest cave password: ""LISTEN TOTHE RAINDOROPS""... to the Water Temple..."
 037F,0x03D2,何かのパスワードみたいだね,Looks like some kind of password.
 037F,0x03F0,森か……,"The forest, huh..."
 037F,0x03FC,行くしかありませんわね,We have no choice but to go.
-037F,0x0416,でも、「洞富の入り口」なんてあったっけ？,"But was there a ""cave entrance""?"
+037F,0x0416,でも、「洞窟の入り口」なんてあったっけ？,"But was there a ""cave entrance""?"
 037F,0x0442,…あのう…来る時に  あった、小高い所で  目立ってた門のような所ではないでしょうか？,...Um... wasn't there a gate on that hill we passed?
 037F,0x049C,あら,Oh.
 037F,0x04A4,そう言えば、     なんかあったわね,"Now that you mention it, there was something."
@@ -980,31 +980,31 @@ scene_idx_hex,offset_hex,jp_decoded,en
 0380,0x0252,さて、森だよ‼,"Now, the forest!!"
 0380,0x0264,これで、全てが判れば     いいのですけど……,I hope this explains everything...
 0381,0x00B4,おおっとぉ‼ ちょうど間にあったわね‼   ここから先には    通さないわ‼,Whoa there!! Just in time!! You won't get past here!!
-0381,0x0106,…なぜならこの森の先にある洞富に入らせるワケには行かないからよっ‼,...Because I can't let you into the cave past this forest!!
+0381,0x0106,…なぜならこの森の先にある洞窟に入らせるワケには行かないからよっ‼,...Because I can't let you into the cave past this forest!!
 0381,0x014C,あ、わかってます,"Oh, we know."
 0381,0x0160,サッサと倒して    サクサク行っちゃいますんで、おかまいなく,"We'll beat you fast and move on, so don't mind us."
 0381,0x01A2,へ？ じゃ、     パスワードも知ってる？,Huh? So you know the password?
 0381,0x01D2,ええ,Yes.
-0381,0x01DA,洞富をぬけると、どこにつながっているかは？,And where the cave leads?
+0381,0x01DA,洞窟をぬけると、どこにつながっているかは？,And where the cave leads?
 0381,0x0208,水の神殿でしょ？,"The Water Temple, right?"
 0381,0x021C,……そう。なんか、さびしいな……ってたそがれてるバアイじゃないっ‼,"...Right. Kinda lonely... Wait, this is no time to mope!!"
 0381,0x0262,…そこまで知られたからには……ここは通さないよっ‼,...Since you know that much... you won't pass!!
 0381,0x0298,今度こそ、パワーアップ最終段階まで行った霧香ちゃんの力を思い知れ‼,"Now feel the power of Kirika, at her final power-up!!"
-0381,0x02DE, ステージ１７・スタート‼                 勝利条件：ボス・霧香を倒し、         洞富に入れ‼,"Stage 17 Start!! Victory condition: Defeat the boss, Kirika, and enter the cave!!"
+0381,0x02DE, ステージ１７・スタート‼                 勝利条件：ボス・霧香を倒し、         洞窟に入れ‼,"Stage 17 Start!! Victory condition: Defeat the boss, Kirika, and enter the cave!!"
 0382,0x0000,ぎぱカあ,Gipa Kaa
 0382,0x0028,かがやくひかりー‼  シールド全開‼    最終段階パワーアップ‼,Shining light!! Full shields!! Final power-up!!
 0382,0x006E,背中のバーニアON‼ 手からミサイル‼   レジューム機能も付いてだんぜんオトク‼,Back thrusters ON!! Hand missiles!! Resume function too!!
 0382,0x00C4,さぁ勝負よっ‼,"Now, let's fight!!"
 0384,0x0186,現破備げ泳い隠ぉ　ぉぉ　,
-0384,0x01F6,さて、この洞富ね,So this is the cave.
+0384,0x01F6,さて、この洞窟ね,So this is the cave.
 0384,0x020A,いくぞぉ‼,Here we go!!
-0384,0x021E,……洞富の入り口は       見えないカベでおおわれている,...The cave entrance is covered by an invisible wall
+0384,0x021E,……洞窟の入り口は       見えないカベでおおわれている,...The cave entrance is covered by an invisible wall
 0384,0x025E,いったーい‼     ハナぶつけちゃったー‼,Owww!! I bumped my nose!!
 0384,0x028E,…そうそう、パスワードを、となえてみましょう,"...Oh yes, let's say the password."
 0384,0x02BE,先にやってやりゃぁいいのに…,Should've done that first...
 0384,0x02DE,パスワードを入力してください    ○           ABCDEFGHIJKLMNOPQRSTUVWXYZ,Please enter the password
 0384,0x0356,いや、パスワードは  「LISTEN TO THE RAINDOROPS」でしょ？,"Um, the password is ""LISTEN TO THE RAINDOROPS,"" right?"
-0384,0x03AC,……ゴゴゴゴゴ…… 洞富に存在していた、見えないカベは   見えないながらもなくなったようだ……,"...Rumble rumble... The invisible wall in the cave seems to be gone, though it's invisible..."
+0384,0x03AC,……ゴゴゴゴゴ…… 洞窟に存在していた、見えないカベは   見えないながらもなくなったようだ……,"...Rumble rumble... The invisible wall in the cave seems to be gone, though it's invisible..."
 0384,0x0410,これで、通れるように なったのかしら？,Can we get through now?
 0384,0x0440,大丈夫か？,You okay?
 0384,0x044E,あ、意外と      恐いモノ知らずだな,"Oh, she's surprisingly fearless."
@@ -1016,9 +1016,9 @@ scene_idx_hex,offset_hex,jp_decoded,en
 0385,0x028A,産おがき永お,Ogakio
 0385,0x02AC,１時間後……,1 hour later...
 0385,0x02BC,わーい、ひろいひろーい‼,"Yay, it's huge!!"
-0385,0x02D8,こんなに、地下の洞富が    続いているとは……。     すばらしいですね、自然って‼,To think a cave goes on this far underground... Nature is wonderful!!
+0385,0x02D8,こんなに、地下の洞窟が    続いているとは……。     すばらしいですね、自然って‼,To think a cave goes on this far underground... Nature is wonderful!!
 0385,0x0334,あんさん、どうみたって人工建造物でんがな‼,"Lady, this is obviously man-made!!"
-0385,0x0362,５人は、仲よく地下の洞富を  進んでいる……,The five proceed happily through the underground cave...
+0385,0x0362,５人は、仲よく地下の洞窟を  進んでいる……,The five proceed happily through the underground cave...
 0385,0x0392,６時間後……,6 hours later...
 0385,0x03A2,つかれたぁ……,I'm tired...
 0385,0x03B4,こう、いつまでも続くと、   アキますわね,"When it goes on forever like this, it gets old."
@@ -1051,7 +1051,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 0385,0x075E,ではでは、行ってみましょ‼  これで、何か進展するかも知れませんわ‼,"Well then, let's go see!! Maybe we'll make some progress!!"
 0386,0x012A,あっ‼ コドモだ‼,Ah!! A kid!!
 0386,0x0140,遅かったから むかえに行っちゃったじゃない‼,"You took so long, I came to get you!!"
-0386,0x0170,……ってなー、よくも こんな広い洞富を造っておいて‼,"...Hey, how dare you build such a huge cave!!"
+0386,0x0170,……ってなー、よくも こんな広い洞窟を造っておいて‼,"...Hey, how dare you build such a huge cave!!"
 0386,0x01A8,あれは迷宮トラップよ‼あなたたち同じ所を  グルグル回ってたのよ‼,That was a maze trap!! You were going in circles!!
 0386,0x01F6,ホントか？,Really?
 0386,0x0204,そうよっ‼ ここに来るまでに体力を消耗すればいいと思ってしかけた トラップなのに……,Yes!! I set that trap to wear you out on the way here...
@@ -1111,7 +1111,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 0391,0x01CE,そうね、今度は    自分からナージュに行くんだもんなぁ,"Yeah, this time we're going to Nage on purpose."
 0391,0x020A,恐い……,Scary...
 0391,0x0216,なーに、状況はこれ以上悪くならないって‼,"Nah, things can't get any worse!!"
-0391,0x0242,それより、      さっき自爆するって  言ってたから、    急ぎましょうよ‼,"More importantly, she said self-destruct, so let's hurry!!"
+0391,0x0242,それより、      さっき自爆するって  言ってたから、    急ぎましょうよ‼,She said self-destruct! Let's hurry!!
 0391,0x0298,そうだね‼,Right!!
 0391,0x02AE,さあてと、ようやく  調子が出てきたわ。  待っていなさい‼,"Alright, I'm finally warmed up. Just wait!!"
 0391,0x02EE,あたしにかかったら  みんなコテンパンよ‼,"When I'm through, you'll all be crushed!!"
@@ -1183,9 +1183,9 @@ scene_idx_hex,offset_hex,jp_decoded,en
 039A,0x029A,でも、            回りにたくさん人がいるー‼,But there are lots of people around it!!
 039A,0x02D6,あの搭を守ってるみたいですわね,They seem to be guarding that tower.
 039A,0x02F8,ほぉら‼           それこそがそのショーコよっ‼ あの搭に行こう‼,See!! That proves it!! Let's go to that tower!!
-039A,0x0348,■■背景がクリスタルパレスになって■,[Background becomes the Crystal Palace]
+039A,0x0348,■■背景がクリスタルパレスになって■,[BG: Crystal Pal.]
 039A,0x0372,ついに、ここまで       来られてしまったか…,So they've finally come this far...
-039A,0x03A8,…その声に、答えるように…    …闇の興から声が響く……,...As if in answer... a voice echoes from the depths of darkness...
+039A,0x03A8,…その声に、答えるように…    …闇の奥から声が響く……,...As if in answer... a voice echoes from the depths of darkness...
 039A,0x03E6,               ……いかが、いたしましょう……,...What shall we do...
 039A,0x0426,自ら、私が行くしかないか……,I have no choice but to go myself...
 039B,0x0000,あう復ぴアぇヅいぃュュュュュロ復,Aaaayyyyyyyyyyro
@@ -1261,7 +1261,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 03A5,0x0478,えっ？,Huh?
 03A5,0x0482,誰なの、あなた？,Who are you?
 03A5,0x0496,……私の名は……ナージュ……,...My name is... Nage...
-03A5,0x04B6,■■レベルアップ、INTERMISSION、■びメニューなし■,"[No level-up, intermission or menu]"
+03A5,0x04B6,■■レベルアップ、INTERMISSION、■びメニューなし■,[No level-up/menu here]
 03A6,0x0184,この声が……ナージュ？,This voice... is Nage?
 03A6,0x019E,げっ‼        搭が変形した‼,Gah!! The tower transformed!!
 03A6,0x01C6,クリスタルがはがれて…下から何かが……‼,The crystal's peeling off... something's underneath...!!
@@ -1269,7 +1269,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 03A6,0x0242,自分に万能の力があるのに…  …自分が何者であるのかだけが判らないのです…,I have the power to do anything... yet I alone don't know what I am...
 03A6,0x0290,…そこで、私は、他の世界から、誰かを呼ぶことにしました…  …誰かが……私を……知っている,...So I decided to call someone from another world... someone who... knew me...
 03A6,0x02EE,……もしくは……私に役目を与えてくれると考えたからです……,...or would give me a purpose... That was my thinking...
-03A6,0x032A,私の呼び声に応じたのが…   …あの人でした……あの人は… ,The one who answered my call... was that person...
+03A6,0x032A,私の呼び声に応じたのが…   …あの人でした……あの人は… ,Who answered my call... was her
 03A6,0x036A,…私に、世界を創造せよ、   そして、あなたたちの世界を自分の物にさせろと……命じました,...She ordered me to create a world... and to make your world hers...
 03A6,0x03C6,…それが、まちがっていたとは、うすうす感じてはいました…  …あの人の心の中には闇が   強く現れていましたから……,...I sensed it was wrong... for the darkness in her heart was so strong...
 03A6,0x043E,でも……私は……あの人の命令を聞いているときは、確かに存在していたのです。「あの人の命令を聞くための存在」として……,"But... while I obeyed her, I truly existed. As ""one who obeys her""..."
@@ -1330,7 +1330,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 03AD,0x00EA,あれが、ナージュの  本体なの？,Is that Nage's true form?
 03AD,0x010E,ちがいます…あなたたちのいるこの搭…この世界全体が私です…,No... this tower you stand in... this whole world is me...
 03AD,0x014C,…だけども…     …支配者をなくした私の力は弱まってきました…,"...But... without a master, my power has weakened..."
-03AD,0x0192,…ならば…いっそのこと…あの人や、あなたたちと同じ形になって、戦おうと…,"...So... I'll take a form like hers and yours, and fight..."
+03AD,0x0192,…ならば…いっそのこと…あの人や、あなたたちと同じ形になって、戦おうと…,...So I'll take your form... and fight
 03AD,0x01DE,そうよねー、もし   この世界全体が    ナージュだったら、  ゼッタイ勝てないもんね,"Right, if this whole world were Nage, we could never win."
 03AD,0x023A,ゆいいつの、     チャンスね……,Our only chance...
 03AD,0x0262, 最終ステージ・スタート‼                   勝利条件：ナージュを倒せ‼,Final Stage Start!! Victory condition: Defeat Nage!!
@@ -1489,7 +1489,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 03CD,0x00AC,ふうう…うまく行ったわね……あれ、何かある‼,"Phew... that worked... Huh, something's here!!"
 03CD,0x00DC,だいせーこー‼ しかもここには何かあるぞぉ‼,Huge success!! And there's something here!!
 03CD,0x010C,うまく行きましたわね♥ではでは、ここにある 宝箱を……,"That went well! Now, the chest here..."
-03CD,0x0148,■■宝箱を開ける,[Open the chest]
+03CD,0x0148,■■宝箱を開ける,[Open]
 03CD,0x015E,……宝箱には              「素早さのモト」が      入っていた‼ ……,"...The chest held a ""Speed Essence""!! ..."
 03CD,0x01BA,                 素早さが３アップした‼,Speed rose by 3!!
 03CD,0x01FA,あ、体が       軽くなったような   気分がする……,"Oh, I feel lighter..."
@@ -1498,7 +1498,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 03CE,0x00AC,ふうう…うまく行ったわね……あれ、何かある‼,"Phew... that worked... Huh, something's here!!"
 03CE,0x00DC,だいせーこー‼ しかもここには何かあるぞぉ‼,Huge success!! And there's something here!!
 03CE,0x010C,うまく行きましたわね♥ではでは、ここにある 宝箱を……,"That went well! Now, the chest here..."
-03CE,0x0148,■■宝箱を開ける,[Open the chest]
+03CE,0x0148,■■宝箱を開ける,[Open]
 03CE,0x015E,……宝箱には              「素早さのモト」が      入っていた‼ ……,"...The chest held a ""Speed Essence""!! ..."
 03CE,0x01BA,                 素早さが３アップした‼,Speed rose by 3!!
 03CE,0x01FA,あ、体が       軽くなったような   気分がする……,"Oh, I feel lighter..."
@@ -1648,7 +1648,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 03E7,0x00AC,ふうう…うまく行ったわね……あれ、何かある‼,"Phew... that worked... Huh, something's here!!"
 03E7,0x00DC,だいせーこー‼ しかもここには何かあるぞぉ‼,Huge success!! And there's something here!!
 03E7,0x010C,うまく行きましたわね♥ではでは、ここにある 宝箱を……,"That went well! Now, the chest here..."
-03E7,0x0148,■■宝箱を開ける,[Open the chest]
+03E7,0x0148,■■宝箱を開ける,[Open]
 03E7,0x015E,……宝箱には            「腕力のモト」が          入っていた‼ ……,"...The chest held a ""Power Essence""!! ..."
 03E7,0x01BC,                 腕力が３アップした‼,Power rose by 3!!
 03E7,0x01FA,あ、力が       みなぎってきたような 気分がする……,"Oh, I feel full of strength..."
@@ -1690,9 +1690,9 @@ scene_idx_hex,offset_hex,jp_decoded,en
 03EB,0x02FA,いろいろな宝が埋まっていたりする事があるよ‼調べてみてね‼,you may find buried treasure!! Go look!!
 03EB,0x0338,……それじゃ、    いそいでるから    またねー♪      バイバーイ♥,"...Well, I'm in a hurry, see ya! Bye-bye!"
 03EB,0x038A,なんだったんだ、今のは……,What was that just now...
-03EB,0x03A8,なにが        いそがしいんだろ？,What's she in a hurry for?
-03EB,0x03D4,なになになに？    今の人？ ……あ、  いなくなっちゃった……,"What, what, what? Who was that? ...Oh, she's gone..."
-03EB,0x041A,あの人も、いろいろと いそがしいの     でしょうかね？,I suppose she's busy with many things?
+03EB,0x03A8,なにが        いそがしいんだろ？,Busy with what?
+03EB,0x03D4,なになになに？    今の人？ ……あ、  いなくなっちゃった……,"What, what? Who was it? ...Gone..."
+03EB,0x041A,あの人も、いろいろと いそがしいの     でしょうかね？,Is she busy with stuff?
 03EC,0x00B8,あの、すいません……,"Um, excuse me..."
 03EC,0x00D0,はい？,Yes?
 03EC,0x00DA,コンタクトレンズを  落としちゃったんです……一緒にさがして   もらえませんか？,I dropped my contact lens... Could you help me look?
@@ -1821,7 +1821,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 03FC,0x0194,いやっほぉ♥     こんにちはぁ‼    あたしは       滝の小女神さまだよ‼,Yoo-hoo! Hiii!! I'm the little Waterfall Goddess!!
 03FC,0x01EE,ゴキブリみたいだな……,Like a cockroach...
 03FC,0x0208,やん、ちっちゃくて  ゴキブリみたい‼,"Eek, she's tiny, like a cockroach!!"
-03FC,0x0232,なんか、ちっちゃいと ヘンだなぁ……,Being so tiny is kinda weird...
+03FC,0x0232,なんか、ちっちゃいと ヘンだなぁ……,Tiny is so weird...
 03FC,0x025A,そのままミニチュアに なってるわね……,A perfect miniature of the others...
 03FC,0x0284,ちっちゃくて、    かわいらしいですわね、お人形みたい♥,"So tiny and adorable, like a doll!"
 03FC,0x02C2,今回は、       ヒントをあげるよ‼  水の神殿の中には、  いい物が落ちてるよ‼,A hint!! There's something good in the Water Temple!!
@@ -1838,7 +1838,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 03FE,0x00E2,長い階段だな。    つかれちゃったなぁ……,Long stairs. I'm tired...
 03FE,0x0112,いやらしい階段ですわね……遠回りさせるなんて,Nasty stairs... making us take the long way.
 03FF,0x0082,香外い,
-03FF,0x0098,                ……洞富の入り口がある……,...There's a cave entrance...
+03FF,0x0098,                ……洞窟の入り口がある……,...There's a cave entrance...
 03FF,0x00D6,ここって、やっぱ……？入ってみよっと……,Is this...? Let's go in...
 03FF,0x0102,よぉし‼       入ってみるぞぉ‼,Alright!! Let's go in!!
 03FF,0x012C,きっと、いいところに つながっているわ‼  行ってみよっと‼,I bet it leads somewhere good!! Let's go!!
@@ -1861,7 +1861,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 0400,0x0104,にしても、「ナージュ」は、女神さまの    多い世界だな……,"Still, ""Nage"" sure has a lot of goddesses..."
 0400,0x0144,あ、どうも、たびたび……よく会いますね,"Oh, hello again... We keep meeting."
 0400,0x016E,あら、        お久しぶりですね♥,"My, long time no see!"
-0400,0x019A,さぁて、       今回のプレゼントは… …コレだぁ‼,"Now, this time's present is... this!!"
+0400,0x019A,さぁて、       今回のプレゼントは… …コレだぁ‼,Today's gift is... this!!
 0400,0x01D6,               ……「腕力のモト」を             もらった‼……,"...Received a ""Power Essence""!!..."
 0400,0x0234,               ……腕力が３アップしたぞ‼……,...Power rose by 3!!...
 0400,0x0274,ありがとー‼,Thanks!!
@@ -2039,7 +2039,7 @@ scene_idx_hex,offset_hex,jp_decoded,en
 041B,0x00AC,ふうう…うまく行ったわね……あれ、何かある‼,"Phew... that worked... Huh, something's here!!"
 041B,0x00DC,だいせーこー‼ しかもここには何かあるぞぉ‼,Huge success!! And there's something here!!
 041B,0x010C,うまく行きましたわね♥ではでは、ここにある 宝箱を……,"That went well! Now, the chest here..."
-041B,0x0148,■■宝箱を開ける,[Open the chest]
+041B,0x0148,■■宝箱を開ける,[Open]
 041B,0x015E,……宝箱には            「腕力のモト」が          入っていた‼ ……,"...The chest held a ""Power Essence""!! ..."
 041B,0x01BC,                 腕力が３アップした‼,Power rose by 3!!
 041B,0x01FA,あ、力が       みなぎってきたような 気分がする……,"Oh, I feel full of strength..."

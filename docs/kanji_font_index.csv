@@ -805,7 +805,7 @@ char_id_hex,char_id_dec,rom_offset_hex,snes_addr_hex,unicode_char,notes
 0x070E,1806,0x0361C0,0x86E1C0,声,auto(à vérifier)
 0x0710,1808,0x036200,0x86E200,読,manuel
 0x0712,1810,0x036240,0x86E240,洞,vérifié (glyph_sheets)
-0x0714,1812,0x036280,0x86E280,富,vérifié (glyph_sheets)
+0x0714,1812,0x036280,0x86E280,窟,vérifié (glyph_sheets + contexte)
 0x0716,1814,0x0362C0,0x86E2C0,工,vérifié (glyph_sheets)
 0x0718,1816,0x036300,0x86E300,建,vérifié (glyph_sheets)
 0x071A,1818,0x036340,0x86E340,展,vérifié (glyph_sheets)
@@ -860,7 +860,7 @@ char_id_hex,char_id_dec,rom_offset_hex,snes_addr_hex,unicode_char,notes
 0x0780,1920,0x037000,0x86F000,様,vérifié (glyph_sheets)
 0x0782,1922,0x037040,0x86F040,昼,vérifié (glyph_sheets)
 0x0786,1926,0x0370C0,0x86F0C0,対,vérifié (glyph_sheets)
-0x0788,1928,0x037100,0x86F100,興,vérifié (glyph_sheets)
+0x0788,1928,0x037100,0x86F100,奥,vérifié (glyph_sheets + contexte)
 0x078A,1930,0x037140,0x86F140,,
 0x078C,1932,0x037180,0x86F180,境,vérifié (glyph_sheets)
 0x0792,1938,0x037240,0x86F240,季,vérifié (glyph_sheets)

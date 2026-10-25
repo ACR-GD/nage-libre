@@ -21,4 +21,4 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x0478,3,4,えっ？,Huh?
 0x0482,8,9,誰なの、あなた？,Who are you?
 0x0496,14,15,……私の名は……ナージュ……,...My name is... Nage...
-0x04B6,31,31,■■レベルアップ、INTERMISSION、■びメニューなし■,"[No level-up, intermission or menu]"
+0x04B6,31,31,■■レベルアップ、INTERMISSION、■びメニューなし■,[No level-up/menu here]
