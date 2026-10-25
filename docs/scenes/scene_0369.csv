@@ -1,14 +1,14 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0000,26,53,"あいぃばばばばば""」いぃふょケニャ吉員いぃ素軽究敗始","Aiiibababababa""iifuyokenii"
-0x006C,3,4,ええ？,Yeah
-0x0076,19,20,ホントだ。ふさがってて通れないや……。,It's blocked. I can't get through...
-0x00A0,22,23,ホントにダメー‼    これは通れないよぉ‼,No way!! You can't get through here!!
-0x00D0,24,25,ホントだ。これは    どうやっても通れないな…,It's a dead end. There's no way to get through this...
-0x0104,22,23,完全に埋まってる…。  これは通れないわね…,It's all blocked... I can't get through here...
-0x0134,44,45,完全に埋まってますわ。ここまで気合いを入れて 埋めることも      ないでしょうに……,It's locked tight. No need to go to such lengths...
-0x0190,20,21,しょうがないなぁ    どうしよっかな？,"Oh well, what should I do?"
-0x01BC,7,8,こまったよぉ‼,Oh no!!
-0x01CE,43,44,ま、しょうがないかぁ‼ どっかにカギか何か  あるでしょ‼    ……捜してみよっと‼,Oh well! There must be a key somewhere! ...Let's look!
-0x0228,11,12,ああ…ついてないなぁ。,Oh... what bad luck.
-0x0242,44,46,まぁ、しかたが    ありませんわね。   気をとりなおして、  なんとかしてみましょう,"Well, it can't be helped. Let's cheer up and try something."
-0x02A0,33,31,へっへーんだ‼    トビラを開かなきゃ  中に入れないもんねぇ‼,Heh heh! We can't get in unless we open the door!
+0x006C,3,4,ええ？,Huh?
+0x0076,19,20,ホントだ。ふさがってて通れないや……。,"It's true. It's blocked, can't get through..."
+0x00A0,22,23,ホントにダメー‼    これは通れないよぉ‼,It really won't work!! We can't get through!!
+0x00D0,24,25,ホントだ。これは    どうやっても通れないな…,It's true. There's no way through here...
+0x0104,22,23,完全に埋まってる…。  これは通れないわね…,It's completely filled in... We can't pass...
+0x0134,44,45,完全に埋まってますわ。ここまで気合いを入れて 埋めることも      ないでしょうに……,Completely filled in. No need to go to such lengths...
+0x0190,20,21,しょうがないなぁ    どうしよっかな？,"Oh well, what should we do?"
+0x01BC,7,8,こまったよぉ‼,We're stuck!!
+0x01CE,43,44,ま、しょうがないかぁ‼ どっかにカギか何か  あるでしょ‼    ……捜してみよっと‼,Oh well!! There must be a key somewhere!! ...Let's look!!
+0x0228,11,12,ああ…ついてないなぁ。,Ah... no luck.
+0x0242,44,46,まぁ、しかたが    ありませんわね。   気をとりなおして、  なんとかしてみましょう,"Well, it can't be helped. Let's cheer up and try."
+0x02A0,33,31,へっへーんだ‼    トビラを開かなきゃ  中に入れないもんねぇ‼,Heh heh!! You can't get in without opening the door!!

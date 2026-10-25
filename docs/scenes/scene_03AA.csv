@@ -1,11 +1,11 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0136,43,45,あ、そうだ‼     はんせいのしるしに  コレあげるよ‼       …それじゃね♪,"Oh, right!! Take this as an apology!! ...See ya!"
-0x0192,45,47,……「回復剤」をもらった‼                  全員、体力が全回復したぞ‼…,"...I got a ""turn""!! My stamina is completely restored!!"
-0x01F2,29,30,わあーい‼      しかも、一方通行が  逆になったよ‼,Yay!! And the one-way path is now two-way!!
-0x0230,15,16,これで、戻ることは出来ますわね,"Now we can go back, right?"
-0x0252,21,22,あっ‼ でも敵がまた 全員よみがえってる‼,Ah!! But the enemy has been completely revived again!!
-0x0280,20,21,キリがないわ…    …こうなったら……,There's no end to it... ...If it comes to this...
-0x02AC,19,20,搭を上がって、ナージュと戦うしかない‼,We have no choice but to go up and use Nage!!
-0x02D6,45,46, ステージ２２・再々スタート‼               勝利条件：階段までたどりつけ‼,Stage Start!! Reach the Winning Floor!!
+0x0192,45,47,……「回復剤」をもらった‼                  全員、体力が全回復したぞ‼…,"...Got a ""Restorative""!! Everyone's stamina is fully restored!!..."
+0x01F2,29,30,わあーい‼      しかも、一方通行が  逆になったよ‼,Yay!! And the one-way path is reversed!!
+0x0230,15,16,これで、戻ることは出来ますわね,Now we can go back.
+0x0252,21,22,あっ‼ でも敵がまた 全員よみがえってる‼,Ah!! But all the enemies are back again!!
+0x0280,20,21,キリがないわ…    …こうなったら……,This is endless... In that case...
+0x02AC,19,20,搭を上がって、ナージュと戦うしかない‼,we have to climb the tower and fight Nage!!
+0x02D6,45,46, ステージ２２・再々スタート‼               勝利条件：階段までたどりつけ‼,Stage 22 Restart 2!! Victory condition: Reach the stairs!!
 0x0334,11,12,   ……声が響く……,...A voice echoes...
-0x034E,57,31,ここまで来ると言うのですか… …いいでしょう…       ……来られるものなら……     ……最後の決戦を……,Are you saying you'll come this far...? ...Very well... ...If you can come... ...The best...
+0x034E,57,31,ここまで来ると言うのですか… …いいでしょう…       ……来られるものなら……     ……最後の決戦を……,You'd come this far...? Very well... if you can reach me... the final battle...

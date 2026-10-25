@@ -1,12 +1,12 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0104,2,14,全全,complete
-0x0122,30,31,５人は、「赤のジュエル」を           手に入れた‼,"Enter has obtained the ""Jewel""!!"
-0x0162,20,21,へええ。これが    「赤のジュエル」か,"Wow. So this is the ""Jewel of..."""
-0x018E,7,8,キレイですわね,"It's beautiful, isn't it?"
-0x01A0,29,30,そうかなぁ。     ただのガラス玉に   見えるけどなぁ,I wonder. It just looks like a glass ball to me.
-0x01DE,20,21,これって、もしかして   …ルビーじゃ…,Could this possibly be... a ruby...?
-0x020A,42,43,でもまぁ、ガラス玉  だっていいじゃん。  これがあれば、    中に入れるんだから,"Eh, a glass bead's fine too. With it, we can get in."
-0x0262,3,4,そだね,That's right.
-0x026C,20,21,じゃ、次はプールだ‼  さっそく行こー‼,"Okay, let's go to the pool!! Let's go right away!!"
-0x0298,21,22,いや…それたぶんルビー…時価すうおくえん…,No...that's probably Ruby...several hundred million yen...
-0x02C6,28,31,                 ステージ１０・クリア‼,Stage cleared!!
+0x0122,30,31,５人は、「赤のジュエル」を           手に入れた‼,"The five obtained the ""Red Jewel""!!"
+0x0162,20,21,へええ。これが    「赤のジュエル」か,"Wow. So this is the ""Red Jewel."""
+0x018E,7,8,キレイですわね,How pretty.
+0x01A0,29,30,そうかなぁ。     ただのガラス玉に   見えるけどなぁ,Really? Looks like a glass bead to me.
+0x01DE,20,21,これって、もしかして   …ルビーじゃ…,Could this be... a ruby...
+0x020A,42,43,でもまぁ、ガラス玉  だっていいじゃん。  これがあれば、    中に入れるんだから,"Eh, a glass bead's fine. With it, we can get inside."
+0x0262,3,4,そだね,Yeah.
+0x026C,20,21,じゃ、次はプールだ‼  さっそく行こー‼,Then next is the pool!! Let's go!!
+0x0298,21,22,いや…それたぶんルビー…時価すうおくえん…,No... that's probably a ruby... worth millions...
+0x02C6,28,31,                 ステージ１０・クリア‼,Stage 10 Clear!!

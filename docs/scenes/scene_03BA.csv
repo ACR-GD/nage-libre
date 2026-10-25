@@ -1,4 +1,4 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0000,8,14,いぼぃぉぉぉぉだ,It's good.
-0x001E,21,22,こっちの教室には   誰もいないみたいだね,It looks like there's no one in this church.
-0x004C,26,31,ここの教室には、   敵も味方もいないみたいですわね,It seems that this religion has no enemies or allies.
+0x001E,21,22,こっちの教室には   誰もいないみたいだね,"No one in this classroom, it seems."
+0x004C,26,31,ここの教室には、   敵も味方もいないみたいですわね,No friends or foes in this classroom.

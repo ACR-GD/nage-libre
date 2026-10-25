@@ -1,5 +1,5 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0000,5,20,あぃくさも,Aikusamo
 0x002A,4,5,ううっ‼,Ugh!!
-0x0036,45,46,…ナージュの造りだした敵が          倒されるごとにナージュの力は弱まっていく……,"...Each time an enemy that Naju attacks is defeated, Naju's power grows..."
-0x0094,45,31,……弱まったナージュに       応じるように       トビラが……ゆらいでいく……,...The door is opening...as if to reach Nage...
+0x0036,45,46,…ナージュの造りだした敵が          倒されるごとにナージュの力は弱まっていく……,"...With each enemy Nage created that falls, Nage's power weakens..."
+0x0094,45,31,……弱まったナージュに       応じるように       トビラが……ゆらいでいく……,"...As Nage weakens, the door... begins to waver..."

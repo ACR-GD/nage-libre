@@ -1,7 +1,7 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0000,9,17,いヴぃがのぽキノ０,Ii ga no Ki
-0x0024,32,33,開かない‼      …このままじゃ、   追いつかれちゃうぞ‼,"It won't open!! ...At this rate, they'll catch up to us!!"
-0x0068,13,14,えーん💦 開かないよぉ……,"Waaah, it won't open..."
-0x0086,31,32,開かない‼      ナージュの所に    行けないじゃない‼,It won't open!! I can't get to Naju's place!!
-0x00C8,31,32,あーん💦       トビラが開かないと追いつかれちゃうわ……,"Oh no, if the door doesn't open, they'll catch up to me..."
-0x010A,33,31,開かない‼      これじゃ、      フクロのネズミですわ‼,It won't open!! It's like a sack!!
+0x0024,32,33,開かない‼      …このままじゃ、   追いつかれちゃうぞ‼,"It won't open!! ...At this rate, they'll catch up!!"
+0x0068,13,14,えーん💦 開かないよぉ……,Waaah! It won't open...
+0x0086,31,32,開かない‼      ナージュの所に    行けないじゃない‼,It won't open!! We can't reach Nage!!
+0x00C8,31,32,あーん💦       トビラが開かないと追いつかれちゃうわ……,"Oh no! If the door won't open, they'll catch us..."
+0x010A,33,31,開かない‼      これじゃ、      フクロのネズミですわ‼,It won't open!! We're like rats in a trap!!

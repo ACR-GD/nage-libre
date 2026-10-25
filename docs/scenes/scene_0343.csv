@@ -1,40 +1,40 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x02A0,11,12,その他に、何か聞いた？,Anything else you asked?
-0x02BA,5,6,えっとぉ…,Um...
-0x02C8,42,43,とりあえず、     どんな事でも、    覚えていることを   教えてくださいね。,"For now, please tell me anything you know."
-0x0320,21,22,まとめれば、けっこうな話になるものですから,"To summarize, it makes for quite a story."
-0x034E,4,5,はーい‼,Yes!!
-0x035A,35,36,そう言えば、彩香さっき「世界に進軍する」とか言われた、って言ってたわね,"Right, someone told you about ""advancing on the world."""
-0x03A4,24,25,あ、そうそう言ってた、言ってた。何なの、アレは？,"Oh, right, he did say that. What was that all about?"
-0x03D8,20,21,はーい、舞ちゃんも聞いたこと言いまーす‼,"Okay, Mai-chan will also say what she heard!!"
-0x0404,33,34,「この造られた世界、 ナージュは、ぜーんぶ あの方の物なのだぁ‼」,"""This world, Naj, belongs entirely to that person!!"""
-0x044A,17,18,とか、言ってたのを  聞いたよぉ‼,I heard someone say that!!
-0x0470,32,33,あ、「もう、帰ることは出来ない……」    とも、言ってたけど…,"Oh, he also said, ""I can't go back now..."""
-0x04B4,2,3,……,...
-0x04BC,21,22,負けないよっ‼    まだまだあるもーん‼,No way!! There's still plenty more!!
-0x04EA,40,41,「心に闇を持つ者なら、この世界では、全て操ることが出来る」    とも聞いたぁ‼,"I heard, ""With darkness in your heart, you rule all!"""
-0x053E,2,3,……,...
-0x0546,19,20,意見をまとめたく   なくなってきた…,I'm losing the will to sum this up...
-0x0570,26,27,何か、聞けば聞くほど いやな答えになりそうですわね…,"The more I hear about it, the more unpleasant it seems..."
-0x05A8,7,8,…そうなのか？,...Is that so?
-0x05BA,22,23,…彩香、考えずに     しゃべってるわね…,...You're just talking without thinking...
-0x05EA,43,44,「世界に」「進軍する」「心に闇を持つ者」  「操る」「帰れない」 …はい、文をつなげて,"""World,"" ""advance,"" ""dark heart,"" ""no return""... Connect!"
-0x0644,39,40,えとぉ…世界に進軍する…心に闇を持つ者を操って…で、帰れない   ……ああっ‼,Um... advance... dark heart... can't go back... Ahh!!
-0x0696,9,10,今ごろ気づいたか…,You just realized that now...?
-0x06AC,19,20,帰れないぃ‼     それヤダぁぁぁ‼,I can't go home!! I don't want that!!
+0x02A0,11,12,その他に、何か聞いた？,Did you hear anything else?
+0x02BA,5,6,えっとぉ…,Ummm...
+0x02C8,42,43,とりあえず、     どんな事でも、    覚えていることを   教えてくださいね。,"For now, tell us anything you remember."
+0x0320,21,22,まとめれば、けっこうな話になるものですから,"Put together, it can tell us a lot."
+0x034E,4,5,はーい‼,Okaaay!!
+0x035A,35,36,そう言えば、彩香さっき「世界に進軍する」とか言われた、って言ってたわね,"Ayaka, you said someone told you, ""Invade the world."""
+0x03A4,24,25,あ、そうそう言ってた、言ってた。何なの、アレは？,"Oh, right, they said that. What was that about?"
+0x03D8,20,21,はーい、舞ちゃんも聞いたこと言いまーす‼,"Ooh, Mai will tell what she heard too!!"
+0x0404,33,34,「この造られた世界、 ナージュは、ぜーんぶ あの方の物なのだぁ‼」,"""This created world, Nage, all belongs to that person!!"""
+0x044A,17,18,とか、言ってたのを  聞いたよぉ‼,That's what I heard!!
+0x0470,32,33,あ、「もう、帰ることは出来ない……」    とも、言ってたけど…,"Oh, and they said, ""You can never go back..."""
+0x04B4,2,3,……,......
+0x04BC,21,22,負けないよっ‼    まだまだあるもーん‼,I won't lose!! There's more!!
+0x04EA,40,41,「心に闇を持つ者なら、この世界では、全て操ることが出来る」    とも聞いたぁ‼,"And: ""Here, anyone with a dark heart can be controlled!"""
+0x053E,2,3,……,......
+0x0546,19,20,意見をまとめたく   なくなってきた…,I don't want to sum this up anymore...
+0x0570,26,27,何か、聞けば聞くほど いやな答えになりそうですわね…,"The more we hear, the worse it sounds..."
+0x05A8,7,8,…そうなのか？,...Does it?
+0x05BA,22,23,…彩香、考えずに     しゃべってるわね…,...Ayaka talks without thinking...
+0x05EA,43,44,「世界に」「進軍する」「心に闇を持つ者」  「操る」「帰れない」 …はい、文をつなげて,"""World,"" ""invade,"" ""dark hearts,"" ""no return""... Connect!"
+0x0644,39,40,えとぉ…世界に進軍する…心に闇を持つ者を操って…で、帰れない   ……ああっ‼,Um... invade the world... control dark hearts... can't go back... Ahh!!
+0x0696,9,10,今ごろ気づいたか…,You only noticed now...
+0x06AC,19,20,帰れないぃ‼     それヤダぁぁぁ‼,We can't go back?! No way!!
 0x06D6,42,43,まぁまぁ。…聞いた事をテキトーにまとめただけだから、まだ本当か  どうかも判らないし,"Now, now... I just pieced it together. It may not be true."
-0x072E,26,27,そうそう。何もそこまで大ゲサなことではありませんわよ,That's right. It's not that big at all.
-0x0766,30,31,ああっははははぁぁ‼ よくぞそこまで    つきとめたわね‼,Ahahahahahaha!! You did well to find out that far!!
-0x07A6,3,4,えっ‼,Huh?!
-0x07B0,11,12,このまえの街にいた人‼,I saw you in town the other day!!
-0x07CA,22,23,そして、アッサリ   やられちゃった人だぁ‼,"And then, Atsari got beaten!"
-0x07FA,41,42,さすがね、あなたたち‼私たちのあるじが   造りだしたこの世界からあなたたちは……,"Impressive!! But from this world our master made, you..."
-0x0850,44,45,もう帰れないのよ‼  だって……今度こそ、 復活した霧香ちゃんに 倒されちゃうんだもん‼,You can't go back!! Because... you'll be beaten right here!!
-0x08AC,9,10,…こりてないわねぇ,"...They haven't learned their lesson, have they?"
-0x08C2,30,31,そんなコト      言っていられるのも  今のうちだけよ‼,You can only say things like that for now!
-0x0902,32,33,この、パワーアップして帰ってきた私を    倒してごらんなさい‼,Try and defeat this guy who's come back with a power-up!!
-0x0946,43,44,この世界には、ナージュの影響を受けない、  心に闇を持たない人間は 必要ないのだから‼,"Here, no one resists Nage or lacks a dark heart!!"
-0x09A0,9,10,ではでは。ワープ‼,Well then. —P!
-0x09B6,19,20,あたしはここで、   待っているわよ‼,"I'll be here, serving you!!"
-0x09E0,40,41,おっとっと…     それだったら、    この穴はあたしが   守らなくちゃ‼,"Oops... In that case, I'll have to take care of it!!"
-0x0A34,44,31, ステージ７・スタート‼                  勝利条件：ボス・霧香を倒せ‼,Stage Start!! Defeat Katsuken!!
+0x072E,26,27,そうそう。何もそこまで大ゲサなことではありませんわよ,Right. It's surely nothing so dramatic.
+0x0766,30,31,ああっははははぁぁ‼ よくぞそこまで    つきとめたわね‼,Ahahahahaha!! Well done figuring all that out!!
+0x07A6,3,4,えっ‼,Huh!!
+0x07B0,11,12,このまえの街にいた人‼,The one from that town!!
+0x07CA,22,23,そして、アッサリ   やられちゃった人だぁ‼,And the one who lost so easily!!
+0x07FA,41,42,さすがね、あなたたち‼私たちのあるじが   造りだしたこの世界からあなたたちは……,"Impressive!! But from this world our master created, you..."
+0x0850,44,45,もう帰れないのよ‼  だって……今度こそ、 復活した霧香ちゃんに 倒されちゃうんだもん‼,can't go back!! The revived Kirika will beat you!!
+0x08AC,9,10,…こりてないわねぇ,...She never learns.
+0x08C2,30,31,そんなコト      言っていられるのも  今のうちだけよ‼,You can only say that for now!!
+0x0902,32,33,この、パワーアップして帰ってきた私を    倒してごらんなさい‼,Try beating me now that I'm powered up!!
+0x0946,43,44,この世界には、ナージュの影響を受けない、  心に闇を持たない人間は 必要ないのだから‼,This world has no need for those Nage can't touch!!
+0x09A0,9,10,ではでは。ワープ‼,Ta-ta! Warp!!
+0x09B6,19,20,あたしはここで、   待っているわよ‼,I'll be waiting here!!
+0x09E0,40,41,おっとっと…     それだったら、    この穴はあたしが   守らなくちゃ‼,"Whoops... In that case, I have to guard this hole!!"
+0x0A34,44,31, ステージ７・スタート‼                  勝利条件：ボス・霧香を倒せ‼,"Stage 7 Start!! Victory condition: Defeat the boss, Kirika!!"

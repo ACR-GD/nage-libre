@@ -1,15 +1,15 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0082,15,36,状用いぃ行行行行行里里定い舞里,
-0x00CC,60,61,               ……よく見ると         コンタクトレンズが             落ちている……,"...Upon closer inspection, the contact lens is broken..."
-0x0148,33,34,あ……これは…    …さっきの人が    捜していたレンズでは…,Ah... this is... ...the Ren that was coming in earlier...
-0x018E,11,12,渡しに行ってやろっと‼,I'm gonna go and do it!!
-0x01A8,14,15,よぉし‼ とどけにいくぞぉ‼,Alright!! Let's go deliver it!!
-0x01C8,17,18,渡してあげないと可哀想ですわね……,I suppose I should do it for them...
-0x01EE,11,12,いたいた‼ はいコレ‼,There it is!! Here it is!!
-0x0208,21,22,まだいましたわね‼  見つけましたよ、これ,They're still here!! I found them!
-0x0236,19,21,よぉし‼ まだいた‼ 見つけたぞコレ‼,Yes!! There's still one left!! I found it!!
-0x0262,42,43,あ…         ありがとうございます‼……これで物が    はっきり見えます‼,Ah... Thank you!! ...Now I can see things clearly!!
-0x02BA,22,24,おれいに……     この私の宝物をあげる‼,As a thank you... I'll give you this treasure!!
-0x02EC,45,46,               ……「シ」の宝玉を             もらった‼ ……,"...I received the ""Shi"" jewel!!..."
-0x034A,17,18,……キレイな石……  ありがとう‼,...What a beautiful stone... Thank you!!
+0x00CC,60,61,               ……よく見ると         コンタクトレンズが             落ちている……,"...Look closely, a contact lens is on the ground..."
+0x0148,33,34,あ……これは…    …さっきの人が    捜していたレンズでは…,Oh... isn't this the lens that person was looking for...
+0x018E,11,12,渡しに行ってやろっと‼,I'll go give it to her!!
+0x01A8,14,15,よぉし‼ とどけにいくぞぉ‼,Alright!! Let's deliver it!!
+0x01C8,17,18,渡してあげないと可哀想ですわね……,We should return it to her...
+0x01EE,11,12,いたいた‼ はいコレ‼,There you are!! Here!!
+0x0208,21,22,まだいましたわね‼  見つけましたよ、これ,You're still here!! We found this.
+0x0236,19,21,よぉし‼ まだいた‼ 見つけたぞコレ‼,Alright!! Still here!! Found it!!
+0x0262,42,43,あ…         ありがとうございます‼……これで物が    はっきり見えます‼,Oh... thank you!! ...Now I can see clearly!!
+0x02BA,22,24,おれいに……     この私の宝物をあげる‼,As thanks... take my treasure!!
+0x02EC,45,46,               ……「シ」の宝玉を             もらった‼ ……,"...Received the ""Shi"" jewel!! ..."
+0x034A,17,18,……キレイな石……  ありがとう‼,...What a pretty stone... Thank you!!
 0x0370,21,31,いえいえ、こちらこそ。じゃ、がんばってね♥,"No, thank you. Well, good luck!"

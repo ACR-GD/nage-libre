@@ -1,8 +1,8 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0000,20,47,あいぃぴななななよ０いぃネデデデデフく４,ainananayoinedededefuku
-0x0060,8,9,あっ‼ 宝箱だ‼,Ah!! It's treasure!!
-0x0074,19,20,よっしゃあ‼     宝箱みーっけた‼,Yes!! I found the treasure!!
-0x009E,45,46,……宝箱の中には         「HPまんたん剤」が          入っていた‼……,"...The treasure contained ""Full HP""!!..."
+0x0060,8,9,あっ‼ 宝箱だ‼,Ah!! A treasure chest!!
+0x0074,19,20,よっしゃあ‼     宝箱みーっけた‼,Alright!! Found a treasure chest!!
+0x009E,45,46,……宝箱の中には         「HPまんたん剤」が          入っていた‼……,"...Inside the chest was a ""Full HP Potion""!!..."
 0x00FC,4,5,わぁい‼,Yay!!
-0x0108,5,7,オッケイ‼,Otsukei!!
-0x0118,29,31,                ……体力が全回復した‼……,...My stamina has been fully restored!!...
+0x0108,5,7,オッケイ‼,Okay!!
+0x0118,29,31,                ……体力が全回復した‼……,...Stamina fully restored!!...

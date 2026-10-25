@@ -1,22 +1,22 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x01D0,28,29,                 ステージ１６・クリア‼,Stage cleared!!
-0x020C,6,7,どれどれ……,let's see……
-0x021C,4,5,ごっくん,gulp
-0x0228,12,13,本にはこう書いてある……,The book says this...
-0x0244,57,58,おいしいスパゲッティの    つくりかた…まず、おゆを多めに入れます。そしてしおを少しだけ入れます。こうすると……,"Tasty spaghetti: First, put water in a pot. Add a pinch of salt. Then..."
-0x02BA,2,3,……,...
-0x02C2,27,28,こんな本を大事にする 必要が、あったんでしょうか……？,I wonder if anyone ever treasured a book like this...
-0x02FC,17,18,にゅにゅー。     わかんないー,Nyunyu. I don't know.
-0x0322,12,13,……パラ……メモが落ちた,...para...memo
-0x033E,10,11,あら、何でしょうか？,"Oh, what is it?"
-0x0356,5,6,どれどれ？,let's see
-0x0364,53,54,森で洞富の入り口に入るための パスワード「LISTEN TOTHE RAINDOROPS」…水の神殿へ……,"Password: ""LISTEN TO THE RAINDROPS""... to the North Club..."
-0x03D2,13,14,何かのパスワードみたいだね,It looks like some kind of passcode.
-0x03F0,4,5,森か……,mosquito……
-0x03FC,11,12,行くしかありませんわね,I guess I have no choice but to go.
-0x0416,20,21,でも、「洞富の入り口」なんてあったっけ？,"But was there ever a ""no hitori""?"
-0x0442,43,44,…あのう…来る時に  あった、小高い所で  目立ってた門のような所ではないでしょうか？,...Um... isn't it that tall place we saw on the way here?
-0x049C,2,3,あら,fault
-0x04A4,19,20,そう言えば、     なんかあったわね,"Oh yeah, something did happen, didn't it?"
-0x04CE,26,27,気づいてたんなら言ってくれればいいのにぃ。 ぷんぷん,"If you noticed, you should have told me. Hmm."
-0x0506,33,31,だって……みんな…気づいてるかと思って…… ごめんなさい、しくしく,"Because... I thought everyone had noticed... I'm sorry, sniff..."
+0x01D0,28,29,                 ステージ１６・クリア‼,Stage 16 Clear!!
+0x020C,6,7,どれどれ……,Let's see...
+0x021C,4,5,ごっくん,Gulp.
+0x0228,12,13,本にはこう書いてある……,The book says...
+0x0244,57,58,おいしいスパゲッティの    つくりかた…まず、おゆを多めに入れます。そしてしおを少しだけ入れます。こうすると……,Tasty spaghetti recipe... Use plenty of water. Add a little salt. Then...
+0x02BA,2,3,……,......
+0x02C2,27,28,こんな本を大事にする 必要が、あったんでしょうか……？,Did anyone need to treasure a book like this...?
+0x02FC,17,18,にゅにゅー。     わかんないー,Hmmm. I don't get it.
+0x0322,12,13,……パラ……メモが落ちた,...Flutter... A note fell out.
+0x033E,10,11,あら、何でしょうか？,"Oh, what's this?"
+0x0356,5,6,どれどれ？,Let's see?
+0x0364,53,54,森で洞富の入り口に入るための パスワード「LISTEN TOTHE RAINDOROPS」…水の神殿へ……,"Forest cave password: ""LISTEN TOTHE RAINDOROPS""... to the Water Temple..."
+0x03D2,13,14,何かのパスワードみたいだね,Looks like some kind of password.
+0x03F0,4,5,森か……,"The forest, huh..."
+0x03FC,11,12,行くしかありませんわね,We have no choice but to go.
+0x0416,20,21,でも、「洞富の入り口」なんてあったっけ？,"But was there a ""cave entrance""?"
+0x0442,43,44,…あのう…来る時に  あった、小高い所で  目立ってた門のような所ではないでしょうか？,...Um... wasn't there a gate on that hill we passed?
+0x049C,2,3,あら,Oh.
+0x04A4,19,20,そう言えば、     なんかあったわね,"Now that you mention it, there was something."
+0x04CE,26,27,気づいてたんなら言ってくれればいいのにぃ。 ぷんぷん,"If you noticed, you should've said so. Hmph."
+0x0506,33,31,だって……みんな…気づいてるかと思って…… ごめんなさい、しくしく,"Well... I thought everyone noticed... I'm sorry, sniff..."

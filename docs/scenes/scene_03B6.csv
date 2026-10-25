@@ -1,4 +1,4 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0000,3,17,ぁがぬ,Aga
-0x0024,30,31,                …部室には誰もいないようだ…,...It seems there's no one there...
-0x0064,20,31,さすがに、今は    誰もいないかぁ……,"As expected, there's no one here right now..."
+0x0024,30,31,                …部室には誰もいないようだ…,...No one seems to be in the club room...
+0x0064,20,31,さすがに、今は    誰もいないかぁ……,"Of course, no one's here now..."

@@ -1,8 +1,8 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0000,25,63,おがきぺおがきょおがきサおがきゼおがきブおがきマお,Ogaki Ogakyou Ogaki Sa Ogaki Ogaki Bu Ogaki Mao
-0x0080,14,15,中にはウチの生徒はいないの？,—There is no calendar for Chi there
-0x00A0,26,27,ええ。教室の様子も      何だか違うみたいですし,Yes. It seems like the children of the teacher are also getting along well.
+0x0080,14,15,中にはウチの生徒はいないの？,None of our students inside?
+0x00A0,26,27,ええ。教室の様子も      何だか違うみたいですし,"No. The classrooms seem different, too."
 0x00D8,5,6,ふうん……,Hmm...
-0x00E6,24,25,そのかわり、ヘンな人が    たくさんいますわ。,"On the other hand, there are lots of people like that."
-0x011A,6,7,変な人って？,Enter the empty
+0x00E6,24,25,そのかわり、ヘンな人が    たくさんいますわ。,"Instead, there are lots of strange people."
+0x011A,6,7,変な人って？,Strange people?
 0x012A,15,31,まぁ、行ってみれば判りますわよ,"Well, you'll see when you go."

@@ -1,11 +1,11 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0000,21,60,あいぃピピぷピょいぃピピヌピクあピ　変体龍,Aii pipipi yoii pipipiku api□ air body
-0x007A,17,18,あ、こんなところに  宝箱があるわ,"Oh, there's treasure here!"
-0x00A0,20,21,あら、こんなところに 宝箱がありますわ…,"Oh, look, there's treasure here..."
-0x00CC,27,28,さっそく、      開けてみましょ。   うきうき♥,Let's open it right away! So excited!
-0x0106,6,7,なぁにかな？,What is it?
-0x0116,45,46,               ……２人は、「リ」の宝玉を       手に入れた‼  ……,"...Iri has obtained the jewel of ""Ri""!!..."
-0x0174,7,7,うわーすごい。,"Wow, that's amazing."
-0x0184,11,12,何だかよく判らないけど,I don't really like it.
-0x019E,20,21,でもコレって、何かの 役に立つのかしら？,But I wonder what purpose this serves?
-0x01CA,33,31,さぁ……。      でも、とりあえず、  もらっときましょうよ。,"Well... But for now, let's just take it."
+0x007A,17,18,あ、こんなところに  宝箱があるわ,"Oh, there's a treasure chest here."
+0x00A0,20,21,あら、こんなところに 宝箱がありますわ…,"My, a treasure chest in a place like this..."
+0x00CC,27,28,さっそく、      開けてみましょ。   うきうき♥,Let's open it right away. How exciting!
+0x0106,6,7,なぁにかな？,What's inside?
+0x0116,45,46,               ……２人は、「リ」の宝玉を       手に入れた‼  ……,"...The two obtained the ""Ri"" jewel!! ..."
+0x0174,7,7,うわーすごい。,"Wow, amazing."
+0x0184,11,12,何だかよく判らないけど,"Not sure what it is, though."
+0x019E,20,21,でもコレって、何かの 役に立つのかしら？,But will this be useful for anything?
+0x01CA,33,31,さぁ……。      でも、とりあえず、  もらっときましょうよ。,Who knows... But let's take it for now.

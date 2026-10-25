@@ -1,21 +1,21 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0082,29,50,画ぐお舞ぐおき燃おが搭ぐお　ぐおき片おが者ぐお豊ぐおき澄お,Guo Mai Guokio Ga Guo □ Guokio Ga Guo Guokio
-0x00E8,29,30,               登場キャラクタープロフィール,Character Profile
-0x0126,24,25,   きりしま・ゆい          霧島 惟,Kirishimai
-0x015A,24,25,   あおい・りょうこ         葵 嶺子,Aoi Ryoko
-0x018E,24,25,   ひめのぎ・まい         姫ノ木 舞,Menogi Mai Hime Mai
+0x00E8,29,30,               登場キャラクタープロフィール,Character Profiles
+0x0126,24,25,   きりしま・ゆい          霧島 惟,Yui Kirishima
+0x015A,24,25,   あおい・りょうこ         葵 嶺子,Reiko Aoi
+0x018E,24,25,   ひめのぎ・まい         姫ノ木 舞,Mai Himenoki
 0x01C2,24,25,   さくらい・あやか        桜井 彩香,Ayaka Sakurai
-0x01F6,24,25,   しずもと・みき         静本 美姫,Shizumoto Miki
-0x022A,45,47,                   ミスティ                 ……大ボス,Ste... Thick S
-0x028A,43,45,AGE        １７  TALL      １６２CMBLOOD TYPE  B,AGE TALL CMBLOOD TYPE B
-0x02E6,43,45,AGE        １７  TALL      １６５CMBLOOD TYPE  A,AGE TALL CMBLOOD TYPE A
-0x0342,43,45,AGE        １７  TALL      １５５CMBLOOD TYPE  A,AGE TALL CMBLOOD TYPE A
-0x039E,43,45,AGE        １７  TALL      １６６CMBLOOD TYPE  O,AGE TALL CMBLOOD TYPE O
-0x03FA,43,45,AGE        １７  TALL      １６０CMBLOOD TYPE  A,AGE TALL CMBLOOD TYPE A
-0x0456,44,46,AGE        ２６  TALL      １７１CMBLOOD TYPE  AB,AGE TALL CMBLOOD TYPE AB
-0x04B4,21,23,最初から登場するよ‼     よろしくね‼,I'll be there from the very beginning!! Looking forward to it!!
-0x04E4,30,32,１面クリアしたら出てきます♥ ちょっとだけ待ってて下さいね♥,Luculia will appear. Please wait for a little while.
-0x0526,22,24,舞ちゃんは、３面のとちゅうから登場するよぉ‼,Mai-chan will be leaving the stage halfway through!!
-0x0558,44,46,６面クリアで仲間になるよ‼  あたしだけ最初は敵として   登場するんだ‼ 待っててね‼,I join your team after the full clear!! Only I start as an enemy!! Wait for me!!
-0x05B6,45,47,あの、わたしは７面クリア後  からの登場です…登場は遅いけど見すてないで待ってて下さいね…,"Um, I join from Full Clear... I come late, but please wait for me..."
-0x0616,41,31,よろしくね♥         ……ってオイオイ、      私まで出ていいのかよ？,"Nice to meet you... Wait a minute, is it really okay to go that far?"
+0x01F6,24,25,   しずもと・みき         静本 美姫,Miki Shizumoto
+0x022A,45,47,                   ミスティ                 ……大ボス,Misty ...Final boss
+0x028A,43,45,AGE        １７  TALL      １６２CMBLOOD TYPE  B,AGE 17 HEIGHT 162CM BLOOD TYPE B
+0x02E6,43,45,AGE        １７  TALL      １６５CMBLOOD TYPE  A,AGE 17 HEIGHT 165CM BLOOD TYPE A
+0x0342,43,45,AGE        １７  TALL      １５５CMBLOOD TYPE  A,AGE 17 HEIGHT 155CM BLOOD TYPE A
+0x039E,43,45,AGE        １７  TALL      １６６CMBLOOD TYPE  O,AGE 17 HEIGHT 166CM BLOOD TYPE O
+0x03FA,43,45,AGE        １７  TALL      １６０CMBLOOD TYPE  A,AGE 17 HEIGHT 160CM BLOOD TYPE A
+0x0456,44,46,AGE        ２６  TALL      １７１CMBLOOD TYPE  AB,AGE 26 HEIGHT 171CM BLOOD TYPE AB
+0x04B4,21,23,最初から登場するよ‼     よろしくね‼,I'm in from the start!! Nice to meet you!!
+0x04E4,30,32,１面クリアしたら出てきます♥ ちょっとだけ待ってて下さいね♥,I appear after Stage 1 is cleared! Please wait just a bit!
+0x0526,22,24,舞ちゃんは、３面のとちゅうから登場するよぉ‼,Mai shows up partway through Stage 3!!
+0x0558,44,46,６面クリアで仲間になるよ‼  あたしだけ最初は敵として   登場するんだ‼ 待っててね‼,I join after Stage 6!! Only I start as an enemy!! Wait for me!!
+0x05B6,45,47,あの、わたしは７面クリア後  からの登場です…登場は遅いけど見すてないで待ってて下さいね…,"Um, I appear after Stage 7... I'm late, but please wait for me..."
+0x0616,41,31,よろしくね♥         ……ってオイオイ、      私まで出ていいのかよ？,"Nice to meet you! ...Hey, wait, am I allowed in here?"

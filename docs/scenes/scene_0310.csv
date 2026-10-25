@@ -1,11 +1,11 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x009A,10,11,なにか学校のようすが,Something about the academic situation
-0x00B2,6,7,おかしいな…,That's strange...
+0x009A,10,11,なにか学校のようすが,Something about school...
+0x00B2,6,7,おかしいな…,seems off...
 0x00C2,10,11,何かあったのかなぁ？,I wonder what happened?
-0x00DA,10,11,…あなたが霧島惟ね。,"...You, that is."
-0x00F2,8,9,待っていたわよ‼,I was there serving you!!
-0x0106,9,10,え？ あなた誰よ‼,"Hey, who are you?!"
-0x011C,11,12,問答無用‼ 行くわよ‼,Nothing!! Let's go!!
-0x0136,30,31, ステージ１・スタート                   ,Stage Start
-0x0176,15,16,   勝利条件：ともみを倒せ‼,Defeat Katsuken and Tomomi!!
-0x0198,30,31,…ちょっと待ってよ‼ なんで、戦わなくちゃ いけないのよぉ‼,"...Hey, a samurai?! Why do I have to?!"
+0x00DA,10,11,…あなたが霧島惟ね。,...So you're Yui Kirishima.
+0x00F2,8,9,待っていたわよ‼,I've been waiting for you!!
+0x0106,9,10,え？ あなた誰よ‼,Huh? Who are you?!
+0x011C,11,12,問答無用‼ 行くわよ‼,No more talk!! Here I come!!
+0x0136,30,31, ステージ１・スタート                   ,Stage 1 Start
+0x0176,15,16,   勝利条件：ともみを倒せ‼,Victory condition: Defeat Tomomi!!
+0x0198,30,31,…ちょっと待ってよ‼ なんで、戦わなくちゃ いけないのよぉ‼,...Wait a minute!! Why do I have to fight?!

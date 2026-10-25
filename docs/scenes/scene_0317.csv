@@ -1,10 +1,10 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x00F4,13,14,…行ってしまいましたね…💦,...They've gone...
-0x0112,21,22,あああっ‼      結局何も判らないわ‼,Ahhh!! There's nothing here!!
-0x0140,10,11,しかたありませんわよ,There's nothing we can do about it.
-0x0158,30,31,しょうがないなぁ…… 他には、誰も     いないみたいだし,Oh well... It looks like there's no one else around.
-0x0198,8,9,帰りましょうか？,Shall we go home?
+0x00F4,13,14,…行ってしまいましたね…💦,...She's gone...
+0x0112,21,22,あああっ‼      結局何も判らないわ‼,"Argh!! In the end, we learned nothing!!"
+0x0140,10,11,しかたありませんわよ,It can't be helped.
+0x0158,30,31,しょうがないなぁ…… 他には、誰も     いないみたいだし,Oh well... Looks like no one else is around.
+0x0198,8,9,帰りましょうか？,Shall we head home?
 0x01AC,9,10,そだね、帰ろっかぁ,"Yeah, let's go home."
-0x01C2,30,31,ちょうど、      見たいテレビが    あったことですし,"And there was a TV show I wanted to watch, too."
-0x0202,20,21,…今日はつかれたし、  帰って寝よっと…,"...I'm tired today, I'm going home..."
-0x022E,27,31,                 ステージ２・クリア‼,Stage cleared!!
+0x01C2,30,31,ちょうど、      見たいテレビが    あったことですし,"There's a TV show I wanted to watch, anyway."
+0x0202,20,21,…今日はつかれたし、  帰って寝よっと…,...I'm tired today. I'll go home and sleep...
+0x022E,27,31,                 ステージ２・クリア‼,Stage 2 Clear!!

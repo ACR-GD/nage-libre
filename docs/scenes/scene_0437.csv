@@ -1,7 +1,7 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0000,8,16,いぃかぐびゆゆる,Iikagubiru
-0x0022,3,4,痛い‼,stomach!
-0x002C,33,34,ぷち‼        ……あーん、     ふんずけちゃったよぉ‼,"Damn it! ...Oh no, I stepped on it!"
-0x0072,18,19,なななに？      とがってるっ‼,"Wow, it's so sharp!!"
-0x009A,4,5,きゃん‼,Kyan!
-0x00A6,45,31,……ダメージ床のため        体力が             へってしまった‼‼……,...My stamina has decreased due to the damage!!...
+0x0022,3,4,痛い‼,Ow!!
+0x002C,33,34,ぷち‼        ……あーん、     ふんずけちゃったよぉ‼,"Squish!! ...Waaah, I stepped on it!!"
+0x0072,18,19,なななに？      とがってるっ‼,Wh-what? It's pointy!!
+0x009A,4,5,きゃん‼,Kyan!!
+0x00A6,45,31,……ダメージ床のため        体力が             へってしまった‼‼……,...The damage floor drained your stamina!!...

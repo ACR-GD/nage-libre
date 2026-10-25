@@ -1,13 +1,13 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x00B4,39,40,おおっとぉ‼ ちょうど間にあったわね‼   ここから先には    通さないわ‼,Whoa!! Made it just in time!! You won't get past here!!
-0x0106,33,34,…なぜならこの森の先にある洞富に入らせるワケには行かないからよっ‼,...Because I can't let you reach what lies beyond!!
-0x014C,8,9,あ、わかってます,"Oh, I understand."
-0x0160,31,32,サッサと倒して    サクサク行っちゃいますんで、おかまいなく,"We'll beat you fast and breeze through, so don't mind us."
-0x01A2,22,23,へ？ じゃ、     パスワードも知ってる？,"So, you know Pasud too?"
-0x01D2,2,3,ええ,Yeah
-0x01DA,21,22,洞富をぬけると、どこにつながっているかは？,"If you turn it, you will find out where it leads."
-0x0208,8,9,水の神殿でしょ？,"It's the ""recruitment"" section, right?"
-0x021C,33,34,……そう。なんか、さびしいな……ってたそがれてるバアイじゃないっ‼,"...I see. Kinda lonely... Hey, this is no time to mope!!"
-0x0262,25,26,…そこまで知られたからには……ここは通さないよっ‼,...Now that you know that much...I'm not letting you pass!!
-0x0298,33,34,今度こそ、パワーアップ最終段階まで行った霧香ちゃんの力を思い知れ‼,Now face the power of a girl who's powered up to the max!!
-0x02DE,59,31, ステージ１７・スタート‼                 勝利条件：ボス・霧香を倒し、         洞富に入れ‼,Stage Start!! Defeat the winning opponent and get in!!
+0x00B4,39,40,おおっとぉ‼ ちょうど間にあったわね‼   ここから先には    通さないわ‼,Whoa there!! Just in time!! You won't get past here!!
+0x0106,33,34,…なぜならこの森の先にある洞富に入らせるワケには行かないからよっ‼,...Because I can't let you into the cave past this forest!!
+0x014C,8,9,あ、わかってます,"Oh, we know."
+0x0160,31,32,サッサと倒して    サクサク行っちゃいますんで、おかまいなく,"We'll beat you fast and move on, so don't mind us."
+0x01A2,22,23,へ？ じゃ、     パスワードも知ってる？,Huh? So you know the password?
+0x01D2,2,3,ええ,Yes.
+0x01DA,21,22,洞富をぬけると、どこにつながっているかは？,And where the cave leads?
+0x0208,8,9,水の神殿でしょ？,"The Water Temple, right?"
+0x021C,33,34,……そう。なんか、さびしいな……ってたそがれてるバアイじゃないっ‼,"...Right. Kinda lonely... Wait, this is no time to mope!!"
+0x0262,25,26,…そこまで知られたからには……ここは通さないよっ‼,...Since you know that much... you won't pass!!
+0x0298,33,34,今度こそ、パワーアップ最終段階まで行った霧香ちゃんの力を思い知れ‼,"Now feel the power of Kirika, at her final power-up!!"
+0x02DE,59,31, ステージ１７・スタート‼                 勝利条件：ボス・霧香を倒し、         洞富に入れ‼,"Stage 17 Start!! Victory condition: Defeat the boss, Kirika, and enter the cave!!"

@@ -1,5 +1,5 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0000,7,39,チぢギへろウオ,Chihero
-0x0050,20,21,きゃ‼        トビラが開かない‼,Ah!! The door won't open!!
-0x007C,21,22,ここのトビラしか   開かないんだよーん♪,This is the only door that will open.
-0x00AA,6,31,くっそぉ……,Damn it...
+0x0050,20,21,きゃ‼        トビラが開かない‼,Kya!! The door won't open!!
+0x007C,21,22,ここのトビラしか   開かないんだよーん♪,Only the door here opens!
+0x00AA,6,31,くっそぉ……,Dammit...

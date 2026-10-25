@@ -1,18 +1,18 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0082,6,33,教　無ああぇ,Teaching □ aaaah
-0x00C6,28,29,こんにちは‼     ちょっとお話して   いいかしら？,Hi! May I chat with you for a bit?
-0x0102,2,3,え？,
+0x00C6,28,29,こんにちは‼     ちょっとお話して   いいかしら？,Hello!! Mind if we chat a moment?
+0x0102,2,3,え？,Huh?
 0x010A,5,6,それじゃ、,"Well then,"
-0x0118,11,12,部活のせつめいをするね,I'll explain my thoughts.
-0x0132,9,10,新しいステージに、,"On a beautiful stage,"
-0x0148,7,8,入るまえには、,"Before people arrive,"
-0x015A,40,41,プレーヤーが、それぞれの、キャラクターたちの部活を、選ぶように  なっているの。,The player chooses each character's items.
-0x01AE,30,31,選べる部は、ステージをクリアするごとに   ふえてゆくけど、,"The items you can choose increase with each stage cleared,"
-0x01EE,44,45,とちゅうで、宝ばこを 開けたり、イベントを クリアすることによって手に入る部もあるのよ。,Treasure chests and events can give you items too.
-0x024A,17,18,…たとえば……。ほら‼これあげる‼,"...For example... Hara!! Here, take this!!"
-0x0270,30,31,………惟はバスケ部のシンボルを        もらった‼……,...I received Suke's Shinru!!...
-0x02B0,43,44,こんなふうにね。これで次のステージからは  「バスケ部」を    選べるようになるの。,"Like this. From the next stage, you can pick ""Suke"" items."
-0x030A,40,41,さがせば、      いろいろあるから、  がんばって      捜してみてね‼,"There's lots to find if you look, so do your best!!"
-0x035E,29,30,あ…ありがとぉ‼   あなたって、     いい人なのね‼,Oh... thank you!! You're a good person!!
-0x039C,16,17,…では、そんなワケで、勝負よっ‼,"...So, with that said, let's win!!"
+0x0118,11,12,部活のせつめいをするね,let me explain clubs.
+0x0132,9,10,新しいステージに、,Before entering
+0x0148,7,8,入るまえには、,"a new stage,"
+0x015A,40,41,プレーヤーが、それぞれの、キャラクターたちの部活を、選ぶように  なっているの。,the player chooses a club for each character.
+0x01AE,30,31,選べる部は、ステージをクリアするごとに   ふえてゆくけど、,"More clubs become available as you clear stages,"
+0x01EE,44,45,とちゅうで、宝ばこを 開けたり、イベントを クリアすることによって手に入る部もあるのよ。,and some come from treasure chests or events.
+0x024A,17,18,…たとえば……。ほら‼これあげる‼,...For example... Here!! Take this!!
+0x0270,30,31,………惟はバスケ部のシンボルを        もらった‼……,...Yui received the Basketball Club emblem!!...
+0x02B0,43,44,こんなふうにね。これで次のステージからは  「バスケ部」を    選べるようになるの。,"Like that. From the next stage, you can pick ""Basketball."""
+0x030A,40,41,さがせば、      いろいろあるから、  がんばって      捜してみてね‼,"There's lots out there, so search hard!!"
+0x035E,29,30,あ…ありがとぉ‼   あなたって、     いい人なのね‼,Th-thanks!! You're a nice person!!
+0x039C,16,17,…では、そんなワケで、勝負よっ‼,"...And with that, let's fight!!"
 0x03C0,5,31,なんでっ‼,Why?!

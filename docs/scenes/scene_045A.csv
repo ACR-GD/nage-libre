@@ -1,10 +1,10 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0104,12,17,お以ぐお以ぐお句ぐお不ぐ,Oguoguoguogu
-0x0128,29,30,ダメだよ♥          ５人全員同じ誕生日にしちゃ♪,That's not okay. You can't make all the entry dates the same.
-0x0166,27,28,せっかくだから、いろんな   誕生日にしてみよーよぉ♥,"Since we're at it, let's try using different Western calendar dates!"
-0x01A0,24,25,しかもこの日は、       ぼくの誕生日なの♥,"Moreover, this day is a certain date in the Western calendar."
+0x0128,29,30,ダメだよ♥          ５人全員同じ誕生日にしちゃ♪,No fair! Don't give all 5 the same birthday!
+0x0166,27,28,せっかくだから、いろんな   誕生日にしてみよーよぉ♥,"Come on, try all kinds of different birthdays!"
+0x01A0,24,25,しかもこの日は、       ぼくの誕生日なの♥,"And besides, that's MY birthday!"
 0x01D4,12,13,みんなで一緒にうたおう‼,Let's all sing together!!
-0x01F0,44,45,♪ハッピバースデートゥーミー♪♪ハッピバースデートゥーミー♪♪ハッピバースデーぼーくー♪,Two Peace Date -- Two Peace Date -- Two Peace Day -- Ku
-0x024C,30,31,               …リセットするまで続きます……,...I'll keep going until I reset it...
-0x028C,30,31,……ここまでねばるとは         思いませんでした……,...I didn't expect them to hold out this long...
-0x02CC,23,31,ゴメンなさい‼        リセットしてね‼,I'm sorry!! Please reset it!!
+0x01F0,44,45,♪ハッピバースデートゥーミー♪♪ハッピバースデートゥーミー♪♪ハッピバースデーぼーくー♪,Happy birthday to me! Happy birthday to me! Happy birthday dear meee!
+0x024C,30,31,               …リセットするまで続きます……,...This continues until you reset...
+0x028C,30,31,……ここまでねばるとは         思いませんでした……,...I didn't think you'd hold out this long...
+0x02CC,23,31,ゴメンなさい‼        リセットしてね‼,Sorry!! Please reset!!
