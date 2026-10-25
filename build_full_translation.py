@@ -37,6 +37,7 @@ import build_character_names as N
 import build_names_full as NF
 import build_club_names as CLUB
 import build_scene_injection as SCENE
+import build_battle_text as BT
 
 ROOT = Path(__file__).parent
 ROM_JP = ROOT / "Nage Libre - Seijaku no Suishin (Japan).sfc"
@@ -112,10 +113,10 @@ def main():
     # === 6) Menu de COMMANDE en combat : hook runtime (banque $80) ===
     CMD.apply(rom)
 
-    # === 6b) Ligne de dégâts : « [nom]は[N]のダメージ » -> « [nom] [N] damage!! ».
-    # La particule sujet は est une chaîne 1-mot à $87:86E9 (hors CSV) ; on la
-    # remplace par une espace ($87:86EB est déjà FFFF).
-    struct.pack_into("<H", rom, 0x0386E9, JP_SPACE)
+    # === 6b) Messages de COMBAT : fragments repointés par site + noms demi-chasse ===
+    #   « [nom] takes [N] damage!! », « [nom] gains [N] DEF!! »… (cf. build_battle_text)
+    #   + HUD de PV dans l'ordre Prénom Initiale.
+    battle = BT.apply(rom, ROM_JP.read_bytes())
 
     with OVERFLOW_CSV.open("w", encoding="utf-8", newline="") as f:
         wr = csv.writer(f)
@@ -140,6 +141,9 @@ def main():
     print(f"  noms combat (tableau partagé) : {nf_entries} entrée(s) repointée(s), "
           f"{nf_strings} chaîne(s) uniques @ $AF:9E8F")
     print(f"  clubs (écran sélection) : {clubs_written} libellés courts @ $87:85FF..")
+    print(f"  messages de combat : {battle['sites']} sites repointés, {battle['strings']} "
+          f"chaînes demi-chasse ({battle['bytes']} o) @ $BF:8000, "
+          f"prénom le plus long {battle['longest_name']} car.")
     print(f"  police partagée : {alloc.count()} paires uniques (sur {len(alloc.free)} dispo)")
     print(f"  scènes : hook {scene_stats['hook']} o @ $83:{SCENE.HOOK_ADDR:04X}, "
           f"annuaire+données {scene_stats['bytes'] // 1024} Ko @ $B0:8000+")
