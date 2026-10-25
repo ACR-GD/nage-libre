@@ -2,7 +2,7 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x0104,5,32,KQ響,KQ Hibiki
 0x0146,18,19,いやー、こっちの世界もいい天気ねぇ,"Wow, the weather's nice here too!"
 0x016E,31,32,本当にそうですわねぇろびろとして    見はらしもよくて…,"That's so true, it's spacious and has a great view..."
-0x01B0,41,42,…ってカ‼ さっきと同じ事を言ってんじゃないっ‼        どこなのよここ　,...Wait!! You're saying the same thing as before!! Where are we?
+0x01B0,41,42,…ってカ‼ さっきと同じ事を言ってんじゃないっ‼        どこなのよここ　,...Hey!! Same thing as before!! Where are we?!
 0x0206,9,10,だな…どうやら,Right...
 0x021C,11,12,ンなが暦えてるー‼,It's so long and beautiful!
 0x0236,3,4,あう…,match…
@@ -15,8 +15,8 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x0306,17,18,ここは、本当の世界、 現室世界です,"This is the real world, the present world."
 0x032C,43,44,そうなんですか　   でも、わたくしのの くにはなんて  ありませんでしたが…,Oh really? But I didn't have a country of my own...
 0x0386,33,34,世界「ナージュ」が 現室世界に      人りんできたのです。,"The world ""Nage"" has entered the present world."
-0x03CC,34,35,もうすぐ、この世界も 全て、ナージュとなり、あの方の物となるのです‼,"Soon this whole world will become Nage, and belong to that person!!"
+0x03CC,34,35,もうすぐ、この世界も 全て、ナージュとなり、あの方の物となるのです‼,"Soon this whole world will become Nage, and be hers!!"
 0x0414,4,5,ええっ‼,What?!
-0x0420,33,34,あの方のりだした  ナージュが、現室世界をするまであと一‼,The Nage that person created is one step from taking over the real world!!
-0x0466,42,43,そのためには、あなたたちのような、ジマは倒さねばなりません‼ かかってきなさい‼,"To achieve that, we must defeat people like you, Jima!! Bring it on!!"
+0x0420,33,34,あの方のりだした  ナージュが、現室世界をするまであと一‼,Nage is one step from swallowing the real world!!
+0x0466,42,43,そのためには、あなたたちのような、ジマは倒さねばなりません‼ かかってきなさい‼,"For that, pests like you must go!! Bring it on!!"
 0x04BE,44,31, ステージスタート‼                    勝件美を倒せ‼,Stage Start!! Defeat Katsukenmi!!

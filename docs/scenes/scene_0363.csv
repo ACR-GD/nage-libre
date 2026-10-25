@@ -1,7 +1,7 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0118,41,46,うう…。このままでは…しかたがない‼   行け‼        飛びおりろ子‼,"Ugh... At this rate... there's no other choice!! Go!! Jump off, kid!!"
+0x0118,41,46,うう…。このままでは…しかたがない‼   行け‼        飛びおりろ子‼,"Ugh... At this rate... No choice!! Go!! Jump, kid!!"
 0x0176,22,23,ええー‼ そんなぁ…‼んじゃいますよぉ…。,Oh no!! That's terrible...!! I'll just have to accept it...
-0x01A6,38,39,ーキだ‼ 下を見ろ‼力ーンがある‼ あそこなら飛びおりても太だ‼,Careful!! Look down!! There's a ramp!! We can jump down safely there!!
+0x01A6,38,39,ーキだ‼ 下を見ろ‼力ーンがある‼ あそこなら飛びおりても太だ‼,Careful!! Look down!! A ramp!! We can jump safely there!!
 0x01F6,8,9,…本当ですかぁ　,...Is that really true?
 0x020A,11,12,をついてどうする‼,What will you do about it?!
 0x0224,4,5,はーい。,Yes.
@@ -10,9 +10,9 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x027E,33,34,はおおおぉ‼     ……ふう。      何とか助かったみたいね,Haaah!! ...Phew. Looks like we're safe somehow.
 0x02C4,9,12,それじゃ、勝よ‼,"Alright then, let's win!!"
 0x02DE,30,31,……力ーンから      ものすごいがきだした‼…,...A really incredible kid came out of the car!!...
-0x031E,31,32,すごい…      …学の回りにいたら ないよ みんな‼,"Wow... That's incredible... You wouldn't find that around Gaku, everyone!!"
+0x031E,31,32,すごい…      …学の回りにいたら ないよ みんな‼,"Wow... Stay near the school and you'll be fine, everyone!!"
 0x0360,22,23,きゅうううう…    …飛ばされちゃうよぉ‼,Aaaah... I'm going to be blown away!!
-0x0390,40,41,このじゃ……    …学の回りにいたら ないわ‼      はなれないと‼,This is... ...you can't stay around Gaku!! You have to stay away!!
+0x0390,40,41,このじゃ……    …学の回りにいたら ないわ‼      はなれないと‼,At this rate... we can't stay near the school!! Get away!!
 0x03E4,19,20,すごい…      …はなれなきゃ‼,Wow... I have to stay away!!
 0x040E,18,21,みんな、学の回りからはなれなさい‼,"Everyone, stay away from Gaku!!"
 0x043A,23,24,へへーん、もう誰もいないぜ‼ どうするんだい　,"Hehe, there's nobody left!! What are you going to do?"

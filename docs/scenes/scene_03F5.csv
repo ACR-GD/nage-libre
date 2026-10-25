@@ -1,7 +1,7 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0000,10,21,あぐいぃみカカトラ,Aguiimi Kakatora
 0x002C,45,46,               ……あたたかいが         あたりをつつんでいる……,...A warmth envelops the surroundings...
-0x008A,27,28,ここは侍してるだけで回するみたいだ‼  ラツキー‼,It seems like this place is run just by being a samurai!! Lucky!!
+0x008A,27,28,ここは侍してるだけで回するみたいだ‼  ラツキー‼,Just waiting here restores you!! Lucky!!
 0x00C4,27,28,侍するだけで    回するのぉ‼    うれしい‼,I'll spin it just by being a samurai!! So happy!!
-0x00FE,31,32,ここは侍してるだけで回するみたいね。  ……あったかい……,It seems like you can run this place just by being a samurai. ...It's warm...
-0x0140,30,31,ここは侍するだけで 回するんですね。  ついていますね,"So, you just need to be a samurai to keep things going here? That's lucky!"
+0x00FE,31,32,ここは侍してるだけで回するみたいね。  ……あったかい……,Just waiting here restores you. ...It's so warm...
+0x0140,30,31,ここは侍するだけで 回するんですね。  ついていますね,So waiting here restores you. How lucky.

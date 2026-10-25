@@ -62,12 +62,12 @@ BANK_SIZE = 0x8000
 PAIR_BUDGET_MARGIN = 12        # garde-fou d'IDs de police
 
 # Géométrie des boîtes de texte par opcode d'affichage : (colonnes demi-chasse,
-# rangées max). op01 : marge $1143=8..$1144=$1E ; op0B : 1..$1F. Les deux passent
-# par $80:F4CA -> $80:F433 (hook $FFFE). Capacité mesurée sur le JP d'origine :
-# 202 lignes op01 et 53 op0B occupent 4 rangées, aucune 5 ; chaque ligne op01 a
-# sa propre boîte (op01 -> op06 -> op03/op07, jamais deux op01 empilés).
-BOX_GEOMETRY = {0x01: (22, 4), 0x0B: (30, 4)}
-DEFAULT_GEOMETRY = (22, 3)     # autres opcodes : géométrie non vérifiée, prudence
+# rangées visibles). Colonnes = $1144 - $1143 lus dans chaque handler :
+# op01 : 8..$1E ; op23 : 1..$1E ; op0B/26/2B/3B : 1..$1F. La boîte n'affiche que
+# 3 rangées (vérifié en jeu, op26/op2B : la 4e passe sous la bordure basse).
+BOX_GEOMETRY = {0x01: (22, 3), 0x0B: (30, 3), 0x23: (29, 3),
+                0x26: (30, 3), 0x2B: (30, 3), 0x3B: (30, 3)}
+DEFAULT_GEOMETRY = (22, 3)     # autres opcodes : marges non lues, prudence
 
 
 def off_to_snes(file_off):
@@ -118,9 +118,9 @@ def _scene_validator(rom, src_off):
         le walk d'opcodes s'arrête tôt sur certaines scènes)."""
         ops = {word(q) for q in range(0, min(o, n) - 2, 2)
                if word(q + 2) == o and feats.get(word(q), {}).get("textline")}
-        if len(ops) == 1:
-            return BOX_GEOMETRY.get(ops.pop(), DEFAULT_GEOMETRY)
-        return DEFAULT_GEOMETRY
+        # chaîne partagée par plusieurs boîtes : la plus étroite l'emporte
+        return min((BOX_GEOMETRY.get(op, DEFAULT_GEOMETRY) for op in ops),
+                   default=DEFAULT_GEOMETRY)
 
     return legit, prog_end, orig_len, geometry
 
@@ -197,11 +197,17 @@ def encode_hw(text):
 
 def layout_rows(text, w):
     """Découpe le texte en rangées de <= `w` caractères sans couper les mots
-    (un mot plus long que `w` reste seul sur sa rangée). '\n' force une rangée."""
+    (un mot plus long que `w` est coupé en morceaux de `w`). '\n' force une rangée."""
     rows = []
     for para in text.replace("...", "…").split("\n"):
         cur = ""
         for word in para.split():
+            while len(word) > w:
+                if cur:
+                    rows.append(cur)
+                    cur = ""
+                rows.append(word[:w])
+                word = word[w:]
             if not cur:
                 cur = word
             elif len(cur) + 1 + len(word) <= w:
@@ -214,19 +220,15 @@ def layout_rows(text, w):
     return rows
 
 
-def screen_rows(rows, cols):
-    """Rangées réellement occupées à l'écran : un mot plus long que `cols`
-    est replié par le plotter $80:F433 sur plusieurs rangées."""
-    return sum(max(1, -(-len(r) // cols)) for r in rows)
-
-
 def wrap_rows(text, cols=22, max_rows=3):
-    """Choisit la largeur de wrapping : cols-2, cols-1 puis cols (marge droite plus
+    """Choisit la largeur de wrapping : cols-2 puis cols-1 (marge droite plus
     équilibrée d'abord, ex. '…Hey, a samurai?!' / 'Why do I have to?!') ; garde la
-    première qui tient en `max_rows` rangées, sinon la plus large (débordement)."""
-    for w in (cols - 2, cols - 1, cols):
+    première qui tient en `max_rows` rangées, sinon la plus large (débordement).
+    Jamais `cols` : une rangée pleine déclenche le retour à la ligne automatique du
+    plotter $80:F433 (col >= $1144), et le $FFFE suivant laisserait une rangée vide."""
+    for w in (cols - 2, cols - 1):
         rows = layout_rows(text, w)
-        if screen_rows(rows, cols) <= max_rows:
+        if len(rows) <= max_rows:
             return rows
     return rows
 
@@ -234,14 +236,12 @@ def wrap_rows(text, cols=22, max_rows=3):
 def wrap_encode(text, cols=22, max_rows=3):
     """Enveloppe et encode le texte en IDs demi-chasse (8x16) avec sauts de ligne propres ($FFFE).
     `cols` = largeur de la boîte en demi-chasse (op01 : $1E-8 = 22), `max_rows` =
-    rangées visibles. Le moteur SNES ne coupe jamais les mots en deux.
-    Une rangée qui remplit exactement la boîte est déjà renvoyée à la ligne par le
-    plotter $80:F433 (col >= $1144) : pas de $FFFE derrière, sinon rangée vide."""
+    rangées visibles. Le moteur SNES ne coupe jamais les mots en deux."""
     rows = wrap_rows(text, cols, max_rows)
     ids = []
     for r_idx, row in enumerate(rows):
         ids.extend(encode_hw(row))
-        if r_idx < len(rows) - 1 and len(row) % cols:
+        if r_idx < len(rows) - 1:
             ids.append(NEWLINE_CODE)
     return ids
 
@@ -502,7 +502,7 @@ def apply(rom: bytearray, alloc=None):
 
         for off, en, slot, (cols, max_rows) in recs:
             full_ids = wrap_encode(en, cols, max_rows)
-            n_rows = screen_rows(wrap_rows(en, cols, max_rows), cols)
+            n_rows = len(wrap_rows(en, cols, max_rows))
             if n_rows > max_rows:
                 overflow.append((sidx, off, cols, max_rows, n_rows, en))
             if len(full_ids) <= slot:
