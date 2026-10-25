@@ -18,6 +18,7 @@ glyphes référencés dans le bloc texte `$87`), valable aussi pour le prologue.
 Sources : docs/prologue_translation.csv  +  docs/combat_menu_translation.csv
 Sortie   : nl-full-en.sfc
 """
+import csv
 import struct
 from pathlib import Path
 
@@ -40,6 +41,8 @@ import build_scene_injection as SCENE
 ROOT = Path(__file__).parent
 ROM_JP = ROOT / "Nage Libre - Seijaku no Suishin (Japan).sfc"
 OUT = ROOT / "nl-full-en.sfc"
+# Lignes de scène trop longues pour leur boîte (à raccourcir dans docs/scenes/)
+OVERFLOW_CSV = ROOT / "docs" / "scene_overflow.csv"
 
 
 def main():
@@ -114,6 +117,12 @@ def main():
     # remplace par une espace ($87:86EB est déjà FFFF).
     struct.pack_into("<H", rom, 0x0386E9, JP_SPACE)
 
+    with OVERFLOW_CSV.open("w", encoding="utf-8", newline="") as f:
+        wr = csv.writer(f)
+        wr.writerow(["scene_idx_hex", "offset_hex", "cols", "max_rows", "rows", "en"])
+        for sidx, off, cols, max_rows, n_rows, en in scene_stats.get("overflow", []):
+            wr.writerow([f"{sidx:04X}", f"0x{off:04X}", cols, max_rows, n_rows, en])
+
     fix_checksum(rom)
     OUT.write_bytes(rom)
 
@@ -121,6 +130,8 @@ def main():
     print(f"  scènes (multi) : {scene_stats['scenes']} scènes / "
           f"{scene_stats['lines']} lignes injectées"
           + (f" ({scene_stats['truncated']} tronquées)" if scene_stats['truncated'] else "")
+          + (f" ({len(scene_stats['overflow'])} débordent de la boîte -> {OVERFLOW_CSV.name})"
+             if scene_stats['overflow'] else "")
           + f"  |  combat/menu : {len(menu_plan)} chaîne(s)")
     print(f"  menu commande combat : hook @ $80:{CMD.HOOK_SNES:04X} "
           f"({' / '.join(w for _, _, w in CMD.CMDS)})")

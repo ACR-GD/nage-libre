@@ -6,10 +6,10 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x02AC,41,42,…あ、そうですわ‼  あの「ー和」を   使ってみたら、    どうでしょうか　,"...Oh, that's right!! How about trying to use that ""-wa""?"
 0x0302,10,11,あ、それな考え‼,"Ah, that's exactly what I was thinking!"
 0x031A,20,21,ー和をー     つかっちゃえー‼,Let's use the Japanese spirit!
-0x0346,43,44,そうでしょ　 では…。さあ、さん、そのビンをもって……体当たり して飛びみなさい‼,"Right? Well then... Now, Mr. [Name], take that bottle and... try to jump by ramming into it!!"
+0x0346,43,44,そうでしょ　 では…。さあ、さん、そのビンをもって……体当たり して飛びみなさい‼,"Right? Now then... take that bottle and leap into it, body first!!"
 0x03A0,5,6,オツケー‼,Otsuke!!
 0x03AE,19,20,…って侍て侍て、   なんでそうなる‼,"...But wait, wait, why did it turn out like that?!"
-0x03D8,44,45,…いや、このビンを持って飛びめば、きっと リアーもくだけるかと…しかもデですしね,"...No, if I jump with this bottle, I'm sure even Rear will break...and it's a D, after all."
+0x03D8,44,45,…いや、このビンを持って飛びめば、きっと リアーもくだけるかと…しかもデですしね,"...No, leaping in with this bottle should break the barrier... it's a D, after all."
 0x0434,42,43,……べつに、デじゃなくてもいいよぉ   入の体を、デにあつかわないでくれよぉ,"...It doesn't have to be De, you know. Just don't treat Iri's body like De's."
 0x048C,21,22,…うーん…とりあえず どっちもげちゃえ‼,"...Hmm...For now, let's just rip both of them off!!"
 0x04BA,4,5,ああっ‼,Ahh!!
@@ -21,6 +21,6 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x05C6,11,12,どうなるのでしょう……,What will happen...?
 0x05E0,44,45, …キュキュキュキュュ…   リアーは、を上げて、   あとかたもなくえさった‼,...Squeak squeak squeak... Ria raised her fins and left without a trace!
 0x063C,2,3,わ‼,circle!
-0x0644,44,45,…あ、やはりさっきの入たちは、間を助ける ために、ー和を   持ってきていたんですね,"...Ah, so those guys who entered earlier brought the harmony to help out the gap after all."
+0x0644,44,45,…あ、やはりさっきの入たちは、間を助ける ために、ー和を   持ってきていたんですね,"...Ah, so the people from earlier brought it to help their friends after all."
 0x06A0,11,12,さ、これでえるぞぉ‼,"Alright, we can get out now!!"
 0x06BA,33,31,よし‼        これで外に出られるわ‼……さっそく勝よっ‼,Alright!! Now I can go outside!! ...Let's win right away!!

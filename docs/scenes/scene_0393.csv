@@ -6,5 +6,5 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x013A,44,45,ようこそ‼      のったへ‼ あなたたちはここで入入倒されてくのよ‼,Welcome to Notta!! You will be defeated here!!
 0x0196,22,23,あちゃあ、あたし   方向オンチなのにな……,"Oh no, I have no sense of direction..."
 0x01C6,19,20,通れそうで通れない… どうしましょう　,"It looks like I can get through, but I can't... What should I do?"
-0x01F0,37,38,でも、どこかに道は  あるはず‼ あの女を倒せばいいんでしょ‼ 行くよ‼,But there must be a way somewhere!! All I have to do is defeat that woman!! Let's go!!
+0x01F0,37,38,でも、どこかに道は  あるはず‼ あの女を倒せばいいんでしょ‼ 行くよ‼,There must be a way somewhere!! We just beat that woman!! Let's go!!
 0x023E,60,31, ステージスタート‼                 勝件スサテを倒し、      を出せよ‼,Stage Start!! Defeat Katsuken Susate and get the [item name]!!

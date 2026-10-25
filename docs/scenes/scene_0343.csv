@@ -4,7 +4,7 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x02C8,42,43,とりあえず、     どんな事でも、    えていることを   教えてくださいね。,"For now, please tell me anything you know."
 0x0320,21,22,まとめれば、けっこうな話になるものですから,"To summarize, it makes for quite a story."
 0x034E,4,5,はーい‼,Yes!!
-0x035A,35,36,そう言えば、さっき「世界に進する」とか言われた、って言ってたわね,"Oh, that reminds me, you mentioned earlier that someone said something about ""going global."""
+0x035A,35,36,そう言えば、さっき「世界に進する」とか言われた、って言ってたわね,"Oh right, you said someone mentioned ""advancing on the world,"" didn't you?"
 0x03A4,24,25,あ、そうそう言ってた、言ってた。何なの、アレは　,"Oh, right, he did say that. What was that all about?"
 0x03D8,20,21,はーい、舞ちゃんも聞いたこと言いまーす‼,"Okay, Mai-chan will also say what she heard!!"
 0x0404,33,34,「このられた世界、 ナージュは、ぜーんぶ あの方の物なのだぁ‼」,"""This world, Naj, belongs entirely to that person!!"""
@@ -12,28 +12,28 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x0470,32,33,あ、「もう、帰ることは出来ない……」    とも、言ってたけど…,"Oh, he also said, ""I can't go back now..."""
 0x04B4,2,3,……,...
 0x04BC,21,22,けないよっ‼    まだまだあるもーん‼,No way!! There's still plenty more!!
-0x04EA,40,41,「心にを持つなら、この世界では、全てることが出来る」    とも聞いたぁ‼,"I also heard that ""If you have what you want in your heart, you can do anything in this world!"""
+0x04EA,40,41,「心にを持つなら、この世界では、全てることが出来る」    とも聞いたぁ‼,"I also heard, ""With darkness in your heart, you can rule everything here!"""
 0x053E,2,3,……,...
 0x0546,19,20,見をまとめたく   なくなってきた…,I'm starting to lose the desire to summarize my thoughts...
 0x0570,26,27,何か、聞けば聞くはど いやなえになりそうですわね…,"The more I hear about it, the more unpleasant it seems..."
 0x05A8,7,8,…そうなのか　,...Is that so?
 0x05BA,22,23,…、考えずに     しゃべってるわね…,...You're just talking without thinking...
-0x05EA,43,44,「世界に」「進する」「心にを持つ」  「る」「帰れない」 …はい、をつなげて,"""To the world,"" ""to advance,"" ""to have in your heart,"" ""to,"" ""cannot return""... Yes, connect them."
+0x05EA,43,44,「世界に」「進する」「心にを持つ」  「る」「帰れない」 …はい、をつなげて,"""World,"" ""advance,"" ""dark heart,"" ""no return""... Now connect them."
 0x0644,39,40,えとぉ…世界に進する…心にを持つをって…で、帰れない   ……ああっ‼,Um...to go out into the world...with that in mind...and I can't go back...Ahh!!
 0x0696,9,10,今ごろ気づいたか…,You just realized that now...?
 0x06AC,19,20,帰れないぃ‼     それヤダぁぁぁ‼,I can't go home!! I don't want that!!
-0x06D6,42,43,まぁまぁ。…聞いた事をテキトーにまとめただけだから、まだ本当か  どうかもらないし,"Well, well... I just roughly put together what I heard, so I don't even know if it's true yet."
+0x06D6,42,43,まぁまぁ。…聞いた事をテキトーにまとめただけだから、まだ本当か  どうかもらないし,"Now, now... I just pieced together what I heard. It may not even be true."
 0x072E,26,27,そうそう。何もそこまで太サなことではありませんわよ,That's right. It's not that big at all.
 0x0766,30,31,ああっははははぁぁ‼ よくぞそこまで    つきとめたわね‼,Ahahahahahaha!! You did well to find out that far!!
 0x07A6,3,4,えっ‼,Huh?!
 0x07B0,11,12,このまえの街にいた入‼,I saw you in town the other day!!
 0x07CA,22,23,そして、アツサリ   やられちゃった入だぁ‼,"And then, Atsari got beaten!"
-0x07FA,41,42,さすがね、あなたたち‼たちのあるじが   りだしたこの世界からあなたたちは……,As expected of you all!! You have come from this world that your master has created...
+0x07FA,41,42,さすがね、あなたたち‼たちのあるじが   りだしたこの世界からあなたたちは……,"Impressive, all of you!! But from this world our master created, you will..."
 0x0850,44,45,もう帰れないのよ‼  だって……今こそ、 したちゃんに 倒されちゃうんだもん‼,"I can't go back now!! Because... right now, Shita-chan is going to defeat me!!"
 0x08AC,9,10,…こりてないわねぇ,"...They haven't learned their lesson, have they?"
 0x08C2,30,31,そんなコト      言っていられるのも  今のうちだけよ‼,You can only say things like that for now!
 0x0902,32,33,この、パーアツプして帰ってきたを    倒してごらんなさい‼,Try and defeat this guy who's come back with a power-up!!
-0x0946,43,44,この世界には、ナージュの響をけない、  心にを持たない入間は ないのだから‼,"In this world, there is no Iruma who does not possess the resonance of Naju, no Iruma who does not have a heart!!"
+0x0946,43,44,この世界には、ナージュの響をけない、  心にを持たない入間は ないのだから‼,"In this world, no one resists Nage or lacks darkness in their heart!!"
 0x09A0,9,10,ではでは。ープ‼,Well then. —P!
 0x09B6,19,20,あたしはここで、   侍っているわよ‼,"I'll be here, serving you!!"
 0x09E0,40,41,おっとっと…     それだったら、    このはあたしが   らなくちゃ‼,"Oops... In that case, I'll have to take care of it!!"

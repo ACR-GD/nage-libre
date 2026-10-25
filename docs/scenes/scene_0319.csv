@@ -12,7 +12,7 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x05EA,20,21,ころすえきに、くさらせないえきもあるよ,"There are stations that kill animals, and stations that don't spoil them."
 0x0616,17,18,こんちゅうさいしゅう セツトかっ‼,Insect Final Set!!
 0x063C,30,31,…それにしても、   このままでは、先に  進めませんわね。,"...But even so, we can't move forward like this."
-0x067C,42,46,このぶんじゃ、    何回行っても、    戻されちゃうわね   …どうしようかぁ…,"At this rate, no matter how many times I go, I'll just be sent back... What should I do...?"
+0x067C,42,46,このぶんじゃ、    何回行っても、    戻されちゃうわね   …どうしようかぁ…,"At this rate, I'll get sent back no matter how often I go... What do I do...?"
 0x06DA,30,31,舞ちゃんとうじょー‼ …なぁに、このくすりがいけないんだね‼,"Mai-chan has arrived!! ...Oh, so this medicine is the problem!!"
 0x071A,32,33,それじゃあ、     こうすればいいんだ‼ …んぐんぐ…はぁ‼,"So, this is how you do it!! ...gulp gulp...haa!!"
 0x075E,4,5,うわっ‼,Wow!!
@@ -20,7 +20,7 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x0794,19,20,おおいっ‼      だいじょーぶー　,Hey!! It's okay!
 0x07BE,31,32,へーき‼       だって、舞ちゃん、  じょうぶだもーん‼,It's okay!! Because Mai-chan is strong!!
 0x0800,22,23,…おいおい、     そんなじゃなくて,"...Hey, hey, not like that"
-0x0830,41,42,くうう‼ このくすりは全思、ぜると    無になることを   知ってるとはっ‼,"Ugh!! This medicine knows that if you take away all your thoughts, you will become nothing!!"
+0x0830,41,42,くうう‼ このくすりは全思、ぜると    無になることを   知ってるとはっ‼,Ugh!! To think you knew mixing all the medicine cancels it out!!
 0x0886,11,12,はーらね‼ えっへん‼,Harane!! Ahem!!
 0x08A0,29,30,…いや、アンタ、 何も考えないで    行動したわ…,"...No, you acted without thinking at all..."
 0x08DE,22,23,くう、ばんじきゅーす‼もうなすすべがないわ‼,"Oh no, it's a dead end!! There's nothing I can do now!!"
@@ -31,4 +31,4 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x0A36,22,23,舞ちゃんも、     きょうりょくするよー‼,Mai-chan will cooperate too!!
 0x0A66,27,28,                  舞が間になった‼,Mai was in between!!
 0x0AA0,41,42,……うーふふー   あたしは求の女部  ここでみんなが来るのを侍っているのぉ,"...Ufufu, I'm the ladies of the Kyuu group, and I'm waiting here for everyone to come."
-0x0AF6,42,31,求の方に来れば、  あたしにえるよん もし、よかったら   あっそびに来てね,"If you come to the place I'm looking for, I'll come see you. If you'd like, please come visit!"
+0x0AF6,42,31,求の方に来れば、  あたしにえるよん もし、よかったら   あっそびに来てね,"Come up north and you can meet me! If you'd like, come play!"

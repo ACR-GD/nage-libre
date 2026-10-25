@@ -61,6 +61,14 @@ BANK_SIZE = 0x8000
 
 PAIR_BUDGET_MARGIN = 12        # garde-fou d'IDs de police
 
+# Géométrie des boîtes de texte par opcode d'affichage : (colonnes demi-chasse,
+# rangées max). op01 : marge $1143=8..$1144=$1E ; op0B : 1..$1F. Les deux passent
+# par $80:F4CA -> $80:F433 (hook $FFFE). Capacité mesurée sur le JP d'origine :
+# 202 lignes op01 et 53 op0B occupent 4 rangées, aucune 5 ; chaque ligne op01 a
+# sa propre boîte (op01 -> op06 -> op03/op07, jamais deux op01 empilés).
+BOX_GEOMETRY = {0x01: (22, 4), 0x0B: (30, 4)}
+DEFAULT_GEOMETRY = (22, 3)     # autres opcodes : géométrie non vérifiée, prudence
+
 
 def off_to_snes(file_off):
     bank = 0x80 + file_off // BANK_SIZE
@@ -72,7 +80,7 @@ def off_to_snes(file_off):
 # 1) Validation des offsets par scène (walk d'opcodes du buffer décompressé)
 # ---------------------------------------------------------------------------
 def _scene_validator(rom, src_off):
-    """Renvoie (legit_offsets, prog_end, orig_len) pour une scène décompressée."""
+    """Renvoie (legit_offsets, prog_end, orig_len, geometry) pour une scène décompressée."""
     out, _ = decompress(rom, src_off, dst_limit=0x4000)
     n = len(out)
 
@@ -104,7 +112,17 @@ def _scene_validator(rom, src_off):
             k += 1
         return k
 
-    return legit, prog_end, orig_len
+    def geometry(o):
+        """(cols, max_rows) de la boîte qui affiche la chaîne à l'offset `o` :
+        opcodes « ligne de texte » dont le 1er opérande vaut `o` (balayage brut,
+        le walk d'opcodes s'arrête tôt sur certaines scènes)."""
+        ops = {word(q) for q in range(0, min(o, n) - 2, 2)
+               if word(q + 2) == o and feats.get(word(q), {}).get("textline")}
+        if len(ops) == 1:
+            return BOX_GEOMETRY.get(ops.pop(), DEFAULT_GEOMETRY)
+        return DEFAULT_GEOMETRY
+
+    return legit, prog_end, orig_len, geometry
 
 
 def _init_walk_tables():
@@ -118,7 +136,7 @@ def _init_walk_tables():
 # 2) Chargement + validation des enregistrements traduits
 # ---------------------------------------------------------------------------
 def load_scene_records(rom):
-    """{scene_idx: [(offset, en, slot), ...]} pour les scènes traduites valides."""
+    """{scene_idx: [(offset, en, slot, (cols, max_rows)), ...]} pour les scènes traduites valides."""
     _init_walk_tables()
     tbl = {i: off for i, _snes, off in read_ptr_table(rom, 0x600) if off}
 
@@ -129,7 +147,7 @@ def load_scene_records(rom):
         if src is None or src >= len(rom):
             continue
         try:
-            legit, prog_end, orig_len = _scene_validator(rom, src)
+            legit, prog_end, orig_len, geometry = _scene_validator(rom, src)
         except Exception:
             continue
 
@@ -145,7 +163,7 @@ def load_scene_records(rom):
             slot = orig_len(off)            # borne sûre = longueur JP d'origine
             if slot < 1:
                 continue
-            recs.append((off, en, slot))
+            recs.append((off, en, slot, geometry(off)))
         if recs:
             scenes[scene_idx] = recs
     return scenes
@@ -177,72 +195,66 @@ def encode_hw(text):
     return ids
 
 
-def wrap_encode(text, alloc=None, approved=None, max_row_chars=21):
-    """Enveloppe et encode le texte en IDs demi-chasse (8x16) avec sauts de ligne propres ($FFFE).
-    Garantit qu'aucune ligne ne déborde la marge droite ($1144 = 30) et que
-    le moteur SNES ne coupe jamais les mots en deux."""
-    text = text.replace("...", "…")
-    paragraphs = text.split('\n')
-    all_ids = []
-
-    for p_idx, para in enumerate(paragraphs):
-        words = [w for w in para.split(' ') if w]
-        if not words:
-            continue
-
-        def do_wrap(w):
-            rows, cur = [], []
-            for item in words:
-                if len(' '.join(cur + [item])) <= w:
-                    cur.append(item)
-                else:
-                    if cur:
-                        rows.append(' '.join(cur))
-                        cur = [item]
-                    else:
-                        rows.append(item)
-                        cur = []
-            if cur:
-                rows.append(' '.join(cur))
-            return rows
-
-        # 1. w=20 : équilibré et marge sûre (ex: '…Hey, a samurai?!' / 'Why do I have to?!')
-        r20 = do_wrap(20)
-        if len(r20) <= 3:
-            rows = r20
-        else:
-            # 2. w=21 si cela permet de tenir en <= 3 lignes
-            r21 = do_wrap(21)
-            if len(r21) <= 3:
-                rows = r21
+def layout_rows(text, w):
+    """Découpe le texte en rangées de <= `w` caractères sans couper les mots
+    (un mot plus long que `w` reste seul sur sa rangée). '\n' force une rangée."""
+    rows = []
+    for para in text.replace("...", "…").split("\n"):
+        cur = ""
+        for word in para.split():
+            if not cur:
+                cur = word
+            elif len(cur) + 1 + len(word) <= w:
+                cur += " " + word
             else:
-                # 3. w=22 si cela permet de tenir en <= 3 lignes
-                r22 = do_wrap(22)
-                if len(r22) <= 3:
-                    rows = r22
-                else:
-                    rows = r21
-
-        for r_idx, row in enumerate(rows):
-            all_ids.extend(encode_hw(row))
-            if r_idx < len(rows) - 1:
-                all_ids.append(NEWLINE_CODE)
-
-        if p_idx < len(paragraphs) - 1:
-            all_ids.append(NEWLINE_CODE)
-
-    return all_ids
+                rows.append(cur)
+                cur = word
+        if cur:
+            rows.append(cur)
+    return rows
 
 
-def encode_fit(text, alloc=None, approved=None, slot=0):
+def screen_rows(rows, cols):
+    """Rangées réellement occupées à l'écran : un mot plus long que `cols`
+    est replié par le plotter $80:F433 sur plusieurs rangées."""
+    return sum(max(1, -(-len(r) // cols)) for r in rows)
+
+
+def wrap_rows(text, cols=22, max_rows=3):
+    """Choisit la largeur de wrapping : cols-2, cols-1 puis cols (marge droite plus
+    équilibrée d'abord, ex. '…Hey, a samurai?!' / 'Why do I have to?!') ; garde la
+    première qui tient en `max_rows` rangées, sinon la plus large (débordement)."""
+    for w in (cols - 2, cols - 1, cols):
+        rows = layout_rows(text, w)
+        if screen_rows(rows, cols) <= max_rows:
+            return rows
+    return rows
+
+
+def wrap_encode(text, cols=22, max_rows=3):
+    """Enveloppe et encode le texte en IDs demi-chasse (8x16) avec sauts de ligne propres ($FFFE).
+    `cols` = largeur de la boîte en demi-chasse (op01 : $1E-8 = 22), `max_rows` =
+    rangées visibles. Le moteur SNES ne coupe jamais les mots en deux.
+    Une rangée qui remplit exactement la boîte est déjà renvoyée à la ligne par le
+    plotter $80:F433 (col >= $1144) : pas de $FFFE derrière, sinon rangée vide."""
+    rows = wrap_rows(text, cols, max_rows)
+    ids = []
+    for r_idx, row in enumerate(rows):
+        ids.extend(encode_hw(row))
+        if r_idx < len(rows) - 1 and len(row) % cols:
+            ids.append(NEWLINE_CODE)
+    return ids
+
+
+def encode_fit(text, slot=0, cols=22, max_rows=3):
     """Encode en bornant à `slot` IDs si non relocalisable. Coupe sur frontière de mot."""
-    ids = wrap_encode(text)
+    ids = wrap_encode(text, cols, max_rows)
     if len(ids) <= slot:
         return ids, False
     words = text.split(" ")
     while len(words) > 1:
         words.pop()
-        cand = wrap_encode(" ".join(words))
+        cand = wrap_encode(" ".join(words), cols, max_rows)
         if len(cand) <= slot:
             return cand, True
     return ids[:slot], True
@@ -465,6 +477,7 @@ def apply(rom: bytearray, alloc=None):
     # Encodage avec relocalisation pour les lignes qui dépassent
     encoded = {}            # scene_idx -> (repoints, [(dest_offset, ids+FFFF)])
     truncated = 0
+    overflow = []           # (scene_idx, offset, cols, max_rows, rangées, en)
     relocated_count = 0
 
     for sidx, recs in scenes.items():
@@ -487,8 +500,11 @@ def apply(rom: bytearray, alloc=None):
         repoints = []
         string_records = []
 
-        for off, en, slot in recs:
-            full_ids = wrap_encode(en)
+        for off, en, slot, (cols, max_rows) in recs:
+            full_ids = wrap_encode(en, cols, max_rows)
+            n_rows = screen_rows(wrap_rows(en, cols, max_rows), cols)
+            if n_rows > max_rows:
+                overflow.append((sidx, off, cols, max_rows, n_rows, en))
             if len(full_ids) <= slot:
                 # Tient sur place
                 string_records.append((off, full_ids + [0xFFFF]))
@@ -505,7 +521,7 @@ def apply(rom: bytearray, alloc=None):
                     relocated_count += 1
                 else:
                     # Repli exceptionnel si aucun pointeur trouvé dans prog_end
-                    ids, was_trunc = encode_fit(en, slot=slot)
+                    ids, was_trunc = encode_fit(en, slot, cols, max_rows)
                     if was_trunc:
                         truncated += 1
                     string_records.append((off, ids + [0xFFFF]))
@@ -571,6 +587,7 @@ def apply(rom: bytearray, alloc=None):
         "scenes": len(idxs),
         "lines": sum(len(str_recs) for _, str_recs in encoded.values()),
         "truncated": truncated,
+        "overflow": overflow,
         "relocated": relocated_count,
         "bytes": cursor - dir_file,
         "hook": len(hook),

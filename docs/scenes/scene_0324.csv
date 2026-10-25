@@ -1,7 +1,7 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x00FA,26,27,                   ……コロン……,……colon……
 0x0132,13,14,あら、何かちていますわね,"Oh, something's going on."
-0x0150,41,42,よし、もらっちゃお‼ から、ちてる物は ろった入の物って  言われてるしね,"Okay, I'll take it!! Because they say that things that are available are things that have been given away."
+0x0150,41,42,よし、もらっちゃお‼ から、ちてる物は ろった入の物って  言われてるしね,"Okay, I'm taking it!! Finders keepers, as they say."
 0x01A6,17,18,いや、誰も、     そんな事は…,"No, nobody said anything like that..."
 0x01CC,22,23,おちてるものはー、   なんだろなぁぁー,I wonder what that thing is that's fallen there...
 0x01FC,41,42,えっと、ビンですね  …ラベルには……   「ー和」 って、 書いてありますわ,"Um, it's a bottle... The label says... ""-Wa"""
@@ -13,4 +13,4 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x0356,19,20,戦ったからって、   行動せんでいい‼,Just because you fought doesn't mean you have to take action!
 0x0380,45,46,……入はビン人りの        「ー和」          を手に人れた‼  ……,"...He entered with the ""-Wa"" character in his hand!!..."
 0x03DE,10,11,さいさきいいですわね,That's a good start.
-0x03F6,42,31,そうだね‼      どう考えても     何かに        使えそうだもんね‼,"That's right!! No matter how you look at it, it seems like it could be useful for something!!"
+0x03F6,42,31,そうだね‼      どう考えても     何かに        使えそうだもんね‼,"Right!! Any way you look at it, it seems useful for something!!"

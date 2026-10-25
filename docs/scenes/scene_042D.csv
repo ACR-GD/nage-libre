@@ -16,7 +16,7 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x0492,32,33,…行ってしまいましたね……これで本当に   最なんでしょう……,...They're gone...I guess this is really the end...
 0x04D6,32,33,あ、言いわすれてたわ‼に、最っから   ームする時にね……,"Oh, I forgot to mention!! When you start doing it from the very beginning..."
 0x051A,33,34,まず、        ちゃんの西暦日を 月日にしてね……,"First, please convert Chan's date to month and day..."
-0x0560,32,33,舞ちゃんは、月日 ちゃんは、月日 美姫ちゃんは月日,Mai-chan is Tsukihi-chan is Tsukihi-chan is Tsukihi-chan is Tsukihi
-0x05A4,42,43,それで、子ちゃんの 西暦日を月日にするとね……     いい事が起こるよ‼,"So, if you change your child's name from the Western calendar to the month and day... something good will happen!!"
+0x0560,32,33,舞ちゃんは、月日 ちゃんは、月日 美姫ちゃんは月日,"Mai-chan's birthday, ___-chan's birthday, Miki-chan's birthday..."
+0x05A4,42,43,それで、子ちゃんの 西暦日を月日にするとね……     いい事が起こるよ‼,So if you enter your birthday as that date... something good will happen!!
 0x05FC,30,31,「からまでに人力する‼」って   えておいてね‼,"""Make sure you remember to do it manually from [time] to [time]!!"""
 0x063C,29,31,それじゃ、今こそ  ントに…      …イーイ‼,"Alright then, now's the time to... Yes!!"
