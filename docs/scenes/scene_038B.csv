@@ -1,9 +1,9 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x00A6,7,8,ふっふっふ……,Heh heh heh...
-0x00B8,18,19,あ、さっきの入‼   してるぅ‼,"Oh, the one that just entered!! It's there!!"
-0x00E0,21,25,はーら、やっとも ったよっ‼ それ‼,"Ah, I finally got it!! That's it!!"
-0x0114,31,35,エコエコアラク       プリリンパ ……へんしーん‼,Eco Eco Arak Puririnpa... Transformation!!
-0x015C,35,36,はーら‼       これでは天下無敵‼ ナージュには行かせないよ‼,Wow!! This makes me invincible!! I won't let Naju get away!!
-0x01A6,59,60, ステージスタート‼                 勝件スまみを倒し、    ナージュへ人せよ‼,Stage Start!! Defeat Sumami Katsuken and head to Naju!!
-0x0220,41,42,さあ、この高みから  飛びおりてすれば きっとビツクリして勝まちがいなしよ‼,"Now, leap from up here! You'll surprise them and win!!"
-0x0276,11,31,でもちょっとコいな…,But it's a little too much...
+0x00B8,18,19,あ、さっきの人‼   復活してるぅ‼,"Oh, the one that just entered!! It's there!!"
+0x00E0,21,25,ほーら、やっと準備も 整ったよっ‼ それ‼,"Ah, I finally got it!! That's it!!"
+0x0114,31,35,♪エコエコアザラク       プリリンパ♪ ……へんしーん‼,Eco Eco Arak Puririnpa... Transformation!!
+0x015C,35,36,ほーら‼       これで私は天下無敵‼ ナージュには行かせないよ‼,Wow!! This makes me invincible!! I won't let Naju get away!!
+0x01A6,59,60, ステージ１９・スタート‼                 勝利条件：ボス・まみを倒し、    ナージュへ再侵入せよ‼,Stage Start!! Defeat Sumami Katsuken and head to Naju!!
+0x0220,41,42,さあ、この高みから  飛びおりて攻撃すれば きっとビックリして完勝まちがいなしよ‼,"Now, leap from up here! You'll surprise them and win!!"
+0x0276,11,31,でもちょっとコワいな…,But it's a little too much...

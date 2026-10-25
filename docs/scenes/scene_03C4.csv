@@ -1,9 +1,9 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0000,19,42,づいぃづめるづエゴいぃづづブく,zuiizumeru egoiizuzubu
-0x0056,26,27,                  …がある……,...is there...
-0x008E,10,11,あれ　 なんかあるぞ,"Hey, there's something there."
-0x00A6,10,11,あれ　 なんかあるぞ,"Hey, there's something there."
+0x0000,19,42,づいぃづめるづエゴいぃヶづハハづハブく,zuiizumeru egoiizuzubu
+0x0056,26,27,                  …病院がある……,...is there...
+0x008E,10,11,あれ？ なんかあるぞ,"Hey, there's something there."
+0x00A6,10,11,あれ？ なんかあるぞ,"Hey, there's something there."
 0x00BE,10,11,何かありますわね……,Something must be going on...
-0x00D6,25,26,                   回のくすり,One dose of medicine
-0x010C,5,6,ラツキー‼,Lucky!!
-0x011A,27,31,                  体力が全回した‼,My energy is fully restored!!
+0x00D6,25,26,                   回復のくすり,One dose of medicine
+0x010C,5,6,ラッキー‼,Lucky!!
+0x011A,27,31,                  体力が全回復した‼,My energy is fully restored!!

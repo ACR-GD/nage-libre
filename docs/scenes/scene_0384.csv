@@ -1,19 +1,19 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0186,12,55,現げいぉ□ぉぉ□,Appearing □ ooo □
-0x01F6,8,9,さて、このね,"Now, this"
+0x0186,12,55,現破備げ泳い隠ぉ　ぉぉ　,
+0x01F6,8,9,さて、この洞富ね,"Now, this"
 0x020A,5,9,いくぞぉ‼,Let's go!!
-0x021E,30,31,……の人りは       見えないカベでおおわれている,...those people are surrounded by an invisible wall.
-0x025E,22,23,いったーい‼     ナぶつけちゃったー‼,Ouch!! I bumped into something!!
-0x028E,22,23,…そうそう、パスードを、となえてみましょう,"...That's right, let's try chanting ""Passed."""
+0x021E,30,31,……洞富の入り口は       見えないカベでおおわれている,...those people are surrounded by an invisible wall.
+0x025E,22,23,いったーい‼     ハナぶつけちゃったー‼,Ouch!! I bumped into something!!
+0x028E,22,23,…そうそう、パスワードを、となえてみましょう,"...That's right, let's try chanting ""Passed."""
 0x02BE,14,15,先にやってやりゃぁいいのに…,They should have just done it earlier...
-0x02DE,56,59,パスードを人力してください               ABCDEFGHIJKLMNOPQRSTUVWXYZ,Please manually enter the password ABCDEFGHIJKLMNOPQRSTUVWXYZ
-0x0356,41,42,いや、パスードは  「LISTEN TO THE RAINDOROPS」でしょ　,"No, Passed is ""LISTEN TO THE RAINDOROPS,"" right?"
-0x03AC,48,49,……ゴゴゴゴゴ…… にしていた、見えないカベは   見えないながらもなくなったようだ……,...Rumble rumble... The invisible wall seems to have vanished...
-0x0410,19,23,これで、通れるように なったのかしら　,I wonder if it's now possible to pass through?
-0x0440,5,6,太か　,thick
-0x044E,20,24,あ、外と      いモ知らずだな,"Oh, I don't know anything about the outside world."
+0x02DE,56,59,パスワードを入力してください    ○           ABCDEFGHIJKLMNOPQRSTUVWXYZ,Please manually enter the password ABCDEFGHIJKLMNOPQRSTUVWXYZ
+0x0356,41,42,いや、パスワードは  「LISTEN TO THE RAINDOROPS」でしょ？,"No, Passed is ""LISTEN TO THE RAINDOROPS,"" right?"
+0x03AC,48,49,……ゴゴゴゴゴ…… 洞富に存在していた、見えないカベは   見えないながらもなくなったようだ……,...Rumble rumble... The invisible wall seems to have vanished...
+0x0410,19,23,これで、通れるように なったのかしら？,I wonder if it's now possible to pass through?
+0x0440,5,6,大丈夫か？,thick
+0x044E,20,24,あ、意外と      恐いモノ知らずだな,"Oh, I don't know anything about the outside world."
 0x0480,21,25,よぉし‼ 舞ちゃんも こんどこそ行くぞぉ‼,"Alright!! Mai-chan, I'm going this time for sure!!"
-0x04B4,30,31,それでは、      まいりましょう。   全なようですし,"Alright, let's get started. It seems to be all right."
+0x04B4,30,31,それでは、      まいりましょう。   安全なようですし,"Alright, let's get started. It seems to be all right."
 0x04F4,5,6,そうね……,Yes...
-0x0502,19,20,ここで、はぐれても、 っちゃうモンね,"Even if we get separated here, we'll be fine, right?"
-0x052C,28,31,                 ステージクリア‼,Stage cleared!!
+0x0502,19,20,ここで、はぐれても、 困っちゃうモンね,"Even if we get separated here, we'll be fine, right?"
+0x052C,28,31,                 ステージ１７・クリア‼,Stage cleared!!

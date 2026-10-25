@@ -1,5 +1,5 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0000,9,19,ぎいネぃぎぎぎイ,Gii Neu Gigigii
-0x0028,45,46,               ……ロツカーには           カがかかっている……,"...The word ""locker"" has a ""ka"" in it..."
-0x0086,22,23,コドロじゃないんだし開けることもないかぁ‼,"It's not Kodoro, so there's no need to open it!"
-0x00B6,39,31,ここはのロツカーではありませんし     わざわざ、開けることもないでしょう,"This isn't a locker, and there's no need to open it."
+0x0000,9,19,ぎいネぃぎぎぽぎイ,Gii Neu Gigigii
+0x0028,45,46,               ……ロッカーには           カギがかかっている……,"...The word ""locker"" has a ""ka"" in it..."
+0x0086,22,23,コソドロじゃないんだし開けることもないかぁ‼,"It's not Kodoro, so there's no need to open it!"
+0x00B6,39,31,ここは私のロッカーではありませんし     わざわざ、開けることもないでしょう,"This isn't a locker, and there's no need to open it."

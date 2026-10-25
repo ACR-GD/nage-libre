@@ -1,8 +1,8 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0000,12,30,すぁいぃビダビ,Suai Bidabi
-0x003E,39,40,えーん、       けちゃったぁ   では、コレあげるよ‼ じゃあねぇ‼,"Waaah, I gave up. Well, I'll give you this!! Bye!!"
-0x0090,45,46,……「回」をもらった‼……                    体力が全回したぞ‼,"...I got a ""turn""!! ...My stamina is fully restored!!"
-0x00EE,17,18,わぁい‼ やったね ありがとー‼,Yay!! We did it! Thank you!!
+0x0000,12,30,重重すぁ技いぃビダビョ撃,Suai Bidabi
+0x003E,39,40,えーん、       負けちゃったぁ💦   では、コレあげるよ‼ じゃあねぇ‼,"Waaah, I gave up. Well, I'll give you this!! Bye!!"
+0x0090,45,46,……「回復剤」をもらった‼……                    体力が全回復したぞ‼,"...I got a ""turn""!! ...My stamina is fully restored!!"
+0x00EE,17,18,わぁい‼ やったね♥ ありがとー‼,Yay!! We did it! Thank you!!
 0x0114,18,19,力がみなぎってくる‼ ……ありがと‼,I feel a surge of energy!! ...Thank you!!
-0x013C,33,34,あ……気持ちいい…… どうも        ありがとうございます,Ah... that feels good... Thank you very much.
-0x0182,10,31,元気になりましたわ,I'm feeling better now.
+0x013C,33,34,あ……気持ちいい…… どうも        ありがとうございます♪,Ah... that feels good... Thank you very much.
+0x0182,10,31,元気になりましたわ♥,I'm feeling better now.

@@ -1,16 +1,16 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0082,11,40,石のの逃のの□ああぇ,Stone escape □ aaah
-0x00D4,17,18,いい事、教えて    あげようか　,Shall I tell you something good?
-0x00FA,2,3,え　,
-0x0102,17,18,がえカードって    あるよね　,"There are exchange cards, right?"
-0x0128,25,26,あれって、ただ、   がえるだけじゃないんだよ‼,"That's not just a frog, you know!!"
-0x015E,43,44,がえるとね、力、 力、さ、部力などのステータスが  空わってくんだよ‼,"Then your stats, like Power, Speed and Club Power, will change!!"
-0x01B8,28,29,たとえば、求なら  力が上がったり   するんだよ‼,"For example, North raises your Power!!"
+0x0082,11,40,石のの逃造のの　ああぇ,Stone escape □ aaah
+0x00D4,17,18,いい事、教えて    あげようか？,Shall I tell you something good?
+0x00FA,2,3,え？,
+0x0102,17,18,着がえカードって    あるよね？,"There are exchange cards, right?"
+0x0128,25,26,あれって、ただ、   着がえるだけじゃないんだよ‼,"That's not just a frog, you know!!"
+0x015E,43,44,着がえるとね、腕力、 防御力、素早さ、精神力などのステータスが  変わってゆくんだよ‼,"Then your stats, like Power, Speed and Club Power, will change!!"
+0x01B8,28,29,たとえば、水着なら  腕力が上がったり   するんだよ‼,"For example, North raises your Power!!"
 0x01F4,4,5,へぇ……,Hmm...
-0x0200,31,32,だけどね、たとえば  求にがえて、   力があがったら、,"But, for example, if you switch to North and Power rises,"
-0x0242,39,40,そのぶん、      力が下がったり、 プラスマイナスが   あるからね。,another stat may drop. There are pluses and minuses.
-0x0294,41,42,ステージごとに気をつけてがえたはうが、ームがサクサク進よ‼  がんばってね‼,Switch wisely each stage and you'll breeze on!!
-0x02EA,22,23,へええ、どうも、   ありがとうございます,"Oh, wow, thank you very much."
-0x031A,10,11,ではでは、いざ勝‼,"Alright then, let's go for the win!!"
-0x0332,35,36,いや、今までの話のながれからして、      にはならないのでは…,"No, given how this is going, I doubt it'll go that way..."
-0x037C,11,31,無‼ しょーぶ‼,Nothing!! Showdown!!
+0x0200,31,32,だけどね、たとえば  水着に着がえて、   腕力があがったら、,"But, for example, if you switch to North and Power rises,"
+0x0242,39,40,そのぶん、      防御力が下がったり、 プラスマイナスが   あるからね。,another stat may drop. There are pluses and minuses.
+0x0294,41,42,ステージごとに気をつけて着がえたほうが、ゲームがサクサク進むよ‼  がんばってね‼,Switch wisely each stage and you'll breeze on!!
+0x02EA,22,23,へええ、どうも、   ありがとうございます♥,"Oh, wow, thank you very much."
+0x031A,10,11,ではでは、いざ勝負‼,"Alright then, let's go for the win!!"
+0x0332,35,36,いや、今までの話のながれからして、      戦闘にはならないのでは…,"No, given how this is going, I doubt it'll go that way..."
+0x037C,11,31,問答無用‼ しょーぶ‼,Nothing!! Showdown!!

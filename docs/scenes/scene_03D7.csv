@@ -1,7 +1,7 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x00B4,31,32,よぉし‼       敵なんかムシして   学に人っちゃえ‼,Alright!! Ignore the enemy and get to school!!
-0x00F6,20,21,先にーに       人っちゃおーっと‼,I'll go ahead and get in first!!
-0x0122,21,22,こっから人ったら敵と わずにすのでは　,"From here on out, people will not be seen as enemies."
-0x0150,30,32,ここにいる敵はムシして先に、ーに人って   しまいましょう,Let's ignore the enemies and get inside first.
+0x00B4,31,32,よぉし‼       敵なんかムシして   学校に入っちゃえ‼,Alright!! Ignore the enemy and get to school!!
+0x00F6,20,21,先に中に       入っちゃおーっと‼,I'll go ahead and get in first!!
+0x0122,21,22,こっから入ったら敵と 戦わずにすむのでは？,"From here on out, people will not be seen as enemies."
+0x0150,30,32,ここにいる敵はムシして先に、中に入って   しまいましょう♪,Let's ignore the enemies and get inside first.
 0x0192,9,11,そうはさせません‼,I won't let that happen!!
-0x01AA,43,31,あっ‼        みんなこっちに来る‼ しかもドア開かない‼ …うしかないかぁ…,Ah!! They're coming!! And the door's stuck!! I must fight...
+0x01AA,43,31,あっ‼        みんなこっちに来る‼ しかもドア開かない‼ …戦うしかないかぁ…,Ah!! They're coming!! And the door's stuck!! I must fight...

@@ -1,4 +1,4 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0000,3,15,おへか,Ohek
-0x0020,43,45,よく、ここまで    たどりつきましたね‼ したでしょう　  これでもお地べなさい,You've come so far!! But even this is just the ground.
-0x007C,20,31,地べますか　              ,Do you want to lie on the ground?
+0x0020,43,45,よく、ここまで    たどりつきましたね‼ 苦労したでしょう？  これでもお食べなさい,You've come so far!! But even this is just the ground.
+0x007C,20,31,食べますか？              ,Do you want to lie on the ground?

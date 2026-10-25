@@ -1,13 +1,13 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x00B4,18,19,さて、ここに、    がいるのね,"Well, here he is."
-0x00DC,21,22,あっさり、      いちゃいましたね。,It was over so easily.
-0x010A,31,32,誰かとちゅうに    いるだろうと、    戦いましたのに……,I fought because I knew someone was in the way...
-0x014C,26,27,おおおいっ‼     ちゃーん‼    どこぉ　,Hey!! Chan!! Where are you?
+0x00B4,18,19,さて、ここに、    彩香がいるのね,"Well, here he is."
+0x00DC,21,22,あっさり、      着いちゃいましたね。,It was over so easily.
+0x010A,31,32,誰かとちゅうに    いるだろうと、    思いましたのに……,I fought because I knew someone was in the way...
+0x014C,26,27,おおおいっ‼     彩香ちゃーん‼    どこぉ？,Hey!! Chan!! Where are you?
 0x0184,20,21,さすがに、      見あたりませんわね,"As expected, I can't find it anywhere."
-0x01B0,33,34,はははっ‼ よくぞ  ここをつきとめました‼さすがね、あなたたち‼,Hahaha!! Well done finding this place!! Impressive!!
-0x01F6,16,17,は、道のーに いるわよ‼,He's on the road!!
-0x021A,28,29,人りたかったら、   たちと、勝してからにしなさい‼,"If you want to do that, you'll have to beat them first!!"
+0x01B0,33,34,ほほほっ‼ よくぞ  ここをつきとめました‼さすがね、あなたたち‼,Hahaha!! Well done finding this place!! Impressive!!
+0x01F6,16,17,彩香は、武道館の中に いるわよ‼,He's on the road!!
+0x021A,28,29,入りたかったら、   私たちと、勝負してからにしなさい‼,"If you want to do that, you'll have to beat them first!!"
 0x0256,10,11,あ、やっぱり敵がいた,"Ah, there were enemies after all."
-0x026E,26,27,…いや、しんせつな入があんないしてくれたんですけどね,"...Well, a kind guide showed me around."
+0x026E,26,27,…いや、しんせつな人があんないしてくれたんですけどね,"...Well, a kind guide showed me around."
 0x02A6,33,34,そんなの、      どうでもいいよ‼   やっちゃえやっちゃえ‼,Who cares about that?! Just do it!
-0x02EC,60,31, ステージスタート‼                   勝件敵を倒して          道に進人せよ‼,Stage Start!! Defeat your enemies and advance on your path!!
+0x02EC,60,31, ステージ５・スタート‼                   勝利条件：敵を倒して          武道館に進入せよ‼,Stage Start!! Defeat your enemies and advance on your path!!

@@ -1,8 +1,8 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0000,8,16,いぃかちよビ,Iikachiyobi
-0x0022,20,21,あちちっ‼ この、 ちょっとあついよ‼,Ouch!! It's a little too hot!!
-0x004E,38,39,ふにぃぃぃぃぃ‼   にさわったら    ヤケドしそうになったぁぁぁぁぁ‼,Fwaaah!! I nearly got burned just touching it!!
+0x0000,8,16,いぃかちよグビ３,Iikachiyobi
+0x0022,20,21,あちちっ‼ この橋、 ちょっとあついよ‼,Ouch!! It's a little too hot!!
+0x004E,38,39,ふにぃぃぃぃぃ‼   橋にさわったら    ヤケドしそうになったぁぁぁぁぁ‼,Fwaaah!! I nearly got burned just touching it!!
 0x009E,22,23,あちゃちゃちゃちゃ‼ 何なの、ここあついよ‼,"Ouch, ouch, ouch!! What's going on? It's so hot here!!"
-0x00CE,33,34,うきゃぁ‼ あついっ‼……あ、わたしったら ンな声出しちゃった…,"Ahhh!! It's hot!! ...Oh, I made such a noise..."
-0x0114,35,36,ふううう…あついですぅ……言づかいまで  つかれてしまいましたぁ……,Phew...it's so hot...even my speech is tired...
+0x00CE,33,34,うきゃぁ‼ あついっ‼……あ、わたしったら ヘンな声出しちゃった…,"Ahhh!! It's hot!! ...Oh, I made such a noise..."
+0x0114,35,36,ふううう…あついですぅ……言葉づかいまで  つかれてしまいましたぁ……,Phew...it's so hot...even my speech is tired...
 0x015E,45,31,……あつさのため          体力が             へってしまった‼‼……,...My energy has been depleted because of the heat!!...

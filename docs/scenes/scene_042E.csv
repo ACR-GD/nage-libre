@@ -1,14 +1,14 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0104,7,44,□石敵界か,□ Stone enemy world?
-0x015E,30,32,               ……トビラがえていった‼……,...The door opened!!...
+0x0104,7,44,　味雲石敵界か,
+0x015E,30,32,               ……トビラが消えていった‼……,...The door opened!!...
 0x01A0,7,8,よし、行くぞ‼,"Alright, let's go!!"
 0x01B2,10,11,よーし‼ いくぞぉ‼,Alright!! Let's go!!
 0x01CA,7,9,行きましょう‼,Let's go!!
-0x01DE,44,46,力がまってきました……でも…最の力を… ふりしって‼…   …いでよの分たち‼,"My power's gathering... Come forth, my doubles!!"
+0x01DE,44,46,力が弱まってきました……でも…最後の力を… ふりしぼって‼…   …いでよ私の分身たち‼,"My power's gathering... Come forth, my doubles!!"
 0x023C,6,8,あ……また‼,Ah... again!!
 0x024E,7,9,……もうヤダ‼,...I can't take it anymore!!
-0x0262,44,45,なりきで間になって来たけど、もうこんな所ヤダよぉ‼      、もうに帰りたい‼,"I came on a whim, but I hate it here!! I want to go home!!"
-0x02BE,20,21,ガママな事     言ってやがんな……,He's being so selfish...
+0x0262,44,45,なりゆきで仲間になって来たけど、もうこんな所ヤダよぉ‼      私、もう家に帰りたい‼,"I came on a whim, but I hate it here!! I want to go home!!"
+0x02BE,20,21,ワガママな事     言ってやがんな……,He's being so selfish...
 0x02EA,18,19,でも、はんせいしてる ようですよ……,But it seems he's remorseful...
-0x0312,19,20,ったな…      …どうしよっか　,Oh no... What should we do?
-0x033C,18,31,倒しちゃいますか　         ,Shall we defeat it?
+0x0312,19,20,困ったな…      …どうしよっか？,Oh no... What should we do?
+0x033C,18,31,倒しちゃいますか？         ,Shall we defeat it?

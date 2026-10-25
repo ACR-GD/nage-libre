@@ -1,5 +1,5 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0000,7,11,いぃううたうぶ,Iiuutaubu
-0x0018,22,24,あれぇ…このカタナよく見るとオモチだぁ……,"Huh... Looking closely at this katana, it looks like mochi..."
-0x004A,20,22,何このカタナ　    オモチじゃない‼,What kind of katana is this? It's not made of mochi!!
-0x0078,43,31,これが本物のカタナ  だったらに立つんですけど、オモチじゃ  方がありませんわね,"A real katana would help, but a toy is no use at all."
+0x0018,22,24,あれぇ…このカタナよく見るとオモチャだぁ……,"Huh... Looking closely at this katana, it looks like mochi..."
+0x004A,20,22,何このカタナ？    オモチャじゃない‼,What kind of katana is this? It's not made of mochi!!
+0x0078,43,31,これが本物のカタナ  だったら役に立つんですけど、オモチャじゃ  仕方がありませんわね,"A real katana would help, but a toy is no use at all."
