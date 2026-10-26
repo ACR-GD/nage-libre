@@ -143,6 +143,9 @@ def _init_walk_tables():
     handlers = dp.opcode_handlers()
     _scene_validator.handlers = handlers
     _scene_validator.sizes = {k: dp.opcode_size(v) for k, v in handlers.items()}
+    # op13 : une chaîne par perso (5 opérandes), le handler saute $1787-1 mots
+    # avant et le reste après -> taille fixe 12 (la dérivation auto donne 6).
+    _scene_validator.sizes[0x13] = 12
     _scene_validator.feats = {k: dp.handler_features(v) for k, v in handlers.items()}
 
 
