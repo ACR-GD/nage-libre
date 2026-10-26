@@ -68,6 +68,9 @@ PAIR_BUDGET_MARGIN = 12        # garde-fou d'IDs de police
 BOX_GEOMETRY = {0x01: (22, 3), 0x0B: (30, 3), 0x23: (29, 3),
                 0x26: (30, 3), 0x2B: (30, 3), 0x3B: (30, 3)}
 DEFAULT_GEOMETRY = (22, 3)     # autres opcodes : marges non lues, prudence
+# Opcodes « boîte à portrait » : impriment à la rangée courante puis descendent
+# d'une rangée, sans effacer -> consécutifs = même boîte (op13 = variante par perso).
+PORTRAIT_OPS = {0x01, 0x0B, 0x13}
 
 
 def off_to_snes(file_off):
@@ -80,7 +83,8 @@ def off_to_snes(file_off):
 # 1) Validation des offsets par scène (walk d'opcodes du buffer décompressé)
 # ---------------------------------------------------------------------------
 def _scene_validator(rom, src_off):
-    """Renvoie (legit_offsets, prog_end, orig_len, geometry) pour une scène décompressée."""
+    """Renvoie (legit_offsets, prog_end, orig_len, geometry, groups) pour une scène décompressée.
+    groups = suites d'opcodes à portrait consécutifs : [[offsets variante…], …]."""
     out, _ = decompress(rom, src_off, dst_limit=0x4000)
     n = len(out)
 
@@ -92,6 +96,7 @@ def _scene_validator(rom, src_off):
     feats = _scene_validator.feats
 
     legit = set()
+    groups, cur = [], []        # boîtes à portrait partagées (cf. PORTRAIT_OPS)
     pos = 0
     for _ in range(4000):
         opc = word(pos)
@@ -100,10 +105,19 @@ def _scene_validator(rom, src_off):
         size = sizes.get(opc, 0) or 2
         nopr = (size - 2) // 2
         if feats[opc]["textline"] and nopr >= 1:
-            o0 = word(pos + 2)
-            if o0 >= 0x100:
-                legit.add(o0)
+            # une chaîne suit toujours l'opcode qui la référence (exclut les
+            # opérandes non-offset type op0A #3, garde les chaînes < $100)
+            offs = [word(pos + 2 + 2 * i) for i in range(nopr if opc == 0x13 else 1)]
+            offs = [o for o in offs if pos < o < n]
+            legit.update(offs)
+            if opc in PORTRAIT_OPS:
+                cur.append(offs)
+        if opc not in PORTRAIT_OPS and cur:
+            groups.append(cur)
+            cur = []
         pos += size
+    if cur:
+        groups.append(cur)
     prog_end = pos
 
     def orig_len(o):
@@ -122,7 +136,7 @@ def _scene_validator(rom, src_off):
         return min((BOX_GEOMETRY.get(op, DEFAULT_GEOMETRY) for op in ops),
                    default=DEFAULT_GEOMETRY)
 
-    return legit, prog_end, orig_len, geometry
+    return legit, prog_end, orig_len, geometry, groups
 
 
 def _init_walk_tables():
@@ -147,7 +161,7 @@ def load_scene_records(rom):
         if src is None or src >= len(rom):
             continue
         try:
-            legit, prog_end, orig_len, geometry = _scene_validator(rom, src)
+            legit, prog_end, orig_len, geometry, groups = _scene_validator(rom, src)
         except Exception:
             continue
 
@@ -165,8 +179,43 @@ def load_scene_records(rom):
                 continue
             recs.append((off, en, slot, geometry(off)))
         if recs:
-            scenes[scene_idx] = recs
+            scenes[scene_idx] = _budget_groups(recs, groups, orig_len)
     return scenes
+
+
+def _budget_groups(recs, groups, orig_len):
+    """Boîte partagée : des opcodes à portrait consécutifs (op01 op01 op01…)
+    écrivent dans la MÊME boîte, une chaîne par rangée suivante ($1142 += 2),
+    sans effacement. On répartit donc les rangées de la boîte entre les chaînes
+    (budget = max(3, rangées JP du groupe)) : largeur cols-2 si tout tient,
+    sinon cols-1 ; au-delà, débordement signalé sur la chaîne qui dépasse."""
+    by_off = {r[0]: i for i, r in enumerate(recs)}
+    cap = {}
+    for g in groups:
+        if len(g) < 2:
+            continue
+        def cols_of(o):
+            return recs[by_off[o]][3][0] if o in by_off else DEFAULT_GEOMETRY[0]
+        jp_rows = sum(max((-(-2 * orig_len(o) // cols_of(o)) for o in offs), default=0)
+                      for offs in g)
+        budget = max(DEFAULT_GEOMETRY[1], jp_rows)
+
+        def rows(offs, shrink):
+            return max((len(layout_rows(recs[by_off[o]][1], cols_of(o) - shrink)) if o in by_off
+                        else -(-2 * orig_len(o) // cols_of(o)) for o in offs), default=0)
+        per = [rows(offs, 2) for offs in g]
+        if sum(per) > budget:
+            per = [rows(offs, 1) for offs in g]
+        used = 0
+        for offs, n in zip(g, per):
+            allot = n if sum(per) <= budget else max(1, budget - used)
+            used += n
+            for o in offs:
+                cap[o] = min(cap.get(o, allot), allot)
+    out = []
+    for off, en, slot, (cols, max_rows) in recs:
+        out.append((off, en, slot, (cols, cap.get(off, max_rows))))
+    return out
 
 
 # ---------------------------------------------------------------------------
