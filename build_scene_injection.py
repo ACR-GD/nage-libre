@@ -525,6 +525,14 @@ def apply(rom: bytearray, alloc=None):
 
     # Table des pointeurs de scènes pour décompresser et inspecter le bytecode
     tbl = {i: off for i, _s, off in read_ptr_table(rom, 0x600) if off}
+    feats = _scene_validator.feats
+
+    def is_text_operand(w, p):
+        """Le mot en `p` est-il l'opérande-chaîne d'un opcode « ligne de texte » ?
+        (1er opérande ; op13 : l'un de ses 5 opérandes, un par perso)."""
+        if p >= 2 and feats.get(w(p - 2), {}).get("textline"):
+            return True
+        return any(p >= 2 * k and w(p - 2 * k) == 0x13 for k in range(1, 6))
 
     # Encodage avec relocalisation pour les lignes qui dépassent
     encoded = {}            # scene_idx -> (repoints, [(dest_offset, ids+FFFF)])
@@ -562,7 +570,9 @@ def apply(rom: bytearray, alloc=None):
                 string_records.append((off, full_ids + [0xFFFF]))
             else:
                 # Dépasse la longueur JP d'origine : on cherche les références dans le programme
-                ptrs = [p for p in range(0, prog_end, 2) if w(p) == off]
+                # (opérande d'un opcode « ligne de texte » uniquement : un simple
+                # mot égal à l'offset peut être un opcode, ex. op24 quand off=$24)
+                ptrs = [p for p in range(0, prog_end, 2) if w(p) == off and is_text_operand(w, p)]
                 if ptrs:
                     # Relocalisation à la fin du buffer décompressé
                     new_off = cur_end
