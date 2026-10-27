@@ -14,7 +14,8 @@ Contexte :
     main-curseur (sprite) suit la 4e tuile : on ne peut pas élargir les lignes.
 
 Correctif : le hook de sortie du renderer (build_combat_command_menu, $80:FA80)
-reconnaît le bloc PAGER (signature) et recopie (MVN $BF -> $7E:2200) des tuiles
+saute (JML) vers une branche en $BF, juste après les tuiles (la banque $80 est
+pleine), qui reconnaît le bloc PAGER (signature) et recopie (MVN $BF -> $7E:2200) des tuiles
 pré-rendues par-dessus les kanji : chaque libellé est écrit dans les tuiles du
 haut de SES cellules d'origine avec une police majuscule étroite (5 px, même
 graisse que le menu de commande), tuiles du bas vidées. Aucun gabarit, curseur
@@ -145,7 +146,10 @@ def apply(rom: bytearray, jp_rom: bytes):
     if any(b not in (0x00, 0xFF) for b in rom[DATA_FILE:DATA_FILE + len(data)]):
         raise SystemExit(f"Zone $BF:{0x8000 + DATA_FILE % 0x8000:04X} déjà occupée.")
     rom[DATA_FILE:DATA_FILE + len(data)] = data
+    code_file = DATA_FILE + len(data)              # branche du hook, juste après
     _params = {
+        "code_file": code_file,
+        "code_snes": (BANK << 16) | (0x8000 + code_file % 0x8000),
         "sigs": _signature(jp_rom),
         "src_bank": BANK,
         "src": 0x8000 + DATA_FILE % 0x8000,
