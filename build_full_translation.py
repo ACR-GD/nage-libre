@@ -38,6 +38,7 @@ import build_names_full as NF
 import build_club_names as CLUB
 import build_scene_injection as SCENE
 import build_battle_text as BT
+import build_pager_menu as PG
 
 ROOT = Path(__file__).parent
 ROM_JP = ROOT / "Nage Libre - Seijaku no Suishin (Japan).sfc"
@@ -111,7 +112,9 @@ def main():
             struct.pack_into("<H", rom, r["off"] + i * 2, cid)
 
     # === 6) Menu de COMMANDE en combat : hook runtime (banque $80) ===
-    CMD.apply(rom)
+    #   + fenêtres PAGER (WHO / ordres) : gabarits $87 + branche du même hook
+    pager = PG.apply(rom, ROM_JP.read_bytes())
+    CMD.apply(rom, PG.hook_params())
 
     # === 6b) Messages de COMBAT : fragments repointés par site + noms demi-chasse ===
     #   « [nom] takes [N] damage!! », « [nom] gains [N] DEF!! »… (cf. build_battle_text)
@@ -136,6 +139,7 @@ def main():
           + f"  |  combat/menu : {len(menu_plan)} chaîne(s)")
     print(f"  menu commande combat : hook @ $80:{CMD.HOOK_SNES:04X} "
           f"({' / '.join(w for _, _, w in CMD.CMDS)})")
+    print(f"  fenêtres PAGER : {pager['labels']} ({pager['bytes']} o @ $BF:F000)")
     print(f"  noms perso : {len(names_written)} relocalisés @ $87:FA0C "
           f"({', '.join(n for n, _, _ in names_written)})")
     print(f"  noms combat (tableau partagé) : {nf_entries} entrée(s) repointée(s), "
