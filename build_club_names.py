@@ -12,7 +12,7 @@ boîte est étroite), remplis d'espaces jusqu'à la largeur du slot (efface le
 suffixe 部 et toute rémanence), terminés par FFFF.
 
 Source des kanji/traductions : docs/nage-libre-kanji-kana - names_translation.csv
-(idx 227..241). Libellés courts définis ici pour tenir dans la boîte.
+(idx 227..242). Libellés courts définis ici pour tenir dans la boîte.
 
 apply(rom, alloc) est appelé par build_full_translation.py (allocateur partagé).
 """
@@ -38,6 +38,7 @@ CLUBS = [
     (0x03866F, 3, "Drama"),     # 演劇部
     (0x038677, 3, "Manga"),     # 漫画部
     (0x03867F, 3, "Crafts"),    # 手芸部    handicraft
+    (0x038687, 4, "No club"),   # 一般生徒  sans club (16e entrée de $87:E346)
 ]
 
 

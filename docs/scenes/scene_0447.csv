@@ -9,7 +9,8 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x030C,41,45,…MAP AND BATTLE      BG DESIGN      島田 大輔,...MAP AND BATTLE BG DESIGN Daisuke Shimada
 0x0368,41,45,  BALANCE             ADJUSTER      鉄田 英克,BALANCE ADJUSTER Hidekatsu Tetsuda
 0x03C4,43,47,  SOUND              高浜 祐輔          しち みちひこ,SOUND Yusuke Takahama Michihiko Shichi
-0x0424,30,79,  BALANCE AND      IVENT CHECK,BALANCE AND IVENT CHECK
+0x0424,30,34,  BALANCE AND      IVENT CHECK,BALANCE AND IVENT CHECK
+0x046A,40,44,      壬生 英俊          岡田 敬博          豊岡 智,Hidetoshi Mibu Takahiro Okada Satoshi Toyooka
 0x04C4,44,48,      中川 直人           乱 由鷹        MIKA SAEKI,Naoto Nakagawa Yutaka Midare MIKA SAEKI
 0x0526,40,44,    SHIVAAAWO‼        ちよう            よねヲ,SHIVAAAWO!! Yonewo Chiyou
 0x0580,41,45,       うっきー           R・リラ          中山 善文,Ukki R. Lila Yoshifumi Nakayama

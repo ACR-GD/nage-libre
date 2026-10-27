@@ -341,7 +341,7 @@ char_id_hex,char_id_dec,rom_offset_hex,snes_addr_hex,unicode_char,notes
 0x02AE,686,0x02D5C0,0x85D5C0,,
 0x02B0,688,0x02D600,0x85D600,都,vérifié (glyph_sheets)
 0x02B2,690,0x02D640,0x85D640,神,corrigé (était 部) — vérifié (glyph_sheets)
-0x02B4,692,0x02D680,0x85D680,,
+0x02B4,692,0x02D680,0x85D680,敬,générique crédits (壬生/敬博/智)
 0x02B6,694,0x02D6C0,0x85D6C0,矢,vérifié (glyph_sheets, noms)
 0x02B8,696,0x02D700,0x85D700,裏,vérifié (glyph_sheets)
 0x02BA,698,0x02D740,0x85D740,投,vérifié (glyph_sheets)
@@ -539,10 +539,10 @@ char_id_hex,char_id_dec,rom_offset_hex,snes_addr_hex,unicode_char,notes
 0x044C,1100,0x030980,0x868980,克,vérifié (glyph_sheets)
 0x044E,1102,0x0309C0,0x8689C0,浜,vérifié (glyph_sheets)
 0x0450,1104,0x030A00,0x868A00,,
-0x0452,1106,0x030A40,0x868A40,,
+0x0452,1106,0x030A40,0x868A40,壬,générique crédits (壬生/敬博/智)
 0x0454,1108,0x030A80,0x868A80,俊,vérifié (glyph_sheets)
 0x0456,1110,0x030AC0,0x868AC0,豊,vérifié (glyph_sheets)
-0x0458,1112,0x030B00,0x868B00,,
+0x0458,1112,0x030B00,0x868B00,智,générique crédits (壬生/敬博/智)
 0x045A,1114,0x030B40,0x868B40,善,vérifié (glyph_sheets)
 0x045C,1116,0x030B80,0x868B80,政,vérifié (glyph_sheets)
 0x045E,1118,0x030BC0,0x868BC0,々,vérifié (glyph_sheets)
