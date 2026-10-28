@@ -5,7 +5,7 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x0182,10,11,おはようございます。,Good morning.
 0x019A,7,8,今日もとっても,What lovely weather
 0x01AC,8,9,いい天気ですわね,we're having today.
-0x01C0,19,20,あ、嶺子、おはよう… って、それどころ,"Ah, Ryoko, morning... This is no time"
+0x01C0,19,20,あ、嶺子、おはよう… って、それどころ,"Ah, Ryoko, morning… There is no time"
 0x01EA,7,8,じゃないわよ‼,for that!!
 0x01FC,21,22,はい？        どうかしたんですか？,Pardon? Is something wrong?
 0x022A,7,8,ヘンな人たちが,Some weird people
@@ -13,7 +13,7 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x0268,20,21,…ああ、それなら中にもたくさんいますわよ,"...Oh, there are lots of them inside, too."
 0x0294,3,4,ふぇ？,Huh?
 0x029E,9,10,あの人たちを倒せば,"If we beat them,"
-0x02B4,16,17,何か知ってるんじゃ  ないかしら,maybe they'll know something.
+0x02B4,16,17,何か知ってるんじゃ  ないかしら,maybe they'll tell us something.
 0x02D8,20,21,…ええぇ、それじゃまたあたしが戦うのぉ…,"...Ugh, so I have to fight again..."
 0x0304,19,20,あ、わたくしも    てつだいますわ♥,"Oh, I'll help too!"
 0x032E,27,29,  嶺子が仲間になった‼               ,Ryoko joined the team!!

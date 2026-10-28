@@ -6,10 +6,10 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x02AC,41,42,…あ、そうですわ‼  あの「中和剤」を   使ってみたら、    どうでしょうか？,"...Oh, I know!! Why not try using that ""Neutralizer""?"
 0x0302,10,11,あ、それグゥな考え‼,"Ooh, great idea!!"
 0x031A,20,21,中和剤をー♪     ♪つかっちゃえー‼,Let's use the neutralizeeer!!
-0x0346,43,44,そうでしょ？ では…。さあ、惟さん、そのビンをもって……体当たり して飛び込みなさい‼,"Right? Then... Yui, hold that bottle and ram into it!!"
+0x0346,43,44,そうでしょ？ では…。さあ、惟さん、そのビンをもって……体当たり して飛び込みなさい‼,"Right? Then... Yui, throw that bottle at the barrier!!"
 0x03A0,5,6,オッケー‼,Okay!!
 0x03AE,19,20,…って待て待て、   なんでそうなる‼,"...Wait, wait, why me?!"
-0x03D8,44,45,…いや、このビンを持って飛び込めば、きっと バリアーもくだけるかと…しかもハデですしね♥,...Ramming it in should break the barrier. And it's flashy!
+0x03D8,44,45,…いや、このビンを持って飛び込めば、きっと バリアーもくだけるかと…しかもハデですしね♥,...That should break the barrier. And it'll look cool!
 0x0434,42,43,……べつに、ハデじゃなくてもいいよぉ💦   人の体を、ハデにあつかわないでくれよぉ💦,...It doesn't need to be flashy! Don't be flashy with my body!
 0x048C,21,22,…うーん…とりあえず どっちも投げちゃえ‼,...Hmm... Let's just throw both!!
 0x04BA,4,5,ああっ‼,Ahh!!
@@ -19,7 +19,7 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x0530,60,61, 舞の投げた         「中和剤１」と「中和剤２」は、 バリアーに当たると、     もうもうと、煙を立てた‼……,Mai's Neutralizers 1 and 2 hit the barrier and gave off thick smoke!!
 0x05AC,11,12,うわ‼ けむってるわ‼,Whoa!! So much smoke!!
 0x05C6,11,12,どうなるのでしょう……,What will happen...
-0x05E0,44,45, …キュキュキュキュュ…   バリアーは、異音を上げて、   あとかたもなく消えさった‼,...Skreeeech... The barrier gave a strange noise and vanished without a trace!!
+0x05E0,44,45, …キュキュキュキュュ…   バリアーは、異音を上げて、   あとかたもなく消えさった‼,…Skreeeech… The barrier gave a strange noise and vanished like it was never there!!
 0x063C,2,3,わ‼,Wow!!
 0x0644,44,45,…あ、やはりさっきの人たちは、仲間を助ける ために、中和剤を   持ってきていたんですね,...So they brought neutralizer to save their friend.
 0x06A0,11,12,さ、これで戦えるぞぉ‼,Now we can fight!!

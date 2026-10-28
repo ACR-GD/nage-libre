@@ -12,7 +12,7 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x0300,20,21,いや、そんな素直に  あやまらなくても…,"No, you don't have to apologize so meekly..."
 0x032C,36,37,さあさあさあ、勝負よ‼あたし、いいかげん  くたびれちゃったんだからね‼,"Come on, come on, let's fight!! I'm worn out already!!"
 0x0378,60,61, ステージ１８・スタート‼                 勝利条件：ボス・まみを倒して      神殿の入り口に行け‼,"Stage 18 Start!! Victory condition: Beat the boss, Mami, reach the temple!!"
-0x03F4,18,19,行くぞぉ‼      むかえうてー‼,Here we go!! Intercept them!!
+0x03F4,18,19,行くぞぉ‼      むかえうてー‼,Here we go!! Catch them!!
 0x041C,7,8,おすなおすなー,"Don't push, don't push!"
 0x042E,7,8,すすめないぞー,Can't move forward!
 0x0440,9,10,いっぽんみちだぞー,It's a one-way path!

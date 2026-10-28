@@ -11,14 +11,14 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x058E,44,45,敵が、戻って来て   しまいましたわ…   変なくすりをたくさん 持ってますわね、あの人,The enemies are back... She has so many odd potions.
 0x05EA,20,21,ころすえきに、くさらせないえきもあるよ♥,"Killing jars, and preserving fluid too!"
 0x0616,17,18,こんちゅうさいしゅう セットかっ‼,Is that a bug-collecting kit?!
-0x063C,30,31,…それにしても、   このままでは、先に  進めませんわね。,"...Anyway, at this rate we can't go forward."
+0x063C,30,31,…それにしても、   このままでは、先に  進めませんわね。,"…Anyway, at this rate we won't go far."
 0x067C,42,46,このぶんじゃ、    何回行っても、    戻されちゃうわね   …どうしようかぁ…,"At this rate, we'll get sent back every time... What do we do..."
 0x06DA,30,31,舞ちゃんとうじょー‼ …なぁに、このくすりがいけないんだね‼,Mai is here!! ...So these potions are the problem!!
 0x071A,32,33,それじゃあ、     こうすればいいんだ‼ …んぐんぐ…ぷはぁ‼,Then I just have to do this!! ...Gulp gulp... Pwah!!
 0x075E,4,5,うわっ‼,Whoa!!
-0x076A,19,20,あの子、全部飲んで  しまいましたね…,That girl drank them all...
-0x0794,19,20,おおいっ‼      だいじょーぶー？,Heyyy!! Are you okay?
-0x07BE,31,32,へーき‼       だって、舞ちゃん、  じょうぶだもーん‼,I'm fine!! Mai is super tough!!
+0x076A,19,20,あの子、全部飲んで  しまいましたね…,That strange girl drank them all…
+0x0794,19,20,おおいっ‼      だいじょーぶー？,Heyyy!! Are you okay? Apart from talking in the 3rd person...
+0x07BE,31,32,へーき‼       だって、舞ちゃん、  じょうぶだもーん‼,Mai is fine!! Mai is super tough!!
 0x0800,22,23,…おいおい、     そんな問題じゃなくて💦,"...Hey, hey, that's not the point..."
 0x0830,41,42,くうう‼ このくすりは全部、混ぜると    無害になることを   知ってるとはっ‼,Grr!! To think you knew mixing them all makes them harmless!!
 0x0886,11,12,ほーらね‼ えっへん‼,See?! Ta-da!!
@@ -30,5 +30,5 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x09E4,39,40,そうね、       もういちど、     気をとりなおして…… 行きましょ‼,Right. Let's pull ourselves together... and go!!
 0x0A36,22,23,舞ちゃんも、     きょうりょくするよー‼,Mai will help too!!
 0x0A66,27,28,                  舞が仲間になった‼,Mai joined the team!!
-0x0AA0,41,42,……うーふふー♪   あたしは水の女神♥  ここでみんなが来るのを待っているのぉ♥,...Ufufu! I'm the Water Goddess. I'm waiting here for everyone!
+0x0AA0,41,42,……うーふふー♪   あたしは水の女神♥  ここでみんなが来るのを待っているのぉ♥,La-la-la! I'm the Water Goddess! I'm waiting for everyone!
 0x0AF6,42,31,水辺の方に来れば、  あたしに会えるよん♥ もし、よかったら   あっそびに来てね♥,Come to the waterside to meet me! Come play sometime!

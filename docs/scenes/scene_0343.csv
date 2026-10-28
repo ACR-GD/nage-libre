@@ -11,7 +11,7 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x044A,17,18,とか、言ってたのを  聞いたよぉ‼,That's what I heard!!
 0x0470,32,33,あ、「もう、帰ることは出来ない……」    とも、言ってたけど…,"Oh, and they said, ""You can never go back..."""
 0x04B4,2,3,……,......
-0x04BC,21,22,負けないよっ‼    まだまだあるもーん‼,I won't lose!! There's more!!
+0x04BC,21,22,負けないよっ‼    まだまだあるもーん‼,But wait!! There's more!!
 0x04EA,40,41,「心に闇を持つ者なら、この世界では、全て操ることが出来る」    とも聞いたぁ‼,"And: ""Here, anyone with a dark heart can be controlled!"""
 0x053E,2,3,……,......
 0x0546,19,20,意見をまとめたく   なくなってきた…,I don't want to sum this up anymore...
@@ -26,11 +26,11 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x072E,26,27,そうそう。何もそこまで大ゲサなことではありませんわよ,Right. It's surely nothing so dramatic.
 0x0766,30,31,ああっははははぁぁ‼ よくぞそこまで    つきとめたわね‼,Ahahahahaha!! Well done figuring all that out!!
 0x07A6,3,4,えっ‼,Huh!!
-0x07B0,11,12,このまえの街にいた人‼,The one from that town!!
+0x07B0,11,12,このまえの街にいた人‼,She's the one from that town!!
 0x07CA,22,23,そして、アッサリ   やられちゃった人だぁ‼,And the one who lost so easily!!
-0x07FA,41,42,さすがね、あなたたち‼私たちのあるじが   造りだしたこの世界からあなたたちは……,"Impressive!! But from this world our master created, you..."
-0x0850,44,45,もう帰れないのよ‼  だって……今度こそ、 復活した霧香ちゃんに 倒されちゃうんだもん‼,can't go back!! The revived Kirika will beat you!!
-0x08AC,9,10,…こりてないわねぇ,...She never learns.
+0x07FA,41,42,さすがね、あなたたち‼私たちのあるじが   造りだしたこの世界からあなたたちは……,Impressive!! But you can't escape from this world our
+0x0850,44,45,もう帰れないのよ‼  だって……今度こそ、 復活した霧香ちゃんに 倒されちゃうんだもん‼,master created. Let me destroy you now that I'm revived!
+0x08AC,9,10,…こりてないわねぇ,They never learn...
 0x08C2,30,31,そんなコト      言っていられるのも  今のうちだけよ‼,You can only say that for now!!
 0x0902,32,33,この、パワーアップして帰ってきた私を    倒してごらんなさい‼,Try beating me now that I'm powered up!!
 0x0946,43,44,この世界には、ナージュの影響を受けない、  心に闇を持たない人間は 必要ないのだから‼,This world has no need for those Nage can't touch!!

@@ -16,7 +16,7 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x04EE,21,37,…はぁ。いったい、どうなっちゃうんだろう…,...Sigh. What's going to happen to us...
 0x053A,44,45,あら、あんなところに街がありますわ。    …とりあえず、あっちのほうに行ってみません？,"Oh, there's a town over there. ...Shall we try going that way?"
 0x0596,33,34,うーん。       そうするしかないかぁ…他に何にもないしねぇ…,Hmm. I guess that's all we can do... There's nothing else...
-0x05DC,33,34,じゃ決定‼ 行きましょきっと、街に入れば何かいいことありますわよ‼,Decided! Let's go! Something good awaits in town!
+0x05DC,33,34,じゃ決定‼ 行きましょきっと、街に入れば何かいいことありますわよ‼,Roger! Let's go! Something good awaits in town!
 0x0622,26,27,ふふーん、ところがぁ、そうはウマく行かないんだなぁ。,"Heh heh, too bad! It won't be that easy!"
 0x065A,18,19,それ、ものども…   …かかーれぇ‼,"Now, my minions... attaaack!!"
 0x0682,60,31, ステージ３・スタート‼                  勝利条件：           ボス・姫香を倒して街に入れ‼,"Stage 3 Start!! Victory condition: Defeat the boss, Himeka, and enter the town!!"

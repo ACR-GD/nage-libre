@@ -2,7 +2,7 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x00AC,19,20,あっ‼ これ以上   先に入れないぞ‼,Ah!! Can't go any further!!
 0x00D6,17,18,行きどまりぃぃ‼   どうしよう？,Dead eeend!! What now?
 0x00FC,20,21,完全に先に行けないわ‼どうすればいいの？,We can't go on at all!! What do we do?
-0x0128,30,31,えーん、やっとここまで来たのに、      先に進めないよぉ,"Waaah, we finally got here and can't go on..."
+0x0128,30,31,えーん、やっとここまで来たのに、      先に進めないよぉ,"Waaah, we finally got here but can't go on…"
 0x0168,20,21,どうしましょう。行き止まりのようですわ…,What shall we do? It seems a dead end...
 0x0194,29,30,おほほほほほほ‼   ここから先は     通れないわよ‼,Ohohohoho!! You can't pass beyond here!!
 0x01D2,29,30,あたしの造った雪迷宮、あなたたちに     壊せるかしら？,Can you break the Snow Maze I made?

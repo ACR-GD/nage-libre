@@ -7,7 +7,7 @@ offset_hex,n_ids,slot_words,jp_decoded,en
 0x028E,22,23,…そうそう、パスワードを、となえてみましょう,"...Oh yes, let's say the password."
 0x02BE,14,15,先にやってやりゃぁいいのに…,Should've done that first...
 0x02DE,56,59,パスワードを入力してください    ○           ABCDEFGHIJKLMNOPQRSTUVWXYZ,Please enter the password
-0x0356,41,42,いや、パスワードは  「LISTEN TO THE RAINDOROPS」でしょ？,"Um, the password is ""LISTEN TO THE RAINDOROPS,"" right?"
+0x0356,41,42,いや、パスワードは  「LISTEN TO THE RAINDOROPS」でしょ？,"Um, the password is ""LISTEN TO THE RAINDROPS,"" right?"
 0x03AC,48,49,……ゴゴゴゴゴ…… 洞窟に存在していた、見えないカベは   見えないながらもなくなったようだ……,"...Rumble rumble... The invisible wall in the cave seems to be gone, though it's invisible..."
 0x0410,19,23,これで、通れるように なったのかしら？,Can we get through now?
 0x0440,5,6,大丈夫か？,You okay?
