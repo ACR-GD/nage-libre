@@ -1,7 +1,7 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0034,45,46,               ……ロツカーはカが            かかっている……,...The locker has a power...
-0x0092,17,18,こわれてるんじゃ   ないのかぁ　,Isn't it broken?
+0x0034,45,46,               ……ロッカーはカギが            かかっている……,...The locker is locked...
+0x0092,17,18,こわれてるんじゃ   ないのかぁ？,Isn't it broken?
 0x00B8,7,8,こわれてるー‼,It's broken!!
-0x00CA,9,10,こわれてるみたいね,It looks broken.
-0x00E0,32,33,ベにロツカーには  なものは     何も人ってないでしょ,"There's nothing like that in the locker room, right?"
-0x0124,42,31,こわれてるみたい   ですわね。      …入のを見たって  がありませんし,It looks broken. ...I can't see anything inside.
+0x00CA,9,10,こわれてるみたいね,Looks broken.
+0x00E0,32,33,ベツにロッカーには  重要なものは     何も入ってないでしょ,There's nothing important in a locker anyway.
+0x0124,42,31,こわれてるみたい   ですわね。      …人の服を見たって  意味がありませんし,It seems broken. ...No point peeking at clothes.

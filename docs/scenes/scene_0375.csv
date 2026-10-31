@@ -1,12 +1,12 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x00B6,3,4,げっ‼,Gah!!
-0x00C0,21,22,あちゃあ、ーには   敵がゴロゴロいるぞぉ,"Oh no, there are enemies everywhere!"
-0x00EE,20,21,みんな、       何してるのかしら　,I wonder what everyone's up to.
-0x011A,17,18,くその本をやせ‼ その本には‼,Get rid of that damn book!! That book contains!!
-0x0140,11,12,…聞いちゃったもんね‼,...I overheard it!!
-0x015A,25,26,な事が書いてある 本が、ここにかくされていると,A book containing such information is hidden here.
-0x0190,39,40,方ない。      どちらにしても、お前らを倒せば、同じことなんだから……。,"It can't be helped. Either way, if I defeat you guys, it'll all be the same..."
-0x01E2,11,12,えーいっ‼ぱんぱーん‼,Yay!! Bang bang!!
-0x01FC,60,61, ステージスタート‼                  勝件           された書物を手に人れろ‼,Stage Start!! Grab the book you've won!!
-0x0278,39,40,さぁ‼ ここから   に飛び出して    すれば、勝つこと うけあいよ‼,"Now!! If you jump out from here, victory is guaranteed!!"
-0x02CA,40,31,…でもは出てるから、れたことには    ならないんじゃ    ないかなぁ……,"...But it's still showing up, so I don't think it counts as being rejected..."
+0x00C0,21,22,あちゃあ、中には   敵がゴロゴロいるぞぉ,"Yikes, there are enemies all over inside."
+0x00EE,20,21,みんな、       何してるのかしら？,What are they all doing?
+0x011A,17,18,早くその本を燃やせ‼ その本には‼,"Burn that book, quick!! That book has...!!"
+0x0140,11,12,…聞いちゃったもんね‼,...We heard that!!
+0x015A,25,26,重要な事が書いてある 本が、ここにかくされていると,A book with something important is hidden here!
+0x0190,39,40,仕方ない。      どちらにしても、お前らを倒せば、同じことなんだから……。,"Fine. Either way, if I beat you, it's all the same..."
+0x01E2,11,12,えーいっ‼ぱんぱーん‼,Hyaah!! Bang bang!!
+0x01FC,60,61, ステージ１６・スタート‼                  勝利条件：           隠された書物を手に入れろ‼,Stage 16 Start!! Victory condition: Get the hidden book!!
+0x0278,39,40,さぁ‼ ここから   急に飛び出して    攻撃すれば、勝つこと うけあいよ‼,"Now!! Jump out from here and attack, and victory is certain!!"
+0x02CA,40,31,…でも頭は出てるから、隠れたことには    ならないんじゃ    ないかなぁ……,...But her head's sticking out. That's not hiding...

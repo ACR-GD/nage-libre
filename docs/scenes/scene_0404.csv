@@ -1,5 +1,5 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0000,7,11,いぃてうてて,Iitutete
-0x0018,30,31,わーい        れるれるー‼   でも戻れないー‼,"Yay, I can do it!! But I can't go back!!"
-0x0058,18,19,ベルトコンベアーか……あ、戻れない‼,"A conveyor belt... Oh, I can't go back!!"
-0x0080,31,31,あら、        この、ベルトコンベアー戻れませんわね……,"Oh dear, it seems I can't go back on this conveyor belt..."
+0x0000,7,11,いぃてうててぺ,Iitutete
+0x0018,30,31,わーい        流れる流れるー‼   でも戻れないー‼,"Yay, it's moving, it's moving!! But we can't go back!!"
+0x0058,18,19,ベルトコンベアーか……あ、戻れない‼,"A conveyor belt... Ah, can't go back!!"
+0x0080,31,31,あら、        この、ベルトコンベアー戻れませんわね……,"My, this conveyor belt won't let us go back..."

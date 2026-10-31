@@ -1,13 +1,13 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0056,10,11,よぉし‼ ここだぁ‼,Alright!! This is it!!
-0x006E,10,11,ここにしーよおっと‼,I'll choose this one!!
-0x0086,44,45,ここだわ‼      きっとそうよ‼    そうにまってる‼  はら‼ 開けちゃうぞ‼,This is it!! I'm sure it is!! It's waiting for this!! Hara!! I'm going to open it!!
-0x00E2,9,10,ここがいいなぁ……,This place is nice...
-0x00F8,21,22,きっと、ここが一いい所に達いありません‼,I'm sure this is the first step we've reached!
-0x0126,45,46,               ……宝のーには        ゴールド人っていた‼,...There was a gold person in the treasure chest!!
-0x0184,10,11,お‼ すごいお…だ‼,Oh!! That's amazing...!!
-0x019C,11,12,わーい お…持ちぃ‼,"Yay, I'll take it!!"
-0x01B6,17,18,お…持ちだぁ‼    イヤツー‼,Oh... I have it!! Yay!!
-0x01DC,18,19,よかった…      …いいもので,That's good... ...it's a good thing
-0x0204,19,20,なかなか       いいものですわ,It's quite nice.
-0x022E,45,31,……そして、のこりの宝も      全て開き、         ーはえてしまった……,"...And then, all the remaining treasures were opened, and..."
+0x0056,10,11,よぉし‼ ここだぁ‼,Alright!! This one!!
+0x006E,10,11,ここにしーよおっと‼,I'll pick this one!!
+0x0086,44,45,ここだわ‼      きっとそうよ‼    そうに決まってる‼  ほら‼ 開けちゃうぞ‼,This is it!! I'm sure!! Here goes!! Opening it!!
+0x00E2,9,10,ここがいいなぁ……,I like this one...
+0x00F8,21,22,きっと、ここが一番いい所に違いありません‼,This must surely be the best one!!
+0x0126,45,46,               ……宝箱の中には        ５０００ゴールド入っていた‼,...Inside the chest were 5000 gold!!
+0x0184,10,11,お‼ すごいお金だ‼,Whoa!! So much money!!
+0x019C,11,12,わーい♪ お金持ちぃ‼,Yay! We're rich!!
+0x01B6,17,18,お金持ちだぁ‼    イヤッホー‼,We're rich!! Yahoo!!
+0x01DC,18,19,よかった…      …いいもので♥,Phew... something good!
+0x0204,19,20,なかなか       いいものですわ♥,Quite a fine thing!
+0x022E,45,31,……そして、のこりの宝箱も      全て開き、         中身は消えてしまった……,"...Then the remaining chests all opened, and their contents vanished..."

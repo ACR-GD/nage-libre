@@ -61,6 +61,17 @@ BANK_SIZE = 0x8000
 
 PAIR_BUDGET_MARGIN = 12        # garde-fou d'IDs de police
 
+# Géométrie des boîtes de texte par opcode d'affichage : (colonnes demi-chasse,
+# rangées visibles). Colonnes = $1144 - $1143 lus dans chaque handler :
+# op01 : 8..$1E ; op23 : 1..$1E ; op0B/26/2B/3B : 1..$1F. La boîte n'affiche que
+# 3 rangées (vérifié en jeu, op26/op2B : la 4e passe sous la bordure basse).
+BOX_GEOMETRY = {0x01: (22, 3), 0x0B: (30, 3), 0x23: (29, 3),
+                0x26: (30, 3), 0x2B: (30, 3), 0x3B: (30, 3)}
+DEFAULT_GEOMETRY = (22, 3)     # autres opcodes : marges non lues, prudence
+# Opcodes « boîte à portrait » : impriment à la rangée courante puis descendent
+# d'une rangée, sans effacer -> consécutifs = même boîte (op13 = variante par perso).
+PORTRAIT_OPS = {0x01, 0x0B, 0x13}
+
 
 def off_to_snes(file_off):
     bank = 0x80 + file_off // BANK_SIZE
@@ -72,7 +83,8 @@ def off_to_snes(file_off):
 # 1) Validation des offsets par scène (walk d'opcodes du buffer décompressé)
 # ---------------------------------------------------------------------------
 def _scene_validator(rom, src_off):
-    """Renvoie (legit_offsets, prog_end, orig_len) pour une scène décompressée."""
+    """Renvoie (legit_offsets, prog_end, orig_len, geometry, groups) pour une scène décompressée.
+    groups = suites d'opcodes à portrait consécutifs : [[offsets variante…], …]."""
     out, _ = decompress(rom, src_off, dst_limit=0x4000)
     n = len(out)
 
@@ -84,6 +96,7 @@ def _scene_validator(rom, src_off):
     feats = _scene_validator.feats
 
     legit = set()
+    groups, cur = [], []        # boîtes à portrait partagées (cf. PORTRAIT_OPS)
     pos = 0
     for _ in range(4000):
         opc = word(pos)
@@ -92,10 +105,19 @@ def _scene_validator(rom, src_off):
         size = sizes.get(opc, 0) or 2
         nopr = (size - 2) // 2
         if feats[opc]["textline"] and nopr >= 1:
-            o0 = word(pos + 2)
-            if o0 >= 0x100:
-                legit.add(o0)
+            # une chaîne suit toujours l'opcode qui la référence (exclut les
+            # opérandes non-offset type op0A #3, garde les chaînes < $100)
+            offs = [word(pos + 2 + 2 * i) for i in range(nopr if opc == 0x13 else 1)]
+            offs = [o for o in offs if pos < o < n]
+            legit.update(offs)
+            if opc in PORTRAIT_OPS:
+                cur.append(offs)
+        if opc not in PORTRAIT_OPS and cur:
+            groups.append(cur)
+            cur = []
         pos += size
+    if cur:
+        groups.append(cur)
     prog_end = pos
 
     def orig_len(o):
@@ -104,13 +126,26 @@ def _scene_validator(rom, src_off):
             k += 1
         return k
 
-    return legit, prog_end, orig_len
+    def geometry(o):
+        """(cols, max_rows) de la boîte qui affiche la chaîne à l'offset `o` :
+        opcodes « ligne de texte » dont le 1er opérande vaut `o` (balayage brut,
+        le walk d'opcodes s'arrête tôt sur certaines scènes)."""
+        ops = {word(q) for q in range(0, min(o, n) - 2, 2)
+               if word(q + 2) == o and feats.get(word(q), {}).get("textline")}
+        # chaîne partagée par plusieurs boîtes : la plus étroite l'emporte
+        return min((BOX_GEOMETRY.get(op, DEFAULT_GEOMETRY) for op in ops),
+                   default=DEFAULT_GEOMETRY)
+
+    return legit, prog_end, orig_len, geometry, groups
 
 
 def _init_walk_tables():
     handlers = dp.opcode_handlers()
     _scene_validator.handlers = handlers
     _scene_validator.sizes = {k: dp.opcode_size(v) for k, v in handlers.items()}
+    # op13 : une chaîne par perso (5 opérandes), le handler saute $1787-1 mots
+    # avant et le reste après -> taille fixe 12 (la dérivation auto donne 6).
+    _scene_validator.sizes[0x13] = 12
     _scene_validator.feats = {k: dp.handler_features(v) for k, v in handlers.items()}
 
 
@@ -118,7 +153,7 @@ def _init_walk_tables():
 # 2) Chargement + validation des enregistrements traduits
 # ---------------------------------------------------------------------------
 def load_scene_records(rom):
-    """{scene_idx: [(offset, en, slot), ...]} pour les scènes traduites valides."""
+    """{scene_idx: [(offset, en, slot, (cols, max_rows)), ...]} pour les scènes traduites valides."""
     _init_walk_tables()
     tbl = {i: off for i, _snes, off in read_ptr_table(rom, 0x600) if off}
 
@@ -129,7 +164,7 @@ def load_scene_records(rom):
         if src is None or src >= len(rom):
             continue
         try:
-            legit, prog_end, orig_len = _scene_validator(rom, src)
+            legit, prog_end, orig_len, geometry, groups = _scene_validator(rom, src)
         except Exception:
             continue
 
@@ -145,10 +180,45 @@ def load_scene_records(rom):
             slot = orig_len(off)            # borne sûre = longueur JP d'origine
             if slot < 1:
                 continue
-            recs.append((off, en, slot))
+            recs.append((off, en, slot, geometry(off)))
         if recs:
-            scenes[scene_idx] = recs
+            scenes[scene_idx] = _budget_groups(recs, groups, orig_len)
     return scenes
+
+
+def _budget_groups(recs, groups, orig_len):
+    """Boîte partagée : des opcodes à portrait consécutifs (op01 op01 op01…)
+    écrivent dans la MÊME boîte, une chaîne par rangée suivante ($1142 += 2),
+    sans effacement. On répartit donc les rangées de la boîte entre les chaînes
+    (budget = max(3, rangées JP du groupe)) : largeur cols-2 si tout tient,
+    sinon cols-1 ; au-delà, débordement signalé sur la chaîne qui dépasse."""
+    by_off = {r[0]: i for i, r in enumerate(recs)}
+    cap = {}
+    for g in groups:
+        if len(g) < 2:
+            continue
+        def cols_of(o):
+            return recs[by_off[o]][3][0] if o in by_off else DEFAULT_GEOMETRY[0]
+        jp_rows = sum(max((-(-2 * orig_len(o) // cols_of(o)) for o in offs), default=0)
+                      for offs in g)
+        budget = max(DEFAULT_GEOMETRY[1], jp_rows)
+
+        def rows(offs, shrink):
+            return max((len(layout_rows(recs[by_off[o]][1], cols_of(o) - shrink)) if o in by_off
+                        else -(-2 * orig_len(o) // cols_of(o)) for o in offs), default=0)
+        per = [rows(offs, 2) for offs in g]
+        if sum(per) > budget:
+            per = [rows(offs, 1) for offs in g]
+        used = 0
+        for offs, n in zip(g, per):
+            allot = n if sum(per) <= budget else max(1, budget - used)
+            used += n
+            for o in offs:
+                cap[o] = min(cap.get(o, allot), allot)
+    out = []
+    for off, en, slot, (cols, max_rows) in recs:
+        out.append((off, en, slot, (cols, cap.get(off, max_rows))))
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -177,72 +247,66 @@ def encode_hw(text):
     return ids
 
 
-def wrap_encode(text, alloc=None, approved=None, max_row_chars=21):
-    """Enveloppe et encode le texte en IDs demi-chasse (8x16) avec sauts de ligne propres ($FFFE).
-    Garantit qu'aucune ligne ne déborde la marge droite ($1144 = 30) et que
-    le moteur SNES ne coupe jamais les mots en deux."""
-    text = text.replace("...", "…")
-    paragraphs = text.split('\n')
-    all_ids = []
-
-    for p_idx, para in enumerate(paragraphs):
-        words = [w for w in para.split(' ') if w]
-        if not words:
-            continue
-
-        def do_wrap(w):
-            rows, cur = [], []
-            for item in words:
-                if len(' '.join(cur + [item])) <= w:
-                    cur.append(item)
-                else:
-                    if cur:
-                        rows.append(' '.join(cur))
-                        cur = [item]
-                    else:
-                        rows.append(item)
-                        cur = []
-            if cur:
-                rows.append(' '.join(cur))
-            return rows
-
-        # 1. w=20 : équilibré et marge sûre (ex: '…Hey, a samurai?!' / 'Why do I have to?!')
-        r20 = do_wrap(20)
-        if len(r20) <= 3:
-            rows = r20
-        else:
-            # 2. w=21 si cela permet de tenir en <= 3 lignes
-            r21 = do_wrap(21)
-            if len(r21) <= 3:
-                rows = r21
+def layout_rows(text, w):
+    """Découpe le texte en rangées de <= `w` caractères sans couper les mots
+    (un mot plus long que `w` est coupé en morceaux de `w`). '\n' force une rangée."""
+    rows = []
+    for para in text.replace("...", "…").split("\n"):
+        cur = ""
+        for word in para.split():
+            while len(word) > w:
+                if cur:
+                    rows.append(cur)
+                    cur = ""
+                rows.append(word[:w])
+                word = word[w:]
+            if not cur:
+                cur = word
+            elif len(cur) + 1 + len(word) <= w:
+                cur += " " + word
             else:
-                # 3. w=22 si cela permet de tenir en <= 3 lignes
-                r22 = do_wrap(22)
-                if len(r22) <= 3:
-                    rows = r22
-                else:
-                    rows = r21
-
-        for r_idx, row in enumerate(rows):
-            all_ids.extend(encode_hw(row))
-            if r_idx < len(rows) - 1:
-                all_ids.append(NEWLINE_CODE)
-
-        if p_idx < len(paragraphs) - 1:
-            all_ids.append(NEWLINE_CODE)
-
-    return all_ids
+                rows.append(cur)
+                cur = word
+        if cur:
+            rows.append(cur)
+    return rows
 
 
-def encode_fit(text, alloc=None, approved=None, slot=0):
+def wrap_rows(text, cols=22, max_rows=3):
+    """Choisit la largeur de wrapping : cols-2 puis cols-1 (marge droite plus
+    équilibrée d'abord, ex. '…Hey, a samurai?!' / 'Why do I have to?!') ; garde la
+    première qui tient en `max_rows` rangées, sinon la plus large (débordement).
+    Jamais `cols` : une rangée pleine déclenche le retour à la ligne automatique du
+    plotter $80:F433 (col >= $1144), et le $FFFE suivant laisserait une rangée vide."""
+    for w in (cols - 2, cols - 1):
+        rows = layout_rows(text, w)
+        if len(rows) <= max_rows:
+            return rows
+    return rows
+
+
+def wrap_encode(text, cols=22, max_rows=3):
+    """Enveloppe et encode le texte en IDs demi-chasse (8x16) avec sauts de ligne propres ($FFFE).
+    `cols` = largeur de la boîte en demi-chasse (op01 : $1E-8 = 22), `max_rows` =
+    rangées visibles. Le moteur SNES ne coupe jamais les mots en deux."""
+    rows = wrap_rows(text, cols, max_rows)
+    ids = []
+    for r_idx, row in enumerate(rows):
+        ids.extend(encode_hw(row))
+        if r_idx < len(rows) - 1:
+            ids.append(NEWLINE_CODE)
+    return ids
+
+
+def encode_fit(text, slot=0, cols=22, max_rows=3):
     """Encode en bornant à `slot` IDs si non relocalisable. Coupe sur frontière de mot."""
-    ids = wrap_encode(text)
+    ids = wrap_encode(text, cols, max_rows)
     if len(ids) <= slot:
         return ids, False
     words = text.split(" ")
     while len(words) > 1:
         words.pop()
-        cand = wrap_encode(" ".join(words))
+        cand = wrap_encode(" ".join(words), cols, max_rows)
         if len(cand) <= slot:
             return cand, True
     return ids[:slot], True
@@ -461,10 +525,19 @@ def apply(rom: bytearray, alloc=None):
 
     # Table des pointeurs de scènes pour décompresser et inspecter le bytecode
     tbl = {i: off for i, _s, off in read_ptr_table(rom, 0x600) if off}
+    feats = _scene_validator.feats
+
+    def is_text_operand(w, p):
+        """Le mot en `p` est-il l'opérande-chaîne d'un opcode « ligne de texte » ?
+        (1er opérande ; op13 : l'un de ses 5 opérandes, un par perso)."""
+        if p >= 2 and feats.get(w(p - 2), {}).get("textline"):
+            return True
+        return any(p >= 2 * k and w(p - 2 * k) == 0x13 for k in range(1, 6))
 
     # Encodage avec relocalisation pour les lignes qui dépassent
     encoded = {}            # scene_idx -> (repoints, [(dest_offset, ids+FFFF)])
     truncated = 0
+    overflow = []           # (scene_idx, offset, cols, max_rows, rangées, en)
     relocated_count = 0
 
     for sidx, recs in scenes.items():
@@ -487,14 +560,19 @@ def apply(rom: bytearray, alloc=None):
         repoints = []
         string_records = []
 
-        for off, en, slot in recs:
-            full_ids = wrap_encode(en)
+        for off, en, slot, (cols, max_rows) in recs:
+            full_ids = wrap_encode(en, cols, max_rows)
+            n_rows = len(wrap_rows(en, cols, max_rows))
+            if n_rows > max_rows:
+                overflow.append((sidx, off, cols, max_rows, n_rows, en))
             if len(full_ids) <= slot:
                 # Tient sur place
                 string_records.append((off, full_ids + [0xFFFF]))
             else:
                 # Dépasse la longueur JP d'origine : on cherche les références dans le programme
-                ptrs = [p for p in range(0, prog_end, 2) if w(p) == off]
+                # (opérande d'un opcode « ligne de texte » uniquement : un simple
+                # mot égal à l'offset peut être un opcode, ex. op24 quand off=$24)
+                ptrs = [p for p in range(0, prog_end, 2) if w(p) == off and is_text_operand(w, p)]
                 if ptrs:
                     # Relocalisation à la fin du buffer décompressé
                     new_off = cur_end
@@ -505,7 +583,7 @@ def apply(rom: bytearray, alloc=None):
                     relocated_count += 1
                 else:
                     # Repli exceptionnel si aucun pointeur trouvé dans prog_end
-                    ids, was_trunc = encode_fit(en, slot=slot)
+                    ids, was_trunc = encode_fit(en, slot, cols, max_rows)
                     if was_trunc:
                         truncated += 1
                     string_records.append((off, ids + [0xFFFF]))
@@ -571,6 +649,7 @@ def apply(rom: bytearray, alloc=None):
         "scenes": len(idxs),
         "lines": sum(len(str_recs) for _, str_recs in encoded.values()),
         "truncated": truncated,
+        "overflow": overflow,
         "relocated": relocated_count,
         "bytes": cursor - dir_file,
         "hook": len(hook),

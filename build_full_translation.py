@@ -18,6 +18,7 @@ glyphes référencés dans le bloc texte `$87`), valable aussi pour le prologue.
 Sources : docs/prologue_translation.csv  +  docs/combat_menu_translation.csv
 Sortie   : nl-full-en.sfc
 """
+import csv
 import struct
 from pathlib import Path
 
@@ -36,10 +37,15 @@ import build_character_names as N
 import build_names_full as NF
 import build_club_names as CLUB
 import build_scene_injection as SCENE
+import build_battle_text as BT
+import build_pager_menu as PG
+import build_save_menu as SAVE
 
 ROOT = Path(__file__).parent
 ROM_JP = ROOT / "Nage Libre - Seijaku no Suishin (Japan).sfc"
 OUT = ROOT / "nl-full-en.sfc"
+# Lignes de scène trop longues pour leur boîte (à raccourcir dans docs/scenes/)
+OVERFLOW_CSV = ROOT / "docs" / "scene_overflow.csv"
 
 
 def main():
@@ -107,12 +113,23 @@ def main():
             struct.pack_into("<H", rom, r["off"] + i * 2, cid)
 
     # === 6) Menu de COMMANDE en combat : hook runtime (banque $80) ===
-    CMD.apply(rom)
+    #   + fenêtres PAGER (WHO / ordres) : gabarits $87 + branche du même hook
+    pager = PG.apply(rom, ROM_JP.read_bytes())
+    CMD.apply(rom, PG.hook_params())
 
-    # === 6b) Ligne de dégâts : « [nom]は[N]のダメージ » -> « [nom] [N] damage!! ».
-    # La particule sujet は est une chaîne 1-mot à $87:86E9 (hors CSV) ; on la
-    # remplace par une espace ($87:86EB est déjà FFFF).
-    struct.pack_into("<H", rom, 0x0386E9, JP_SPACE)
+    # === 6b) Messages de COMBAT : fragments repointés par site + noms demi-chasse ===
+    #   « [nom] takes [N] damage!! », « [nom] gains [N] DEF!! »… (cf. build_battle_text)
+    #   + HUD de PV dans l'ordre Prénom Initiale.
+    battle = BT.apply(rom, ROM_JP.read_bytes())
+
+    # === 6c) Écran de SAUVEGARDE : « 2面 » -> « St2 » (chaînes demi-chasse, cf. build_save_menu)
+    SAVE.apply(rom)
+
+    with OVERFLOW_CSV.open("w", encoding="utf-8", newline="") as f:
+        wr = csv.writer(f)
+        wr.writerow(["scene_idx_hex", "offset_hex", "cols", "max_rows", "rows", "en"])
+        for sidx, off, cols, max_rows, n_rows, en in scene_stats.get("overflow", []):
+            wr.writerow([f"{sidx:04X}", f"0x{off:04X}", cols, max_rows, n_rows, en])
 
     fix_checksum(rom)
     OUT.write_bytes(rom)
@@ -121,14 +138,20 @@ def main():
     print(f"  scènes (multi) : {scene_stats['scenes']} scènes / "
           f"{scene_stats['lines']} lignes injectées"
           + (f" ({scene_stats['truncated']} tronquées)" if scene_stats['truncated'] else "")
+          + (f" ({len(scene_stats['overflow'])} débordent de la boîte -> {OVERFLOW_CSV.name})"
+             if scene_stats['overflow'] else "")
           + f"  |  combat/menu : {len(menu_plan)} chaîne(s)")
     print(f"  menu commande combat : hook @ $80:{CMD.HOOK_SNES:04X} "
           f"({' / '.join(w for _, _, w in CMD.CMDS)})")
+    print(f"  fenêtres PAGER : {pager['labels']} ({pager['bytes']} o @ $BF:F000)")
     print(f"  noms perso : {len(names_written)} relocalisés @ $87:FA0C "
           f"({', '.join(n for n, _, _ in names_written)})")
     print(f"  noms combat (tableau partagé) : {nf_entries} entrée(s) repointée(s), "
           f"{nf_strings} chaîne(s) uniques @ $AF:9E8F")
     print(f"  clubs (écran sélection) : {clubs_written} libellés courts @ $87:85FF..")
+    print(f"  messages de combat : {battle['sites']} sites repointés, {battle['strings']} "
+          f"chaînes demi-chasse ({battle['bytes']} o) @ $BF:8000, "
+          f"prénom le plus long {battle['longest_name']} car.")
     print(f"  police partagée : {alloc.count()} paires uniques (sur {len(alloc.free)} dispo)")
     print(f"  scènes : hook {scene_stats['hook']} o @ $83:{SCENE.HOOK_ADDR:04X}, "
           f"annuaire+données {scene_stats['bytes'] // 1024} Ko @ $B0:8000+")

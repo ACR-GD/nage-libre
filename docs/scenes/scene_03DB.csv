@@ -1,7 +1,7 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0000,8,14,いぃぉぞキ二,Ii ozo kini
-0x001E,19,20,うげぇ、学のうらは 通れないでやんの,"Ugh, you can't get through the back of the school."
-0x0048,29,30,学のうらは、    道かと戦ったのに  通れないやぁ…,"I fought against the road behind the school, but I still can't get through..."
-0x0086,31,32,うー、うらから行けば道かと戦ったけど… …人れないみたいね,"Hmm, I tried to go the other way around, thinking it was a road, but... ...it looks like there's no one there."
-0x00C8,28,29,学のうらは     行き止まりになってる みたいね……,It looks like the back of the school is a dead end...
-0x0104,22,31,ここから先は     行けないみたいですわね,It looks like we can't go any further than this.
+0x0000,8,14,いャぃぉぞぽキニ,Ii ozo kini
+0x001E,19,20,うげぇ、学校のうらは 通れないでやんの,"Ugh, you can't get through behind the school."
+0x0048,29,30,学校のうらは、    近道かと思ったのに  通れないやぁ…,"I thought behind the school was a shortcut, but no..."
+0x0086,31,32,うーむ、うらから行けば近道かと思ったけど… …入れないみたいね,"Hmm, I thought the back was a shortcut... Can't get in."
+0x00C8,28,29,学校のうらは     行き止まりになってる みたいね……,"Behind the school is a dead end, it seems..."
+0x0104,22,31,ここから先は     行けないみたいですわね,It seems we can't go past here.

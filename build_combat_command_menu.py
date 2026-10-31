@@ -40,7 +40,7 @@ OUT = ROOT / "nl-full-en.sfc"
 # --- Implantation ---
 HOOK_FILE = 0x07A80           # offset fichier de $80:FA80 (zone libre ~1283 o de FF)
 HOOK_SNES = 0xFA80            # adresse $80:FA80
-FREE_END_FILE = 0x07F80       # fin de la zone libre
+FREE_END_FILE = 0x07EE0       # fin de la zone libre (hook saut de ligne des scènes en $80:FEE0)
 # Point de détournement : SORTIE du renderer $80:F902 (`C2 30 7A FA` =
 # REP #$30 ; PLY ; PLX). On écrase 4 octets par `JML $80:FA80`.
 EXIT_FILE = 0x07902
@@ -100,8 +100,9 @@ def build_plan():
     return tiles, copies
 
 
-def assemble():
-    """Assemble hook + données. Retourne les octets à écrire à HOOK_FILE."""
+def assemble(pager=None):
+    """Assemble hook + données. Retourne les octets à écrire à HOOK_FILE.
+    `pager` = build_pager_menu.hook_params() : branche « bloc PAGER » (si fourni)."""
     tiles, copies = build_plan()
 
     # Le code a une taille FIXE (LDX/LDY/LDA immédiats = 3 o, MVN = 3 o), donc on
@@ -127,12 +128,23 @@ def assemble():
             c += bytes([0xA9, 0x0F, 0x00])                       # LDA #$000F
             c += bytes([0x54, 0x7E, 0x80])                       # MVN dest=$7E,src=$80
         c += bytes([0xAB])                          # PLB
+        jd = len(c); c += bytes([0x4C, 0x00, 0x00])# JMP done
+        # Bloc PAGER (fenêtres WHO / ordres) : le code vit en banque $BF à côté
+        # de ses tuiles (place insuffisante ici) -> simple JML aller/retour.
+        pager_at = len(c)
+        if pager:
+            e = pager["code_snes"]
+            c += bytes([0x5C, e & 0xFF, (e >> 8) & 0xFF, e >> 16])   # JML $BF:code
         done = len(c)
         # Épilogue original rejoué : PLY PLX PLA PLP RTS
         c += bytes([0x7A, 0xFA, 0x68, 0x28, 0x60])
         done_snes = HOOK_SNES + done
+        pager_snes = HOOK_SNES + pager_at
         for j in (j1, j2):
+            c[j + 1] = pager_snes & 0xFF; c[j + 2] = (pager_snes >> 8) & 0xFF
+        for j in [jd]:
             c[j + 1] = done_snes & 0xFF; c[j + 2] = (done_snes >> 8) & 0xFF
+        build_code.done_snes = done_snes
         return c
 
     code_len = len(build_code(0))                  # taille fixe
@@ -140,19 +152,48 @@ def assemble():
     code = build_code(data_base)
     assert len(code) == code_len
     blob = bytes(code) + b"".join(tiles)
-    return blob
+    return blob, 0x800000 | build_code.done_snes
 
 
-def apply(rom: bytearray):
+def assemble_pager(pager, done_long):
+    """Branche PAGER (banque $BF) : signatures du bloc $A1:8FC7 dans le buffer
+    de police, puis MVN des tuiles anglaises ; retour à l'épilogue du hook."""
+    c = bytearray()
+    pj = []
+    for addr, val in pager["sigs"]:
+        c += bytes([0xAF, addr & 0xFF, (addr >> 8) & 0xFF, 0x7E])  # LDA $7E:sig
+        c += bytes([0xC9, val & 0xFF, (val >> 8) & 0xFF])          # CMP #sig
+        c += bytes([0xF0, 0x04])                                   # BEQ +4
+        pj.append(len(c)); c += bytes(4)                           # JML done
+    src, dst, n = pager["src"], pager["dst"], pager["len"] - 1
+    c += bytes([0x8B])                                             # PHB
+    c += bytes([0xA2, src & 0xFF, (src >> 8) & 0xFF])              # LDX #src
+    c += bytes([0xA0, dst & 0xFF, (dst >> 8) & 0xFF])              # LDY #dst
+    c += bytes([0xA9, n & 0xFF, (n >> 8) & 0xFF])                  # LDA #len-1
+    c += bytes([0x54, 0x7E, pager["src_bank"]])                    # MVN $7E,src
+    c += bytes([0xAB])                                             # PLB
+    pj.append(len(c)); c += bytes(4)                               # JML done
+    for j in pj:
+        c[j:j + 4] = bytes([0x5C, done_long & 0xFF, (done_long >> 8) & 0xFF, done_long >> 16])
+    return bytes(c)
+
+
+def apply(rom: bytearray, pager=None):
     # Restaure l'enveloppe $80:F8D8 si une build précédente l'avait détournée.
     if rom[WRAP_FILE:WRAP_FILE + 4] == WRAP_OLDHOOK:
         rom[WRAP_FILE:WRAP_FILE + 4] = WRAP_ORIG
 
-    blob = assemble()
+    blob, done_long = assemble(pager)
     if HOOK_FILE + len(blob) > FREE_END_FILE:
         raise SystemExit(f"Dépassement zone libre $80 : {len(blob)} o "
                          f"(dispo {FREE_END_FILE - HOOK_FILE} o).")
     rom[HOOK_FILE:HOOK_FILE + len(blob)] = blob
+    if pager:
+        code = assemble_pager(pager, done_long)
+        f = pager["code_file"]
+        if any(b not in (0x00, 0xFF) for b in rom[f:f + len(code)]):
+            raise SystemExit(f"Zone du code PAGER (fichier {f:#x}) déjà occupée.")
+        rom[f:f + len(code)] = code
 
     cur = rom[EXIT_FILE:EXIT_FILE + 4]
     if cur == EXIT_NEW:

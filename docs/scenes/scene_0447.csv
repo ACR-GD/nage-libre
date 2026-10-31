@@ -1,21 +1,22 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0104,20,33,ぎずカじぎずカじ□カじ□カじカじす,Gizu Kaji Gizu Kaji □ Kaji □ Kaji Kaji Su
+0x0104,20,33,平ぎずカじぎず反カじ　カじ　カじ益カじす,Gizu Kaji Gizu Kaji □ Kaji □ Kaji Kaji Su
 0x0148,41,45,  NAGE LIBRE                        STAFF,NAGE LIBRE STAFF
-0x01A4,26,30,  DIRECTOR           ー 姫,DIRECTOR - Hime
-0x01E2,41,45,SCENARIO AND      IVENT DESIGN      太 ,SCENARIO AND IVENT DESIGN
-0x023E,40,44,  PROGRAM              入            ガク,PROGRAM Entry Gaku
-0x0298,8,12,GRAPHIC…,GRAPHIC…
-0x02B2,40,44,……CHARACTER             DESIGN      本 ,……CHARACTER DESIGN book
-0x030C,41,45,…MAP AND BATTLE      BG DESIGN       太,…MAP AND BATTLE BG DESIGN Tai
-0x0368,41,45,  BALANCE             ADJUSTER       ,BALANCE ADJUSTER
-0x03C4,43,47,  SOUND              高           しち みちこ,SOUND Takashi Michiko
-0x0424,30,79,  BALANCE AND      IVENT CHECK,BALANCE AND EVENT CHECK
-0x04C4,44,48,      ー 直入                    MIKA SAEKI,- Naoiri MIKA SAEKI
-0x0526,40,44,    SHIVAAAWO‼        ちよう            よね,SHIVAAAWO!! Chiyou yone
-0x0580,41,45,       うっきー           Rリラ          ー ,Ukki R Lila
-0x05DC,41,45,  EXECTIVE           PRODUCER       求 勝,EXECTIVE PRODUCER Katsu Moto
+0x01A4,26,30,  DIRECTOR           中嶌 彩姫,DIRECTOR Saki Nakajima
+0x01E2,41,45,SCENARIO AND      IVENT DESIGN      大栗 久幸,SCENARIO AND EVENT DESIGN Hisayuki Okuri
+0x023E,40,44,  PROGRAM             谷 雅人            ガク,PROGRAM Masato Tani GAKU
+0x0298,8,12,GRAPHIC…,GRAPHIC...
+0x02B2,40,44,……CHARACTER             DESIGN      岡本 稜,...CHARACTER DESIGN Ryo Okamoto
+0x030C,41,45,…MAP AND BATTLE      BG DESIGN      島田 大輔,...MAP AND BATTLE BG DESIGN Daisuke Shimada
+0x0368,41,45,  BALANCE             ADJUSTER      鉄田 英克,BALANCE ADJUSTER Hidekatsu Tetsuda
+0x03C4,43,47,  SOUND              高浜 祐輔          しち みちひこ,SOUND Yusuke Takahama Michihiko Shichi
+0x0424,30,34,  BALANCE AND      IVENT CHECK,BALANCE AND EVENT CHECK
+0x046A,40,44,      壬生 英俊          岡田 敬博          豊岡 智,Hidetoshi Mibu Takahiro Okada Satoshi Toyooka
+0x04C4,44,48,      中川 直人           乱 由鷹        MIKA SAEKI,Naoto Nakagawa Yutaka Midare MIKA SAEKI
+0x0526,40,44,    SHIVAAAWO‼        ちよう            よねヲ,SHIVAAAWO!! Yonewo Chiyou
+0x0580,41,45,       うっきー           R・リラ          中山 善文,Ukki R. Lila Yoshifumi Nakayama
+0x05DC,41,45,  EXECTIVE           PRODUCER       清水 勝政,EXECUTIVE PRODUCER Katsumasa Shimizu
 0x0638,42,46,PRESENTED BY                         VARIE,PRESENTED BY VARIE
-0x0696,13,17, あ‼ が見える‼,Ah!! I can see it!!
-0x06BA,13,17,舞 今こそ戻れるのぉ‼,"Mai, now is the time to go back!!"
-0x06DE,13,17, え……でも…あれは…,Uh... but... that was...
-0x0702,9,31,美姫……あーん,Miki... aah
+0x0696,13,17,惟 ：あ‼ 陸地が見える‼,Yui: Ah!! I can see land!!
+0x06BA,13,17,舞 ：今度こそ戻れるのぉ‼,Mai: Now we can really go home!!
+0x06DE,13,17,惟 ：え……でも…あれは…,Yui: Huh... but... that's...
+0x0702,9,31,美姫：……あーん💦,Miki: ...Waaah!

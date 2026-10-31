@@ -1,6 +1,6 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0000,7,11,いぃとうとはん,Iitouhan
-0x0018,32,33,わーい        方向だー‼    でもまた戻れないー‼,"Yay, that's the right direction!! But I can't go back again!!"
-0x005C,17,18,よし‼ 最のだ‼…行くぞぉ‼,Alright!! This is the best!! ...Let's go!!
+0x0000,7,11,いぃとうとほん,Iitouhan
+0x0018,32,33,わーい        反対方向だー‼    でもまた戻れないー‼,"Yay, the opposite way!! But we can't go back again!!"
+0x005C,17,18,よし‼ 最後の決戦だ‼…行くぞぉ‼,Alright!! The final battle!! ...Here we go!!
 0x0082,21,22,さあ、        がんばるのよ、美姫‼,"Come on, do your best, Miki!!"
-0x00B0,21,31,これをったら、もう、戻れないんですね……,"Once you do this, there's no going back..."
+0x00B0,21,31,これを登ったら、もう、戻れないんですね……,"Once we climb this, there's no going back..."
