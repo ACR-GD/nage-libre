@@ -39,6 +39,7 @@ import build_club_names as CLUB
 import build_scene_injection as SCENE
 import build_battle_text as BT
 import build_pager_menu as PG
+import build_save_menu as SAVE
 
 ROOT = Path(__file__).parent
 ROM_JP = ROOT / "Nage Libre - Seijaku no Suishin (Japan).sfc"
@@ -120,6 +121,9 @@ def main():
     #   « [nom] takes [N] damage!! », « [nom] gains [N] DEF!! »… (cf. build_battle_text)
     #   + HUD de PV dans l'ordre Prénom Initiale.
     battle = BT.apply(rom, ROM_JP.read_bytes())
+
+    # === 6c) Écran de SAUVEGARDE : « 2面 » -> « St2 » (chaînes demi-chasse, cf. build_save_menu)
+    SAVE.apply(rom)
 
     with OVERFLOW_CSV.open("w", encoding="utf-8", newline="") as f:
         wr = csv.writer(f)
