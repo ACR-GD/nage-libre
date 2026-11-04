@@ -12,7 +12,7 @@ public sealed class SnesRomHeader
     {
         const int headerOffset = 0x7FC0;
         if (rom.Length < headerOffset + 0x40)
-            throw new InvalidDataException("ROM trop petite pour l'en-tête SNES.");
+            throw new InvalidDataException("ROM too small for the SNES header.");
 
         var block = rom.Slice(headerOffset, 0x40);
         var title = System.Text.Encoding.ASCII.GetString(block[..21]).TrimEnd('\0', ' ');

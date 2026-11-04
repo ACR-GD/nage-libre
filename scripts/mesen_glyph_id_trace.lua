@@ -1,22 +1,22 @@
 --[[
-  Nage Libre — capture des CHAÎNES d'IDs 16-bit rendues à l'écran.
+  Nage Libre — capture of the 16-bit ID STRINGS rendered on screen.
 
-  Les boucles typewriter lisent une chaîne d'IDs 16-bit (terminée $FFFF) via le
-  pointeur 24-bit [$09]/$0A/$0B, puis tracent chaque glyphe avec $80:F433 :
-    • $80:F4A7  : chaînes en ROM (banque $87 : combat, menus, banderoles…)
-    • $80:F4CA  : dialogue décompressé en $7F:64C0 (narration / pré-combat)
+  The typewriter loops read a string of 16-bit IDs (terminated by $FFFF) through the
+  24-bit pointer [$09]/$0A/$0B, then draw each glyph with $80:F433:
+    • $80:F4A7  : strings in ROM (bank $87: battle, menus, banners…)
+    • $80:F4CA  : dialogue decompressed to $7F:64C0 (narration / pre-battle)
 
-  On logue, pour CHAQUE chaîne (dédupliquée par adresse source), la liste complète
-  de ses IDs. Les IDs < $0800 sont les glyphes de police : ce sont eux que
-  l'allocateur de paires anglaises ne doit PAS écraser. Je croiserai ces IDs avec
-  nos paires pour réserver exactement les glyphes japonais en collision.
+  For EACH string (deduplicated by source address) we log the full list
+  of its IDs. IDs < $0800 are font glyphs: those are the ones the
+  English pair allocator must NOT overwrite. I'll cross-check these IDs with
+  our pairs to reserve exactly the Japanese glyphs that collide.
 
-  Usage :
-    1. nl-full-en.sfc, arriver JUSTE AVANT la scène pré-combat.
-    2. Debug → Script Window → Load → ce fichier → Run.
-    3. Déclencher du texte NEUF : avancer tout le dialogue pré-combat +
-       la banderole « STAGE 1 START » + la condition de victoire.
-    4. M'envoyer  mesen_dumps/glyph_ids.log
+  Usage:
+    1. nl-full-en.sfc, get to JUST BEFORE the pre-battle scene.
+    2. Debug → Script Window → Load → this file → Run.
+    3. Trigger NEW text: advance through the whole pre-battle dialogue +
+       the "STAGE 1 START" banner + the victory condition.
+    4. Send me  mesen_dumps/glyph_ids.log
 ]]
 
 local LOG_PATH = "/Users/acr/Develop/nage-libre/mesen_dumps/glyph_ids.log"
@@ -60,9 +60,9 @@ local function onRom()  onString("ROM $87") end   -- $80:F4A7
 local function onDial() onString("DIAL 7F") end    -- $80:F4CA
 local function onFrame() frame = frame + 1 end
 
-logline("=== chaînes d'IDs 16-bit (F4A7 ROM + F4CA dialogue) ===")
+logline("=== 16-bit ID strings (F4A7 ROM + F4CA dialogue) ===")
 logline("Log: "..LOG_PATH)
 emu.addMemoryCallback(onRom,  CB.exec, 0x80F4A7, 0x80F4A7)
 emu.addMemoryCallback(onDial, CB.exec, 0x80F4CA, 0x80F4CA)
 emu.addEventCallback(onFrame, emu.eventType.startFrame)
-logline("Actif. Avancer le dialogue pré-combat + la banderole STAGE START.")
+logline("Active. Advance the pre-battle dialogue + the STAGE START banner.")

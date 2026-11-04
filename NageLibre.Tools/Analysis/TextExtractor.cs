@@ -4,14 +4,14 @@ namespace NageLibre.Tools.Analysis;
 
 public static class TextExtractor
 {
-    /// <summary>Zones dialogue (hors table des scripts @ 0x20000).</summary>
+    /// <summary>Dialogue areas (excluding the script table @ 0x20000).</summary>
     public static readonly (int Start, int End, string Name)[] DialogueRegions =
     [
         (0x22000, 0x38000, "bank84_dialogue"),
         (0x38000, 0x48000, "dialogue_extended"),
     ];
 
-    /// <summary>Bytecode script : ne pas scanner les 01 ici.</summary>
+    /// <summary>Script bytecode: don't scan the 01s here.</summary>
     public const int ScriptTableEnd = 0x22000;
 
     public static readonly byte[] FfTerminators = [0x05, 0x10, 0x01, 0x02, 0x09, 0x0A];
@@ -30,7 +30,7 @@ public static class TextExtractor
             results.AddRange(Extract01Prefixed(data, start, end, region, seen));
         }
 
-        // FF/FE dans la banque script mais après la table d’opcodes
+        // FF/FE in the script bank, but after the opcode table
         results.AddRange(ExtractFfTerminated(data, 0x20000, ScriptTableEnd, "bank84_early", seen));
 
         results.AddRange(ExtractFromScriptPointers(rom, seen));
@@ -39,7 +39,7 @@ public static class TextExtractor
 
     private static GlyphUnicodeTable? _unicodeTable;
 
-    /// <summary>Supprime les chaînes strictement incluses dans une autre au même offset ±4.</summary>
+    /// <summary>Removes strings strictly contained in another one at the same offset ±4.</summary>
     private static List<DecodedString> PruneSubstrings(List<DecodedString> list)
     {
         var keep = new bool[list.Count];
@@ -59,7 +59,7 @@ public static class TextExtractor
         return list.Where((_, i) => keep[i]).ToList();
     }
 
-    /// <summary>Chaînes terminées FF + sous-octet (dialogue script).</summary>
+    /// <summary>Strings terminated by FF + a sub-byte (script dialogue).</summary>
     public static IEnumerable<DecodedString> ExtractFfTerminated(
         byte[] rom, int start, int end, string region, HashSet<string> seen)
     {
@@ -84,7 +84,7 @@ public static class TextExtractor
         }
     }
 
-    /// <summary>Chaînes terminées par FE (souvent avant FF 10).</summary>
+    /// <summary>Strings terminated by FE (often before FF 10).</summary>
     public static IEnumerable<DecodedString> ExtractFeTerminated(
         byte[] rom, int start, int end, string region, HashSet<string> seen)
     {
@@ -108,7 +108,7 @@ public static class TextExtractor
         }
     }
 
-    /// <summary>Bloc commençant par 01 (marqueur de ligne / boîte de dialogue).</summary>
+    /// <summary>Block starting with 01 (line / dialogue box marker).</summary>
     public static IEnumerable<DecodedString> Extract01Prefixed(
         byte[] rom, int start, int end, string region, HashSet<string> seen)
     {
@@ -140,7 +140,7 @@ public static class TextExtractor
         }
     }
 
-    /// <summary>Suit les pointeurs des scripts vers les données texte.</summary>
+    /// <summary>Follows the script pointers to the text data.</summary>
     public static IEnumerable<DecodedString> ExtractFromScriptPointers(SnesRom rom, HashSet<string> seen)
     {
         var data = rom.Data;
@@ -169,7 +169,7 @@ public static class TextExtractor
             if (score < 25 && CountHighGlyphs(span) < 3)
                 continue;
 
-            // Tronquer à FF/FE
+            // Truncate at FF/FE
             int end = len;
             for (int j = 0; j < len; j++)
             {

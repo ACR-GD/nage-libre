@@ -3,8 +3,8 @@ using System.IO.Compression;
 namespace NageLibre.Tools.Mesen;
 
 /// <summary>
-/// Lecteur minimal du format .mss Mesen2 (MSS + en-tête vidéo zlib + état sérialisé zlib).
-/// Référence : Mesen2 Core/Shared/SaveStateManager.cpp, Utilities/Serializer.cpp
+/// Minimal reader for the Mesen2 .mss format (MSS + zlib video header + zlib serialized state).
+/// Reference: Mesen2 Core/Shared/SaveStateManager.cpp, Utilities/Serializer.cpp
 /// </summary>
 public sealed class MesenSaveState
 {
@@ -26,7 +26,7 @@ public sealed class MesenSaveState
         var bytes = File.ReadAllBytes(path);
         int pos = 3;
         if (bytes.Length < 32 || System.Text.Encoding.ASCII.GetString(bytes, 0, 3) != "MSS")
-            throw new InvalidDataException("Fichier MSS invalide.");
+            throw new InvalidDataException("Invalid MSS file.");
 
         uint emuVer = ReadU32(bytes, ref pos);
         uint fmtVer = ReadU32(bytes, ref pos);
@@ -44,7 +44,7 @@ public sealed class MesenSaveState
         pos += (int)nameLen;
 
         if (bytes[pos++] != 1)
-            throw new InvalidDataException("État Mesen non compressé (non géré).");
+            throw new InvalidDataException("Uncompressed Mesen state (not supported).");
 
         uint decompSize = ReadU32(bytes, ref pos);
         uint compSize = ReadU32(bytes, ref pos);
@@ -100,7 +100,7 @@ public sealed class MesenSaveState
         var result = output.ToArray();
         if (expectedSize > 0 && result.Length != expectedSize)
         {
-            // Mesen stocke la taille attendue ; tolérer léger écart.
+            // Mesen stores the expected size; tolerate a small difference.
         }
         return result;
     }

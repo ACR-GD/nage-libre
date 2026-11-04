@@ -279,6 +279,18 @@ Counter **`$06`** is compared to **`$0001`…`$0007`**; each phase calls a handl
 - **Screen 2:** `$80:F4AB` → `JSL $8088E4` (sound/init) → loop `JSR $80:F433` per glyph until `FFFF`.
 - **Screen 1:** text is preloaded in the tilemap; phases reveal rows progressively — corrupted rows cause JP screen-2 text and sounds shortly after broken patches.
 
+### Screen 2 (clouds) — separate pipeline
+
+- Text in **ROM**: `$87:89C5`, `$87:89DF`, `$87:8A51`…
+- Displayed via **`$87:DA3B` → `JSL $80:F4A7` → `$80:F4AB`**
+- Safe patch: replace the ROM strings (as `patch_prologue_v3.py` does), **without touching** `$7F:64C0`.
+
+### Analysis script
+
+```bash
+python3 scripts/analyze_prologue_engine.py
+```
+
 ---
 
 ## Conclusion

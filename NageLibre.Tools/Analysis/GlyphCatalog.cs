@@ -2,7 +2,7 @@ using System.Globalization;
 
 namespace NageLibre.Tools.Analysis;
 
-/// <summary>Charge charset_catalog.csv pour résoudre index glyphe → tuile VRAM.</summary>
+/// <summary>Loads charset_catalog.csv to resolve glyph index → VRAM tile.</summary>
 public sealed class GlyphCatalog
 {
     private readonly Dictionary<int, GlyphInfo> _byIndex = new();
@@ -51,7 +51,7 @@ public sealed class GlyphCatalog
         return false;
     }
 
-    /// <summary>Remplace {XX} par ? si pas de table unicode (à enrichir manuellement).</summary>
+    /// <summary>Replaces {XX} with ? if there is no Unicode table (to extend by hand).</summary>
     public string ApplyKnownGlyphs(string display, IReadOnlyDictionary<byte, char>? unicodeTable = null)
     {
         if (unicodeTable == null || unicodeTable.Count == 0)

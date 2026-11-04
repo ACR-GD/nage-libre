@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
-"""Relocalisation de TOUTE la table de noms de personnages/ennemis (Nage Libre).
+"""Relocation of the WHOLE character/enemy name table (Nage Libre).
 
-Le jeu tire un NOM DE FAMILLE + un PRÉNOM d'UN SEUL tableau de pointeurs 24-bit
-partagé en banque $81, vers le pool de chaînes kanji en $87:8077.. :
-    $81:AF5B  tableau complet (244 entrées)
-    $81:B087  = MÊMES octets, fenêtre « prénoms » à partir de l'entrée 100
-              (given[k] == surname[100+k] : repointer l'un modifie l'autre)
-En combat la boîte de PV affiche « [nom de famille] [prénom] ».
+The game takes a SURNAME + a GIVEN NAME from ONE shared table of 24-bit
+pointers in bank $81, into the kanji string pool at $87:8077..:
+    $81:AF5B  full table (244 entries)
+    $81:B087  = the SAME bytes, a "given names" window starting at entry 100
+              (given[k] == surname[100+k]: repointing one changes the other)
+In battle the HP box shows "[surname] [given name]".
 
-Les chaînes kanji sont dans des slots trop courts pour du romaji → on RELOCALISE :
-on écrit les noms romanisés (lus depuis docs/names_translation.csv, colonne `en`)
-dans une grande zone libre $AF:9E8F, puis on repointe chaque entrée du tableau.
-Chaque nom reçoit une ESPACE finale (séparateur entre nom et prénom) ; l'espace
-en trop d'un prénom en fin de boîte est inoffensive.
+The kanji strings sit in slots too short for romaji → we RELOCATE:
+we write the romanised names (read from docs/names_translation.csv, column `en`)
+into a large free area at $AF:9E8F, then repoint every entry of the table.
+Each name gets a trailing SPACE (separator between surname and given name); the
+extra space after a given name at the end of the box is harmless.
 
-On ne touche QUE les lignes dont `en` est rempli. Les entrées 0..4 (5 persos
-principaux) sont laissées à build_character_names (écran anniversaire).
+We ONLY touch the lines whose `en` is filled in. Entries 0..4 (the 5 main
+characters) are left to build_character_names (birthday screen).
 
-apply(rom, alloc) est appelé par build_full_translation.py (allocateur partagé).
+apply(rom, alloc) is called by build_full_translation.py (shared allocator).
 """
 import csv
 from pathlib import Path
@@ -27,11 +27,11 @@ from patch_prologue_v3 import JP_SPACE, encode_en
 ROOT = Path(__file__).parent
 CSV_PATH = ROOT / "docs" / "names_translation.csv"
 
-NAME_TBL = 0x0AF5B        # $81:AF5B (offset fichier) — tableau unique partagé
-N_ENTRIES = 244           # $81:B087 (prénoms) n'est qu'une fenêtre interne
-SKIP_MAIN = 5             # entrées 0..4 = persos principaux (build_character_names)
+NAME_TBL = 0x0AF5B        # $81:AF5B (file offset): the single shared table
+N_ENTRIES = 244           # $81:B087 (given names) is only an internal window
+SKIP_MAIN = 5             # entries 0..4 = main characters (build_character_names)
 
-# Pool libre $AF:9E8F .. $AF:FFFF (24945 o)
+# Free pool $AF:9E8F .. $AF:FFFF (24945 bytes)
 POOL_FILE = 0x179E8F
 POOL_BANK = 0xAF
 POOL_ADDR = 0x9E8F
@@ -39,7 +39,7 @@ POOL_END = 0x180000
 
 
 def _load_en():
-    """idx -> romaji (lignes remplies), snes_off -> idx, idx -> role."""
+    """idx -> romaji (filled-in lines), snes_off -> idx, idx -> role."""
     en_by_idx, idx_by_off, role_by_idx = {}, {}, {}
     if not CSV_PATH.is_file():
         return en_by_idx, idx_by_off, role_by_idx
@@ -55,13 +55,13 @@ def _load_en():
     return en_by_idx, idx_by_off, role_by_idx
 
 
-NAME_BLOCK_START = 0x038077   # bloc de chaînes de noms en $87
-NAME_BLOCK_END = 0x038697     # (suivi du bloc messages, scanné normalement)
+NAME_BLOCK_START = 0x038077   # block of name strings in $87
+NAME_BLOCK_END = 0x038697     # (followed by the message block, scanned normally)
 
 
 def _name_block_keep_ids(rom, en_by_idx, idx_by_off):
-    """IDs des entrées de noms NON traduites (à GARDER référencées). Les kanji
-    des noms traduits (relocalisés) sont omis → libérables pour la police."""
+    """IDs of the UNtranslated name entries (to KEEP referenced). The kanji
+    of translated (relocated) names are left out → can be freed for the font."""
     keep, cur, start, i = set(), [], 0x8077, NAME_BLOCK_START
     while i < NAME_BLOCK_END:
         w = rom[i] | (rom[i + 1] << 8)
@@ -77,16 +77,16 @@ def _name_block_keep_ids(rom, en_by_idx, idx_by_off):
 
 
 def compute_free_pool(rom):
-    """Liste d'IDs de police libres (>=0x100), consciente des noms : les kanji
-    n'appartenant qu'à des noms traduits sont rendus disponibles. À appeler sur la
-    ROM d'origine (avant relocalisation des pointeurs)."""
+    """List of free font IDs (>=0x100), name-aware: kanji that only
+    belong to translated names are made available. Call it on the
+    original ROM (before the pointers are relocated)."""
     import build_combat_menu_translation as M
     from patch_prologue_v3 import find_safe_ids
 
     en_by_idx, idx_by_off, _role = _load_en()
 
     ref = set(M.SPECIAL_IDS)
-    i = NAME_BLOCK_END                       # bloc messages : scan complet
+    i = NAME_BLOCK_END                       # message block: full scan
     while i < M.TEXT_BLOCK_END:
         w = rom[i] | (rom[i + 1] << 8)
         if w != 0xFFFF and w < 0x0800:
@@ -114,26 +114,26 @@ def _write_ptr(rom, tbl_file, e, bank, addr):
     rom[a + 2] = bank & 0xFF
 
 
-# Patch de la routine HUD adverse @ $81:C0B0 (0x00C0B0) :
-# D'origine : charge $13D8,X (Nom de famille) puis $13D7,X (Prénom).
-# Inversé : charge $13D7,X (Prénom) puis $13D8,X (Initiale nom de famille).
+# Patch of the opponent HUD routine @ $81:C0B0 (0x00C0B0):
+# Original: loads $13D8,X (surname) then $13D7,X (given name).
+# Swapped: loads $13D7,X (given name) then $13D8,X (surname initial).
 OPPONENT_HUD_PATCH_1 = 0x00C0B5   # BD D8 13 -> BD D7 13
 OPPONENT_HUD_PATCH_2 = 0x00C0BE   # BD D7 13 -> BD D8 13
 
 
 def apply(rom: bytearray, alloc):
-    """Relocalise les noms remplis et repointe le tableau partagé. Renvoie le nb
-    d'entrées relocalisées (et le nb de chaînes uniques écrites dans le pool)."""
+    """Relocates the filled-in names and repoints the shared table. Returns the number
+    of entries relocated (and the number of unique strings written to the pool)."""
     en_by_idx, idx_by_off, role_by_idx = _load_en()
     if not en_by_idx:
         return 0, 0
 
-    # Inverse l'ordre d'affichage dans le HUD de combat adverse (Prénom puis Initiale Nom)
+    # Swap the display order in the opponent battle HUD (given name, then surname initial)
     rom[OPPONENT_HUD_PATCH_1:OPPONENT_HUD_PATCH_1 + 3] = bytes([0xBD, 0xD7, 0x13])
     rom[OPPONENT_HUD_PATCH_2:OPPONENT_HUD_PATCH_2 + 3] = bytes([0xBD, 0xD8, 0x13])
 
     cursor = POOL_FILE
-    cache = {}  # tuple(ids) -> addr 16-bit
+    cache = {}  # tuple(ids) -> 16-bit addr
 
     def intern(ids):
         nonlocal cursor
@@ -143,7 +143,7 @@ def apply(rom: bytearray, alloc):
         addr = POOL_ADDR + (cursor - POOL_FILE)
         need = len(ids) * 2
         if cursor + need > POOL_END:
-            raise SystemExit("Dépassement du pool de noms $AF:9E8F.")
+            raise SystemExit("Name pool $AF:9E8F overflow.")
         for j, cid in enumerate(ids):
             rom[cursor + j * 2] = cid & 0xFF
             rom[cursor + j * 2 + 1] = (cid >> 8) & 0xFF
@@ -155,15 +155,15 @@ def apply(rom: bytearray, alloc):
         last = ids[-1]
         if last == JP_SPACE:
             return True
-        pair = alloc.id2p.get(last)        # tuile (gauche, droite)
+        pair = alloc.id2p.get(last)        # tile (left, right)
         return bool(pair) and pair[1] == ' '
 
     def encode(en, trailing_space):
         ids = encode_en(en, alloc)
         while len(ids) > 1 and ids[-1] == JP_SPACE:
             ids.pop()
-        # séparateur prénom -> initiale : une seule espace (les noms de
-        # longueur impaire en ont déjà une implicite via la tuile « X␣ »).
+        # given name -> initial separator: a single space (names of
+        # odd length already have an implicit one through the "X␣" tile).
         if trailing_space and not _ends_with_space(ids):
             ids = ids + [JP_SPACE]
         return ids + [0xFFFF]
@@ -177,16 +177,16 @@ def apply(rom: bytearray, alloc):
         raw_name = en_by_idx[idx]
         role = role_by_idx.get(idx)
         if role == "surname":
-            # Initiale du nom de famille suivie d'un point : "N." (1 tuile 16x16)
+            # Surname initial followed by a period: "N." (one 16x16 tile)
             text = f"{raw_name[0].upper()}."
             a = intern(encode(text, trailing_space=False))
         else:
-            # Prénom : max 7 caractères pour garantir que Prénom + " N." <= 10 caractères
+            # Given name: max 7 characters so that given name + " N." <= 10 characters
             if idx < 227 and len(raw_name) > 7:
                 text = raw_name[:7]
             else:
                 text = raw_name
-            # trailing_space=True assure qu'une espace sépare le prénom de l'initiale dans le HUD
+            # trailing_space=True ensures a space separates the given name from the initial in the HUD
             a = intern(encode(text, trailing_space=True))
         _write_ptr(rom, NAME_TBL, e, POOL_BANK, a)
         n_entries += 1

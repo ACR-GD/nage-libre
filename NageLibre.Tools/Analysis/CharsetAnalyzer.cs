@@ -88,7 +88,7 @@ public static class CharsetAnalyzer
     return ink;
   }
 
-  /// <summary>Heuristique grossière : syllabaires simples vs kanji denses vs ponctuation.</summary>
+  /// <summary>Rough heuristic: simple syllabaries vs dense kanji vs punctuation.</summary>
   public static string ClassifyGlyph(int inkPixels) => inkPixels switch
   {
     < 25 => "sparse",
@@ -126,16 +126,16 @@ public static class CharsetAnalyzer
     var lines = new List<string>
     {
       "metric,value,notes",
-      $"font_banks,{banks.Count},Région ROM 0x20000-0x40000",
+      $"font_banks,{banks.Count},ROM region 0x20000-0x40000",
       $"total_glyphs,{list.Count},",
-      $"vram_tile_bias,0x{VramTileBias:X},tuile_VRAM = index + 0xFB",
+      $"vram_tile_bias,0x{VramTileBias:X},VRAM_tile = index + 0xFB",
       $"category_sparse,{byCat.GetValueOrDefault("sparse")},",
       $"category_syllabary_latin,{byCat.GetValueOrDefault("syllabary_latin")},Probable hiragana/katakana/ASCII",
       $"category_kana_kanji_light,{byCat.GetValueOrDefault("kana_kanji_light")},",
       $"category_kanji_dense,{byCat.GetValueOrDefault("kanji_dense")},Probable kanji",
       "hiragana_complete_expected,~86,Standard gojuon minus obsolete",
       "katakana_complete_expected,~86,",
-      "encoding_text,byte_vram_tile_id,Texte utilise l'ID tuile (ex. 0x8D XX ou byte direct)",
+      "encoding_text,byte_vram_tile_id,Text uses the tile ID (e.g. 0x8D XX or a direct byte)",
     };
 
     for (int i = 0; i < banks.Count; i++)

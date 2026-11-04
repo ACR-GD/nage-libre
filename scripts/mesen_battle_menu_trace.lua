@@ -1,33 +1,33 @@
 --[[
-  Nage Libre — trace MENU DE COMBAT v2 (Mesen2)
-  But : trouver la ROUTINE + la SOURCE qui composent le menu de commandes.
+  Nage Libre — BATTLE MENU trace v2 (Mesen2)
+  Goal: find the ROUTINE + the SOURCE that build the command menu.
 
-  Ce qu'on sait (dumps VRAM/WRAM analysés) :
-    - Le menu est sur BG3 (tilemap VRAM mot $7C00). La tilemap est d'abord
-      ASSEMBLÉE dans un buffer shadow WRAM $7E:4000+ (les lignes du menu y sont
-      à $7E:406E+), puis DMA'd en VRAM.
-    - Les glyphes des commandes (待機/攻撃/…) sont des tuiles de POLICE COMBAT
-      assemblées dans un buffer shadow WRAM $7E:2000+ (tuile N à $7E:2000+N*16).
-      Les commandes occupent les tuiles ~$90..$E4. Ces glyphes sont COPIÉS depuis
-      la police kanji principale (ROM) — il existe donc une LISTE source (IDs /
-      offsets) qui pilote la copie. C'est cette liste qu'on cherche.
+  What we know (from the analysed VRAM/WRAM dumps):
+    - The menu is on BG3 (VRAM tilemap word $7C00). The tilemap is first
+      ASSEMBLED in a WRAM shadow buffer at $7E:4000+ (the menu lines are
+      at $7E:406E+), then DMA'd to VRAM.
+    - The command glyphs (待機/攻撃/…) are BATTLE FONT tiles
+      assembled in a WRAM shadow buffer at $7E:2000+ (tile N at $7E:2000+N*16).
+      The commands use tiles ~$90..$E4. These glyphs are COPIED from
+      the main kanji font (ROM), so there is a source LIST (IDs /
+      offsets) that drives the copy. That list is what we're looking for.
 
-  Méthode :
-    - On suit le PC courant via un callback exec (emu.getState() ne marche pas
-      dans un callback d'écriture sur ce Mesen2).
-    - On logue les écritures CPU dans :
-        * le buffer de police   $7E:2100..$7E:2E50  (tuiles $90..$E4)
-        * le shadow tilemap BG3 $7E:4040..$7E:4280  (lignes du menu)
-      avec le PC, A/X/Y/DP/DB. Le pointeur source apparaît dans X ou Y.
+  Method:
+    - We track the current PC through an exec callback (emu.getState() doesn't work
+      inside a write callback on this Mesen2).
+    - We log CPU writes to:
+        * the font buffer        $7E:2100..$7E:2E50  (tiles $90..$E4)
+        * the BG3 tilemap shadow $7E:4040..$7E:4280  (menu lines)
+      with the PC, A/X/Y/DP/DB. The source pointer shows up in X or Y.
 
-  Usage :
-    1. Charger nl-full-en.sfc, entrer en combat, AVANT d'ouvrir le menu COMMAND.
-    2. Script Window → Load → ce fichier → Run.
-    3. Ouvrir le menu de commandes.
-    4. M'envoyer  mesen_dumps/battle_menu_trace.log
+  Usage:
+    1. Load nl-full-en.sfc, enter a battle, BEFORE opening the COMMAND menu.
+    2. Script Window → Load → this file → Run.
+    3. Open the command menu.
+    4. Send me  mesen_dumps/battle_menu_trace.log
 
-  Note perf : le suivi du PC instrumente chaque instruction → l'émulation peut
-  ralentir. C'est normal ; il suffit d'ouvrir le menu une fois.
+  Performance note: tracking the PC instruments every instruction → emulation may
+  slow down. That's normal; opening the menu once is enough.
 ]]
 
 local LOG_PATH = "/Users/acr/Develop/nage-libre/mesen_dumps/battle_menu_trace.log"
@@ -35,15 +35,15 @@ local MAX_LINES = 6000
 
 local CB  = emu.callbackType or emu.memCallbackType
 
--- Plages WRAM (adresses bus CPU 24 bits) à surveiller en écriture.
+-- WRAM ranges (24-bit CPU bus addresses) to watch for writes.
 local WATCH = {
-  {0x7E2100, 0x7E2E50, "FONT"},   -- buffer police combat, tuiles $90..$E4
-  {0x7E4040, 0x7E4280, "MAP"},    -- shadow tilemap BG3, fenêtre du menu
+  {0x7E2100, 0x7E2E50, "FONT"},   -- battle font buffer, tiles $90..$E4
+  {0x7E4040, 0x7E4280, "MAP"},    -- BG3 tilemap shadow, menu window
 }
 
 local fileHandle = io.open(LOG_PATH, "w")
 local lineCount = 0
-local curPC = 0          -- mis à jour à chaque instruction (léger)
+local curPC = 0          -- updated on every instruction (cheap)
 local frame = 0
 
 local function logline(s)
@@ -54,13 +54,13 @@ end
 local function stop()
   lineCount = lineCount + 1
   if lineCount >= MAX_LINES and fileHandle then
-    logline(string.format("=== MAX_LINES (%d) — arrêt ===", MAX_LINES))
+    logline(string.format("=== MAX_LINES (%d) — stopping ===", MAX_LINES))
     fileHandle:close(); fileHandle = nil
   end
 end
 
--- Suivi du PC : exec sur tout l'espace. ON NE FAIT QUE mémoriser l'adresse
--- (pas de emu.getState() ici sinon l'émulation rame énormément).
+-- PC tracking: exec over the whole address space. We ONLY store the address
+-- (no emu.getState() here, otherwise emulation slows to a crawl).
 local function onExec(addr)
   curPC = addr
 end
@@ -68,8 +68,8 @@ end
 local function mkWriteCb(tag)
   return function(addr, value)
     if fileHandle == nil then return end
-    -- emu.getState() peut renvoyer un état vide dans un write cb sur ce Mesen2 ;
-    -- on tente quand même pour récupérer X/Y (= pointeur source) si possible.
+    -- emu.getState() can return an empty state in a write cb on this Mesen2;
+    -- we try anyway, to get X/Y (= source pointer) if possible.
     local x, y, a = -1, -1, -1
     local st = emu.getState()
     if st and st.cpu then a = st.cpu.a or -1; x = st.cpu.x or -1; y = st.cpu.y or -1 end
@@ -82,10 +82,10 @@ end
 
 local function onFrame() frame = frame + 1 end
 
-logline("=== Nage Libre — trace MENU DE COMBAT v2 ===")
+logline("=== Nage Libre — BATTLE MENU trace v2 ===")
 logline("Log: "..LOG_PATH)
 
--- exec global pour capturer le PC (emu.getState marche ici, pas dans un write cb)
+-- global exec to capture the PC (emu.getState works here, not in a write cb)
 emu.addMemoryCallback(onExec, CB.exec, 0x000000, 0xFFFFFF)
 
 for _, w in ipairs(WATCH) do
@@ -94,4 +94,4 @@ for _, w in ipairs(WATCH) do
 end
 emu.addEventCallback(onFrame, emu.eventType.startFrame)
 
-logline("Actif. Ouvrir le menu COMMAND, puis m'envoyer le log.")
+logline("Active. Open the COMMAND menu, then send me the log.")

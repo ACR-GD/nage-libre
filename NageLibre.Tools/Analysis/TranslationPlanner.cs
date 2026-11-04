@@ -37,16 +37,16 @@ public static class TranslationPlanner
         var lines = new List<string>
         {
             "metric,value,notes",
-            $"unique_unicode_chars,{inv.UniqueChars},Après mapping unicode partiel (sinon utiliser glyph_ids)",
-            $"hiragana_unique,{inv.Hiragana},Attendu ~46-86 si complet",
-            $"katakana_unique,{inv.Katakana},Attendu ~46-86 si complet",
-            $"kanji_unique,{inv.Kanji},Sous-ensemble jeu (~{glyphCount} glyphes ROM)",
-            $"ascii_unique,{inv.Ascii},Chiffres / Latin dans dialogue",
-            $"font_glyphs_rom,{glyphCount},Tuiles 16x16 en ROM",
-            "hiragana_complete_in_font,unknown,Vérifier charset_atlas.bmp",
-            "katakana_complete_in_font,unknown,Vérifier charset_atlas.bmp",
-            "repack_strategy,replace_glyph_bytes_same_length,Conserver FF/FE et longueur octets",
-            "space_saving,remove_kanji_banks,Repointer scripts après suppression banques 12-19",
+            $"unique_unicode_chars,{inv.UniqueChars},After partial Unicode mapping (otherwise use glyph_ids)",
+            $"hiragana_unique,{inv.Hiragana},Expected ~46-86 if complete",
+            $"katakana_unique,{inv.Katakana},Expected ~46-86 if complete",
+            $"kanji_unique,{inv.Kanji},Game subset (~{glyphCount} ROM glyphs)",
+            $"ascii_unique,{inv.Ascii},Digits / Latin in dialogue",
+            $"font_glyphs_rom,{glyphCount},16x16 tiles in ROM",
+            "hiragana_complete_in_font,unknown,Check charset_atlas.bmp",
+            "katakana_complete_in_font,unknown,Check charset_atlas.bmp",
+            "repack_strategy,replace_glyph_bytes_same_length,Keep FF/FE and the byte length",
+            "space_saving,remove_kanji_banks,Repoint scripts after removing banks 12-19",
         };
         File.WriteAllLines(path, lines, Encoding.UTF8);
     }
@@ -56,9 +56,9 @@ public static class TranslationPlanner
         var lines = new List<string>
         {
             "region,rom_start,rom_end,size_bytes,freeable_for_translation,notes",
-            "font_kanji_banks,0x033010,0x03E700,~45000,true,Banques 14-19 ~kanji denses",
-            "font_duplicate_banks,0x050000,0x180000,variable,partial,VRAM tiles aussi en gfx — prudence",
-            "script_bank84,0x020000,0x040000,131072,false,Repointer si texte déplacé",
+            "font_kanji_banks,0x033010,0x03E700,~45000,true,Banks 14-19 ~dense kanji",
+            "font_duplicate_banks,0x050000,0x180000,variable,partial,VRAM tiles also in gfx — careful",
+            "script_bank84,0x020000,0x040000,131072,false,Repoint if the text moves",
             "rom_total,0x000000,0x180000,1572864,false,LoROM 1.5MB",
         };
         File.WriteAllLines(path, lines, Encoding.UTF8);

@@ -1,8 +1,8 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0000,9,22,あいぃけっスュ,Aikesshu
-0x002E,16,17,ねえ、ドアを開ける方知ってる　,"Hey, do you know how to open the door?"
+0x0000,9,22,あいぃけっぷィスュ,Aikesshu
+0x002E,16,17,ねえ、ドアを開ける方法知ってる？,"Hey, do you know how to open the door?"
 0x0052,18,19,ねえねえ‼      ドア開けてよ‼,"Hey, hey!! Open the door!!"
-0x007A,27,28,あなた、       ドア開ける方    知らない　,You don't know who opens the door.
-0x00B4,20,21,あのドアどうやったら 開くんでしょうか　,How do I open that door?
-0x00E0,42,43,すいません、     学に人りたいので  ドアを 開けて    いただけませんか　,"Excuse me, I'd like to enter the school, could you please open the door?"
-0x0138,19,31,も人れなくって   ってんのよっ‼,There's absolutely no one there!!
+0x007A,27,28,あなた、       ドア開ける方法    知らない？,Do you know how to open the door?
+0x00B4,20,21,あのドアどうやったら 開くんでしょうか？,"How do we open that door, I wonder?"
+0x00E0,42,43,すいません、     学校に入りたいので  ドアを 開けて    いただけませんか？,"Excuse me, could you open the door? I need to get in."
+0x0138,19,31,私も入れなくって   困ってんのよっ‼,"I can't get in either, and it's driving me crazy!!"

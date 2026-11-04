@@ -1,34 +1,34 @@
 #!/usr/bin/env python3
 """
-Traduction du MENU DE COMMANDE en combat (待機/攻撃/アイテム/交換/ポケベル/アニメ/
-セーブ) de Nage Libre — par HOOK runtime (aucune édition de police permanente).
+Translation of the BATTLE COMMAND MENU (待機/攻撃/アイテム/交換/ポケベル/アニメ/
+セーブ) of Nage Libre, through a runtime HOOK (no permanent font editing).
 
-Contexte (voir docs/combat_menu_text.md) :
-  - Le menu est dessiné par le moteur de texte commun banque $80 (enveloppe
-    $80:F8D8 = `JSR $F8DC ; RTL`, appelée par `JSL $80F8D8`). Le moteur décode un
-    flux de glyphes COMPRESSÉ et assemble les glyphes dans un buffer de police
-    WRAM, EN ORDRE DE DESSIN : la tuile d'indice T est à $7E:2000 + (T-$80)*16.
-  - Les 7 commandes occupent des indices de tuile STABLES (top/bottom) :
+Context (see docs/combat_menu_text.md):
+  - The menu is drawn by the shared text engine in bank $80 (wrapper
+    $80:F8D8 = `JSR $F8DC ; RTL`, called by `JSL $80F8D8`). The engine decodes a
+    COMPRESSED glyph stream and assembles the glyphs into a WRAM font buffer,
+    IN DRAWING ORDER: the tile with index T is at $7E:2000 + (T-$80)*16.
+  - The 7 commands use STABLE tile indexes (top/bottom):
         待機=90-94/A0-A4  攻撃=B5-B9/C5-C9  アイテム=95-99/A5-A9
         交換=9A-9E/AA-AE  ポケベル=B0-B4/C0-C4  アニメ=D0-D4/E0-E4  セーブ=BA-BE/CA-CE
-  - Ce buffer est ensuite DMA'd en VRAM (BG3, char base $A000). La tilemap BG3
-    référence ces indices.
+  - This buffer is then DMA'd to VRAM (BG3, char base $A000). The BG3 tilemap
+    references those indexes.
 
-Stratégie : on détourne la SORTIE du renderer $80:F902 (`REP #$30 ; PLY ; PLX`,
-juste avant `PLA ; PLP ; RTS`) en `JML $80:FA80`. AINSI tout appel à $F8DC est
-intercepté (peu importe le chemin d'appel : enveloppe $F8D8 ou JSR direct), juste
-après la (re)construction du buffer de police et avant le DMA→VRAM (NMI). Notre
-code rejoue les instructions écrasées, puis — si la signature du menu est présente
-dans le buffer de police — recopie nos bitmaps de LETTRES anglaises (embarqués en
-ROM, banque $80) par-dessus les tuiles de glyphe des commandes (MVN ROM→WRAM).
-Lettre dans la tuile du HAUT, tuile du bas vidée. Enfin il rejoue l'épilogue
-original (PLY PLX PLA PLP RTS).
+Strategy: we redirect the EXIT of the $80:F902 renderer (`REP #$30 ; PLY ; PLX`,
+right before `PLA ; PLP ; RTS`) to `JML $80:FA80`. THIS WAY every call to $F8DC is
+intercepted (whatever the call path: the $F8D8 wrapper or a direct JSR), right
+after the font buffer is (re)built and before the DMA→VRAM (NMI). Our
+code replays the overwritten instructions, then, if the menu's signature is in
+the font buffer, copies our English LETTER bitmaps (embedded in
+ROM, bank $80) over the commands' glyph tiles (MVN ROM→WRAM).
+Letter in the TOP tile, bottom tile cleared. Finally it replays the original
+epilogue (PLY PLX PLA PLP RTS).
 
-Limite : 5 tuiles (8px) par commande → 5 lettres max. `攻撃` rendu **FIGHT**
-(ATTACK = 6 ne tient pas).
+Limit: 5 tiles (8px) per command → 5 letters max. `攻撃` becomes **FIGHT**
+(ATTACK = 6 letters doesn't fit).
 
-Usage : python3 build_combat_command_menu.py        # patche nl-full-en.sfc
-        (ou importé : apply(rom) depuis build_full_translation.py)
+Usage: python3 build_combat_command_menu.py        # patches nl-full-en.sfc
+        (or imported: apply(rom) from build_full_translation.py)
 """
 from pathlib import Path
 
@@ -37,32 +37,32 @@ from patch_prologue_v3 import FONT, _rows_to_2bpp, fix_checksum
 ROOT = Path(__file__).parent
 OUT = ROOT / "nl-full-en.sfc"
 
-# --- Implantation ---
-HOOK_FILE = 0x07A80           # offset fichier de $80:FA80 (zone libre ~1283 o de FF)
-HOOK_SNES = 0xFA80            # adresse $80:FA80
-FREE_END_FILE = 0x07F80       # fin de la zone libre
-# Point de détournement : SORTIE du renderer $80:F902 (`C2 30 7A FA` =
-# REP #$30 ; PLY ; PLX). On écrase 4 octets par `JML $80:FA80`.
+# --- Layout ---
+HOOK_FILE = 0x07A80           # file offset of $80:FA80 (free area of ~1283 FF bytes)
+HOOK_SNES = 0xFA80            # address $80:FA80
+FREE_END_FILE = 0x07EE0       # end of the free area (scene line-break hook at $80:FEE0)
+# Detour point: EXIT of the $80:F902 renderer (`C2 30 7A FA` =
+# REP #$30 ; PLY ; PLX). We overwrite 4 bytes with `JML $80:FA80`.
 EXIT_FILE = 0x07902
 EXIT_ORIG = bytes([0xC2, 0x30, 0x7A, 0xFA])      # REP #$30 ; PLY ; PLX
 EXIT_NEW = bytes([0x5C, HOOK_SNES & 0xFF, (HOOK_SNES >> 8) & 0xFF, 0x80])  # JML $80:FA80
-# Au cas où une build précédente aurait détourné l'enveloppe $80:F8D8 : on la
-# restaure à l'origine.
+# In case a previous build redirected the $80:F8D8 wrapper: we
+# restore it to the original.
 WRAP_FILE = 0x078D8
 WRAP_ORIG = bytes([0x20, 0xDC, 0xF8, 0x6B])      # JSR $F8DC ; RTL
 WRAP_OLDHOOK = bytes([0x5C, HOOK_SNES & 0xFF, (HOOK_SNES >> 8) & 0xFF, 0x80])
 
-# Buffer de police WRAM (banque $7E) : tuile T → 0x2000 + (T-0x80)*16
+# WRAM font buffer (bank $7E): tile T → 0x2000 + (T-0x80)*16
 def dst_off(tile):
     return 0x2000 + (tile - 0x80) * 16
 
-# Signatures (buffer de police, banque $7E) : présentes uniquement quand le menu
-# de combat est rendu.  待 (tuile $90 → $7E:2100) mot@+4 == $3718 ;
-# 攻 (tuile $B5 → $7E:2350) mot@+6 == $7E01.
+# Signatures (font buffer, bank $7E): only present when the battle menu
+# is rendered.  待 (tile $90 → $7E:2100) word@+4 == $3718 ;
+# 攻 (tile $B5 → $7E:2350) word@+6 == $7E01.
 SIG1_ADDR, SIG1_VAL = 0x2104, 0x3718
 SIG2_ADDR, SIG2_VAL = 0x2356, 0x7E01
 
-# (tuiles_haut, tuiles_bas, mot)  — mot ≤ 5 lettres
+# (top_tiles, bottom_tiles, word)  — word ≤ 5 letters
 CMDS = [
     ([0x90, 0x91, 0x92, 0x93, 0x94], [0xA0, 0xA1, 0xA2, 0xA3, 0xA4], "WAIT"),
     ([0xB5, 0xB6, 0xB7, 0xB8, 0xB9], [0xC5, 0xC6, 0xC7, 0xC8, 0xC9], "FIGHT"),
@@ -75,12 +75,12 @@ CMDS = [
 
 BLANK_TILE = bytes(16)
 def letter_tile_data(c):
-    return _rows_to_2bpp(FONT[c][0])   # demi-haut 8x8 de la lettre
+    return _rows_to_2bpp(FONT[c][0])   # top 8x8 half of the letter
 
 
 def build_plan():
-    """Retourne (tiles, copies) : tiles = liste de tuiles 16 o dédupliquées ;
-    copies = liste de (tile_index, dst_off)."""
+    """Returns (tiles, copies): tiles = list of deduplicated 16-byte tiles;
+    copies = list of (tile_index, dst_off)."""
     tiles, idx_of = [], {}
     def ti(data):
         if data not in idx_of:
@@ -100,17 +100,18 @@ def build_plan():
     return tiles, copies
 
 
-def assemble():
-    """Assemble hook + données. Retourne les octets à écrire à HOOK_FILE."""
+def assemble(pager=None):
+    """Assembles hook + data. Returns the bytes to write at HOOK_FILE.
+    `pager` = build_pager_menu.hook_params(): "PAGER block" branch (if given)."""
     tiles, copies = build_plan()
 
-    # Le code a une taille FIXE (LDX/LDY/LDA immédiats = 3 o, MVN = 3 o), donc on
-    # peut calculer l'adresse des données avant de remplir les opérandes.
+    # The code has a FIXED size (immediate LDX/LDY/LDA = 3 bytes, MVN = 3 bytes), so we
+    # can compute the data address before filling in the operands.
     def build_code(data_base):
         c = bytearray()
-        # On arrive ici à la place de `REP #$30 ; PLY ; PLX` (instr. écrasées).
-        c += bytes([0xC2, 0x30])                   # REP #$30  (rejoué)
-        # A/X/Y seront restaurés depuis la pile à la fin → libres à clobber ici.
+        # We get here in place of `REP #$30 ; PLY ; PLX` (overwritten instructions).
+        c += bytes([0xC2, 0x30])                   # REP #$30  (replayed)
+        # A/X/Y will be restored from the stack at the end → free to clobber here.
         c += bytes([0xAF, SIG1_ADDR & 0xFF, (SIG1_ADDR >> 8) & 0xFF, 0x7E])  # LDA $7E:SIG1
         c += bytes([0xC9, SIG1_VAL & 0xFF, (SIG1_VAL >> 8) & 0xFF])          # CMP #SIG1
         c += bytes([0xF0, 0x03])                   # BEQ +3
@@ -119,62 +120,102 @@ def assemble():
         c += bytes([0xC9, SIG2_VAL & 0xFF, (SIG2_VAL >> 8) & 0xFF])          # CMP #SIG2
         c += bytes([0xF0, 0x03])                   # BEQ +3
         j2 = len(c); c += bytes([0x4C, 0x00, 0x00])# JMP done
-        c += bytes([0x8B])                          # PHB  (MVN écrase DBR)
+        c += bytes([0x8B])                          # PHB  (MVN overwrites DBR)
         for tile_i, dst in copies:
-            src = data_base + tile_i * 16          # adresse 16-bit (banque $80)
+            src = data_base + tile_i * 16          # 16-bit address (bank $80)
             c += bytes([0xA2, src & 0xFF, (src >> 8) & 0xFF])   # LDX #src
             c += bytes([0xA0, dst & 0xFF, (dst >> 8) & 0xFF])   # LDY #dst
             c += bytes([0xA9, 0x0F, 0x00])                       # LDA #$000F
             c += bytes([0x54, 0x7E, 0x80])                       # MVN dest=$7E,src=$80
         c += bytes([0xAB])                          # PLB
+        jd = len(c); c += bytes([0x4C, 0x00, 0x00])# JMP done
+        # PAGER block (WHO / order windows): the code lives in bank $BF next to
+        # its tiles (not enough room here) -> a plain JML there and back.
+        pager_at = len(c)
+        if pager:
+            e = pager["code_snes"]
+            c += bytes([0x5C, e & 0xFF, (e >> 8) & 0xFF, e >> 16])   # JML $BF:code
         done = len(c)
-        # Épilogue original rejoué : PLY PLX PLA PLP RTS
+        # Original epilogue replayed: PLY PLX PLA PLP RTS
         c += bytes([0x7A, 0xFA, 0x68, 0x28, 0x60])
         done_snes = HOOK_SNES + done
+        pager_snes = HOOK_SNES + pager_at
         for j in (j1, j2):
+            c[j + 1] = pager_snes & 0xFF; c[j + 2] = (pager_snes >> 8) & 0xFF
+        for j in [jd]:
             c[j + 1] = done_snes & 0xFF; c[j + 2] = (done_snes >> 8) & 0xFF
+        build_code.done_snes = done_snes
         return c
 
-    code_len = len(build_code(0))                  # taille fixe
+    code_len = len(build_code(0))                  # fixed size
     data_base = HOOK_SNES + code_len
     code = build_code(data_base)
     assert len(code) == code_len
     blob = bytes(code) + b"".join(tiles)
-    return blob
+    return blob, 0x800000 | build_code.done_snes
 
 
-def apply(rom: bytearray):
-    # Restaure l'enveloppe $80:F8D8 si une build précédente l'avait détournée.
+def assemble_pager(pager, done_long):
+    """PAGER branch (bank $BF): signatures of the $A1:8FC7 block in the font
+    buffer, then MVN of the English tiles; returns to the hook's epilogue."""
+    c = bytearray()
+    pj = []
+    for addr, val in pager["sigs"]:
+        c += bytes([0xAF, addr & 0xFF, (addr >> 8) & 0xFF, 0x7E])  # LDA $7E:sig
+        c += bytes([0xC9, val & 0xFF, (val >> 8) & 0xFF])          # CMP #sig
+        c += bytes([0xF0, 0x04])                                   # BEQ +4
+        pj.append(len(c)); c += bytes(4)                           # JML done
+    src, dst, n = pager["src"], pager["dst"], pager["len"] - 1
+    c += bytes([0x8B])                                             # PHB
+    c += bytes([0xA2, src & 0xFF, (src >> 8) & 0xFF])              # LDX #src
+    c += bytes([0xA0, dst & 0xFF, (dst >> 8) & 0xFF])              # LDY #dst
+    c += bytes([0xA9, n & 0xFF, (n >> 8) & 0xFF])                  # LDA #len-1
+    c += bytes([0x54, 0x7E, pager["src_bank"]])                    # MVN $7E,src
+    c += bytes([0xAB])                                             # PLB
+    pj.append(len(c)); c += bytes(4)                               # JML done
+    for j in pj:
+        c[j:j + 4] = bytes([0x5C, done_long & 0xFF, (done_long >> 8) & 0xFF, done_long >> 16])
+    return bytes(c)
+
+
+def apply(rom: bytearray, pager=None):
+    # Restore the $80:F8D8 wrapper if a previous build had redirected it.
     if rom[WRAP_FILE:WRAP_FILE + 4] == WRAP_OLDHOOK:
         rom[WRAP_FILE:WRAP_FILE + 4] = WRAP_ORIG
 
-    blob = assemble()
+    blob, done_long = assemble(pager)
     if HOOK_FILE + len(blob) > FREE_END_FILE:
-        raise SystemExit(f"Dépassement zone libre $80 : {len(blob)} o "
-                         f"(dispo {FREE_END_FILE - HOOK_FILE} o).")
+        raise SystemExit(f"Free area $80 overflow: {len(blob)} bytes "
+                         f"(available {FREE_END_FILE - HOOK_FILE} bytes).")
     rom[HOOK_FILE:HOOK_FILE + len(blob)] = blob
+    if pager:
+        code = assemble_pager(pager, done_long)
+        f = pager["code_file"]
+        if any(b not in (0x00, 0xFF) for b in rom[f:f + len(code)]):
+            raise SystemExit(f"PAGER code area (file {f:#x}) already in use.")
+        rom[f:f + len(code)] = code
 
     cur = rom[EXIT_FILE:EXIT_FILE + 4]
     if cur == EXIT_NEW:
-        return True                                # déjà détourné (bloc réécrit ci-dessus)
+        return True                                # already redirected (block rewritten above)
     if cur != EXIT_ORIG:
-        raise SystemExit(f"$80:F902 inattendu : {cur.hex()} (attendu {EXIT_ORIG.hex()})")
+        raise SystemExit(f"Unexpected $80:F902: {cur.hex()} (expected {EXIT_ORIG.hex()})")
     rom[EXIT_FILE:EXIT_FILE + 4] = EXIT_NEW
     return True
 
 
 def main():
     if not OUT.is_file():
-        raise SystemExit(f"{OUT.name} introuvable — lancer build_full_translation.py")
+        raise SystemExit(f"{OUT.name} not found — run build_full_translation.py")
     rom = bytearray(OUT.read_bytes())
     apply(rom)
     fix_checksum(rom)
     OUT.write_bytes(rom)
     blob = assemble()
-    print(f"Écrit : {OUT.name}")
-    print(f"  hook menu combat : {len(blob)} o @ $80:{HOOK_SNES:04X} "
-          f"(dispo {FREE_END_FILE - HOOK_FILE} o)")
-    print("  commandes : " + " / ".join(w for _, _, w in CMDS))
+    print(f"Written: {OUT.name}")
+    print(f"  battle menu hook: {len(blob)} bytes @ $80:{HOOK_SNES:04X} "
+          f"(available {FREE_END_FILE - HOOK_FILE} bytes)")
+    print("  commands: " + " / ".join(w for _, _, w in CMDS))
 
 
 if __name__ == "__main__":

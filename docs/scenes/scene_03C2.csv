@@ -1,5 +1,5 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
-0x0000,7,11,いぃううどう,Iiiiudo
-0x0018,33,34,ここで侍すると   体力が回するんだ‼ わーい‼ うれしいな‼,"If I samurai here, my stamina will recover!! Yay!! I'm so happy!!"
-0x005E,44,45,の上で侍すると  体力が回するみたいさっそく       みんなに教えようっと‼,It seems like samurai training on top of it really boosts your stamina! I'll have to tell everyone right away!!
-0x00BA,41,31,体力が回してく……の力かしら　    でも…をふみつぶしていいのかしらね　,Is it the power of my stamina that's driving me...? But...is it really okay to trample on it?
+0x0000,7,11,いぃううどうウ,Iiiiudo
+0x0018,33,34,ここで待機すると   体力が回復するんだ‼ わーい‼ うれしいな‼,Waiting here restores stamina!! Yay!! I'm so happy!!
+0x005E,44,45,花の上で待機すると  体力が回復するみたい♥さっそく       みんなに教えようっと‼,Waiting on flowers restores stamina! I'll tell everyone!!
+0x00BA,41,31,体力が回復してゆく……花の力かしら？    でも…花をふみつぶしていいのかしらね？,Stamina's back... from the flowers? Can I step on them?

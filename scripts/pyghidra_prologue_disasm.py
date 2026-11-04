@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""PyGhidra: désassemble les routines du prologue (Bank $87 / $80)."""
+"""PyGhidra: disassembles the prologue routines (Bank $87 / $80)."""
 import os
 from pathlib import Path
 

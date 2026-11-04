@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Pré-remplit docs/kanji_manual.csv avec une première passe de lecture de l'atlas.
+"""Pre-fills docs/kanji_manual.csv with a first reading pass of the atlas.
 
-Ne remplit que les glyphes lus avec une confiance raisonnable (kana, ponctuation,
-kanji clairs). Les glyphes ambigus restent vides (à compléter à la main).
+Only fills in the glyphs read with reasonable confidence (kana, punctuation,
+clear kanji). Ambiguous glyphs stay empty (to complete by hand).
 """
 import csv
 from pathlib import Path
@@ -10,9 +10,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 MANUAL = ROOT / "docs" / "kanji_manual.csv"
 
-# char_id (hex int) -> caractère lu sur l'atlas (première passe)
+# char_id (hex int) -> character read from the atlas (first pass)
 READ = {
-    # --- ponctuation / parenthèses ---
+    # --- punctuation / brackets ---
     0x02FA: "、", 0x02F8: "。", 0x02E6: "「", 0x02E8: "」",
     # --- hiragana ---
     0x0094: "も", 0x00AC: "わ", 0x004E: "ち", 0x0046: "そ", 0x0026: "き",
@@ -21,11 +21,11 @@ READ = {
     0x0044: "ぜ", 0x002C: "ぐ", 0x0028: "ぎ", 0x0056: "づ", 0x006E: "ぱ",
     0x0098: "ゃ", 0x0090: "ぁ", 0x0072: "び", 0x0076: "ふ", 0x0078: "ぶ",
     0x007C: "へ", 0x0012: "ぃ", 0x0016: "ぅ",
-    # --- petit katakana ---
+    # --- small katakana ---
     0x0138: "ュ",
     # --- katakana ---
     0x00FA: "テ", 0x00D4: "コ", 0x00F0: "チ", 0x0102: "ナ",
-    # --- kanji (confiance haute) ---
+    # --- kanji (high confidence) ---
     0x0318: "何", 0x034A: "行", 0x03BC: "人", 0x0206: "入", 0x0250: "来",
     0x0308: "倒", 0x033E: "言", 0x0324: "見", 0x0340: "今", 0x0348: "出",
     0x0316: "気", 0x0304: "全", 0x0188: "回", 0x01AC: "手", 0x0214: "勝",
@@ -63,7 +63,7 @@ def main():
         w = csv.DictWriter(f, fieldnames=["rank", "char_id_hex", "occ", "unicode"])
         w.writeheader()
         w.writerows(rows)
-    print(f"{n} glyphes pré-remplis sur {len(READ)} proposés ; CSV mis à jour.")
+    print(f"{n} glyphs pre-filled out of {len(READ)} proposed; CSV updated.")
 
 
 if __name__ == "__main__":

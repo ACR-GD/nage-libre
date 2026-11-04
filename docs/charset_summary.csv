@@ -1,5 +1,5 @@
 ﻿metric,value,notes
-font_banks,20,Région ROM 0x20000-0x40000
+font_banks,20,ROM region 0x20000-0x40000
 total_glyphs,1381,
 vram_tile_bias,0xFB,tuile_VRAM = index + 0xFB
 category_sparse,1,

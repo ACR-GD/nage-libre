@@ -7,7 +7,7 @@ After $80:F8D8, replace exactly 30 tilemap entries at $7F:65E2
 This block includes $7F:6602 (offset $0142, words 16–29) but does NOT
 touch $01A2+ (row 2 tilemap / screen-2 preload / border).
 
-See docs/prologue_text_engine.md § Architecture confirmée.
+See docs/prologue_text_engine.en.md § Confirmed architecture.
 """
 from pathlib import Path
 

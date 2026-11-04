@@ -1,9 +1,9 @@
 --[[
-  Sonde : découvre la structure de emu.getState() sur CETTE version de Mesen,
-  pour corriger l'extraction du PC/registres dans les traces.
+  Probe: discovers the structure of emu.getState() on THIS version of Mesen,
+  to fix the PC/register extraction in the traces.
 
-  Usage : Script Window → Load → Run. Le fichier est écrit immédiatement.
-  M'envoyer  mesen_dumps/state_probe.txt
+  Usage: Script Window → Load → Run. The file is written immediately.
+  Send me  mesen_dumps/state_probe.txt
 ]]
 local OUT = "/Users/acr/Develop/nage-libre/mesen_dumps/state_probe.txt"
 local f = io.open(OUT, "w")
@@ -34,10 +34,10 @@ local ok, st = pcall(emu.getState)
 if ok then
   dump(st, "state", 0)
 else
-  w("ERREUR emu.getState(): "..tostring(st))
+  w("ERROR emu.getState(): "..tostring(st))
 end
 
-w("\n=== enums dispo ===")
+w("\n=== available enums ===")
 for _,name in ipairs({"callbackType","memCallbackType","memType","eventType","cpuType"}) do
   local e = emu[name]
   if type(e)=="table" then

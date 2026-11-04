@@ -1,6 +1,6 @@
 namespace NageLibre.Tools.Compression;
 
-/// <summary>Format Nintendo 0x12 (LC_LZ3) — taille 3 octets, décalages 12 bits.</summary>
+/// <summary>Format Nintendo 0x12 (LC_LZ3) — 3-byte size, 12-bit offsets.</summary>
 public static class NintendoLz12
 {
     public static byte[]? TryDecompress(ReadOnlySpan<byte> src)

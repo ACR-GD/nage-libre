@@ -1,6 +1,6 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0000,8,14,いチぃぉぞびびを,Ichi ozobibiwo
-0x001E,19,20,くもりガラスじゃ、  外は見えないね,You can't see outside through frosted glass.
-0x0048,19,20,このガラス      くもってるよぉ‼,This glass is foggy!!
-0x0072,28,29,くもりガラスは    外が見えないから   ヤだなぁ……,I don't like frosted glass because you can't see outside...
-0x00AE,30,31,まどの外には…    …ベに空わったものは見えませんわねぇ,"Outside the window... ...you can't see anything that's been blown away, can you?"
+0x001E,19,20,くもりガラスじゃ、  外は見えないね♪,"Frosted glass, so you can't see outside!"
+0x0048,19,20,このガラス      くもってるよぉ‼,This glass is all cloudy!!
+0x0072,28,29,くもりガラスは    外が見えないから   ヤだなぁ……,I hate frosted glass. Can't see outside...
+0x00AE,30,31,まどの外には…    …ベツに変わったものは見えませんわねぇ,"Outside the window... nothing unusual, it seems."

@@ -1,29 +1,29 @@
 #!/usr/bin/env python3
-"""Injection MULTI-SCÈNES à grande échelle (Nage Libre).
+"""MULTI-SCENE injection at scale (Nage Libre).
 
-Toutes les scènes de dialogue/narration sont décompressées en `$7F:64C0` par
-`$80:F8D8`, appelé depuis l'init narration `$83:80DB`. Juste avant ce JSL
-($83:80FF), le registre **A = scene_idx** (base 0x030F = index de la table de
-pointeurs source $8A:8000). C'est une clé EXACTE, sans collision : on hooke
-$83:80FF, on garde A, on décompresse, puis on recopie les chaînes anglaises de
-la bonne scène à leur offset dans le buffer.
+Every dialogue/narration scene is decompressed to `$7F:64C0` by
+`$80:F8D8`, called from the narration init `$83:80DB`. Right before that JSL
+($83:80FF), register **A = scene_idx** (base 0x030F = index into the source
+pointer table $8A:8000). It's an EXACT key, with no collisions: we hook
+$83:80FF, keep A, decompress, then copy the English strings of the right
+scene to their offset in the buffer.
 
-Sûreté : chaque chaîne anglaise est bornée à `n_ids` (longueur EXACTE de la
-chaîne japonaise d'origine) et terminée par `$FFFF`. Elle reste donc strictement
-dans l'empreinte de la chaîne JP -> jamais de débordement sur le programme
-d'opcodes. Les offsets sont validés (walk d'opcodes : offset « ligne de texte »
-OU offset >= fin du programme) pour rejeter les faux positifs en zone programme.
+Safety: each English string is bounded by `n_ids` (the EXACT length of the
+original Japanese string) and terminated by `$FFFF`. It therefore stays strictly
+within the JP string's footprint -> never overflows into the opcode
+program. Offsets are validated (opcode walk: "text line" offset
+OR offset >= end of program) to reject false positives in the program area.
 
-Table (annuaire scene_idx -> section + données) : trop grosse pour la banque $83
-(~1.8 Ko) -> placée en ROM ÉTENDUE à 2 Mo (banques $B0+, déjà déclarées par
-l'en-tête). Le hook (~130 o) reste en banque $83.
+Table (scene_idx -> section + data directory): too big for bank $83
+(~1.8 KB) -> placed in the ROM EXPANDED to 2 MB (banks $B0+, already declared by
+the header). The hook (~130 bytes) stays in bank $83.
 
-Police : encodeur par paires (2 car./tuile 16x16) avec repli MONO-caractère
-(1 car./tuile) pour les digrammes rares -> tient dans le pool d'IDs partagé quel
-que soit le volume de texte.
+Font: pair encoder (2 chars per 16x16 tile) with a SINGLE-character fallback
+(1 char per tile) for rare digrams -> fits in the shared ID pool whatever
+the amount of text.
 
-apply(rom, alloc) est appelé par build_full_translation.py (allocateur partagé,
-APRÈS menu/noms/clubs pour connaître le budget de police restant).
+apply(rom, alloc) is called by build_full_translation.py (shared allocator,
+AFTER menus/names/clubs so the remaining font budget is known).
 """
 import csv
 import importlib.util
@@ -46,7 +46,7 @@ _spec.loader.exec_module(dp)
 SCENES_DIR = ROOT / "docs" / "scenes"
 ELLIPSIS = 0x02AA
 DEST_BASE = 0x64C0
-SCENE_BASE = 0x030F            # scene_idx du 1er enregistrement de la table
+SCENE_BASE = 0x030F            # scene_idx of the table's 1st record
 
 HOOK_POINT = 0x0180FF          # ROM offset de $83:80FF
 HOOK_BANK = 0x83
@@ -54,12 +54,23 @@ HOOK_ADDR = 0xF8E3
 HOOK_ROM = 0x01F8E3
 FREE83_END = 0x01FFE0
 
-# ROM étendue : annuaire + données en $B0:8000+ (l'en-tête déclare déjà 2 Mo)
+# Expanded ROM: directory + data at $B0:8000+ (the header already declares 2 MB)
 EXP_FILE_START = 0x180000
 EXP_FILE_END = 0x200000
 BANK_SIZE = 0x8000
 
-PAIR_BUDGET_MARGIN = 12        # garde-fou d'IDs de police
+PAIR_BUDGET_MARGIN = 12        # safety margin of font IDs
+
+# Text box geometry per display opcode: (half-width columns,
+# visible rows). Columns = $1144 - $1143 as read in each handler:
+# op01: 8..$1E; op23: 1..$1E; op0B/26/2B/3B: 1..$1F. The box only shows
+# 3 rows (checked in game, op26/op2B: the 4th goes under the bottom border).
+BOX_GEOMETRY = {0x01: (22, 3), 0x0B: (30, 3), 0x23: (29, 3),
+                0x26: (30, 3), 0x2B: (30, 3), 0x3B: (30, 3)}
+DEFAULT_GEOMETRY = (22, 3)     # other opcodes: margins not read, be careful
+# "Portrait box" opcodes: print at the current row then move down
+# one row, without clearing -> consecutive ones = the same box (op13 = per-character variant).
+PORTRAIT_OPS = {0x01, 0x0B, 0x13}
 
 
 def off_to_snes(file_off):
@@ -69,10 +80,11 @@ def off_to_snes(file_off):
 
 
 # ---------------------------------------------------------------------------
-# 1) Validation des offsets par scène (walk d'opcodes du buffer décompressé)
+# 1) Offset validation per scene (opcode walk of the decompressed buffer)
 # ---------------------------------------------------------------------------
 def _scene_validator(rom, src_off):
-    """Renvoie (legit_offsets, prog_end, orig_len) pour une scène décompressée."""
+    """Returns (legit_offsets, prog_end, orig_len, geometry, groups) for a decompressed scene.
+    groups = runs of consecutive portrait opcodes: [[variant offsets…], …]."""
     out, _ = decompress(rom, src_off, dst_limit=0x4000)
     n = len(out)
 
@@ -84,6 +96,7 @@ def _scene_validator(rom, src_off):
     feats = _scene_validator.feats
 
     legit = set()
+    groups, cur = [], []        # shared portrait boxes (see PORTRAIT_OPS)
     pos = 0
     for _ in range(4000):
         opc = word(pos)
@@ -92,10 +105,19 @@ def _scene_validator(rom, src_off):
         size = sizes.get(opc, 0) or 2
         nopr = (size - 2) // 2
         if feats[opc]["textline"] and nopr >= 1:
-            o0 = word(pos + 2)
-            if o0 >= 0x100:
-                legit.add(o0)
+            # a string always follows the opcode that references it (excludes
+            # non-offset operands like op0A #3, keeps strings < $100)
+            offs = [word(pos + 2 + 2 * i) for i in range(nopr if opc == 0x13 else 1)]
+            offs = [o for o in offs if pos < o < n]
+            legit.update(offs)
+            if opc in PORTRAIT_OPS:
+                cur.append(offs)
+        if opc not in PORTRAIT_OPS and cur:
+            groups.append(cur)
+            cur = []
         pos += size
+    if cur:
+        groups.append(cur)
     prog_end = pos
 
     def orig_len(o):
@@ -104,21 +126,34 @@ def _scene_validator(rom, src_off):
             k += 1
         return k
 
-    return legit, prog_end, orig_len
+    def geometry(o):
+        """(cols, max_rows) of the box that shows the string at offset `o`:
+        "text line" opcodes whose 1st operand is `o` (raw scan, since
+        the opcode walk stops early on some scenes)."""
+        ops = {word(q) for q in range(0, min(o, n) - 2, 2)
+               if word(q + 2) == o and feats.get(word(q), {}).get("textline")}
+        # string shared by several boxes: the narrowest wins
+        return min((BOX_GEOMETRY.get(op, DEFAULT_GEOMETRY) for op in ops),
+                   default=DEFAULT_GEOMETRY)
+
+    return legit, prog_end, orig_len, geometry, groups
 
 
 def _init_walk_tables():
     handlers = dp.opcode_handlers()
     _scene_validator.handlers = handlers
     _scene_validator.sizes = {k: dp.opcode_size(v) for k, v in handlers.items()}
+    # op13: one string per character (5 operands), the handler skips $1787-1 words
+    # before and the rest after -> fixed size 12 (automatic derivation gives 6).
+    _scene_validator.sizes[0x13] = 12
     _scene_validator.feats = {k: dp.handler_features(v) for k, v in handlers.items()}
 
 
 # ---------------------------------------------------------------------------
-# 2) Chargement + validation des enregistrements traduits
+# 2) Loading + validating the translated records
 # ---------------------------------------------------------------------------
 def load_scene_records(rom):
-    """{scene_idx: [(offset, en, slot), ...]} pour les scènes traduites valides."""
+    """{scene_idx: [(offset, en, slot, (cols, max_rows)), ...]} for the valid translated scenes."""
     _init_walk_tables()
     tbl = {i: off for i, _snes, off in read_ptr_table(rom, 0x600) if off}
 
@@ -129,7 +164,7 @@ def load_scene_records(rom):
         if src is None or src >= len(rom):
             continue
         try:
-            legit, prog_end, orig_len = _scene_validator(rom, src)
+            legit, prog_end, orig_len, geometry, groups = _scene_validator(rom, src)
         except Exception:
             continue
 
@@ -139,26 +174,61 @@ def load_scene_records(rom):
             if not en:
                 continue
             off = int(r["offset_hex"], 16)
-            # rejette les faux positifs en zone programme (≠ offset de ligne réel)
+            # rejects false positives in the program area (≠ a real line offset)
             if off not in legit and off < prog_end:
                 continue
-            slot = orig_len(off)            # borne sûre = longueur JP d'origine
+            slot = orig_len(off)            # safe bound = original JP length
             if slot < 1:
                 continue
-            recs.append((off, en, slot))
+            recs.append((off, en, slot, geometry(off)))
         if recs:
-            scenes[scene_idx] = recs
+            scenes[scene_idx] = _budget_groups(recs, groups, orig_len)
     return scenes
 
 
+def _budget_groups(recs, groups, orig_len):
+    """Shared box: consecutive portrait opcodes (op01 op01 op01…)
+    write into the SAME box, one string per following row ($1142 += 2),
+    without clearing. So the box's rows are split between the strings
+    (budget = max(3, JP rows of the group)): width cols-2 if everything fits,
+    otherwise cols-1; beyond that, an overflow is reported on the string that exceeds."""
+    by_off = {r[0]: i for i, r in enumerate(recs)}
+    cap = {}
+    for g in groups:
+        if len(g) < 2:
+            continue
+        def cols_of(o):
+            return recs[by_off[o]][3][0] if o in by_off else DEFAULT_GEOMETRY[0]
+        jp_rows = sum(max((-(-2 * orig_len(o) // cols_of(o)) for o in offs), default=0)
+                      for offs in g)
+        budget = max(DEFAULT_GEOMETRY[1], jp_rows)
+
+        def rows(offs, shrink):
+            return max((len(layout_rows(recs[by_off[o]][1], cols_of(o) - shrink)) if o in by_off
+                        else -(-2 * orig_len(o) // cols_of(o)) for o in offs), default=0)
+        per = [rows(offs, 2) for offs in g]
+        if sum(per) > budget:
+            per = [rows(offs, 1) for offs in g]
+        used = 0
+        for offs, n in zip(g, per):
+            allot = n if sum(per) <= budget else max(1, budget - used)
+            used += n
+            for o in offs:
+                cap[o] = min(cap.get(o, allot), allot)
+    out = []
+    for off, en, slot, (cols, max_rows) in recs:
+        out.append((off, en, slot, (cols, cap.get(off, max_rows))))
+    return out
+
+
 # ---------------------------------------------------------------------------
-# 3) Moteur de police matérielle 8x16 native (demi-chasse)
+# 3) Native 8x16 hardware font engine (half-width)
 # ---------------------------------------------------------------------------
 HW_BASE_ID = 0x0500
 HW_HOOK_ADDR = 0xFF10
 HW_HOOK_FILE = 0x7F10
 
-# Table de correspondance caractère -> ID 16-bit
+# Character -> 16-bit ID lookup table
 CHAR_TO_HW_ID = {chr(c): HW_BASE_ID + (c - 32) for c in range(32, 127)}
 CHAR_TO_HW_ID['…'] = HW_BASE_ID + 95
 CHAR_TO_HW_ID['—'] = HW_BASE_ID + 96
@@ -167,7 +237,7 @@ CHAR_TO_HW_ID['□'] = CHAR_TO_HW_ID['?']
 
 
 def encode_hw(text):
-    """Encode une chaîne de texte en IDs demi-chasse (8x16) natifs."""
+    """Encodes a text string as native half-width (8x16) IDs."""
     ids = []
     for ch in text:
         cid = CHAR_TO_HW_ID.get(ch)
@@ -177,72 +247,66 @@ def encode_hw(text):
     return ids
 
 
-def wrap_encode(text, alloc=None, approved=None, max_row_chars=21):
-    """Enveloppe et encode le texte en IDs demi-chasse (8x16) avec sauts de ligne propres ($FFFE).
-    Garantit qu'aucune ligne ne déborde la marge droite ($1144 = 30) et que
-    le moteur SNES ne coupe jamais les mots en deux."""
-    text = text.replace("...", "…")
-    paragraphs = text.split('\n')
-    all_ids = []
-
-    for p_idx, para in enumerate(paragraphs):
-        words = [w for w in para.split(' ') if w]
-        if not words:
-            continue
-
-        def do_wrap(w):
-            rows, cur = [], []
-            for item in words:
-                if len(' '.join(cur + [item])) <= w:
-                    cur.append(item)
-                else:
-                    if cur:
-                        rows.append(' '.join(cur))
-                        cur = [item]
-                    else:
-                        rows.append(item)
-                        cur = []
-            if cur:
-                rows.append(' '.join(cur))
-            return rows
-
-        # 1. w=20 : équilibré et marge sûre (ex: '…Hey, a samurai?!' / 'Why do I have to?!')
-        r20 = do_wrap(20)
-        if len(r20) <= 3:
-            rows = r20
-        else:
-            # 2. w=21 si cela permet de tenir en <= 3 lignes
-            r21 = do_wrap(21)
-            if len(r21) <= 3:
-                rows = r21
+def layout_rows(text, w):
+    """Splits the text into rows of <= `w` characters without breaking words
+    (a word longer than `w` is cut into `w`-sized pieces). '\n' forces a new row."""
+    rows = []
+    for para in text.replace("...", "…").split("\n"):
+        cur = ""
+        for word in para.split():
+            while len(word) > w:
+                if cur:
+                    rows.append(cur)
+                    cur = ""
+                rows.append(word[:w])
+                word = word[w:]
+            if not cur:
+                cur = word
+            elif len(cur) + 1 + len(word) <= w:
+                cur += " " + word
             else:
-                # 3. w=22 si cela permet de tenir en <= 3 lignes
-                r22 = do_wrap(22)
-                if len(r22) <= 3:
-                    rows = r22
-                else:
-                    rows = r21
-
-        for r_idx, row in enumerate(rows):
-            all_ids.extend(encode_hw(row))
-            if r_idx < len(rows) - 1:
-                all_ids.append(NEWLINE_CODE)
-
-        if p_idx < len(paragraphs) - 1:
-            all_ids.append(NEWLINE_CODE)
-
-    return all_ids
+                rows.append(cur)
+                cur = word
+        if cur:
+            rows.append(cur)
+    return rows
 
 
-def encode_fit(text, alloc=None, approved=None, slot=0):
-    """Encode en bornant à `slot` IDs si non relocalisable. Coupe sur frontière de mot."""
-    ids = wrap_encode(text)
+def wrap_rows(text, cols=22, max_rows=3):
+    """Picks the wrapping width: cols-2 then cols-1 (a more balanced right
+    margin first, e.g. '…Hey, a samurai?!' / 'Why do I have to?!'); keeps the
+    first that fits in `max_rows` rows, otherwise the widest (overflow).
+    Never `cols`: a full row triggers the automatic line wrap of the
+    $80:F433 plotter (col >= $1144), and the following $FFFE would leave an empty row."""
+    for w in (cols - 2, cols - 1):
+        rows = layout_rows(text, w)
+        if len(rows) <= max_rows:
+            return rows
+    return rows
+
+
+def wrap_encode(text, cols=22, max_rows=3):
+    """Wraps and encodes the text as half-width (8x16) IDs with clean line breaks ($FFFE).
+    `cols` = box width in half-width chars (op01: $1E-8 = 22), `max_rows` =
+    visible rows. The SNES engine never splits words in two."""
+    rows = wrap_rows(text, cols, max_rows)
+    ids = []
+    for r_idx, row in enumerate(rows):
+        ids.extend(encode_hw(row))
+        if r_idx < len(rows) - 1:
+            ids.append(NEWLINE_CODE)
+    return ids
+
+
+def encode_fit(text, slot=0, cols=22, max_rows=3):
+    """Encodes, bounded to `slot` IDs if the line can't be relocated. Cuts on a word boundary."""
+    ids = wrap_encode(text, cols, max_rows)
     if len(ids) <= slot:
         return ids, False
     words = text.split(" ")
     while len(words) > 1:
         words.pop()
-        cand = wrap_encode(" ".join(words))
+        cand = wrap_encode(" ".join(words), cols, max_rows)
         if len(cand) <= slot:
             return cand, True
     return ids[:slot], True
@@ -256,53 +320,53 @@ NEWLINE_HOOK_FILE = 0x7EE0
 
 
 def assemble_newline_hook():
-    """Hook @ $80:FEE0 interceptant le code de saut de ligne $FFFE pour $80:F433."""
+    """Hook @ $80:FEE0 intercepting the $FFFE line-break code for $80:F433."""
     c = bytearray()
-    # 1. Préserve immédiatement les flags P et force A/XY en 16-bit
+    # 1. Immediately save the P flags and force A/XY to 16-bit
     c += bytes([0x08])                                # PHP
     c += bytes([0xC2, 0x30])                          # REP #$30
 
-    # 2. Vérifie le code de saut de ligne ($FFFE)
+    # 2. Check for the line-break code ($FFFE)
     c += bytes([0xC9, 0xFE, 0xFF])                    # CMP #$FFFE
     c += bytes([0xF0, 0x0A])                          # BEQ handle_newline (+10)
 
-    # Chemin normal : sauvegarde A/X/Y, charge X et saute à $80:F43C
+    # Normal path: save A/X/Y, load X and jump to $80:F43C
     c += bytes([0x48])                                # PHA
     c += bytes([0xDA])                                # PHX
     c += bytes([0x5A])                                # PHY
     c += bytes([0xAE, 0x40, 0x02])                    # LDX $0240
     c += bytes([0x5C, 0x3C, 0xF4, 0x80])              # JML $80:F43C
 
-    # handle_newline : avance la rangée et réinitialise la colonne
+    # handle_newline: advance the row and reset the column
     c += bytes([0xE2, 0x20])                          # SEP #$20
-    c += bytes([0xAD, 0x42, 0x11])                    # LDA $1142 (rangée courante)
+    c += bytes([0xAD, 0x42, 0x11])                    # LDA $1142 (current row)
     c += bytes([0x18, 0x69, 0x02])                    # CLC ; ADC #$02
     c += bytes([0xC9, 0x1F])                          # CMP #$1F
     c += bytes([0x30, 0x02])                          # BMI +2
     c += bytes([0xA9, 0x1E])                          # LDA #$1E
     c += bytes([0x8D, 0x42, 0x11])                    # STA $1142
-    c += bytes([0xAD, 0x43, 0x11])                    # LDA $1143 (marge gauche)
-    c += bytes([0x8D, 0x41, 0x11])                    # STA $1141 (colonne courante)
-    c += bytes([0x28])                                # PLP (restaure flags et taille de l'appelant)
+    c += bytes([0xAD, 0x43, 0x11])                    # LDA $1143 (left margin)
+    c += bytes([0x8D, 0x41, 0x11])                    # STA $1141 (current column)
+    c += bytes([0x28])                                # PLP (restores the caller's flags and size)
     c += bytes([0x60])                                # RTS
     return bytes(c)
 
 
 def install_newline_hook(rom: bytearray):
-    """Installe l'intercepteur de saut de ligne dans la banque $80."""
+    """Installs the line-break interceptor in bank $80."""
     hook = assemble_newline_hook()
     rom[NEWLINE_HOOK_FILE:NEWLINE_HOOK_FILE + len(hook)] = hook
 
-    # Détournement à $80:F433 : JML $80:FEE0 + NOPs
+    # Detour at $80:F433: JML $80:FEE0 + NOPs
     patch = bytearray([0x5C, NEWLINE_HOOK_ADDR & 0xFF, (NEWLINE_HOOK_ADDR >> 8) & 0xFF, 0x80])
     patch += bytes([0xEA] * 5)
     rom[NEWLINE_ENTRY_FILE:NEWLINE_ENTRY_FILE + len(patch)] = patch
 
 
 def assemble_hw_hook():
-    """Sous-routine à $80:FF10 testant si l'ID dans A est demi-chasse (8x16).
-    Renvoie Carry = 0 si demi-chasse (< 0x0010 OU 0x0500..0x056F),
-            Carry = 1 si pleine-chasse (0x0010..0x04FF OU >= 0x0570)."""
+    """Subroutine at $80:FF10 testing whether the ID in A is half-width (8x16).
+    Returns Carry = 0 if half-width (< 0x0010 OR 0x0500..0x056F),
+            Carry = 1 if full-width (0x0010..0x04FF OR >= 0x0570)."""
     c = bytearray()
     c += bytes([0xC9, 0x10, 0x00])      # CMP #$0010
     c += bytes([0x90, 0x0A])            # BCC +10 ($FF1F)
@@ -318,23 +382,23 @@ def assemble_hw_hook():
 
 
 def install_hw_hook(rom: bytearray):
-    """Installe la sous-routine is_half_width à $80:FF10 et patche les 3 sites de $80:F390."""
+    """Installs the is_half_width subroutine at $80:FF10 and patches the 3 sites of $80:F390."""
     sub = assemble_hw_hook()
     rom[HW_HOOK_FILE:HW_HOOK_FILE + len(sub)] = sub
 
-    # Site 1 : $80:F3AD (offset 0x73AD) - 5 octets
+    # Site 1: $80:F3AD (offset 0x73AD) - 5 bytes
     rom[0x73AD:0x73AD + 5] = bytes([0x20, HW_HOOK_ADDR & 0xFF, (HW_HOOK_ADDR >> 8) & 0xFF, 0x90, 0x02])
 
-    # Site 2 : $80:F3C6 (offset 0x73C6) - 5 octets
+    # Site 2: $80:F3C6 (offset 0x73C6) - 5 bytes
     rom[0x73C6:0x73C6 + 5] = bytes([0x20, HW_HOOK_ADDR & 0xFF, (HW_HOOK_ADDR >> 8) & 0xFF, 0xB0, 0x1E])
 
-    # Site 3 : $80:F425 (offset 0x7425) - 6 octets
+    # Site 3: $80:F425 (offset 0x7425) - 6 bytes
     rom[0x7425:0x7425 + 6] = bytes([0x20, HW_HOOK_ADDR & 0xFF, (HW_HOOK_ADDR >> 8) & 0xFF, 0xEA, 0xEA, 0xEA])
 
 
 def install_hw_font(rom: bytearray):
-    """Installe les tuiles 8x16 (32 octets 2bpp par caractère) pour tous les caractères
-    supportés en ROM à partir de char_id_to_rom(0x0500) = 0x032000."""
+    """Installs the 8x16 tiles (32 bytes of 2bpp per character) for every supported
+    character in ROM, starting at char_id_to_rom(0x0500) = 0x032000."""
     from patch_prologue_v3 import make_half_tile, char_id_to_rom
     for ch in FONT:
         if ch in CHAR_TO_HW_ID:
@@ -345,11 +409,11 @@ def install_hw_font(rom: bytearray):
 
 
 # ---------------------------------------------------------------------------
-# 4) Hook scene_idx (banque $83) — annuaire 4 o/entrée en ROM étendue
+# 4) scene_idx hook (bank $83): 4-byte-per-entry directory in expanded ROM
 # ---------------------------------------------------------------------------
 def assemble_hook(dir_snes, base, ndir):
-    """Hook @ $83:F8E3. A=scene_idx en entrée. Annuaire DIR (4 o/entrée :
-    addrLo, addrHi, bank, 0) à l'adresse 24-bit `dir_snes` ; bank 0 = pas de
+    """Hook @ $83:F8E3. A=scene_idx on entry. DIR directory (4 bytes per entry:
+    addrLo, addrHi, bank, 0) at the 24-bit address `dir_snes`; bank 0 = no
     section.
     Section format :
       [n_repoints, (ptr_pos, new_offset) * n_repoints, (dest_offset, count, ids…) * n_strings, FFFF]
@@ -357,7 +421,7 @@ def assemble_hook(dir_snes, base, ndir):
     DLO = dir_snes & 0xFFFF
     DHI = (dir_snes >> 16) & 0xFF
     c = bytearray()
-    c += bytes([0x22, 0xD8, 0xF8, 0x80])              # JSL $80F8D8 (A préservé)
+    c += bytes([0x22, 0xD8, 0xF8, 0x80])              # JSL $80F8D8 (A preserved)
     c += bytes([0x08])                                # PHP
     c += bytes([0xC2, 0x30])                          # REP #$30
     c += bytes([0xDA, 0x5A])                          # PHX PHY
@@ -368,7 +432,7 @@ def assemble_hook(dir_snes, base, ndir):
     c += bytes([0xA5, 0x0D, 0x48])                    # LDA $0D ; PHA
     c += bytes([0xA5, 0x3C, 0x48])                    # LDA $3C ; PHA
     c += bytes([0xA5, 0x3E, 0x48])                    # LDA $3E ; PHA
-    # index annuaire = (scene_idx - base) ; borne
+    # directory index = (scene_idx - base); bounds check
     c += bytes([0x98])                                # TYA
     c += bytes([0x38, 0xE9, base & 0xFF, (base >> 8) & 0xFF])  # SEC ; SBC #base
     jmp_done = []
@@ -384,14 +448,14 @@ def assemble_hook(dir_snes, base, ndir):
     c += bytes([0x85, 0x3E])                          # STA $3E  (src bank)
     c += bytes([0xBF, DLO & 0xFF, (DLO >> 8) & 0xFF, DHI])  # LDA.l DIR,X (addr16)
     c += bytes([0x85, 0x3C])                          # STA $3C  (src addr)
-    # $0B = $7F (bank dest), une fois
+    # $0B = $7F (destination bank), once
     c += bytes([0xE2, 0x20, 0xA9, 0x7F, 0x85, 0x0B, 0xC2, 0x20])  # SEP/LDA/STA/REP
     c += bytes([0xA0, 0x00, 0x00])                    # LDY #$0000  (index section)
 
-    # --- Phase 1 : Repointage des opcodes bytecode pour lignes relocalisées ---
+    # --- Phase 1: repoint the bytecode opcodes of relocated lines ---
     c += bytes([0xB7, 0x3C])                          # LDA [$3C],Y (n_repoints)
     c += bytes([0xF0, 0x16])                          # BEQ skip_repoints (+22)
-    c += bytes([0x85, 0x0C])                          # STA $0C (compteur)
+    c += bytes([0x85, 0x0C])                          # STA $0C (counter)
     rp_loop = len(c)
     c += bytes([0xC8, 0xC8])                          # INY INY
     c += bytes([0xB7, 0x3C])                          # LDA [$3C],Y (ptr_pos)
@@ -405,19 +469,19 @@ def assemble_hook(dir_snes, base, ndir):
     # skip_repoints:
     c += bytes([0xC8, 0xC8])                          # INY INY
 
-    # --- Phase 2 : Copie des chaînes de texte ---
+    # --- Phase 2: copy the text strings ---
     rec = len(c)
     c += bytes([0xB7, 0x3C])                          # LDA [$3C],Y  (dest_offset)
     c += bytes([0xC9, 0xFF, 0xFF])                    # CMP #$FFFF
     c += bytes([0xD0, 0x03])                          # BNE +3
     jmp_done.append(len(c)); c += bytes([0x4C, 0x00, 0x00])  # JMP done
     c += bytes([0x18, 0x69, 0xC0, 0x64])              # CLC ; ADC #$64C0
-    c += bytes([0x85, 0x09])                          # STA $09  (dest addr)
+    c += bytes([0x85, 0x09])                          # STA $09  (destination addr)
     c += bytes([0xC8, 0xC8])                          # INY INY
     c += bytes([0xB7, 0x3C])                          # LDA [$3C],Y  (count)
-    c += bytes([0x0A, 0x85, 0x0C])                    # ASL A ; STA $0C (octets)
+    c += bytes([0x0A, 0x85, 0x0C])                    # ASL A ; STA $0C (bytes)
     c += bytes([0xC8, 0xC8])                          # INY INY
-    c += bytes([0xA2, 0x00, 0x00])                    # LDX #$0000  (octets copiés)
+    c += bytes([0xA2, 0x00, 0x00])                    # LDX #$0000  (bytes copied)
     cp = len(c)
     c += bytes([0xB7, 0x3C])                          # LDA [$3C],Y  (id)
     c += bytes([0x87, 0x09])                          # STA [$09]
@@ -435,7 +499,7 @@ def assemble_hook(dir_snes, base, ndir):
     for j in jmp_done:
         c[j + 1] = done_snes & 0xFF
         c[j + 2] = (done_snes >> 8) & 0xFF
-    # restauration ZP (ordre inverse)
+    # restore ZP (reverse order)
     c += bytes([0x68, 0x85, 0x3E])                    # PLA ; STA $3E
     c += bytes([0x68, 0x85, 0x3C])                    # PLA ; STA $3C
     c += bytes([0x68, 0x85, 0x0D])                    # PLA ; STA $0D
@@ -447,24 +511,33 @@ def assemble_hook(dir_snes, base, ndir):
 
 
 # ---------------------------------------------------------------------------
-# 5) apply() — encode, place annuaire+données en $B0+, écrit le hook
+# 5) apply(): encode, place directory+data at $B0+, write the hook
 # ---------------------------------------------------------------------------
 def apply(rom: bytearray, alloc=None):
     scenes = load_scene_records(rom)
     if not scenes:
         return {"scenes": 0, "lines": 0, "truncated": 0, "bytes": 0}
 
-    # 1. Installe la police matérielle demi-chasse (8x16) et les hooks moteur en banque $80
+    # 1. Install the half-width (8x16) hardware font and the engine hooks in bank $80
     install_hw_font(rom)
     install_hw_hook(rom)
     install_newline_hook(rom)
 
-    # Table des pointeurs de scènes pour décompresser et inspecter le bytecode
+    # Scene pointer table, to decompress and inspect the bytecode
     tbl = {i: off for i, _s, off in read_ptr_table(rom, 0x600) if off}
+    feats = _scene_validator.feats
 
-    # Encodage avec relocalisation pour les lignes qui dépassent
+    def is_text_operand(w, p):
+        """Is the word at `p` the string operand of a "text line" opcode?
+        (1st operand; op13: one of its 5 operands, one per character)."""
+        if p >= 2 and feats.get(w(p - 2), {}).get("textline"):
+            return True
+        return any(p >= 2 * k and w(p - 2 * k) == 0x13 for k in range(1, 6))
+
+    # Encoding with relocation for the lines that overflow
     encoded = {}            # scene_idx -> (repoints, [(dest_offset, ids+FFFF)])
     truncated = 0
+    overflow = []           # (scene_idx, offset, cols, max_rows, rows, en)
     relocated_count = 0
 
     for sidx, recs in scenes.items():
@@ -472,14 +545,14 @@ def apply(rom: bytearray, alloc=None):
         out, _ = decompress(rom, src, dst_limit=0x4000)
         w = lambda o: out[o] | (out[o+1] << 8) if o + 1 < len(out) else 0xFFFF
 
-        # Recherche de la fin du programme d'opcodes (premier FFFF aligné)
+        # Find the end of the opcode program (first aligned FFFF)
         prog_end = 0
         for p in range(0, len(out) - 1, 2):
             if w(p) == 0xFFFF:
                 prog_end = p
                 break
 
-        # Curseur d'offset WRAM pour les nouvelles chaînes au-delà du buffer
+        # WRAM offset cursor for new strings past the buffer
         cur_end = len(out)
         if cur_end % 2 != 0:
             cur_end += 1
@@ -487,16 +560,21 @@ def apply(rom: bytearray, alloc=None):
         repoints = []
         string_records = []
 
-        for off, en, slot in recs:
-            full_ids = wrap_encode(en)
+        for off, en, slot, (cols, max_rows) in recs:
+            full_ids = wrap_encode(en, cols, max_rows)
+            n_rows = len(wrap_rows(en, cols, max_rows))
+            if n_rows > max_rows:
+                overflow.append((sidx, off, cols, max_rows, n_rows, en))
             if len(full_ids) <= slot:
-                # Tient sur place
+                # Fits in place
                 string_records.append((off, full_ids + [0xFFFF]))
             else:
-                # Dépasse la longueur JP d'origine : on cherche les références dans le programme
-                ptrs = [p for p in range(0, prog_end, 2) if w(p) == off]
+                # Longer than the original JP: look for references in the program
+                # (only the operand of a "text line" opcode: a plain
+                # word equal to the offset may be an opcode, e.g. op24 when off=$24)
+                ptrs = [p for p in range(0, prog_end, 2) if w(p) == off and is_text_operand(w, p)]
                 if ptrs:
-                    # Relocalisation à la fin du buffer décompressé
+                    # Relocate to the end of the decompressed buffer
                     new_off = cur_end
                     cur_end += (len(full_ids) + 1) * 2
                     for p in ptrs:
@@ -504,8 +582,8 @@ def apply(rom: bytearray, alloc=None):
                     string_records.append((new_off, full_ids + [0xFFFF]))
                     relocated_count += 1
                 else:
-                    # Repli exceptionnel si aucun pointeur trouvé dans prog_end
-                    ids, was_trunc = encode_fit(en, slot=slot)
+                    # Rare fallback if no pointer was found within prog_end
+                    ids, was_trunc = encode_fit(en, slot, cols, max_rows)
                     if was_trunc:
                         truncated += 1
                     string_records.append((off, ids + [0xFFFF]))
@@ -516,39 +594,39 @@ def apply(rom: bytearray, alloc=None):
     base = SCENE_BASE
     ndir = max(idxs) - base + 1
 
-    # étend la ROM à 2 Mo si besoin
+    # expand the ROM to 2 MB if needed
     if len(rom) < EXP_FILE_END:
         rom.extend(b"\xFF" * (EXP_FILE_END - len(rom)))
 
-    # annuaire (4 o/entrée) en $B0:8000 ; sections bin-packées sans franchir de
-    # frontière de banque (32 Ko) -> [src],Y reste dans la banque.
+    # directory (4 bytes per entry) at $B0:8000; sections bin-packed without crossing a
+    # bank boundary (32 KB) -> [src],Y stays within the bank.
     dir_file = EXP_FILE_START
     dir_snes = off_to_snes(dir_file)
-    dir_bytes = bytearray(ndir * 4)        # 00.. = pas de section
+    dir_bytes = bytearray(ndir * 4)        # 00.. = no section
 
     cursor = dir_file + len(dir_bytes)
     for sidx in idxs:
         repoints, str_recs = encoded[sidx]
         sec = bytearray()
 
-        # En-tête : nombre de repoints
+        # Header: number of repoints
         sec += struct.pack("<H", len(repoints))
         for ptr_pos, new_off in repoints:
             sec += struct.pack("<HH", ptr_pos, new_off)
 
-        # Chaînes de texte
+        # Text strings
         for dest_off, ids in str_recs:
             sec += struct.pack("<HH", dest_off, len(ids))
             for cid in ids:
                 sec += struct.pack("<H", cid)
         sec += struct.pack("<H", 0xFFFF)
 
-        # ne pas franchir la frontière de banque
+        # don't cross the bank boundary
         bank_end = (cursor // BANK_SIZE + 1) * BANK_SIZE
         if cursor + len(sec) > bank_end:
             cursor = bank_end
         if cursor + len(sec) > EXP_FILE_END:
-            raise SystemExit("Dépassement ROM étendue (sections de scènes).")
+            raise SystemExit("Expanded ROM overflow (scene sections).")
         snes = off_to_snes(cursor)
         rom[cursor:cursor + len(sec)] = sec
         e = (sidx - base) * 4
@@ -559,10 +637,10 @@ def apply(rom: bytearray, alloc=None):
 
     rom[dir_file:dir_file + len(dir_bytes)] = dir_bytes
 
-    # hook scènes en banque $83 + redirection $83:80FF
+    # scene hook in bank $83 + redirect $83:80FF
     hook = assemble_hook(dir_snes, base, ndir)
     if HOOK_ROM + len(hook) > FREE83_END:
-        raise SystemExit(f"Hook scènes trop gros pour banque $83 ({len(hook)} o).")
+        raise SystemExit(f"Scene hook too big for bank $83 ({len(hook)} bytes).")
     rom[HOOK_ROM:HOOK_ROM + len(hook)] = hook
     rom[HOOK_POINT:HOOK_POINT + 4] = bytes(
         [0x22, HOOK_ADDR & 0xFF, (HOOK_ADDR >> 8) & 0xFF, HOOK_BANK])
@@ -571,6 +649,7 @@ def apply(rom: bytearray, alloc=None):
         "scenes": len(idxs),
         "lines": sum(len(str_recs) for _, str_recs in encoded.values()),
         "truncated": truncated,
+        "overflow": overflow,
         "relocated": relocated_count,
         "bytes": cursor - dir_file,
         "hook": len(hook),

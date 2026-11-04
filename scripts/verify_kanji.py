@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Atlas de vérification des kanji/kana mappés (docs/kanji_font_index.csv).
+"""Verification atlas of the mapped kanji/kana (docs/kanji_font_index.csv).
 
-Pour chaque ID mappé, rend côte à côte le GLYPHE DU JEU (gauche, depuis la police
-ROM) et le CARACTÈRE assigné (droite, police Hiragino), avec l'ID hex, la note
-(confiance) et le nb d'occurrences. Les entrées « auto(à vérifier) » (les plus
-susceptibles d'être fausses) sont placées EN PREMIER.
+For each mapped ID, renders side by side the GAME GLYPH (left, from the ROM
+font) and the assigned CHARACTER (right, Hiragino font), with the hex ID, the note
+(confidence) and the number of occurrences. The "auto(to verify)" entries (the most
+likely to be wrong) come FIRST.
 
-Pour corriger : repérer une case où glyphe ≠ caractère, puis éditer la colonne
-`unicode_char` de docs/kanji_font_index.csv à la ligne `char_id_hex` indiquée.
+To fix one: find a cell where glyph ≠ character, then edit the
+`unicode_char` column of docs/kanji_font_index.csv on the `char_id_hex` row shown.
 
-Sortie : docs/kanji_atlas/verify_NN.png
+Output: docs/kanji_atlas/verify_NN.png
 """
 import csv
 import sys
@@ -26,8 +26,8 @@ MANUAL = ROOT / "docs" / "kanji_manual.csv"
 ATLAS = ROOT / "docs" / "kanji_atlas"
 CJK = "/System/Library/Fonts/ヒラギノ角ゴシック W4.ttc"
 
-# ordre de priorité de revue (les plus douteux d'abord)
-ORDER = {"auto(à vérifier)": 0, "manuel": 1}
+# review priority order (the most doubtful first)
+ORDER = {"auto(to verify)": 0, "manual": 1}
 
 
 def main():
@@ -49,7 +49,7 @@ def main():
         note = (r.get("notes") or "").strip()
         rows.append({"cid": cid, "u": u, "note": note, "occ": occ.get(cid, 0)})
 
-    # tri : note prioritaire d'abord, puis par occurrences décroissantes
+    # sort: priority note first, then by decreasing occurrences
     rows.sort(key=lambda r: (ORDER.get(r["note"], 9), -r["occ"], r["cid"]))
 
     font = ImageFont.truetype(CJK, 40)
@@ -69,15 +69,15 @@ def main():
         for k, r in enumerate(chunk):
             cx = (k % COLS) * cw + 4
             cy = (k // COLS) * ch + 4
-            # bandeau : ID + occ, couleur selon confiance
-            tag = "AUTO?" if r["note"] == "auto(à vérifier)" else (
-                "man" if r["note"] == "manuel" else "ok")
+            # banner: ID + occ, colour by confidence
+            tag = "AUTO?" if r["note"] == "auto(to verify)" else (
+                "man" if r["note"] == "manual" else "ok")
             col = (200, 0, 0) if tag == "AUTO?" else (
                 (80, 80, 80) if tag == "man" else (0, 130, 0))
             d.text((cx, cy), f'0x{r["cid"]:04X} {tag}', fill=col, font=small)
             if r["occ"]:
                 d.text((cx, cy + 12), f'×{r["occ"]}', fill=(120, 120, 120), font=tiny)
-            # glyphe du jeu
+            # game glyph
             g = rt.glyph_pixels(rom, r["cid"])
             gi = Image.new("L", (16, 16))
             gp = gi.load()
@@ -85,16 +85,16 @@ def main():
                 for x in range(16):
                     gp[x, y] = rt.INK[g[y][x]]
             im.paste(gi.resize((gs, gs), Image.NEAREST), (cx, cy + 24))
-            # caractère assigné
+            # assigned character
             d.text((cx + gs + 8, cy + 26), r["u"], fill=(0, 0, 0), font=font)
-            # séparateur
+            # separator
             d.line([(cx + gs + 4, cy + 24), (cx + gs + 4, cy + 24 + gs)],
                    fill=(210, 210, 210))
         out = ATLAS / f"verify_{pg:02d}.png"
         im.save(out)
-    n_auto = sum(1 for r in rows if r["note"] == "auto(à vérifier)")
-    print(f"{len(rows)} kanji mappés -> {pages} page(s) docs/kanji_atlas/verify_*.png")
-    print(f"  dont {n_auto} 'auto(à vérifier)' (en tête, marqués AUTO? en rouge)")
+    n_auto = sum(1 for r in rows if r["note"] == "auto(to verify)")
+    print(f"{len(rows)} mapped kanji -> {pages} page(s) docs/kanji_atlas/verify_*.png")
+    print(f"  including {n_auto} 'auto(to verify)' (first, marked AUTO? in red)")
 
 
 if __name__ == "__main__":

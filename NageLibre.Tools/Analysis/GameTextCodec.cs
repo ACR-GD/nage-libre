@@ -3,8 +3,8 @@ using System.Text;
 namespace NageLibre.Tools.Analysis;
 
 /// <summary>
-/// Décodeur du texte Nage Libre : index de glyphe (1 octet), pas Shift-JIS.
-/// Contrôles : 01 début, 02 pause, 8D/20 glyphe explicite, FF xx fin, FE fin alternative.
+/// Nage Libre text decoder: glyph index (1 byte), not Shift-JIS.
+/// Control codes: 01 start, 02 pause, 8D/20 explicit glyph, FF xx end, FE alternative end.
 /// </summary>
 public static class GameTextCodec
 {
@@ -77,7 +77,7 @@ public static class GameTextCodec
             {
                 byte g1 = raw[i + 1];
                 byte g2 = raw[i + 2];
-                // Souvent 20 XX 96 / 9E : l’index utile est XX (second octet quasi constant).
+                // Often 20 XX 96 / 9E: the useful index is XX (the second byte is nearly constant).
                 byte g = g2 is 0x96 or 0x9E ? g1 : g1;
                 AppendGlyph(display, ids, g, $"20{g1:X2}{g2:X2}");
                 i += 3;
@@ -125,7 +125,7 @@ public static class GameTextCodec
         if (glyphs < 3)
             return -1;
 
-        // Rejeter motifs 65816 fréquents
+        // Reject common 65816 patterns
         if (ContainsPattern(raw, [0xE9, 0x82]) || ContainsPattern(raw, [0x22, 0x65, 0xF1]))
             return -1;
 

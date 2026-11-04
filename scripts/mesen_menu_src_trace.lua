@@ -1,19 +1,19 @@
 --[[
-  Nage Libre — capture du POINTEUR SOURCE [$09] du moteur de texte $80:F8DC.
+  Nage Libre — capture of the SOURCE POINTER [$09] of the $80:F8DC text engine.
 
-  Le menu de combat est dessiné par le moteur commun $80:F8DC, qui lit un flux
-  de glyphes compressés via le pointeur 24-bit en page directe $09/$0A/$0B.
-  Ce script logue, pour CHAQUE entrée du moteur, l'adresse source (dédupliquée),
-  le pointeur destination $06/$07/$08 (buffer police) et un aperçu des octets
-  source. Le menu apparaîtra comme une entrée distincte (dest dans $7E:2000+).
+  The battle menu is drawn by the shared engine $80:F8DC, which reads a stream
+  of compressed glyphs through the 24-bit direct-page pointer $09/$0A/$0B.
+  For EACH entry into the engine, this script logs the source address (deduplicated),
+  the destination pointer $06/$07/$08 (font buffer) and a preview of the source
+  bytes. The menu will show up as a separate entry (dest in $7E:2000+).
 
-  Usage :
-    1. nl-full-en.sfc, entrer en combat, AVANT d'ouvrir le menu COMMAND.
-    2. Script Window → Load → ce fichier → Run.
-    3. Ouvrir le menu de commandes (puis le refermer/rouvrir une fois).
-    4. M'envoyer  mesen_dumps/menu_src_trace.log
+  Usage:
+    1. nl-full-en.sfc, enter a battle, BEFORE opening the COMMAND menu.
+    2. Script Window → Load → this file → Run.
+    3. Open the command menu (then close/reopen it once).
+    4. Send me  mesen_dumps/menu_src_trace.log
 
-  (Exec callback : emu.getState() y fonctionne, contrairement aux write cb.)
+  (Exec callback: emu.getState() works there, unlike in write callbacks.)
 ]]
 
 local LOG_PATH = "/Users/acr/Develop/nage-libre/mesen_dumps/menu_src_trace.log"
@@ -34,31 +34,31 @@ end
 local function rd(addr) return emu.read(addr, MEM) & 0xFF end
 local function rd24(a) return rd(a) | (rd(a+1)<<8) | (rd(a+2)<<16) end
 
--- Entrée du moteur de texte : $80:F8DC
+-- Text engine entry: $80:F8DC
 local function onEnter()
   if fileHandle == nil then return end
   local st = emu.getState()
   local dp = (st and st.cpu and st.cpu.d) or 0
-  local src = rd24(dp + 0x09)            -- pointeur source [$09]
-  local dst = rd24(dp + 0x06)            -- pointeur dest   [$06]
+  local src = rd24(dp + 0x09)            -- source pointer [$09]
+  local dst = rd24(dp + 0x06)            -- dest pointer   [$06]
   local key = string.format("%06X", src)
   if seen[key] then return end
   seen[key] = true
-  -- aperçu : 12 octets à la source (banque:adresse 24-bit → lecture bus)
+  -- preview: 12 bytes at the source (24-bit bank:address → bus read)
   local preview = {}
   for i = 0, 11 do preview[#preview+1] = string.format("%02X", rd(src + i)) end
   logline(string.format("SRC=$%06X  DST=$%06X  DP=$%04X  f=%d  bytes: %s",
     src, dst, dp, frame, table.concat(preview, " ")))
   count = count + 1
   if count >= MAX and fileHandle then
-    logline("=== MAX entrées ==="); fileHandle:close(); fileHandle = nil
+    logline("=== MAX entries ==="); fileHandle:close(); fileHandle = nil
   end
 end
 
 local function onFrame() frame = frame + 1 end
 
-logline("=== capture source [$09] moteur $80:F8DC ===")
+logline("=== $80:F8DC engine source [$09] capture ===")
 logline("Log: "..LOG_PATH)
 emu.addMemoryCallback(onEnter, CB.exec, 0x80F8DC, 0x80F8DC)
 emu.addEventCallback(onFrame, emu.eventType.startFrame)
-logline("Actif. Ouvrir/fermer le menu COMMAND, puis m'envoyer le log.")
+logline("Active. Open/close the COMMAND menu, then send me the log.")

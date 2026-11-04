@@ -27,7 +27,7 @@ public sealed class GlyphUnicodeTable
         var catalogRows = LoadCatalogRows(charsetCatalogPath);
         var romSpan = rom.AsSpan();
 
-        // Regrouper par empreinte bitmap
+        // Group by bitmap fingerprint
         var byHash = new Dictionary<ulong, List<CatalogRow>>();
         foreach (var row in catalogRows)
         {
@@ -43,7 +43,7 @@ public sealed class GlyphUnicodeTable
             list.Add(row);
         }
 
-        // Ancre こ : ROM utilisateur 0x28540 (tolérance ±64)
+        // こ anchor: user-found ROM offset 0x28540 (±64 tolerance)
         ulong? koHash = FindKoAnchorHash(romSpan, byHash);
         if (koHash != null)
         {
@@ -57,7 +57,7 @@ public sealed class GlyphUnicodeTable
                 "kanji_dense", "anchor_ko_fallback");
         }
 
-        // Gojuon uniquement sur petites banques syllabaires (ROM ~0x28000), pas les banques kanji.
+        // Gojūon only on the small syllabary banks (ROM ~0x28000), not the kanji banks.
         int[] kanaBankIds = [2, 3, 4, 5, 6, 7];
         foreach (int bankId in kanaBankIds)
         {
@@ -86,7 +86,7 @@ public sealed class GlyphUnicodeTable
             }
         }
 
-        // Index complet : chaque glyphe catalogue → octet texte (sans unicode si inconnu)
+        // Full index: each catalogued glyph → text byte (no Unicode if unknown)
         foreach (var row in catalogRows)
         {
             byte tb = (byte)(row.VramTile - GameTextCodec.VramTileBias);
@@ -94,7 +94,7 @@ public sealed class GlyphUnicodeTable
                 table._byByte[tb] = new Entry(tb, row.VramTile, null, null, row.RomOffset, row.Category, "catalog_index", row.Fingerprint);
         }
 
-        // Doublons visuels : même empreinte → même caractère si déjà connu
+        // Visual duplicates: same fingerprint → same character if already known
         foreach (var (hash, rows) in byHash)
         {
             char? known = null;

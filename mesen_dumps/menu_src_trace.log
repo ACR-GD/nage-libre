@@ -1,6 +1,6 @@
-=== capture source [$09] moteur $80:F8DC ===
+=== $80:F8DC engine source [$09] capture ===
 Log: /Users/acr/Develop/nage-libre/mesen_dumps/menu_src_trace.log
-Actif. Ouvrir/fermer le menu COMMAND, puis m'envoyer le log.
+Active. Open/close the COMMAND menu, then send me the log.
 SRC=$A0FBA5  DST=$7E4000  DP=$0000  f=151  bytes: 00 A0 12 01 AC E8 FF FF FF 42 99 00
 SRC=$9F9AF4  DST=$7E5830  DP=$0000  f=180  bytes: 00 AC 07 C0 DD 0A 02 1B F1 90 11 00
 SRC=$A0FB4C  DST=$7E4000  DP=$0000  f=205  bytes: 00 A1 02 00 AC E6 5D 66 81 BD 67 DA

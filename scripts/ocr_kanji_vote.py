@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""Mappe les kanji par OCR (manga-ocr) au niveau LIGNE + vote majoritaire par ID.
+"""Maps the kanji by OCR (manga-ocr) at LINE level + a majority vote per ID.
 
-Idée : la police n'a pas d'ordre standard, donc on « lit » les glyphes. manga-ocr
-lit chaque phrase rendue ; on n'accepte que les lignes où la longueur OCR (hors
-espaces) == nombre d'IDs (hors $03FE) -> alignement 1:1 propre. Chaque ID reçoit
-un vote par caractère. Sur ~2000 lignes, un kanji vu N fois devient fiable par
-vote majoritaire (les hallucinations OCR, de mauvaise longueur, sont rejetées).
+Idea: the font has no standard order, so we "read" the glyphs. manga-ocr
+reads each rendered sentence; we only accept lines where the OCR length (excluding
+spaces) == number of IDs (excluding $03FE) -> a clean 1:1 alignment. Each ID gets
+one vote per character. Over ~2000 lines, a kanji seen N times becomes reliable by
+majority vote (OCR hallucinations, which have the wrong length, are rejected).
 
-Phases :
-  ocr   : collecte les lignes uniques (idx>=0x30F), OCR en mémoire, cache JSON.
-  vote  : lit le cache, vote par ID, écrit docs/kanji_font_index_ocr.csv + stats.
+Phases:
+  ocr   : collects the unique lines (idx>=0x30F), OCR in memory, JSON cache.
+  vote  : reads the cache, votes per ID, writes docs/kanji_font_index_ocr.csv + stats.
 
-Usage :
+Usage:
   .venv-ocr/bin/python scripts/ocr_kanji_vote.py ocr
   python3 scripts/ocr_kanji_vote.py vote
 """
@@ -32,8 +32,8 @@ SPACE = 0x03FE
 FIRST_TEXT_IDX = 0x30F
 TABLE_COUNT = 0x600
 
-# Caractères qui ne correspondent pas à un glyphe game « plein » (à ignorer dans
-# l'alignement, manga-ocr les ajoute/retire librement).
+# Characters that don't match a "full" game glyph (ignored in the
+# alignment, manga-ocr adds/removes them freely).
 DROP = set(" 　\n\t")
 
 
@@ -51,7 +51,7 @@ def load_km():
 
 
 def collect_lines():
-    """Retourne {key_hex: [ids...]} pour toutes les lignes de dialogue uniques."""
+    """Returns {key_hex: [ids...]} for every unique dialogue line."""
     import importlib.util
     spec = importlib.util.spec_from_file_location(
         "dp", ROOT / "scripts" / "decompile_prologue_script.py")
@@ -94,7 +94,7 @@ def collect_lines():
 def phase_ocr():
     from manga_ocr import MangaOcr
     lines, rom = collect_lines()
-    print(f"{len(lines)} lignes uniques à OCR")
+    print(f"{len(lines)} unique lines to OCR")
     m = MangaOcr()
     cache = {}
     if CACHE.exists():
@@ -109,13 +109,13 @@ def phase_ocr():
             print(f"  {n}/{len(todo)}")
             CACHE.write_text(json.dumps(cache, ensure_ascii=False))
     CACHE.write_text(json.dumps(cache, ensure_ascii=False))
-    print(f"OCR terminé, cache écrit ({len(cache)} lignes)")
+    print(f"OCR done, cache written ({len(cache)} lines)")
 
 
 def _align(expected, ocr):
-    """Needleman-Wunsch entre la séquence d'IDs (expected = char connu ou None)
-    et la chaîne OCR. Score : ancre connue==ocr +2 ; ancre!=ocr -2 ;
-    inconnu vs ocr +0.3 ; gap -1.5. Retourne la liste de paires (idx_id|None, char|None)."""
+    """Needleman-Wunsch between the ID sequence (expected = known char or None)
+    and the OCR string. Score: known anchor==ocr +2; anchor!=ocr -2;
+    unknown vs ocr +0.3; gap -1.5. Returns the list of pairs (idx_id|None, char|None)."""
     n, m = len(expected), len(ocr)
     GAP = -1.5
     dp = [[0.0] * (m + 1) for _ in range(n + 1)]
@@ -153,7 +153,7 @@ def _align(expected, ocr):
 
 
 def compute_votes(cache, anchor_map, thresh=0.7):
-    """anchor_map : ID->char utilisés comme ancres. Retourne (votes, n_lignes)."""
+    """anchor_map: ID->char used as anchors. Returns (votes, n_lines)."""
     votes = defaultdict(Counter)
     aligned = 0
     for key, text in cache.items():
@@ -182,12 +182,12 @@ def compute_votes(cache, anchor_map, thresh=0.7):
 
 
 def phase_eval():
-    """Validation : cache les kanji CJK connus, vote, compare à la vérité."""
+    """Validation: hides the known CJK kanji, votes, compares with the truth."""
     km = load_km()
     cache = json.loads(CACHE.read_text())
     held = {i: c for i, c in km.items() if any(ord(x) >= 0x4E00 for x in c)}
     anchors = {i: c for i, c in km.items() if i not in held}
-    print(f"held-out : {len(held)} kanji connus cachés ; ancres : {len(anchors)} (kana)")
+    print(f"held-out: {len(held)} known kanji hidden; anchors: {len(anchors)} (kana)")
     for th in (0.6, 0.7, 0.8):
         votes, _ = compute_votes(cache, anchors, th)
         ok = bad = nf = 0
@@ -201,29 +201,29 @@ def phase_eval():
             else:
                 bad += 1
         tested = ok + bad
-        print(f"  seuil {th}: prédits {tested}/{len(held)} ; "
-              f"justes {ok} ({100*ok/tested if tested else 0:.0f}%), faux {bad}, absents {nf}")
+        print(f"  threshold {th}: predicted {tested}/{len(held)}; "
+              f"right {ok} ({100*ok/tested if tested else 0:.0f}%), wrong {bad}, missing {nf}")
 
 
 def phase_vote():
     km = load_km()
     cache = json.loads(CACHE.read_text())
     votes, aligned = compute_votes(cache, km, 0.7)
-    print(f"lignes retenues : {aligned}/{len(cache)}")
-    # construit le mapping voté (kanji non encore connus)
+    print(f"lines kept: {aligned}/{len(cache)}")
+    # build the voted mapping (kanji not known yet)
     new = {}
     strong = 0
     for i, cnt in votes.items():
         char, n = cnt.most_common(1)[0]
         total = sum(cnt.values())
-        # anchor : si l'ID est déjà connu (kana), on vérifie la cohérence du vote
+        # anchor: if the ID is already known (kana), check the vote is consistent
         if i in km:
             continue
         if n >= 3 and n / total >= 0.6 and len(char) == 1:
             new[i] = char
             if n >= 5 and n / total >= 0.8:
                 strong += 1
-    print(f"nouveaux IDs mappés : {len(new)} (dont {strong} très fiables)")
+    print(f"new IDs mapped: {len(new)} ({strong} of them very reliable)")
     with OUT.open("w", encoding="utf-8") as f:
         f.write("char_id_hex,unicode_char,votes,total,confidence\n")
         for i in sorted(new):
@@ -231,7 +231,7 @@ def phase_vote():
             char, n = cnt.most_common(1)[0]
             tot = sum(cnt.values())
             f.write(f"0x{i:04X},{char},{n},{tot},{n/tot:.2f}\n")
-    print(f"écrit {OUT}")
+    print(f"wrote {OUT}")
     # couverture dialogue (occurrences)
     merged = dict(km)
     merged.update(new)

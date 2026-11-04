@@ -2,7 +2,7 @@ namespace NageLibre.Tools.Gfx;
 
 public static class SnesGfx
 {
-    /// <summary>Palette BGR555 SNES (2 octets, little endian) → RGB888.</summary>
+    /// <summary>SNES BGR555 palette (2 bytes, little endian) → RGB888.</summary>
     public static (byte R, byte G, byte B) Bgr555ToRgb(byte lo, byte hi)
     {
         int v = lo | (hi << 8);
@@ -12,11 +12,11 @@ public static class SnesGfx
         return ((byte)(r | (r >> 5)), (byte)(g | (g >> 5)), (byte)(b | (b >> 5)));
     }
 
-    /// <summary>Tuile 2bpp 8×8 (16 octets) → 64 pixels, indices 0–3.</summary>
+    /// <summary>2bpp 8×8 tile (16 bytes) → 64 pixels, indexes 0–3.</summary>
     public static byte[] Decode2BppTile8x8(ReadOnlySpan<byte> tile)
     {
         if (tile.Length < 16)
-            throw new ArgumentException("Tuile 2bpp attendue : 16 octets.");
+            throw new ArgumentException("Expected a 2bpp tile: 16 bytes.");
         var pixels = new byte[64];
         for (int row = 0; row < 8; row++)
         {
@@ -33,11 +33,11 @@ public static class SnesGfx
         return pixels;
     }
 
-    /// <summary>Tuile 4bpp 8×8 (32 octets) → 64 pixels, indices 0–15.</summary>
+    /// <summary>4bpp 8×8 tile (32 bytes) → 64 pixels, indexes 0–15.</summary>
     public static byte[] Decode4BppTile8x8(ReadOnlySpan<byte> tile)
     {
         if (tile.Length < 32)
-            throw new ArgumentException("Tuile 4bpp attendue : 32 octets.");
+            throw new ArgumentException("Expected a 4bpp tile: 32 bytes.");
         var pixels = new byte[64];
         for (int row = 0; row < 8; row++)
         {

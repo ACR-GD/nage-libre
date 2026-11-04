@@ -1,6 +1,6 @@
-=== capture source moteur $80:F4A7 (noms/dates/pierres) ===
+=== $80:F4A7 engine source capture (names/dates/birthstones) ===
 Log: /Users/acr/Develop/nage-libre/mesen_dumps/name_src_trace.log
-Actif. Faire défiler les personnages sur l'écran d'anniversaire.
+Active. Scroll through the characters on the birthday screen.
 SRC=$8386B3  f=908  n=15  ids: 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE 3FE
 SRC=$878965  f=1944  n=1  ids: 32C
 SRC=$878969  f=1944  n=1  ids: 2C8

@@ -1,14 +1,14 @@
 --[[
-  Nage Libre — dump de l'en-tête du buffer script $7F:64C0 (scène pré-combat).
+  Nage Libre — dump of the header of the $7F:64C0 script buffer (pre-battle scene).
 
-  Le buffer est déjà chargé quand on est dans la scène. On dumpe une fois
-  $7F:64C0 .. $7F:6700 (en-tête d'opcodes + début des chaînes) pour choisir une
-  SIGNATURE de garde stable (comme $64C8/$64D4 pour le prologue).
+  The buffer is already loaded once you're in the scene. We dump
+  $7F:64C0 .. $7F:6700 once (opcode header + start of the strings) to pick a
+  stable guard SIGNATURE (like $64C8/$64D4 for the prologue).
 
-  Usage :
-    1. nl-full-en.sfc, ÊTRE DANS la scène pré-combat (dialogue/banderole visible).
-    2. Script Window → Load → ce fichier → Run.
-    3. M'envoyer  mesen_dumps/precombat_buffer.log  (dump après ~30 frames).
+  Usage:
+    1. nl-full-en.sfc, BE IN the pre-battle scene (dialogue/banner visible).
+    2. Script Window → Load → this file → Run.
+    3. Send me  mesen_dumps/precombat_buffer.log  (dumped after ~30 frames).
 ]]
 
 local LOG_PATH = "/Users/acr/Develop/nage-libre/mesen_dumps/precombat_buffer.log"
@@ -23,7 +23,7 @@ local function onFrame()
   frame = frame + 1
   if dumped or frame < 30 then return end
   dumped = true
-  fileHandle:write("=== $7F:64C0 .. $7F:6700 (mots 16-bit little-endian) ===\n")
+  fileHandle:write("=== $7F:64C0 .. $7F:6700 (16-bit little-endian words) ===\n")
   for base = 0x7F64C0, 0x7F66FF, 16 do
     local words = {}
     for i = 0, 14, 2 do
@@ -32,8 +32,8 @@ local function onFrame()
     fileHandle:write(string.format("+%04X: %s\n", base - 0x7F64C0, table.concat(words, " ")))
   end
   fileHandle:flush(); fileHandle:close(); fileHandle = nil
-  if emu.log then emu.log("dump fait : "..LOG_PATH) end
+  if emu.log then emu.log("dump done: "..LOG_PATH) end
 end
 
 emu.addEventCallback(onFrame, emu.eventType.startFrame)
-if emu.log then emu.log("Actif. Dump du buffer dans ~30 frames.") end
+if emu.log then emu.log("Active. Buffer dump in ~30 frames.") end

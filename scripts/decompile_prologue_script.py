@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-"""Décompile un script de scène du prologue Nage Libre depuis un dump WRAM.
+"""Decompiles a Nage Libre prologue scene script from a WRAM dump.
 
-Le script vit dans le bloc décompressé en $7F:64C0 (pointeur $06/$07/$08).
-L'interpréteur $83:8103 lit des opcodes 16-bit (0x01–0x42), terminateur $FFFF.
-Ce script :
-  1. dérive la table opcode→handler et la taille (octets consommés) de chaque opcode
-     depuis la ROM (validée contre les deltas de $06 observés dans les dumps),
-  2. parcourt le bloc et émet un listing annoté,
-  3. extrait les chaînes de texte (offset → IDs 16-bit, fin $FFFF) et les décode
+The script lives in the decompressed block at $7F:64C0 (pointer $06/$07/$08).
+The $83:8103 interpreter reads 16-bit opcodes (0x01–0x42), terminator $FFFF.
+This script:
+  1. derives the opcode→handler table and the size (bytes consumed) of each opcode
+     from the ROM (validated against the $06 deltas seen in the dumps),
+  2. walks the block and prints an annotated listing,
+  3. extracts the text strings (offset → 16-bit IDs, end $FFFF) and decodes them
      via docs/kanji_font_index.csv.
 
 Usage:
   python3 scripts/decompile_prologue_script.py [dump_dir]
-  (défaut : premier dump *_PC_838103_* trouvé)
+  (default: the first *_PC_838103_* dump found)
 """
 import csv
 import sys
@@ -40,20 +40,20 @@ def opcode_handlers():
 
 def handler_features(tgt):
     o = lorom(0x83, tgt); blob = rom[o:o+400]
-    # Opcode « ligne de texte » : charge $09 = offset + $64C0 (ADC #$64C0 / STA $09),
-    # puis appelle un renderer de la famille $80:F4xx/F5xx (F4AB, F4CA, F5AC, …).
+    # "Text line" opcode: loads $09 = offset + $64C0 (ADC #$64C0 / STA $09),
+    # then calls a renderer of the $80:F4xx/F5xx family (F4AB, F4CA, F5AC, …).
     textline = b"\x69\xC0\x64\x85\x09" in blob
     return {
         "textline": textline,
         "ptr": b"\x69\xC0\x64" in blob,
         "decomp": b"\x22\x63\xFA\x80" in blob,
-        # rendu de texte ROM (pointeur fixe en banque 80/83/87) via la famille F4A7/F5xx
+        # ROM text rendering (fixed pointer in bank 80/83/87) via the F4A7/F5xx family
         "rom_text": (b"\x22\xA7\xF4\x80" in blob) and not textline,
     }
 
 
 def opcode_size(tgt, depth=0, seen=None, mflag=0, xflag=0):
-    """Octets consommés sur $06 = nb d'INC $06, en suivant les JSR internes (banque 83)."""
+    """Bytes consumed from $06 = number of INC $06, following internal JSRs (bank 83)."""
     if seen is None:
         seen = set()
     if depth > 4 or tgt in seen:
@@ -101,7 +101,7 @@ def find_dump():
         return Path(sys.argv[1])
     cands = sorted((ROOT / "mesen_dumps").glob("*_PC_838103_*"))
     if not cands:
-        sys.exit("Aucun dump *_PC_838103_* trouvé.")
+        sys.exit("No *_PC_838103_* dump found.")
     return cands[0]
 
 
@@ -109,9 +109,9 @@ def main():
     dump = find_dump()
     binf = dump / "wram_7E0000_20000.bin"
     if not binf.exists():
-        sys.exit(f"Dump WRAM introuvable : {binf}")
+        sys.exit(f"WRAM dump not found: {binf}")
     w = binf.read_bytes()
-    BASE = 0x10000 + 0x64C0  # $7F:64C0 dans le fichier $7E0000+0x20000
+    BASE = 0x10000 + 0x64C0  # $7F:64C0 within the $7E0000+0x20000 file
 
     def word(off):
         return w[BASE + off] | (w[BASE + off + 1] << 8)
@@ -132,23 +132,23 @@ def main():
         txt = "".join(fmap.get(v, "□") if v != 0x03FE else " " for v in ids)
         return ids, txt, terminated
 
-    print(f"# Décompilation du script $7F:64C0  (dump : {dump.name})\n")
+    print(f"# Decompilation of the $7F:64C0 script  (dump: {dump.name})\n")
     pos = 0
     strings = []
     for _ in range(400):
         opc = word(pos)
         if opc == 0xFFFF:
-            print(f"+{pos:04X}  FFFF              ── FIN DE SCÈNE ──")
+            print(f"+{pos:04X}  FFFF              ── END OF SCENE ──")
             break
         if opc not in handlers:
-            print(f"+{pos:04X}  {opc:04X}  ?? opcode inconnu — arrêt")
+            print(f"+{pos:04X}  {opc:04X}  ?? unknown opcode — stopping")
             break
         size = sizes.get(opc, 0) or 2
         nopr = (size - 2) // 2
         opr = [word(pos + 2 + 2*j) for j in range(nopr)]
         ft = feats[opc]
-        # Un opcode « ligne de texte » résout réellement une chaîne si son 1er opérande
-        # est un offset plausible (>= 0x100, au-delà du code) vers une chaîne terminée $FFFF.
+        # A "text line" opcode really resolves to a string if its 1st operand
+        # is a plausible offset (>= 0x100, past the code) to a $FFFF-terminated string.
         is_text = False
         soff = ids = txt = None
         if ft["textline"] and nopr >= 1 and opr[0] >= 0x100:
@@ -158,25 +158,25 @@ def main():
                 is_text = True
         kind = []
         if is_text:
-            kind.append("TEXTE")
+            kind.append("TEXT")
         elif ft["textline"]:
-            kind.append("data-ptr")  # même addressing $09=+64C0 mais table de données
+            kind.append("data-ptr")  # same $09=+64C0 addressing, but a data table
         elif ft["rom_text"]:
-            kind.append("texte-ROM")
+            kind.append("ROM-text")
         if ft["decomp"]:
             kind.append("DECOMP")
         if ft["ptr"] and not ft["textline"]:
             kind.append("ptr")
         tag = "/".join(kind) if kind else "ctrl"
         oprs = " ".join(f"{o:04X}" for o in opr)
-        line = f"+{pos:04X}  op {opc:02X} [{size}o] {tag:12s} {oprs}"
+        line = f"+{pos:04X}  op {opc:02X} [{size}B] {tag:12s} {oprs}"
         if is_text:
             line += f"   → @+{soff:04X} ({len(ids)} IDs) : «{txt}»"
             strings.append((pos, soff, ids, txt))
         print(line)
         pos += size
 
-    print(f"\n## {len(strings)} chaîne(s) de texte référencée(s) :")
+    print(f"\n## {len(strings)} referenced text string(s):")
     for spos, soff, ids, txt in strings:
         print(f"  opcode @+{spos:04X} → +{soff:04X} : «{txt}»")
         print(f"      IDs: {' '.join(f'{v:03X}' for v in ids)}")
@@ -185,17 +185,17 @@ def main():
 
 
 def export_csv(out_path):
-    """Génère une table de traduction : offset, slot (mots dispo), JP décodé, EN à remplir.
-    Le slot = écart jusqu'à la chaîne suivante (par offset croissant) − 1 (terminateur)."""
+    """Generates a translation table: offset, slot (available words), decoded JP, EN to fill in.
+    The slot = gap to the next string (by increasing offset) − 1 (terminator)."""
     import io, contextlib
     with contextlib.redirect_stdout(io.StringIO()):
         strings, word = main()
-    # offsets uniques des chaînes, triés
+    # unique string offsets, sorted
     offs = sorted({soff for _, soff, _, _ in strings})
     slot_of = {}
     for i, o in enumerate(offs):
         nxt = offs[i+1] if i+1 < len(offs) else o + 0x40
-        slot_of[o] = (nxt - o) // 2 - 1  # mots utilisables (hors terminateur $FFFF)
+        slot_of[o] = (nxt - o) // 2 - 1  # usable words (excluding the $FFFF terminator)
     seen = set()
     rows = []
     for spos, soff, ids, txt in strings:
@@ -209,7 +209,7 @@ def export_csv(out_path):
         for soff, nids, slot, txt in rows:
             jp = txt.replace('"', "'")
             f.write(f"0x{soff:04X},{nids},{slot},\"{jp}\",\n")
-    print(f"Écrit {out_path} ({len(rows)} lignes)")
+    print(f"Wrote {out_path} ({len(rows)} rows)")
 
 
 if __name__ == "__main__":

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Synchronise les corrections de docs/translations_review.csv vers les CSV par
-scène (docs/scenes/scene_XXXX.csv), en réécrivant la colonne `en` repérée par
+"""Syncs the corrections in docs/translations_review.csv to the per-scene
+CSVs (docs/scenes/scene_XXXX.csv), rewriting the `en` column identified by
 (scene_idx_hex, offset_hex).
 
-Workflow de correction des traductions :
-  1. éditer la colonne `en` de docs/translations_review.csv
+Translation correction workflow:
+  1. edit the `en` column of docs/translations_review.csv
   2. python3 scripts/sync_translations.py
-  3. python3 build_full_translation.py   (reconstruit nl-full-en.sfc)
+  3. python3 build_full_translation.py   (rebuilds nl-full-en.sfc)
 """
 import csv
 from collections import defaultdict
@@ -29,7 +29,7 @@ def main():
         if not path.exists():
             path = SCENES / f"scene_{int(sidx, 16):04X}.csv"
         if not path.exists():
-            print(f"  introuvable : {sidx}")
+            print(f"  not found: {sidx}")
             continue
         rows = list(csv.DictReader(path.open(encoding="utf-8")))
         if not rows:
@@ -49,7 +49,7 @@ def main():
                 w.writerows(rows)
             changed_files += 1
 
-    print(f"{changed_cells} cellule(s) `en` mises à jour dans {changed_files} scène(s).")
+    print(f"{changed_cells} `en` cell(s) updated in {changed_files} scene(s).")
 
 
 if __name__ == "__main__":

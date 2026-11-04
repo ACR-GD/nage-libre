@@ -1,7 +1,7 @@
 offset_hex,n_ids,slot_words,jp_decoded,en
 0x0000,10,25,あエいぃぱごごごぜも,"Ah, Iiipagogozemo"
-0x0034,6,7,いらなーい‼,I don't need it!!
+0x0034,6,7,いらなーい‼,No thanks!!
 0x0044,19,20,今回は、       えんりょしますわ,I'll pass this time.
-0x006E,17,18,なんか、あやしいから 今回はいいや,"It seems a bit suspicious, so I'll pass this time."
-0x0094,19,20,……そう。      それじゃまたね‼,...Okay. See you later!!
-0x00BE,2,31,ぉぉ,Oh
+0x006E,17,18,なんか、あやしいから 今回はいいや,"Seems fishy, so I'll pass this time."
+0x0094,19,20,……そう。      それじゃまたね‼,...I see. See you then!!
+0x00BE,2,31,ぉぉ,

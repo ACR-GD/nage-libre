@@ -1,7 +1,7 @@
 Tilemap base $7F64C0
 
 
---- L1 visible ($65E2) (offset +0122) — 32 mots ---
+--- L1 visible ($65E2) (offset +0122) — 32 words ---
   +0122  $7F65E2  03FE
   +0124  $7F65E4  016C
   +0126  $7F65E6  016E
@@ -35,7 +35,7 @@ Tilemap base $7F64C0
   +015E  $7F661E  FFFF
   +0160  $7F6620  FFFF
 
---- signature / L2 ($6602) (offset +0142) — 32 mots ---
+--- signature / L2 ($6602) (offset +0142) — 32 words ---
   +0142  $7F6602  016E
   +0144  $7F6604  0434
   +0146  $7F6606  0436
@@ -69,7 +69,7 @@ Tilemap base $7F64C0
   +017E  $7F663E  03FE
   +0180  $7F6640  03FE
 
---- offset $0166 (offset +0166) — 32 mots ---
+--- offset $0166 (offset +0166) — 32 words ---
   +0166  $7F6626  0068
   +0168  $7F6628  033A
   +016A  $7F662A  033C
@@ -103,7 +103,7 @@ Tilemap base $7F64C0
   +01A2  $7F6662  03FE
   +01A4  $7F6664  03FE
 
---- row2 tilemap ($6662) (offset +01A2) — 32 mots ---
+--- row2 tilemap ($6662) (offset +01A2) — 32 words ---
   +01A2  $7F6662  03FE
   +01A4  $7F6664  03FE
   +01A6  $7F6666  03FE
@@ -137,7 +137,7 @@ Tilemap base $7F64C0
   +01DE  $7F669E  FFFF
   +01E0  $7F66A0  03FE
 
---- row3 preload ($66E2) (offset +0222) — 32 mots ---
+--- row3 preload ($66E2) (offset +0222) — 32 words ---
   +0222  $7F66E2  03FE
   +0224  $7F66E4  03FE
   +0226  $7F66E6  03FE
@@ -171,7 +171,7 @@ Tilemap base $7F64C0
   +025E  $7F671E  03FE
   +0260  $7F6720  03FE
 
---- row4+ ($66E2+) (offset +02A2) — 32 mots ---
+--- row4+ ($66E2+) (offset +02A2) — 32 words ---
   +02A2  $7F6762  0090
   +02A4  $7F6764  0090
   +02A6  $7F6766  0090
@@ -206,6 +206,6 @@ Tilemap base $7F64C0
   +02E0  $7F67A0  0016
 
 
---- Signature écran 1 ---
-  $7F:6602 = 016E (attendu 075A)
-  $7F:6604 = 0434 (attendu 002A)
+--- Screen 1 signature ---
+  $7F:6602 = 016E (expected 075A)
+  $7F:6604 = 0434 (expected 002A)

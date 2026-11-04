@@ -1,27 +1,27 @@
 #!/usr/bin/env python3
-"""Noms de clubs pour l'ÉCRAN DE SÉLECTION (Nage Libre).
+"""Club names for the SELECTION SCREEN (Nage Libre).
 
-L'écran de sélection de club lit les noms via une table de pointeurs 24-bit
-(4 octets/entrée) à $87:E346, qui pointe vers les chaînes kanji en $87:85FF...
-Ce chemin est DISTINCT de la boîte de PV en combat (table $81:AF5B), déjà
-relocalisée vers les noms complets en $AF par build_names_full.
+The club selection screen reads the names through a table of 24-bit pointers
+(4 bytes per entry) at $87:E346, which points to the kanji strings at $87:85FF...
+This path is SEPARATE from the battle HP box (table $81:AF5B), already
+relocated to the full names in $AF by build_names_full.
 
-Comme $81:AF5B ne pointe plus vers $87:85FF.., ces slots ne servent QUE pour la
-sélection de club : on y réécrit *sur place* des libellés anglais COURTS (la
-boîte est étroite), remplis d'espaces jusqu'à la largeur du slot (efface le
-suffixe 部 et toute rémanence), terminés par FFFF.
+Since $81:AF5B no longer points to $87:85FF.., these slots are ONLY used for
+club selection: we rewrite SHORT English labels there *in place* (the
+box is narrow), padded with spaces up to the slot width (which erases the
+部 suffix and any ghosting), terminated by FFFF.
 
-Source des kanji/traductions : docs/nage-libre-kanji-kana - names_translation.csv
-(idx 227..241). Libellés courts définis ici pour tenir dans la boîte.
+Source of the kanji/translations: docs/nage-libre-kanji-kana - names_translation.csv
+(idx 227..242). The short labels are defined here so they fit in the box.
 
-apply(rom, alloc) est appelé par build_full_translation.py (allocateur partagé).
+apply(rom, alloc) is called by build_full_translation.py (shared allocator).
 """
 import struct
 
 from patch_prologue_v3 import JP_SPACE, encode_en
 
-# (file_off, slot_words, libellé court).  slot_words = nb de glyphes du nom JP
-# d'origine (1 mot/glyphe) ; le moteur s'arrête au FFFF qui suit.
+# (file_off, slot_words, short label).  slot_words = number of glyphs in the original
+# JP name (1 word per glyph); the engine stops at the FFFF that follows.
 CLUBS = [
     (0x0385FF, 4, "Basket"),    # バスケ部  Basketball
     (0x038609, 4, "Tennis"),    # テニス部
@@ -38,12 +38,13 @@ CLUBS = [
     (0x03866F, 3, "Drama"),     # 演劇部
     (0x038677, 3, "Manga"),     # 漫画部
     (0x03867F, 3, "Crafts"),    # 手芸部    handicraft
+    (0x038687, 4, "No club"),   # 一般生徒  no club (16th entry of $87:E346)
 ]
 
 
 def apply(rom: bytearray, alloc):
-    """Réécrit les noms de clubs (courts) en place à $87:85FF.. Renvoie le nb
-    écrit. Lève si un libellé dépasse son slot."""
+    """Rewrites the (short) club names in place at $87:85FF.. Returns the number
+    written. Raises if a label is longer than its slot."""
     written = 0
     for off, slot, en in CLUBS:
         ids = encode_en(en, alloc)
@@ -51,7 +52,7 @@ def apply(rom: bytearray, alloc):
             ids.pop()
         if len(ids) > slot:
             raise SystemExit(
-                f"Club '{en}' = {len(ids)} mots > slot {slot} @ 0x{off:06X}")
+                f"Club '{en}' = {len(ids)} words > slot {slot} @ 0x{off:06X}")
         ids = ids + [JP_SPACE] * (slot - len(ids)) + [0xFFFF]
         for i, cid in enumerate(ids):
             struct.pack_into("<H", rom, off + i * 2, cid)

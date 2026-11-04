@@ -1,6 +1,6 @@
 namespace NageLibre.Tools.Compression;
 
-/// <summary>Format Nintendo 0x11 (LC_LZ2 / SMW US style) — en-tête 3 octets de taille.</summary>
+/// <summary>Format Nintendo 0x11 (LC_LZ2 / SMW US style) — 3-byte size header.</summary>
 public static class NintendoLz11
 {
     public static byte[]? TryDecompress(ReadOnlySpan<byte> src)

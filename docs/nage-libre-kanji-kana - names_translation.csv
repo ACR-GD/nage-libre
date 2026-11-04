@@ -243,6 +243,6 @@ idx,snes_off,n_glyphs,role,ocr_kanji,partial_decode,en
 241,867F,3,School Club,手芸部,,Handicraft Club
 242,8687,4,given+surname,ー般生徒,,Regular Students
 243,8691,2,given+surname,ボス,,boss
-244,8697,14,(non pointé),,,"=ai(""translate those kanji that are names from Japanese to English"", E246)"
-245,86B5,11,(non pointé),,,"=ai(""translate those kanji that are names from Japanese to English"", E247)"
-246,86CD,5,(non pointé),,,"=ai(""translate those kanji that are names from Japanese to English"", E248)"
+244,8697,14,(no pointer),,,"=ai(""translate those kanji that are names from Japanese to English"", E246)"
+245,86B5,11,(no pointer),,,"=ai(""translate those kanji that are names from Japanese to English"", E247)"
+246,86CD,5,(no pointer),,,"=ai(""translate those kanji that are names from Japanese to English"", E248)"
