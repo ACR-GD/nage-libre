@@ -1,52 +1,52 @@
 #!/usr/bin/env python3
-"""Boîte à outils PyGhidra réutilisable pour reverse-engineer des jeux Super Nintendo
-(65816) en vue d'une traduction (JP -> EN, EN -> FR).
+"""Reusable PyGhidra toolkit for reverse-engineering Super Nintendo games
+(65816) for translation (JP -> EN, EN -> FR).
 
-Pensée pour être copiée telle quelle dans n'importe quel projet de ROM-hacking SNES.
-Elle combine :
+Designed to be copied as-is into any SNES ROM-hacking project.
+It combines:
 
-  * Analyse de l'en-tête + détection automatique du mapping (LoROM / HiROM /
-    ExHiROM) et de l'éventuel en-tête copieur SMC de 512 octets.
-  * Conversions SNES <-> offset fichier dans les deux sens.
-  * Des SCANNERS HEURISTIQUES en Python pur (sans Ghidra, donc rapides) qui
-    repèrent les routines les plus utiles à traduire :
-        - afficheurs de chaînes  (boucle : charge via pointeur, compare à un
-          terminateur, branche)  -> où le texte est rendu ;
-        - tables de pointeurs    (2 ou 3 octets)                -> où sont les
-          scripts / chaînes ;
-        - uploads DMA -> VRAM    (écritures $2116/$2118 + $420B) -> où la police
-          / les tuiles sont chargées.
-  * GRAPHISMES : décodage de tuiles SNES (2/4/8 bpp + Mode7) et rendu PNG, pour
-    extraire les graphismes contenant du texte (logos, écrans-titres, libellés).
-  * COMPRESSION : carte d'entropie (blobs compressés candidats) + détection
-    heuristique de décompresseurs avec type deviné (RLE / LZSS / bit-packed /
-    LZ custom). Méthodologie complète : docs/snes_compression_id.md.
-  * L'intégration Ghidra (chargée à la demande) : map mémoire correct par banque,
-    pose des vecteurs (RESET/NMI/IRQ), désassemble à une adresse, et peut
-    SAUVEGARDER un projet Ghidra ouvrable dans l'UI (labels des routines trouvées).
+  * Header analysis + automatic detection of the mapping (LoROM / HiROM /
+    ExHiROM) and of a possible 512-byte SMC copier header.
+  * SNES <-> file offset conversions in both directions.
+  * HEURISTIC SCANNERS in pure Python (no Ghidra, so they're fast) that
+    find the routines most useful for translation:
+        - string printers  (loop: load through a pointer, compare to a
+          terminator, branch)  -> where the text is rendered;
+        - pointer tables    (2 or 3 bytes)                -> where the
+          scripts / strings are;
+        - DMA -> VRAM uploads    (writes to $2116/$2118 + $420B) -> where the font
+          / tiles are loaded.
+  * GRAPHICS: SNES tile decoding (2/4/8 bpp + Mode 7) and PNG rendering, to
+    extract graphics that contain text (logos, title screens, labels).
+  * COMPRESSION: entropy map (candidate compressed blobs) + heuristic
+    detection of decompressors with a guessed type (RLE / LZSS / bit-packed /
+    custom LZ). Full method: docs/snes_compression_id.en.md.
+  * Ghidra integration (loaded on demand): correct per-bank memory map,
+    vector setup (RESET/NMI/IRQ), disassembly at an address, and it can
+    SAVE a Ghidra project you can open in the UI (labels for the routines found).
 
-Exemples :
-    # info + vecteurs + heuristiques, rapport texte sur la sortie standard
-    python3 scripts/snes_re_toolkit.py jeu.sfc
+Examples:
+    # info + vectors + heuristics, text report on standard output
+    python3 scripts/snes_re_toolkit.py game.sfc
 
-    # scanners seuls (aucun Ghidra requis), rapport markdown
-    python3 scripts/snes_re_toolkit.py jeu.sfc --find-printers --find-tables \\
-            --find-dma --report rapport.md
+    # scanners only (no Ghidra needed), markdown report
+    python3 scripts/snes_re_toolkit.py game.sfc --find-printers --find-tables \\
+            --find-dma --report report.md
 
-    # désassemble 40 instructions à $80:8000 et à $80:F8D8
-    python3 scripts/snes_re_toolkit.py jeu.sfc --disasm 808000,40 --disasm 80F8D8,40
+    # disassemble 40 instructions at $80:8000 and at $80:F8D8
+    python3 scripts/snes_re_toolkit.py game.sfc --disasm 808000,40 --disasm 80F8D8,40
 
-    # graphismes + compression : rendre une zone, lister blobs et décompresseurs
-    python3 scripts/snes_re_toolkit.py jeu.sfc --gfx 0x28000,0x2000,2,32 --out font.png
-    python3 scripts/snes_re_toolkit.py jeu.sfc --entropy --find-decompressors --find-dma
-    python3 scripts/snes_re_toolkit.py jeu.sfc --gfx-bin dump_decompresse.bin,4,16 --out dump.png
+    # graphics + compression: render an area, list blobs and decompressors
+    python3 scripts/snes_re_toolkit.py game.sfc --gfx 0x28000,0x2000,2,32 --out font.png
+    python3 scripts/snes_re_toolkit.py game.sfc --entropy --find-decompressors --find-dma
+    python3 scripts/snes_re_toolkit.py game.sfc --gfx-bin decompressed_dump.bin,4,16 --out dump.png
 
-    # construit + sauvegarde un projet Ghidra (ouvrable dans la GUI)
-    python3 scripts/snes_re_toolkit.py jeu.sfc --save-project ./ghidra_proj:MonJeu --analyze
+    # build + save a Ghidra project (can be opened in the GUI)
+    python3 scripts/snes_re_toolkit.py game.sfc --save-project ./ghidra_proj:MyGame --analyze
 
-Pré-requis Ghidra (uniquement pour --vectors/--disasm/--save-project/--analyze) :
+Ghidra requirements (only for --vectors/--disasm/--save-project/--analyze):
     pip install pyghidra
-    export GHIDRA_INSTALL_DIR=/chemin/vers/ghidra   (sinon valeur par défaut ci-dessous)
+    export GHIDRA_INSTALL_DIR=/path/to/ghidra   (otherwise the default value below)
 """
 import argparse
 import os
@@ -59,7 +59,7 @@ os.environ.setdefault(
 
 GHIDRA_LANG = "65816:LE:16:default"
 
-# Opcodes 65816 d'intérêt pour les scanners (chargement indirect via pointeur).
+# 65816 opcodes of interest for the scanners (indirect load through a pointer).
 LOAD_VIA_PTR = {
     0xA7: "LDA [dp]",
     0xB7: "LDA [dp],Y",
@@ -69,22 +69,22 @@ LOAD_VIA_PTR = {
     0xBD: "LDA addr,X",
     0xB9: "LDA addr,Y",
 }
-CMP_IMM = 0xC9            # CMP #imm  (test de terminateur)
+CMP_IMM = 0xC9            # CMP #imm  (terminator test)
 BRANCHES = {0xF0: "BEQ", 0xD0: "BNE", 0x80: "BRA", 0x90: "BCC", 0xB0: "BCS"}
 
 
 # ===========================================================================
-# 1. ROM : en-tête copieur, mapping, en-tête interne
+# 1. ROM: copier header, mapping, internal header
 # ===========================================================================
 def strip_smc_header(data: bytes):
-    """Retire l'en-tête copieur SMC de 512 o si présent. Renvoie (data, had_smc)."""
+    """Removes the 512-byte SMC copier header if present. Returns (data, had_smc)."""
     if len(data) % 0x8000 == 0x200:
         return data[0x200:], True
     return data, False
 
 
 def _score_header(data: bytes, base: int) -> int:
-    """Score de plausibilité d'un en-tête interne SNES à l'offset `base`."""
+    """Plausibility score of a SNES internal header at offset `base`."""
     if base + 0x30 > len(data):
         return -1
     score = 0
@@ -105,7 +105,7 @@ def _score_header(data: bytes, base: int) -> int:
 
 
 def detect_mapping(data: bytes, forced: str = "auto"):
-    """Renvoie 'lorom' | 'hirom' | 'exhirom' (header interne à 0x7FC0/0xFFC0/0x40FFC0)."""
+    """Returns 'lorom' | 'hirom' | 'exhirom' (internal header at 0x7FC0/0xFFC0/0x40FFC0)."""
     if forced != "auto":
         return forced
     cands = {"lorom": 0x7FC0, "hirom": 0xFFC0, "exhirom": 0x40FFC0}
@@ -144,7 +144,7 @@ def parse_header(data: bytes, mapping: str) -> dict:
     }
 
 
-# ---- conversions SNES <-> fichier (selon mapping) ----
+# ---- SNES <-> file conversions (depending on the mapping) ----
 def snes_to_file(snes: int, mapping: str):
     bank = (snes >> 16) & 0xFF
     addr = snes & 0xFFFF
@@ -155,7 +155,7 @@ def snes_to_file(snes: int, mapping: str):
     # hirom / exhirom
     if bank in range(0x40, 0x7E) or bank >= 0xC0:
         return ((bank & 0x3F) * 0x10000) + addr
-    if addr >= 0x8000:                      # miroir $80-$BF:8000-FFFF
+    if addr >= 0x8000:                      # mirror $80-$BF:8000-FFFF
         return ((bank & 0x3F) * 0x10000) + addr
     return None
 
@@ -173,12 +173,12 @@ def fmt_snes(snes: int) -> str:
 
 
 # ===========================================================================
-# 2. Scanners heuristiques (Python pur — aucun Ghidra requis)
+# 2. Heuristic scanners (pure Python, no Ghidra needed)
 # ===========================================================================
 def find_string_printers(data: bytes, mapping: str, window: int = 24, limit: int = 60):
-    """Repère les boucles d'affichage de texte : un chargement via pointeur suivi,
-    dans une petite fenêtre, d'un CMP #imm (terminateur) et d'un branchement, le
-    tout dans une boucle (branche arrière). Renvoie une liste de candidats."""
+    """Finds text-printing loops: a load through a pointer followed,
+    within a small window, by a CMP #imm (terminator) and a branch, the
+    whole thing inside a loop (backward branch). Returns a list of candidates."""
     out = []
     n = len(data)
     for i in range(n - window):
@@ -186,16 +186,16 @@ def find_string_printers(data: bytes, mapping: str, window: int = 24, limit: int
         if op not in LOAD_VIA_PTR:
             continue
         seg = data[i:i + window]
-        # cherche CMP #imm
+        # look for CMP #imm
         jc = seg.find(bytes([CMP_IMM]))
         if jc < 2 or jc + 2 >= len(seg):
             continue
         term = seg[jc + 1]
-        # branchement juste après le CMP (terminateur)
+        # branch right after the CMP (terminator)
         bpos = jc + 2
         if seg[bpos] not in BRANCHES:
             continue
-        # présence d'une branche arrière (boucle) dans la fenêtre
+        # a backward branch (loop) within the window
         has_loop = any(
             seg[k] in (0x80, 0xD0, 0xF0, 0x90, 0xB0) and seg[k + 1] >= 0x80
             for k in range(0, len(seg) - 1))
@@ -213,8 +213,8 @@ def find_string_printers(data: bytes, mapping: str, window: int = 24, limit: int
 
 def find_pointer_tables(data: bytes, mapping: str, min_entries: int = 16,
                         limit: int = 80):
-    """Détecte les tables de pointeurs 2 octets (intra-banque) et 3 octets (long).
-    Une table = >= min_entries entrées dont les cibles tombent dans la ROM."""
+    """Detects 2-byte (within a bank) and 3-byte (long) pointer tables.
+    A table = >= min_entries entries whose targets fall inside the ROM."""
     out = []
     n = len(data)
     rom_kb = max(8, n // 1024)
@@ -222,7 +222,7 @@ def find_pointer_tables(data: bytes, mapping: str, min_entries: int = 16,
     def valid_addr(addr):
         return addr >= 0x8000 if mapping == "lorom" else True
 
-    # --- 3 octets (pointeurs long) ---
+    # --- 3 bytes (long pointers) ---
     i = 0
     while i < n - 3 * min_entries:
         cnt = 0
@@ -230,7 +230,7 @@ def find_pointer_tables(data: bytes, mapping: str, min_entries: int = 16,
         while j + 3 <= n:
             addr = data[j] | (data[j + 1] << 8)
             bank = data[j + 2]
-            if addr in (0x0000, 0xFFFF):          # padding -> rupture
+            if addr in (0x0000, 0xFFFF):          # padding -> break
                 break
             snes = (bank << 16) | addr
             if not (0x80 <= bank <= 0xFF or 0x00 <= bank <= 0x7D):
@@ -249,7 +249,7 @@ def find_pointer_tables(data: bytes, mapping: str, min_entries: int = 16,
         if len(out) >= limit:
             break
 
-    # --- 2 octets (intra-banque) ; 0xFFFF/0x0000 rompent la série (padding) ---
+    # --- 2 bytes (within a bank); 0xFFFF/0x0000 break the run (padding) ---
     i = 0
     while i < n - 2 * min_entries:
         cnt = 0
@@ -272,8 +272,8 @@ def find_pointer_tables(data: bytes, mapping: str, min_entries: int = 16,
 
 
 def find_vram_dma(data: bytes, mapping: str, limit: int = 80):
-    """Repère les écritures de registres clés des uploads graphiques :
-       STA $2116/$2117 (adresse VRAM), STA $4300.. (params DMA), STA $420B (go)."""
+    """Finds writes to the key registers of graphics uploads:
+       STA $2116/$2117 (VRAM address), STA $4300.. (DMA params), STA $420B (go)."""
     targets = {0x2116: "VMADDL", 0x2117: "VMADDH", 0x2118: "VMDATAL",
                0x420B: "MDMAEN", 0x4300: "DMAP0", 0x4302: "A1T0L"}
     out = []
@@ -291,16 +291,16 @@ def find_vram_dma(data: bytes, mapping: str, limit: int = 80):
 
 
 # ===========================================================================
-# 2b. Graphismes : décodage de tuiles SNES + rendu PNG
+# 2b. Graphics: SNES tile decoding + PNG rendering
 # ===========================================================================
-# Formats planaires SNES (8x8) : 2bpp=16 o, 4bpp=32 o, 8bpp=64 o ; Mode7=64 o
-# linéaire (1 octet/pixel). Texte « cuit » dans des graphismes (logos, « PUSH
-# START », libellés de menu) -> à extraire pour traduire/redessiner.
+# SNES planar formats (8x8): 2bpp=16 bytes, 4bpp=32 bytes, 8bpp=64 bytes; Mode 7=64 bytes
+# linear (1 byte per pixel). Text "baked" into graphics (logos, "PUSH
+# START", menu labels) -> to extract for translating/redrawing.
 TILE_SIZE = {"2": 16, "4": 32, "8": 64, "m7": 64}
 
 
 def _decode_planar(seg, bpp):
-    """Renvoie 8x8 indices de couleur pour une tuile planaire (bpp = 2/4/8)."""
+    """Returns 8x8 colour indexes for a planar tile (bpp = 2/4/8)."""
     px = [[0] * 8 for _ in range(8)]
     planes = bpp
     for y in range(8):
@@ -319,15 +319,15 @@ def _decode_m7(seg):
 
 
 def render_tiles(data, bpp="4", per_row=16, scale=2, max_tiles=None, palette=None):
-    """Rend `data` comme une planche de tuiles 8x8 -> image PIL (niveaux de gris
-    par défaut, ou `palette` = liste de (r,g,b) indexée par couleur)."""
+    """Renders `data` as a sheet of 8x8 tiles -> PIL image (greyscale
+    by default, or `palette` = list of (r,g,b) indexed by colour)."""
     from PIL import Image
     size = TILE_SIZE[bpp]
     ntiles = len(data) // size
     if max_tiles:
         ntiles = min(ntiles, max_tiles)
     if ntiles == 0:
-        raise SystemExit("Pas assez de données pour une tuile.")
+        raise SystemExit("Not enough data for one tile.")
     rows = (ntiles + per_row - 1) // per_row
     img = Image.new("RGB", (per_row * 8, rows * 8), (40, 40, 40))
     pix = img.load()
@@ -350,11 +350,11 @@ def render_tiles(data, bpp="4", per_row=16, scale=2, max_tiles=None, palette=Non
 
 
 # ===========================================================================
-# 2c. Compression : entropie (blobs compressés) + détection de décompresseurs
+# 2c. Compression: entropy (compressed blobs) + decompressor detection
 # ===========================================================================
 def entropy_regions(data, block=0x100, thresh=6.8):
-    """Régions à FORTE entropie (>= thresh bits/octet) = données compressées ou
-    déjà denses. Indice (pas une preuve) de blob compressé. Renvoie [(off,len,H)]."""
+    """HIGH-entropy regions (>= thresh bits/byte) = compressed or already
+    dense data. A hint (not proof) of a compressed blob. Returns [(off,len,H)]."""
     import math
     from collections import Counter
     regions = []
@@ -377,53 +377,53 @@ def entropy_regions(data, block=0x100, thresh=6.8):
     return regions
 
 
-# Opcodes utiles à la détection de décompresseurs
-SHIFT_OPS = {0x4A, 0x0A, 0x2A, 0x6A}          # LSR / ASL / ROL / ROR (sur A)
+# Opcodes useful for detecting decompressors
+SHIFT_OPS = {0x4A, 0x0A, 0x2A, 0x6A}          # LSR / ASL / ROL / ROR (on A)
 IND_LOAD = {0xA7, 0xB7, 0xB1, 0xB2}           # LDA [dp]/[dp],Y/(dp),Y/(dp)
 IND_STORE = {0x87, 0x97, 0x91, 0x92}          # STA …
 BACK_BRANCH = {0x80, 0xD0, 0xF0, 0x90, 0xB0}  # BRA/BNE/BEQ/BCC/BCS (offset < 0)
 
 
 def classify_decompressor(data, off, span=0x200):
-    """Devine le type de compression d'après la structure du code à `off`."""
+    """Guesses the compression type from the structure of the code at `off`."""
     seg = data[off:off + span]
     nshift = sum(1 for b in seg if b in SHIFT_OPS)
     nload = sum(1 for b in seg if b in IND_LOAD)
     nstore = sum(1 for b in seg if b in IND_STORE)
-    # copie « fenêtre » LZ : lecture indexée d'un tampon récemment écrit
+    # LZ "window" copy: indexed read of a recently written buffer
     abs_copy = sum(1 for k in range(len(seg) - 3)
                    if seg[k] in (0xBD, 0xB9, 0xBF) and seg[k + 3] in (0x9D, 0x99, 0x9F))
     has_window = (nload and nstore) or abs_copy
     if nshift >= 4 and has_window:
-        guess = "LZ + lecteur de bits (LZSS/Nintendo-LZ ou custom à nibbles/bits)"
+        guess = "LZ + bit reader (LZSS/Nintendo-LZ or custom nibble/bit-based)"
     elif nshift >= 4:
-        guess = "compression à bits (Huffman/codes de longueur variable ?)"
+        guess = "bit-level compression (Huffman/variable-length codes?)"
     elif has_window and nshift < 2:
-        guess = "LZSS octet (back-reference, drapeaux par octet)"
+        guess = "byte LZSS (back-reference, per-byte flags)"
     elif nstore >= 2 and nshift < 2 and not has_window:
-        guess = "RLE (répétition d'octets)"
+        guess = "RLE (byte repetition)"
     else:
-        guess = "indéterminé (inspecter au désassembleur)"
+        guess = "undetermined (inspect in a disassembler)"
     return {"shifts": nshift, "ind_load": nload, "ind_store": nstore,
             "window_copy": has_window, "guess": guess}
 
 
 def find_decompressors(data, mapping, window=0x60, min_shift=5, limit=40):
-    """Repère les routines ressemblant à un décompresseur : grappe d'opérations de
-    décalage (lecteur de bits) + copie « fenêtre » (LZ) + boucle arrière.
+    """Finds routines that look like a decompressor: a cluster of shift
+    operations (bit reader) + a "window" copy (LZ) + a backward loop.
 
-    HEURISTIQUE BRUITÉE et incomplète : les décompresseurs à TABLE DE SAUT
-    (`JSR (table,X)`, comme $80:F8D8 dans Nage Libre) sont éclatés en
-    sous-routines et passent sous le radar. Pour ceux-là, utiliser la méthode du
-    trace DMA->WRAM (voir docs/snes_compression_id.md)."""
+    A NOISY and incomplete HEURISTIC: decompressors that use a JUMP TABLE
+    (`JSR (table,X)`, like $80:F8D8 in Nage Libre) are split into
+    subroutines and slip under the radar. For those, use the
+    DMA->WRAM trace method (see docs/snes_compression_id.en.md)."""
     shift_pos = [k for k, b in enumerate(data) if b in SHIFT_OPS]
     sset = shift_pos
     out, seen = [], -window
     import bisect
     for s in shift_pos:
-        if s - seen < window:                       # dédoublonne les grappes proches
+        if s - seen < window:                       # dedupe nearby clusters
             continue
-        # nb de décalages dans [s, s+window)
+        # number of shifts in [s, s+window)
         hi = bisect.bisect_left(sset, s + window)
         lo = bisect.bisect_left(sset, s)
         if hi - lo < min_shift:
@@ -443,7 +443,7 @@ def find_decompressors(data, mapping, window=0x60, min_shift=5, limit=40):
 
 
 # ===========================================================================
-# 3. Intégration Ghidra (importée à la demande)
+# 3. Ghidra integration (imported on demand)
 # ===========================================================================
 def _start_ghidra():
     import pyghidra
@@ -451,8 +451,8 @@ def _start_ghidra():
 
 
 def build_program(data: bytes, mapping: str, name: str):
-    """Construit un ProgramDB 65816 et y mappe la ROM banque par banque selon le
-    mapping. Renvoie (prog, api, consumer)."""
+    """Builds a 65816 ProgramDB and maps the ROM into it bank by bank according to the
+    mapping. Returns (prog, api, consumer)."""
     from ghidra.program.model.lang import LanguageID
     from ghidra.program.database import ProgramDB
     from ghidra.program.util import DefaultLanguageService
@@ -498,7 +498,7 @@ def build_program(data: bytes, mapping: str, name: str):
 
 
 def label_and_disassemble(prog, api, snes_points: dict):
-    """Désassemble et pose un label (symbole) à chaque (label -> snes)."""
+    """Disassembles and places a label (symbol) at each (label -> snes)."""
     from ghidra.util.task import TaskMonitor
     from ghidra.program.model.symbol import SourceType
     space = prog.getAddressFactory().getDefaultAddressSpace()
@@ -560,8 +560,8 @@ def save_project(prog, proj_dir: str, proj_name: str):
 # 4. Rapport / CLI
 # ===========================================================================
 def vectors_to_snes(hdr: dict, mapping: str):
-    """Les vecteurs (RESET/NMI/IRQ) sont des adresses 16-bit en banque 0 ; en
-    LoROM/HiROM le code vit en banque $80/$C0 -> on remappe pour le désassemblage."""
+    """The vectors (RESET/NMI/IRQ) are 16-bit addresses in bank 0; in
+    LoROM/HiROM the code lives in bank $80/$C0 -> we remap for disassembly."""
     bank = 0x80 if mapping == "lorom" else 0xC0
     pts = {}
     for name in ("RESET", "NMI", "IRQ"):
@@ -572,29 +572,29 @@ def vectors_to_snes(hdr: dict, mapping: str):
 
 
 def main():
-    p = argparse.ArgumentParser(description="Boîte à outils PyGhidra pour le reverse SNES.")
+    p = argparse.ArgumentParser(description="PyGhidra toolkit for SNES reverse engineering.")
     p.add_argument("rom", type=Path)
     p.add_argument("--map", default="auto", choices=["auto", "lorom", "hirom", "exhirom"])
-    p.add_argument("--info", action="store_true", help="en-tête + mapping")
-    p.add_argument("--vectors", action="store_true", help="désassemble RESET/NMI/IRQ (Ghidra)")
+    p.add_argument("--info", action="store_true", help="header + mapping")
+    p.add_argument("--vectors", action="store_true", help="disassembles RESET/NMI/IRQ (Ghidra)")
     p.add_argument("--find-printers", action="store_true")
     p.add_argument("--find-tables", action="store_true")
     p.add_argument("--find-dma", action="store_true")
     p.add_argument("--entropy", action="store_true",
-                   help="régions à forte entropie (blobs compressés candidats)")
+                   help="high-entropy regions (candidate compressed blobs)")
     p.add_argument("--find-decompressors", action="store_true",
-                   help="routines ressemblant à un décompresseur + type deviné")
+                   help="routines that look like a decompressor + guessed type")
     p.add_argument("--gfx", metavar="OFF,LEN,BPP,W",
-                   help="rend la ROM (offset FICHIER hex) en tuiles -> PNG "
-                        "(BPP=2/4/8/m7, W=tuiles/ligne)")
+                   help="renders the ROM (hex FILE offset) as tiles -> PNG "
+                        "(BPP=2/4/8/m7, W=tiles per row)")
     p.add_argument("--gfx-bin", metavar="PATH,BPP,W",
-                   help="rend un binaire externe (ex. dump décompressé) en tuiles")
-    p.add_argument("--out", type=Path, default=None, help="chemin du PNG de sortie")
+                   help="renders an external binary (e.g. a decompressed dump) as tiles")
+    p.add_argument("--out", type=Path, default=None, help="output PNG path")
     p.add_argument("--disasm", action="append", default=[],
-                   metavar="SNES,LEN", help="désassemble à $SNES (hex) LEN instructions (Ghidra)")
-    p.add_argument("--save-project", metavar="DIR:NAME", help="sauvegarde un projet Ghidra")
-    p.add_argument("--analyze", action="store_true", help="lance l'auto-analyse Ghidra")
-    p.add_argument("--report", type=Path, help="écrit le rapport en markdown (sinon stdout)")
+                   metavar="SNES,LEN", help="disassembles LEN instructions at $SNES (hex) (Ghidra)")
+    p.add_argument("--save-project", metavar="DIR:NAME", help="saves a Ghidra project")
+    p.add_argument("--analyze", action="store_true", help="runs Ghidra auto-analysis")
+    p.add_argument("--report", type=Path, help="writes the report as markdown (otherwise stdout)")
     args = p.parse_args()
 
     raw = args.rom.read_bytes()
@@ -602,7 +602,7 @@ def main():
     mapping = detect_mapping(data, args.map)
     hdr = parse_header(data, mapping)
 
-    # par défaut : info + heuristiques si rien n'est demandé
+    # default: info + heuristics if nothing is requested
     if not any([args.info, args.vectors, args.find_printers, args.find_tables,
                 args.find_dma, args.entropy, args.find_decompressors, args.gfx,
                 args.gfx_bin, args.disasm, args.save_project, args.analyze]):
@@ -613,22 +613,22 @@ def main():
         R.append(s)
 
     out(f"# Reverse SNES — {args.rom.name}")
-    out(f"- taille : {len(data):,} o ({len(data)//1024} Ko){' (+ en-tête SMC)' if smc else ''}")
-    out(f"- mapping détecté : **{mapping}**")
+    out(f"- size: {len(data):,} bytes ({len(data)//1024} KB){' (+ SMC header)' if smc else ''}")
+    out(f"- detected mapping: **{mapping}**")
     if args.info:
-        out(f"- titre : `{hdr['title']}`")
+        out(f"- title: `{hdr['title']}`")
         out(f"- mapper 0x{hdr['mapper']:02X} | type 0x{hdr['rom_type']:02X} | "
-            f"ROM {hdr['rom_kb']}Ko | RAM {hdr['ram_kb']}Ko | région 0x{hdr['region']:02X}")
-        out(f"- checksum 0x{hdr['checksum']:04X} / complément 0x{hdr['complement']:04X} "
-            f"({'OK' if (hdr['checksum'] ^ hdr['complement']) == 0xFFFF else 'incohérent'})")
+            f"ROM {hdr['rom_kb']}KB | RAM {hdr['ram_kb']}KB | region 0x{hdr['region']:02X}")
+        out(f"- checksum 0x{hdr['checksum']:04X} / complement 0x{hdr['complement']:04X} "
+            f"({'OK' if (hdr['checksum'] ^ hdr['complement']) == 0xFFFF else 'inconsistent'})")
         vs = "  ".join(f"{k}={fmt_snes(vectors_to_snes(hdr, mapping).get(k, v))}"
                        for k, v in hdr["vectors"].items() if k in ("RESET", "NMI", "IRQ"))
-        out(f"- vecteurs : {vs}")
+        out(f"- vectors: {vs}")
 
     if args.find_printers:
         c = find_string_printers(data, mapping)
-        out(f"\n## Afficheurs de texte candidats ({len(c)})")
-        out("| SNES | chargement | terminateur | branche |")
+        out(f"\n## Candidate text printers ({len(c)})")
+        out("| SNES | load | terminator | branch |")
         out("|---|---|---|---|")
         for x in c[:40]:
             out(f"| {fmt_snes(x['snes'])} | {x['load']} | "
@@ -637,16 +637,16 @@ def main():
     if args.find_tables:
         c = find_pointer_tables(data, mapping)
         c.sort(key=lambda x: -x["entries"])
-        out(f"\n## Tables de pointeurs candidates ({len(c)})")
-        out("| SNES | pas | entrées |")
+        out(f"\n## Candidate pointer tables ({len(c)})")
+        out("| SNES | stride | entries |")
         out("|---|---|---|")
         for x in c[:40]:
-            out(f"| {fmt_snes(x['snes'])} | {x['stride']} o | {x['entries']} |")
+            out(f"| {fmt_snes(x['snes'])} | {x['stride']} bytes | {x['entries']} |")
 
     if args.find_dma:
         c = find_vram_dma(data, mapping)
-        out(f"\n## Écritures registres VRAM/DMA ({len(c)})")
-        out("| SNES | registre |")
+        out(f"\n## VRAM/DMA register writes ({len(c)})")
+        out("| SNES | register |")
         out("|---|---|")
         for x in c[:40]:
             out(f"| {fmt_snes(x['snes'])} | {x['reg']} (${x['regaddr']:04X}) |")
@@ -654,21 +654,21 @@ def main():
     if args.entropy:
         c = entropy_regions(data)
         c.sort(key=lambda r: -r[1])
-        out(f"\n## Régions à forte entropie ({len(c)}) — blobs compressés candidats")
-        out("| SNES | taille | entropie |")
+        out(f"\n## High-entropy regions ({len(c)}) — candidate compressed blobs")
+        out("| SNES | size | entropy |")
         out("|---|---|---|")
         for off, ln, H in c[:40]:
-            out(f"| {fmt_snes(file_to_snes(off, mapping))} | {ln} o | {H:.2f} |")
+            out(f"| {fmt_snes(file_to_snes(off, mapping))} | {ln} bytes | {H:.2f} |")
 
     if args.find_decompressors:
         c = find_decompressors(data, mapping)
-        out(f"\n## Décompresseurs candidats ({len(c)})")
-        out("| SNES | décalages | ld/st ind. | fenêtre | type deviné |")
+        out(f"\n## Candidate decompressors ({len(c)})")
+        out("| SNES | shifts | ind. ld/st | window | guessed type |")
         out("|---|---|---|---|---|")
         for x in c[:30]:
             out(f"| {fmt_snes(x['snes'])} | {x['shifts']} | "
                 f"{x['ind_load']}/{x['ind_store']} | "
-                f"{'oui' if x['window_copy'] else 'non'} | {x['guess']} |")
+                f"{'yes' if x['window_copy'] else 'no'} | {x['guess']} |")
 
     if args.gfx or args.gfx_bin:
         if args.gfx_bin:
@@ -685,8 +685,8 @@ def main():
         img = render_tiles(blob, bpp=bpp, per_row=int(w))
         outp = args.out or default_out
         img.save(outp)
-        out(f"\n## Graphismes rendus")
-        out(f"- source : {label} ({len(blob)} o, {bpp}bpp, {w} tuiles/ligne)")
+        out(f"\n## Rendered graphics")
+        out(f"- source: {label} ({len(blob)} bytes, {bpp}bpp, {w} tiles per row)")
         out(f"- image  : `{outp}`")
 
     need_ghidra = args.vectors or args.disasm or args.save_project or args.analyze
@@ -715,14 +715,14 @@ def main():
             if args.save_project:
                 d, _, nm = args.save_project.partition(":")
                 save_project(prog, d, nm or args.rom.stem)
-                out(f"\n_Projet Ghidra sauvegardé : {d}/{nm or args.rom.stem}_")
+                out(f"\n_Ghidra project saved: {d}/{nm or args.rom.stem}_")
         finally:
             prog.release(consumer)
 
     text = "\n".join(R)
     if args.report:
         args.report.write_text(text, encoding="utf-8")
-        print(f"Rapport écrit : {args.report}")
+        print(f"Report written: {args.report}")
     else:
         print(text)
 

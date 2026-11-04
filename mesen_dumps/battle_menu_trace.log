@@ -1,8 +1,8 @@
-=== Nage Libre — trace MENU DE COMBAT v2 ===
+=== Nage Libre — BATTLE MENU trace v2 ===
 Log: /Users/acr/Develop/nage-libre/mesen_dumps/battle_menu_trace.log
   watch write FONT  $7E2100..$7E2E50
   watch write MAP  $7E4040..$7E4280
-Actif. Ouvrir le menu COMMAND, puis m'envoyer le log.
+Active. Open the COMMAND menu, then send me the log.
 MAP w $7E4040 = $00   PC=$80F9C7 A=FFFF X=FFFF Y=FFFF f=95
 MAP w $7E4041 = $20   PC=$80F9D2 A=FFFF X=FFFF Y=FFFF f=95
 MAP w $7E4042 = $00   PC=$80F9C7 A=FFFF X=FFFF Y=FFFF f=95

@@ -2,12 +2,12 @@
 """
 Patch prologue screen 1 (starfield) — English opening lines.
 
-Insertion minimale (doc prologue_text_engine.md) :
-  • 14 mots @ $7F:6602 seulement (flux texte JP, même longueur)
-  • Ne pas toucher $7F:65E2 (rangée visible / bordures — remplie par les 7 phases)
-  • Ne pas effacer row $0222 (preload écran 2 / transition fin prologue)
+Minimal insertion (doc prologue_text_engine.en.md):
+  • 14 words @ $7F:6602 only (JP text stream, same length)
+  • Don't touch $7F:65E2 (visible row / borders, filled by the 7 phases)
+  • Don't clear row $0222 (screen 2 preload / end-of-prologue transition)
 
-Le patch 30 mots @ $65E2 + clear $0222 provoquait le plantage en fin de prologue.
+The 30-word patch @ $65E2 + clearing $0222 caused the crash at the end of the prologue.
 
 Output: nl-prologue-en.sfc
 """
@@ -32,10 +32,10 @@ HOOK_ADDR = 0xF8E3
 HOOK_ADDR_SUB = 0xF950
 
 MIN_FONT_ID = 0x0100
-WRAM_TEXT = 0x7F6602  # offset $0142 — 14 mots texte écran 1
+WRAM_TEXT = 0x7F6602  # offset $0142 — 14 words of screen 1 text
 SLOT_COUNT = 14
 
-# 14 slots VWF ≈ même empreinte que 遠くの世界で……声が響く……
+# 14 VWF slots ≈ the same footprint as 遠くの世界で……声が響く……
 LINE = "In a distant world,a voice echoes"
 
 
@@ -114,7 +114,7 @@ def main():
     OUT_PATH.write_bytes(rom)
 
     print(f"Written: {OUT_PATH.name}")
-    print(f"  {SLOT_COUNT} mots @ $7F:6602 uniquement (pas $65E2, pas clear $0222)")
+    print(f"  {SLOT_COUNT} words @ $7F:6602 only (not $65E2, no clearing of $0222)")
     print(f"  Texte: {LINE!r}")
     print(f"  IDs: {' '.join(f'{v:04X}' for v in ids)}")
     print(f"  Font pairs: {alloc.count()}")

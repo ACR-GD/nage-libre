@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""Atlas des glyphes kanji NON mappés, triés par fréquence dans le dialogue.
+"""Atlas of the UNmapped kanji glyphs, sorted by frequency in the dialogue.
 
-Pourquoi : l'OCR auto (Vision/manga-ocr) échoue sur cette police (erreurs
-systématiques, ~12% de justesse vérifiée). Mapper à la main les glyphes les
-plus fréquents est fiable et suffit : top 200 -> ~97% de couverture.
+Why: automatic OCR (Vision/manga-ocr) fails on this font (systematic
+errors, ~12% verified accuracy). Mapping the most frequent glyphs by hand
+is reliable and enough: top 200 -> ~97% coverage.
 
-Sortie :
-  docs/kanji_atlas/page_NN.png  — glyphes agrandis + n° de rang
-  docs/kanji_manual.csv         — rank, char_id_hex, occ, unicode(à remplir)
+Output:
+  docs/kanji_atlas/page_NN.png  — enlarged glyphs + rank number
+  docs/kanji_manual.csv         — rank, char_id_hex, occ, unicode (to fill in)
 
-Workflow : remplir la colonne `unicode` de docs/kanji_manual.csv en lisant
-l'atlas, puis `python3 scripts/build_kanji_atlas.py apply` fusionne dans
-docs/kanji_font_index.csv et régénère les CSV de scènes.
+Workflow: fill in the `unicode` column of docs/kanji_manual.csv by reading
+the atlas, then `python3 scripts/build_kanji_atlas.py apply` merges it into
+docs/kanji_font_index.csv and regenerates the scene CSVs.
 
 Usage : python3 scripts/build_kanji_atlas.py [build|apply] [--top N]
 """
@@ -46,7 +46,7 @@ def known_ids():
 
 
 def dialogue_occ():
-    """Occurrences des glyphes dans les lignes de dialogue extraites."""
+    """Glyph occurrences in the extracted dialogue lines."""
     import json
     occ = Counter()
     if CACHE.exists():
@@ -56,7 +56,7 @@ def dialogue_occ():
                 if v != SPACE:
                     occ[v] += 1
         return occ
-    # fallback : redécompresse
+    # fallback: decompress again
     rom = ROM.read_bytes()
     for i, snes, off in read_ptr_table(rom, 0x600):
         if i < 0x30F or off is None or off >= len(rom):
@@ -78,7 +78,7 @@ def phase_build(top):
     occ = dialogue_occ()
     unknown = [(w, c) for w, c in occ.most_common() if w not in known and w < 0x800]
     unknown = unknown[:top]
-    print(f"{len(unknown)} glyphes à mapper (top {top} par fréquence)")
+    print(f"{len(unknown)} glyphs to map (top {top} by frequency)")
 
     ATLAS_DIR.mkdir(parents=True, exist_ok=True)
     with MANUAL_CSV.open("w", encoding="utf-8") as f:
@@ -86,11 +86,11 @@ def phase_build(top):
         for rank, (w, c) in enumerate(unknown, 1):
             f.write(f"{rank},0x{w:04X},{c},\n")
 
-    # pages : 8 colonnes x 12 lignes = 96 glyphes/page
+    # pages: 8 columns x 12 rows = 96 glyphs per page
     COLS, ROWS = 8, 12
     per_page = COLS * ROWS
     scale = 5
-    cell_g = 16 * scale          # 80 px glyphe
+    cell_g = 16 * scale          # 80 px glyph
     label_h = 16
     cell_w = cell_g + 12
     cell_h = cell_g + label_h + 6
@@ -117,43 +117,43 @@ def phase_build(top):
         out = ATLAS_DIR / f"page_{pg:02d}.png"
         im.save(out)
     print(f"{pages} page(s) -> {ATLAS_DIR}")
-    print(f"CSV à remplir : {MANUAL_CSV}")
+    print(f"CSV to fill in: {MANUAL_CSV}")
 
 
 def phase_apply():
-    """Fusionne kanji_manual.csv (colonne unicode remplie) dans l'index."""
+    """Merges kanji_manual.csv (filled-in unicode column) into the index."""
     add = {}
     for r in csv.DictReader(MANUAL_CSV.open()):
         u = (r.get("unicode") or "").strip()
         if u:
             add[int(r["char_id_hex"], 16)] = u
-    print(f"{len(add)} mappings manuels remplis")
+    print(f"{len(add)} manual mappings filled in")
     if not add:
-        print("Rien à fusionner (colonne unicode vide).")
+        print("Nothing to merge (unicode column empty).")
         return
     rows = list(csv.DictReader(INDEX_CSV.open()))
     have = {int(r["char_id_hex"], 16) for r in rows}
     fields = rows[0].keys() if rows else ["char_id_hex", "char_id_dec",
                                           "rom_offset_hex", "snes_addr_hex",
                                           "unicode_char", "notes"]
-    # met à jour les existants, ajoute les nouveaux
+    # update the existing ones, add the new ones
     for r in rows:
         cid = int(r["char_id_hex"], 16)
         if cid in add and not r.get("unicode_char"):
             r["unicode_char"] = add[cid]
-            r["notes"] = "manuel"
+            r["notes"] = "manual"
     for cid, u in add.items():
         if cid not in have:
             rows.append({"char_id_hex": f"0x{cid:04X}", "char_id_dec": str(cid),
                          "rom_offset_hex": "", "snes_addr_hex": "",
-                         "unicode_char": u, "notes": "manuel"})
+                         "unicode_char": u, "notes": "manual"})
     rows.sort(key=lambda r: int(r["char_id_hex"], 16))
     with INDEX_CSV.open("w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(fields))
         w.writeheader()
         w.writerows(rows)
-    print(f"index mis à jour : {INDEX_CSV}")
-    print("Régénère les scènes : python3 scripts/extract_scenes.py")
+    print(f"index updated: {INDEX_CSV}")
+    print("Regenerate the scenes: python3 scripts/extract_scenes.py")
 
 
 if __name__ == "__main__":

@@ -1,8 +1,8 @@
 namespace NageLibre.Tools.Compression;
 
 /// <summary>
-/// Décompresseurs Nintendo courants sur SNES (formats Lunar Compress / LC_LZ*).
-/// Le jeu n'a pas encore été confirmé sur un format unique — le scanner teste plusieurs en-têtes.
+/// Nintendo decompressors common on SNES (Lunar Compress / LC_LZ* formats).
+/// The game hasn't been confirmed to use a single format yet — the scanner tries several headers.
 /// </summary>
 public static class NintendoLz
 {
@@ -15,7 +15,7 @@ public static class NintendoLz
 
     public sealed record DecompressResult(FormatKind Kind, byte[] Data, int SourceOffset);
 
-    /// <summary>Format 0x10 — en-tête 4 octets + flux LZSS (SMW, ALTTP, etc.).</summary>
+    /// <summary>Format 0x10 — 4-byte header + LZSS stream (SMW, ALTTP, etc.).</summary>
     public static byte[]? TryDecompressLz10(ReadOnlySpan<byte> src)
     {
         if (src.Length < 4 || src[0] != 0x10)
@@ -63,12 +63,12 @@ public static class NintendoLz
         return outPos == size ? output : null;
     }
 
-    /// <summary>Format 0x01 — variante Nintendo (même flux bit que LZ10, autre type byte).</summary>
+    /// <summary>Format 0x01 — Nintendo variant (same bit stream as LZ10, different type byte).</summary>
     public static byte[]? TryDecompressLz01(ReadOnlySpan<byte> src)
     {
         if (src.Length < 4 || src[0] != 0x01)
             return null;
-        // Même algorithme ; seul le type byte diffère.
+        // Same algorithm; only the type byte differs.
         return TryDecompressLz10(src);
     }
 

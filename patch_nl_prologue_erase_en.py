@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Prologue écran 1 — alias de patch_nl_prologue_en.py (insertion minimale 14 mots).
+Prologue screen 1 — alias of patch_nl_prologue_en.py (minimal 14-word insertion).
 
 Output: nl-prologue-erase-en.sfc
 """

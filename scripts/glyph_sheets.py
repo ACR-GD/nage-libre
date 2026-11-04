@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Planches de vérification des glyphes 16x16 (police kanji 2bpp, banque $85).
+"""Verification sheets of the 16x16 glyphs (2bpp kanji font, bank $85).
 
-Chaque case : le glyphe agrandi (couleur 1 = trait noir, 3 = trait bleu,
-2 = contour gris clair), son ID, son mapping actuel (docs/kanji_font_index.csv,
-rouge = non mappé) et son nombre d'occurrences dans le texte des scènes.
-Contrairement à render_text.render_ids (qui encre tout pixel non nul et rend les
-kanji en « pâtés »), les plans sont séparés : les kanji sont lisibles à l'œil.
+Each cell: the enlarged glyph (colour 1 = black stroke, 3 = blue stroke,
+2 = light grey outline), its ID, its current mapping (docs/kanji_font_index.csv,
+red = unmapped) and its number of occurrences in the scene text.
+Unlike render_text.render_ids (which inks every non-zero pixel and turns the
+kanji into "blobs"), the planes are kept separate: the kanji are readable by eye.
 
-Usage : python3 scripts/glyph_sheets.py [used|all] [out_dir]
-  used : IDs présents dans les lignes des scènes (défaut), triés par ID
-  all  : tous les IDs pairs 0x10..0x7E6 de la police
+Usage: python3 scripts/glyph_sheets.py [used|all] [out_dir]
+  used : IDs present in the scene lines (default), sorted by ID
+  all  : every even ID 0x10..0x7E6 of the font
 """
 import csv
 import sys
@@ -33,7 +33,7 @@ LABEL_FONT = "/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc"
 
 
 def scene_glyph_counts(rom):
-    """Occurrences de chaque ID pair >= 0x10 dans les lignes des CSV de scène."""
+    """Occurrences of each even ID >= 0x10 in the lines of the scene CSVs."""
     tbl = {i: off for i, _s, off in read_ptr_table(rom, 0x600) if off}
     occ = Counter()
     for path in sorted((ROOT / "docs" / "scenes").glob("scene_*.csv")):
@@ -93,7 +93,7 @@ def main():
         chunk = ids[n:n + per]
         draw_sheet(rom, chunk, fmap, occ, font, small).save(
             out_dir / f"{mode}_{n // per:02d}_{chunk[0]:03X}-{chunk[-1]:03X}.png")
-    print(f"{len(ids)} glyphes -> {out_dir} ({(len(ids) + per - 1) // per} planches)")
+    print(f"{len(ids)} glyphs -> {out_dir} ({(len(ids) + per - 1) // per} sheets)")
 
 
 if __name__ == "__main__":

@@ -1,17 +1,17 @@
 --[[
-  Nage Libre — sonde du HOOK menu de combat ($80:FA80, détourné depuis $80:F902).
+  Nage Libre — probe for the battle menu HOOK ($80:FA80, redirected from $80:F902).
 
-  Vérifie, à l'exécution, pourquoi le menu n'est pas traduit :
-    1. Le hook $80:FA80 s'exécute-t-il quand le menu est ouvert ?
-    2. La signature matche-t-elle ?  ($7E:2104 == $3718  ET  $7E:2356 == $7E01)
-    3. Après la copie (RTS @ $80:FDB8), le buffer de tuile $7E:2100 (待→W)
-       contient-il bien le bitmap de 'W' (00 00 63 00 63 00 ...) ?
+  Checks at run time why the menu isn't translated:
+    1. Does the $80:FA80 hook run when the menu is open?
+    2. Does the signature match?  ($7E:2104 == $3718  AND  $7E:2356 == $7E01)
+    3. After the copy (RTS @ $80:FDB8), does the tile buffer $7E:2100 (待→W)
+       really hold the 'W' bitmap (00 00 63 00 63 00 ...)?
 
-  Usage :
-    1. nl-full-en.sfc, entrer en COMBAT.
-    2. Script Window → Load → ce fichier → Run.
-    3. Ouvrir le menu de COMMANDES (待機/攻撃/...). Laisser 1-2 s, refermer.
-    4. M'envoyer  mesen_dumps/hook_probe.log
+  Usage:
+    1. nl-full-en.sfc, enter a BATTLE.
+    2. Script Window → Load → this file → Run.
+    3. Open the COMMAND menu (待機/攻撃/...). Wait 1-2 s, close it.
+    4. Send me  mesen_dumps/hook_probe.log
 ]]
 
 local LOG_PATH = "/Users/acr/Develop/nage-libre/mesen_dumps/hook_probe.log"
@@ -19,7 +19,7 @@ local CB  = emu.callbackType or emu.memCallbackType
 local WRAM = emu.memType.snesWorkRam        -- 0-based, $7E:xxxx = offset xxxx
 
 local HOOK_ENTRY = 0x80FA80
-local HOOK_RTS   = 0x80FDE8                  -- dernier octet (RTS) du hook
+local HOOK_RTS   = 0x80FDE8                  -- last byte (RTS) of the hook
 
 local fileHandle = io.open(LOG_PATH, "w")
 local frame = 0
@@ -41,7 +41,7 @@ local function hexbytes(off, n)
   return table.concat(t, " ")
 end
 
--- Entrée du hook : juste après reconstruction du buffer, avant copie.
+-- Hook entry: right after the buffer is rebuilt, before the copy.
 local function onEntry()
   if fileHandle == nil then return end
   entryCount = entryCount + 1
@@ -57,7 +57,7 @@ local function onEntry()
   end
 end
 
--- Sortie du hook (RTS) : après copie (si signature avait matché).
+-- Hook exit (RTS): after the copy (if the signature matched).
 local function onRts()
   if fileHandle == nil then return end
   if matchCount > 0 and logged < MAX_LOG then
@@ -70,10 +70,10 @@ end
 
 local function onFrame() frame = frame + 1 end
 
-logline("=== sonde HOOK menu de combat ($80:FA80) ===")
+logline("=== battle menu HOOK probe ($80:FA80) ===")
 logline("Log: "..LOG_PATH)
-logline("Cible : 'W' attendu @ $7E:2100 = 00 00 63 00 63 00 63 00 6B 00 7F 00 77 00 63 00")
+logline("Target: 'W' expected @ $7E:2100 = 00 00 63 00 63 00 63 00 6B 00 7F 00 77 00 63 00")
 emu.addMemoryCallback(onEntry, CB.exec, HOOK_ENTRY, HOOK_ENTRY)
 emu.addMemoryCallback(onRts,   CB.exec, HOOK_RTS,   HOOK_RTS)
 emu.addEventCallback(onFrame, emu.eventType.startFrame)
-logline("Actif. Ouvrir le menu COMMAND ~2s, puis m'envoyer le log.")
+logline("Active. Open the COMMAND menu for ~2s, then send me the log.")

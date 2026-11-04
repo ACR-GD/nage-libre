@@ -2,7 +2,7 @@ namespace NageLibre.Tools.Analysis;
 
 public enum TextEncodingKind
 {
-    /// <summary>Index glyphe 1 octet, terminé FF xx (pas Shift-JIS).</summary>
+    /// <summary>1-byte glyph index, terminated by FF xx (not Shift-JIS).</summary>
     CustomGlyphFfTerminated,
     CustomGlyphFeTerminated,
     CustomGlyphControl,

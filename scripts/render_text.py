@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Rendu d'une suite d'IDs de police 16-bit (police kanji 16x16, 2bpp) en PNG.
+"""Renders a sequence of 16-bit font IDs (16x16 kanji font, 2bpp) to PNG.
 
-Sert à *lire* visuellement le texte ROM dont le mapping unicode est incertain.
-Réutilise l'agencement de tuiles LT,LB,RT,RB validé par scripts/ocr_kanji_font.py.
+Used to *read* ROM text visually when its Unicode mapping is uncertain.
+Reuses the LT,LB,RT,RB tile layout validated by scripts/ocr_kanji_font.py.
 """
 from pathlib import Path
 from PIL import Image
@@ -44,7 +44,7 @@ def glyph_pixels(rom: bytes, cid: int):
 
 
 def render_ids(rom: bytes, ids, scale=3, per_row=24, pad=2):
-    """Rend une liste d'IDs en grille (FFFF = saut de ligne, 0x0000 = espace)."""
+    """Renders a list of IDs as a grid (FFFF = line break, 0x0000 = space)."""
     rows = [[]]
     for w in ids:
         if w == 0xFFFF:
@@ -52,7 +52,7 @@ def render_ids(rom: bytes, ids, scale=3, per_row=24, pad=2):
         else:
             rows[-1].append(w)
     rows = [r for r in rows if r] or [[]]
-    # découpe en sous-lignes de per_row
+    # split into sub-rows of per_row
     flat_rows = []
     for r in rows:
         for i in range(0, len(r), per_row):
@@ -79,7 +79,7 @@ def render_ids(rom: bytes, ids, scale=3, per_row=24, pad=2):
 def main():
     import sys
     rom = ROM.read_bytes()
-    # démo : bloc du méchant $87:89C5
+    # demo: the villain's block $87:89C5
     off = ((0x87 & 0x7F) * 0x8000) + (0x89C5 - 0x8000)
     ids = []
     i = off
@@ -91,7 +91,7 @@ def main():
             break
     out = ROOT / "docs" / "render_villain.png"
     render_ids(rom, ids, scale=4).save(out)
-    print("écrit", out)
+    print("wrote", out)
 
 
 if __name__ == "__main__":

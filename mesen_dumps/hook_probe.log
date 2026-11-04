@@ -1,7 +1,7 @@
-=== sonde HOOK menu de combat ($80:FA80) ===
+=== battle menu HOOK probe ($80:FA80) ===
 Log: /Users/acr/Develop/nage-libre/mesen_dumps/hook_probe.log
-Cible : 'W' attendu @ $7E:2100 = 00 00 63 00 63 00 63 00 6B 00 7F 00 77 00 63 00
-Actif. Ouvrir le menu COMMAND ~2s, puis m'envoyer le log.
+Target: 'W' expected @ $7E:2100 = 00 00 63 00 63 00 63 00 6B 00 7F 00 77 00 63 00
+Active. Open the COMMAND menu for ~2s, then send me the log.
 ENTRY f=272  $7E2104=6CBB  $7E2356=3636  match=false  tile90[pre]=D0 6F FF 2F BB 6C BB 6C
 ENTRY f=274  $7E2104=6CBB  $7E2356=3636  match=false  tile90[pre]=D0 6F FF 2F BB 6C BB 6C
 ENTRY f=459  $7E2104=0000  $7E2356=7F7F  match=false  tile90[pre]=00 00 00 00 00 00 00 00

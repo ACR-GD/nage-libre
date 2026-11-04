@@ -1,56 +1,56 @@
 --[[
-  Nage Libre — dump mémoire prologue pour Mesen-S / Mesen2 (SNES)
+  Nage Libre — prologue memory dump for Mesen-S / Mesen2 (SNES)
 
   Usage:
     1. Tools → Script Window → Load Script → scripts/mesen_prologue_dump.lua
-    2. Run (▶). La console affiche le dossier de sortie.
-    3. Pose un breakpoint CPU OU laisse WATCH_EXEC actif (voir config).
-    4. Joue jusqu'au break → un sous-dossier est créé automatiquement.
+    2. Run (▶). The console shows the output folder.
+    3. Set a CPU breakpoint OR leave WATCH_EXEC active (see config).
+    4. Play until the break → a subfolder is created automatically.
 
-  IMPORTANT — $87:DCCB ne hit JAMAIS si le prologue freeze :
-    DCCB n'est appelé qu'après 5 tours de boucle via JSR @ $87:D6D4.
-    Si freeze avant la fin → utiliser Pause manuelle (F10) ou breakpoints ci-dessous.
+  IMPORTANT — $87:DCCB NEVER hits if the prologue freezes:
+    DCCB is only called after 5 loop iterations, via the JSR @ $87:D6D4.
+    If it freezes before the end → use a manual Pause (F10) or the breakpoints below.
 
-  Sortie (par défaut): <repo>/mesen_dumps/<timestamp>_PC_<addr>/
+  Output (default): <repo>/mesen_dumps/<timestamp>_PC_<addr>/
 
-  Fichiers produits:
-    meta.txt          — PC, registres, ROM, frame
-    cpu_state.txt     — dump brut getState()
-    wram_7F6000.bin   — tilemap / texte prologue ($7F:6000–$7F:6FFF)
-    wram_7E0000.bin   — bas WRAM ($7E:0000–$7F:FFFF, 128 KiB)
-    prologue_words.txt — mots 16-bit LE aux offsets clés depuis $7F:64C0
+  Files produced:
+    meta.txt          — PC, registers, ROM, frame
+    cpu_state.txt     — raw getState() dump
+    wram_7F6000.bin   — prologue tilemap / text ($7F:6000–$7F:6FFF)
+    wram_7E0000.bin   — WRAM ($7E:0000–$7F:FFFF, 128 KiB)
+    prologue_words.txt — 16-bit LE words at the key offsets from $7F:64C0
     zp_direct.txt     — $00–$FF (direct page / $7E:0000)
 
-  Analyse côté repo:
-    python3 scripts/analyze_mesen_dump.py mesen_dumps/<dossier>
+  Analysis in the repo:
+    python3 scripts/analyze_mesen_dump.py mesen_dumps/<folder>
 ]]
 
 -- ── Configuration ───────────────────────────────────────────────────────────
 
--- Chemin absolu du repo (Mac/Linux). Mesen peut aussi écrire dans getScriptDataFolder().
+-- Absolute path of the repo (Mac/Linux). Mesen can also write to getScriptDataFolder().
 local OUTPUT_DIR = "/Users/acr/Develop/nage-libre/mesen_dumps"
 
--- true = dump à chaque breakpoint debugger (event codeBreak)
+-- true = dump on every debugger breakpoint (codeBreak event)
 local AUTO_DUMP_ON_BREAK = true
 
--- Adresses CPU 24-bit : dump auto à l'exécution (sans breakpoint manuel)
--- Priorité debug freeze fin prologue :
+-- 24-bit CPU addresses: automatic dump on execution (no manual breakpoint)
+-- Priority for debugging the end-of-prologue freeze:
 local WATCH_EXEC = {
-  0x0087D70C,  -- $87:D70C  début d'un acte (×5 max avant DCCB)
-  0x0087D6D4,  -- $87:D6D4  JSR DCCB — fin prologue (rare si freeze)
-  0x0087D756,  -- $87:D756  attente dialogue (LDA $0214, CMP #$0200)
-  0x0080F4AB,  -- $80:F4AB  moteur typewriter (texte ROM)
-  -- 0x008380FF,  -- $83:80FF  post-décompression écran 1
-  -- 0x00838103,  -- $83:8103  phases tilemap écran 1
+  0x0087D70C,  -- $87:D70C  start of an act (×5 max before DCCB)
+  0x0087D6D4,  -- $87:D6D4  JSR DCCB — end of prologue (rare if it freezes)
+  0x0087D756,  -- $87:D756  dialogue wait (LDA $0214, CMP #$0200)
+  0x0080F4AB,  -- $80:F4AB  typewriter engine (ROM text)
+  -- 0x008380FF,  -- $83:80FF  after decompression, screen 1
+  -- 0x00838103,  -- $83:8103  tilemap phases, screen 1
 }
 
--- Ignorer les breaks trop rapprochés (step-in répété)
+-- Ignore breaks that are too close together (repeated step-in)
 local MIN_FRAMES_BETWEEN_DUMPS = 0
 
--- false = skip le dump 128 KiB ($7E:0000–$7F:FFFF, ~1–2 s)
+-- false = skip the 128 KiB dump ($7E:0000–$7F:FFFF, ~1–2 s)
 local FULL_WRAM_DUMP = true
 
--- ── Constantes prologue ─────────────────────────────────────────────────────
+-- ── Prologue constants ─────────────────────────────────────────────────────
 
 local MEM = emu.memType.cpuDebug
 local TILEMAP_BASE = 0x7F64C0
@@ -89,12 +89,12 @@ local WRAM7E_VARS = {
   {0x7E17D4, "config ($17D4)"},
 }
 
--- ── État interne ─────────────────────────────────────────────────────────────
+-- ── Internal state ─────────────────────────────────────────────────────────────
 
 local dumpCount = 0
 local lastDumpFrame = -999999
 
--- ── Utilitaires ─────────────────────────────────────────────────────────────
+-- ── Utilities ─────────────────────────────────────────────────────────────
 
 local function log(msg)
   emu.log("[nl-dump] " .. msg)
@@ -130,7 +130,7 @@ end
 local function writeBinary(path, data)
   local f = io.open(path, "wb")
   if not f then
-    log("ERREUR écriture: " .. path)
+    log("WRITE ERROR: " .. path)
     return false
   end
   f:write(data)
@@ -141,7 +141,7 @@ end
 local function writeText(path, text)
   local f = io.open(path, "w")
   if not f then
-    log("ERREUR écriture: " .. path)
+    log("WRITE ERROR: " .. path)
     return false
   end
   f:write(text)
@@ -213,15 +213,15 @@ local function buildPrologueWordsText()
 
   for _, entry in ipairs(PROLOGUE_OFFSETS) do
     local off, label = entry[1], entry[2]
-    out[#out + 1] = string.format("\n--- %s (offset +%04X) — 32 mots ---", label, off)
+    out[#out + 1] = string.format("\n--- %s (offset +%04X) — 32 words ---", label, off)
     out[#out + 1] = decodeWordsFromTilemap(TILEMAP_BASE, off, 32)
   end
 
-  out[#out + 1] = "\n\n--- Signature écran 1 ---"
+  out[#out + 1] = "\n\n--- Screen 1 signature ---"
   local sig1 = readWordLE(0x7F6602)
   local sig2 = readWordLE(0x7F6604)
-  out[#out + 1] = string.format("  $7F:6602 = %04X (attendu 075A)", sig1)
-  out[#out + 1] = string.format("  $7F:6604 = %04X (attendu 002A)", sig2)
+  out[#out + 1] = string.format("  $7F:6602 = %04X (expected 075A)", sig1)
+  out[#out + 1] = string.format("  $7F:6604 = %04X (expected 002A)", sig2)
 
   return table.concat(out, "\n")
 end
@@ -243,11 +243,11 @@ local function buildZpText()
     local addr, label = entry[1], entry[2]
     lines[#lines + 1] = string.format("  $%06X  %s  = %04X", addr, label, readWordLE(addr))
   end
-  lines[#lines + 1] = string.format("\n  $000214 (abs) wait = %04X (attendu 0200 pour continuer)", readWordLE(0x7E0214))
+  lines[#lines + 1] = string.format("\n  $000214 (abs) wait = %04X (expected 0200 to continue)", readWordLE(0x7E0214))
   return table.concat(lines, "\n")
 end
 
--- ── Dump principal ───────────────────────────────────────────────────────────
+-- ── Main dump ───────────────────────────────────────────────────────────
 
 local function doDump(reason)
   local state = emu.getState()
@@ -285,7 +285,7 @@ local function doDump(reason)
   writeText(dir .. "/prologue_words.txt", buildPrologueWordsText())
   writeText(dir .. "/zp_direct.txt", buildZpText())
 
-  -- WRAM $7F:6000–$6FFF (4 KiB — tilemap prologue)
+  -- WRAM $7F:6000–$6FFF (4 KiB — prologue tilemap)
   writeBinary(dir .. "/wram_7F6000_1000.bin", readBlock(0x7F6000, 0x1000))
 
   if FULL_WRAM_DUMP then
@@ -326,9 +326,9 @@ for _, addr in ipairs(WATCH_EXEC) do
   log(string.format("Watch exec $%06X", addr))
 end
 
-log("Script actif.")
+log("Script active.")
 log("OUTPUT_DIR = " .. OUTPUT_DIR)
-log("Breakpoints utiles si DCCB ne hit pas:")
-log("  $87:D70C (acte), $87:D756 (attente), $80:F4AB (texte)")
-log("  Au freeze: Pause (F10) → Debugger montre PC → dump manuel si besoin")
-log("Analyse: python3 scripts/analyze_mesen_dump.py " .. OUTPUT_DIR .. "/<dossier>")
+log("Useful breakpoints if DCCB doesn't hit:")
+log("  $87:D70C (act), $87:D756 (wait), $80:F4AB (text)")
+log("  On freeze: Pause (F10) → the Debugger shows the PC → manual dump if needed")
+log("Analyse: python3 scripts/analyze_mesen_dump.py " .. OUTPUT_DIR .. "/<folder>")

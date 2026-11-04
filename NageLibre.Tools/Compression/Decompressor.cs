@@ -75,7 +75,7 @@ public static class Decompressor
         }
     }
 
-    /// <summary>Heuristique : texte (0x8D), glyphes 2bpp, SJIS.</summary>
+    /// <summary>Heuristic: text (0x8D), 2bpp glyphs, SJIS.</summary>
     public static int ScorePayload(ReadOnlySpan<byte> data)
     {
         int score = 0;

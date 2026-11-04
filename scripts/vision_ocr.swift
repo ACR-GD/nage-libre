@@ -1,7 +1,7 @@
-// Vision OCR CLI — reconnaît le texte (ja+en) dans des images.
-// Usage: vision_ocr <fichier_liste.txt>
-//   où chaque ligne = chemin d'une image PNG.
-// Sortie (stdout): "chemin\tcandidat1|candidat2|candidat3" par ligne.
+// Vision OCR CLI — recognises text (ja+en) in images.
+// Usage: vision_ocr <list_file.txt>
+//   where each line = the path of a PNG image.
+// Output (stdout): "path\tcandidate1|candidate2|candidate3" per line.
 import Foundation
 import Vision
 import AppKit

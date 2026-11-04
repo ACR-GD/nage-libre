@@ -243,6 +243,6 @@ idx,snes_off,n_glyphs,role,ocr_kanji,partial_decode,en
 241,867F,3,given+surname,手芸部,,Handicraft Club
 242,8687,4,given+surname,一般生徒,暦,Regular Students
 243,8691,2,given+surname,ボス,ス,boss
-244,8697,14,(non pointé),,,
-245,86B5,11,(non pointé),,,
-246,86CD,5,(non pointé),,,
+244,8697,14,(no pointer),,,
+245,86B5,11,(no pointer),,,
+246,86CD,5,(no pointer),,,

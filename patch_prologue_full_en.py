@@ -2,12 +2,12 @@
 """
 Prologue EN — nl-prologue-full-en.sfc
 
-Écran 1 : hook décompression (patch_nl_prologue_erase_en.py)
-UI anniversaire : table $87:8697 (#41–44, pierres #51–59)
-Pierres : table $87:89C5 entrées 3–11 (FFFF) — PAS les offsets 8A51/61/71
-  (ces adresses = noms JP des pierres, réutilisés par le prologue écran 2)
+Screen 1: decompression hook (patch_nl_prologue_erase_en.py)
+Birthday UI: table $87:8697 (#41–44, birthstones #51–59)
+Birthstones: table $87:89C5 entries 3–11 (FFFF) — NOT the offsets 8A51/61/71
+  (those addresses = JP birthstone names, reused by prologue screen 2)
 
-Écran 2 prologue : non patché en ROM (conflit avec pierres / heap partagé).
+Prologue screen 2: not patched in ROM (conflict with the birthstones / shared heap).
 """
 from __future__ import annotations
 
@@ -40,7 +40,7 @@ OUT_PATH = Path(__file__).parent / "nl-prologue-full-en.sfc"
 TABLE_8697 = 0x038697
 TABLE_89C5 = 0x0389C5
 
-# Entrées table $87:8697 (index = numéro d'entrée FFFF)
+# Table $87:8697 entries (index = FFFF entry number)
 UI_8697: dict[int, str] = {
     41: "/",
     42: "  ",
@@ -57,7 +57,7 @@ UI_8697: dict[int, str] = {
     59: "Sapphire",
 }
 
-# Entrées 3–11 de la table $87:89C5 (écran anniversaire lit cette table)
+# Entries 3–11 of table $87:89C5 (the birthday screen reads this table)
 STONES_89C5: dict[int, str] = {
     3: "Garnet",
     4: "Amethyst",
@@ -106,7 +106,7 @@ def patch_ffff_table(
 
 def main() -> None:
     if not ROM_PATH.is_file():
-        raise SystemExit(f"ROM introuvable: {ROM_PATH}")
+        raise SystemExit(f"ROM not found: {ROM_PATH}")
 
     rom = bytearray(ROM_PATH.read_bytes())
     if rom[HOOK_POINT : HOOK_POINT + 4] != bytes([0x22, 0xD8, 0xF8, 0x80]):
@@ -133,12 +133,12 @@ def main() -> None:
     fix_checksum(rom)
     OUT_PATH.write_bytes(rom)
 
-    print(f"Écrit: {OUT_PATH.name}")
-    print(f"  Écran 1: {LINE!r} ({SLOT_COUNT} mots @ $6602)")
-    print(f"  UI $8697: {len(UI_8697)} entrées")
-    print(f"  Pierres $89C5: entrées {sorted(STONES_89C5)}")
-    print(f"  Écran 2 prologue: non patché (heap partagé)")
-    print(f"  Police: {alloc.count()} paires")
+    print(f"Written: {OUT_PATH.name}")
+    print(f"  Screen 1: {LINE!r} ({SLOT_COUNT} words @ $6602)")
+    print(f"  UI $8697: {len(UI_8697)} entries")
+    print(f"  Birthstones $89C5: entries {sorted(STONES_89C5)}")
+    print(f"  Prologue screen 2: not patched (shared heap)")
+    print(f"  Font: {alloc.count()} pairs")
 
 
 if __name__ == "__main__":

@@ -36,14 +36,14 @@ public static class CsvExporter
         var lines = new List<string>
         {
             "key,value,notes",
-            $"title,\"{rom.Header.Title}\",En-tête LoROM @ 0x7FC0",
+            $"title,\"{rom.Header.Title}\",LoROM header @ 0x7FC0",
             $"size_bytes,{rom.Size},1.5 MiB = 24 Mbit",
             $"map_mode,0x{rom.Header.MapMode:X2},Bit0=HiROM (0=LoROM)",
             $"rom_type,0x{rom.Header.RomType:X2},",
-            "endianness,little,Adresses 16/24/32 bits en ROM et RAM",
-            "text_encoding,custom_compressed,Pas de Shift-JIS brut ; préfixe 0x8D pour quelques chaînes",
-            "script_bank,$84,Banque événements / pointeurs (octet tag 0x84)",
-            "event_data_rom,0x20000-0x27FFF,Banques 4-5 : scripts et tables (faible entropie)",
+            "endianness,little,16/24/32-bit addresses in ROM and RAM",
+            "text_encoding,custom_compressed,Not raw Shift-JIS; 0x8D prefix for a few strings",
+            "script_bank,$84,Events / pointers bank (tag byte 0x84)",
+            "event_data_rom,0x20000-0x27FFF,Banks 4-5: scripts and tables (low entropy)",
         };
         File.WriteAllLines(path, lines, Encoding.UTF8);
     }
@@ -53,10 +53,10 @@ public static class CsvExporter
         var lines = new List<string>
         {
             "region,rom_start,rom_end,snes_bank,notes",
-            "code_low,0x00000,0x07FFF,$00-$01,Code 65816 + vecteurs",
-            "data_mid,0x20000,0x4FFFF,$04-$09,Scripts / tables (banque tag 0x84)",
-            "gfx_high,0x50000,0x17FFFF,$0A-$2F,Tuiles (entropie élevée) ; police en VRAM depuis ROM",
-            "header,0x7FC0,0x7FFF,$00,En-tête copie SNES",
+            "code_low,0x00000,0x07FFF,$00-$01,65816 code + vectors",
+            "data_mid,0x20000,0x4FFFF,$04-$09,Scripts / tables (bank tag 0x84)",
+            "gfx_high,0x50000,0x17FFFF,$0A-$2F,Tiles (high entropy); font loaded to VRAM from ROM",
+            "header,0x7FC0,0x7FFF,$00,SNES header copy",
         };
         File.WriteAllLines(path, lines, Encoding.UTF8);
     }
@@ -82,7 +82,7 @@ public static class CsvExporter
         var lines = new List<string>
         {
             "rom_offset,format,decompressed_size,notes",
-            "REM,Utiliser: dotnet run -- decompress <offset>",
+            "REM,Use: dotnet run -- decompress <offset>",
         };
         foreach (var c in CompressionScanner.Scan(rom).Take(500))
         {
@@ -100,7 +100,7 @@ public static class CsvExporter
         foreach (var rec in RomAnalyzer.ParseScriptRecords(rom, 0x20000, 0x21000).Take(400))
         {
             string ptrs = string.Join(";", rec.Pointers.Select(p => $"${p.SnesAddress:X6}"));
-            lines.Add($"0x{rec.RomOffset:X6},0x{rec.Command:X4},{rec.Pointers.Count},{ptrs},Banque $84 script/event");
+            lines.Add($"0x{rec.RomOffset:X6},0x{rec.Command:X4},{rec.Pointers.Count},{ptrs},Bank $84 script/event");
         }
         File.WriteAllLines(path, lines, Encoding.UTF8);
     }
@@ -110,11 +110,11 @@ public static class CsvExporter
         var lines = new List<string>
         {
             "rom_offset,char_count,char_ids_hex,notes",
-            "REM,Format 0x8D id — encodage custom (pas SJIS)",
+            "REM,Format 0x8D id — custom encoding (not SJIS)",
         };
         foreach (var s in RomAnalyzer.Find8DPrefixedStrings(rom))
         {
-            lines.Add($"0x{s.RomOffset:X6},{s.CharIds.Count},{s.HexPreview},Préfixe 0x8D + ID glyphe");
+            lines.Add($"0x{s.RomOffset:X6},{s.CharIds.Count},{s.HexPreview},0x8D prefix + glyph ID");
         }
         File.WriteAllLines(path, lines, Encoding.UTF8);
     }
@@ -125,11 +125,11 @@ public static class CsvExporter
         var lines = new List<string>
         {
             "rom_offset,raw_value,notes",
-            "REM,Séquence 81 87 XX — métriques police (22 entrées trouvées)",
+            "REM,Sequence 81 87 XX — font metrics (22 entries found)",
         };
         foreach (var (off, val) in RomAnalyzer.ParseFontMetricTable(rom, tableOffset))
         {
-            lines.Add($"0x{off:X6},0x{val:X2},Possible largeur glyphe ou index tuile");
+            lines.Add($"0x{off:X6},0x{val:X2},Possibly glyph width or tile index");
         }
         File.WriteAllLines(path, lines, Encoding.UTF8);
     }
@@ -139,8 +139,8 @@ public static class CsvExporter
         var lines = new List<string>
         {
             "region,rom_start,rom_end,bpp,notes",
-            "font_tiles_vram_match,0x50000,0x17FFFF,2,7445+ tuiles 2bpp 8x8 trouvées aussi en VRAM (savestate)",
-            "dialog_box_tiles,VRAM,VRAM,2,Boîte de dialogue = tuiles en VRAM (voir extract)",
+            "font_tiles_vram_match,0x50000,0x17FFFF,2,7445+ 2bpp 8x8 tiles also found in VRAM (savestate)",
+            "dialog_box_tiles,VRAM,VRAM,2,Dialogue box = tiles in VRAM (see extract)",
         };
         File.WriteAllLines(path, lines, Encoding.UTF8);
     }
@@ -150,8 +150,8 @@ public static class CsvExporter
         var lines = new List<string>
         {
             "feature,condition_jp,translation_en,rom_status",
-            "hidden_profiles,Anniversaires personnages (voir TCRF),Character profiles,Texte probablement compressé",
-            "dev_message,5× 11月25日 (25 nov),Developer birthday easter egg,Pas trouvé en SJIS brut",
+            "hidden_profiles,Character birthdays (see TCRF),Character profiles,Text probably compressed",
+            "dev_message,5× 11月25日 (25 Nov),Developer birthday easter egg,Not found as raw SJIS",
             "dev_msg_1,ダメだよ…,Don't set same birthday…,Custom encoding",
             "dev_msg_2,せっかくだから…,Try various birthdays,Custom encoding",
             "dev_msg_3,ぼくの誕生日,It's my birthday,Custom encoding",
@@ -168,9 +168,9 @@ public static class CsvExporter
         {
             string note = kv.Key switch
             {
-                "memoryManager.workRam" => "128 KiB WRAM — chercher pointeurs texte",
-                "ppu.vram" => "64 KiB VRAM — tuiles et tilemaps",
-                "ppu.cgram" => "512 octets — 256 couleurs BGR555",
+                "memoryManager.workRam" => "128 KiB WRAM — look for text pointers",
+                "ppu.vram" => "64 KiB VRAM — tiles and tilemaps",
+                "ppu.cgram" => "512 bytes — 256 BGR555 colours",
                 _ => "",
             };
             lines.Add($"{kv.Key},{kv.Value.Length},{note}");

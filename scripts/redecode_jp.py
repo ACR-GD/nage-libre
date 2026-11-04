@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Re-décode la colonne `jp_decoded` des CSV de scène et de translations_review.csv
-depuis la ROM, avec la table docs/kanji_font_index.csv à jour.
+"""Re-decodes the `jp_decoded` column of the scene CSVs and of translations_review.csv
+from the ROM, with the up-to-date docs/kanji_font_index.csv table.
 
-Ne touche QUE `jp_decoded` (la colonne `en` est préservée) — contrairement à
-extract_scenes.py, qui réécrit les CSV avec une colonne `en` vide.
+Only touches `jp_decoded` (the `en` column is kept), unlike
+extract_scenes.py, which rewrites the CSVs with an empty `en` column.
 
 Usage : python3 scripts/redecode_jp.py
 """
@@ -37,7 +37,7 @@ def read_ids(out, off):
 
 
 def rewrite_csv(path, keyfn, decoded):
-    """Remplace `jp_decoded` des lignes dont la clé est dans `decoded` ; garde les fins de ligne."""
+    """Replaces `jp_decoded` on the rows whose key is in `decoded`; keeps the line endings."""
     raw = path.read_bytes().decode("utf-8")
     nl = "\r\n" if "\r\n" in raw else "\n"
     rows = list(csv.reader(io.StringIO(raw, newline="")))
@@ -74,8 +74,8 @@ def main():
 
     n_review = rewrite_csv(REVIEW, lambda d: (d["scene_idx_hex"], d["offset_hex"]), decoded)
     unmapped = sum(jp.count("□") for jp in decoded.values())
-    print(f"jp_decoded mis à jour : {n_scene} lignes de scène, {n_review} lignes de review "
-          f"({unmapped} glyphe(s) encore non mappé(s) □)")
+    print(f"jp_decoded updated: {n_scene} scene rows, {n_review} review rows "
+          f"({unmapped} glyph(s) still unmapped □)")
 
 
 if __name__ == "__main__":

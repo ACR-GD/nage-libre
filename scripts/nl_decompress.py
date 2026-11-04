@@ -1,24 +1,24 @@
 #!/usr/bin/env python3
-"""Décompresseur statique Nage Libre (reverse de $80:F8D8), validé bit-à-bit
-contre le buffer $7F:64C0 du prologue (région programme identique + source
-consommée exactement jusqu'à $A5:F34D).
+"""Static Nage Libre decompressor (reverse of $80:F8D8), validated bit for bit
+against the prologue's $7F:64C0 buffer (identical program region + source
+consumed exactly up to $A5:F34D).
 
-Format (codec custom à nibbles + fenêtre 4 octets) :
-  - Flux de nibbles lus dans [$09] : octet -> nibble haut puis nibble bas.
-  - 1er octet source = octet de contrôle (8 bits de poids fort des littéraux).
-  - Commande = 1 nibble :
-      0-7  : octet littéral = ((cmd<<4)|nibble) | (bit MSB du flux de contrôle).
-             Le contrôle est décalé à chaque littéral ; rechargé (1 octet = 2
-             nibbles) tous les 8 littéraux.
-      8    : RLE de mot 16 bits = répète les 2 derniers octets « count » fois
-             (count = octet ; étendu tant que l'octet vaut 0xFF).
-      9    : fin du flux.
-      10/11: octet 0x00 / 0xFF.
-      12-15: recopie window[cmd-12] (4 derniers octets, positions absolues).
-  Octets littéraux / 0x00 / 0xFF / window poussés dans la fenêtre ; le RLE non.
+Format (custom nibble codec + 4-byte window):
+  - Stream of nibbles read from [$09]: byte -> high nibble, then low nibble.
+  - 1st source byte = control byte (the 8 high bits of the literals).
+  - Command = 1 nibble:
+      0-7  : literal byte = ((cmd<<4)|nibble) | (MSB of the control stream).
+             The control is shifted on each literal; reloaded (1 byte = 2
+             nibbles) every 8 literals.
+      8    : 16-bit word RLE = repeats the last 2 bytes "count" times
+             (count = a byte; extended while the byte is 0xFF).
+      9    : end of stream.
+      10/11: byte 0x00 / 0xFF.
+      12-15: copies window[cmd-12] (last 4 bytes, absolute positions).
+  Literal / 0x00 / 0xFF / window bytes are pushed into the window; RLE bytes aren't.
 
-La table de pointeurs source 24 bits est à $8A:8000 (entrées de 3 octets,
-indexées par scène). Le code de scène ($83:80DB) décompresse vers $7F:64C0.
+The 24-bit source pointer table is at $8A:8000 (3-byte entries,
+indexed by scene). The scene code ($83:80DB) decompresses to $7F:64C0.
 """
 from pathlib import Path
 
@@ -26,7 +26,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ROM = ROOT / "Nage Libre - Seijaku no Suishin (Japan).sfc"
 
 PTR_TABLE = 0x8A8000   # $8A:8000 (SNES) — table de pointeurs source
-DEST_SCRIPT = 0x7F64C0  # destination des scènes de texte
+DEST_SCRIPT = 0x7F64C0  # destination of the text scenes
 
 
 def lorom_off(snes24):
@@ -36,7 +36,7 @@ def lorom_off(snes24):
 
 
 def decompress(rom, src_off, dst_limit=0x8000, max_steps=2_000_000):
-    """Décompresse à partir de l'offset fichier src_off. Renvoie (octets, fin_src)."""
+    """Decompresses from file offset src_off. Returns (bytes, src_end)."""
     pos = src_off
     nibc = 0
     nibb = 0
@@ -106,7 +106,7 @@ def decompress(rom, src_off, dst_limit=0x8000, max_steps=2_000_000):
 
 
 def read_ptr_table(rom, count):
-    """count entrées de 3 octets à $8A:8000 -> liste de (idx, snes24, file_off|None)."""
+    """count 3-byte entries at $8A:8000 -> list of (idx, snes24, file_off|None)."""
     base = lorom_off(PTR_TABLE)
     out = []
     for i in range(count):
@@ -126,4 +126,4 @@ if __name__ == "__main__":
     tbl = read_ptr_table(rom, idx + 1)
     _, snes, off = tbl[idx]
     out, end = decompress(rom, off)
-    print(f"idx {idx:#05x}  src ${snes:06X}  -> {len(out)} o, fin ${end//0x8000+0x80:02X}:{end%0x8000+0x8000:04X}")
+    print(f"idx {idx:#05x}  src ${snes:06X}  -> {len(out)} bytes, end ${end//0x8000+0x80:02X}:{end%0x8000+0x8000:04X}")

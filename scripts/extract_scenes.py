@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""Extraction de TOUTES les scènes de texte compressées de Nage Libre.
+"""Extraction of ALL the compressed text scenes of Nage Libre.
 
-Chaîne complète :
-  1. table de pointeurs $8A:8000 -> source compressée de chaque scène
-  2. décompression statique (scripts/nl_decompress.py, reverse de $80:F8D8)
-  3. parcours du programme d'opcodes ($83:8103) pour localiser les lignes de
-     texte (opcodes « ligne » = motif ADC #$64C0/STA $09) et leur offset dans
-     le bloc $7F:64C0
-  4. par scène : CSV de travail (offset, slot, JP partiel, EN) + PNG fidèle des
-     lignes (rendu police 16x16) pour LIRE les kanji non encore mappés.
+Full pipeline:
+  1. pointer table $8A:8000 -> compressed source of each scene
+  2. static decompression (scripts/nl_decompress.py, reverse of $80:F8D8)
+  3. walk of the opcode program ($83:8103) to locate the text lines
+     ("line" opcodes = the ADC #$64C0/STA $09 pattern) and their offset in
+     the $7F:64C0 block
+  4. per scene: a working CSV (offset, slot, partial JP, EN) + an accurate PNG of the
+     lines (16x16 font rendering) to READ the kanji not mapped yet.
 
-Sortie : docs/scenes/scene_XXXX.csv / .png  +  docs/scenes/_index.csv
+Output: docs/scenes/scene_XXXX.csv / .png  +  docs/scenes/_index.csv
 
 Usage : python3 scripts/extract_scenes.py [--limit N] [--no-png]
 """
@@ -33,17 +33,17 @@ TABLE_COUNT = 0x600
 DENSITY_MIN = 0.30
 GLYPH_MIN = 30
 
-SPACE = 0x03FE          # marqueur d'espace dans le flux
-FIRST_GLYPH = 0x10      # premier glyphe réel (あ) ; en deçà = codes de contrôle
+SPACE = 0x03FE          # space marker in the stream
+FIRST_GLYPH = 0x10      # first real glyph (あ); below = control codes
 
 
 def is_glyph(v):
-    """Slot de glyphe de police valide.
+    """Valid font glyph slot.
 
-    L'adressage est char_id*32 et un glyphe occupe 64 octets : les glyphes
-    réels sont donc aux IDs PAIRS >= 0x10. Un ID impair pointe au milieu d'un
-    glyphe (rendu parasite) et 0x00..0x0F est sous le premier glyphe : dans les
-    deux cas c'est un code de contrôle, pas du texte.
+    Addressing is char_id*32 and a glyph takes 64 bytes: real glyphs
+    are therefore at EVEN IDs >= 0x10. An odd ID points into the middle of a
+    glyph (garbage rendering) and 0x00..0x0F is below the first glyph: in both
+    cases it's a control code, not text.
     """
     return v != 0xFFFF and v >= FIRST_GLYPH and (v & 1) == 0
 
@@ -66,32 +66,32 @@ def _decode(ids, fmap):
         if v == SPACE:
             out.append(" ")
         elif not is_glyph(v):
-            continue          # code de contrôle : ignoré (ni □ ni caractère)
+            continue          # control code: ignored (neither □ nor a character)
         else:
-            out.append(fmap.get(v, "□"))   # glyphe réel non mappé -> □
+            out.append(fmap.get(v, "□"))   # unmapped real glyph -> □
     return "".join(out)
 
 
 def line_quality(ids, km):
-    """(nb glyphes réels, nb glyphes mappés) d'une ligne, hors espaces/contrôle."""
+    """(number of real glyphs, number of mapped glyphs) in a line, excluding spaces/control codes."""
     glyphs = [v for v in ids if is_glyph(v) and v != SPACE]
     return len(glyphs), sum(1 for v in glyphs if v in km)
 
 
 def is_text_line(ids, km):
-    """Vraie ligne de dialogue (≥2 glyphes mappés, majorité de glyphes mappés)."""
+    """A real dialogue line (≥2 mapped glyphs, mostly mapped glyphs)."""
     n, kn = line_quality(ids, km)
     return kn >= 2 and n >= 2 and kn / n >= 0.5
 
 
 def scene_lines(out, handlers, sizes, feats, fmap, km):
-    """Localise les lignes de texte du bloc décompressé `out`.
+    """Locates the text lines of the decompressed block `out`.
 
-    1) Walk du programme d'opcodes ($83:8103) : opcodes « ligne » -> offsets.
-    2) Fallback robuste (indépendant du format) : scan de toutes les chaînes
-       terminées $FFFF à forte densité de glyphes, au-delà de la fin du
-       programme. Récupère le texte des scènes que le walk ne parse pas.
-    Retourne (text_lines, prog_end) ; text_lines = [(offset, ids, jp)]."""
+    1) Walk of the opcode program ($83:8103): "line" opcodes -> offsets.
+    2) Robust fallback (format-independent): scan of every $FFFF-terminated
+       string with a high glyph density, past the end of the
+       program. Recovers the text of scenes the walk can't parse.
+    Returns (text_lines, prog_end); text_lines = [(offset, ids, jp)]."""
     def word(o):
         return out[o] | (out[o + 1] << 8) if o + 1 < len(out) else 0xFFFF
 
@@ -120,7 +120,7 @@ def scene_lines(out, handlers, sizes, feats, fmap, km):
         pos += size
     prog_end = pos
 
-    # Fallback : scan des chaînes glyphiques terminées $FFFF.
+    # Fallback: scan of $FFFF-terminated glyph strings.
     nwords = len(out) // 2
     o = 0
     start = None
@@ -137,7 +137,7 @@ def scene_lines(out, handlers, sizes, feats, fmap, km):
             if start is None:
                 start = o * 2
             run.append(v)
-            if len(run) > 64:  # aucune vraie ligne de dialogue n'est si longue
+            if len(run) > 64:  # no real dialogue line is that long
                 run = []
                 start = None
         o += 1
@@ -150,7 +150,7 @@ def scene_lines(out, handlers, sizes, feats, fmap, km):
 
 
 def slots(offsets):
-    """slot_words[offset] = écart jusqu'à l'offset suivant − 1 (terminateur)."""
+    """slot_words[offset] = gap to the next offset − 1 (terminator)."""
     offs = sorted(set(offsets))
     out = {}
     for i, o in enumerate(offs):
@@ -197,13 +197,13 @@ def main():
             continue
 
         lines, prog_end = scene_lines(out, handlers, sizes, feats, fmap, km)
-        # rejette les scènes « graphiques » (lignes anormalement longues) et
-        # les lignes numériques / statut (codes de contrôle, pas du dialogue)
+        # rejects "graphics" scenes (abnormally long lines) and
+        # numeric / status lines (control codes, not dialogue)
         lines = [ln for ln in lines if len(ln[1]) <= 64 and is_text_line(ln[1], km)]
         if not lines or sum(line_quality(ln[1], km)[0] for ln in lines) < 12:
             continue
 
-        # dédoublonne par offset, trie
+        # dedupe by offset, sort
         seen = {}
         for soff, ids, jp in lines:
             if soff not in seen:
@@ -246,8 +246,8 @@ def main():
 
     tot_lines = sum(r[2] for r in index_rows)
     tot_glyph = sum(r[3] for r in index_rows)
-    print(f"{len(index_rows)} scènes extraites -> {OUTDIR}")
-    print(f"  {tot_lines} lignes de texte, {tot_glyph} glyphes")
+    print(f"{len(index_rows)} scenes extracted -> {OUTDIR}")
+    print(f"  {tot_lines} text lines, {tot_glyph} glyphs")
     print(f"  index : {idx_path}")
 
 

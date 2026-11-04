@@ -1,50 +1,50 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-snes_rebuild_toolkit.py — Réinsertion / rebuild de ROM SNES (réutilisable)
+snes_rebuild_toolkit.py — SNES ROM reinsertion / rebuild (reusable)
 ===========================================================================
 
-Complément de `snes_re_toolkit.py` (analyse). Ici on RECONSTRUIT une ROM SNES
-après modifications (texte traduit, graphismes, code) « sans rien oublier » :
+Companion to `snes_re_toolkit.py` (analysis). This one REBUILDS a SNES ROM
+after changes (translated text, graphics, code) "without forgetting anything":
 
-  * moteur d'écriture (offset FICHIER ou adresse SNES) avec SUIVI DES ÉCRITURES
-    -> détection des CHEVAUCHEMENTS (deux patchs qui s'écrasent) ;
-  * EXPANSION de la ROM (Mbit) + mise à jour de l'octet de taille du header ;
-  * FIX CHECKSUM SNES (checksum + complément, avec miroir des tailles non
-    puissances de deux) -> l'oubli n°1 qui fait planter/rejeter une ROM ;
-  * recherche d'ESPACE LIBRE (runs de 0x00/0xFF) + ALLOCATEUR pour y placer des
-    données étendues sans collision ;
-  * REPOINTAGE de tables de pointeurs (2 ou 3 octets) ;
-  * PATCHS IPS : génération (diff orig/modifiée) et application ;
-  * VÉRIFICATION finale (header, checksum, taille, chevauchements) ;
-  * MODE MANIFESTE : un build déclaratif (JSON) reproductible qui applique tout
-    dans l'ordre (writes, repoints, expand, fix) -> « rebuild sans rien oublier ».
+  * write engine (FILE offset or SNES address) with WRITE TRACKING
+    -> detects OVERLAPS (two patches overwriting each other);
+  * ROM EXPANSION (Mbit) + update of the header size byte;
+  * SNES CHECKSUM FIX (checksum + complement, with mirroring of
+    non-power-of-two sizes) -> the number one thing people forget, which makes a ROM crash or get rejected;
+  * FREE SPACE search (runs of 0x00/0xFF) + an ALLOCATOR to place
+    expanded data there without collisions;
+  * REPOINTING of pointer tables (2 or 3 bytes);
+  * IPS PATCHES: generation (orig/modified diff) and application;
+  * final VERIFICATION (header, checksum, size, overlaps);
+  * MANIFEST MODE: a reproducible declarative (JSON) build that applies everything
+    in order (writes, repoints, expand, fix) -> "rebuild without forgetting anything".
 
-Tout est pilotable en ligne de commande ET importable comme bibliothèque
+Everything can be driven from the command line AND imported as a library
 (`from snes_rebuild_toolkit import RomBuilder`).
 
-Exemples
+Examples
 --------
-    # expanser à 16 Mbit (2 Mo) et corriger header + checksum
-    python3 scripts/snes_rebuild_toolkit.py jeu.sfc --expand 16 -o jeu_2mb.sfc
+    # expand to 16 Mbit (2 MB) and fix header + checksum
+    python3 scripts/snes_rebuild_toolkit.py game.sfc --expand 16 -o game_2mb.sfc
 
-    # juste recalculer le checksum
-    python3 scripts/snes_rebuild_toolkit.py jeu.sfc --fix-checksum -o jeu.sfc
+    # just recompute the checksum
+    python3 scripts/snes_rebuild_toolkit.py game.sfc --fix-checksum -o game.sfc
 
-    # lister l'espace libre (runs >= 256 o de 0x00/0xFF)
-    python3 scripts/snes_rebuild_toolkit.py jeu.sfc --free-space --min 256
+    # list the free space (runs >= 256 bytes of 0x00/0xFF)
+    python3 scripts/snes_rebuild_toolkit.py game.sfc --free-space --min 256
 
-    # vérifier une ROM (checksum/header/taille)
-    python3 scripts/snes_rebuild_toolkit.py jeu.sfc --verify
+    # verify a ROM (checksum/header/size)
+    python3 scripts/snes_rebuild_toolkit.py game.sfc --verify
 
-    # générer un patch IPS de diffusion (orig -> modifiée)
-    python3 scripts/snes_rebuild_toolkit.py orig.sfc --make-ips modifiee.sfc -o patch.ips
+    # make a distribution IPS patch (orig -> modified)
+    python3 scripts/snes_rebuild_toolkit.py orig.sfc --make-ips modified.sfc -o patch.ips
 
-    # appliquer un patch IPS
-    python3 scripts/snes_rebuild_toolkit.py orig.sfc --apply-ips patch.ips -o patche.sfc
+    # apply an IPS patch
+    python3 scripts/snes_rebuild_toolkit.py orig.sfc --apply-ips patch.ips -o patched.sfc
 
-    # rebuild déclaratif complet depuis un manifeste
-    python3 scripts/snes_rebuild_toolkit.py jeu.sfc --build build.json -o jeu_fr.sfc
+    # full declarative rebuild from a manifest
+    python3 scripts/snes_rebuild_toolkit.py game.sfc --build build.json -o game_en.sfc
 """
 from __future__ import annotations
 
@@ -54,7 +54,7 @@ import os
 import sys
 from pathlib import Path
 
-# réutilise les helpers d'analyse (mapping, header, conversions)
+# reuses the analysis helpers (mapping, header, conversions)
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from snes_re_toolkit import (                       # noqa: E402
     strip_smc_header, detect_mapping, parse_header, header_base,
@@ -63,26 +63,26 @@ from snes_re_toolkit import (                       # noqa: E402
 
 
 # ===========================================================================
-# Checksum / taille SNES
+# SNES checksum / size
 # ===========================================================================
 def snes_checksum(data: bytes) -> int:
-    """Checksum SNES 16 bits = somme de tous les octets, avec MIROIR de la partie
-    excédentaire pour les tailles non puissances de deux (algorithme standard)."""
+    """16-bit SNES checksum = sum of all bytes, MIRRORING the excess part
+    for non-power-of-two sizes (standard algorithm)."""
     size = len(data)
     if size == 0:
         return 0
-    pow2 = 1 << (size.bit_length() - 1)             # plus grande puissance de 2 <= size
+    pow2 = 1 << (size.bit_length() - 1)             # largest power of 2 <= size
     if pow2 == size:
         return sum(data) & 0xFFFF
     base = sum(data[:pow2])
     rest = size - pow2
     rem = sum(data[pow2:])
-    mult = pow2 // rest if rest else 0              # nb de répétitions pour combler
+    mult = pow2 // rest if rest else 0              # number of repeats needed to fill
     return (base + rem * mult) & 0xFFFF
 
 
 def rom_size_byte(size_bytes: int) -> int:
-    """Octet $D7 du header : v tel que taille_Ko ≈ 2^v (arrondi au-dessus)."""
+    """Header byte $D7: v such that size_KB ≈ 2^v (rounded up)."""
     kb = size_bytes // 1024
     v = 0
     while (1 << v) < kb:
@@ -91,15 +91,15 @@ def rom_size_byte(size_bytes: int) -> int:
 
 
 # ===========================================================================
-# IPS (génération / application)
+# IPS (generation / application)
 # ===========================================================================
 IPS_MAGIC = b"PATCH"
 IPS_EOF = b"EOF"
-IPS_EOF_OFF = 0x454F46                              # collision d'offset à éviter
+IPS_EOF_OFF = 0x454F46                              # offset collision to avoid
 
 
 def make_ips(orig: bytes, mod: bytes) -> bytes:
-    """Diff IPS de `orig` -> `mod` (records simples, gère l'agrandissement)."""
+    """IPS diff of `orig` -> `mod` (simple records, handles enlargement)."""
     out = bytearray(IPS_MAGIC)
     i, n = 0, len(mod)
     while i < n:
@@ -112,7 +112,7 @@ def make_ips(orig: bytes, mod: bytes) -> bytes:
             i += 1
             if i - start >= 0xFFFF:
                 break
-        if start == IPS_EOF_OFF:                    # évite l'offset "EOF"
+        if start == IPS_EOF_OFF:                    # avoid the "EOF" offset
             start -= 1
         chunk = mod[start:i]
         out += start.to_bytes(3, "big")
@@ -124,7 +124,7 @@ def make_ips(orig: bytes, mod: bytes) -> bytes:
 
 def apply_ips(rom: bytes, patch: bytes) -> bytes:
     if patch[:5] != IPS_MAGIC:
-        raise ValueError("Patch IPS invalide (magic 'PATCH' absent)")
+        raise ValueError("Invalid IPS patch ('PATCH' magic missing)")
     data = bytearray(rom)
     i = 5
     while True:
@@ -133,7 +133,7 @@ def apply_ips(rom: bytes, patch: bytes) -> bytes:
             break
         off = int.from_bytes(rec, "big"); i += 3
         size = int.from_bytes(patch[i:i + 2], "big"); i += 2
-        if size == 0:                               # record RLE
+        if size == 0:                               # RLE record
             rl = int.from_bytes(patch[i:i + 2], "big"); i += 2
             b = patch[i]; i += 1
             if off + rl > len(data):
@@ -149,7 +149,7 @@ def apply_ips(rom: bytes, patch: bytes) -> bytes:
 
 
 # ===========================================================================
-# RomBuilder — moteur de réinsertion
+# RomBuilder — reinsertion engine
 # ===========================================================================
 class RomBuilder:
     def __init__(self, path, mapping="auto"):
@@ -158,26 +158,26 @@ class RomBuilder:
         self.data = bytearray(body)
         self.mapping = detect_mapping(self.data, mapping)
         self.writes = []                            # (start, end, tag)
-        self.allocs = []                            # zones réservées par l'allocateur
-        self._free = None                           # cache de la freelist
+        self.allocs = []                            # areas reserved by the allocator
+        self._free = None                           # free-list cache
 
-    # ---- lecture ----
+    # ---- reading ----
     def read_file(self, off, n):
         return bytes(self.data[off:off + n])
 
     def read_snes(self, addr, n):
         fo = snes_to_file(addr, self.mapping)
         if fo is None:
-            raise ValueError(f"Adresse SNES non mappable: {fmt_snes(addr)}")
+            raise ValueError(f"Unmappable SNES address: {fmt_snes(addr)}")
         return self.read_file(fo, n)
 
-    # ---- écriture (avec journalisation) ----
+    # ---- writing (with logging) ----
     def write_file(self, off, payload, tag=""):
         payload = bytes(payload)
         end = off + len(payload)
         if end > len(self.data):
-            raise ValueError(f"Écriture hors ROM @0x{off:06X} (+{len(payload)}); "
-                             f"taille={len(self.data)}. Expanser d'abord ?")
+            raise ValueError(f"Write outside the ROM @0x{off:06X} (+{len(payload)}); "
+                             f"size={len(self.data)}. Expand first?")
         self.data[off:end] = payload
         self.writes.append((off, end, tag))
         self._free = None
@@ -186,7 +186,7 @@ class RomBuilder:
     def write_snes(self, addr, payload, tag=""):
         fo = snes_to_file(addr, self.mapping)
         if fo is None:
-            raise ValueError(f"Adresse SNES non mappable: {fmt_snes(addr)}")
+            raise ValueError(f"Unmappable SNES address: {fmt_snes(addr)}")
         return self.write_file(fo, payload, tag or fmt_snes(addr))
 
     def fill(self, off, length, byte=0x00, tag="fill"):
@@ -195,9 +195,9 @@ class RomBuilder:
     # ---- expansion ----
     def expand_to(self, size_bytes, fill=0x00, fix_header=True):
         if size_bytes < len(self.data):
-            raise ValueError("La taille cible est plus petite que la ROM actuelle.")
+            raise ValueError("The target size is smaller than the current ROM.")
         if size_bytes % 0x8000:
-            raise ValueError("La taille doit être un multiple de 0x8000 (32 Ko).")
+            raise ValueError("The size must be a multiple of 0x8000 (32 KB).")
         self.data.extend(bytes([fill & 0xFF]) * (size_bytes - len(self.data)))
         self._free = None
         if fix_header:
@@ -214,10 +214,10 @@ class RomBuilder:
             self.data[b + 0x17] = rom_size_byte(len(self.data))
 
     def fix_checksum(self):
-        """Recalcule et écrit checksum + complément dans le header interne."""
+        """Recomputes and writes checksum + complement into the internal header."""
         b = header_base(self.mapping)
-        # état neutre : complément=0xFFFF, checksum=0x0000 (somme des 4 = 0x1FE,
-        # constante quelle que soit la valeur finale -> calcul cohérent)
+        # neutral state: complement=0xFFFF, checksum=0x0000 (the sum of the 4 = 0x1FE,
+        # constant whatever the final value -> consistent computation)
         self.data[b + 0x1C] = 0xFF
         self.data[b + 0x1D] = 0xFF
         self.data[b + 0x1E] = 0x00
@@ -230,9 +230,9 @@ class RomBuilder:
         self.data[b + 0x1F] = (chk >> 8) & 0xFF
         return chk
 
-    # ---- espace libre / allocateur ----
+    # ---- free space / allocator ----
     def free_regions(self, min_run=0x40, fill_bytes=(0x00, 0xFF), start=0):
-        """Runs >= min_run d'un même octet de remplissage. -> [(off, len, byte)]."""
+        """Runs >= min_run of the same fill byte. -> [(off, len, byte)]."""
         regions, n = [], len(self.data)
         i = start
         while i < n:
@@ -255,8 +255,8 @@ class RomBuilder:
 
     def alloc(self, size, align=1, fill=0x00, min_run=None, fill_bytes=(0x00, 0xFF),
               tag="alloc"):
-        """Réserve `size` octets dans une zone libre, en évitant les zones déjà
-        allouées/écrites. Renvoie l'offset FICHIER. Lève si plus de place."""
+        """Reserves `size` bytes in a free area, avoiding areas already
+        allocated/written. Returns the FILE offset. Raises if there is no room left."""
         min_run = min_run or size
         for off, rlen, _b in self._ensure_free(min_run, fill_bytes):
             cur = off
@@ -266,11 +266,11 @@ class RomBuilder:
                     continue
                 if not self._overlaps(cur, cur + size):
                     self.allocs.append((cur, cur + size, tag))
-                    if fill:                        # réserve la zone (pré-remplie)
+                    if fill:                        # reserve the area (pre-filled)
                         self.data[cur:cur + size] = bytes([fill & 0xFF]) * size
-                    return cur                      # l'appelant écrit via write_file
+                    return cur                      # the caller writes via write_file
                 cur += 1
-        raise RuntimeError(f"Pas d'espace libre contigu de {size} o (tag={tag}).")
+        raise RuntimeError(f"No contiguous free space of {size} bytes (tag={tag}).")
 
     def _overlaps(self, s, e):
         for a, b, _ in self.allocs:
@@ -278,10 +278,10 @@ class RomBuilder:
                 return True
         return False
 
-    # ---- repointage ----
+    # ---- repointing ----
     def repoint(self, table_file_off, index, target_snes, width=2, tag="repoint"):
-        """Écrit l'entrée `index` d'une table de pointeurs vers `target_snes`.
-        width=2 -> 16 bits (intra-banque) ; width=3 -> pointeur long 24 bits."""
+        """Writes entry `index` of a pointer table to point at `target_snes`.
+        width=2 -> 16 bits (within the bank); width=3 -> 24-bit long pointer."""
         off = table_file_off + index * width
         if width == 2:
             val = target_snes & 0xFFFF
@@ -291,7 +291,7 @@ class RomBuilder:
                                         (target_snes >> 8) & 0xFF,
                                         (target_snes >> 16) & 0xFF]), tag)
         else:
-            raise ValueError("width doit valoir 2 ou 3")
+            raise ValueError("width must be 2 or 3")
         return off
 
     def read_pointer(self, table_file_off, index, width=2, bank=None):
@@ -301,9 +301,9 @@ class RomBuilder:
             return ((bank or 0) << 16) | addr
         return self.data[off] | (self.data[off + 1] << 8) | (self.data[off + 2] << 16)
 
-    # ---- vérification ----
+    # ---- verification ----
     def overlaps(self):
-        """Renvoie les paires d'écritures qui se chevauchent (potentiel oubli)."""
+        """Returns the pairs of writes that overlap (potential mistake)."""
         ev = sorted(self.writes)
         bad = []
         for i in range(len(ev)):
@@ -319,7 +319,7 @@ class RomBuilder:
     def verify(self):
         b = header_base(self.mapping)
         stored = self.data[b + 0x1E] | (self.data[b + 0x1F] << 8)
-        comp = snes_checksum(self.data)             # checksum « tel quel »
+        comp = snes_checksum(self.data)             # checksum "as is"
         return {
             "size": len(self.data),
             "size_pow2": (len(self.data) & (len(self.data) - 1)) == 0,
@@ -334,7 +334,7 @@ class RomBuilder:
             "overlaps": self.overlaps(),
         }
 
-    # ---- sortie ----
+    # ---- output ----
     def save(self, path, keep_smc=False):
         out = bytes(self.data)
         if keep_smc and self.had_smc:
@@ -344,7 +344,7 @@ class RomBuilder:
 
 
 # ===========================================================================
-# Manifeste de build déclaratif
+# Declarative build manifest
 # ===========================================================================
 def _to_int(v):
     return v if isinstance(v, int) else int(str(v), 0)
@@ -360,16 +360,16 @@ def _payload_from_entry(e, base_dir):
         return p.read_bytes()
     if "fill" in e:
         return bytes([_to_int(e["fill"]) & 0xFF]) * _to_int(e["len"])
-    raise ValueError(f"Entrée d'écriture sans 'hex'/'bin'/'fill': {e}")
+    raise ValueError(f"Write entry without 'hex'/'bin'/'fill': {e}")
 
 
 def run_manifest(rb: RomBuilder, manifest: dict, base_dir: Path, log):
     if "expand_mbit" in manifest:
         rb.expand_mbit(_to_int(manifest["expand_mbit"]))
-        log(f"- expand -> {len(rb.data):,} o ({_to_int(manifest['expand_mbit'])} Mbit)")
+        log(f"- expand -> {len(rb.data):,} bytes ({_to_int(manifest['expand_mbit'])} Mbit)")
     elif "expand_bytes" in manifest:
         rb.expand_to(_to_int(manifest["expand_bytes"]))
-        log(f"- expand -> {len(rb.data):,} o")
+        log(f"- expand -> {len(rb.data):,} bytes")
 
     for e in manifest.get("writes", []):
         payload = _payload_from_entry(e, base_dir)
@@ -382,8 +382,8 @@ def run_manifest(rb: RomBuilder, manifest: dict, base_dir: Path, log):
             off = rb.alloc(len(payload), align=_to_int(e.get("align", 1)), tag=tag)
             rb.write_file(off, payload, tag)
         else:
-            raise ValueError(f"Entrée d'écriture sans cible: {e}")
-        log(f"- write {len(payload):>6} o @0x{off:06X} {('('+tag+')') if tag else ''}")
+            raise ValueError(f"Write entry without a target: {e}")
+        log(f"- write {len(payload):>6} bytes @0x{off:06X} {('('+tag+')') if tag else ''}")
 
     for r in manifest.get("repoints", []):
         rb.repoint(_to_int(r["table_file"]), _to_int(r["index"]),
@@ -396,7 +396,7 @@ def run_manifest(rb: RomBuilder, manifest: dict, base_dir: Path, log):
         rb.fix_rom_size_byte()
     if manifest.get("fix_checksum", True):
         chk = rb.fix_checksum()
-        log(f"- checksum corrigé : ${chk:04X}")
+        log(f"- checksum fixed: ${chk:04X}")
 
 
 # ===========================================================================
@@ -404,28 +404,28 @@ def run_manifest(rb: RomBuilder, manifest: dict, base_dir: Path, log):
 # ===========================================================================
 def main():
     p = argparse.ArgumentParser(
-        description="Boîte à outils de réinsertion / rebuild de ROM SNES.")
+        description="SNES ROM reinsertion / rebuild toolkit.")
     p.add_argument("rom", type=Path)
     p.add_argument("--map", default="auto",
                    choices=["auto", "lorom", "hirom", "exhirom"])
-    p.add_argument("-o", "--out", type=Path, help="ROM/patch de sortie")
+    p.add_argument("-o", "--out", type=Path, help="output ROM/patch")
     p.add_argument("--expand", type=int, metavar="MBIT",
-                   help="expanse la ROM à MBIT Mbit + corrige header/checksum")
+                   help="expands the ROM to MBIT Mbit + fixes header/checksum")
     p.add_argument("--fix-checksum", action="store_true",
-                   help="recalcule checksum + complément")
+                   help="recomputes checksum + complement")
     p.add_argument("--free-space", action="store_true",
-                   help="liste les zones libres (runs de 0x00/0xFF)")
-    p.add_argument("--min", type=int, default=256, help="taille mini d'un run libre")
+                   help="lists the free areas (runs of 0x00/0xFF)")
+    p.add_argument("--min", type=int, default=256, help="minimum size of a free run")
     p.add_argument("--verify", action="store_true",
-                   help="vérifie header/checksum/taille")
-    p.add_argument("--make-ips", type=Path, metavar="MODIFIEE",
-                   help="génère un patch IPS : rom(orig) -> MODIFIEE")
+                   help="verifies header/checksum/size")
+    p.add_argument("--make-ips", type=Path, metavar="MODIFIED",
+                   help="makes an IPS patch: rom(orig) -> MODIFIED")
     p.add_argument("--apply-ips", type=Path, metavar="PATCH",
-                   help="applique un patch IPS sur la rom")
+                   help="applies an IPS patch to the rom")
     p.add_argument("--build", type=Path, metavar="MANIFEST.json",
-                   help="rebuild déclaratif depuis un manifeste JSON")
+                   help="declarative rebuild from a JSON manifest")
     p.add_argument("--keep-smc", action="store_true",
-                   help="ré-ajoute un en-tête SMC de 512 o à la sortie")
+                   help="adds a 512-byte SMC header back to the output")
     args = p.parse_args()
 
     lines = []
@@ -433,82 +433,82 @@ def main():
         print(s)
         lines.append(s)
 
-    # --- patchs IPS (cas particuliers : pas de RomBuilder requis) ---
+    # --- IPS patches (special cases: no RomBuilder needed) ---
     if args.make_ips:
         orig, _ = strip_smc_header(args.rom.read_bytes())
         mod, _ = strip_smc_header(args.make_ips.read_bytes())
         patch = make_ips(orig, mod)
         outp = args.out or args.rom.with_suffix(".ips")
         outp.write_bytes(patch)
-        log(f"Patch IPS écrit : {outp} ({len(patch):,} o)")
+        log(f"IPS patch written: {outp} ({len(patch):,} bytes)")
         return
     if args.apply_ips:
         rom, smc = strip_smc_header(args.rom.read_bytes())
         patched = apply_ips(rom, args.apply_ips.read_bytes())
         outp = args.out or args.rom.with_name(args.rom.stem + "_patched.sfc")
         outp.write_bytes(patched)
-        log(f"ROM patchée : {outp} ({len(patched):,} o)")
+        log(f"Patched ROM: {outp} ({len(patched):,} bytes)")
         return
 
     rb = RomBuilder(args.rom, args.map)
     hdr = parse_header(rb.data, rb.mapping)
     log(f"# Rebuild SNES — {args.rom.name}")
-    log(f"- titre : {hdr['title']!r}  | mapping : {rb.mapping}"
-        f"  | taille : {len(rb.data):,} o")
+    log(f"- title: {hdr['title']!r}  | mapping: {rb.mapping}"
+        f"  | size: {len(rb.data):,} bytes")
 
     if args.free_space:
         regs = rb.free_regions(min_run=args.min)
         total = sum(r[1] for r in regs)
-        log(f"\n## Espace libre (>= {args.min} o) — {len(regs)} zones, "
-            f"{total:,} o au total")
-        log("| SNES | fichier | taille | octet |")
+        log(f"\n## Free space (>= {args.min} bytes) — {len(regs)} areas, "
+            f"{total:,} bytes in total")
+        log("| SNES | file | size | byte |")
         log("|---|---|---|---|")
         for off, ln, b in sorted(regs, key=lambda r: -r[1])[:40]:
             log(f"| {fmt_snes(file_to_snes(off, rb.mapping))} | 0x{off:06X} "
-                f"| {ln:,} o | 0x{b:02X} |")
+                f"| {ln:,} bytes | 0x{b:02X} |")
 
     if args.build:
         manifest = json.loads(args.build.read_text())
         if manifest.get("mapping") and manifest["mapping"] != "auto":
             rb.mapping = manifest["mapping"]
-        log(f"\n## Manifeste {args.build.name}")
+        log(f"\n## Manifest {args.build.name}")
         run_manifest(rb, manifest, args.build.resolve().parent, log)
 
     if args.expand is not None:
         rb.expand_mbit(args.expand)
         rb.fix_checksum()
-        log(f"\n- ROM expansée à {args.expand} Mbit ({len(rb.data):,} o), "
-            f"header + checksum corrigés")
+        log(f"\n- ROM expanded to {args.expand} Mbit ({len(rb.data):,} bytes), "
+            f"header + checksum fixed")
     elif args.fix_checksum:
         chk = rb.fix_checksum()
-        log(f"\n- checksum recalculé : ${chk:04X}")
+        log(f"\n- checksum recomputed: ${chk:04X}")
 
     if args.verify or args.build or args.expand is not None:
         v = rb.verify()
-        log(f"\n## Vérification")
-        log(f"- taille : {v['size']:,} o "
-            f"(mult. 32 Ko: {'oui' if v['mult_32k'] else 'NON'}, "
-            f"puiss. de 2: {'oui' if v['size_pow2'] else 'non'})")
-        log(f"- checksum stocké ${v['checksum_stored']:04X} / "
-            f"calculé ${v['checksum_calc']:04X} -> "
-            f"{'OK' if v['checksum_ok'] else 'INCOHÉRENT'}")
-        log(f"- complément : {'OK' if v['complement_ok'] else 'INCOHÉRENT'}")
-        log(f"- octet taille header : 0x{v['rom_size_byte']:02X} "
-            f"(attendu 0x{v['rom_size_byte_expected']:02X})")
+        log(f"\n## Verification")
+        log(f"- size: {v['size']:,} bytes "
+            f"(mult. of 32 KB: {'yes' if v['mult_32k'] else 'NO'}, "
+            f"power of 2: {'yes' if v['size_pow2'] else 'no'})")
+        log(f"- stored checksum ${v['checksum_stored']:04X} / "
+            f"computed ${v['checksum_calc']:04X} -> "
+            f"{'OK' if v['checksum_ok'] else 'INCONSISTENT'}")
+        log(f"- complement: {'OK' if v['complement_ok'] else 'INCONSISTENT'}")
+        log(f"- header size byte: 0x{v['rom_size_byte']:02X} "
+            f"(expected 0x{v['rom_size_byte_expected']:02X})")
         if v["overlaps"]:
-            log(f"- ⚠️ {len(v['overlaps'])} CHEVAUCHEMENT(S) d'écriture :")
+            log(f"- ⚠️ {len(v['overlaps'])} write OVERLAP(S):")
             for (a, b) in v["overlaps"][:10]:
                 log(f"    0x{a[0]:06X}-0x{a[1]:06X} ({a[2]}) ∩ "
                     f"0x{b[0]:06X}-0x{b[1]:06X} ({b[2]})")
         else:
-            log("- chevauchements : aucun")
+            log("- overlaps: none")
 
-    # --- sauvegarde si on a modifié quelque chose ---
+    # --- save if anything was changed ---
     if args.out and (args.build or args.expand is not None or args.fix_checksum):
         n = rb.save(args.out, keep_smc=args.keep_smc)
-        log(f"\nROM écrite : {args.out} ({n:,} o)")
+        log(f"\nROM written: {args.out} ({n:,} bytes)")
     elif (args.build or args.expand is not None or args.fix_checksum) and not args.out:
-        log("\n(aucun -o fourni : ROM non sauvegardée)")
+        log("\n(no -o given: ROM not saved)")
 
 
 if __name__ == "__main__":

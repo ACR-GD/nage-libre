@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROM = Path(__file__).resolve().parent.parent / "Nage Libre - Seijaku no Suishin (Japan).sfc"
 
-# Mapping confirmé (prologue + UI) — voir docs/prologue_text_engine.md
+# Confirmed mapping (prologue + UI), see docs/prologue_text_engine.en.md
 CHARS: dict[int, str] = {
     0x0010: "あ", 0x0014: "い", 0x0018: "う", 0x001A: "ぇ", 0x001C: "の", 0x001E: "ぉ",
     0x0020: "お", 0x0022: "か", 0x0024: "が", 0x002A: "く", 0x002E: "私", 0x0030: "げ",
@@ -53,7 +53,7 @@ def main() -> None:
     for arg in sys.argv[1:]:
         addr = int(arg, 16)
         ids = read_string(rom, 0x87, addr)
-        print(f"$87:{addr:04X}  ({len(ids)} mots)")
+        print(f"$87:{addr:04X}  ({len(ids)} words)")
         print(f"  IDs: {' '.join(f'{x:04X}' for x in ids)}")
         print(f"  JP:  {decode(ids)}")
 

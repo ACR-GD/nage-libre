@@ -1,5 +1,5 @@
-# IDs de glyphes présents dans le buffer prologue $7F:64C0 (dump nl-full-en).
-# Inclut horodatages + lignes non traduites. Ne JAMAIS réutiliser pour l'anglais.
+# Glyph IDs present in the prologue buffer $7F:64C0 (nl-full-en dump).
+# Includes timestamps + untranslated lines. NEVER reuse them for English.
 0x0000
 0x0001
 0x0002
@@ -346,9 +346,9 @@
 0x07FA
 0x07FC
 0x07FE
-# --- Glyphes du dialogue pré-combat (scène compressée $7F:64C0, trace F4CA) ---
-# Capturés via scripts/mesen_glyph_id_trace.lua. Étaient écrasés par nos paires
-# anglaises → corruption « ng / n to: / us ».
+# --- Glyphs of the pre-battle dialogue (compressed scene $7F:64C0, F4CA trace) ---
+# Captured with scripts/mesen_glyph_id_trace.lua. They were being overwritten by our
+# English pairs → "ng / n to: / us" corruption.
 0x0042
 0x0092
 0x0094

@@ -124,7 +124,7 @@ def make_pair_tile(ch_l, ch_r):
     return _rows_to_2bpp(lt) + _rows_to_2bpp(lb) + _rows_to_2bpp(rt) + _rows_to_2bpp(rb)
 
 def make_half_tile(ch):
-    """Génère les 32 octets 2bpp (2 tuiles 8x8 empilées = 8x16) d'un glyphe demi-chasse."""
+    """Generates the 32 bytes of 2bpp (2 stacked 8x8 tiles = 8x16) for a half-width glyph."""
     lt, lb = FONT.get(ch, FONT[' '])
     return _rows_to_2bpp(lt) + _rows_to_2bpp(lb)
 

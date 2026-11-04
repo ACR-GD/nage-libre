@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Désassembleur 65816 (suivi M/X) pour les routines texte du prologue Nage Libre."""
+"""65816 disassembler (with M/X tracking) for the Nage Libre prologue text routines."""
 from pathlib import Path
 
 ROM = Path(__file__).resolve().parent.parent / "Nage Libre - Seijaku no Suishin (Japan).sfc"
@@ -10,7 +10,7 @@ def lorom(bank, addr):
     return ((bank & 0x7F) * 0x8000) + (addr - 0x8000)
 
 
-# opcode table : nom, mode
+# opcode table: name, mode
 # modes: imp, imm_m(A width), imm_x(X width), imm8, abs, absx, absy, absl, abslx,
 #        dp, dpx, dpy, dpind, dpindl, dpindy, dpindly, rel, rell, mv, acc, sr, sry
 OPS = {
@@ -39,13 +39,13 @@ OPS = {
     0xC2: ("REP", "imm8"), 0xE2: ("SEP", "imm8"),
 }
 
-# familles régulières (low nibble pattern) — on gère les principales
+# regular families (low nibble pattern): we handle the main ones
 def base_op(b):
     if b in OPS:
         return OPS[b]
     hi = b & 0xF0
     lo = b & 0x0F
-    # exceptions colonne 2 et autres : priorité sur le motif de groupe
+    # column-2 exceptions and others: take priority over the group pattern
     misc0 = {
         0xA2:("LDX","imm_x"),0xA0:("LDY","imm_x"),
         0xE0:("CPX","imm_x"),0xC0:("CPY","imm_x"),
@@ -55,7 +55,7 @@ def base_op(b):
     name = {0x00:"ORA",0x20:"AND",0x40:"EOR",0x60:"ADC",0x80:"STA",
             0xA0:"LDA",0xC0:"CMP",0xE0:"SBC"}.get(hi)
     if name and lo in (0x1,0x3,0x5,0x7,0x9,0xD,0xF):
-        # addressing by low nibble (group 1) — PAS la colonne 2
+        # addressing by low nibble (group 1), NOT column 2
         mode = {0x1:"dpindx",0x3:"sr",0x5:"dp",0x7:"dpindl",
                 0x9:"imm_m",0xD:"abs",0xF:"absl"}[lo]
         return (name, mode)
@@ -167,8 +167,8 @@ def fmt(name, mode, op, snes, sz):
 
 
 def opcode_table():
-    """Extrait la table d'opcodes de l'interpr\u00e9teur de script $83:8103 et classe
-    chaque handler (texte / pointeur / d\u00e9compression)."""
+    """Extracts the opcode table of the $83:8103 script interpreter and classifies
+    each handler (text / pointer / decompression)."""
     start = lorom(0x83, 0x8103)
     table = {}
     i = start
@@ -180,15 +180,15 @@ def opcode_table():
             i += 11
         else:
             i += 1
-    print("opc  handler    fonction")
+    print("opc  handler    function")
     for k in sorted(table):
         o = lorom(0x83, table[k]); blob = rom[o:o+400]
         feats = []
-        if b"\x22\xCA\xF4\x80" in blob: feats.append("texte(F4CA)")
-        if b"\x22\xA7\xF4\x80" in blob: feats.append("texte(F4A7)")
+        if b"\x22\xCA\xF4\x80" in blob: feats.append("text(F4CA)")
+        if b"\x22\xA7\xF4\x80" in blob: feats.append("text(F4A7)")
         if b"\x69\xC0\x64" in blob: feats.append("ptr+64C0")
         if b"\x22\x63\xFA\x80" in blob: feats.append("decomp(FA63)")
-        print(f"{k:02X}   $83:{table[k]:04X}    {', '.join(feats) if feats else '(contr\u00f4le)'}")
+        print(f"{k:02X}   $83:{table[k]:04X}    {', '.join(feats) if feats else '(control)'}")
     return table
 
 
@@ -198,10 +198,10 @@ if __name__ == "__main__":
         opcode_table()
         sys.exit()
     routines = [
-        ("D70C boucle acte", 0x87, 0xD70C, 80),
+        ("D70C act loop", 0x87, 0xD70C, 80),
         ("D9D7 gfx/init", 0x87, 0xD9D7, 40),
-        ("DA3B ligne 1", 0x87, 0xDA3B, 40),
-        ("DA8C ligne 2", 0x87, 0xDA8C, 40),
+        ("DA3B line 1", 0x87, 0xDA3B, 40),
+        ("DA8C line 2", 0x87, 0xDA8C, 40),
         ("D990 -> F4A7", 0x87, 0xD990, 30),
         ("F4A7 dispatch", 0x80, 0xF4A7, 12),
         ("F4AB typewriter", 0x80, 0xF4AB, 80),

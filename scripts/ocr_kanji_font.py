@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Passe OCR Tesseract (jpn) sur la police kanji 16x16 (2bpp, ordre LT-LB-RT-RB).
+Tesseract OCR pass (jpn) over the 16x16 kanji font (2bpp, LT-LB-RT-RB order).
 
-Rend chaque glyphe en haute résolution noir-sur-blanc avec marge, puis lance
-tesseract --psm 10 -l jpn. Écrit docs/kanji_font_ocr.csv.
+Renders each glyph at high resolution, black on white with a margin, then runs
+tesseract --psm 10 -l jpn. Writes docs/kanji_font_ocr.csv.
 
 Usage: python3 scripts/ocr_kanji_font.py [--all]
-  (par défaut : seulement les cellules non déjà mappées dans kanji_font_index.csv)
+  (default: only the cells not already mapped in kanji_font_index.csv)
 """
 import csv
 import subprocess
@@ -108,7 +108,7 @@ def main() -> None:
 
     targets = cells if do_all else [(c, o) for c, o in cells if c not in known]
     total = len(targets)
-    print(f"OCR sur {total} cellules (scale {SCALE}, --psm 10 -l jpn)…", flush=True)
+    print(f"OCR on {total} cells (scale {SCALE}, --psm 10 -l jpn)…", flush=True)
 
     results = {}
     with tempfile.TemporaryDirectory() as td:
@@ -125,7 +125,7 @@ def main() -> None:
             f.write(f"0x{cid:04X},0x{off:06X},{known.get(cid,'')},{results.get(cid,'')}\n")
 
     got = sum(1 for v in results.values() if v)
-    print(f"Terminé. {got}/{total} glyphes ont produit un résultat OCR.")
+    print(f"Done. {got}/{total} glyphs produced an OCR result.")
     print(f"CSV: {OUT_CSV}")
 
 

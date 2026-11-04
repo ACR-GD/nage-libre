@@ -1,9 +1,9 @@
 namespace NageLibre.Tools.Gfx;
 
 /// <summary>
-/// Police 16×16 du jeu : 4 tuiles 2bpp 8×8 par caractère.
-/// En ROM : quadrants contigus (+0, +16, +32, +48 octets).
-/// En VRAM (après chargement) : indices +0, +1, +16, +17 (disposition SNES 32 tuiles de large).
+/// The game's 16×16 font: 4 2bpp 8×8 tiles per character.
+/// In ROM: contiguous quadrants (+0, +16, +32, +48 bytes).
+/// In VRAM (after loading): indexes +0, +1, +16, +17 (SNES layout, 32 tiles wide).
 /// </summary>
 public static class Font16x16
 {
@@ -12,10 +12,10 @@ public static class Font16x16
 
     public enum Quadrant { TopLeft, TopRight, BottomLeft, BottomRight }
 
-    /// <summary>Offsets en octets dans un bloc ROM de 64 octets (4 tuiles linéaires).</summary>
+    /// <summary>Byte offsets within a 64-byte ROM block (4 linear tiles).</summary>
     public static int RomQuadrantOffset(Quadrant q) => (int)q * TileBytes;
 
-    /// <summary>Index de tuile VRAM relatif au glyphe (base = index du quadrant HG).</summary>
+    /// <summary>VRAM tile index relative to the glyph (base = index of the top-left quadrant).</summary>
     public static int VramTileIndexOffset(Quadrant q) => q switch
     {
         Quadrant.TopLeft => 0,
@@ -40,7 +40,7 @@ public static class Font16x16
 
     public static byte[] ComposeVramLayout(ReadOnlySpan<byte> romLinear64)
     {
-        // Réordonne ROM linéaire → ordre d'indices VRAM pour export/debug
+        // Reorders linear ROM → VRAM index order for export/debugging
         var ordered = new byte[CharacterBytes];
         ReadOnlySpan<int> romOff = [0, 16, 32, 48];
         ReadOnlySpan<int> vramIdx = [0, 1, 2, 3]; // slots 0,1,16,17 in 4-tile buffer

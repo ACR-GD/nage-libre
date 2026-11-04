@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """
-Builder UNIFIÉ Nage Libre : prologue + combat/menus dans une seule ROM.
+UNIFIED Nage Libre builder: prologue + battle/menus in a single ROM.
 
-Combine les deux systèmes avec un **allocateur de police partagé** (un seul pool
-d'IDs libres) pour éviter toute collision de tuiles :
+Combines both systems with a **shared font allocator** (a single pool of
+free IDs) to avoid any tile collision:
 
-  1. Prologue (narration) — script compressé décompressé en WRAM `$7F:64C0`.
-     On hooke `$83:80FF` : après la décompression, on recopie les chaînes
-     anglaises (table ROM en banque $83) à leur offset WRAM. (= build_prologue_*)
+  1. Prologue (narration): compressed script, decompressed into WRAM `$7F:64C0`.
+     We hook `$83:80FF`: after decompression, the English strings are copied
+     (ROM table in bank $83) to their WRAM offset. (= build_prologue_*)
 
-  2. Combat / menus / système — chaînes en clair de la banque `$87`, réécrites
-     *sur place*, terminées par `FFFF`. (= build_combat_menu_*)
+  2. Battle / menus / system: plain strings in bank `$87`, rewritten
+     *in place*, terminated by `FFFF`. (= build_combat_menu_*)
 
-Pool d'IDs : on prend le jeu le plus strict (celui du menu, qui exclut TOUS les
-glyphes référencés dans le bloc texte `$87`), valable aussi pour le prologue.
+ID pool: we take the strictest set (the menu's, which excludes EVERY glyph
+referenced in the `$87` text block), which is also valid for the prologue.
 
-Sources : docs/prologue_translation.csv  +  docs/combat_menu_translation.csv
-Sortie   : nl-full-en.sfc
+Sources: docs/prologue_translation.csv  +  docs/combat_menu_translation.csv
+Output:  nl-full-en.sfc
 """
 import csv
 import struct
@@ -44,28 +44,28 @@ import build_save_menu as SAVE
 ROOT = Path(__file__).parent
 ROM_JP = ROOT / "Nage Libre - Seijaku no Suishin (Japan).sfc"
 OUT = ROOT / "nl-full-en.sfc"
-# Lignes de scène trop longues pour leur boîte (à raccourcir dans docs/scenes/)
+# Scene lines too long for their box (to shorten in docs/scenes/)
 OVERFLOW_CSV = ROOT / "docs" / "scene_overflow.csv"
 
 
 def main():
     rom = bytearray(ROM_JP.read_bytes())
     if rom[P.HOOK_POINT:P.HOOK_POINT + 4] != bytes([0x22, 0xD8, 0xF8, 0x80]):
-        raise SystemExit("Point de hook $83:80FF inattendu — ROM JP propre ?")
+        raise SystemExit("Unexpected hook point $83:80FF — is this a clean JP ROM?")
 
-    # Pool partagé : IDs libres ne servant à AUCUN glyphe du bloc texte $87.
-    # Variante « name-aware » : les kanji des noms qu'on relocalise (romaji) sont
-    # libérés pour la police, ce qui débloque ~128 slots supplémentaires.
+    # Shared pool: free IDs not used by ANY glyph of the $87 text block.
+    # "Name-aware" variant: the kanji of the names we relocate (romaji) are
+    # freed for the font, which unlocks ~128 extra slots.
     alloc = ScatterAllocator(NF.compute_free_pool(rom))
 
-    # === 2) MENU/COMBAT : encodage + validation taille (sur place) ===
-    # Rémanence : ces écrans redessinent leurs lignes à position FIXE (sélection
-    # qui défile, journal de combat, achat/vente/échange…). Une nouvelle valeur
-    # plus COURTE que la précédente laisse les tuiles d'avant en VRAM ->
-    # « Buy a card[cter] », « Topaz Lazuli », « [lla] 部 »… On remplit donc TOUTE
-    # chaîne d'espaces jusqu'à la largeur de son slot (les espaces sont des
-    # tuiles vierges qui effacent le reliquat), AVANT le FFFF qui reste à sa
-    # position d'origine. Sûr : on ne déborde jamais hors de la chaîne d'origine.
+    # === 2) MENU/BATTLE: encoding + size check (in place) ===
+    # Ghosting: these screens redraw their lines at a FIXED position (scrolling
+    # selection, battle log, buy/sell/swap…). A new value SHORTER than the
+    # previous one leaves the old tiles in VRAM ->
+    # "Buy a card[cter]", "Topaz Lazuli", "[lla] 部"… So we pad EVERY
+    # string with spaces up to the width of its slot (spaces are blank tiles
+    # that erase the leftovers), BEFORE the FFFF, which stays at its original
+    # position. Safe: we never write past the end of the original string.
     menu = M.load_rows(set(), take_all=True)
     menu_plan, errors = [], []
     for r in menu:
@@ -75,54 +75,54 @@ def main():
         if len(ids) > r["slot"]:
             errors.append(f"  {r['snes']} '{r['en']}' = {len(ids)} > slot {r['slot']}")
             continue
-        ids = ids + [JP_SPACE] * (r["slot"] - len(ids))   # pad -> efface la rémanence
+        ids = ids + [JP_SPACE] * (r["slot"] - len(ids))   # pad -> erases ghosting
         menu_plan.append((r, ids + [0xFFFF]))
     if errors:
-        raise SystemExit("Chaînes menu trop longues :\n" + "\n".join(errors))
+        raise SystemExit("Menu strings too long:\n" + "\n".join(errors))
 
-    # === 2b) NOMS de personnages (écran anniversaire) : relocalisation ===
+    # === 2b) Character NAMES (birthday screen): relocation ===
     names_written, slash_cid, slash_glyph = N.apply(rom, alloc)
 
-    # === 2c) NOMS d'ennemis/persos en COMBAT : relocalisation table complète ===
-    #   Lit docs/names_translation.csv (colonne `en`) ; ne touche que les lignes
-    #   remplies, saute les 5 persos principaux (gérés en 2b). Repointe le tableau
-    #   partagé $81:AF5B (244 entrées, fenêtre prénoms incluse) vers $AF:9E8F.
+    # === 2c) Enemy/character NAMES in BATTLE: full table relocation ===
+    #   Reads docs/names_translation.csv (column `en`); only touches filled-in
+    #   rows, skips the 5 main characters (handled in 2b). Repoints the shared
+    #   table $81:AF5B (244 entries, given-name window included) to $AF:9E8F.
     nf_entries, nf_strings = NF.apply(rom, alloc)
 
-    # === 2d) NOMS DE CLUBS (écran de sélection) : libellés courts sur place ===
-    #   La sélection de club lit ses noms via la table $87:E346 -> $87:85FF.. ,
-    #   distincte de $81:AF5B (combat, déjà relocalisée). On réécrit donc des
-    #   libellés anglais courts sur place dans $87:85FF.. (cf. build_club_names).
+    # === 2d) CLUB NAMES (selection screen): short labels in place ===
+    #   Club selection reads its names through the table $87:E346 -> $87:85FF..,
+    #   separate from $81:AF5B (battle, already relocated). So we rewrite short
+    #   English labels in place in $87:85FF.. (see build_club_names).
     clubs_written = CLUB.apply(rom, alloc)
 
-    # === 1) SCÈNES COMPRESSÉES ($7F:64C0) : injection MULTI-SCÈNES à l'échelle ===
-    #   Hook à $83:80FF : A=scene_idx -> annuaire (ROM étendue $B0+) -> recopie des
-    #   chaînes anglaises de la scène. Borne n_ids + FFFF = aucun débordement.
-    #   Appelé EN DERNIER : les scènes prennent le budget de police restant.
+    # === 1) COMPRESSED SCENES ($7F:64C0): MULTI-SCENE injection at scale ===
+    #   Hook at $83:80FF: A=scene_idx -> directory (expanded ROM $B0+) -> copies the
+    #   scene's English strings. Bounded by n_ids + FFFF = no overflow.
+    #   Called LAST: the scenes take whatever font budget is left.
     scene_stats = SCENE.apply(rom, alloc)
 
-    # === 3) Écrire TOUTES les tuiles de paires (pool partagé, une seule fois) ===
+    # === 3) Write ALL the pair tiles (shared pool, once) ===
     for (cl, cr), cid in alloc.p2id.items():
         rom[char_id_to_rom(cid):char_id_to_rom(cid) + 64] = make_pair_tile(cl, cr)
-    # glyphe « / » 16×16 dédié à la date (écrase la paire générée pour cet ID)
+    # dedicated 16×16 "/" glyph for the date (overwrites the pair generated for this ID)
     rom[char_id_to_rom(slash_cid):char_id_to_rom(slash_cid) + 64] = slash_glyph
 
-    # === 5) Menu/combat : réécriture sur place en $87 ===
+    # === 5) Menu/battle: in-place rewrite in $87 ===
     for r, ids in menu_plan:
         for i, cid in enumerate(ids):
             struct.pack_into("<H", rom, r["off"] + i * 2, cid)
 
-    # === 6) Menu de COMMANDE en combat : hook runtime (banque $80) ===
-    #   + fenêtres PAGER (WHO / ordres) : gabarits $87 + branche du même hook
+    # === 6) BATTLE COMMAND menu: runtime hook (bank $80) ===
+    #   + PAGER windows (WHO / orders): $87 templates + a branch of the same hook
     pager = PG.apply(rom, ROM_JP.read_bytes())
     CMD.apply(rom, PG.hook_params())
 
-    # === 6b) Messages de COMBAT : fragments repointés par site + noms demi-chasse ===
-    #   « [nom] takes [N] damage!! », « [nom] gains [N] DEF!! »… (cf. build_battle_text)
-    #   + HUD de PV dans l'ordre Prénom Initiale.
+    # === 6b) BATTLE messages: fragments repointed per site + half-width names ===
+    #   "[name] takes [N] damage!!", "[name] gains [N] DEF!!"… (see build_battle_text)
+    #   + HP HUD in Given-name Initial order.
     battle = BT.apply(rom, ROM_JP.read_bytes())
 
-    # === 6c) Écran de SAUVEGARDE : « 2面 » -> « St2 » (chaînes demi-chasse, cf. build_save_menu)
+    # === 6c) SAVE screen: "2面" -> "St2" (half-width strings, see build_save_menu)
     SAVE.apply(rom)
 
     with OVERFLOW_CSV.open("w", encoding="utf-8", newline="") as f:
@@ -134,27 +134,27 @@ def main():
     fix_checksum(rom)
     OUT.write_bytes(rom)
 
-    print(f"Écrit : {OUT.name}  ({len(rom) // 1024} Ko)")
-    print(f"  scènes (multi) : {scene_stats['scenes']} scènes / "
-          f"{scene_stats['lines']} lignes injectées"
-          + (f" ({scene_stats['truncated']} tronquées)" if scene_stats['truncated'] else "")
-          + (f" ({len(scene_stats['overflow'])} débordent de la boîte -> {OVERFLOW_CSV.name})"
+    print(f"Written: {OUT.name}  ({len(rom) // 1024} KB)")
+    print(f"  scenes (multi): {scene_stats['scenes']} scenes / "
+          f"{scene_stats['lines']} lines injected"
+          + (f" ({scene_stats['truncated']} truncated)" if scene_stats['truncated'] else "")
+          + (f" ({len(scene_stats['overflow'])} overflow their box -> {OVERFLOW_CSV.name})"
              if scene_stats['overflow'] else "")
-          + f"  |  combat/menu : {len(menu_plan)} chaîne(s)")
-    print(f"  menu commande combat : hook @ $80:{CMD.HOOK_SNES:04X} "
+          + f"  |  battle/menu: {len(menu_plan)} string(s)")
+    print(f"  battle command menu: hook @ $80:{CMD.HOOK_SNES:04X} "
           f"({' / '.join(w for _, _, w in CMD.CMDS)})")
-    print(f"  fenêtres PAGER : {pager['labels']} ({pager['bytes']} o @ $BF:F000)")
-    print(f"  noms perso : {len(names_written)} relocalisés @ $87:FA0C "
+    print(f"  PAGER windows: {pager['labels']} ({pager['bytes']} bytes @ $BF:F000)")
+    print(f"  character names: {len(names_written)} relocated @ $87:FA0C "
           f"({', '.join(n for n, _, _ in names_written)})")
-    print(f"  noms combat (tableau partagé) : {nf_entries} entrée(s) repointée(s), "
-          f"{nf_strings} chaîne(s) uniques @ $AF:9E8F")
-    print(f"  clubs (écran sélection) : {clubs_written} libellés courts @ $87:85FF..")
-    print(f"  messages de combat : {battle['sites']} sites repointés, {battle['strings']} "
-          f"chaînes demi-chasse ({battle['bytes']} o) @ $BF:8000, "
-          f"prénom le plus long {battle['longest_name']} car.")
-    print(f"  police partagée : {alloc.count()} paires uniques (sur {len(alloc.free)} dispo)")
-    print(f"  scènes : hook {scene_stats['hook']} o @ $83:{SCENE.HOOK_ADDR:04X}, "
-          f"annuaire+données {scene_stats['bytes'] // 1024} Ko @ $B0:8000+")
+    print(f"  battle names (shared table): {nf_entries} entry(ies) repointed, "
+          f"{nf_strings} unique string(s) @ $AF:9E8F")
+    print(f"  clubs (selection screen): {clubs_written} short labels @ $87:85FF..")
+    print(f"  battle messages: {battle['sites']} sites repointed, {battle['strings']} "
+          f"half-width strings ({battle['bytes']} bytes) @ $BF:8000, "
+          f"longest given name {battle['longest_name']} chars")
+    print(f"  shared font: {alloc.count()} unique pairs (of {len(alloc.free)} available)")
+    print(f"  scenes: hook {scene_stats['hook']} bytes @ $83:{SCENE.HOOK_ADDR:04X}, "
+          f"directory+data {scene_stats['bytes'] // 1024} KB @ $B0:8000+")
 
 
 if __name__ == "__main__":

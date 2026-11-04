@@ -9,7 +9,7 @@ using NageLibre.Tools.Snes;
 
 string romPath = args.Length > 1 && args[0] == "--rom"
     ? args[1]
-    : FindRom() ?? throw new FileNotFoundException("ROM .sfc introuvable.");
+    : FindRom() ?? throw new FileNotFoundException(".sfc ROM not found.");
 
 string? mssPath = args.Length > 2 && args[0] == "--rom"
     ? args[2]
@@ -22,7 +22,7 @@ switch (cmd)
 {
     case "export":
         CsvExporter.ExportAll(romPath, mssPath, outDir);
-        Console.WriteLine($"CSV exportés dans : {outDir}");
+        Console.WriteLine($"CSVs exported to: {outDir}");
         break;
 
     case "decompress":
@@ -53,7 +53,7 @@ switch (cmd)
     case "extract-mesen":
         if (mssPath == null)
         {
-            Console.WriteLine("Aucun fichier .mss trouvé.");
+            Console.WriteLine("No .mss file found.");
             return;
         }
         var mss = MesenSaveState.Load(mssPath);
@@ -64,7 +64,7 @@ switch (cmd)
             File.WriteAllBytes(Path.Combine(baseDir, "extracted_vram.bin"), mss.Vram);
         if (mss.Cgram != null)
             File.WriteAllBytes(Path.Combine(baseDir, "extracted_cgram.bin"), mss.Cgram);
-        Console.WriteLine("WRAM / VRAM / CGRAM extraits.");
+        Console.WriteLine("WRAM / VRAM / CGRAM extracted.");
         break;
 
     case "tile":
@@ -85,7 +85,7 @@ switch (cmd)
         Directory.CreateDirectory(outDir);
         string bmp = Path.Combine(outDir, $"tile_{tileOff:X6}.bmp");
         SnesGfx.ExportIndexedBmp(bmp, indices, 8, 8, pal);
-        Console.WriteLine($"Tuile → {bmp}");
+        Console.WriteLine($"Tile → {bmp}");
         break;
 
     case "font-char":
@@ -114,7 +114,7 @@ switch (cmd)
         Directory.CreateDirectory(outDir);
         string bmp16 = Path.Combine(outDir, $"font16_{charOff:X6}.bmp");
         SnesGfx.ExportIndexedBmp(bmp16, px, 16, 16, pal16);
-        Console.WriteLine($"Glyphe 16×16 → {bmp16}");
+        Console.WriteLine($"16×16 glyph → {bmp16}");
         break;
 
     case "ascii-grid":
@@ -164,7 +164,7 @@ switch (cmd)
             string vramFile = Path.Combine(Path.GetDirectoryName(romPath)!, "extracted_vram.bin");
             if (!File.Exists(vramFile))
             {
-                Console.WriteLine("extracted_vram.bin introuvable.");
+                Console.WriteLine("extracted_vram.bin not found.");
                 return;
             }
             var vramData = File.ReadAllBytes(vramFile);
@@ -176,7 +176,7 @@ switch (cmd)
                 return;
             }
             var targetTile = vramData.AsSpan(tileOffsetInVram, 16);
-            Console.WriteLine($"Recherche de la tuile VRAM 0x{vramTileIndex:X3} (offset VRAM 0x{tileOffsetInVram:X4}):");
+            Console.WriteLine($"Looking for VRAM tile 0x{vramTileIndex:X3} (VRAM offset 0x{tileOffsetInVram:X4}):");
             Console.WriteLine(string.Join(" ", targetTile.ToArray().Select(b => b.ToString("X2"))));
 
             var romBytes = File.ReadAllBytes(romPath);
@@ -185,13 +185,13 @@ switch (cmd)
             {
                 if (romBytes.AsSpan(offset, 16).SequenceEqual(targetTile))
                 {
-                    Console.WriteLine($"Match trouvé à l'offset ROM: 0x{offset:X6}");
+                    Console.WriteLine($"Match found at ROM offset: 0x{offset:X6}");
                     matchCount++;
                 }
             }
             if (matchCount == 0)
             {
-                Console.WriteLine("Aucun match trouvé dans la ROM.");
+                Console.WriteLine("No match found in the ROM.");
             }
             break;
         }
@@ -199,26 +199,26 @@ switch (cmd)
     case "help":
     default:
         Console.WriteLine("""
-            Nage Libre — outils ROM SNES (LoROM)
+            Nage Libre — SNES ROM tools (LoROM)
 
-            export                 Génère les CSV dans docs/
-            catalog-font           Catalogue glyphes + atlas BMP + résumé traduction
-            extract-all            Extrait texte + script → CSV (sans jouer)
-            map-glyphs             Table octet → Unicode (glyph_unicode.csv)
-            decompress <hex>       Décompresse LZ01/LZ10/LZ11/LZ12 à l'offset ROM
-            decompress-scan        Liste les blocs décompressables (CSV)
-            extract-mesen          WRAM / VRAM / CGRAM depuis .mss
-            tile <hex> <2|4>       Tuile 8×8 en BMP
-            font-char <hex>        Glyphe 16×16 (64 octets ROM)
-            ascii-grid             Génère docs/ascii_glyphs.txt avec les glyphes en ASCII art
-            compact-grid           Génère docs/compact_glyphs.txt avec les glyphes 8x16 de façon compacte
-            html-grid              Génère docs/glyph_grid.html avec tous les glyphes agrandis en SVG
-            vram-grid              Génère docs/vram_ascii_glyphs.txt à partir de extracted_vram.bin
-            compact-vram           Génère docs/compact_vram_glyphs.txt avec les glyphes actifs VRAM 8x16 compacts
-            html-vram-grid         Génère docs/glyph_vram_grid.html avec tous les glyphes actifs et complets VRAM
-            dialogue-font <t> <b>  Génère docs/dialogue_font_<offset>.txt avec la police dialogue séparée (top/bottom)
+            export                 Generates the CSVs in docs/
+            catalog-font           Glyph catalogue + BMP atlas + translation summary
+            extract-all            Extracts text + script → CSV (without playing)
+            map-glyphs             Byte → Unicode table (glyph_unicode.csv)
+            decompress <hex>       Decompresses LZ01/LZ10/LZ11/LZ12 at the ROM offset
+            decompress-scan        Lists the decompressible blocks (CSV)
+            extract-mesen          WRAM / VRAM / CGRAM from a .mss
+            tile <hex> <2|4>       8×8 tile as BMP
+            font-char <hex>        16×16 glyph (64 ROM bytes)
+            ascii-grid             Generates docs/ascii_glyphs.txt with the glyphs as ASCII art
+            compact-grid           Generates docs/compact_glyphs.txt with the 8x16 glyphs, compact
+            html-grid              Generates docs/glyph_grid.html with every glyph enlarged as SVG
+            vram-grid              Generates docs/vram_ascii_glyphs.txt from extracted_vram.bin
+            compact-vram           Generates docs/compact_vram_glyphs.txt with the active 8x16 VRAM glyphs, compact
+            html-vram-grid         Generates docs/glyph_vram_grid.html with every active and full VRAM glyph
+            dialogue-font <t> <b>  Generates docs/dialogue_font_<offset>.txt with the dialogue font split (top/bottom)
 
-            Options : --rom <fichier.sfc> [fichier.mss]
+            Options: --rom <file.sfc> [file.mss]
             """);
         break;
 }
@@ -229,7 +229,7 @@ static void RunDecompress(string romPath, string outDir, int off)
     var attempt = Decompressor.TryAt(rom.AsSpan(), off);
     if (attempt == null)
     {
-        Console.WriteLine("Échec — formats testés : LZ01, LZ10, LZ11, LZ12.");
+        Console.WriteLine("Failed — formats tried: LZ01, LZ10, LZ11, LZ12.");
         return;
     }
     Directory.CreateDirectory(outDir);
@@ -237,7 +237,7 @@ static void RunDecompress(string romPath, string outDir, int off)
     File.WriteAllBytes(outPath, attempt.Data);
     int glyphs = Decompressor.CountGlyphBlocks(attempt.Data);
     Console.WriteLine($"{attempt.Format} @ 0x{off:X} → {outPath}");
-    Console.WriteLine($"  {attempt.Data.Length} octets, score={attempt.Score}, glyphes~{glyphs}");
+    Console.WriteLine($"  {attempt.Data.Length} bytes, score={attempt.Score}, glyphs~{glyphs}");
 }
 
 static void RunDecompressScan(string romPath, string outDir)
@@ -258,7 +258,7 @@ static void RunDecompressScan(string romPath, string outDir)
     }
 
     File.WriteAllLines(path, lines);
-    Console.WriteLine($"Scan : {lines.Count - 1} blocs → {path}");
+    Console.WriteLine($"Scan: {lines.Count - 1} blocks → {path}");
 }
 
 static void RunMapGlyphs(string romPath, string outDir)
@@ -269,7 +269,7 @@ static void RunMapGlyphs(string romPath, string outDir)
     string catalogPath = Path.Combine(outDir, "charset_catalog.csv");
     if (!File.Exists(catalogPath))
     {
-        Console.WriteLine("charset_catalog.csv absent — lancez catalog-font d'abord.");
+        Console.WriteLine("charset_catalog.csv missing — run catalog-font first.");
         return;
     }
 
@@ -281,9 +281,9 @@ static void RunMapGlyphs(string romPath, string outDir)
 
     int mapped = table.ByByte.Count(e => e.Value.Unicode != null);
     int total = table.ByByte.Count;
-    Console.WriteLine($"Unicode : {mapped} octets avec caractère → {outPath}");
-    Console.WriteLine($"Index complet : {total} octets (remplir unicode dans glyph_index.csv) → {fullPath}");
-    Console.WriteLine($"  Dans game_strings.csv : 〓 = octet sans unicode encore assigné");
+    Console.WriteLine($"Unicode: {mapped} bytes with a character → {outPath}");
+    Console.WriteLine($"Full index: {total} bytes (fill in unicode in glyph_index.csv) → {fullPath}");
+    Console.WriteLine($"  In game_strings.csv: 〓 = byte with no Unicode assigned yet");
 }
 
 static void RunExtractAll(string romPath, string outDir)
@@ -302,12 +302,12 @@ static void RunExtractAll(string romPath, string outDir)
     {
         unicode = GlyphUnicodeTable.Build(rom, catalogPath);
         unicode.ExportCsv(unicodePath);
-        Console.WriteLine($"glyph_unicode.csv généré ({unicode.ByByte.Count} entrées).");
+        Console.WriteLine($"glyph_unicode.csv generated ({unicode.ByByte.Count} entries).");
     }
     else
     {
         unicode = new GlyphUnicodeTable();
-        Console.WriteLine("Astuce : catalog-font puis map-glyphs pour plus de caractères.");
+        Console.WriteLine("Tip: run catalog-font, then map-glyphs, for more characters.");
     }
 
     var strings = TextExtractor.ExtractAll(rom, catalog, unicode);
@@ -324,13 +324,13 @@ static void RunExtractAll(string romPath, string outDir)
     ScriptExtractor.ExportScriptCsv(
         Path.Combine(outDir, "script_commands.csv"), commands, strings);
 
-    Console.WriteLine($"Chaînes extraites : {strings.Count}");
+    Console.WriteLine($"Strings extracted: {strings.Count}");
     Console.WriteLine($"  FF-term      : {strings.Count(s => s.Encoding == TextEncodingKind.CustomGlyphFfTerminated)}");
     Console.WriteLine($"  FE-term      : {strings.Count(s => s.Encoding == TextEncodingKind.CustomGlyphFeTerminated)}");
     Console.WriteLine($"  01-control   : {strings.Count(s => s.Encoding == TextEncodingKind.CustomGlyphControl)}");
     Console.WriteLine($"  via pointer  : {strings.Count(s => s.Encoding == TextEncodingKind.CustomGlyphPointer)}");
-    Console.WriteLine($"Unicode : {inv.Hiragana} hiragana, {inv.Katakana} katakana, {inv.Kanji} kanji uniques");
-    Console.WriteLine($"Commandes script : {commands.Count}");
+    Console.WriteLine($"Unicode: {inv.Hiragana} hiragana, {inv.Katakana} katakana, {inv.Kanji} unique kanji");
+    Console.WriteLine($"Script commands: {commands.Count}");
     Console.WriteLine($"→ game_strings.csv, script_commands.csv, glyph_unicode.csv, character_analysis.csv");
 }
 
@@ -346,13 +346,13 @@ static void RunFontCatalog(string romPath, string outDir)
     CharsetAnalyzer.ExportSummaryCsv(Path.Combine(outDir, "charset_summary.csv"), banks, entries);
     CharsetAnalyzer.ExportAtlas(Path.Combine(outDir, "charset_atlas.bmp"), rom, banks);
 
-    Console.WriteLine($"Banques police : {banks.Count}");
-    Console.WriteLine($"Glyphes catalogués : {entries.Count}");
+    Console.WriteLine($"Font banks: {banks.Count}");
+    Console.WriteLine($"Glyphs catalogued: {entries.Count}");
     Console.WriteLine($"  sparse          : {entries.Count(e => e.Category == "sparse")}");
     Console.WriteLine($"  syllabary_latin : {entries.Count(e => e.Category == "syllabary_latin")}");
     Console.WriteLine($"  kana_kanji_light: {entries.Count(e => e.Category == "kana_kanji_light")}");
     Console.WriteLine($"  kanji_dense     : {entries.Count(e => e.Category == "kanji_dense")}");
-    Console.WriteLine($"Fichiers : charset_catalog.csv, charset_summary.csv, charset_atlas.bmp");
+    Console.WriteLine($"Files: charset_catalog.csv, charset_summary.csv, charset_atlas.bmp");
 }
 
 static void RunAsciiGrid(string romPath, string outDir)
@@ -361,7 +361,7 @@ static void RunAsciiGrid(string romPath, string outDir)
     string indexPath = Path.Combine(outDir, "glyph_index.csv");
     if (!File.Exists(indexPath))
     {
-        Console.WriteLine("glyph_index.csv non trouvé.");
+        Console.WriteLine("glyph_index.csv not found.");
         return;
     }
 
@@ -400,7 +400,7 @@ static void RunAsciiGrid(string romPath, string outDir)
 
     string txtPath = Path.Combine(outDir, "ascii_glyphs.txt");
     File.WriteAllText(txtPath, sb.ToString(), Encoding.UTF8);
-    Console.WriteLine($"Grid ASCII générée dans : {txtPath}");
+    Console.WriteLine($"ASCII grid generated in: {txtPath}");
 }
 
 static void RunCompactGrid(string romPath, string outDir)
@@ -409,7 +409,7 @@ static void RunCompactGrid(string romPath, string outDir)
     string indexPath = Path.Combine(outDir, "glyph_index.csv");
     if (!File.Exists(indexPath))
     {
-        Console.WriteLine("glyph_index.csv non trouvé.");
+        Console.WriteLine("glyph_index.csv not found.");
         return;
     }
 
@@ -474,7 +474,7 @@ static void RunCompactGrid(string romPath, string outDir)
 
     string txtPath = Path.Combine(outDir, "compact_glyphs.txt");
     File.WriteAllText(txtPath, sb.ToString(), Encoding.UTF8);
-    Console.WriteLine($"Grid compacte ASCII générée dans : {txtPath}");
+    Console.WriteLine($"Compact ASCII grid generated in: {txtPath}");
 }
 
 
@@ -484,7 +484,7 @@ static void RunHtmlGrid(string romPath, string outDir)
     string indexPath = Path.Combine(outDir, "glyph_index.csv");
     if (!File.Exists(indexPath))
     {
-        Console.WriteLine("glyph_index.csv non trouvé.");
+        Console.WriteLine("glyph_index.csv not found.");
         return;
     }
 
@@ -625,7 +625,7 @@ h1 {
 
     string htmlPath = Path.Combine(outDir, "glyph_grid.html");
     File.WriteAllText(htmlPath, sb.ToString(), Encoding.UTF8);
-    Console.WriteLine($"HTML grid généré dans : {htmlPath}");
+    Console.WriteLine($"HTML grid generated in: {htmlPath}");
 }
 
 static string? FindRom()
@@ -646,7 +646,7 @@ static void RunVramGrid(string vramPath, string outDir)
 {
     if (!File.Exists(vramPath))
     {
-        Console.WriteLine($"Fichier VRAM introuvable : {vramPath}");
+        Console.WriteLine($"VRAM file not found: {vramPath}");
         return;
     }
     var vram = File.ReadAllBytes(vramPath);
@@ -692,14 +692,14 @@ static void RunVramGrid(string vramPath, string outDir)
     Directory.CreateDirectory(outDir);
     string txtPath = Path.Combine(outDir, "vram_ascii_glyphs.txt");
     File.WriteAllText(txtPath, sb.ToString(), Encoding.UTF8);
-    Console.WriteLine($"Grid VRAM ASCII générée dans : {txtPath}");
+    Console.WriteLine($"VRAM ASCII grid generated in: {txtPath}");
 }
 
 static void RunCompactVram(string vramPath, string outDir, string unicodePath)
 {
     if (!File.Exists(vramPath))
     {
-        Console.WriteLine($"Fichier VRAM introuvable : {vramPath}");
+        Console.WriteLine($"VRAM file not found: {vramPath}");
         return;
     }
     var vram = File.ReadAllBytes(vramPath);
@@ -777,14 +777,14 @@ static void RunCompactVram(string vramPath, string outDir, string unicodePath)
     Directory.CreateDirectory(outDir);
     string txtPath = Path.Combine(outDir, "compact_vram_glyphs.txt");
     File.WriteAllText(txtPath, sb.ToString(), Encoding.UTF8);
-    Console.WriteLine($"Grid compacte VRAM ASCII générée dans : {txtPath}");
+    Console.WriteLine($"Compact VRAM ASCII grid generated in: {txtPath}");
 }
 
 static void RunHtmlVramGrid(string vramPath, string outDir, string unicodePath)
 {
     if (!File.Exists(vramPath))
     {
-        Console.WriteLine($"Fichier VRAM introuvable : {vramPath}");
+        Console.WriteLine($"VRAM file not found: {vramPath}");
         return;
     }
     var vram = File.ReadAllBytes(vramPath);
@@ -969,7 +969,7 @@ h1 {
 
     string htmlPath = Path.Combine(outDir, "glyph_vram_grid.html");
     File.WriteAllText(htmlPath, sb.ToString(), Encoding.UTF8);
-    Console.WriteLine($"HTML grid VRAM généré dans : {htmlPath}");
+    Console.WriteLine($"VRAM HTML grid generated in: {htmlPath}");
 }
 
 static void RunDialogueFont(string romPath, string outDir, int topOff, int bottomOff, int count)

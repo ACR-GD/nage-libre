@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Analyse un dump Mesen produit par scripts/mesen_prologue_dump.lua.
+Analyses a Mesen dump produced by scripts/mesen_prologue_dump.lua.
 
 Usage:
   python3 scripts/analyze_mesen_dump.py mesen_dumps/20260519_143022_PC_0087DCCB_001
-  python3 scripts/analyze_mesen_dump.py mesen_dumps/   # tous les dumps
+  python3 scripts/analyze_mesen_dump.py mesen_dumps/   # every dump
 """
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ import struct
 import sys
 from pathlib import Path
 
-# IDs connus (prologue + ponctuation)
+# Known IDs (prologue + punctuation)
 GLYPH = {
     0x0010: "あ", 0x002A: "く", 0x005A: "で", 0x0088: "ほ", 0x009C: "球",
     0x02AA: "…", 0x02DE: "西", 0x01DA: "暦", 0x03FE: " ",
@@ -68,11 +68,11 @@ def analyze_dump(dump_dir: Path) -> None:
 
     tilemap = dump_dir / "wram_7F6000_1000.bin"
     if not tilemap.is_file():
-        print("  (pas de wram_7F6000_1000.bin)")
+        print("  (no wram_7F6000_1000.bin)")
         return
 
     data = tilemap.read_bytes()
-    # offsets depuis $7F:64C0 → index dans bin = addr - 0x7F6000
+    # offsets from $7F:64C0 → index in the bin = addr - 0x7F6000
     base_addr = 0x7F6000
     tilemap_base = 0x7F64C0
     rel_base = tilemap_base - base_addr
@@ -94,11 +94,11 @@ def analyze_dump(dump_dir: Path) -> None:
     sig = words_at(data, base_addr, rel_base + 0x0142, 2)
     if len(sig) >= 2:
         ok = sig[0] == 0x075A and sig[1] == 0x002A
-        print(f"\n  Signature 075A+002A: {'OK' if ok else 'non'} ({sig[0]:04X} {sig[1]:04X})")
+        print(f"\n  Signature 075A+002A: {'OK' if ok else 'no'} ({sig[0]:04X} {sig[1]:04X})")
 
     zp = dump_dir / "zp_direct.txt"
     if zp.is_file():
-        print(f"\n  --- zp_direct.txt (extrait) ---")
+        print(f"\n  --- zp_direct.txt (excerpt) ---")
         for line in zp.read_text().splitlines()[:12]:
             print(f"  {line}")
 
@@ -116,13 +116,13 @@ def main() -> None:
     if target.is_dir():
         dumps = sorted(p for p in target.iterdir() if p.is_dir() and (p / "meta.txt").is_file())
         if not dumps:
-            print(f"Aucun dump dans {target}", file=sys.stderr)
+            print(f"No dump in {target}", file=sys.stderr)
             sys.exit(1)
         for d in dumps:
             analyze_dump(d)
         return
 
-    print(f"Chemin invalide: {target}", file=sys.stderr)
+    print(f"Invalid path: {target}", file=sys.stderr)
     sys.exit(1)
 
 

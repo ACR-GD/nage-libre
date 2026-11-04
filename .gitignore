@@ -22,10 +22,10 @@ bin/
 obj/
 *.user
 
-# Dumps mémoire Mesen (peuvent contenir la ROM) — locaux
+# Mesen memory dumps (may contain the ROM) — local only
 *.dmp
 
-# Binaire compilé (source : scripts/vision_ocr.swift)
+# Compiled binary (source: scripts/vision_ocr.swift)
 scripts/vision_ocr
 
 # Ghidra project lock and state files

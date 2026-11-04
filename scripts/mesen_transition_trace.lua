@@ -1,29 +1,29 @@
 --[[
-  Nage Libre — traceur de la transition narration → UI (bug de fin de prologue)
-  Pour Mesen-S / Mesen2 (SNES).
+  Nage Libre — tracer for the narration → UI transition (end-of-prologue bug)
+  For Mesen-S / Mesen2 (SNES).
 
-  But : localiser PRÉCISÉMENT où le prologue se fige après l'écran 24.
-  Méthode :
-    1. Logue chaque passage aux points clés du hand-off (séquenceur → driver → boucle → DCCB).
-    2. Échantillonne le PC à chaque frame : quand l'image se fige, le PC qui se répète
-       révèle la boucle d'attente exacte (= la cause du freeze).
+  Goal: locate EXACTLY where the prologue freezes after screen 24.
+  Method:
+    1. Logs each pass through the key points of the hand-off (sequencer → driver → loop → DCCB).
+    2. Samples the PC every frame: when the picture freezes, the PC that repeats
+       reveals the exact wait loop (= the cause of the freeze).
 
-  Usage :
-    1. Charger la ROM (nl-prologue-en.sfc), aller jusqu'au prologue.
+  Usage:
+    1. Load the ROM (nl-prologue-en.sfc), go up to the prologue.
     2. Tools → Script Window → Load Script → scripts/mesen_transition_trace.lua → Run.
-    3. Laisser tourner jusqu'au freeze (écran 24 → boîte vide).
-    4. Lire le log : la DERNIÈRE étape « REACHED » atteinte + le PC répété en fin de fichier.
-    5. M'envoyer le fichier  mesen_dumps/transition_trace.log
+    3. Let it run until the freeze (screen 24 → empty box).
+    4. Read the log: the LAST "REACHED" step + the repeated PC at the end of the file.
+    5. Send me the file  mesen_dumps/transition_trace.log
 
-  Aucune pause/breakpoint manuel requis.
+  No manual pause/breakpoint needed.
 ]]
 
 local LOG_PATH = "/Users/acr/Develop/nage-libre/mesen_dumps/transition_trace.log"
 
--- Points clés de la chaîne narration → UI (adresses CPU 24-bit)
+-- Key points of the narration → UI chain (24-bit CPU addresses)
 local STEPS = {
-  {0x008380D7, "NARRATION entry ($83:80D7) — lance une scène"},
-  {0x008383E5, "NARRATION END   ($83:83E5) — script terminé (FFFF)"},
+  {0x008380D7, "NARRATION entry ($83:80D7) — starts a scene"},
+  {0x008383E5, "NARRATION END   ($83:83E5) — script finished (FFFF)"},
   {0x00809626, "SEQ scene $0136  ($80:9626)"},
   {0x0080963A, "SEQ scene $0138  ($80:963A)"},
   {0x00809390, "SEQ pre-D63B     ($80:9390  JSR $9B20)"},
@@ -33,13 +33,13 @@ local STEPS = {
   {0x0087D70C, "LOOP body        ($87:D70C)"},
   {0x0087D756, "WAIT input       ($87:D756  LDA $0214)"},
   {0x0087D6D4, "→ DCCB           ($87:D6D4  JSR DCCB)"},
-  {0x0087DCCB, "TRANSITION       ($87:DCCB) — sortie prologue"},
+  {0x0087DCCB, "TRANSITION       ($87:DCCB) — prologue exit"},
 }
 
--- Échantillonnage PC : 1 log toutes les N frames
+-- PC sampling: 1 log line every N frames
 local HEARTBEAT_FRAMES = 20
 
--- ── état ────────────────────────────────────────────────────────────────────
+-- ── state ────────────────────────────────────────────────────────────────────
 local MEM = emu.memType.cpuDebug
 local hitCount = {}
 local fileHandle = io.open(LOG_PATH, "w")
@@ -74,7 +74,7 @@ local function pcOf(state)
 end
 
 local function snapshot()
-  -- variables d'état utiles au diagnostic
+  -- state variables useful for diagnosis
   return string.format("frame=%d  $1156=%04X  $0214=%04X  $17D6=%04X  $0006=%04X",
     frame, rd16(0x001156), rd16(0x000214), rd16(0x0017D6), rd16(0x000006))
 end
@@ -95,7 +95,7 @@ local function onFrame()
   if frame % HEARTBEAT_FRAMES ~= 0 then return end
   local state = emu.getState()
   local pc, a, x = pcOf(state)
-  -- regrouper le PC par tranche de 0x20 pour détecter une boucle de spin
+  -- group the PC into 0x20 slices to detect a spin loop
   local key = pc - (pc % 32)
   if key == lastPcKey then
     lastPcRepeat = lastPcRepeat + 1
@@ -108,11 +108,11 @@ local function onFrame()
 end
 
 -- ── init ──────────────────────────────────────────────────────────────────
-logline("=== Nage Libre — trace transition narration → UI ===")
+logline("=== Nage Libre — narration → UI transition trace ===")
 logline("Log: " .. LOG_PATH)
 for _, s in ipairs(STEPS) do
   emu.addMemoryCallback(onStep, emu.memCallbackType.exec, s[1], s[1])
   logline(string.format("  watch $%06X  %s", s[1], s[2]))
 end
 emu.addEventCallback(onFrame, emu.eventType.startFrame)
-logline("Traceur actif. Jouer jusqu'au freeze, puis m'envoyer le log.")
+logline("Tracer active. Play until the freeze, then send me the log.")

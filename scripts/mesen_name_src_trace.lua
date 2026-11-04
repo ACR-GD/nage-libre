@@ -1,19 +1,19 @@
 --[[
-  Nage Libre — capture des POINTEURS SOURCE des chaînes rendues par $80:F4A7.
+  Nage Libre — capture of the SOURCE POINTERS of the strings rendered by $80:F4A7.
 
-  $80:F4A7 → F4AB lit une chaîne d'IDs 16-bit via le pointeur 24-bit en page
-  directe $09/$0A/$0B (fin = $FFFF). L'écran d'anniversaire (driver $87:EA20)
-  affiche le NOM du personnage, la DATE (mois/jour) et la PIERRE via ce moteur.
+  $80:F4A7 → F4AB reads a string of 16-bit IDs through the 24-bit direct-page
+  pointer $09/$0A/$0B (end = $FFFF). The birthday screen (driver $87:EA20)
+  shows the character's NAME, the DATE (month/day) and the BIRTHSTONE through this engine.
 
-  Ce script logue, pour chaque entrée du moteur, l'adresse source (dédupliquée)
-  et un aperçu des IDs 16-bit (jusqu'au $FFFF). Les noms apparaîtront comme des
-  chaînes de kanji (IDs élevés) à des offsets banque $87.
+  For each entry into the engine, this script logs the source address (deduplicated)
+  and a preview of the 16-bit IDs (up to the $FFFF). The names will show up as
+  kanji strings (high IDs) at bank $87 offsets.
 
-  Usage :
-    1. nl-full-en.sfc, aller jusqu'à l'écran d'anniversaire (sélection perso).
-    2. Script Window → Load → ce fichier → Run.
-    3. Faire défiler les personnages (chaque portrait/nom), puis valider l'écran
-       de confirmation. M'envoyer  mesen_dumps/name_src_trace.log
+  Usage:
+    1. nl-full-en.sfc, go to the birthday screen (character selection).
+    2. Script Window → Load → this file → Run.
+    3. Scroll through the characters (each portrait/name), then confirm the
+       confirmation screen. Send me  mesen_dumps/name_src_trace.log
 ]]
 
 local LOG_PATH = "/Users/acr/Develop/nage-libre/mesen_dumps/name_src_trace.log"
@@ -35,16 +35,16 @@ local function rd(addr) return emu.read(addr, MEM) & 0xFF end
 local function rd16(a) return rd(a) | (rd(a+1)<<8) end
 local function rd24(a) return rd(a) | (rd(a+1)<<8) | (rd(a+2)<<16) end
 
--- $80:F4A7 — entrée du moteur typewriter ROM
+-- $80:F4A7 — entry of the ROM typewriter engine
 local function onEnter()
   if fileHandle == nil then return end
   local st = emu.getState()
   local dp = (st and st.cpu and st.cpu.d) or 0
-  local src = rd24(dp + 0x09)            -- pointeur source 24-bit [$09]
+  local src = rd24(dp + 0x09)            -- 24-bit source pointer [$09]
   local key = string.format("%06X", src)
   if seen[key] then return end
   seen[key] = true
-  -- lire les IDs jusqu'au FFFF (max 24)
+  -- read the IDs up to the FFFF (max 24)
   local ids = {}
   for i = 0, 23 do
     local w = rd16(src + i*2)
@@ -61,8 +61,8 @@ end
 
 local function onFrame() frame = frame + 1 end
 
-logline("=== capture source moteur $80:F4A7 (noms/dates/pierres) ===")
+logline("=== $80:F4A7 engine source capture (names/dates/birthstones) ===")
 logline("Log: "..LOG_PATH)
 emu.addMemoryCallback(onEnter, CB.exec, 0x80F4A7, 0x80F4A7)
 emu.addEventCallback(onFrame, emu.eventType.startFrame)
-logline("Actif. Faire défiler les personnages sur l'écran d'anniversaire.")
+logline("Active. Scroll through the characters on the birthday screen.")

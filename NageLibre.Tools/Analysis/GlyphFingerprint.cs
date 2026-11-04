@@ -2,7 +2,7 @@ using NageLibre.Tools.Gfx;
 
 namespace NageLibre.Tools.Analysis;
 
-/// <summary>Empreinte 8×8 d’un glyphe 16×16 pour regrouper les doublons en ROM.</summary>
+/// <summary>8×8 fingerprint of a 16×16 glyph, to group duplicates in ROM.</summary>
 public static class GlyphFingerprint
 {
     public static ulong Hash64(ReadOnlySpan<byte> romGlyph64)

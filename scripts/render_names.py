@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Rend les 247 chaînes du bloc de noms $87:8077.. en planches PNG étiquetées.
+"""Renders the 247 strings of the $87:8077.. name block as labelled PNG sheets.
 
-Chaque ligne = [index décimal en police latine 8x8] [glyphes kanji 16x16 du nom].
-Sert à identifier/romaniser les noms (lectures non mappées dans l'index kanji).
-Sortie : docs/names_render/page_NN.png  + index console (idx -> offset SNES).
+Each row = [decimal index in the 8x8 Latin font] [16x16 kanji glyphs of the name].
+Used to identify/romanise the names (readings not mapped in the kanji index).
+Output: docs/names_render/page_NN.png  + console index (idx -> SNES offset).
 """
 from pathlib import Path
 from PIL import Image
@@ -23,7 +23,7 @@ PER_PAGE = 24
 
 
 def collect():
-    """(offset_snes, [ids]) pour chaque chaîne FFFF-terminée."""
+    """(snes_offset, [ids]) for each FFFF-terminated string."""
     out, cur, off0 = [], [], BLOCK_START
     i = BLOCK_START
     start = i
@@ -40,7 +40,7 @@ def collect():
 
 
 def latin_glyph(ch):
-    """16x16 pixel grid pour un caractère latin (8x8 en haut-gauche)."""
+    """16x16 pixel grid for a Latin character (8x8 in the top-left)."""
     g = [[0] * 16 for _ in range(16)]
     if ch in FONT:
         top, bot = FONT[ch]
@@ -77,13 +77,13 @@ def main():
     names = collect()
     outdir = ROOT / "docs" / "names_render"
     outdir.mkdir(exist_ok=True)
-    print(f"{len(names)} chaînes")
+    print(f"{len(names)} strings")
     indexed = [(i, snes, ids) for i, (snes, ids) in enumerate(names)]
     for p in range(0, len(indexed), PER_PAGE):
         page = indexed[p:p + PER_PAGE]
         path = outdir / f"page_{p // PER_PAGE:02d}.png"
         render_page(page, path)
-        print("écrit", path.name, f"(idx {page[0][0]}..{page[-1][0]})")
+        print("wrote", path.name, f"(idx {page[0][0]}..{page[-1][0]})")
 
 
 if __name__ == "__main__":
