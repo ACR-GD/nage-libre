@@ -1,7 +1,7 @@
 # Nage Libre English v1.0: release texts
 
 Replace `ACR-GD` with the name you want credited if it's different. Every text
-says the translation is AI-assisted and human-proofread. Keep that in, because
+says the translation is machine/AI-assisted and translated and proofread by you. Keep that in, because
 some sites and readers care a lot about it (see "Before posting" at the end).
 
 ---
@@ -21,7 +21,7 @@ some sites and readers care a lot about it (see "Before posting" at the end).
 **Short description:**
 
 > A complete English translation of Varie's 1995 card-battle strategy game,
-> AI-assisted and proofread by a human.
+> machine/AI-assisted, translated and proofread by a human.
 
 **Description:**
 
@@ -34,8 +34,10 @@ some sites and readers care a lot about it (see "Before posting" at the end).
 > menus, the save and birthday screens, card-battle commands and messages,
 > level-ups, the PAGER windows, and every character, enemy and club name.
 >
-> This is my first fan translation, and it was AI-assisted: an AI model helped
-> decode the text and font, build the insertion tools and draft the script. I
+> This is my first fan translation. Much of the script is my own work: the first
+> draft mixed my own translation with Google Translate, Gemini helped identify
+> kanji, and Claude helped decode the text and font, build the insertion tools
+> and polish the script. I
 > then proofread every line of dialogue myself, corrected what was wrong
 > (87 fixes in the final pass) and playtested the game. Mistakes may still be
 > there, so reports are very welcome on the GitHub issue tracker.
@@ -82,7 +84,7 @@ Five schoolgirls are pulled from an ordinary morning into a strange world called
 [/list]
 
 [b]A word on how it was made[/b]
-This is my first fan translation, and it was AI-assisted. An AI model helped me decode the game's text and font, build the tools that insert the English, and draft the script. I then proofread every line of dialogue myself, rewrote what was wrong or clunky (87 corrections in the last pass) and playtested the game. I'm one person, so mistakes are probably still in there. If you find one, please tell me with a screenshot. It all goes into the next version.
+This is my first fan translation, and I want to be upfront about how it was made. Much of the script is my own work: the first draft mixed my own translation with Google Translate, Gemini helped me identify kanji, and Claude helped me decode the game's text and font, build the tools that insert the English, and polish the script. I then proofread every line of dialogue myself, rewrote what was wrong or clunky (87 corrections in the last pass) and playtested the game. I'm one person, so mistakes are probably still in there. If you find one, please tell me with a screenshot. It all goes into the next version.
 
 [b]Download[/b]
 GitHub: https://github.com/ACR-GD/nage-libre
@@ -101,7 +103,7 @@ Thanks for reading, and have fun!
 
 ## 3. Reddit (Markdown: r/romhacking, r/snes, r/superfamicom, r/emulation)
 
-**Title:** *Nage Libre: Seijaku no Suishin* (SFC, 1995) is now playable in English. My first fan translation (AI-assisted, human-proofread)
+**Title:** *Nage Libre: Seijaku no Suishin* (SFC, 1995) is now playable in English. My first fan translation (machine/AI-assisted, human-translated and proofread)
 
 ```
 I've just released an English patch for *Nage Libre: Seijaku no Suishin*, a 1995 Super Famicom card-battle strategy game by Varie that never left Japan.
@@ -110,7 +112,7 @@ Five schoolgirls get pulled into a strange world called "Nage" and have to fight
 
 **What's translated:** everything I could find. That's all story dialogue (about 2,300 lines, prologue to credits), menus, save/birthday/club screens, battle commands and messages, level-ups, and all names.
 
-**How it was made:** this is my first translation and I want to be upfront: it was AI-assisted. An AI model helped decode the text and font, build the insertion tools and draft the script. I then proofread every line myself, rewrote what was wrong (87 fixes in the final pass) and playtested it. Mistakes are probably still in there. Reports with screenshots are very welcome on GitHub.
+**How it was made:** this is my first translation and I want to be upfront: much of the script is my own work, but the first draft mixed my translation with Google Translate, Gemini helped identify kanji, and Claude helped decode the text and font, build the insertion tools and polish the script. I then proofread every line myself, rewrote what was wrong (87 fixes in the final pass) and playtested it. Mistakes are probably still in there. Reports with screenshots are very welcome on GitHub.
 
 **Download:** https://github.com/ACR-GD/nage-libre (BPS + IPS, for the unheadered Japanese ROM, CRC32 A98F24E1)
 
@@ -144,7 +146,7 @@ Easiest way to patch: https://www.marcrobledo.com/RomPatcher.js/
 All story dialogue (about 2,300 lines), menus, save/load, birthday and club screens, shop, card-battle commands and messages, level-ups, PAGER windows, and all names.
 
 ### About this translation
-My first fan translation. AI-assisted (text decoding, tools, first draft) and proofread line by line by me, a human. Mistakes may remain: please [open an issue](https://github.com/ACR-GD/nage-libre/issues) with a screenshot.
+My first fan translation. Much of the script is my own work; the first draft also used Google Translate, Gemini helped identify kanji, and Claude helped with decoding, tools and polish. Every line was proofread by me, a human. Mistakes may remain: please [open an issue](https://github.com/ACR-GD/nage-libre/issues) with a screenshot.
 
 ### Known issues
 - Tested in Mesen 2 only so far.
@@ -160,7 +162,7 @@ My first fan translation. AI-assisted (text decoding, tools, first draft) and pr
 
 ```
 Nage Libre: Seijaku no Suishin (Super Famicom, 1995) is now playable in English!
-My first fan translation: AI-assisted, proofread line by line by me. Patch + notes:
+My first fan translation: machine/AI-assisted, translated and proofread by me. Patch + notes:
 github.com/ACR-GD/nage-libre
 #romhacking #SNES #SuperFamicom #fantranslation
 ```
@@ -170,7 +172,7 @@ github.com/ACR-GD/nage-libre
 ```
 A 1995 Super Famicom game that never left Japan… now in English 🌊
 Nage Libre: Seijaku no Suishin. Five schoolgirls, one very strange world, card battles.
-My first fan translation (AI-assisted, proofread by me). Patch link in bio.
+My first fan translation (machine/AI-assisted, translated and proofread by me). Patch link in bio.
 #retrogaming #snes #superfamicom #fantranslation #romhacking #90sanime
 ```
 

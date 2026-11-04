@@ -39,18 +39,20 @@ This patch is for the Super Famicom game only.
 -------------------------------------------------------------------------------
 This is my first fan translation.
 
-It was made with the help of AI. An AI model (Anthropic's Claude) helped me
-decode the game's text and font, write the tools that put the English text
-into the ROM, and draft the English script.
+Much of the English script is my own work. The first draft mixed my own
+translation with machine translation (Google Translate), and I used AI
+(Google's Gemini) to help identify kanji in the game's font. An AI model
+(Anthropic's Claude) helped me decode the game's text and font, write the
+tools that put the English text into the ROM, and polish the script.
 
 I then proofread the whole script myself, every line of story dialogue, and
 rewrote the lines that were wrong or read badly (87 corrections in the final
 pass). I also played the game to check the text on screen.
 
-So: AI-assisted, human-proofread. I did my best, but I am one person and
-mistakes are probably still in there: a misread line, an odd phrasing, a
-name read the wrong way. If you spot one, please tell me (see section 7).
-Every report makes the next version better.
+So: machine- and AI-assisted, human-translated and proofread. I did my best,
+but I am one person and mistakes are probably still in there: a misread line,
+an odd phrasing, a name read the wrong way. If you spot one, please tell me
+(see section 7). Every report makes the next version better.
 
 
 -------------------------------------------------------------------------------
@@ -144,7 +146,9 @@ A screenshot helps a lot. If you can, say roughly where you were in the game
 8. CREDITS
 -------------------------------------------------------------------------------
   Translation, hacking, proofreading, testing ... ACR-GD
-  AI assistance (text decoding, tools, draft) .. Claude (Anthropic)
+  Machine translation (part of the first draft)  Google Translate
+  Kanji identification help ..................... Gemini (Google)
+  Decoding, tools, script polish ................ Claude (Anthropic)
 
   Original game ................................. Varie, 1995
 

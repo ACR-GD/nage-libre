@@ -6,7 +6,7 @@
 
 **Download:** get the patch from the [Releases page](https://github.com/ACR-GD/nage-libre/releases) (BPS recommended, IPS included) and apply it to the unheadered Japanese ROM, `Nage Libre - Seijaku no Suishin (Japan).sfc`: 1,572,864 bytes, CRC32 `A98F24E1`. The easiest way is [RomPatcher.js](https://www.marcrobledo.com/RomPatcher.js/). No ROMs are provided here.
 
-**About this translation:** this is my first fan translation. It was AI-assisted (text decoding, insertion tools, first draft) and then proofread line by line by me, a human, and playtested. Mistakes may remain, so please [open an issue](https://github.com/ACR-GD/nage-libre/issues) with a screenshot if you find one. Full notes are in [`release/README.txt`](release/README.txt).
+**About this translation:** this is my first fan translation. Much of the script is my own work: the first draft mixed my own translation with Google Translate, with Gemini helping to identify kanji, and Claude helped decode the text and font, build the insertion tools and polish the script. I then proofread every line myself and playtested the game. Mistakes may remain, so please [open an issue](https://github.com/ACR-GD/nage-libre/issues) with a screenshot if you find one. Full notes are in [`release/README.txt`](release/README.txt).
 
 The rest of this page documents the translation tools, first in English, then in the original French.
 
